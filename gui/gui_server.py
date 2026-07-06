@@ -278,6 +278,12 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(500, b"matrix_board.html not found next to gui_server.py",
                                   "text/plain; charset=utf-8")
             return self._send(200, HTML_PATH.read_bytes(), "text/html; charset=utf-8")
+        if path in ("/evidence.html", "/evidence.json"):
+            fp = HERE / path.lstrip("/")
+            if not fp.is_file():
+                return self._send(404, path.encode() + b" not found", "text/plain; charset=utf-8")
+            ctype = "text/html; charset=utf-8" if path.endswith(".html") else "application/json; charset=utf-8"
+            return self._send(200, fp.read_bytes(), ctype)
         if path == "/api/runs":
             return self._json({"runs_dir": str(RUNS_DIR), "runs": scan_runs()})
         if path == "/api/report":

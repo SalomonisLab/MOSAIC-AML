@@ -98,6 +98,8 @@
   .mprob{font-family:var(--mono);font-size:13px;text-align:right;color:var(--muted)}
   .mcall{font-size:10px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;font-family:var(--mono);text-align:center;border-radius:5px;padding:3px 0}
   .mcall.present{color:var(--present);background:var(--present-bg)} .mcall.absent{color:var(--absent);background:var(--absent-bg)}
+  .evlink{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:11px;color:var(--accent);text-decoration:none;border:1px solid var(--accent);border-radius:6px;padding:3px 9px;opacity:.85}
+  .evlink:hover{opacity:1;background:color-mix(in srgb,var(--accent) 14%,transparent)}
   .auc{font-family:var(--mono);font-size:11px;color:var(--faint);text-align:right}
   .vchk{text-align:center;font-size:13px;font-family:var(--mono)} .vchk.ok{color:var(--absent)} .vchk.no{color:var(--present)}
   .caret{color:var(--faint);text-align:center;cursor:pointer;font-size:11px;user-select:none}
@@ -335,7 +337,8 @@ function renderMutations(rep){
       <span class="mcall ${present?"present":"absent"}">${esc(call||"–")}</span>
       <span class="auc" title="sealed held-out AUC">${p.heldout_auc!=null?num(p.heldout_auc,2):"–"}</span>
       <span class="caret" data-caret>▸</span>
-      <div class="mdetail"><div class="faint small mono" style="margin:2px 0 6px;letter-spacing:.06em">MODALITY · weight · score</div>${cbars}</div>
+      <div class="mdetail"><div class="faint small mono" style="margin:2px 0 6px;letter-spacing:.06em">MODALITY · weight · score</div>${cbars}
+        <a class="evlink" href="/evidence.html?driver=${encodeURIComponent(p.mutation)}" target="_blank" onclick="event.stopPropagation()">open evidence view — classifiers · markers · patient vs control ↗</a></div>
     </div>`;}).join("");
   const npos=preds.filter(p=>p.call==="present").length;
   return `<div class="card"><h2>Mutation predictions · ${preds.length} drivers · ${npos} called present</h2>
