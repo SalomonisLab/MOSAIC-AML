@@ -1,0 +1,3 @@
+[submodule "engine-code/altanalyze3"]
+	path = engine-code/altanalyze3
+	url = https://github.com/SalomonisLab/altanalyze3.git
