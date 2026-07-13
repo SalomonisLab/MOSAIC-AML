@@ -34,7 +34,10 @@ from amlmm import scrna, genetics, arbiter
 from amlmm import ledger as _led
 from amlmm.agent import AgentResult
 from amlmm.panel import evidence_predictive, _write_patient_md
+from amlmm.bulk_predictor import BulkMutationPredictor
 import control_gate as CG
+
+BULK_PKL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "bulk_mutation_predictor.pkl")
 
 DEFERRED = ["surfaceome/ADT", "metabolic", "lipid", "GRN-regulon", "LSC",
             "cell-state/UDON", "cell-communication"]
@@ -152,6 +155,53 @@ def composition_result(ctx, adata, permutations):
                        status="ok", evidence=evidence, opinion=opinion), meta
 
 
+def bulk_equiv_from_adata(adata):
+    """Collapse a single-cell sample to a whole-sample bulk-equivalent: sum counts across all cells per
+    gene -> CP10k (linear), the same representation the atlas 'sc' reference was built from. Returns a
+    Series indexed by gene symbol (the predictor maps symbol->ENSG internally)."""
+    import scipy.sparse as sp
+    X = adata.X
+    tot = np.asarray(X.sum(axis=0)).ravel() if sp.issparse(X) else np.asarray(X).sum(axis=0).ravel()
+    s = float(tot.sum()) or 1.0
+    cp10k = tot / s * 1e4                                    # counts-per-10k; predictor applies log2 + z internally
+    return pd.Series(cp10k, index=[str(g) for g in adata.var_names])
+
+
+def bulk_mutation_result(adata, present_truth):
+    """PRIMARY mutation caller: predict ~50 variant-level categories from the sample's bulk-equivalent
+    (BeatAML-trained). Returns (report_block, AgentResult) or (None, None) if the model isn't available."""
+    if not os.path.exists(BULK_PKL):
+        return None, None
+    BP = BulkMutationPredictor.load(BULK_PKL)
+    be = bulk_equiv_from_adata(adata)
+    calls = BP.predict(be, ref="sc")                        # {category: {probability, call, threshold, cv_auroc, confidence}}
+    truth = {str(t).upper() for t in present_truth}
+    preds = []
+    for cat, v in calls.items():
+        pr = dict(v); pr["mutation"] = cat
+        pr["source"] = "bulk_rna (BeatAML-trained, variant-level)"
+        gene = cat.split("_")[0].upper()                    # coarse gene for a cross-check vs supplied truth
+        pr["supplied_truth"] = ("present" if (gene in truth or cat.upper() in truth) else None)
+        preds.append(pr)
+    n_called = sum(1 for p in preds if p["call"] == "present" and p["confidence"] == "ok")
+    block = {"mode": "bulk_variant_primary", "caller": "BulkMutationPredictor",
+             "predictor": BP.summary(), "n_confident_present": n_called, "predictions": preds,
+             "note": "PRIMARY mutation caller — ~50 variant-level categories predicted from the sample's "
+                     "bulk-equivalent expression (BeatAML-trained, validated cross-cohort). Predicted, not "
+                     "sequenced: high-confidence 'present' calls are leads to confirm by sequencing. Weak "
+                     "categories (CV AUROC < 0.65) are marked abstain."}
+    top = [p["mutation"] for p in preds if p["call"] == "present" and p["confidence"] == "ok"][:8]
+    ev = {"witness": "bulk_mutation", "kind": "predictive", "status": "ok",
+          "n_confident_present": n_called, "top_predicted_present": top,
+          "mean_cv_auroc": BP.summary().get("mean_cv_auroc"), "n_categories": len(BP.categories)}
+    op = {"confidence": 0.5, "reliability_weight": 0.6,
+          "summary": f"predicts {n_called} driver categories present (top: {top})",
+          "caveats": "mutations PREDICTED from bulk-equivalent expression, not sequenced; confirm by DNA"}
+    res = AgentResult("bulk_mutation", "predictive", "honest_cv", "independent",
+                      status="ok", evidence=ev, opinion=op)
+    return block, res
+
+
 def genetic_result(present, unknown, eln):
     targetable = {g.replace("mut_", ""): t for g, t in genetics.TARGETABLE.items()
                   if g.replace("mut_", "") in present}
@@ -216,6 +266,13 @@ def main():
         present, unknown = normalize_mutations(args.mutations.split(","))
         gen_res = genetic_result(present, unknown, args.eln)
 
+        _status(run_dir, "running", "mutation_calling", "predicting drivers from bulk-equivalent (primary)")
+        try:
+            mut_block, _ = bulk_mutation_result(adata, present)
+        except Exception as _e:
+            mut_block = None
+            print("WARN bulk mutation caller skipped: %s" % _e, file=sys.stderr)
+
         _status(run_dir, "running", "arbiter", "reconciling witnesses")
         led = _led.Ledger(sample_key, "subtype", provenance=ctx.getart("provenance"))
         ctx.ledger = led
@@ -247,6 +304,7 @@ def main():
             "panel": [{"witness": e["witness"], "grounding": e["grounding"],
                        "independence": e["independence"], "evidence": e["evidence"],
                        "opinion": e["opinion"]} for e in led.current_entries()],
+            "mutation_predictions": mut_block,        # PRIMARY variant-level mutation caller (bulk-equivalent)
             "consensus": consensus, "deliberation": None,
             "ingest": {"source": args.sample, "input_kind": how, "name": args.name,
                        "mutations_supplied": present, "unrecognized_mutations": unknown,

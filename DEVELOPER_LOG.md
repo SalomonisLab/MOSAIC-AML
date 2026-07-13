@@ -454,4 +454,38 @@ comprehensive comparison workbook (`Desktop/MATRIX-AML_vs_marker-pipeline.xlsx`,
   number is kept as a separate column. LSF note: per-user 125-slot cap (A549 array) blocked scheduling;
   bswitch to `test` + bmod -n 1 got allcov running immediately.
 
-_Last updated: 2026-07-06._
+### 2026-07-09 → 07-13 — Variant-level bulk predictor becomes the PRIMARY mutation caller
+Cross-cohort bake-off pushed to **variant level** and promoted to the platform's primary caller.
+- **Variant-level relabeling (`pipeline/bulk_external.py`):** genes with distinct functional hotspots are
+  split into sub-categories parsed from BeatAML `hgvsp_short` / `variant_classification` / clinical fusions
+  (FLT3_ITD vs TKD_D835-I836 vs other; DNMT3A_R882 vs nonR882; NRAS/KRAS G12/G13/Q61; TP53 hotspot-DBD vs
+  LOF; SF3B1 K700/K666; U2AF1 S34 / Q157-R156; CEBPA bZIP/N-term/biallelic; …). Genes with no hotspot stay
+  gene-level. **58 categories; ~50 clear ≥6 positives** in BeatAML (5-fold CV-OOF, the primary metric).
+- **Result — splitting recovers hidden signal:** DNMT3A_R882 CV-AUROC **0.88 vs nonR882 0.61**; FLT3_ITD 0.91
+  vs TKD 0.69; U2AF1_S34 1.00 vs Q157 0.80. TP53 hotspot-DBD 0.90 ≈ LOF 0.89 (clean split, no gap). No-FS beats
+  MarkerFinder (+0.05, 73% of pairs); ENSEMBLE/PLS/logL2/shrLDA > trees > linSVM > MLP (worst). BeatAML→Leucegene
+  transfers (NPM1/SRSF2/U2AF1_S34/STAG2/RUNX1 on-diagonal); TET2 the notable non-transfer (0.83→0.65).
+- **Per-modality breakdown of the deployed sc system:** imputed Metabolite/Lipid/GRN carry it (single-best for
+  19/26 mutations); RNA is the reliable backbone (weighted 17/26) but rarely single-best; LSC/Cell-comm weak;
+  **fusion beats best-single in 26/26**. Base-learner sweep (8 families through the exact deployed recipe)
+  **confirmed the deployed LinearSVC is optimal** — no learner beats it on train CV-OOF; percentile-calibration
+  + NNLS late-fusion neutralize the base-learner differences that mattered on raw bulk.
+- **Decision (boss):** the bulk variant-level predictor covers ~2× the mutations at comparable accuracy on
+  cheap ubiquitous bulk RNA, so it becomes the **PRIMARY mutation caller**; the sc multimodal system is kept for
+  cytogenetics (inv16/del5/del7/complex/trisomy8/KMT2A) + multimodal depth. Head-to-head on 18 shared mutations:
+  sc 0.853 vs bulk comparable; bulk adds 25 categories sc can't reach (U2AF1_S34 1.00, SF3B1 1.00, JAK2_V617F,
+  variant splits).
+- **Deployable (`amlmm/bulk_predictor.py` + `pipeline/train_bulk_predictor.py` → `bulk_mutation_predictor.pkl`,
+  3.9 MB):** `BulkMutationPredictor` trains on BeatAML2 (n=707 WES) over 50 categories on the 14,237 shared genes;
+  logL2 / no-FS / top-2500-variance / percentile / F1-max. Per-cohort z-refs (sc/beataml/leucegene) so ONE model
+  scores plain bulk RNA and any single-cell sample collapsed to its bulk-equivalent. Mean 5-fold CV AUROC 0.829;
+  validated on the sealed sc held-out via bulk-equivalent (SRSF2 0.91, FLT3_ITD 0.83, TET2 0.76).
+- **Wired into `pipeline/ingest_patient.py`:** every upload's scRNA → `bulk_equiv_from_adata` (sum cells → CP10k)
+  → `predict(ref="sc")` → new top-level `mutation_predictions` report block (mode `bulk_variant_primary`) — the
+  first time the ingest path calls mutations from expression. Kept OUT of the arbiter (predicted ≠ ground truth;
+  user-supplied mutations stay the deterministic anchor); degrades gracefully if the pkl is absent. Real-data
+  sanity: median 3 confident-present calls/sample.
+- **Caveat:** variant-level labels need full WES, feasible only in bulk cohorts — our sc cohort's per-sample HGVS
+  is too sparse (only FLT3_ITD clears ≥8), so the sc system stays gene-level.
+
+_Last updated: 2026-07-13._
