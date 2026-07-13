@@ -193,23 +193,32 @@ def _set_status(run_dir: Path, state, step, message=""):
         pass
 
 
-def dispatch_ingest(name, sample, mutations="", dataset="uploaded"):
-    """Kick off ingest_patient.py for a new sample. Returns {run_id, job_id, mode} or {error}.
-    argv is a list (no shell) so the user-supplied name/sample/mutations cannot inject commands."""
+def dispatch_ingest(name, sample, mutations="", dataset="uploaded", kind="scrna",
+                    bulk_ref="beataml", bulk_scale="auto"):
+    """Kick off ingest_patient.py for a new sample (single-cell or bulk RNA). Returns {run_id, job_id, mode}
+    or {error}. argv is a list (no shell) so user-supplied fields cannot inject commands."""
     if not INGEST_SCRIPT.is_file():
         return {"error": f"ingest script not found: {INGEST_SCRIPT}"}
     run_id = _slug(name)
     run_dir = RUNS_DIR / run_id
     _set_status(run_dir, "queued", "submitting", name)
-    cmd = [PYTHON, str(INGEST_SCRIPT), "--sample", sample, "--name", name,
-           "--dataset", dataset, "--run-id", run_id, "--out-root", str(RUNS_DIR)]
+    if kind == "bulk":                                    # bulk RNA -> variant-level mutation panel (no atlas load)
+        _br = bulk_ref if bulk_ref in ("beataml", "leucegene", "sc") else "beataml"
+        _bs = bulk_scale if bulk_scale in ("auto", "linear", "log2", "log1p") else "auto"
+        cmd = [PYTHON, str(INGEST_SCRIPT), "--bulk", sample, "--name", name,
+               "--bulk-ref", _br, "--bulk-scale", _bs,
+               "--dataset", dataset, "--run-id", run_id, "--out-root", str(RUNS_DIR)]
+    else:
+        cmd = [PYTHON, str(INGEST_SCRIPT), "--sample", sample, "--name", name,
+               "--dataset", dataset, "--run-id", run_id, "--out-root", str(RUNS_DIR)]
     if mutations.strip():
         cmd += ["--mutations", mutations.strip()]
     log = str(run_dir / "_job.log")
     try:
         if USE_LSF:
-            bsub = ["bsub", "-q", "normal", "-J", f"aml_{run_id}", "-M", LSF_MEM,
-                    "-R", f"rusage[mem={LSF_MEM}]", "-o", log, "-e", log] + cmd
+            mem = "4000" if kind == "bulk" else LSF_MEM      # bulk skips the atlas load -> lighter job
+            bsub = ["bsub", "-q", "normal", "-J", f"aml_{run_id}", "-M", mem,
+                    "-R", f"rusage[mem={mem}]", "-o", log, "-e", log] + cmd
             p = subprocess.run(bsub, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                universal_newlines=True, timeout=90)
             if p.returncode != 0:
@@ -243,14 +252,17 @@ def list_jobs() -> "list[dict]":
 
 
 def list_samples() -> "list[dict]":
-    """Candidate inputs dropped into the inbox dir (10x dirs / .h5ad / 10x .h5)."""
+    """Candidate inputs dropped into the inbox dir: single-cell (10x dirs / .h5ad / 10x .h5) and
+    bulk RNA expression tables (.tsv / .csv / .txt)."""
     out = []
     if INBOX_DIR.is_dir():
         for p in sorted(INBOX_DIR.iterdir()):
             if p.is_dir() and (p / "filtered_feature_bc_matrix.h5").is_file():
-                out.append({"path": str(p), "label": p.name, "kind": "10x dir"})
+                out.append({"path": str(p), "label": p.name, "kind": "10x dir", "input": "scrna"})
             elif p.suffix.lower() in (".h5ad", ".h5"):
-                out.append({"path": str(p), "label": p.name, "kind": p.suffix.lower().lstrip(".")})
+                out.append({"path": str(p), "label": p.name, "kind": p.suffix.lower().lstrip("."), "input": "scrna"})
+            elif p.suffix.lower() in (".tsv", ".csv", ".txt"):
+                out.append({"path": str(p), "label": p.name, "kind": "bulk " + p.suffix.lower().lstrip("."), "input": "bulk"})
     return out
 
 
@@ -278,7 +290,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(500, b"matrix_board.html not found next to gui_server.py",
                                   "text/plain; charset=utf-8")
             return self._send(200, HTML_PATH.read_bytes(), "text/html; charset=utf-8")
-        if path in ("/evidence.html", "/evidence.json"):
+        if path in ("/evidence.html", "/evidence.json", "/mutation_frequency.json", "/reliability.json",
+                    "/calibration.html", "/cellstate_localization.json", "/vaf_by_mutation.json"):
             fp = HERE / path.lstrip("/")
             if not fp.is_file():
                 return self._send(404, path.encode() + b" not found", "text/plain; charset=utf-8")
@@ -315,8 +328,11 @@ class Handler(BaseHTTPRequestHandler):
         sample = str(body.get("sample") or "").strip()
         if not name or not sample:
             return self._json({"error": "name and sample are required"}, code=400)
+        kind = "bulk" if str(body.get("kind") or "").lower() in ("bulk", "bulk_rna", "bulkrna") else "scrna"
         res = dispatch_ingest(name, sample, str(body.get("mutations") or ""),
-                              str(body.get("dataset") or "uploaded"))
+                              str(body.get("dataset") or "uploaded"), kind=kind,
+                              bulk_ref=str(body.get("bulk_ref") or "beataml"),
+                              bulk_scale=str(body.get("bulk_scale") or "auto"))
         return self._json(res, code=200 if res.get("run_id") and not res.get("error") else 400)
 
     do_HEAD = do_GET

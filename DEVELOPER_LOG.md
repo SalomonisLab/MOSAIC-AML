@@ -488,4 +488,24 @@ Cross-cohort bake-off pushed to **variant level** and promoted to the platform's
 - **Caveat:** variant-level labels need full WES, feasible only in bulk cohorts — our sc cohort's per-sample HGVS
   is too sparse (only FLT3_ITD clears ≥8), so the sc system stays gene-level.
 
+### 2026-07-13 — Bulk-RNA upload path for patient ingest (single-cell OR bulk)
+The platform now accepts a **bulk RNA expression file** as a sample, not just single-cell.
+- **Pipeline (`pipeline/ingest_patient.py`):** new `--bulk <file>` (mutually exclusive with `--sample`) +
+  `--bulk-ref {beataml,leucegene,sc}` + `--bulk-scale {auto,linear,log2,log1p}`. `parse_bulk_expression`
+  reads any delimited gene×value table and auto-detects scale (negatives→log2→2^x; compressed→log1p→expm1;
+  else linear). `main_bulk` skips the atlas load entirely (fast, `-M 4000`) → runs the PRIMARY bulk
+  variant-level caller (`ref=bulk_ref`) + genetic anchor → report mode `bulk_panel`. Cell-state composition,
+  subtype, cytogenetics, and the control gate need single cells and are skipped (clearly noted in the report).
+- **Schema fix:** `bulk_mutation_result` now returns `(predictions_list, caller_meta, AgentResult)` so
+  `mutation_predictions` is the GUI-native **list** (was a block dict) with `heldout_auc := CV AUROC` for the
+  reliability/abstain logic — this fixes a latent render bug for BOTH the sc and bulk ingest report paths.
+- **GUI (`gui/gui_server.py`, `gui/matrix_board.html`):** `dispatch_ingest` routes `kind=bulk` → `--bulk`;
+  `POST /api/ingest` reads `kind/bulk_ref/bulk_scale`; `/api/samples` surfaces `.tsv/.csv/.txt` as bulk. The
+  add-patient modal gained an Input-type toggle (single-cell / bulk RNA) + a bulk-reference selector, the
+  inbox auto-detects input type, and `renderPredMeta` + the footer are bulk-aware (show the bulk caller, not
+  the sc multimodal boilerplate). (This commit also brings the GUI up to the current deployed cluster state.)
+- **Verified end-to-end:** bulk ingest of a BeatAML sample (14,237 genes, auto→linear, ref=beataml) → 7
+  confident-present variant calls (FLT3_TKD, NPM1_exon12, DNMT3A_R882, IDH1_R132, IDH2_R140, NRAS_Q61,
+  PTPN11_other); calibration sane (median 2–3 present/sample over 60 samples); rendered live in the board GUI.
+
 _Last updated: 2026-07-13._
