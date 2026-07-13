@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
-"""Ingest a NEW external scRNA sample as a patient and emit a decision-board report.
+"""Ingest a NEW external sample (single-cell OR bulk RNA) as a patient and emit a decision-board report.
 
-    gene-level scRNA (10x filtered_feature_bc_matrix.h5 | 10x dir | .h5ad)
+  --sample : gene-level scRNA (10x filtered_feature_bc_matrix.h5 | 10x dir | .h5ad)
         -> cell-state COMPOSITION  (cosine to the 89-state cellHarmony BM reference; amlmm.scrna)
         -> COHORT-TRAINED subtype prediction  (RF on the atlas composition->subtype; predict this sample)
+        -> PRIMARY variant-level mutation panel (bulk-equivalent -> bulk_mutation_predictor)
         -> optional GENETIC ANCHOR  (from user-supplied mutations)
         -> arbiter v2  ->  runs/<id>/{patient_report.json, ledger.json, PATIENT.md}
+
+  --bulk   : a BULK RNA expression table (gene x value; tsv/csv/txt)
+        -> PRIMARY variant-level mutation panel (bulk_mutation_predictor, --bulk-ref cohort)
+        -> optional GENETIC ANCHOR  ->  runs/<id>/patient_report.json  (mode "bulk_panel")
+        Cell-state composition / subtype / cytogenetics / control-gate need single cells and are skipped.
 
 The report is byte-shape-identical to what `panel.py --patient` writes, so the GUI renders it the
 same way. This is the NEW-PATIENT entry path, with two honest properties:
@@ -167,29 +173,64 @@ def bulk_equiv_from_adata(adata):
     return pd.Series(cp10k, index=[str(g) for g in adata.var_names])
 
 
-def bulk_mutation_result(adata, present_truth):
-    """PRIMARY mutation caller: predict ~50 variant-level categories from the sample's bulk-equivalent
-    (BeatAML-trained). Returns (report_block, AgentResult) or (None, None) if the model isn't available."""
+def parse_bulk_expression(path, scale="auto", column=None):
+    """Parse an uploaded BULK RNA expression file -> linear Series(gene -> value).
+
+    Accepts any delimited table (tsv/csv/txt) with genes in the first column and one or more sample
+    columns (ENSG or symbol index; the predictor maps symbols internally). Picks `column` if given, else
+    the first numeric column. Linearizes to the scale the predictor expects (log2(x+1) is applied inside):
+    log2-normalized (has negatives, e.g. BeatAML norm_exp) -> 2^x; log1p (compressed, non-negative) ->
+    expm1; linear counts/TPM/RPKM -> as-is. Auto-detect is overridable via `scale`. Returns (series, col, scale)."""
+    df = pd.read_csv(path, sep=None, engine="python", index_col=0)
+    num = df.apply(pd.to_numeric, errors="coerce").dropna(axis=1, how="all")
+    if num.shape[1] == 0:
+        raise ValueError("no numeric expression column found in the bulk file")
+    col = column if (column and column in num.columns) else str(num.columns[0])
+    ser = num[col].dropna()
+    ser.index = ser.index.astype(str).str.split(".").str[0]   # strip ENSG version suffixes
+    ser = ser.groupby(ser.index).max()                        # collapse duplicate gene rows
+    v = ser.values.astype(float)
+    if scale == "auto":
+        if np.nanmin(v) < -0.01:
+            scale = "log2"
+        elif np.nanmax(v) <= 30:
+            scale = "log1p"
+        else:
+            scale = "linear"
+    if scale == "log2":
+        ser = np.power(2.0, ser)                              # BeatAML norm_exp is log2 -> linearize
+    elif scale == "log1p":
+        ser = np.expm1(ser)                                   # CP10k+log1p -> linear
+    return ser, col, scale
+
+
+def bulk_mutation_result(expr_linear, present_truth, ref="sc"):
+    """PRIMARY mutation caller: predict ~50 variant-level categories from a LINEAR gene-expression Series
+    (a single-cell bulk-equivalent with ref='sc', or an uploaded bulk sample with ref='beataml').
+    Returns (predictions_list, caller_meta, AgentResult) or (None, None, None) if the model isn't available.
+    predictions_list is the GUI-native list (each prediction carries heldout_auc := CV AUROC for the
+    reliability/abstain logic); caller_meta holds the panel-level metadata."""
     if not os.path.exists(BULK_PKL):
-        return None, None
+        return None, None, None
     BP = BulkMutationPredictor.load(BULK_PKL)
-    be = bulk_equiv_from_adata(adata)
-    calls = BP.predict(be, ref="sc")                        # {category: {probability, call, threshold, cv_auroc, confidence}}
+    calls = BP.predict(expr_linear, ref=ref)                 # {category: {probability, call, threshold, cv_auroc, confidence}}
     truth = {str(t).upper() for t in present_truth}
     preds = []
     for cat, v in calls.items():
         pr = dict(v); pr["mutation"] = cat
+        pr["heldout_auc"] = v.get("cv_auroc")               # GUI keys reliability/abstain off heldout_auc
         pr["source"] = "bulk_rna (BeatAML-trained, variant-level)"
         gene = cat.split("_")[0].upper()                    # coarse gene for a cross-check vs supplied truth
         pr["supplied_truth"] = ("present" if (gene in truth or cat.upper() in truth) else None)
         preds.append(pr)
     n_called = sum(1 for p in preds if p["call"] == "present" and p["confidence"] == "ok")
-    block = {"mode": "bulk_variant_primary", "caller": "BulkMutationPredictor",
-             "predictor": BP.summary(), "n_confident_present": n_called, "predictions": preds,
-             "note": "PRIMARY mutation caller — ~50 variant-level categories predicted from the sample's "
-                     "bulk-equivalent expression (BeatAML-trained, validated cross-cohort). Predicted, not "
-                     "sequenced: high-confidence 'present' calls are leads to confirm by sequencing. Weak "
-                     "categories (CV AUROC < 0.65) are marked abstain."}
+    _inp = "uploaded bulk RNA" if ref != "sc" else "the sample's single-cell bulk-equivalent"
+    caller_meta = {"mode": "bulk_variant_primary", "caller": "BulkMutationPredictor", "input": ref,
+                   "predictor": BP.summary(), "n_confident_present": n_called,
+                   "note": "PRIMARY mutation caller — ~50 variant-level categories predicted from %s "
+                           "(BeatAML-trained, validated cross-cohort). Predicted, not sequenced: high-confidence "
+                           "'present' calls are leads to confirm by sequencing. Weak categories (CV AUROC < 0.65) "
+                           "are marked abstain." % _inp}
     top = [p["mutation"] for p in preds if p["call"] == "present" and p["confidence"] == "ok"][:8]
     ev = {"witness": "bulk_mutation", "kind": "predictive", "status": "ok",
           "n_confident_present": n_called, "top_predicted_present": top,
@@ -199,7 +240,7 @@ def bulk_mutation_result(adata, present_truth):
           "caveats": "mutations PREDICTED from bulk-equivalent expression, not sequenced; confirm by DNA"}
     res = AgentResult("bulk_mutation", "predictive", "honest_cv", "independent",
                       status="ok", evidence=ev, opinion=op)
-    return block, res
+    return preds, caller_meta, res
 
 
 def genetic_result(present, unknown, eln):
@@ -232,9 +273,72 @@ def provenance(layout, sample_path, deferred):
     return out
 
 
+def main_bulk(args, cfg, run_dir, sample_key):
+    """BULK-RNA ingest path: an expression file -> the PRIMARY variant-level mutation panel (+ genetic anchor).
+    No cell-state composition / subtype / cytogenetics / control-gate — those require single-cell input — so
+    this path skips the atlas load entirely and is fast."""
+    try:
+        _status(run_dir, "running", "loading_bulk", "parsing bulk expression file")
+        ser, col, scale = parse_bulk_expression(args.bulk, scale=args.bulk_scale)
+
+        _status(run_dir, "running", "genetic", "applying genetic anchor")
+        present, unknown = normalize_mutations(args.mutations.split(","))
+        gen_res = genetic_result(present, unknown, args.eln)
+
+        _status(run_dir, "running", "mutation_calling", "predicting drivers from bulk RNA (primary)")
+        mut_preds, mut_caller, _ = bulk_mutation_result(ser, present, ref=args.bulk_ref)
+        if mut_preds is None:
+            raise RuntimeError("bulk mutation predictor not found (pipeline/bulk_mutation_predictor.pkl)")
+        top_present = [p["mutation"] for p in mut_preds
+                       if p["call"] == "present" and p["confidence"] == "ok"]
+
+        consensus = {
+            "leading_hypothesis": ("predicted drivers: " + ", ".join(top_present[:4])) if top_present
+                                  else "no high-confidence drivers predicted",
+            "overall_confidence": "mutation panel only — bulk RNA input has no subtype/cytogenetics witness",
+            "leading_confirmed_by_genetics": bool(present), "supplied_mutations": present,
+        }
+        prov = {"layout": "bulk", "ingested": True, "source": args.bulk, "input_kind": "bulk_rna",
+                "deferred_witnesses": ["composition/subtype", "cytogenetics", "control-gate"] + DEFERRED}
+        report = {
+            "mode": "bulk_panel", "sample_key": sample_key, "annotation": None, "dataset": args.dataset,
+            "provenance": prov, "specimen_class": None, "control_gate": None,
+            "panel": [{"witness": gen_res.name, "grounding": gen_res.grounding,
+                       "independence": gen_res.independence, "evidence": gen_res.evidence,
+                       "opinion": gen_res.opinion}],
+            "mutation_predictions": mut_preds, "mutation_caller": mut_caller,
+            "consensus": consensus, "deliberation": None,
+            "ingest": {"source": args.bulk, "input_kind": "bulk_rna", "name": args.name,
+                       "bulk_ref": args.bulk_ref, "bulk_scale_detected": scale, "bulk_column": col,
+                       "n_genes": int(ser.shape[0]), "mutations_supplied": present,
+                       "unrecognized_mutations": unknown,
+                       "note": "BULK RNA input — variant-level mutation panel only. Cell-state composition, "
+                               "subtype prediction, cytogenetics, and the healthy-vs-diseased control gate "
+                               "require single-cell input and are not produced for a bulk sample."},
+        }
+        os.makedirs(run_dir, exist_ok=True)
+        json.dump(report, open(os.path.join(run_dir, "patient_report.json"), "w"), default=str, indent=1)
+        _status(run_dir, "done", "done",
+                f"{sample_key}: {mut_caller['n_confident_present']} drivers predicted (bulk RNA)")
+        print("OK %s\n  sample_key: %s\n  input: bulk RNA (%d genes, scale=%s, ref=%s)\n  drivers present: %s"
+              % (run_dir, sample_key, ser.shape[0], scale, args.bulk_ref, ", ".join(top_present) or "none"))
+        return 0
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        _status(run_dir, "error", "failed", f"{type(e).__name__}: {e}")
+        print(f"ERROR {type(e).__name__}: {e}", file=sys.stderr)
+        return 1
+
+
 def main():
-    ap = argparse.ArgumentParser(description="Ingest an scRNA sample as a MATRIX-AML patient.")
-    ap.add_argument("--sample", required=True, help="10x filtered_feature_bc_matrix.h5, a 10x dir, or .h5ad")
+    ap = argparse.ArgumentParser(description="Ingest an scRNA or bulk-RNA sample as a MATRIX-AML patient.")
+    ap.add_argument("--sample", help="single-cell input: 10x filtered_feature_bc_matrix.h5, a 10x dir, or .h5ad")
+    ap.add_argument("--bulk", help="BULK RNA input: a gene x value table (tsv/csv/txt). Mutually exclusive with --sample")
+    ap.add_argument("--bulk-ref", default="beataml", choices=["beataml", "leucegene", "sc"],
+                    help="z-score reference cohort for a bulk upload (default beataml = the training cohort)")
+    ap.add_argument("--bulk-scale", default="auto", choices=["auto", "linear", "log2", "log1p"],
+                    help="expression scale of the bulk file (default auto-detect)")
     ap.add_argument("--name", required=True, help="patient/sample display name")
     ap.add_argument("--mutations", default="", help="comma-separated observed drivers, e.g. 'TP53,FLT3'")
     ap.add_argument("--eln", default=None, help="optional ELN risk label")
@@ -244,6 +348,8 @@ def main():
     ap.add_argument("--permutations", type=int, default=40)
     ap.add_argument("--no-llm", action="store_true", help="skip LLM narration (deterministic only)")
     args = ap.parse_args()
+    if bool(args.sample) == bool(args.bulk):
+        ap.error("provide exactly one of --sample (single-cell) or --bulk (bulk RNA)")
 
     run_id = args.run_id or ("ingest_" + "".join(ch if ch.isalnum() else "_" for ch in args.name).strip("_"))
     cfg = Config(run_id=run_id)
@@ -252,6 +358,8 @@ def main():
     run_dir = os.path.join(cfg.out_dir, run_id)
     _status(run_dir, "running", "starting", f"ingesting {args.name}")
     sample_key = f"{args.dataset}::{args.name}"
+    if args.bulk:
+        return main_bulk(args, cfg, run_dir, sample_key)
 
     try:
         _status(run_dir, "running", "loading_cohort", "loading atlas + knowledge base")
@@ -267,10 +375,10 @@ def main():
         gen_res = genetic_result(present, unknown, args.eln)
 
         _status(run_dir, "running", "mutation_calling", "predicting drivers from bulk-equivalent (primary)")
+        mut_preds, mut_caller = None, None
         try:
-            mut_block, _ = bulk_mutation_result(adata, present)
+            mut_preds, mut_caller, _ = bulk_mutation_result(bulk_equiv_from_adata(adata), present, ref="sc")
         except Exception as _e:
-            mut_block = None
             print("WARN bulk mutation caller skipped: %s" % _e, file=sys.stderr)
 
         _status(run_dir, "running", "arbiter", "reconciling witnesses")
@@ -304,7 +412,8 @@ def main():
             "panel": [{"witness": e["witness"], "grounding": e["grounding"],
                        "independence": e["independence"], "evidence": e["evidence"],
                        "opinion": e["opinion"]} for e in led.current_entries()],
-            "mutation_predictions": mut_block,        # PRIMARY variant-level mutation caller (bulk-equivalent)
+            "mutation_predictions": mut_preds,        # PRIMARY variant-level mutation caller (bulk-equivalent)
+            "mutation_caller": mut_caller,
             "consensus": consensus, "deliberation": None,
             "ingest": {"source": args.sample, "input_kind": how, "name": args.name,
                        "mutations_supplied": present, "unrecognized_mutations": unknown,

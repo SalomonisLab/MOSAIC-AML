@@ -91,16 +91,29 @@
 
   /* mutation prediction panel */
   .mlist{display:flex;flex-direction:column;gap:1px}
-  .mrow{display:grid;grid-template-columns:140px 1fr 56px 92px 60px 26px;gap:13px;align-items:center;padding:9px 8px;border-radius:7px;border:1px solid transparent}
+  .mrow{display:grid;grid-template-columns:120px 1fr 46px 78px 40px 48px 22px 20px;gap:11px;align-items:center;padding:9px 8px;border-radius:7px;border:1px solid transparent}
   .mrow:hover{background:var(--panel2);border-color:var(--line)}
   .mrow.open{background:var(--panel2);border-color:var(--line)}
   .mname{font-family:var(--mono);font-size:13.5px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .mprob{font-family:var(--mono);font-size:13px;text-align:right;color:var(--muted)}
   .mcall{font-size:10px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;font-family:var(--mono);text-align:center;border-radius:5px;padding:3px 0}
   .mcall.present{color:var(--present);background:var(--present-bg)} .mcall.absent{color:var(--absent);background:var(--absent-bg)}
+  .mcall.abstain{color:var(--faint);background:transparent;border:1px dashed var(--line);opacity:.9}
+  .imp{color:var(--accent-dim);font-size:8.5px;font-weight:700;margin-left:2px;cursor:help;vertical-align:super;font-family:var(--mono)}
+  .impnote{font-size:10px;color:var(--faint);font-family:var(--mono);margin:7px 0 0;letter-spacing:.03em}
+  .vafrow{margin-top:9px;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .vaflbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--faint);text-transform:uppercase}
+  .vafnum{font-family:var(--mono);color:var(--ink)}
+  .vstrip{position:relative;height:13px;width:200px;background:#161a20;border-radius:7px;border:1px solid var(--line)}
+  .vdot{position:absolute;top:3.5px;width:5px;height:5px;border-radius:50%;background:var(--control);transform:translateX(-50%);opacity:.75}
+  .vmed{position:absolute;top:-1px;height:15px;width:2px;background:var(--accent);transform:translateX(-50%)}
+  .vscale{font-family:var(--mono);font-size:9px;color:var(--faint)}
+  .vafrow.wait,.vafrow.na{color:var(--faint)}
   .evlink{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:11px;color:var(--accent);text-decoration:none;border:1px solid var(--accent);border-radius:6px;padding:3px 9px;opacity:.85}
   .evlink:hover{opacity:1;background:color-mix(in srgb,var(--accent) 14%,transparent)}
   .auc{font-family:var(--mono);font-size:11px;color:var(--faint);text-align:right}
+  .vac{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:right;font-weight:600}
+  .vac.ok{color:var(--absent)} .vac.mid{color:#c79a4b} .vac.bad{color:var(--present)}
   .vchk{text-align:center;font-size:13px;font-family:var(--mono)} .vchk.ok{color:var(--absent)} .vchk.no{color:var(--present)}
   .caret{color:var(--faint);text-align:center;cursor:pointer;font-size:11px;user-select:none}
   .mdetail{grid-column:1/-1;padding:6px 6px 10px;display:none}
@@ -111,9 +124,9 @@
   .contrib .ct>span{display:block;height:100%;background:var(--accent-dim)}
   .contrib .cw{font-family:var(--mono);min-width:42px;text-align:right;color:var(--faint)}
   .contrib .cs{font-family:var(--mono);min-width:38px;text-align:right;color:var(--muted)}
-  .legrow{display:grid;grid-template-columns:140px 1fr 56px 92px 60px 26px;gap:13px;padding:0 8px 7px;font-size:9.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--faint);font-family:var(--mono)}
-  .legrow span:nth-child(2),.legrow span:nth-child(3),.legrow span:nth-child(5){text-align:right}
-  .legrow span:nth-child(4){text-align:center}
+  .legrow{display:grid;grid-template-columns:120px 1fr 46px 78px 40px 48px 22px 20px;gap:11px;padding:0 8px 7px;font-size:9.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--faint);font-family:var(--mono)}
+  .legrow span:nth-child(3),.legrow span:nth-child(5),.legrow span:nth-child(6){text-align:right}
+  .legrow span:nth-child(4),.legrow span:nth-child(7){text-align:center}
 
   .banner{display:flex;gap:11px;align-items:flex-start;border-radius:8px;padding:12px 15px;font-size:12.5px;margin-bottom:16px;border:1px solid}
   .banner.ok{background:var(--absent-bg);border-color:#1d3026;color:#8fc3a8}
@@ -192,9 +205,14 @@
   <h3>Reading the board</h3>
   <p>Each sample is first run through the <b style="color:var(--control)">control gate</b> — a healthy-vs-diseased
   call. A "control" reads as <i>no mutation</i>; a "diseased" specimen proceeds to mutation calling.</p>
-  <p style="margin-top:9px">Each <b style="color:var(--accent)">mutation prediction</b> is a probability from the
-  deployed combiner: per-modality linSVM models fused with <b>optimized per-mutation modality weights</b>.
-  Expand a row to see which modalities drove the call. <b>AUC</b> is that mutation's sealed held-out reliability.</p>
+  <p style="margin-top:9px">Each <b style="color:var(--accent)">mutation prediction</b> shows a <b>model score</b> from the
+  deployed combiner (per-modality linSVM fused with <b>optimized per-mutation modality weights</b>) — <i>not</i> a
+  literal probability. The raw score is over-confident, so the <b>chance ✓</b> column is the held-out-calibrated
+  empirical chance the call is correct. <b>AUC</b> is that mutation's sealed held-out reliability; a call below the
+  0.65 floor is flagged <span style="color:var(--faint)">⚠ low-confidence</span> (treat as a lead, confirm by sequencing).</p>
+  <p style="margin-top:9px">Expand a row for the modalities that drove the call. <b style="color:var(--accent-dim)">ᴿᴺᴬ</b>-tagged
+  modalities (ADT, GRN, Lipid, Metabolite) are <b>imputed from RNA</b> — RNA-conditioned views, weighted but not
+  independent evidence.</p>
   <p style="margin-top:9px" class="faint small">Validation samples show ✓ / ✗ = predicted call vs the known label.
   Decision-support only.</p>
 </div>
@@ -202,12 +220,19 @@
 
 <div class="modal-bg" id="ingestBg">
   <div class="modal">
-    <h3>Add patient · process an scRNA sample</h3>
-    <div class="sub">scRNA → composition → control gate → mutation predictor → report. Runs as an LSF job; joins the roster when done.</div>
+    <h3>Add patient · single-cell or bulk RNA</h3>
+    <div class="sub">Single-cell → composition → control gate → mutation predictor → full report. Bulk RNA → the variant-level mutation panel (primary caller); no cell-state/cytogenetics without single cells. Runs as an LSF job; joins the roster when done.</div>
+    <div class="field"><label>Input type</label>
+      <select id="ingKind">
+        <option value="scrna">single-cell RNA (10x dir / .h5 / .h5ad)</option>
+        <option value="bulk">bulk RNA (gene × value table: .tsv / .csv / .txt)</option>
+      </select></div>
     <div class="field"><label>Patient name</label><input id="ingName" placeholder="e.g. AML-7"></div>
-    <div class="field"><label>Sample <span class="hint">— cluster path to a 10x dir / filtered_feature_bc_matrix.h5 / .h5ad</span></label>
+    <div class="field"><label>Sample <span class="hint" id="ingSampleHint">— cluster path to a 10x dir / filtered_feature_bc_matrix.h5 / .h5ad</span></label>
       <input id="ingSample" placeholder="/data/…/AML-7/">
       <select id="ingInbox" style="margin-top:7px"><option value="">— pick from inbox —</option></select></div>
+    <div class="field" id="ingBulkOpts" style="display:none"><label>Bulk reference <span class="hint">— z-score cohort for cross-platform calibration</span></label>
+      <select id="ingBulkRef"><option value="beataml">BeatAML — normalized/log2 (default)</option><option value="leucegene">Leucegene — linear RPKM-like</option><option value="sc">atlas single-cell bulk-equivalent</option></select></div>
     <div class="field"><label>Observed mutations <span class="hint">— optional; engages the genetic anchor</span></label>
       <input id="ingMut" placeholder="e.g. TP53, FLT3"></div>
     <div class="field"><label>Dataset label</label><input id="ingDataset" value="uploaded"></div>
@@ -224,15 +249,21 @@ const pct=x=>x==null||isNaN(x)?"–":(x*100).toFixed(0)+"%";
 const num=(x,n=2)=>x==null||isNaN(x)?"–":(+x).toFixed(n);
 const GFAC={deterministic_fact:1,honest_cv:.9,classifier_call:.7,descriptive_aggregate:.5};
 const IFAC={independent:1,rna_derived:.6,imputed_from_RNA:.5,discovery:.7};
+const IMPUTED={ADT:1,GRN:1,Lipid:1,Metabolite:1};   // imputed from RNA — RNA-conditioned views, not independent
+const AUC_FLOOR=0.65;                                 // below this held-out AUC a call is low-confidence (abstain)
 const gfac=g=>g in GFAC?GFAC[g]:.5, ifac=i=>i in IFAC?IFAC[i]:.5;
 const effW=w=>(((w.opinion&&+w.opinion.reliability_weight)||0)*gfac(w.grounding)*ifac(w.independence));
-let CURRENT=null, RUNS=[], SERVER=false, CAPS={}, PREV_ACTIVE=new Set(), LAST_SUBMIT=null, jobTimer=null;
+let CURRENT=null, RUNS=[], SERVER=false, CAPS={}, FREQ={}, REL={}, LOC={}, VAFM={}, PREV_ACTIVE=new Set(), LAST_SUBMIT=null, jobTimer=null;
 
 async function boot(){
   try{
     const r=await fetch("/api/runs",{cache:"no-store"}); if(!r.ok) throw 0;
     const j=await r.json(); RUNS=j.runs||[]; SERVER=true; renderRoster(j.runs_dir);
     try{ CAPS=await (await fetch("/api/capabilities",{cache:"no-store"})).json(); }catch(e){ CAPS={}; }
+    try{ FREQ=await (await fetch("/mutation_frequency.json",{cache:"no-store"})).json(); }catch(e){ FREQ={}; }
+    try{ REL=await (await fetch("/reliability.json",{cache:"no-store"})).json(); }catch(e){ REL={}; }
+    try{ LOC=(await (await fetch("/cellstate_localization.json",{cache:"no-store"})).json()).drivers||{}; }catch(e){ LOC={}; }
+    try{ VAFM=(await (await fetch("/vaf_by_mutation.json",{cache:"no-store"})).json()).mutations||{}; }catch(e){ VAFM={}; }
     if(CAPS.ingest){ $("#addBtn").style.display=""; populateInbox(); pollJobs(); }
     const want=new URLSearchParams(location.search).get("run");
     const first=(RUNS.find(x=>x.run===want)||RUNS[0]);
@@ -292,7 +323,9 @@ function renderReport(rep){
   } else {
     parts.push(renderWitnessReport(rep));
   }
-  parts.push(`<div class="foot">Decision-support only · mutation calls = deployed combiner (per-modality linSVM ⊕ optimized modality weights, RNA = raw + UDON programs); imputed-from-RNA modalities are weighted, not independent witnesses. Sealed held-out AUC ≈ 0.86.</div>`);
+  parts.push(rep.mutation_caller
+    ? `<div class="foot">Decision-support only · mutation calls = <b>bulk variant-level predictor</b> (BeatAML-trained, one model per category on ${rep.mutation_caller.input==="sc"?"the single-cell bulk-equivalent":"the uploaded bulk RNA"}); predicted from expression, not sequenced — confirm high-confidence calls by DNA. Mean 5-fold CV AUROC ≈ ${rep.mutation_caller.predictor&&rep.mutation_caller.predictor.mean_cv_auroc!=null?num(rep.mutation_caller.predictor.mean_cv_auroc,2):"0.83"}.</div>`
+    : `<div class="foot">Decision-support only · mutation calls = deployed combiner (per-modality linSVM ⊕ optimized modality weights, RNA = raw + UDON programs); imputed-from-RNA modalities are weighted, not independent witnesses. Sealed held-out AUC ≈ 0.86.</div>`);
   const b=$("#board"); b.innerHTML=parts.join(""); b.scrollTop=0; wireMutRows();
 }
 
@@ -317,32 +350,87 @@ function renderSpecimen(rep){
     </div></div></div>`;
 }
 
+/* ---------- calibration: raw probability -> calibrated P(present) (isotonic on held-out) ---------- */
+function calibP(p){
+  const b=REL.bins;
+  if(!b||!b.length||p==null) return null;
+  if(p<=b[0].p) return b[0].present;
+  if(p>=b[b.length-1].p) return b[b.length-1].present;
+  let i=0; while(i<b.length-1 && b[i+1].p<p) i++;
+  const t=(p-b[i].p)/(b[i+1].p-b[i].p); return b[i].present + t*(b[i+1].present-b[i].present);
+}
+/* ---------- cell-state localization: top compartments carrying this driver's signal ---------- */
+function locFor(name){
+  let L=LOC[name];
+  if(!L){const nk=s=>String(s).replace(/[^a-z0-9]/gi,"").toLowerCase();
+    const alt=Object.keys(LOC).find(k=>nk(k)===nk(name)); if(alt)L=LOC[alt];}
+  return (L&&L.top_states&&L.top_states.length)?L.top_states.slice(0,3):null;
+}
+/* ---------- VAF (variant allele frequency ~ clonal burden), per mutation ---------- */
+function vafFor(name){
+  let e=VAFM[name];
+  if(!e){const nk=s=>String(s).replace(/[^a-z0-9]/gi,"").toLowerCase();
+    const alt=Object.keys(VAFM).find(k=>nk(k)===nk(name)); if(alt)e=VAFM[alt];}
+  return e||null;
+}
+function vafBlock(name){
+  const e=vafFor(name); if(!e) return "";
+  if(e.status==="not_applicable")
+    return `<div class="vafrow na"><span class="vaflbl">VAF</span> N/A — cytogenetic / structural lesion (allele fraction undefined)</div>`;
+  if(e.status==="awaiting")
+    return `<div class="vafrow wait"><span class="vaflbl">VAF</span> awaiting — no external DNA-panel VAF yet; slot ready for incoming cohorts</div>`;
+  const vals=e.values||[];
+  const dots=vals.map(v=>`<span class="vdot" style="left:${(v*100).toFixed(1)}%"></span>`).join("");
+  const med=(e.median*100).toFixed(1);
+  return `<div class="vafrow"><span class="vaflbl">VAF</span>
+    <span class="vafnum">median ${e.median.toFixed(2)}</span>
+    <span class="faint" style="font-size:10.5px">IQR ${(e.q1!=null?e.q1.toFixed(2):"?")}–${(e.q3!=null?e.q3.toFixed(2):"?")} · n=${e.n_samples}</span>
+    <span class="vscale">0</span>
+    <span class="vstrip" title="each dot = one sample's variant allele fraction; gold line = median">${dots}<span class="vmed" style="left:${med}%"></span></span>
+    <span class="vscale">1.0</span></div>`;
+}
 /* ---------- mutation predictions ---------- */
 function renderMutations(rep){
   const preds=rep.mutation_predictions||[];
   if(!preds.length) return "";
   const rows=preds.map((p,i)=>{
     const prob=p.probability, call=p.call, present=call==="present";
+    const ha=p.heldout_auc;
+    const abstain=(ha==null)||(ha<AUC_FLOOR)||String(p.confidence||"").startsWith("abstain");
+    const abTitle=abstain?`low-confidence — held-out AUC ${ha==null?"n/a":(+ha).toFixed(2)} below the ${AUC_FLOOR} reliability floor${String(p.confidence||"").startsWith("abstain")?" ("+esc(p.confidence)+")":""}; treat as a lead, confirm by sequencing`:"";
     const contribs=(p.contributions||[]).filter(c=>c.weight>0);
+    const hasImp=contribs.some(c=>IMPUTED[c.modality]);
+    const loc=locFor(p.mutation);
     const mx=Math.max(...contribs.map(c=>c.weight),1e-9);
-    const v=p.true_label?`<span class="vchk ${(p.true_label===call)?"ok":"no"}">${p.true_label===call?"✓":"✗"}</span>`:`<span class="vchk"></span>`;
-    const cbars=contribs.map(c=>`<div class="contrib"><span class="cn">${esc(c.modality)}</span>
+    const v=p.true_label?`<span class="vchk ${(p.true_label===call)?"ok":"no"}" title="known: ${esc(p.true_label)} — ${p.true_label===call?"correct":"incorrect"}">${p.true_label===call?"✓":"✗"}</span>`:`<span class="vchk"></span>`;
+    const cp=calibP(prob);
+    const cc=(cp==null)?null:(present?cp:1-cp);
+    const vacStr=(cc!=null)?Math.round(cc*100)+"%":"–";
+    const vacTitle=(cc!=null)?`calibrated chance the call is correct: for a ${present?"present":"absent"} call at model score ${prob==null?"?":pct(prob)}, held-out-calibrated P(present)=${cp==null?"?":pct(cp)} — the raw model score is over-confident, so this is the empirical chance`:"chance-correct n/a";
+    const ccClass=(cc==null)?"":(cc>=0.8?"ok":(cc>=0.55?"mid":"bad"));
+    const cbars=contribs.map(c=>`<div class="contrib"><span class="cn">${esc(c.modality)}${IMPUTED[c.modality]?'<sup class="imp" title="imputed from RNA — an RNA-conditioned view, not independent evidence">RNA</sup>':''}</span>
       <span class="ct"><span style="width:${(c.weight/mx*100).toFixed(0)}%"></span></span>
       <span class="cw">${num(c.weight,2)}</span><span class="cs">${num(c.score,2)}</span></div>`).join("")
       ||'<div class="contrib faint small">no weighted modalities</div>';
-    return `<div class="mrow" data-i="${i}">
+    return `<div class="mrow${abstain?" isab":""}" data-i="${i}">
       <span class="mname">${esc(p.mutation)}</span>
       <span class="bar" style="margin:0"><span class="${present?"present":"absent"}" style="width:${prob==null?0:(prob*100).toFixed(1)}%"></span></span>
       <span class="mprob">${prob==null?"–":pct(prob)}</span>
-      <span class="mcall ${present?"present":"absent"}">${esc(call||"–")}</span>
-      <span class="auc" title="sealed held-out AUC">${p.heldout_auc!=null?num(p.heldout_auc,2):"–"}</span>
+      <span class="mcall ${present?"present":"absent"}${abstain?" abstain":""}" title="${abTitle}">${abstain?"⚠ ":""}${esc(call||"–")}</span>
+      <span class="auc" title="sealed held-out AUC${abstain?" — below reliability floor":""}">${ha!=null?num(ha,2):"–"}</span>
+      <span class="vac ${ccClass}" title="${vacTitle}">${vacStr}</span>
+      ${v}
       <span class="caret" data-caret>▸</span>
       <div class="mdetail"><div class="faint small mono" style="margin:2px 0 6px;letter-spacing:.06em">MODALITY · weight · score</div>${cbars}
-        <a class="evlink" href="/evidence.html?driver=${encodeURIComponent(p.mutation)}" target="_blank" onclick="event.stopPropagation()">open evidence view — classifiers · markers · patient vs control ↗</a></div>
+        ${hasImp?'<div class="impnote">ᴿᴺᴬ = imputed from RNA — an RNA-conditioned view, weighted but not independent evidence.</div>':''}
+        ${loc?`<div class="impnote" style="color:var(--muted)">signal concentrates in (marrow compartments) ·&nbsp; ${loc.map(esc).join("&nbsp; · &nbsp;")}</div>`:''}
+        ${vafBlock(p.mutation)}
+        <a class="evlink" href="/evidence.html?driver=${encodeURIComponent(p.mutation)}" target="_blank" onclick="event.stopPropagation()">open evidence view — classifiers · markers · patient vs control · where the signal lives ↗</a></div>
     </div>`;}).join("");
   const npos=preds.filter(p=>p.call==="present").length;
-  return `<div class="card"><h2>Mutation predictions · ${preds.length} drivers · ${npos} called present</h2>
-    <div class="legrow"><span>driver</span><span>probability</span><span></span><span>call</span><span>auc</span><span></span></div>
+  const nab=preds.filter(p=>{const h=p.heldout_auc;return (h==null)||(h<AUC_FLOOR)||String(p.confidence||"").startsWith("abstain");}).length;
+  return `<div class="card"><h2>Mutation predictions · ${preds.length} drivers · ${npos} called present${nab?` · ${nab} low-confidence`:""}</h2>
+    <div class="legrow"><span>driver</span><span title="deployed combiner model score — NOT a literal probability">model score</span><span></span><span>call</span><span>auc</span><span title="empirical chance the prediction is correct — held-out accuracy at this score, calibrated; NOT the raw score">chance ✓</span><span title="✓/✗ vs known label">✓</span><span></span></div>
     <div class="mlist">${rows}</div></div>`;
 }
 function wireMutRows(){
@@ -353,6 +441,17 @@ function wireMutRows(){
   });
 }
 function renderPredMeta(rep){
+  const mc=rep.mutation_caller;
+  if(mc){                                            // PRIMARY bulk variant-level caller (bulk RNA or sc bulk-equivalent)
+    const p=mc.predictor||{}, inp=mc.input==="sc"?"single-cell bulk-equivalent":(mc.input||"bulk RNA");
+    return `<div class="card"><h2>Predictor</h2><div class="predmeta">
+      <span>caller <b>bulk variant-level (BeatAML-trained)</b></span>
+      <span>model <b>${esc(p.base_model||"logL2")}</b></span>
+      <span>input <b>${esc(inp)}</b></span>
+      <span>categories <b>${p.n_categories!=null?p.n_categories:"–"}</b></span>
+      <span>mean CV AUROC <b>${p.mean_cv_auroc!=null?num(p.mean_cv_auroc,3):"–"}</b></span>
+      ${p.trained_on?`<span>trained <b>${esc(p.trained_on)}</b></span>`:""}</div></div>`;
+  }
   const p=rep.predictor||{};
   return `<div class="card"><h2>Predictor</h2><div class="predmeta">
     <span>model <b>${esc(p.base_model||"linSVM")} ⊕ optimized weights</b></span>
@@ -392,16 +491,21 @@ function renderWitnessReport(rep){
 /* ---------- ingest ---------- */
 async function populateInbox(){ try{ const j=await (await fetch("/api/samples",{cache:"no-store"})).json();
   const sel=$("#ingInbox"); if(!sel) return;
-  sel.innerHTML=`<option value="">— pick from inbox (${(j.samples||[]).length}) —</option>`+(j.samples||[]).map(s=>`<option value="${esc(s.path)}">${esc(s.label)} (${esc(s.kind)})</option>`).join("");
+  sel.innerHTML=`<option value="">— pick from inbox (${(j.samples||[]).length}) —</option>`+(j.samples||[]).map(s=>`<option value="${esc(s.path)}" data-input="${esc(s.input||'scrna')}">${esc(s.label)} (${esc(s.kind)})</option>`).join("");
 }catch(e){} }
-function openIngest(){ $("#ingErr").style.display="none"; $("#ingestBg").classList.add("show"); $("#ingName").focus(); }
+function syncIngKind(){ const bulk=$("#ingKind").value==="bulk";
+  $("#ingBulkOpts").style.display=bulk?"":"none";
+  $("#ingSampleHint").textContent=bulk?"— cluster path to a bulk expression table (gene × value: .tsv / .csv / .txt)"
+                                       :"— cluster path to a 10x dir / filtered_feature_bc_matrix.h5 / .h5ad"; }
+function openIngest(){ $("#ingErr").style.display="none"; $("#ingestBg").classList.add("show"); syncIngKind(); $("#ingName").focus(); }
 function closeIngest(){ $("#ingestBg").classList.remove("show"); }
 async function submitIngest(){
   const name=$("#ingName").value.trim(), sample=$("#ingSample").value.trim(), err=$("#ingErr");
-  if(!name||!sample){ err.textContent="Name and sample path are required."; err.style.display="block"; return; }
+  const kind=$("#ingKind").value, bulk_ref=$("#ingBulkRef").value;
+  if(!name||!sample){ err.textContent="Name and "+(kind==="bulk"?"bulk file path":"sample path")+" are required."; err.style.display="block"; return; }
   const go=$("#ingGo"); go.disabled=true; go.textContent="Submitting…";
   try{ const res=await (await fetch("/api/ingest",{method:"POST",headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({name,sample,mutations:$("#ingMut").value,dataset:$("#ingDataset").value.trim()||"uploaded"})})).json();
+      body:JSON.stringify({name,sample,kind,bulk_ref,mutations:$("#ingMut").value,dataset:$("#ingDataset").value.trim()||"uploaded"})})).json();
     if(res.error){ err.textContent=res.error; err.style.display="block"; }
     else{ LAST_SUBMIT=res.run_id; closeIngest(); $("#ingName").value=$("#ingSample").value=$("#ingMut").value=""; pollJobs(); }
   }catch(e){ err.textContent=String(e.message||e); err.style.display="block"; }
@@ -430,7 +534,9 @@ $("#openBtn").onclick=()=>$("#fileInput").click();
 $("#fileInput").onchange=e=>{ const f=e.target.files[0]; if(f) readFile(f); };
 $("#legendBtn").onclick=()=>$("#legend").classList.toggle("show");
 $("#addBtn").onclick=openIngest; $("#ingCancel").onclick=closeIngest; $("#ingGo").onclick=submitIngest;
-$("#ingInbox").onchange=e=>{ if(e.target.value) $("#ingSample").value=e.target.value; };
+$("#ingKind").onchange=syncIngKind;
+$("#ingInbox").onchange=e=>{ const o=e.target.selectedOptions[0]; if(e.target.value){ $("#ingSample").value=e.target.value;
+  if(o&&o.dataset.input){ $("#ingKind").value=o.dataset.input; syncIngKind(); } } };
 $("#ingestBg").addEventListener("click",e=>{ if(e.target.id==="ingestBg") closeIngest(); });
 document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ $("#legend").classList.remove("show"); closeIngest(); } });
 boot();
