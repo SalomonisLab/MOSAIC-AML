@@ -452,8 +452,7 @@ screened; 47 excluded for sample size, dynamic range, degenerate tails or acquis
 **Headline validation** (donor-grouped CV; 15% of *patients* sealed):
 mean AUROC **0.774** over 118 inhibitors (**0.809** on the 42 approved agents); per-patient top-1
 retrieval **34%** vs 10% matched chance; ECE **0.012**; leave-wave-out 0.722/0.733; leave-centre-out
-0.731-0.890; survives inside every differentiation-state stratum; ~15 null SDs above a
-specimen-repointing permutation null.
+0.731-0.890; survives inside every differentiation-state stratum; **19 null SDs** above a specimen-repointing permutation null (100 shuffles, p = 0.0099).
 
 **Model B's falsifiable test.** Fitted only on BeatAML bulk and never shown a cell-state label, it
 predicts higher venetoclax sensitivity in primitive than in monocytic states in **93.2%** of the 387

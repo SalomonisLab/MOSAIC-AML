@@ -202,7 +202,7 @@ be comparable *across* inhibitors.
 | leave-wave-out | AUROC 0.722 / 0.733 |
 | leave-centre-out (4 centres) | AUROC 0.731 – 0.890 |
 | differentiation-state strata | AUROC 0.721 – 0.762 in every stratum |
-| permutation null (specimen↔expression re-pointing) | observed 0.367 vs null 0.008 ± 0.024 — ~15 null SDs |
+| permutation null (specimen↔expression re-pointing, 100 shuffles) | observed 0.367 vs null 0.001 ± 0.019 — **19 null SDs**, *p* = 0.0099 |
 
 **Best-predicted inhibitors** include Venetoclax (AUROC 0.977, AUPRC 0.970 vs 0.482 baseline),
 Dasatinib 0.936, Tivozanib 0.927, Rapamycin 0.926, Trametinib 0.916, Ponatinib 0.916.
