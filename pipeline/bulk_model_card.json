@@ -160,7 +160,7 @@
    "cv_auroc": 0.899,
    "n_pos_train": 158,
    "threshold": 0.792,
-   "sc_heldout_auroc": 0.827,
+   "sc_heldout_auroc": 0.865,
    "sc_heldout_npos": 7
   },
   "KMT2A_fusion": {
@@ -172,7 +172,7 @@
    "cv_auroc": 0.815,
    "n_pos_train": 82,
    "threshold": 0.889,
-   "sc_heldout_auroc": 0.761,
+   "sc_heldout_auroc": 0.784,
    "sc_heldout_npos": 9
   },
   "ASXL1": {
@@ -186,14 +186,14 @@
    "cv_auroc": 0.996,
    "n_pos_train": 72,
    "threshold": 0.888,
-   "sc_heldout_auroc": 0.914,
+   "sc_heldout_auroc": 0.924,
    "sc_heldout_npos": 5
   },
   "STAG2": {
    "cv_auroc": 0.892,
    "n_pos_train": 43,
    "threshold": 0.946,
-   "sc_heldout_auroc": 0.96,
+   "sc_heldout_auroc": 1.0,
    "sc_heldout_npos": 1
   },
   "BCOR": {
@@ -222,7 +222,7 @@
    "cv_auroc": 0.673,
    "n_pos_train": 16,
    "threshold": 0.938,
-   "sc_heldout_auroc": 0.615,
+   "sc_heldout_auroc": 0.625,
    "sc_heldout_npos": 2
   },
   "RAD21": {
@@ -234,7 +234,7 @@
    "cv_auroc": 0.578,
    "n_pos_train": 13,
    "threshold": 0.993,
-   "sc_heldout_auroc": 0.469,
+   "sc_heldout_auroc": 0.438,
    "sc_heldout_npos": 2
   },
   "BCORL1": {
@@ -251,7 +251,7 @@
    "cv_auroc": 0.682,
    "n_pos_train": 10,
    "threshold": 0.99,
-   "sc_heldout_auroc": 0.22,
+   "sc_heldout_auroc": 0.24,
    "sc_heldout_npos": 1
   },
   "ZRSR2": {

@@ -1,0 +1,951 @@
+{
+ "mode": "patient_panel",
+ "sample_key": "GSE281087::SU204_single",
+ "annotation": null,
+ "dataset": "GSE281087",
+ "provenance": {
+  "layout": "cluster",
+  "ingested": true,
+  "source": "/data/salomonis-archive/FASTQs/PublicDatasets/DATASET_8_GSE281087/counts_h5/GSM8610691_SU204_single_counts.h5",
+  "python": "3.12.3",
+  "deferred_witnesses": [
+   "surfaceome/ADT",
+   "metabolic",
+   "lipid",
+   "GRN-regulon",
+   "LSC",
+   "cell-state/UDON",
+   "cell-communication"
+  ],
+  "scikit-learn": "1.5.2",
+  "numpy": "2.4.6",
+  "anndata": "0.10.8",
+  "scanpy": "1.10.2"
+ },
+ "specimen_class": "diseased",
+ "control_gate": {
+  "call": "diseased",
+  "p_diseased": 0.9649,
+  "threshold": 0.056,
+  "cv_auc": 0.9649873257287706,
+  "modality": "Composition"
+ },
+ "panel": [
+  {
+   "witness": "composition",
+   "grounding": "honest_cv",
+   "independence": "independent",
+   "evidence": {
+    "witness": "composition",
+    "kind": "measured",
+    "status": "ok",
+    "held_out": false,
+    "patient_prediction": "NPM1",
+    "patient_probability": 0.56,
+    "true_label": null,
+    "cohort_balanced_accuracy": 0.6751,
+    "cohort_permutation_p": 0.024390243902439025,
+    "patient_top_cellstates": {
+     "Intermediate Mono-2": 0.819,
+     "Intermediate Mono-3": 0.023,
+     "LMPP-1-cycling": 0.018,
+     "MPP-2": 0.018,
+     "Classical-Mono": 0.016,
+     "NK-Mature": 0.016
+    },
+    "mean_cosine": 0.71,
+    "n_cells": 4477,
+    "n_shared_markers": 1936,
+    "n_states_present": 40,
+    "trained_classes": [
+     "FLT3",
+     "Inv16",
+     "NPM1",
+     "TET2",
+     "TP53"
+    ]
+   },
+   "opinion": {
+    "confidence": 0.5,
+    "reliability_weight": 0.85,
+    "summary": "predicts NPM1 (prob 0.56); cohort balanced-acc 0.6751",
+    "caveats": "external sample: cohort-trained classifier, NOT held-out for this sample; out-of-cohort domain shift possible"
+   }
+  },
+  {
+   "witness": "genetic",
+   "grounding": "deterministic_fact",
+   "independence": "independent",
+   "evidence": {
+    "witness": "genetic",
+    "kind": "independent",
+    "status": "ok",
+    "present": [],
+    "targetable": {},
+    "eln": null
+   },
+   "opinion": {
+    "confidence": 0.2,
+    "reliability_weight": 0.1,
+    "summary": "present: []; targetable: []",
+    "caveats": "no mutations supplied \u2014 arbiter runs anchor-free"
+   }
+  }
+ ],
+ "mutation_predictions": [
+  {
+   "probability": 0.995,
+   "call": "present",
+   "threshold": 0.989,
+   "cv_auroc": 0.66,
+   "n_pos_train": 7,
+   "confidence": "ok",
+   "mutation": "SUZ12",
+   "heldout_auc": 0.66,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.99,
+   "call": "absent",
+   "threshold": 0.99,
+   "cv_auroc": 0.983,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "SF3B1_K700",
+   "heldout_auc": 0.983,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.987,
+   "call": "present",
+   "threshold": 0.948,
+   "cv_auroc": 0.936,
+   "n_pos_train": 14,
+   "confidence": "ok",
+   "mutation": "CEBPA_bZIP",
+   "heldout_auc": 0.936,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.969,
+   "call": "present",
+   "threshold": 0.846,
+   "cv_auroc": 0.946,
+   "n_pos_train": 75,
+   "confidence": "ok",
+   "mutation": "RUNX1_LOF",
+   "heldout_auc": 0.946,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.966,
+   "call": "present",
+   "threshold": 0.862,
+   "cv_auroc": 0.678,
+   "n_pos_train": 34,
+   "confidence": "ok",
+   "mutation": "NRAS_G12",
+   "heldout_auc": 0.678,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.961,
+   "call": "absent",
+   "threshold": 0.99,
+   "cv_auroc": 0.682,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "SMC1A",
+   "heldout_auc": 0.682,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.946,
+   "call": "absent",
+   "threshold": 0.992,
+   "cv_auroc": 0.665,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "CREBBP",
+   "heldout_auc": 0.665,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.941,
+   "call": "absent",
+   "threshold": 0.948,
+   "cv_auroc": 0.963,
+   "n_pos_train": 43,
+   "confidence": "ok",
+   "mutation": "KMT2A_fusion",
+   "heldout_auc": 0.963,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.933,
+   "call": "absent",
+   "threshold": 0.941,
+   "cv_auroc": 0.898,
+   "n_pos_train": 21,
+   "confidence": "ok",
+   "mutation": "PHF6",
+   "heldout_auc": 0.898,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.93,
+   "call": "absent",
+   "threshold": 0.979,
+   "cv_auroc": 0.778,
+   "n_pos_train": 6,
+   "confidence": "ok",
+   "mutation": "ETV6",
+   "heldout_auc": 0.778,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.928,
+   "call": "absent",
+   "threshold": 0.976,
+   "cv_auroc": 0.731,
+   "n_pos_train": 27,
+   "confidence": "ok",
+   "mutation": "FLT3_other_TKD_or_JM",
+   "heldout_auc": 0.731,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.928,
+   "call": "absent",
+   "threshold": 0.938,
+   "cv_auroc": 0.857,
+   "n_pos_train": 47,
+   "confidence": "ok",
+   "mutation": "WT1_LOF",
+   "heldout_auc": 0.857,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.915,
+   "call": "absent",
+   "threshold": 0.995,
+   "cv_auroc": 0.881,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "ZRSR2",
+   "heldout_auc": 0.881,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.904,
+   "call": "absent",
+   "threshold": 0.989,
+   "cv_auroc": 0.828,
+   "n_pos_train": 13,
+   "confidence": "ok",
+   "mutation": "KIT_D816",
+   "heldout_auc": 0.828,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.902,
+   "call": "absent",
+   "threshold": 0.938,
+   "cv_auroc": 0.673,
+   "n_pos_train": 16,
+   "confidence": "ok",
+   "mutation": "NF1",
+   "heldout_auc": 0.673,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.899,
+   "call": "absent",
+   "threshold": 0.964,
+   "cv_auroc": 0.997,
+   "n_pos_train": 18,
+   "confidence": "ok",
+   "mutation": "SF3B1_K666",
+   "heldout_auc": 0.997,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.889,
+   "call": "present",
+   "threshold": 0.792,
+   "cv_auroc": 0.899,
+   "n_pos_train": 158,
+   "confidence": "ok",
+   "mutation": "FLT3_ITD",
+   "heldout_auc": 0.899,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.873,
+   "call": "absent",
+   "threshold": 0.993,
+   "cv_auroc": 0.578,
+   "n_pos_train": 13,
+   "confidence": "abstain: weak (CV AUROC 0.58)",
+   "mutation": "CBL",
+   "heldout_auc": 0.578,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "present"
+  },
+  {
+   "probability": 0.837,
+   "call": "absent",
+   "threshold": 0.995,
+   "cv_auroc": 0.688,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "SMC3",
+   "heldout_auc": 0.688,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.798,
+   "call": "absent",
+   "threshold": 0.976,
+   "cv_auroc": 0.889,
+   "n_pos_train": 9,
+   "confidence": "ok",
+   "mutation": "IKZF1",
+   "heldout_auc": 0.889,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.767,
+   "call": "absent",
+   "threshold": 0.974,
+   "cv_auroc": 0.744,
+   "n_pos_train": 22,
+   "confidence": "ok",
+   "mutation": "NRAS_G13",
+   "heldout_auc": 0.744,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.76,
+   "call": "absent",
+   "threshold": 0.912,
+   "cv_auroc": 0.871,
+   "n_pos_train": 63,
+   "confidence": "ok",
+   "mutation": "ASXL1",
+   "heldout_auc": 0.871,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.736,
+   "call": "absent",
+   "threshold": 0.888,
+   "cv_auroc": 0.996,
+   "n_pos_train": 72,
+   "confidence": "ok",
+   "mutation": "SRSF2",
+   "heldout_auc": 0.996,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.731,
+   "call": "absent",
+   "threshold": 0.779,
+   "cv_auroc": 0.703,
+   "n_pos_train": 15,
+   "confidence": "ok",
+   "mutation": "KRAS_G12",
+   "heldout_auc": 0.703,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.726,
+   "call": "absent",
+   "threshold": 0.865,
+   "cv_auroc": 0.838,
+   "n_pos_train": 62,
+   "confidence": "ok",
+   "mutation": "IDH2_R140",
+   "heldout_auc": 0.838,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.726,
+   "call": "absent",
+   "threshold": 0.987,
+   "cv_auroc": 0.961,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "IDH2_R172",
+   "heldout_auc": 0.961,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.718,
+   "call": "absent",
+   "threshold": 0.966,
+   "cv_auroc": 1.0,
+   "n_pos_train": 23,
+   "confidence": "ok",
+   "mutation": "U2AF1_S34",
+   "heldout_auc": 1.0,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.718,
+   "call": "absent",
+   "threshold": 0.992,
+   "cv_auroc": 0.779,
+   "n_pos_train": 19,
+   "confidence": "ok",
+   "mutation": "EZH2",
+   "heldout_auc": 0.779,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.716,
+   "call": "absent",
+   "threshold": 0.964,
+   "cv_auroc": 0.937,
+   "n_pos_train": 16,
+   "confidence": "ok",
+   "mutation": "CEBPA_biallelic_or_double",
+   "heldout_auc": 0.937,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.674,
+   "call": "absent",
+   "threshold": 0.995,
+   "cv_auroc": 0.67,
+   "n_pos_train": 9,
+   "confidence": "ok",
+   "mutation": "CSF3R",
+   "heldout_auc": 0.67,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.672,
+   "call": "absent",
+   "threshold": 0.878,
+   "cv_auroc": 0.831,
+   "n_pos_train": 39,
+   "confidence": "ok",
+   "mutation": "NRAS_Q61",
+   "heldout_auc": 0.831,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.638,
+   "call": "absent",
+   "threshold": 0.98,
+   "cv_auroc": 0.909,
+   "n_pos_train": 13,
+   "confidence": "ok",
+   "mutation": "BCORL1",
+   "heldout_auc": 0.909,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.623,
+   "call": "absent",
+   "threshold": 0.995,
+   "cv_auroc": 0.955,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "KRAS_G13",
+   "heldout_auc": 0.955,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.605,
+   "call": "absent",
+   "threshold": 0.751,
+   "cv_auroc": 0.981,
+   "n_pos_train": 140,
+   "confidence": "ok",
+   "mutation": "NPM1_exon12_frameshift",
+   "heldout_auc": 0.981,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.579,
+   "call": "absent",
+   "threshold": 0.917,
+   "cv_auroc": 0.704,
+   "n_pos_train": 20,
+   "confidence": "ok",
+   "mutation": "PTPN11_other",
+   "heldout_auc": 0.704,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.514,
+   "call": "absent",
+   "threshold": 0.963,
+   "cv_auroc": 0.968,
+   "n_pos_train": 32,
+   "confidence": "ok",
+   "mutation": "CEBPA_Nterminal_frameshift/nonsense",
+   "heldout_auc": 0.968,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.499,
+   "call": "absent",
+   "threshold": 0.837,
+   "cv_auroc": 0.911,
+   "n_pos_train": 49,
+   "confidence": "ok",
+   "mutation": "IDH1_R132",
+   "heldout_auc": 0.911,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.473,
+   "call": "absent",
+   "threshold": 0.927,
+   "cv_auroc": 0.876,
+   "n_pos_train": 43,
+   "confidence": "ok",
+   "mutation": "TP53_hotspot_DBD",
+   "heldout_auc": 0.876,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.434,
+   "call": "absent",
+   "threshold": 0.969,
+   "cv_auroc": 0.652,
+   "n_pos_train": 15,
+   "confidence": "ok",
+   "mutation": "RAD21",
+   "heldout_auc": 0.652,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.362,
+   "call": "absent",
+   "threshold": 0.922,
+   "cv_auroc": 0.716,
+   "n_pos_train": 42,
+   "confidence": "ok",
+   "mutation": "FLT3_TKD_D835/I836",
+   "heldout_auc": 0.716,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.362,
+   "call": "absent",
+   "threshold": 0.993,
+   "cv_auroc": 0.784,
+   "n_pos_train": 7,
+   "confidence": "ok",
+   "mutation": "SETBP1",
+   "heldout_auc": 0.784,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.344,
+   "call": "absent",
+   "threshold": 0.824,
+   "cv_auroc": 0.88,
+   "n_pos_train": 76,
+   "confidence": "ok",
+   "mutation": "DNMT3A_R882",
+   "heldout_auc": 0.88,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.31,
+   "call": "absent",
+   "threshold": 0.943,
+   "cv_auroc": 0.915,
+   "n_pos_train": 34,
+   "confidence": "ok",
+   "mutation": "BCOR",
+   "heldout_auc": 0.915,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.274,
+   "call": "absent",
+   "threshold": 0.889,
+   "cv_auroc": 0.815,
+   "n_pos_train": 82,
+   "confidence": "ok",
+   "mutation": "TET2",
+   "heldout_auc": 0.815,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "present"
+  },
+  {
+   "probability": 0.209,
+   "call": "absent",
+   "threshold": 0.966,
+   "cv_auroc": 0.83,
+   "n_pos_train": 29,
+   "confidence": "ok",
+   "mutation": "GATA2",
+   "heldout_auc": 0.83,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.194,
+   "call": "absent",
+   "threshold": 0.995,
+   "cv_auroc": 0.811,
+   "n_pos_train": 18,
+   "confidence": "ok",
+   "mutation": "JAK2_V617F",
+   "heldout_auc": 0.811,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.181,
+   "call": "absent",
+   "threshold": 0.32,
+   "cv_auroc": 0.605,
+   "n_pos_train": 64,
+   "confidence": "abstain: weak (CV AUROC 0.60)",
+   "mutation": "DNMT3A_nonR882",
+   "heldout_auc": 0.605,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.101,
+   "call": "absent",
+   "threshold": 0.946,
+   "cv_auroc": 0.892,
+   "n_pos_train": 43,
+   "confidence": "ok",
+   "mutation": "STAG2",
+   "heldout_auc": 0.892,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.072,
+   "call": "absent",
+   "threshold": 0.982,
+   "cv_auroc": 0.872,
+   "n_pos_train": 22,
+   "confidence": "ok",
+   "mutation": "TP53_LOF/splice/frameshift",
+   "heldout_auc": 0.872,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.018,
+   "call": "absent",
+   "threshold": 0.985,
+   "cv_auroc": 0.859,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "U2AF1_Q157/R156",
+   "heldout_auc": 0.859,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  }
+ ],
+ "mutation_caller": {
+  "mode": "bulk_variant_primary",
+  "caller": "BulkMutationPredictor",
+  "input": "sc",
+  "predictor": {
+   "version": "1.0",
+   "n_categories": 50,
+   "mean_cv_auroc": 0.829,
+   "refs": [
+    "beataml",
+    "sc",
+    "leucegene"
+   ],
+   "genes": 14237,
+   "trained_on": "BeatAML2 (n=707, WES)",
+   "base_model": "logL2",
+   "varcap": 2500,
+   "min_pos": 6
+  },
+  "n_confident_present": 5,
+  "note": "PRIMARY mutation caller \u2014 ~50 variant-level categories predicted from the sample's single-cell bulk-equivalent (BeatAML-trained, validated cross-cohort). Predicted, not sequenced: high-confidence 'present' calls are leads to confirm by sequencing. Weak categories (CV AUROC < 0.65) are marked abstain."
+ },
+ "treatment_panel": [
+  {
+   "driver": "RUNX1_LOF",
+   "match": "gene",
+   "status": "PREDICTED \u2014 confirm before acting",
+   "predicted": true,
+   "confidence": 0.969,
+   "reliability_auc": 0.946,
+   "drugs": [
+    {
+     "drug": "standard of care",
+     "class": "\u2014",
+     "tier": "prognostic",
+     "note": ""
+    }
+   ],
+   "rationale": "adverse-risk marker (ELN); no targeted agent",
+   "explanation": "This driver was PREDICTED from expression (model score 0.97, reliability AUROC 0.95) and has NOT been sequenced \u2014 standard of care is implicated only if the call is confirmed. adverse-risk marker (ELN); no targeted agent Co-occurring calls on this sample: NRAS_G12, FLT3_ITD.",
+   "explained_by": "rules"
+  },
+  {
+   "driver": "NRAS_G12",
+   "match": "gene",
+   "status": "PREDICTED \u2014 confirm before acting",
+   "predicted": true,
+   "confidence": 0.966,
+   "reliability_auc": 0.678,
+   "drugs": [
+    {
+     "drug": "trametinib",
+     "class": "MEK inhibitor",
+     "tier": "investigational \u00b7 RAS-pathway",
+     "note": ""
+    },
+    {
+     "drug": "SHP2 inhibitor",
+     "class": "SHP2",
+     "tier": "investigational",
+     "note": ""
+    }
+   ],
+   "rationale": "RAS-pathway activation is linked to venetoclax resistance and relapse",
+   "explanation": "This driver was PREDICTED from expression (model score 0.97, reliability AUROC 0.68) and has NOT been sequenced \u2014 trametinib, SHP2 inhibitor is implicated only if the call is confirmed. RAS-pathway activation is linked to venetoclax resistance and relapse Co-occurring calls on this sample: RUNX1_LOF, FLT3_ITD.",
+   "explained_by": "rules"
+  },
+  {
+   "driver": "FLT3_ITD",
+   "match": "variant",
+   "status": "PREDICTED \u2014 confirm before acting",
+   "predicted": true,
+   "confidence": 0.889,
+   "reliability_auc": 0.899,
+   "drugs": [
+    {
+     "drug": "gilteritinib",
+     "class": "FLT3 inhibitor (type I)",
+     "tier": "approved \u00b7 R/R",
+     "note": "covers ITD and TKD"
+    },
+    {
+     "drug": "midostaurin",
+     "class": "FLT3 inhibitor (type I)",
+     "tier": "approved \u00b7 newly dx + chemo",
+     "note": ""
+    },
+    {
+     "drug": "quizartinib",
+     "class": "FLT3 inhibitor (type II)",
+     "tier": "approved \u00b7 newly dx, ITD",
+     "note": "ITD only \u2014 no TKD activity"
+    }
+   ],
+   "rationale": "ITD allelic ratio guides inhibitor choice and transplant decisions",
+   "explanation": "This driver was PREDICTED from expression (model score 0.89, reliability AUROC 0.90) and has NOT been sequenced \u2014 gilteritinib, midostaurin, quizartinib is implicated only if the call is confirmed. ITD allelic ratio guides inhibitor choice and transplant decisions Co-occurring calls on this sample: RUNX1_LOF, NRAS_G12.",
+   "explained_by": "rules"
+  }
+ ],
+ "tests_panel": [
+  {
+   "test": "myeloid NGS panel",
+   "why": "adverse-risk marker (ELN); no targeted agent",
+   "driver": "RUNX1_LOF",
+   "priority": "confirm",
+   "reason": "confirm the predicted driver before any targeted decision"
+  },
+  {
+   "test": "RAS-pathway NGS (NRAS/KRAS/PTPN11/NF1/CBL)",
+   "why": "RAS-pathway activation is linked to venetoclax resistance and relapse",
+   "driver": "NRAS_G12",
+   "priority": "confirm",
+   "reason": "confirm the predicted driver before any targeted decision"
+  },
+  {
+   "test": "FLT3-ITD PCR with allelic ratio",
+   "why": "ITD allelic ratio guides inhibitor choice and transplant decisions",
+   "driver": "FLT3_ITD",
+   "priority": "confirm",
+   "reason": "confirm the predicted driver before any targeted decision"
+  },
+  {
+   "test": "Karyotype + FISH",
+   "why": "cytogenetic risk (inv16, t(8;21), -5/-7, complex) \u2014 bulk RNA does not call these",
+   "priority": "baseline",
+   "driver": null,
+   "reason": "standard workup"
+  },
+  {
+   "test": "Targeted myeloid NGS panel",
+   "why": "the ground truth this panel's predictions must be confirmed against",
+   "priority": "baseline",
+   "driver": null,
+   "reason": "standard workup"
+  },
+  {
+   "test": "Flow cytometry immunophenotype",
+   "why": "blast %, lineage, and an MRD baseline",
+   "priority": "baseline",
+   "driver": null,
+   "reason": "standard workup"
+  }
+ ],
+ "panels_note": "RESEARCH DECISION SUPPORT \u2014 not medical advice. Drivers marked PREDICTED were inferred from expression and have NOT been sequenced; confirm them before any targeted decision. Close the loop: re-run with --mutations <confirmed drivers> to engage the deterministic genetic anchor.",
+ "consensus": {
+  "subtype_call": "NPM1 (witness consensus)",
+  "leading_hypothesis": "NPM1",
+  "leading_confirmed_by_genetics": false,
+  "concordance": 1.0,
+  "per_witness_consistency": {
+   "composition": "agree"
+  },
+  "conflicts": "",
+  "ranked_therapy_hypotheses": [],
+  "surface_therapy_hypotheses": [],
+  "recommended_validations": [
+   {
+    "claim": "mutation",
+    "validation": "targeted DNA/RNA sequencing (NGS panel)",
+    "source": "standard"
+   },
+   {
+    "claim": "subtype",
+    "validation": "flow cytometry immunophenotyping",
+    "source": "standard"
+   }
+  ],
+  "descriptive_findings": [],
+  "overall_confidence": "medium",
+  "rationale": "Leading hypothesis: NPM1 (witness consensus). Concordance 1.00. Therapies follow observed drivers; a predicted subtype must be confirmed by sequencing before subtype-directed therapy.",
+  "knowledge_version": "kb-2026.07"
+ },
+ "deliberation": null,
+ "ingest": {
+  "source": "/data/salomonis-archive/FASTQs/PublicDatasets/DATASET_8_GSE281087/counts_h5/GSM8610691_SU204_single_counts.h5",
+  "input_kind": "10x_h5",
+  "name": "SU204_single",
+  "mutations_supplied": [],
+  "unrecognized_mutations": [],
+  "composition_quality": {
+   "mean_cosine": 0.7099153399467468,
+   "n_cells": 4477,
+   "n_states_present": 40,
+   "n_shared_markers": 1936,
+   "control_gate": {
+    "call": "diseased",
+    "p_diseased": 0.9649,
+    "threshold": 0.056,
+    "cv_auc": 0.9649873257287706,
+    "modality": "Composition"
+   }
+  },
+  "deferred_witnesses": [
+   "surfaceome/ADT",
+   "metabolic",
+   "lipid",
+   "GRN-regulon",
+   "LSC",
+   "cell-state/UDON",
+   "cell-communication"
+  ]
+ },
+ "validation": true,
+ "truth_source": "GSE281087_Mutation_Matrix (panel-honest: never-assayed genes left unlabelled)"
+}

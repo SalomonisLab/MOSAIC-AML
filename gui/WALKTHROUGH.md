@@ -1,4 +1,4 @@
-# MATRIX-AML — end-to-end walkthrough: what happens at every step
+# MOSAIC-AML — end-to-end walkthrough: what happens at every step
 
 This traces the **complete journey** of using the decision board: from double-clicking the
 launcher, through uploading an scRNA sample, to reading the rendered patient report — naming the
@@ -6,7 +6,7 @@ exact file, function, input, and output at each step, with the real numbers from
 Grimes AML-CITE-Seq runs. For the broader engine (cohort pipeline, all 9 witnesses, Phases A–D) see
 `../OVERVIEW.md`; this document is the **runtime path a user actually exercises**.
 
-> **TL;DR of the spine.** `start_matrix_board.bat` → SSH tunnel → `gui_server.py` on the cluster →
+> **TL;DR of the spine.** `start_mosaic_board.bat` → SSH tunnel → `gui_server.py` on the cluster →
 > browser board → **+ Add patient** → `POST /api/ingest` → `bsub` → `ingest_patient.py` on a compute
 > node → (cell-state composition → cohort-trained subtype + optional genetic anchor → arbiter) →
 > `patient_report.json` → polled by the browser → rendered as the decision board.
@@ -26,8 +26,8 @@ Everything heavy runs where the data lives (the cluster). The laptop is a thin v
 
 ```
   ┌─ YOUR LAPTOP ───────────────┐        ┌─ CLUSTER login node (bmiclusterp2) ─────────────┐
-  │ start_matrix_board.bat      │        │  gui_server.py  (stock /usr/bin/python3, 3.6+)  │
-  │   ├─ ssh: start server ──────┼───────▶│   GET /                -> matrix_board.html     │
+  │ start_mosaic_board.bat      │        │  gui_server.py  (stock /usr/bin/python3, 3.6+)  │
+  │   ├─ ssh: start server ──────┼───────▶│   GET /                -> mosaic_board.html     │
   │   ├─ browser  ◀──────────────┼────────│   GET /api/runs|report -> reads runs/*.json     │
   │   └─ ssh -L 8766:…:8766 ─────┼═tunnel═▶│   POST /api/ingest ─┐                           │
   │        (held open)          │        │   GET /api/jobs      │ bsub                       │
@@ -46,8 +46,8 @@ Everything heavy runs where the data lives (the cluster). The laptop is a thin v
 
 ## PART A — Launching and opening the board
 
-### Step 1 — You double-click `start_matrix_board.bat`
-**File:** `gui/start_matrix_board.bat` (runs in `cmd.exe` on your laptop).
+### Step 1 — You double-click `start_mosaic_board.bat`
+**File:** `gui/start_mosaic_board.bat` (runs in `cmd.exe` on your laptop).
 It sets four variables (`SSH_HOST=bmiclusterp-head`, `PORT=8766`, `GUI_DIR=…/AML-multimodal/gui`,
 `URL=http://localhost:8766/`) and then runs three steps.
 
@@ -101,10 +101,10 @@ ssh -N -o ExitOnForwardFailure=yes -o ServerAliveInterval=30 -L 8766:127.0.0.1:8
 
 ### Step 5 — Browser requests the page
 `GET http://localhost:8766/` → through the tunnel → `gui_server.py` `do_GET` matches `/` and returns
-`matrix_board.html` (read fresh from disk each time, so edits need no server restart).
+`mosaic_board.html` (read fresh from disk each time, so edits need no server restart).
 The HTML is one self-contained file: CSS + vanilla JS, no build step, no external assets.
 
-### Step 6 — The page boots (`boot()` in `matrix_board.html`)
+### Step 6 — The page boots (`boot()` in `mosaic_board.html`)
 1. `fetch('/api/runs')` — if it succeeds, the page is in **server mode**; if it fails (e.g. the file
    was opened directly with no server) it falls back to **standalone mode** (drag-drop a report).
 2. `fetch('/api/capabilities')` → `{ingest, lsf, inbox, python}`. Because `bsub` exists on the

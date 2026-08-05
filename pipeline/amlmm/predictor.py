@@ -1,4 +1,4 @@
-"""Deployable per-mutation MATRIX-AML predictor — the validated combiner, consolidated.
+"""Deployable per-mutation MOSAIC-AML predictor — the validated combiner, consolidated.
 
 Per mutation, each modality has a frozen pipeline: StandardScaler -> differential feature selection ->
 LinearSVC. Its decision scores are percentile-normalised against the TRAIN distribution and oriented;
@@ -85,6 +85,7 @@ class MutationPredictor:
         self.models = {}             # (mutation, modality) -> ModalityModel
         self.weights = {}            # mutation -> {modality: weight}  (sum 1, deployable)
         self.heldout_auc = {}        # mutation -> sealed held-out AUC (display)
+        self.train_auc = {}          # mutation -> donor-grouped CV (out-of-fold) AUROC on the TRAINING set
         self.prevalence = {}         # mutation -> cohort positive rate
         self.thresholds = {}         # mutation -> calibrated present/absent cut (cohort Youden-J; default 0.5)
         self.meta = {}               # rep notes (rna='raw+prog', n_train, date, ...)

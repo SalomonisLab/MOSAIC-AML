@@ -1,8 +1,21 @@
-# MATRIX-AML — Project Overview (master document)
+# MOSAIC-AML — Project Overview (master document)
 
-*Multimodal Agentic Therapy Reasoning from Imputed eXpression in AML.*
+***M**ultimodal **O**mics and **S**tate-**A**ware **I**nference of **C**ancer Drivers in **A**cute **M**yeloid **L**eukemia.*
+(Formerly MATRIX-AML; renamed 2026-08-04 — same platform, same code, new name.)
 Last updated 2026-06-15. This is the single source of truth: what the project is,
 how everything works, where everything lives, and what is done vs. still ahead.
+
+## The three names
+
+| name | what it is |
+|---|---|
+| **MOSAIC-AML** | the platform — *Multimodal Omics and State-Aware Inference of Cancer Drivers in Acute Myeloid Leukemia*. The atlas, the ingest path, the witness panel, the arbiter, the decision board. |
+| **CIPHER-AML** | the **mutation predictor** — *Cell-state Inference of Pathogenic Hits from Expression and Regulation*. Infers driver lesions from expression, cell state and regulon activity, without sequencing. |
+| **COMPASS-AML** | the **drug predictor** — *Cell-state Oriented Modelling of Pharmacologic Assay Sensitivity*. Predicts ex-vivo inhibitor sensitivity from the BeatAML2 functional screen, resolved by cell state. |
+
+CIPHER-AML and COMPASS-AML are deliberately **parallel** layers, not a chain: a mutation call enters the
+drug layer as one piece of evidence among several, never as a look-up key for a therapy.
+
 
 ---
 
@@ -131,7 +144,7 @@ fail-closed status). The headline metric is an **honest out-of-fold balanced acc
   the same seams driven by Nemotron (gate/skeptic, feature-block choice, model choice, report
   synthesis), each validating + falling back to deterministic. `run.py --hooks agent`,
   `submit.py … --hooks agent`. The agent owns *which/whether/write-up*, never the CV math.
-- **Per-modality panel** (`panel.py`): the MATRIX-AML "tumor board." Witness kinds:
+- **Per-modality panel** (`panel.py`): the MOSAIC-AML "tumor board." Witness kinds:
   - **predictive** (composition, or a modality block) — grounded in that block's honest CV.
   - **genetic** — mutation/cytogenetic context + targetable drivers (independent axis).
   - **UDON** — conserved program ↔ subtype associations (discovery; flags batch programs).
@@ -147,7 +160,7 @@ fail-closed status). The headline metric is an **honest out-of-fold balanced acc
 |---|---|
 | `run.py` | orchestrator / one-config LSF job body (provenance, gate-abort, nonzero exit on error) |
 | `submit.py` | fan-out LSF submitter + `status` (completed/errored/aborted/CRASHED?/CORRUPT) |
-| `panel.py` | MATRIX-AML panel CLI (witnesses + arbiter) |
+| `panel.py` | MOSAIC-AML panel CLI (witnesses + arbiter) |
 | `amlmm/dataio.py` | layout-aware loader (local vs cluster), stdlib `.xlsx` reader, modality aggregation, cached cohort-matrix baseline + direct cell-communication reader |
 | `amlmm/context.py` | `Config` + `Context` (tables, artifact store, hooks, atomic IO) |
 | `amlmm/cv.py` | **leakage-proof grouped/nested CV** + group-level permutation baseline |
@@ -187,10 +200,10 @@ $PY submit.py status                  # per-config state
 # one config in-process (the job body)
 $PY run.py --target subtype --strategy donor_kfold
 
-# MATRIX-AML per-witness panel (cohort)
+# MOSAIC-AML per-witness panel (cohort)
 $PY panel.py --target subtype                          # composition + genetic + UDON
 $PY panel.py --target subtype --blocks composition,ADT,GRN   # add predictive modality witnesses
-# MATRIX-AML per-PATIENT tumor-board report
+# MOSAIC-AML per-PATIENT tumor-board report
 $PY panel.py --patient "WashU::10DD-1002__Diagnosis"             # subtype + therapies + validations
 $PY panel.py --patient "WashU::10DD-1002__Diagnosis" --rounds 2  # + Phase C deliberation
 ```
@@ -412,3 +425,44 @@ python ingest_patient.py --sample <10x_dir|h5|h5ad> --name "Patient X" [--mutati
 - LLM: `nemotron-3-super` @ `http://bmiclusterp2.chmcres.cchmc.org:4000/v1`.
 - Engine: github.com/SalomonisLab/altanalyze3 (UDON in `components/udon/`).
 - The honest signal = permutation p-value; the canonical metric env = cluster sklearn 1.5.2.
+
+---
+
+## 11. COMPASS-AML — the ex-vivo drug-response layer (added 2026-08-04)
+
+A **parallel** layer to the mutation caller, not a downstream one: mutation calls enter as evidence,
+never as a drug look-up. Trained on the BeatAML2 ex-vivo inhibitor screen
+(`beataml_probit_curve_fits_v4_dbgap.txt`, fetched from the public BeatAML2 repo into
+`data/external/beataml/`).
+
+**Cohort.** 48,998 dose-response curves over **520 specimens / 479 patients / 118 inhibitors** (of 165
+screened; 47 excluded for sample size, dynamic range, degenerate tails or acquisition-wave shift, and
+3 — Cytarabine, Nutlin 3a, GDC-0941 — kept in a `wave_conditional` tier with the caveat attached).
+
+**Three models, deliberately separate.**
+- **A** patient-level response: hierarchical (target-pathway family + per-drug residual), four feature
+  blocks (`rna`/`state`/`mut`/`clin`) late-fused by NNLS on inner donor-grouped OOF, floored to the
+  best single block. Calibrated per drug on the OOF **percentile**, with cohort-matched score
+  references (`beataml` / `sc_sample` / `sc_state`).
+- **B** state-resolved: the same model applied per cell-state pseudobulk -> blast and LSC-like
+  coverage, escape state, dispersion, bulk-vs-single-cell disagreement.
+- **C** mechanistic: target expression, pathway output readout, BCL2-family dependency, genetic
+  activation, measurable resistance proxies. Kept out of A so agreement/disagreement stays informative.
+
+**Headline validation** (donor-grouped CV; 15% of *patients* sealed):
+mean AUROC **0.774** over 118 inhibitors (**0.809** on the 42 approved agents); per-patient top-1
+retrieval **34%** vs 10% matched chance; ECE **0.012**; leave-wave-out 0.722/0.733; leave-centre-out
+0.731-0.890; survives inside every differentiation-state stratum; ~15 null SDs above a
+specimen-repointing permutation null.
+
+**Model B's falsifiable test.** Fitted only on BeatAML bulk and never shown a cell-state label, it
+predicts higher venetoclax sensitivity in primitive than in monocytic states in **93.2%** of the 387
+atlas samples (p = 8.4e-51) — **rank 1 of 118 inhibitors**, so not a generic artefact.
+
+**Entry points.** `pipeline/predict_drugs.py` (one sample), `pipeline/drug_layer.py` (the hook
+`ingest_patient.py` calls, non-fatal), `pipeline/batch_drug_reports.py` (backfill).
+**GUI.** `/therapy.html` per-patient prioritisation (tiered, click a row for evidence),
+`/rx_validation.html` the validation page. Full methods: `deliverables/METHODS_COMPASS-AML.md`.
+
+**Standing caveat.** Ex-vivo sensitivity is an experimentally grounded prioritisation signal, not an
+estimate of clinical benefit. Every surface says so.

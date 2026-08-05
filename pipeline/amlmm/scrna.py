@@ -14,10 +14,23 @@ import numpy as np
 import pandas as pd
 from scipy import sparse
 
-# default on the cluster shared archive (group-readable)
-DEFAULT_REFERENCE = ("/data/salomonis-archive/LabFiles/Nathan/Revio/altanalyze3/altanalyze3/"
-                     "components/cellHarmony/flask/references/Human/BoneMarrow/Zhang-2024/"
-                     "Hs-MarrowAtlas-L3M.txt")
+import os as _os
+
+# The cellHarmony marrow reference. A single hardcoded cluster path meant an scRNA upload failed on
+# every machine that was not the cluster -- including the laptop someone would naturally try the tool
+# on first. Resolve in order: explicit env override, the copy that ships inside the vendored
+# altanalyze3 checkout, then the cluster archive.
+_REF_NAME = "Hs-MarrowAtlas-L3M.txt"
+_REF_CANDIDATES = [
+    _os.environ.get("AMLMM_CELLHARMONY_REF"),
+    _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))),
+                  "engine-code", "altanalyze3", "altanalyze3", "components", "cellHarmony", "flask",
+                  "references", "Human", "BoneMarrow", "Zhang-2024", _REF_NAME),
+    ("/data/salomonis-archive/LabFiles/Nathan/Revio/altanalyze3/altanalyze3/"
+     "components/cellHarmony/flask/references/Human/BoneMarrow/Zhang-2024/" + _REF_NAME),
+]
+DEFAULT_REFERENCE = next((p for p in _REF_CANDIDATES if p and _os.path.exists(p)),
+                         _REF_CANDIDATES[-1])
 
 
 def load_reference(path=DEFAULT_REFERENCE):

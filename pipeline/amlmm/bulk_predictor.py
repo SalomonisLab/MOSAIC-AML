@@ -34,6 +34,7 @@ class BulkMutationPredictor:
     def __init__(self):
         self.genes = []            # ENSG order of the feature space (14,237)
         self.refs = {}             # ref_name -> (mu[genes], sd[genes]) on the common log2 scale
+        self.score_refs = {}       # ref_name -> {cat: sorted decision scores OVER THAT COHORT}
         self.categories = []       # variant-level category names
         self.models = {}           # cat -> dict(est, sel, sorted_scores, sign, threshold, cv_auroc, n_pos)
         self.sym2ens = {}          # gene symbol -> ENSG (to accept symbol-keyed samples)
@@ -66,10 +67,21 @@ class BulkMutationPredictor:
         return (clog - mu) / sd
 
     # ---------- inference ----------
-    def predict_one(self, cat, z):
+    def predict_one(self, cat, z, ref="sc"):
+        """Percentile the sample against ITS OWN cohort's score distribution.
+
+        Using the BeatAML score distribution for a non-BeatAML sample is wrong: sc scores occupy a
+        compressed band of that scale, so high thresholds become literally unreachable (SRSF2 ceilinged
+        at 0.883 vs a 0.888 cut -> 0/387 sc samples callable). With a cohort-matched reference the
+        percentile means "where this sample sits among its own cohort", and a threshold means
+        "call the top (1-thr) fraction" in any cohort.
+        """
         m = self.models[cat]
         d = m["est"].decision_function(z[m["sel"]].reshape(1, -1))
-        q = _pct(m["sorted_scores"], d)[0]
+        base = (self.score_refs.get(ref) or {}).get(cat)
+        if base is None:
+            base = m["sorted_scores"]                 # back-compat: pre-score_refs models
+        q = _pct(base, d)[0]
         if q != q:
             return None
         prob = q if m["sign"] > 0 else 1.0 - q
@@ -86,7 +98,7 @@ class BulkMutationPredictor:
         z = self._z(self._clog(self._align(sample)), ref)
         out = {}
         for cat in self.categories:
-            r = self.predict_one(cat, z)
+            r = self.predict_one(cat, z, ref)         # percentile against the SAME cohort we z-scored to
             if r is not None:
                 out[cat] = r
         return dict(sorted(out.items(), key=lambda kv: -(kv[1]["probability"] or 0)))
@@ -124,10 +136,11 @@ class BulkMutationPredictor:
             return mu, sd, (cl - mu) / sd
 
         self = cls(); self.genes = genes; self.sym2ens = dict(sym2ens)
+        Zs = {}
         for name, key in [("beataml", "ba_X"), ("sc", "sc_X"), ("leucegene", "lg_X")]:
-            mu, sd, _ = clog_z_ref(d[key].astype(float))
-            self.refs[name] = (mu, sd)
-        _, _, Zba = clog_z_ref(baX)
+            mu, sd, Z = clog_z_ref(d[key].astype(float))
+            self.refs[name] = (mu, sd); Zs[name] = Z          # keep each cohort's z-matrix for score refs
+        Zba = Zs["beataml"]
 
         def mk(name):
             if name == "shrLDA":
@@ -167,6 +180,10 @@ class BulkMutationPredictor:
                 f1 = 2 * prec * rec / (prec + rec) if (prec + rec) else 0.0
                 if f1 > bf1:
                     bf1, bt = f1, float(t)
+            # cohort-matched score references: each cohort's own decision-score distribution, so a
+            # sample is percentiled among its peers rather than against BeatAML's scale.
+            for _name, _Z in Zs.items():
+                self.score_refs.setdefault(_name, {})[cat] = np.sort(est.decision_function(_Z[:, sel]))
             self.categories.append(cat)
             self.models[cat] = {"est": est, "sel": sel, "sorted_scores": ssorted, "sign": sign,
                                 "threshold": round(bt, 3), "cv_auroc": cv_auroc, "n_pos": int(yv.sum())}

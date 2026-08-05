@@ -12,248 +12,121 @@
  },
  "mutation_predictions": [
   {
-   "probability": 0.985,
-   "call": "present",
-   "threshold": 0.516,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "ADT",
-     "weight": 0.477,
-     "score": 0.972,
-     "oof_auc": 0.784
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.386,
-     "score": 0.997,
-     "oof_auc": 0.768
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.126,
-     "score": 1.0,
-     "oof_auc": 0.732
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.012,
-     "score": 0.953,
-     "oof_auc": 0.702
-    },
-    {
-     "modality": "RNA",
-     "weight": 0.0,
-     "score": 0.873,
-     "oof_auc": 0.708
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.0,
-     "score": 0.972,
-     "oof_auc": 0.724
-    },
-    {
-     "modality": "GRN",
-     "weight": 0.0,
-     "score": 0.97,
-     "oof_auc": 0.701
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.0,
-     "score": 0.975,
-     "oof_auc": 0.61
-    }
-   ],
-   "heldout_auc": 0.6,
-   "mutation": "PTPN11",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "probability": 0.972,
+   "call": "absent",
+   "threshold": 0.982,
+   "cv_auroc": 0.872,
+   "n_pos_train": 22,
+   "confidence": "ok",
+   "mutation": "TP53_LOF/splice/frameshift",
+   "heldout_auc": 0.872,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.966,
+   "call": "absent",
+   "threshold": 0.995,
+   "cv_auroc": 0.955,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "KRAS_G13",
+   "heldout_auc": 0.955,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.946,
+   "call": "absent",
+   "threshold": 0.946,
+   "cv_auroc": 0.892,
+   "n_pos_train": 43,
+   "confidence": "ok",
+   "mutation": "STAG2",
+   "heldout_auc": 0.892,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
   },
   {
    "probability": 0.941,
-   "call": "present",
-   "threshold": 0.709,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "Lipid",
-     "weight": 0.533,
-     "score": 1.0,
-     "oof_auc": 0.808
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.238,
-     "score": 0.966,
-     "oof_auc": 0.738
-    },
-    {
-     "modality": "RNA",
-     "weight": 0.229,
-     "score": 0.778,
-     "oof_auc": 0.771
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.0,
-     "score": 1.0,
-     "oof_auc": 0.654
-    },
-    {
-     "modality": "ADT",
-     "weight": 0.0,
-     "score": 0.986,
-     "oof_auc": 0.7
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.0,
-     "score": 0.244,
-     "oof_auc": 0.713
-    },
-    {
-     "modality": "GRN",
-     "weight": 0.0,
-     "score": 0.767,
-     "oof_auc": 0.72
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 1.0,
-     "oof_auc": 0.576
-    }
-   ],
-   "heldout_auc": 0.783,
-   "mutation": "IDH1",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
-  },
-  {
-   "probability": 0.875,
    "call": "absent",
-   "threshold": 0.899,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "ADT",
-     "weight": 0.947,
-     "score": 0.878,
-     "oof_auc": 0.919
-    },
-    {
-     "modality": "RNA",
-     "weight": 0.053,
-     "score": 0.812,
-     "oof_auc": 0.78
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.0,
-     "score": 0.64,
-     "oof_auc": 0.675
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.0,
-     "score": 0.011,
-     "oof_auc": 0.772
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.0,
-     "score": 0.452,
-     "oof_auc": 0.743
-    },
-    {
-     "modality": "GRN",
-     "weight": 0.0,
-     "score": 0.953,
-     "oof_auc": 0.706
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 0.0,
-     "oof_auc": 0.544
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.0,
-     "score": 0.986,
-     "oof_auc": 0.592
-    }
-   ],
-   "heldout_auc": null,
-   "mutation": "GATA2",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "threshold": 0.948,
+   "cv_auroc": 0.963,
+   "n_pos_train": 43,
+   "confidence": "ok",
+   "mutation": "KMT2A_fusion",
+   "heldout_auc": 0.963,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": "present",
+   "true_label": null
   },
   {
-   "probability": 0.828,
+   "probability": 0.925,
    "call": "present",
-   "threshold": 0.689,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "Metabolite",
-     "weight": 0.973,
-     "score": 0.848,
-     "oof_auc": 0.83
-    },
-    {
-     "modality": "ADT",
-     "weight": 0.027,
-     "score": 0.102,
-     "oof_auc": 0.686
-    },
-    {
-     "modality": "RNA",
-     "weight": 0.0,
-     "score": 0.402,
-     "oof_auc": 0.669
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.0,
-     "score": 0.03,
-     "oof_auc": 0.583
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.0,
-     "score": 0.368,
-     "oof_auc": 0.68
-    },
-    {
-     "modality": "GRN",
-     "weight": 0.0,
-     "score": 0.643,
-     "oof_auc": 0.728
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 0.0,
-     "oof_auc": 0.53
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.0,
-     "score": 0.955,
-     "oof_auc": 0.578
-    }
-   ],
-   "heldout_auc": 0.971,
-   "mutation": "RUNX1",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "threshold": 0.889,
+   "cv_auroc": 0.815,
+   "n_pos_train": 82,
+   "confidence": "ok",
+   "mutation": "TET2",
+   "heldout_auc": 0.815,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.92,
+   "call": "absent",
+   "threshold": 0.969,
+   "cv_auroc": 0.652,
+   "n_pos_train": 15,
+   "confidence": "ok",
+   "mutation": "RAD21",
+   "heldout_auc": 0.652,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.91,
+   "call": "present",
+   "threshold": 0.865,
+   "cv_auroc": 0.838,
+   "n_pos_train": 62,
+   "confidence": "ok",
+   "mutation": "IDH2_R140",
+   "heldout_auc": 0.838,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.881,
+   "call": "absent",
+   "threshold": 0.985,
+   "cv_auroc": 0.859,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "U2AF1_Q157/R156",
+   "heldout_auc": 0.859,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.824,
+   "call": "absent",
+   "threshold": 0.922,
+   "cv_auroc": 0.716,
+   "n_pos_train": 42,
+   "confidence": "ok",
+   "mutation": "FLT3_TKD_D835/I836",
+   "heldout_auc": 0.716,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
   },
   {
    "probability": 0.816,
@@ -314,7 +187,8 @@
    "mutation": "kmt2a",
    "true_label": "present",
    "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "confidence": "abstain: underpowered (n+<3)",
+   "source": "sc multimodal (cytogenetics)"
   },
   {
    "probability": 0.816,
@@ -375,312 +249,73 @@
    "mutation": "KMT2A-rearrangement",
    "true_label": "absent",
    "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "confidence": "abstain: underpowered (n+<3)",
+   "source": "sc multimodal (cytogenetics)"
   },
   {
-   "probability": 0.774,
+   "probability": 0.811,
    "call": "absent",
-   "threshold": 0.795,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "RNA",
-     "weight": 0.561,
-     "score": 0.74,
-     "oof_auc": 0.891
-    },
-    {
-     "modality": "GRN",
-     "weight": 0.318,
-     "score": 0.817,
-     "oof_auc": 0.864
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.121,
-     "score": 0.818,
-     "oof_auc": 0.8
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.0,
-     "score": 0.92,
-     "oof_auc": 0.697
-    },
-    {
-     "modality": "ADT",
-     "weight": 0.0,
-     "score": 0.227,
-     "oof_auc": 0.793
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.0,
-     "score": 0.227,
-     "oof_auc": 0.82
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.0,
-     "score": 0.82,
-     "oof_auc": 0.857
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 1.0,
-     "oof_auc": 0.551
-    }
-   ],
-   "heldout_auc": 0.952,
-   "mutation": "NPM1",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "ok"
+   "threshold": 0.99,
+   "cv_auroc": 0.682,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "SMC1A",
+   "heldout_auc": 0.682,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
   },
   {
-   "probability": 0.758,
-   "call": "present",
-   "threshold": 0.701,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "Cell-comm",
-     "weight": 0.379,
-     "score": 0.91,
-     "oof_auc": 0.85
-    },
-    {
-     "modality": "ADT",
-     "weight": 0.325,
-     "score": 0.906,
-     "oof_auc": 0.848
-    },
-    {
-     "modality": "RNA",
-     "weight": 0.295,
-     "score": 0.399,
-     "oof_auc": 0.837
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.0,
-     "score": 0.521,
-     "oof_auc": 0.733
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.0,
-     "score": 0.116,
-     "oof_auc": 0.794
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.0,
-     "score": 0.299,
-     "oof_auc": 0.774
-    },
-    {
-     "modality": "GRN",
-     "weight": 0.0,
-     "score": 0.216,
-     "oof_auc": 0.738
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 0.0,
-     "oof_auc": 0.628
-    }
-   ],
-   "heldout_auc": 0.604,
-   "mutation": "KIT",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
-  },
-  {
-   "probability": 0.718,
-   "call": "present",
-   "threshold": 0.708,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "Composition",
-     "weight": 0.349,
-     "score": 0.934,
-     "oof_auc": 0.788
-    },
-    {
-     "modality": "RNA",
-     "weight": 0.238,
-     "score": 0.659,
-     "oof_auc": 0.781
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.235,
-     "score": 0.336,
-     "oof_auc": 0.76
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.136,
-     "score": 0.867,
-     "oof_auc": 0.77
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.042,
-     "score": 0.92,
-     "oof_auc": 0.759
-    },
-    {
-     "modality": "ADT",
-     "weight": 0.0,
-     "score": 0.867,
-     "oof_auc": 0.735
-    },
-    {
-     "modality": "GRN",
-     "weight": 0.0,
-     "score": 0.609,
-     "oof_auc": 0.706
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 1.0,
-     "oof_auc": 0.631
-    }
-   ],
-   "heldout_auc": 0.676,
-   "mutation": "NRAS",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
-  },
-  {
-   "probability": 0.714,
+   "probability": 0.806,
    "call": "absent",
-   "threshold": 0.796,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "RNA",
-     "weight": 0.379,
-     "score": 0.922,
-     "oof_auc": 0.936
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.27,
-     "score": 0.291,
-     "oof_auc": 0.933
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.258,
-     "score": 0.789,
-     "oof_auc": 0.933
-    },
-    {
-     "modality": "GRN",
-     "weight": 0.094,
-     "score": 0.881,
-     "oof_auc": 0.914
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.0,
-     "score": 0.659,
-     "oof_auc": 0.572
-    },
-    {
-     "modality": "ADT",
-     "weight": 0.0,
-     "score": 0.895,
-     "oof_auc": 0.602
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 0.0,
-     "oof_auc": 0.568
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.0,
-     "score": 0.966,
-     "oof_auc": 0.721
-    }
-   ],
-   "heldout_auc": 0.807,
-   "mutation": "TP53",
-   "true_label": "present",
-   "modality_coverage": 1.0,
-   "confidence": "ok"
+   "threshold": 0.824,
+   "cv_auroc": 0.88,
+   "n_pos_train": 76,
+   "confidence": "ok",
+   "mutation": "DNMT3A_R882",
+   "heldout_auc": 0.88,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
   },
   {
-   "probability": 0.709,
-   "call": "present",
-   "threshold": 0.626,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "RNA",
-     "weight": 0.437,
-     "score": 0.518,
-     "oof_auc": 0.878
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.303,
-     "score": 0.95,
-     "oof_auc": 0.85
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.259,
-     "score": 0.751,
-     "oof_auc": 0.86
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.0,
-     "score": 0.964,
-     "oof_auc": 0.743
-    },
-    {
-     "modality": "ADT",
-     "weight": 0.0,
-     "score": 0.15,
-     "oof_auc": 0.705
-    },
-    {
-     "modality": "GRN",
-     "weight": 0.0,
-     "score": 0.418,
-     "oof_auc": 0.797
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 0.0,
-     "oof_auc": 0.566
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.0,
-     "score": 0.975,
-     "oof_auc": 0.726
-    }
-   ],
-   "heldout_auc": null,
-   "mutation": "CEBPA",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "probability": 0.773,
+   "call": "absent",
+   "threshold": 0.964,
+   "cv_auroc": 0.997,
+   "n_pos_train": 18,
+   "confidence": "ok",
+   "mutation": "SF3B1_K666",
+   "heldout_auc": 0.997,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.739,
+   "call": "absent",
+   "threshold": 0.917,
+   "cv_auroc": 0.704,
+   "n_pos_train": 20,
+   "confidence": "ok",
+   "mutation": "PTPN11_other",
+   "heldout_auc": 0.704,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.664,
+   "call": "absent",
+   "threshold": 0.966,
+   "cv_auroc": 0.83,
+   "n_pos_train": 29,
+   "confidence": "ok",
+   "mutation": "GATA2",
+   "heldout_auc": 0.83,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
   },
   {
    "probability": 0.662,
@@ -741,7 +376,8 @@
    "mutation": "inv16",
    "true_label": "absent",
    "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "confidence": "abstain: underpowered (n+<3)",
+   "source": "sc multimodal (cytogenetics)"
   },
   {
    "probability": 0.662,
@@ -802,190 +438,60 @@
    "mutation": "inv(16)_CBFB-MYH11",
    "true_label": "absent",
    "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "confidence": "abstain: underpowered (n+<3)",
+   "source": "sc multimodal (cytogenetics)"
   },
   {
-   "probability": 0.606,
+   "probability": 0.628,
    "call": "absent",
-   "threshold": 0.659,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "GRN",
-     "weight": 0.431,
-     "score": 0.936,
-     "oof_auc": 0.788
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.363,
-     "score": 0.008,
-     "oof_auc": 0.782
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.206,
-     "score": 0.966,
-     "oof_auc": 0.72
-    },
-    {
-     "modality": "RNA",
-     "weight": 0.0,
-     "score": 0.332,
-     "oof_auc": 0.705
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.0,
-     "score": 0.978,
-     "oof_auc": 0.697
-    },
-    {
-     "modality": "ADT",
-     "weight": 0.0,
-     "score": 0.85,
-     "oof_auc": 0.536
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.0,
-     "score": 0.884,
-     "oof_auc": 0.667
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 1.0,
-     "oof_auc": 0.621
-    }
-   ],
-   "heldout_auc": 0.72,
-   "mutation": "ASXL1",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "ok"
+   "threshold": 0.878,
+   "cv_auroc": 0.831,
+   "n_pos_train": 39,
+   "confidence": "ok",
+   "mutation": "NRAS_Q61",
+   "heldout_auc": 0.831,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
   },
   {
-   "probability": 0.598,
+   "probability": 0.625,
    "call": "absent",
-   "threshold": 0.629,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "ADT",
-     "weight": 0.516,
-     "score": 0.532,
-     "oof_auc": 0.668
-    },
-    {
-     "modality": "RNA",
-     "weight": 0.253,
-     "score": 0.906,
-     "oof_auc": 0.635
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.231,
-     "score": 0.407,
-     "oof_auc": 0.613
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.0,
-     "score": 0.759,
-     "oof_auc": 0.52
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.0,
-     "score": 0.917,
-     "oof_auc": 0.501
-    },
-    {
-     "modality": "GRN",
-     "weight": 0.0,
-     "score": 0.95,
-     "oof_auc": 0.572
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 1.0,
-     "oof_auc": 0.51
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.0,
-     "score": 0.692,
-     "oof_auc": 0.515
-    }
-   ],
-   "heldout_auc": 0.65,
-   "mutation": "IDH2",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "threshold": 0.995,
+   "cv_auroc": 0.811,
+   "n_pos_train": 18,
+   "confidence": "ok",
+   "mutation": "JAK2_V617F",
+   "heldout_auc": 0.811,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
   },
   {
-   "probability": 0.592,
+   "probability": 0.605,
    "call": "absent",
-   "threshold": 0.633,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "ADT",
-     "weight": 0.309,
-     "score": 0.861,
-     "oof_auc": 0.704
-    },
-    {
-     "modality": "GRN",
-     "weight": 0.306,
-     "score": 0.025,
-     "oof_auc": 0.704
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.232,
-     "score": 0.964,
-     "oof_auc": 0.676
-    },
-    {
-     "modality": "RNA",
-     "weight": 0.121,
-     "score": 0.601,
-     "oof_auc": 0.687
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.032,
-     "score": 0.698,
-     "oof_auc": 0.545
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.0,
-     "score": 0.166,
-     "oof_auc": 0.672
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.0,
-     "score": 0.266,
-     "oof_auc": 0.582
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 1.0,
-     "oof_auc": 0.516
-    }
-   ],
-   "heldout_auc": 0.84,
-   "mutation": "KRAS",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "threshold": 0.751,
+   "cv_auroc": 0.981,
+   "n_pos_train": 140,
+   "confidence": "ok",
+   "mutation": "NPM1_exon12_frameshift",
+   "heldout_auc": 0.981,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.566,
+   "call": "absent",
+   "threshold": 0.976,
+   "cv_auroc": 0.889,
+   "n_pos_train": 9,
+   "confidence": "ok",
+   "mutation": "IKZF1",
+   "heldout_auc": 0.889,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
   },
   {
    "probability": 0.559,
@@ -1046,7 +552,8 @@
    "mutation": "complex",
    "true_label": "absent",
    "modality_coverage": 1.0,
-   "confidence": "ok"
+   "confidence": "ok",
+   "source": "sc multimodal (cytogenetics)"
   },
   {
    "probability": 0.543,
@@ -1107,7 +614,47 @@
    "mutation": "del7",
    "true_label": "absent",
    "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "confidence": "abstain: underpowered (n+<3)",
+   "source": "sc multimodal (cytogenetics)"
+  },
+  {
+   "probability": 0.522,
+   "call": "absent",
+   "threshold": 0.846,
+   "cv_auroc": 0.946,
+   "n_pos_train": 75,
+   "confidence": "ok",
+   "mutation": "RUNX1_LOF",
+   "heldout_auc": 0.946,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.522,
+   "call": "absent",
+   "threshold": 0.99,
+   "cv_auroc": 0.983,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "SF3B1_K700",
+   "heldout_auc": 0.983,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.501,
+   "call": "absent",
+   "threshold": 0.938,
+   "cv_auroc": 0.857,
+   "n_pos_train": 47,
+   "confidence": "ok",
+   "mutation": "WT1_LOF",
+   "heldout_auc": 0.857,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
   },
   {
    "probability": 0.5,
@@ -1168,251 +715,255 @@
    "mutation": "trisomy8",
    "true_label": "absent",
    "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "confidence": "abstain: underpowered (n+<3)",
+   "source": "sc multimodal (cytogenetics)"
   },
   {
-   "probability": 0.499,
+   "probability": 0.478,
    "call": "absent",
-   "threshold": 0.701,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "GRN",
-     "weight": 0.496,
-     "score": 0.925,
-     "oof_auc": 0.752
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.44,
-     "score": 0.008,
-     "oof_auc": 0.735
-    },
-    {
-     "modality": "RNA",
-     "weight": 0.065,
-     "score": 0.573,
-     "oof_auc": 0.706
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.0,
-     "score": 0.975,
-     "oof_auc": 0.527
-    },
-    {
-     "modality": "ADT",
-     "weight": 0.0,
-     "score": 0.551,
-     "oof_auc": 0.594
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.0,
-     "score": 0.934,
-     "oof_auc": 0.651
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.0,
-     "score": 0.288,
-     "oof_auc": 0.65
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 0.0,
-     "oof_auc": 0.525
-    }
-   ],
-   "heldout_auc": 0.785,
-   "mutation": "DNMT3A",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "ok"
+   "threshold": 0.993,
+   "cv_auroc": 0.784,
+   "n_pos_train": 7,
+   "confidence": "ok",
+   "mutation": "SETBP1",
+   "heldout_auc": 0.784,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
   },
   {
-   "probability": 0.456,
+   "probability": 0.475,
    "call": "absent",
-   "threshold": 0.734,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "GRN",
-     "weight": 0.441,
-     "score": 0.706,
-     "oof_auc": 0.918
-    },
-    {
-     "modality": "RNA",
-     "weight": 0.33,
-     "score": 0.186,
-     "oof_auc": 0.906
-    },
-    {
-     "modality": "ADT",
-     "weight": 0.137,
-     "score": 0.105,
-     "oof_auc": 0.869
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.093,
-     "score": 0.748,
-     "oof_auc": 0.886
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.0,
-     "score": 0.557,
-     "oof_auc": 0.757
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.0,
-     "score": 0.053,
-     "oof_auc": 0.852
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 1.0,
-     "oof_auc": 0.556
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.0,
-     "score": 0.952,
-     "oof_auc": 0.702
-    }
-   ],
-   "heldout_auc": 0.797,
-   "mutation": "TET2",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "ok"
+   "threshold": 0.989,
+   "cv_auroc": 0.66,
+   "n_pos_train": 7,
+   "confidence": "ok",
+   "mutation": "SUZ12",
+   "heldout_auc": 0.66,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
   },
   {
-   "probability": 0.434,
+   "probability": 0.46,
    "call": "absent",
-   "threshold": 0.667,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "GRN",
-     "weight": 0.461,
-     "score": 0.006,
-     "oof_auc": 0.837
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.417,
-     "score": 0.989,
-     "oof_auc": 0.8
-    },
-    {
-     "modality": "ADT",
-     "weight": 0.122,
-     "score": 0.161,
-     "oof_auc": 0.768
-    },
-    {
-     "modality": "RNA",
-     "weight": 0.0,
-     "score": 0.072,
-     "oof_auc": 0.652
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.0,
-     "score": 0.036,
-     "oof_auc": 0.661
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.0,
-     "score": 0.152,
-     "oof_auc": 0.713
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.0,
-     "score": 0.247,
-     "oof_auc": 0.669
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 1.0,
-     "oof_auc": 0.54
-    }
-   ],
-   "heldout_auc": 0.705,
-   "mutation": "FLT3-TKD",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "threshold": 0.938,
+   "cv_auroc": 0.673,
+   "n_pos_train": 16,
+   "confidence": "ok",
+   "mutation": "NF1",
+   "heldout_auc": 0.673,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
   },
   {
-   "probability": 0.374,
+   "probability": 0.45,
    "call": "absent",
-   "threshold": 0.727,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "ADT",
-     "weight": 0.737,
-     "score": 0.485,
-     "oof_auc": 0.776
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.246,
-     "score": 0.0,
-     "oof_auc": 0.686
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.017,
-     "score": 0.969,
-     "oof_auc": 0.594
-    },
-    {
-     "modality": "RNA",
-     "weight": 0.0,
-     "score": 0.155,
-     "oof_auc": 0.63
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.0,
-     "score": 0.958,
-     "oof_auc": 0.592
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.0,
-     "score": 0.008,
-     "oof_auc": 0.67
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.0,
-     "score": 0.147,
-     "oof_auc": 0.646
-    },
-    {
-     "modality": "GRN",
-     "weight": 0.0,
-     "score": 0.659,
-     "oof_auc": 0.588
-    }
-   ],
-   "heldout_auc": 0.44,
-   "mutation": "WT1",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "threshold": 0.963,
+   "cv_auroc": 0.968,
+   "n_pos_train": 32,
+   "confidence": "ok",
+   "mutation": "CEBPA_Nterminal_frameshift/nonsense",
+   "heldout_auc": 0.968,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.444,
+   "call": "absent",
+   "threshold": 0.992,
+   "cv_auroc": 0.665,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "CREBBP",
+   "heldout_auc": 0.665,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.416,
+   "call": "absent",
+   "threshold": 0.987,
+   "cv_auroc": 0.961,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "IDH2_R172",
+   "heldout_auc": 0.961,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.382,
+   "call": "absent",
+   "threshold": 0.989,
+   "cv_auroc": 0.828,
+   "n_pos_train": 13,
+   "confidence": "ok",
+   "mutation": "KIT_D816",
+   "heldout_auc": 0.828,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.341,
+   "call": "absent",
+   "threshold": 0.995,
+   "cv_auroc": 0.881,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "ZRSR2",
+   "heldout_auc": 0.881,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.328,
+   "call": "absent",
+   "threshold": 0.995,
+   "cv_auroc": 0.67,
+   "n_pos_train": 9,
+   "confidence": "ok",
+   "mutation": "CSF3R",
+   "heldout_auc": 0.67,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.318,
+   "call": "absent",
+   "threshold": 0.927,
+   "cv_auroc": 0.876,
+   "n_pos_train": 43,
+   "confidence": "ok",
+   "mutation": "TP53_hotspot_DBD",
+   "heldout_auc": 0.876,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.289,
+   "call": "absent",
+   "threshold": 0.943,
+   "cv_auroc": 0.915,
+   "n_pos_train": 34,
+   "confidence": "ok",
+   "mutation": "BCOR",
+   "heldout_auc": 0.915,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.276,
+   "call": "absent",
+   "threshold": 0.941,
+   "cv_auroc": 0.898,
+   "n_pos_train": 21,
+   "confidence": "ok",
+   "mutation": "PHF6",
+   "heldout_auc": 0.898,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.266,
+   "call": "absent",
+   "threshold": 0.993,
+   "cv_auroc": 0.578,
+   "n_pos_train": 13,
+   "confidence": "abstain: weak (CV AUROC 0.58)",
+   "mutation": "CBL",
+   "heldout_auc": 0.578,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.256,
+   "call": "absent",
+   "threshold": 0.888,
+   "cv_auroc": 0.996,
+   "n_pos_train": 72,
+   "confidence": "ok",
+   "mutation": "SRSF2",
+   "heldout_auc": 0.996,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.233,
+   "call": "absent",
+   "threshold": 0.964,
+   "cv_auroc": 0.937,
+   "n_pos_train": 16,
+   "confidence": "ok",
+   "mutation": "CEBPA_biallelic_or_double",
+   "heldout_auc": 0.937,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.214,
+   "call": "absent",
+   "threshold": 0.995,
+   "cv_auroc": 0.688,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "SMC3",
+   "heldout_auc": 0.688,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.199,
+   "call": "absent",
+   "threshold": 0.966,
+   "cv_auroc": 1.0,
+   "n_pos_train": 23,
+   "confidence": "ok",
+   "mutation": "U2AF1_S34",
+   "heldout_auc": 1.0,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.194,
+   "call": "absent",
+   "threshold": 0.792,
+   "cv_auroc": 0.899,
+   "n_pos_train": 158,
+   "confidence": "ok",
+   "mutation": "FLT3_ITD",
+   "heldout_auc": 0.899,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.191,
+   "call": "absent",
+   "threshold": 0.98,
+   "cv_auroc": 0.909,
+   "n_pos_train": 13,
+   "confidence": "ok",
+   "mutation": "BCORL1",
+   "heldout_auc": 0.909,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
   },
   {
    "probability": 0.177,
@@ -1473,129 +1024,138 @@
    "mutation": "del5",
    "true_label": "absent",
    "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "confidence": "abstain: underpowered (n+<3)",
+   "source": "sc multimodal (cytogenetics)"
   },
   {
-   "probability": 0.071,
+   "probability": 0.165,
    "call": "absent",
-   "threshold": 0.724,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "ADT",
-     "weight": 0.826,
-     "score": 0.047,
-     "oof_auc": 0.836
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.143,
-     "score": 0.216,
-     "oof_auc": 0.763
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.031,
-     "score": 0.044,
-     "oof_auc": 0.755
-    },
-    {
-     "modality": "RNA",
-     "weight": 0.0,
-     "score": 0.177,
-     "oof_auc": 0.707
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.0,
-     "score": 0.163,
-     "oof_auc": 0.601
-    },
-    {
-     "modality": "GRN",
-     "weight": 0.0,
-     "score": 0.158,
-     "oof_auc": 0.74
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 1.0,
-     "oof_auc": 0.637
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.0,
-     "score": 0.782,
-     "oof_auc": 0.635
-    }
-   ],
-   "heldout_auc": 0.694,
-   "mutation": "FLT3",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "ok"
+   "threshold": 0.979,
+   "cv_auroc": 0.778,
+   "n_pos_train": 6,
+   "confidence": "ok",
+   "mutation": "ETV6",
+   "heldout_auc": 0.778,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
   },
   {
-   "probability": 0.01,
+   "probability": 0.155,
    "call": "absent",
-   "threshold": 0.734,
-   "n_modalities": 8,
-   "contributions": [
-    {
-     "modality": "ADT",
-     "weight": 0.499,
-     "score": 0.014,
-     "oof_auc": 0.853
-    },
-    {
-     "modality": "Lipid",
-     "weight": 0.322,
-     "score": 0.006,
-     "oof_auc": 0.832
-    },
-    {
-     "modality": "Composition",
-     "weight": 0.179,
-     "score": 0.006,
-     "oof_auc": 0.804
-    },
-    {
-     "modality": "RNA",
-     "weight": 0.0,
-     "score": 0.158,
-     "oof_auc": 0.677
-    },
-    {
-     "modality": "Metabolite",
-     "weight": 0.0,
-     "score": 0.263,
-     "oof_auc": 0.679
-    },
-    {
-     "modality": "GRN",
-     "weight": 0.0,
-     "score": 0.058,
-     "oof_auc": 0.75
-    },
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 1.0,
-     "oof_auc": 0.723
-    },
-    {
-     "modality": "Cell-comm",
-     "weight": 0.0,
-     "score": 0.821,
-     "oof_auc": 0.685
-    }
-   ],
-   "heldout_auc": 0.902,
-   "mutation": "FLT3-ITD",
-   "true_label": "absent",
-   "modality_coverage": 1.0,
-   "confidence": "abstain: underpowered (n+<3)"
+   "threshold": 0.976,
+   "cv_auroc": 0.731,
+   "n_pos_train": 27,
+   "confidence": "ok",
+   "mutation": "FLT3_other_TKD_or_JM",
+   "heldout_auc": 0.731,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.142,
+   "call": "absent",
+   "threshold": 0.862,
+   "cv_auroc": 0.678,
+   "n_pos_train": 34,
+   "confidence": "ok",
+   "mutation": "NRAS_G12",
+   "heldout_auc": 0.678,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.134,
+   "call": "absent",
+   "threshold": 0.974,
+   "cv_auroc": 0.744,
+   "n_pos_train": 22,
+   "confidence": "ok",
+   "mutation": "NRAS_G13",
+   "heldout_auc": 0.744,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.127,
+   "call": "absent",
+   "threshold": 0.992,
+   "cv_auroc": 0.779,
+   "n_pos_train": 19,
+   "confidence": "ok",
+   "mutation": "EZH2",
+   "heldout_auc": 0.779,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.083,
+   "call": "absent",
+   "threshold": 0.779,
+   "cv_auroc": 0.703,
+   "n_pos_train": 15,
+   "confidence": "ok",
+   "mutation": "KRAS_G12",
+   "heldout_auc": 0.703,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.075,
+   "call": "absent",
+   "threshold": 0.32,
+   "cv_auroc": 0.605,
+   "n_pos_train": 64,
+   "confidence": "abstain: weak (CV AUROC 0.60)",
+   "mutation": "DNMT3A_nonR882",
+   "heldout_auc": 0.605,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
+  },
+  {
+   "probability": 0.075,
+   "call": "absent",
+   "threshold": 0.837,
+   "cv_auroc": 0.911,
+   "n_pos_train": 49,
+   "confidence": "ok",
+   "mutation": "IDH1_R132",
+   "heldout_auc": 0.911,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.067,
+   "call": "absent",
+   "threshold": 0.912,
+   "cv_auroc": 0.871,
+   "n_pos_train": 63,
+   "confidence": "ok",
+   "mutation": "ASXL1",
+   "heldout_auc": 0.871,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": "absent"
+  },
+  {
+   "probability": 0.065,
+   "call": "absent",
+   "threshold": 0.948,
+   "cv_auroc": 0.936,
+   "n_pos_train": 14,
+   "confidence": "ok",
+   "mutation": "CEBPA_bZIP",
+   "heldout_auc": 0.936,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null,
+   "true_label": null
   }
  ],
  "predictor": {
@@ -1633,5 +1193,326 @@
   "TP53",
   "kmt2a"
  ],
- "note": "external Trumpp sample \u2014 FULL multimodal (RNA + imputed ADT/Lipid/GRN); predicted vs Table S4"
+ "note": "external Trumpp sample \u2014 FULL multimodal (RNA + imputed ADT/Lipid/GRN); predicted vs Table S4",
+ "mutation_caller": {
+  "mode": "bulk_variant_primary",
+  "caller": "BulkMutationPredictor",
+  "input": "sc",
+  "predictor": {
+   "version": "1.0",
+   "n_categories": 50,
+   "mean_cv_auroc": 0.829,
+   "refs": [
+    "beataml",
+    "sc",
+    "leucegene"
+   ],
+   "genes": 14237,
+   "trained_on": "BeatAML2 (n=707, WES)",
+   "base_model": "logL2",
+   "varcap": 2500,
+   "min_pos": 6
+  },
+  "n_confident_present": 2,
+  "note": "PRIMARY mutation caller \u2014 ~50 variant-level categories predicted from the sample's single-cell bulk-equivalent (BeatAML-trained, validated cross-cohort). Predicted, not sequenced: high-confidence 'present' calls are leads to confirm by sequencing. Weak categories (CV AUROC < 0.65) are marked abstain. Cytogenetic calls (8) retained from the sc multimodal predictor, which the bulk caller does not cover."
+ },
+ "treatment_panel": [
+  {
+   "driver": "TET2",
+   "match": "gene",
+   "status": "PREDICTED \u2014 confirm before acting",
+   "predicted": true,
+   "confidence": 0.925,
+   "reliability_auc": 0.815,
+   "drugs": [
+    {
+     "drug": "hypomethylating agent",
+     "class": "HMA",
+     "tier": "context / investigational",
+     "note": ""
+    }
+   ],
+   "rationale": "clonal-haematopoiesis driver; context for HMA",
+   "explanation": "TET2 loss-of-function leads to aberrant DNA methylation and a clonal hematopoiesis phenotype that can be partially reversed by hypomethylating agents, which is why the rule associates this driver with that drug class. The evidence shows a high model score (0.925) and moderate reliability (AUROC 0.815), but the status is PREDICTED, meaning the TET2 alteration is inferred from expression and must be confirmed by sequencing before it can guide treatment. Consequently, the hypomethylating agent should be considered only as contextual/investigational support pending confirmation.",
+   "explained_by": "agent"
+  },
+  {
+   "driver": "IDH2_R140",
+   "match": "variant",
+   "status": "PREDICTED \u2014 confirm before acting",
+   "predicted": true,
+   "confidence": 0.91,
+   "reliability_auc": 0.838,
+   "drugs": [
+    {
+     "drug": "enasidenib",
+     "class": "IDH2 inhibitor",
+     "tier": "approved",
+     "note": ""
+    }
+   ],
+   "rationale": "IDH2 inhibitor requires a confirmed variant",
+   "explanation": "IDH2_R140 produces an oncogenic metabolite (2\u2011hydroxyglutarate) that drives leukemogenesis; enasidenib specifically inhibits mutant IDH2 and is an approved therapy for this alteration. The driver has a strong model score (0.91) and good reliability (AUROC 0.838), yet its status is PREDICTED, indicating the variant is currently inferred from expression and requires sequencing confirmation before enasidenib can be used clinically. Therefore, enasidenib is warranted only after the IDH2_R140 mutation is verified.",
+   "explained_by": "agent"
+  }
+ ],
+ "tests_panel": [
+  {
+   "test": "myeloid NGS panel",
+   "why": "clonal-haematopoiesis driver; context for HMA",
+   "driver": "TET2",
+   "priority": "confirm",
+   "reason": "confirm the predicted driver before any targeted decision"
+  },
+  {
+   "test": "IDH2 R140/R172 hotspot NGS",
+   "why": "IDH2 inhibitor requires a confirmed variant",
+   "driver": "IDH2_R140",
+   "priority": "confirm",
+   "reason": "confirm the predicted driver before any targeted decision"
+  },
+  {
+   "test": "Karyotype + FISH",
+   "why": "cytogenetic risk (inv16, t(8;21), -5/-7, complex) \u2014 bulk RNA does not call these",
+   "priority": "baseline",
+   "driver": null,
+   "reason": "standard workup"
+  },
+  {
+   "test": "Targeted myeloid NGS panel",
+   "why": "the ground truth this panel's predictions must be confirmed against",
+   "priority": "baseline",
+   "driver": null,
+   "reason": "standard workup"
+  },
+  {
+   "test": "Flow cytometry immunophenotype",
+   "why": "blast %, lineage, and an MRD baseline",
+   "priority": "baseline",
+   "driver": null,
+   "reason": "standard workup"
+  }
+ ],
+ "panels_note": "RESEARCH DECISION SUPPORT \u2014 not medical advice. Drivers marked PREDICTED were inferred from expression and have NOT been sequenced; confirm them before any targeted decision. Close the loop: re-run with --mutations <confirmed drivers> to engage the deterministic genetic anchor.",
+ "validation_gene": {
+  "n_labeled": 43,
+  "n_correct": 39,
+  "units": {
+   "ASXL1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "BCOR": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "BCORL1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "CBL": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "CEBPA": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "CREBBP": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "CSF3R": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "DNMT3A": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "ETV6": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "EZH2": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "FLT3": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "GATA2": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "IDH1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "IDH2": {
+    "truth": "absent",
+    "call": "present",
+    "correct": false
+   },
+   "IKZF1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "JAK2": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "KIT": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "KMT2A": {
+    "truth": "absent",
+    "call": "present",
+    "correct": false
+   },
+   "KRAS": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "NF1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "NPM1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "NRAS": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "PHF6": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "PTPN11": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "RAD21": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "RUNX1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "SETBP1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "SF3B1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "SMC1A": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "SMC3": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "SRSF2": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "STAG2": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "SUZ12": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "TET2": {
+    "truth": "absent",
+    "call": "present",
+    "correct": false
+   },
+   "TP53": {
+    "truth": "present",
+    "call": "absent",
+    "correct": false
+   },
+   "U2AF1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "WT1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "ZRSR2": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "complex": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "del5": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "del7": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "inv16": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "trisomy8": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   }
+  }
+ }
 }

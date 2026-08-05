@@ -1,0 +1,235 @@
+{
+ "generated": "2026-08-04 20:16",
+ "n_samples_evaluated": 387,
+ "n_drugs": 118,
+ "primitive_vs_monocytic": {
+  "definition": "mean predicted sensitivity in HSC/MPP+LMPP/CLP+GMP states minus monocytic states",
+  "venetoclax": {
+   "inhibitor": "Venetoclax",
+   "n_samples": 309,
+   "mean_primitive_minus_monocytic": 0.662,
+   "frac_positive": 0.932,
+   "wilcoxon_p": 8.447310447403294e-51,
+   "clinical_tier": "approved_AML",
+   "family_group": "apoptosis",
+   "rank": 1
+  },
+  "venetoclax_rank_of": 118,
+  "top10": [
+   {
+    "inhibitor": "Venetoclax",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": 0.662,
+    "frac_positive": 0.932,
+    "wilcoxon_p": 8.447310447403294e-51,
+    "clinical_tier": "approved_AML",
+    "family_group": "apoptosis",
+    "rank": 1
+   },
+   {
+    "inhibitor": "GSK-1838705A",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": 0.5204,
+    "frac_positive": 0.932,
+    "wilcoxon_p": 1.323478675865664e-49,
+    "clinical_tier": "research",
+    "family_group": "RTK",
+    "rank": 2
+   },
+   {
+    "inhibitor": "AZD1152-HQPA (AZD2811)",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": 0.4509,
+    "frac_positive": 0.887,
+    "wilcoxon_p": 3.2381994223246677e-44,
+    "clinical_tier": "trial",
+    "family_group": "cell_cycle",
+    "rank": 3
+   },
+   {
+    "inhibitor": "PHA-665752",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": 0.4476,
+    "frac_positive": 0.935,
+    "wilcoxon_p": 4.429135808038845e-49,
+    "clinical_tier": "research",
+    "family_group": "RTK",
+    "rank": 4
+   },
+   {
+    "inhibitor": "Artemisinin",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": 0.4016,
+    "frac_positive": 0.896,
+    "wilcoxon_p": 3.304813200011612e-43,
+    "clinical_tier": "research",
+    "family_group": "other",
+    "rank": 5
+   },
+   {
+    "inhibitor": "SR9011",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": 0.3779,
+    "frac_positive": 0.883,
+    "wilcoxon_p": 5.214517271125052e-41,
+    "clinical_tier": "research",
+    "family_group": "metabolic",
+    "rank": 6
+   },
+   {
+    "inhibitor": "Pelitinib (EKB-569)",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": 0.3711,
+    "frac_positive": 0.906,
+    "wilcoxon_p": 1.5015481756709087e-44,
+    "clinical_tier": "trial",
+    "family_group": "RTK",
+    "rank": 7
+   },
+   {
+    "inhibitor": "Azacytidine",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": 0.3342,
+    "frac_positive": 0.877,
+    "wilcoxon_p": 2.722053192053088e-43,
+    "clinical_tier": "approved_AML",
+    "family_group": "epigenetic",
+    "rank": 8
+   },
+   {
+    "inhibitor": "Lenalidomide",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": 0.3324,
+    "frac_positive": 0.958,
+    "wilcoxon_p": 3.3737455786768237e-50,
+    "clinical_tier": "approved_other",
+    "family_group": "epigenetic",
+    "rank": 9
+   },
+   {
+    "inhibitor": "NF-kB Activation Inhibitor",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": 0.3283,
+    "frac_positive": 0.929,
+    "wilcoxon_p": 5.012622827793859e-47,
+    "clinical_tier": "research",
+    "family_group": "NF-kB",
+    "rank": 10
+   }
+  ],
+  "bottom10": [
+   {
+    "inhibitor": "Tofacitinib (CP-690550)",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": -0.5338,
+    "frac_positive": 0.039,
+    "wilcoxon_p": 3.112487984955244e-51,
+    "clinical_tier": "approved_other",
+    "family_group": "JAK_STAT",
+    "rank": 109
+   },
+   {
+    "inhibitor": "17-AAG (Tanespimycin)",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": -0.5765,
+    "frac_positive": 0.071,
+    "wilcoxon_p": 5.801158913088916e-50,
+    "clinical_tier": "trial",
+    "family_group": "proteostasis",
+    "rank": 110
+   },
+   {
+    "inhibitor": "Trametinib (GSK1120212)",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": -0.6114,
+    "frac_positive": 0.074,
+    "wilcoxon_p": 2.2219695355095486e-48,
+    "clinical_tier": "approved_other",
+    "family_group": "MAPK",
+    "rank": 111
+   },
+   {
+    "inhibitor": "Cediranib (AZD2171)",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": -0.6133,
+    "frac_positive": 0.029,
+    "wilcoxon_p": 5.52539760075951e-52,
+    "clinical_tier": "trial",
+    "family_group": "RTK",
+    "rank": 112
+   },
+   {
+    "inhibitor": "MK-2206",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": -0.6319,
+    "frac_positive": 0.065,
+    "wilcoxon_p": 1.4275409578986268e-49,
+    "clinical_tier": "trial",
+    "family_group": "PI3K_AKT_mTOR",
+    "rank": 113
+   },
+   {
+    "inhibitor": "Selumetinib (AZD6244)",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": -0.6579,
+    "frac_positive": 0.029,
+    "wilcoxon_p": 9.502459765519185e-52,
+    "clinical_tier": "approved_other",
+    "family_group": "MAPK",
+    "rank": 114
+   },
+   {
+    "inhibitor": "Doramapimod (BIRB 796)",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": -0.6764,
+    "frac_positive": 0.026,
+    "wilcoxon_p": 1.4963771516900137e-51,
+    "clinical_tier": "research",
+    "family_group": "stress_MAPK",
+    "rank": 115
+   },
+   {
+    "inhibitor": "Panobinostat",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": -0.6868,
+    "frac_positive": 0.013,
+    "wilcoxon_p": 2.8279576539249326e-52,
+    "clinical_tier": "approved_other",
+    "family_group": "epigenetic",
+    "rank": 116
+   },
+   {
+    "inhibitor": "Rapamycin",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": -0.7461,
+    "frac_positive": 0.026,
+    "wilcoxon_p": 7.388865905231222e-52,
+    "clinical_tier": "approved_other",
+    "family_group": "PI3K_AKT_mTOR",
+    "rank": 117
+   },
+   {
+    "inhibitor": "PHT-427",
+    "n_samples": 309,
+    "mean_primitive_minus_monocytic": -1.0339,
+    "frac_positive": 0.081,
+    "wilcoxon_p": 2.8830240751350374e-47,
+    "clinical_tier": "research",
+    "family_group": "PI3K_AKT_mTOR",
+    "rank": 118
+   }
+  ]
+ },
+ "internal_consistency": {
+  "n_pairs": 45666,
+  "spearman_bulk_vs_weighted": 0.9697,
+  "mean_abs_difference": 0.0551
+ },
+ "out_of_distribution": {
+  "metric": "RMS z-distance in BeatAML PCA space (per-PC standardised)",
+  "beataml_median": 0.897,
+  "beataml_p95": 1.488,
+  "singlecell_median": 6.823,
+  "singlecell_frac_beyond_beataml_p95": 1.0
+ }
+}

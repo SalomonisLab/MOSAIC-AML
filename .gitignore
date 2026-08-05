@@ -1,10 +1,28 @@
-# Large expression matrices — shared as data, not committed (per project decision)
+# ---------------------------------------------------------------- data ----
+# The atlas and the external cohorts are shared as data, not committed: they are large, and
+# `data/external/beataml/norm_exp.txt` alone is 281 MB — well past what GitHub will accept.
+# Fetch BeatAML2 from https://github.com/biodev/beataml2.0_data ; the atlas from the lab archive.
 *.h5ad
+data/
 
-# Regenerable cache blocks (and GitHub rejects files >100 MB, e.g. _sl_Cell-comm.pkl = 212 MB)
+# Uploaded / synthesised test samples (regenerate: pipeline/make_upload_test_sample.py)
+inbox/
+
+# --------------------------------------------------------------- models ----
+# Committed: bulk_mutation_predictor.pkl (4 MB), drug_response_model.pkl (14 MB), control_gate.pkl.
+# Excluded: the multimodal single-cell predictors, which are 124–152 MB — over GitHub's hard limit.
+# Rebuild with pipeline/train_predictor.py.
+pipeline/mutation_predictor*.pkl
+
+# Regenerable cache blocks (_sl_Cell-comm.pkl alone is 212 MB)
 runs/single_modality/_sl_*.pkl
 
-# Python / OS
+# --------------------------------------------------- generated artefacts ----
+# The static export is fully regenerable: python pipeline/build_static_site.py
+deliverables/mosaic_static/
+deliverables/*.zip
+
+# ------------------------------------------------------------ python/OS ----
 __pycache__/
 *.pyc
 *.pyo

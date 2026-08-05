@@ -1,0 +1,1265 @@
+{
+ "generated": "2026-07-23 22:02",
+ "metric": "mean per-mutation ACCURACY at the F1-max operating point",
+ "imputed_modalities": [
+  "ADT",
+  "GRN",
+  "Lipid",
+  "Metabolite"
+ ],
+ "n_mutations": 47,
+ "arm_means": {
+  "rna_only": {
+   "accuracy": 0.921,
+   "auroc": 0.8022,
+   "f1": 0.447
+  },
+  "rna_imputed": {
+   "accuracy": 0.9387,
+   "auroc": 0.8604,
+   "f1": 0.5081
+  },
+  "rna_random": {
+   "accuracy": 0.9368,
+   "auroc": 0.8649,
+   "f1": 0.5185
+  }
+ },
+ "imputed_vs_only": {
+  "delta": 0.0177,
+  "p": 0.004493048249873133
+ },
+ "random_vs_only": {
+  "delta": 0.0158,
+  "p": 0.0025531009639445505
+ },
+ "imputed_vs_random_REAL_BIOLOGY": {
+  "delta": 0.0019,
+  "p": 0.5685091983129287
+ },
+ "caveat": "accuracy is prevalence-dominated on rare mutations (mean prevalence ~5.6%), so all arms sit near the 'call-all-absent' baseline and differences are compressed; deltas still order the arms.",
+ "per_mutation": {
+  "ASXL1": {
+   "rna_only": {
+    "accuracy": 0.8976,
+    "auroc": 0.8579,
+    "f1": 0.5532,
+    "n_pos": 63,
+    "n": 615,
+    "prevalence": 0.1024
+   },
+   "rna_imputed": {
+    "accuracy": 0.9008,
+    "auroc": 0.8918,
+    "f1": 0.5906,
+    "n_pos": 63,
+    "n": 615,
+    "prevalence": 0.1024
+   },
+   "rna_random": {
+    "accuracy": 0.9138,
+    "auroc": 0.8877,
+    "f1": 0.6131,
+    "n_pos": 63,
+    "n": 615,
+    "prevalence": 0.1024
+   }
+  },
+  "BCOR": {
+   "rna_only": {
+    "accuracy": 0.9268,
+    "auroc": 0.9036,
+    "f1": 0.5361,
+    "n_pos": 34,
+    "n": 615,
+    "prevalence": 0.0553
+   },
+   "rna_imputed": {
+    "accuracy": 0.9577,
+    "auroc": 0.929,
+    "f1": 0.6389,
+    "n_pos": 34,
+    "n": 615,
+    "prevalence": 0.0553
+   },
+   "rna_random": {
+    "accuracy": 0.9626,
+    "auroc": 0.9321,
+    "f1": 0.623,
+    "n_pos": 34,
+    "n": 615,
+    "prevalence": 0.0553
+   }
+  },
+  "BCORL1": {
+   "rna_only": {
+    "accuracy": 0.9821,
+    "auroc": 0.9135,
+    "f1": 0.6207,
+    "n_pos": 13,
+    "n": 615,
+    "prevalence": 0.0211
+   },
+   "rna_imputed": {
+    "accuracy": 0.9545,
+    "auroc": 0.9387,
+    "f1": 0.4167,
+    "n_pos": 13,
+    "n": 615,
+    "prevalence": 0.0211
+   },
+   "rna_random": {
+    "accuracy": 0.9805,
+    "auroc": 0.9582,
+    "f1": 0.5714,
+    "n_pos": 13,
+    "n": 615,
+    "prevalence": 0.0211
+   }
+  },
+  "CBL": {
+   "rna_only": {
+    "accuracy": 0.974,
+    "auroc": 0.5759,
+    "f1": 0.2727,
+    "n_pos": 13,
+    "n": 615,
+    "prevalence": 0.0211
+   },
+   "rna_imputed": {
+    "accuracy": 0.9577,
+    "auroc": 0.6338,
+    "f1": 0.1875,
+    "n_pos": 13,
+    "n": 615,
+    "prevalence": 0.0211
+   },
+   "rna_random": {
+    "accuracy": 0.9854,
+    "auroc": 0.7272,
+    "f1": 0.5263,
+    "n_pos": 13,
+    "n": 615,
+    "prevalence": 0.0211
+   }
+  },
+  "CEBPA_Nterminal_frameshift/nonsense": {
+   "rna_only": {
+    "accuracy": 0.9545,
+    "auroc": 0.9725,
+    "f1": 0.65,
+    "n_pos": 32,
+    "n": 615,
+    "prevalence": 0.052
+   },
+   "rna_imputed": {
+    "accuracy": 0.9691,
+    "auroc": 0.9793,
+    "f1": 0.7246,
+    "n_pos": 32,
+    "n": 615,
+    "prevalence": 0.052
+   },
+   "rna_random": {
+    "accuracy": 0.9772,
+    "auroc": 0.9832,
+    "f1": 0.8,
+    "n_pos": 32,
+    "n": 615,
+    "prevalence": 0.052
+   }
+  },
+  "CEBPA_bZIP": {
+   "rna_only": {
+    "accuracy": 0.974,
+    "auroc": 0.8197,
+    "f1": 0.5294,
+    "n_pos": 14,
+    "n": 615,
+    "prevalence": 0.0228
+   },
+   "rna_imputed": {
+    "accuracy": 0.9756,
+    "auroc": 0.9301,
+    "f1": 0.4444,
+    "n_pos": 14,
+    "n": 615,
+    "prevalence": 0.0228
+   },
+   "rna_random": {
+    "accuracy": 0.9675,
+    "auroc": 0.9515,
+    "f1": 0.4737,
+    "n_pos": 14,
+    "n": 615,
+    "prevalence": 0.0228
+   }
+  },
+  "CEBPA_biallelic_or_double": {
+   "rna_only": {
+    "accuracy": 0.9642,
+    "auroc": 0.8722,
+    "f1": 0.4762,
+    "n_pos": 16,
+    "n": 615,
+    "prevalence": 0.026
+   },
+   "rna_imputed": {
+    "accuracy": 0.9577,
+    "auroc": 0.9278,
+    "f1": 0.5,
+    "n_pos": 16,
+    "n": 615,
+    "prevalence": 0.026
+   },
+   "rna_random": {
+    "accuracy": 0.974,
+    "auroc": 0.9302,
+    "f1": 0.6,
+    "n_pos": 16,
+    "n": 615,
+    "prevalence": 0.026
+   }
+  },
+  "CREBBP": {
+   "rna_only": {
+    "accuracy": 0.987,
+    "auroc": 0.804,
+    "f1": 0.5556,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_imputed": {
+    "accuracy": 0.9919,
+    "auroc": 0.7972,
+    "f1": 0.6667,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_random": {
+    "accuracy": 0.9902,
+    "auroc": 0.8957,
+    "f1": 0.625,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   }
+  },
+  "CSF3R": {
+   "rna_only": {
+    "accuracy": 0.9789,
+    "auroc": 0.5103,
+    "f1": 0.2353,
+    "n_pos": 9,
+    "n": 615,
+    "prevalence": 0.0146
+   },
+   "rna_imputed": {
+    "accuracy": 0.987,
+    "auroc": 0.6962,
+    "f1": 0.5,
+    "n_pos": 9,
+    "n": 615,
+    "prevalence": 0.0146
+   },
+   "rna_random": {
+    "accuracy": 0.987,
+    "auroc": 0.771,
+    "f1": 0.4286,
+    "n_pos": 9,
+    "n": 615,
+    "prevalence": 0.0146
+   }
+  },
+  "DNMT3A_R882": {
+   "rna_only": {
+    "accuracy": 0.8797,
+    "auroc": 0.8605,
+    "f1": 0.5488,
+    "n_pos": 76,
+    "n": 615,
+    "prevalence": 0.1236
+   },
+   "rna_imputed": {
+    "accuracy": 0.9041,
+    "auroc": 0.8933,
+    "f1": 0.6093,
+    "n_pos": 76,
+    "n": 615,
+    "prevalence": 0.1236
+   },
+   "rna_random": {
+    "accuracy": 0.9073,
+    "auroc": 0.8826,
+    "f1": 0.6122,
+    "n_pos": 76,
+    "n": 615,
+    "prevalence": 0.1236
+   }
+  },
+  "DNMT3A_nonR882": {
+   "rna_only": {
+    "accuracy": 0.6618,
+    "auroc": 0.5732,
+    "f1": 0.2296,
+    "n_pos": 64,
+    "n": 615,
+    "prevalence": 0.1041
+   },
+   "rna_imputed": {
+    "accuracy": 0.665,
+    "auroc": 0.6341,
+    "f1": 0.2643,
+    "n_pos": 64,
+    "n": 615,
+    "prevalence": 0.1041
+   },
+   "rna_random": {
+    "accuracy": 0.5935,
+    "auroc": 0.6478,
+    "f1": 0.256,
+    "n_pos": 64,
+    "n": 615,
+    "prevalence": 0.1041
+   }
+  },
+  "EZH2": {
+   "rna_only": {
+    "accuracy": 0.9707,
+    "auroc": 0.6486,
+    "f1": 0.3571,
+    "n_pos": 19,
+    "n": 615,
+    "prevalence": 0.0309
+   },
+   "rna_imputed": {
+    "accuracy": 0.961,
+    "auroc": 0.6638,
+    "f1": 0.25,
+    "n_pos": 19,
+    "n": 615,
+    "prevalence": 0.0309
+   },
+   "rna_random": {
+    "accuracy": 0.9382,
+    "auroc": 0.7901,
+    "f1": 0.3448,
+    "n_pos": 19,
+    "n": 615,
+    "prevalence": 0.0309
+   }
+  },
+  "FLT3_ITD": {
+   "rna_only": {
+    "accuracy": 0.861,
+    "auroc": 0.8622,
+    "f1": 0.6971,
+    "n_pos": 158,
+    "n": 669,
+    "prevalence": 0.2362
+   },
+   "rna_imputed": {
+    "accuracy": 0.8834,
+    "auroc": 0.8831,
+    "f1": 0.74,
+    "n_pos": 158,
+    "n": 669,
+    "prevalence": 0.2362
+   },
+   "rna_random": {
+    "accuracy": 0.8909,
+    "auroc": 0.8813,
+    "f1": 0.7365,
+    "n_pos": 158,
+    "n": 669,
+    "prevalence": 0.2362
+   }
+  },
+  "FLT3_TKD_D835/I836": {
+   "rna_only": {
+    "accuracy": 0.9106,
+    "auroc": 0.664,
+    "f1": 0.3038,
+    "n_pos": 42,
+    "n": 615,
+    "prevalence": 0.0683
+   },
+   "rna_imputed": {
+    "accuracy": 0.8813,
+    "auroc": 0.7654,
+    "f1": 0.3303,
+    "n_pos": 42,
+    "n": 615,
+    "prevalence": 0.0683
+   },
+   "rna_random": {
+    "accuracy": 0.9106,
+    "auroc": 0.7173,
+    "f1": 0.321,
+    "n_pos": 42,
+    "n": 615,
+    "prevalence": 0.0683
+   }
+  },
+  "FLT3_other_TKD_or_JM": {
+   "rna_only": {
+    "accuracy": 0.8407,
+    "auroc": 0.5423,
+    "f1": 0.1404,
+    "n_pos": 27,
+    "n": 615,
+    "prevalence": 0.0439
+   },
+   "rna_imputed": {
+    "accuracy": 0.8163,
+    "auroc": 0.6991,
+    "f1": 0.1871,
+    "n_pos": 27,
+    "n": 615,
+    "prevalence": 0.0439
+   },
+   "rna_random": {
+    "accuracy": 0.8293,
+    "auroc": 0.6992,
+    "f1": 0.2105,
+    "n_pos": 27,
+    "n": 615,
+    "prevalence": 0.0439
+   }
+  },
+  "GATA2": {
+   "rna_only": {
+    "accuracy": 0.9431,
+    "auroc": 0.8829,
+    "f1": 0.4444,
+    "n_pos": 29,
+    "n": 615,
+    "prevalence": 0.0472
+   },
+   "rna_imputed": {
+    "accuracy": 0.9496,
+    "auroc": 0.9029,
+    "f1": 0.5079,
+    "n_pos": 29,
+    "n": 615,
+    "prevalence": 0.0472
+   },
+   "rna_random": {
+    "accuracy": 0.9528,
+    "auroc": 0.9072,
+    "f1": 0.4528,
+    "n_pos": 29,
+    "n": 615,
+    "prevalence": 0.0472
+   }
+  },
+  "IDH1_R132": {
+   "rna_only": {
+    "accuracy": 0.8911,
+    "auroc": 0.8584,
+    "f1": 0.4724,
+    "n_pos": 49,
+    "n": 615,
+    "prevalence": 0.0797
+   },
+   "rna_imputed": {
+    "accuracy": 0.9154,
+    "auroc": 0.9102,
+    "f1": 0.5873,
+    "n_pos": 49,
+    "n": 615,
+    "prevalence": 0.0797
+   },
+   "rna_random": {
+    "accuracy": 0.9024,
+    "auroc": 0.9024,
+    "f1": 0.5455,
+    "n_pos": 49,
+    "n": 615,
+    "prevalence": 0.0797
+   }
+  },
+  "IDH2_R140": {
+   "rna_only": {
+    "accuracy": 0.852,
+    "auroc": 0.8529,
+    "f1": 0.4859,
+    "n_pos": 62,
+    "n": 615,
+    "prevalence": 0.1008
+   },
+   "rna_imputed": {
+    "accuracy": 0.878,
+    "auroc": 0.8603,
+    "f1": 0.5033,
+    "n_pos": 62,
+    "n": 615,
+    "prevalence": 0.1008
+   },
+   "rna_random": {
+    "accuracy": 0.8862,
+    "auroc": 0.8613,
+    "f1": 0.5333,
+    "n_pos": 62,
+    "n": 615,
+    "prevalence": 0.1008
+   }
+  },
+  "IDH2_R172": {
+   "rna_only": {
+    "accuracy": 0.9707,
+    "auroc": 0.9565,
+    "f1": 0.4,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_imputed": {
+    "accuracy": 0.9902,
+    "auroc": 0.981,
+    "f1": 0.625,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_random": {
+    "accuracy": 0.9854,
+    "auroc": 0.983,
+    "f1": 0.5263,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   }
+  },
+  "IKZF1": {
+   "rna_only": {
+    "accuracy": 0.9707,
+    "auroc": 0.69,
+    "f1": 0.1818,
+    "n_pos": 9,
+    "n": 615,
+    "prevalence": 0.0146
+   },
+   "rna_imputed": {
+    "accuracy": 0.9854,
+    "auroc": 0.8783,
+    "f1": 0.3077,
+    "n_pos": 9,
+    "n": 615,
+    "prevalence": 0.0146
+   },
+   "rna_random": {
+    "accuracy": 0.9886,
+    "auroc": 0.8839,
+    "f1": 0.3636,
+    "n_pos": 9,
+    "n": 615,
+    "prevalence": 0.0146
+   }
+  },
+  "JAK2_V617F": {
+   "rna_only": {
+    "accuracy": 0.9642,
+    "auroc": 0.8026,
+    "f1": 0.3529,
+    "n_pos": 18,
+    "n": 615,
+    "prevalence": 0.0293
+   },
+   "rna_imputed": {
+    "accuracy": 0.9724,
+    "auroc": 0.8466,
+    "f1": 0.4138,
+    "n_pos": 18,
+    "n": 615,
+    "prevalence": 0.0293
+   },
+   "rna_random": {
+    "accuracy": 0.9691,
+    "auroc": 0.8404,
+    "f1": 0.4242,
+    "n_pos": 18,
+    "n": 615,
+    "prevalence": 0.0293
+   }
+  },
+  "KIT_D816": {
+   "rna_only": {
+    "accuracy": 0.9821,
+    "auroc": 0.8973,
+    "f1": 0.4211,
+    "n_pos": 13,
+    "n": 615,
+    "prevalence": 0.0211
+   },
+   "rna_imputed": {
+    "accuracy": 0.974,
+    "auroc": 0.8999,
+    "f1": 0.4286,
+    "n_pos": 13,
+    "n": 615,
+    "prevalence": 0.0211
+   },
+   "rna_random": {
+    "accuracy": 0.987,
+    "auroc": 0.9221,
+    "f1": 0.6364,
+    "n_pos": 13,
+    "n": 615,
+    "prevalence": 0.0211
+   }
+  },
+  "KMT2A_fusion": {
+   "rna_only": {
+    "accuracy": 0.9851,
+    "auroc": 0.9671,
+    "f1": 0.875,
+    "n_pos": 43,
+    "n": 671,
+    "prevalence": 0.0641
+   },
+   "rna_imputed": {
+    "accuracy": 0.9881,
+    "auroc": 0.9672,
+    "f1": 0.9024,
+    "n_pos": 43,
+    "n": 671,
+    "prevalence": 0.0641
+   },
+   "rna_random": {
+    "accuracy": 0.9866,
+    "auroc": 0.9726,
+    "f1": 0.8861,
+    "n_pos": 43,
+    "n": 671,
+    "prevalence": 0.0641
+   }
+  },
+  "KRAS_G12": {
+   "rna_only": {
+    "accuracy": 0.8715,
+    "auroc": 0.6051,
+    "f1": 0.1319,
+    "n_pos": 15,
+    "n": 615,
+    "prevalence": 0.0244
+   },
+   "rna_imputed": {
+    "accuracy": 0.961,
+    "auroc": 0.7913,
+    "f1": 0.25,
+    "n_pos": 15,
+    "n": 615,
+    "prevalence": 0.0244
+   },
+   "rna_random": {
+    "accuracy": 0.7366,
+    "auroc": 0.7243,
+    "f1": 0.1099,
+    "n_pos": 15,
+    "n": 615,
+    "prevalence": 0.0244
+   }
+  },
+  "KRAS_G13": {
+   "rna_only": {
+    "accuracy": 0.9805,
+    "auroc": 0.9425,
+    "f1": 0.4,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_imputed": {
+    "accuracy": 0.9886,
+    "auroc": 0.9691,
+    "f1": 0.4615,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_random": {
+    "accuracy": 0.974,
+    "auroc": 0.9719,
+    "f1": 0.4667,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   }
+  },
+  "NF1": {
+   "rna_only": {
+    "accuracy": 0.9447,
+    "auroc": 0.7043,
+    "f1": 0.15,
+    "n_pos": 16,
+    "n": 615,
+    "prevalence": 0.026
+   },
+   "rna_imputed": {
+    "accuracy": 0.9301,
+    "auroc": 0.7777,
+    "f1": 0.2456,
+    "n_pos": 16,
+    "n": 615,
+    "prevalence": 0.026
+   },
+   "rna_random": {
+    "accuracy": 0.9138,
+    "auroc": 0.7615,
+    "f1": 0.1846,
+    "n_pos": 16,
+    "n": 615,
+    "prevalence": 0.026
+   }
+  },
+  "NPM1_exon12_frameshift": {
+   "rna_only": {
+    "accuracy": 0.9382,
+    "auroc": 0.9701,
+    "f1": 0.8774,
+    "n_pos": 140,
+    "n": 615,
+    "prevalence": 0.2276
+   },
+   "rna_imputed": {
+    "accuracy": 0.9577,
+    "auroc": 0.9789,
+    "f1": 0.9128,
+    "n_pos": 140,
+    "n": 615,
+    "prevalence": 0.2276
+   },
+   "rna_random": {
+    "accuracy": 0.9528,
+    "auroc": 0.9803,
+    "f1": 0.9043,
+    "n_pos": 140,
+    "n": 615,
+    "prevalence": 0.2276
+   }
+  },
+  "NRAS_G12": {
+   "rna_only": {
+    "accuracy": 0.9041,
+    "auroc": 0.6697,
+    "f1": 0.2133,
+    "n_pos": 34,
+    "n": 615,
+    "prevalence": 0.0553
+   },
+   "rna_imputed": {
+    "accuracy": 0.8146,
+    "auroc": 0.755,
+    "f1": 0.25,
+    "n_pos": 34,
+    "n": 615,
+    "prevalence": 0.0553
+   },
+   "rna_random": {
+    "accuracy": 0.9366,
+    "auroc": 0.6916,
+    "f1": 0.2041,
+    "n_pos": 34,
+    "n": 615,
+    "prevalence": 0.0553
+   }
+  },
+  "NRAS_G13": {
+   "rna_only": {
+    "accuracy": 0.9106,
+    "auroc": 0.6722,
+    "f1": 0.2254,
+    "n_pos": 22,
+    "n": 615,
+    "prevalence": 0.0358
+   },
+   "rna_imputed": {
+    "accuracy": 0.9089,
+    "auroc": 0.7367,
+    "f1": 0.2,
+    "n_pos": 22,
+    "n": 615,
+    "prevalence": 0.0358
+   },
+   "rna_random": {
+    "accuracy": 0.9463,
+    "auroc": 0.6879,
+    "f1": 0.1538,
+    "n_pos": 22,
+    "n": 615,
+    "prevalence": 0.0358
+   }
+  },
+  "NRAS_Q61": {
+   "rna_only": {
+    "accuracy": 0.9008,
+    "auroc": 0.7791,
+    "f1": 0.2989,
+    "n_pos": 39,
+    "n": 615,
+    "prevalence": 0.0634
+   },
+   "rna_imputed": {
+    "accuracy": 0.9187,
+    "auroc": 0.8451,
+    "f1": 0.375,
+    "n_pos": 39,
+    "n": 615,
+    "prevalence": 0.0634
+   },
+   "rna_random": {
+    "accuracy": 0.9252,
+    "auroc": 0.8271,
+    "f1": 0.3947,
+    "n_pos": 39,
+    "n": 615,
+    "prevalence": 0.0634
+   }
+  },
+  "PHF6": {
+   "rna_only": {
+    "accuracy": 0.8797,
+    "auroc": 0.7585,
+    "f1": 0.2292,
+    "n_pos": 21,
+    "n": 615,
+    "prevalence": 0.0341
+   },
+   "rna_imputed": {
+    "accuracy": 0.9528,
+    "auroc": 0.8143,
+    "f1": 0.2927,
+    "n_pos": 21,
+    "n": 615,
+    "prevalence": 0.0341
+   },
+   "rna_random": {
+    "accuracy": 0.9593,
+    "auroc": 0.8904,
+    "f1": 0.4681,
+    "n_pos": 21,
+    "n": 615,
+    "prevalence": 0.0341
+   }
+  },
+  "PTPN11_other": {
+   "rna_only": {
+    "accuracy": 0.7057,
+    "auroc": 0.614,
+    "f1": 0.1084,
+    "n_pos": 20,
+    "n": 615,
+    "prevalence": 0.0325
+   },
+   "rna_imputed": {
+    "accuracy": 0.8537,
+    "auroc": 0.6862,
+    "f1": 0.1346,
+    "n_pos": 20,
+    "n": 615,
+    "prevalence": 0.0325
+   },
+   "rna_random": {
+    "accuracy": 0.9593,
+    "auroc": 0.7415,
+    "f1": 0.1935,
+    "n_pos": 20,
+    "n": 615,
+    "prevalence": 0.0325
+   }
+  },
+  "RAD21": {
+   "rna_only": {
+    "accuracy": 0.9382,
+    "auroc": 0.6904,
+    "f1": 0.1364,
+    "n_pos": 15,
+    "n": 615,
+    "prevalence": 0.0244
+   },
+   "rna_imputed": {
+    "accuracy": 0.9512,
+    "auroc": 0.735,
+    "f1": 0.1176,
+    "n_pos": 15,
+    "n": 615,
+    "prevalence": 0.0244
+   },
+   "rna_random": {
+    "accuracy": 0.8211,
+    "auroc": 0.7462,
+    "f1": 0.127,
+    "n_pos": 15,
+    "n": 615,
+    "prevalence": 0.0244
+   }
+  },
+  "RUNX1_LOF": {
+   "rna_only": {
+    "accuracy": 0.8732,
+    "auroc": 0.8791,
+    "f1": 0.5979,
+    "n_pos": 75,
+    "n": 615,
+    "prevalence": 0.122
+   },
+   "rna_imputed": {
+    "accuracy": 0.9415,
+    "auroc": 0.9422,
+    "f1": 0.7353,
+    "n_pos": 75,
+    "n": 615,
+    "prevalence": 0.122
+   },
+   "rna_random": {
+    "accuracy": 0.9285,
+    "auroc": 0.9371,
+    "f1": 0.7105,
+    "n_pos": 75,
+    "n": 615,
+    "prevalence": 0.122
+   }
+  },
+  "SF3B1_K666": {
+   "rna_only": {
+    "accuracy": 0.9902,
+    "auroc": 0.9955,
+    "f1": 0.8,
+    "n_pos": 18,
+    "n": 615,
+    "prevalence": 0.0293
+   },
+   "rna_imputed": {
+    "accuracy": 0.9902,
+    "auroc": 0.9966,
+    "f1": 0.85,
+    "n_pos": 18,
+    "n": 615,
+    "prevalence": 0.0293
+   },
+   "rna_random": {
+    "accuracy": 0.9902,
+    "auroc": 0.9971,
+    "f1": 0.8421,
+    "n_pos": 18,
+    "n": 615,
+    "prevalence": 0.0293
+   }
+  },
+  "SF3B1_K700": {
+   "rna_only": {
+    "accuracy": 0.987,
+    "auroc": 0.9899,
+    "f1": 0.6364,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_imputed": {
+    "accuracy": 0.9919,
+    "auroc": 0.9957,
+    "f1": 0.7619,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_random": {
+    "accuracy": 0.9902,
+    "auroc": 0.9969,
+    "f1": 0.75,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   }
+  },
+  "SMC1A": {
+   "rna_only": {
+    "accuracy": 0.8358,
+    "auroc": 0.6026,
+    "f1": 0.0561,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_imputed": {
+    "accuracy": 0.9707,
+    "auroc": 0.8,
+    "f1": 0.25,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_random": {
+    "accuracy": 0.9382,
+    "auroc": 0.7071,
+    "f1": 0.1739,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   }
+  },
+  "SMC3": {
+   "rna_only": {
+    "accuracy": 0.7398,
+    "auroc": 0.5625,
+    "f1": 0.0476,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_imputed": {
+    "accuracy": 0.961,
+    "auroc": 0.8197,
+    "f1": 0.2941,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_random": {
+    "accuracy": 0.9203,
+    "auroc": 0.7769,
+    "f1": 0.1967,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   }
+  },
+  "SRSF2": {
+   "rna_only": {
+    "accuracy": 0.9902,
+    "auroc": 0.9953,
+    "f1": 0.9595,
+    "n_pos": 72,
+    "n": 615,
+    "prevalence": 0.1171
+   },
+   "rna_imputed": {
+    "accuracy": 0.9951,
+    "auroc": 0.9967,
+    "f1": 0.9796,
+    "n_pos": 72,
+    "n": 615,
+    "prevalence": 0.1171
+   },
+   "rna_random": {
+    "accuracy": 0.9902,
+    "auroc": 0.9967,
+    "f1": 0.9589,
+    "n_pos": 72,
+    "n": 615,
+    "prevalence": 0.1171
+   }
+  },
+  "STAG2": {
+   "rna_only": {
+    "accuracy": 0.9675,
+    "auroc": 0.8919,
+    "f1": 0.7727,
+    "n_pos": 43,
+    "n": 615,
+    "prevalence": 0.0699
+   },
+   "rna_imputed": {
+    "accuracy": 0.9659,
+    "auroc": 0.9123,
+    "f1": 0.7586,
+    "n_pos": 43,
+    "n": 615,
+    "prevalence": 0.0699
+   },
+   "rna_random": {
+    "accuracy": 0.9691,
+    "auroc": 0.9264,
+    "f1": 0.7595,
+    "n_pos": 43,
+    "n": 615,
+    "prevalence": 0.0699
+   }
+  },
+  "TET2": {
+   "rna_only": {
+    "accuracy": 0.8569,
+    "auroc": 0.7716,
+    "f1": 0.5,
+    "n_pos": 82,
+    "n": 615,
+    "prevalence": 0.1333
+   },
+   "rna_imputed": {
+    "accuracy": 0.8472,
+    "auroc": 0.7903,
+    "f1": 0.4946,
+    "n_pos": 82,
+    "n": 615,
+    "prevalence": 0.1333
+   },
+   "rna_random": {
+    "accuracy": 0.8927,
+    "auroc": 0.8065,
+    "f1": 0.5658,
+    "n_pos": 82,
+    "n": 615,
+    "prevalence": 0.1333
+   }
+  },
+  "TP53_LOF/splice/frameshift": {
+   "rna_only": {
+    "accuracy": 0.9431,
+    "auroc": 0.8807,
+    "f1": 0.386,
+    "n_pos": 22,
+    "n": 615,
+    "prevalence": 0.0358
+   },
+   "rna_imputed": {
+    "accuracy": 0.9626,
+    "auroc": 0.9348,
+    "f1": 0.5306,
+    "n_pos": 22,
+    "n": 615,
+    "prevalence": 0.0358
+   },
+   "rna_random": {
+    "accuracy": 0.9707,
+    "auroc": 0.9018,
+    "f1": 0.5,
+    "n_pos": 22,
+    "n": 615,
+    "prevalence": 0.0358
+   }
+  },
+  "TP53_hotspot_DBD": {
+   "rna_only": {
+    "accuracy": 0.935,
+    "auroc": 0.8512,
+    "f1": 0.5455,
+    "n_pos": 43,
+    "n": 615,
+    "prevalence": 0.0699
+   },
+   "rna_imputed": {
+    "accuracy": 0.9415,
+    "auroc": 0.8981,
+    "f1": 0.6,
+    "n_pos": 43,
+    "n": 615,
+    "prevalence": 0.0699
+   },
+   "rna_random": {
+    "accuracy": 0.9285,
+    "auroc": 0.9018,
+    "f1": 0.5769,
+    "n_pos": 43,
+    "n": 615,
+    "prevalence": 0.0699
+   }
+  },
+  "U2AF1_Q157/R156": {
+   "rna_only": {
+    "accuracy": 0.9854,
+    "auroc": 0.7955,
+    "f1": 0.4,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_imputed": {
+    "accuracy": 0.9935,
+    "auroc": 0.898,
+    "f1": 0.75,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_random": {
+    "accuracy": 0.9919,
+    "auroc": 0.9312,
+    "f1": 0.6667,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   }
+  },
+  "U2AF1_S34": {
+   "rna_only": {
+    "accuracy": 0.9951,
+    "auroc": 0.9992,
+    "f1": 0.9333,
+    "n_pos": 23,
+    "n": 615,
+    "prevalence": 0.0374
+   },
+   "rna_imputed": {
+    "accuracy": 1.0,
+    "auroc": 1.0,
+    "f1": 1.0,
+    "n_pos": 23,
+    "n": 615,
+    "prevalence": 0.0374
+   },
+   "rna_random": {
+    "accuracy": 0.9967,
+    "auroc": 0.9998,
+    "f1": 0.9583,
+    "n_pos": 23,
+    "n": 615,
+    "prevalence": 0.0374
+   }
+  },
+  "WT1_LOF": {
+   "rna_only": {
+    "accuracy": 0.8959,
+    "auroc": 0.796,
+    "f1": 0.4074,
+    "n_pos": 47,
+    "n": 615,
+    "prevalence": 0.0764
+   },
+   "rna_imputed": {
+    "accuracy": 0.9122,
+    "auroc": 0.8634,
+    "f1": 0.5091,
+    "n_pos": 47,
+    "n": 615,
+    "prevalence": 0.0764
+   },
+   "rna_random": {
+    "accuracy": 0.9366,
+    "auroc": 0.8335,
+    "f1": 0.4935,
+    "n_pos": 47,
+    "n": 615,
+    "prevalence": 0.0764
+   }
+  },
+  "ZRSR2": {
+   "rna_only": {
+    "accuracy": 0.9951,
+    "auroc": 0.998,
+    "f1": 0.8571,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_imputed": {
+    "accuracy": 0.9935,
+    "auroc": 0.9927,
+    "f1": 0.8,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   },
+   "rna_random": {
+    "accuracy": 0.9967,
+    "auroc": 0.9888,
+    "f1": 0.9,
+    "n_pos": 10,
+    "n": 615,
+    "prevalence": 0.0163
+   }
+  }
+ }
+}

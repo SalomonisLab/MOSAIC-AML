@@ -1,0 +1,665 @@
+{
+ "generated": "2026-07-30 15:02",
+ "modalities": [
+  "RNA",
+  "Composition",
+  "ADT",
+  "Lipid",
+  "Metabolite",
+  "GRN",
+  "LSC",
+  "Cell-comm",
+  "BulkRNA"
+ ],
+ "note": "Standalone donor-grouped CV-OOF AUROC per (driver x modality) on the current labels (NYU-2 corrected). fusion_weights are from the deployed augmented model.",
+ "drivers": {
+  "complex": {
+   "standalone_auroc": {
+    "RNA": 0.792,
+    "Composition": 0.5908,
+    "ADT": 0.5205,
+    "Lipid": 0.8438,
+    "Metabolite": 0.8487,
+    "GRN": 0.7838,
+    "LSC": 0.588,
+    "Cell-comm": 0.6598,
+    "BulkRNA": 0.8327
+   },
+   "best_modality": "Metabolite",
+   "best_single_auroc": 0.8487,
+   "n_pos": 24,
+   "fusion_weights": {
+    "RNA": 0.039,
+    "Lipid": 0.264,
+    "Metabolite": 0.371,
+    "BulkRNA": 0.327
+   },
+   "spread": 0.3282
+  },
+  "del5": {
+   "standalone_auroc": {
+    "RNA": 0.842,
+    "Composition": 0.8106,
+    "ADT": 0.7204,
+    "Lipid": 0.847,
+    "Metabolite": 0.8977,
+    "GRN": 0.8459,
+    "LSC": 0.5289,
+    "Cell-comm": 0.7203,
+    "BulkRNA": 0.8867
+   },
+   "best_modality": "Metabolite",
+   "best_single_auroc": 0.8977,
+   "n_pos": 15,
+   "fusion_weights": {
+    "Composition": 0.157,
+    "Metabolite": 0.437,
+    "BulkRNA": 0.406
+   },
+   "spread": 0.3688
+  },
+  "del7": {
+   "standalone_auroc": {
+    "RNA": 0.8912,
+    "Composition": 0.6053,
+    "ADT": 0.7238,
+    "Lipid": 0.851,
+    "Metabolite": 0.9498,
+    "GRN": 0.9485,
+    "LSC": 0.7692,
+    "Cell-comm": 0.8355,
+    "BulkRNA": 0.7732
+   },
+   "best_modality": "Metabolite",
+   "best_single_auroc": 0.9498,
+   "n_pos": 18,
+   "fusion_weights": {
+    "RNA": 0.115,
+    "Metabolite": 0.424,
+    "GRN": 0.434,
+    "Cell-comm": 0.027
+   },
+   "spread": 0.3445
+  },
+  "inv16": {
+   "standalone_auroc": {
+    "RNA": 0.9971,
+    "Composition": 0.9574,
+    "ADT": 0.986,
+    "Lipid": 0.9951,
+    "Metabolite": 0.9961,
+    "GRN": 0.9948,
+    "LSC": 0.5234,
+    "Cell-comm": 0.9834,
+    "BulkRNA": 0.9668
+   },
+   "best_modality": "RNA",
+   "best_single_auroc": 0.9971,
+   "n_pos": 11,
+   "fusion_weights": {
+    "RNA": 0.11,
+    "Composition": 0.077,
+    "ADT": 0.148,
+    "Lipid": 0.147,
+    "Metabolite": 0.106,
+    "GRN": 0.097,
+    "Cell-comm": 0.192,
+    "BulkRNA": 0.122
+   },
+   "spread": 0.4737
+  },
+  "kmt2a": {
+   "standalone_auroc": {
+    "RNA": 0.9062,
+    "Composition": 0.7276,
+    "ADT": 0.861,
+    "Lipid": 0.8441,
+    "Metabolite": 0.91,
+    "GRN": 0.9062,
+    "LSC": 0.7658,
+    "Cell-comm": 0.8118,
+    "BulkRNA": 0.9112
+   },
+   "best_modality": "BulkRNA",
+   "best_single_auroc": 0.9112,
+   "n_pos": 12,
+   "fusion_weights": {
+    "RNA": 0.121,
+    "ADT": 0.238,
+    "Metabolite": 0.209,
+    "GRN": 0.165,
+    "BulkRNA": 0.267
+   },
+   "spread": 0.1836
+  },
+  "trisomy8": {
+   "standalone_auroc": {
+    "RNA": 0.5701,
+    "Composition": 0.511,
+    "ADT": 0.5023,
+    "Lipid": 0.765,
+    "Metabolite": 0.6772,
+    "GRN": 0.6654,
+    "LSC": 0.5405,
+    "Cell-comm": 0.5841,
+    "BulkRNA": 0.5488
+   },
+   "best_modality": "Lipid",
+   "best_single_auroc": 0.765,
+   "n_pos": 18,
+   "fusion_weights": {
+    "ADT": 0.013,
+    "Lipid": 0.949,
+    "GRN": 0.033
+   },
+   "spread": 0.2627
+  },
+  "ASXL1": {
+   "standalone_auroc": {
+    "RNA": 0.6898,
+    "Composition": 0.7007,
+    "ADT": 0.5093,
+    "Lipid": 0.7664,
+    "Metabolite": 0.6571,
+    "GRN": 0.7627,
+    "LSC": 0.6262,
+    "Cell-comm": 0.8316,
+    "BulkRNA": 0.5865
+   },
+   "best_modality": "Cell-comm",
+   "best_single_auroc": 0.8316,
+   "n_pos": 14,
+   "fusion_weights": {
+    "Lipid": 0.229,
+    "GRN": 0.369,
+    "Cell-comm": 0.402
+   },
+   "spread": 0.3223
+  },
+  "CEBPA": {
+   "standalone_auroc": {
+    "RNA": 0.6926,
+    "Composition": 0.7838,
+    "ADT": 0.6125,
+    "Lipid": 0.7578,
+    "Metabolite": 0.8387,
+    "GRN": 0.7701,
+    "LSC": 0.5641,
+    "Cell-comm": 0.8075,
+    "BulkRNA": 0.7584
+   },
+   "best_modality": "Metabolite",
+   "best_single_auroc": 0.8387,
+   "n_pos": 10,
+   "fusion_weights": {
+    "Composition": 0.049,
+    "Cell-comm": 0.182,
+    "BulkRNA": 0.768
+   },
+   "spread": 0.2746
+  },
+  "DNMT3A": {
+   "standalone_auroc": {
+    "RNA": 0.7835,
+    "Composition": 0.7359,
+    "ADT": 0.7058,
+    "Lipid": 0.7615,
+    "Metabolite": 0.7641,
+    "GRN": 0.8033,
+    "LSC": 0.5392,
+    "Cell-comm": 0.7267,
+    "BulkRNA": 0.7366
+   },
+   "best_modality": "GRN",
+   "best_single_auroc": 0.8033,
+   "n_pos": 45,
+   "fusion_weights": {
+    "RNA": 0.046,
+    "Lipid": 0.044,
+    "Metabolite": 0.465,
+    "Cell-comm": 0.094,
+    "BulkRNA": 0.35
+   },
+   "spread": 0.2641
+  },
+  "FLT3": {
+   "standalone_auroc": {
+    "RNA": 0.6823,
+    "Composition": 0.6188,
+    "ADT": 0.8201,
+    "Lipid": 0.7532,
+    "Metabolite": 0.7707,
+    "GRN": 0.7525,
+    "LSC": 0.6679,
+    "Cell-comm": 0.6406,
+    "BulkRNA": 0.6735
+   },
+   "best_modality": "ADT",
+   "best_single_auroc": 0.8201,
+   "n_pos": 31,
+   "fusion_weights": {
+    "ADT": 0.637,
+    "Lipid": 0.11,
+    "Metabolite": 0.253
+   },
+   "spread": 0.2013
+  },
+  "FLT3-ITD": {
+   "standalone_auroc": {
+    "RNA": 0.7662,
+    "Composition": 0.7235,
+    "ADT": 0.7658,
+    "Lipid": 0.7979,
+    "Metabolite": 0.7555,
+    "GRN": 0.8074,
+    "LSC": 0.6846,
+    "Cell-comm": 0.73,
+    "BulkRNA": 0.7945
+   },
+   "best_modality": "GRN",
+   "best_single_auroc": 0.8074,
+   "n_pos": 33,
+   "fusion_weights": {
+    "RNA": 0.067,
+    "ADT": 0.406,
+    "Lipid": 0.116,
+    "Metabolite": 0.246,
+    "BulkRNA": 0.165
+   },
+   "spread": 0.1228
+  },
+  "FLT3-TKD": {
+   "standalone_auroc": {
+    "RNA": 0.9222,
+    "Composition": 0.8205,
+    "ADT": 0.8203,
+    "Lipid": 0.8199,
+    "Metabolite": 0.797,
+    "GRN": 0.7981,
+    "LSC": 0.6429,
+    "Cell-comm": 0.8245,
+    "BulkRNA": 0.6972
+   },
+   "best_modality": "RNA",
+   "best_single_auroc": 0.9222,
+   "n_pos": 14,
+   "fusion_weights": {
+    "RNA": 0.656,
+    "Composition": 0.079,
+    "Cell-comm": 0.258
+   },
+   "spread": 0.2793
+  },
+  "GATA2": {
+   "standalone_auroc": {
+    "RNA": 0.7461,
+    "Composition": 0.6753,
+    "ADT": 0.9186,
+    "Lipid": 0.7716,
+    "Metabolite": 0.7426,
+    "GRN": 0.7064,
+    "LSC": 0.5439,
+    "Cell-comm": 0.5924,
+    "BulkRNA": 0.5814
+   },
+   "best_modality": "ADT",
+   "best_single_auroc": 0.9186,
+   "n_pos": 8,
+   "fusion_weights": {
+    "RNA": 0.028,
+    "ADT": 0.564,
+    "Lipid": 0.205,
+    "GRN": 0.117,
+    "BulkRNA": 0.085
+   },
+   "spread": 0.3747
+  },
+  "IDH1": {
+   "standalone_auroc": {
+    "RNA": 0.7553,
+    "Composition": 0.6493,
+    "ADT": 0.5961,
+    "Lipid": 0.7193,
+    "Metabolite": 0.6838,
+    "GRN": 0.5778,
+    "LSC": 0.5493,
+    "Cell-comm": 0.748,
+    "BulkRNA": 0.5443
+   },
+   "best_modality": "RNA",
+   "best_single_auroc": 0.7553,
+   "n_pos": 15,
+   "fusion_weights": {
+    "RNA": 0.333,
+    "Cell-comm": 0.139,
+    "BulkRNA": 0.528
+   },
+   "spread": 0.211
+  },
+  "IDH2": {
+   "standalone_auroc": {
+    "RNA": 0.7933,
+    "Composition": 0.7607,
+    "ADT": 0.7543,
+    "Lipid": 0.7782,
+    "Metabolite": 0.8129,
+    "GRN": 0.8183,
+    "LSC": 0.5221,
+    "Cell-comm": 0.6792,
+    "BulkRNA": 0.7121
+   },
+   "best_modality": "GRN",
+   "best_single_auroc": 0.8183,
+   "n_pos": 37,
+   "fusion_weights": {
+    "Metabolite": 0.485,
+    "GRN": 0.162,
+    "BulkRNA": 0.35
+   },
+   "spread": 0.2962
+  },
+  "KIT": {
+   "standalone_auroc": {
+    "RNA": 0.8725,
+    "Composition": 0.7333,
+    "ADT": 0.8477,
+    "Lipid": 0.7939,
+    "Metabolite": 0.7736,
+    "GRN": 0.7378,
+    "LSC": 0.628,
+    "Cell-comm": 0.85,
+    "BulkRNA": 0.6258
+   },
+   "best_modality": "RNA",
+   "best_single_auroc": 0.8725,
+   "n_pos": 12,
+   "fusion_weights": {
+    "RNA": 0.476,
+    "GRN": 0.112,
+    "Cell-comm": 0.411
+   },
+   "spread": 0.2467
+  },
+  "KMT2A-rearrangement": {
+   "standalone_auroc": {
+    "RNA": 0.9062,
+    "Composition": 0.7276,
+    "ADT": 0.861,
+    "Lipid": 0.8441,
+    "Metabolite": 0.91,
+    "GRN": 0.9062,
+    "LSC": 0.7658,
+    "Cell-comm": 0.8118,
+    "BulkRNA": 0.9112
+   },
+   "best_modality": "BulkRNA",
+   "best_single_auroc": 0.9112,
+   "n_pos": 12,
+   "fusion_weights": {
+    "RNA": 0.204,
+    "Metabolite": 0.202,
+    "GRN": 0.283,
+    "BulkRNA": 0.311
+   },
+   "spread": 0.1836
+  },
+  "KRAS": {
+   "standalone_auroc": {
+    "RNA": 0.6864,
+    "Composition": 0.5123,
+    "ADT": 0.6243,
+    "Lipid": 0.7163,
+    "Metabolite": 0.6448,
+    "GRN": 0.6679,
+    "LSC": 0.5239,
+    "Cell-comm": 0.5735,
+    "BulkRNA": 0.5094
+   },
+   "best_modality": "Lipid",
+   "best_single_auroc": 0.7163,
+   "n_pos": 17,
+   "fusion_weights": {
+    "ADT": 0.889,
+    "Lipid": 0.111
+   },
+   "spread": 0.2069
+  },
+  "NPM1": {
+   "standalone_auroc": {
+    "RNA": 0.8971,
+    "Composition": 0.7473,
+    "ADT": 0.8289,
+    "Lipid": 0.8608,
+    "Metabolite": 0.8762,
+    "GRN": 0.866,
+    "LSC": 0.5255,
+    "Cell-comm": 0.792,
+    "BulkRNA": 0.878
+   },
+   "best_modality": "RNA",
+   "best_single_auroc": 0.8971,
+   "n_pos": 65,
+   "fusion_weights": {
+    "RNA": 0.401,
+    "ADT": 0.065,
+    "Lipid": 0.092,
+    "Metabolite": 0.202,
+    "GRN": 0.058,
+    "BulkRNA": 0.182
+   },
+   "spread": 0.3716
+  },
+  "NRAS": {
+   "standalone_auroc": {
+    "RNA": 0.8229,
+    "Composition": 0.826,
+    "ADT": 0.7445,
+    "Lipid": 0.7871,
+    "Metabolite": 0.8354,
+    "GRN": 0.7823,
+    "LSC": 0.6299,
+    "Cell-comm": 0.7789,
+    "BulkRNA": 0.7976
+   },
+   "best_modality": "Metabolite",
+   "best_single_auroc": 0.8354,
+   "n_pos": 48,
+   "fusion_weights": {
+    "RNA": 0.021,
+    "Composition": 0.218,
+    "GRN": 0.301,
+    "BulkRNA": 0.46
+   },
+   "spread": 0.2055
+  },
+  "PTPN11": {
+   "standalone_auroc": {
+    "RNA": 0.5486,
+    "Composition": 0.702,
+    "ADT": 0.7841,
+    "Lipid": 0.7677,
+    "Metabolite": 0.7238,
+    "GRN": 0.7014,
+    "LSC": 0.7317,
+    "Cell-comm": 0.6095,
+    "BulkRNA": 0.7424
+   },
+   "best_modality": "ADT",
+   "best_single_auroc": 0.7841,
+   "n_pos": 9,
+   "fusion_weights": {
+    "ADT": 0.157,
+    "Lipid": 0.24,
+    "Metabolite": 0.247,
+    "GRN": 0.189,
+    "LSC": 0.068,
+    "BulkRNA": 0.099
+   },
+   "spread": 0.2355
+  },
+  "RUNX1": {
+   "standalone_auroc": {
+    "RNA": 0.8281,
+    "Composition": 0.7038,
+    "ADT": 0.7816,
+    "Lipid": 0.7467,
+    "Metabolite": 0.8994,
+    "GRN": 0.8129,
+    "LSC": 0.5916,
+    "Cell-comm": 0.7105,
+    "BulkRNA": 0.6006
+   },
+   "best_modality": "Metabolite",
+   "best_single_auroc": 0.8994,
+   "n_pos": 19,
+   "fusion_weights": {
+    "RNA": 0.321,
+    "Metabolite": 0.481,
+    "BulkRNA": 0.198
+   },
+   "spread": 0.3078
+  },
+  "SF3B1": {
+   "standalone_auroc": {
+    "RNA": 0.8345,
+    "Composition": 0.691,
+    "ADT": 0.8128,
+    "Lipid": 0.8457,
+    "Metabolite": 0.9207,
+    "GRN": 0.8534,
+    "LSC": 0.6187,
+    "Cell-comm": 0.9094,
+    "BulkRNA": 0.8629
+   },
+   "best_modality": "Metabolite",
+   "best_single_auroc": 0.9207,
+   "n_pos": 12,
+   "fusion_weights": {
+    "Metabolite": 0.507,
+    "Cell-comm": 0.325,
+    "BulkRNA": 0.168
+   },
+   "spread": 0.302
+  },
+  "SRSF2": {
+   "standalone_auroc": {
+    "RNA": 0.8312,
+    "Composition": 0.753,
+    "ADT": 0.8035,
+    "Lipid": 0.8461,
+    "Metabolite": 0.8037,
+    "GRN": 0.7391,
+    "LSC": 0.669,
+    "Cell-comm": 0.6556,
+    "BulkRNA": 0.7613
+   },
+   "best_modality": "Lipid",
+   "best_single_auroc": 0.8461,
+   "n_pos": 15,
+   "fusion_weights": {
+    "RNA": 0.108,
+    "ADT": 0.393,
+    "Lipid": 0.049,
+    "Metabolite": 0.21,
+    "GRN": 0.045,
+    "BulkRNA": 0.196
+   },
+   "spread": 0.1905
+  },
+  "TET2": {
+   "standalone_auroc": {
+    "RNA": 0.8921,
+    "Composition": 0.7569,
+    "ADT": 0.8694,
+    "Lipid": 0.8525,
+    "Metabolite": 0.8864,
+    "GRN": 0.9177,
+    "LSC": 0.5556,
+    "Cell-comm": 0.7016,
+    "BulkRNA": 0.6235
+   },
+   "best_modality": "GRN",
+   "best_single_auroc": 0.9177,
+   "n_pos": 20,
+   "fusion_weights": {
+    "RNA": 0.384,
+    "ADT": 0.297,
+    "Lipid": 0.107,
+    "Metabolite": 0.087,
+    "GRN": 0.126
+   },
+   "spread": 0.3621
+  },
+  "TP53": {
+   "standalone_auroc": {
+    "RNA": 0.9193,
+    "Composition": 0.5422,
+    "ADT": 0.6293,
+    "Lipid": 0.8851,
+    "Metabolite": 0.9284,
+    "GRN": 0.8877,
+    "LSC": 0.6008,
+    "Cell-comm": 0.733,
+    "BulkRNA": 0.828
+   },
+   "best_modality": "Metabolite",
+   "best_single_auroc": 0.9284,
+   "n_pos": 13,
+   "fusion_weights": {
+    "RNA": 0.469,
+    "Lipid": 0.094,
+    "Metabolite": 0.407,
+    "GRN": 0.029
+   },
+   "spread": 0.3862
+  },
+  "WT1": {
+   "standalone_auroc": {
+    "RNA": 0.6626,
+    "Composition": 0.5844,
+    "ADT": 0.5566,
+    "Lipid": 0.6083,
+    "Metabolite": 0.6449,
+    "GRN": 0.5983,
+    "LSC": 0.5,
+    "Cell-comm": 0.7528,
+    "BulkRNA": 0.7193
+   },
+   "best_modality": "Cell-comm",
+   "best_single_auroc": 0.7528,
+   "n_pos": 15,
+   "fusion_weights": {
+    "Cell-comm": 0.212,
+    "BulkRNA": 0.788
+   },
+   "spread": 0.2528
+  },
+  "inv(16)_CBFB-MYH11": {
+   "standalone_auroc": {
+    "RNA": 0.9971,
+    "Composition": 0.9574,
+    "ADT": 0.986,
+    "Lipid": 0.9951,
+    "Metabolite": 0.9961,
+    "GRN": 0.9948,
+    "LSC": 0.5234,
+    "Cell-comm": 0.9834,
+    "BulkRNA": 0.9668
+   },
+   "best_modality": "RNA",
+   "best_single_auroc": 0.9971,
+   "n_pos": 11,
+   "fusion_weights": {
+    "RNA": 0.11,
+    "Composition": 0.077,
+    "ADT": 0.148,
+    "Lipid": 0.147,
+    "Metabolite": 0.106,
+    "GRN": 0.097,
+    "Cell-comm": 0.192,
+    "BulkRNA": 0.122
+   },
+   "spread": 0.4737
+  }
+ }
+}

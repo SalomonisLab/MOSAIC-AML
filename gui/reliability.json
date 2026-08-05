@@ -1,0 +1,362 @@
+{
+"note": "chance_correct(prob) = acc_by_decile[floor(prob*10)] \u2014 EMPIRICAL held-out accuracy; NOT the raw probability. Non-monotonic by design (high-prob band is unreliable).",
+"acc_by_decile": {
+"0.0": 1.0,
+"0.1": 0.974,
+"0.2": 0.953,
+"0.3": 0.975,
+"0.4": 0.964,
+"0.5": 0.912,
+"0.6": 0.868,
+"0.7": 0.914,
+"0.8": 0.688,
+"0.9": 0.575
+},
+"mutations": {
+"NRAS": {
+"n": 26,
+"n_pos": 5,
+"sens": 0.4,
+"spec": 0.81,
+"ppv": 0.333,
+"npv": 0.85,
+"sens_weight": 0.747
+},
+"PTPN11": {
+"n": 26,
+"n_pos": 1,
+"sens": 0.0,
+"spec": 0.96,
+"ppv": 0.0,
+"npv": 0.96,
+"sens_weight": 0.0
+},
+"NPM1": {
+"n": 26,
+"n_pos": 12,
+"sens": 0.833,
+"spec": 1.0,
+"ppv": 1.0,
+"npv": 0.875,
+"sens_weight": 1.556
+},
+"CEBPA": {
+"n": 26,
+"n_pos": 0,
+"sens": null,
+"spec": 0.923,
+"ppv": 0.0,
+"npv": 1.0,
+"sens_weight": null
+},
+"IDH1": {
+"n": 26,
+"n_pos": 3,
+"sens": 0.667,
+"spec": 0.87,
+"ppv": 0.4,
+"npv": 0.952,
+"sens_weight": 1.245
+},
+"complex": {
+"n": 26,
+"n_pos": 4,
+"sens": 0.5,
+"spec": 1.0,
+"ppv": 1.0,
+"npv": 0.917,
+"sens_weight": 0.934
+},
+"del7": {
+"n": 26,
+"n_pos": 1,
+"sens": 1.0,
+"spec": 0.96,
+"ppv": 0.5,
+"npv": 1.0,
+"sens_weight": 1.868
+},
+"kmt2a": {
+"n": 26,
+"n_pos": 0,
+"sens": null,
+"spec": 1.0,
+"ppv": 0.0,
+"npv": 1.0,
+"sens_weight": null
+},
+"KMT2A-rearrangement": {
+"n": 26,
+"n_pos": 0,
+"sens": null,
+"spec": 1.0,
+"ppv": 0.0,
+"npv": 1.0,
+"sens_weight": null
+},
+"TP53": {
+"n": 26,
+"n_pos": 4,
+"sens": 0.75,
+"spec": 0.864,
+"ppv": 0.5,
+"npv": 0.95,
+"sens_weight": 1.401
+},
+"KIT": {
+"n": 26,
+"n_pos": 2,
+"sens": 0.0,
+"spec": 0.917,
+"ppv": 0.0,
+"npv": 0.917,
+"sens_weight": 0.0
+},
+"inv16": {
+"n": 26,
+"n_pos": 4,
+"sens": 0.5,
+"spec": 1.0,
+"ppv": 1.0,
+"npv": 0.917,
+"sens_weight": 0.934
+},
+"inv(16)_CBFB-MYH11": {
+"n": 26,
+"n_pos": 4,
+"sens": 0.5,
+"spec": 1.0,
+"ppv": 1.0,
+"npv": 0.917,
+"sens_weight": 0.934
+},
+"WT1": {
+"n": 26,
+"n_pos": 1,
+"sens": 0.0,
+"spec": 1.0,
+"ppv": null,
+"npv": 0.962,
+"sens_weight": 0.0
+},
+"IDH2": {
+"n": 26,
+"n_pos": 6,
+"sens": 0.5,
+"spec": 0.8,
+"ppv": 0.429,
+"npv": 0.842,
+"sens_weight": 0.934
+},
+"FLT3-TKD": {
+"n": 26,
+"n_pos": 4,
+"sens": 0.5,
+"spec": 0.909,
+"ppv": 0.5,
+"npv": 0.909,
+"sens_weight": 0.934
+},
+"ASXL1": {
+"n": 26,
+"n_pos": 1,
+"sens": 0.0,
+"spec": 0.92,
+"ppv": 0.0,
+"npv": 0.958,
+"sens_weight": 0.0
+},
+"trisomy8": {
+"n": 26,
+"n_pos": 5,
+"sens": 0.8,
+"spec": 0.714,
+"ppv": 0.4,
+"npv": 0.938,
+"sens_weight": 1.494
+},
+"DNMT3A": {
+"n": 26,
+"n_pos": 8,
+"sens": 0.625,
+"spec": 0.778,
+"ppv": 0.556,
+"npv": 0.824,
+"sens_weight": 1.167
+},
+"del5": {
+"n": 26,
+"n_pos": 0,
+"sens": null,
+"spec": 0.808,
+"ppv": 0.0,
+"npv": 1.0,
+"sens_weight": null
+},
+"GATA2": {
+"n": 26,
+"n_pos": 0,
+"sens": null,
+"spec": 1.0,
+"ppv": 0.0,
+"npv": 1.0,
+"sens_weight": null
+},
+"KRAS": {
+"n": 26,
+"n_pos": 1,
+"sens": 1.0,
+"spec": 0.8,
+"ppv": 0.167,
+"npv": 1.0,
+"sens_weight": 1.868
+},
+"TET2": {
+"n": 26,
+"n_pos": 9,
+"sens": 0.556,
+"spec": 1.0,
+"ppv": 1.0,
+"npv": 0.81,
+"sens_weight": 1.038
+},
+"FLT3": {
+"n": 26,
+"n_pos": 10,
+"sens": 0.4,
+"spec": 0.875,
+"ppv": 0.667,
+"npv": 0.7,
+"sens_weight": 0.747
+},
+"RUNX1": {
+"n": 26,
+"n_pos": 5,
+"sens": 1.0,
+"spec": 0.714,
+"ppv": 0.455,
+"npv": 1.0,
+"sens_weight": 1.868
+},
+"FLT3-ITD": {
+"n": 26,
+"n_pos": 7,
+"sens": 0.714,
+"spec": 0.895,
+"ppv": 0.714,
+"npv": 0.895,
+"sens_weight": 1.334
+}
+},
+"n_predictions": 676,
+"overall_acc": 0.862,
+"calib_grid": [
+0.0,
+0.05,
+0.1,
+0.15,
+0.2,
+0.25,
+0.3,
+0.35,
+0.4,
+0.45,
+0.5,
+0.55,
+0.6,
+0.65,
+0.7,
+0.75,
+0.8,
+0.85,
+0.9,
+0.95,
+1.0
+],
+"calib_present": [
+0.0,
+0.0,
+0.012,
+0.025,
+0.035,
+0.045,
+0.045,
+0.045,
+0.045,
+0.045,
+0.062,
+0.086,
+0.108,
+0.131,
+0.131,
+0.131,
+0.182,
+0.258,
+0.391,
+0.506,
+0.506
+],
+"bins": [
+{
+"p": 0.056,
+"present": 0.0,
+"acc": 1.0,
+"n": 18
+},
+{
+"p": 0.155,
+"present": 0.026,
+"acc": 0.974,
+"n": 39
+},
+{
+"p": 0.261,
+"present": 0.047,
+"acc": 0.953,
+"n": 64
+},
+{
+"p": 0.35,
+"present": 0.025,
+"acc": 0.975,
+"n": 81
+},
+{
+"p": 0.446,
+"present": 0.036,
+"acc": 0.964,
+"n": 84
+},
+{
+"p": 0.553,
+"present": 0.087,
+"acc": 0.912,
+"n": 80
+},
+{
+"p": 0.653,
+"present": 0.132,
+"acc": 0.868,
+"n": 76
+},
+{
+"p": 0.746,
+"present": 0.1,
+"acc": 0.914,
+"n": 70
+},
+{
+"p": 0.851,
+"present": 0.26,
+"acc": 0.688,
+"n": 77
+},
+{
+"p": 0.943,
+"present": 0.506,
+"acc": 0.575,
+"n": 87
+}
+],
+"calib_src": "bin-observed (rebuilt from F1-max reports 2026-07-07)"
+}

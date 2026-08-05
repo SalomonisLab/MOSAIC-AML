@@ -1,4 +1,4 @@
-# MATRIX-AML decision board (GUI)
+# MOSAIC-AML decision board (GUI)
 
 A zero-dependency viewer **and uploader** for the per-patient reports the engine writes
 (`runs/<run>/patient_report.json`). It renders the tumor-board readout, and it can **ingest a new
@@ -63,10 +63,10 @@ are listed under `ingest.deferred` in the report.
 | `POST /api/ingest` | `{name, sample, mutations?, dataset?}` → dispatch a new ingest, returns `{run_id, job_id, mode}` |
 
 ## Files
-- `matrix_board.html` — the entire front-end (HTML + CSS + JS, no build step). Also works
+- `mosaic_board.html` — the entire front-end (HTML + CSS + JS, no build step). Also works
   standalone: open the file and drag a `patient_report.json` onto it (view only).
 - `gui_server.py` — discovery / serve + ingest dispatch (stdlib `http.server`).
-- `start_matrix_board.bat` — Windows double-click launcher: starts the server on the cluster, opens
+- `start_mosaic_board.bat` — Windows double-click launcher: starts the server on the cluster, opens
   the SSH tunnel, and pops your browser.
 - `WALKTHROUGH.md` — **step-by-step of what happens at every stage** (launch → tunnel → upload →
   `ingest_patient.py` → arbiter → render), with the real functions, data shapes, and numbers.

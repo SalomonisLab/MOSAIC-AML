@@ -219,7 +219,7 @@ def validate(ctx) -> dict:
 
 def _write_md(ctx, report) -> str:
     c, cov, ts = report["caveat"], report["coverage"], report["tests"]
-    L = ["# MATRIX-AML retrospective clinical validation", "", f"_{c}_", "",
+    L = ["# MOSAIC-AML retrospective clinical validation", "", f"_{c}_", "",
          "## Coverage (the binding constraint)",
          f"- samples: {cov['n_samples']}; anchored driver: {cov['n_anchored_driver']}; "
          f"ELN: {cov['n_eln']}; clinical response: {cov['n_responder']}; "

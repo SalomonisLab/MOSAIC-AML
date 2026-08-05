@@ -1,930 +1,1074 @@
 {
-  "mode": "patient_panel",
-  "sample_key": "WashU::10DD-1002__Diagnosis",
-  "annotation": "TP53 U2AF1",
-  "dataset": "WashU",
-  "provenance": null,
-  "panel": [
-    {
-      "witness": "composition",
-      "grounding": "honest_cv",
-      "independence": "independent",
-      "evidence": {
-        "witness": "composition",
-        "kind": "measured",
-        "status": "ok",
-        "held_out": true,
-        "patient_prediction": "FLT3",
-        "patient_probability": 0.7819,
-        "true_label": "TP53",
-        "cohort_balanced_accuracy": 0.6312,
-        "cohort_permutation_p": 0.09090909090909091,
-        "patient_top_cellstates": {
-          "MDP-2": 0.124,
-          "LMPP-1-cycling": 0.103,
-          "CD8 TEM": 0.082,
-          "NK-Mature": 0.079,
-          "Myeloid intermediate 2": 0.078,
-          "MPP-MEP": 0.066
-        }
-      },
-      "opinion": {
-        "confidence": 0.5,
-        "reliability_weight": 0.425,
-        "summary": "predicts FLT3 (prob 0.7819)",
-        "caveats": "LLM fallback [r1: deferred to observed driver TP53]",
-        "revised": true
-      }
-    },
-    {
-      "witness": "genetic",
-      "grounding": "deterministic_fact",
-      "independence": "independent",
-      "evidence": {
-        "witness": "genetic",
-        "kind": "independent",
-        "status": "ok",
-        "present": [
-          "del7",
-          "TP53"
-        ],
-        "targetable": {},
-        "eln": null
-      },
-      "opinion": {
-        "confidence": 0.6,
-        "reliability_weight": 0.85,
-        "summary": "present: ['del7', 'TP53']; targetable: []",
-        "caveats": "LLM fallback"
-      }
-    },
-    {
-      "witness": "cell-state/UDON",
-      "grounding": "discovery",
-      "independence": "rna_derived",
-      "evidence": {
-        "witness": "cell-state/UDON",
-        "kind": "discovery",
-        "status": "ok",
-        "n_pseudobulks": 38,
-        "active_programs": [
-          {
-            "program": "P8",
-            "n_pseudobulks": 18,
-            "marks": "TP53"
-          },
-          {
-            "program": "P2",
-            "n_pseudobulks": 7,
-            "marks": "NPM1"
-          },
-          {
-            "program": "P9",
-            "n_pseudobulks": 5,
-            "marks": null
-          },
-          {
-            "program": "P1",
-            "n_pseudobulks": 2,
-            "marks": null
-          },
-          {
-            "program": "P10",
-            "n_pseudobulks": 2,
-            "marks": "FLT3"
-          },
-          {
-            "program": "P6",
-            "n_pseudobulks": 2,
-            "marks": "NPM1"
-          },
-          {
-            "program": "P3",
-            "n_pseudobulks": 1,
-            "marks": "Inv16"
-          },
-          {
-            "program": "P7",
-            "n_pseudobulks": 1,
-            "marks": "PHIP"
-          }
-        ]
-      },
-      "opinion": {
-        "confidence": 0.6,
-        "reliability_weight": 0.7,
-        "summary": "programs: ['P8', 'P2', 'P9', 'P1', 'P10', 'P6', 'P3', 'P7']",
-        "caveats": "LLM fallback"
-      }
-    },
-    {
-      "witness": "LSC",
-      "grounding": "classifier_call",
-      "independence": "rna_derived",
-      "evidence": {
-        "witness": "LSC",
-        "kind": "classifier_call",
-        "status": "ok",
-        "predicted_class": "p-LSC",
-        "max_prob": 0.718,
-        "class_probs": {
-          "Prob_m-LSC": 0.072,
-          "Prob_p+m-LSC": 0.21,
-          "Prob_p-LSC": 0.718
-        },
-        "low_confidence": false,
-        "few_cells": false,
-        "total_cells": 6373.0,
-        "confident_call": true,
-        "validation_claims": [
-          "lsc"
-        ],
-        "descriptive_context": [
-          "LSC architecture call: p-LSC (MaxProb 0.718, low_confidence=False, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
-        ]
-      },
-      "opinion": {
-        "confidence": 0.5,
-        "reliability_weight": 0.5,
-        "summary": "LSC architecture call: p-LSC (MaxProb 0.718, low_confidence=False, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth.",
-        "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
-      }
-    },
-    {
-      "witness": "surfaceome/ADT",
-      "grounding": "descriptive_aggregate",
-      "independence": "imputed_from_RNA",
-      "evidence": {
-        "witness": "surfaceome/ADT",
-        "kind": "imputed_surface",
-        "status": "ok",
-        "high_markers": [
-          {
-            "marker": "CD235a",
-            "z": 1.806
-          },
-          {
-            "marker": "CD279",
-            "z": 1.626
-          },
-          {
-            "marker": "CD85g",
-            "z": 1.572
-          },
-          {
-            "marker": "CD25",
-            "z": 1.492
-          },
-          {
-            "marker": "Cadherin",
-            "z": 1.275
-          },
-          {
-            "marker": "CD200",
-            "z": 1.264
-          },
-          {
-            "marker": "CD140b",
-            "z": 1.215
-          },
-          {
-            "marker": "CD150",
-            "z": 1.167
-          },
-          {
-            "marker": "CD135",
-            "z": 1.158
-          },
-          {
-            "marker": "GPR56",
-            "z": 1.128
-          }
-        ],
-        "actionable_markers": [
-          {
-            "marker": "CD25",
-            "z": 1.492
-          },
-          {
-            "marker": "CD135",
-            "z": 1.158
-          }
-        ],
-        "therapy_biomarkers": [],
-        "flow_panel": [
-          "CD135",
-          "CD25"
-        ],
-        "validation_claims": [
-          "surface_marker"
-        ],
-        "descriptive_context": [
-          "Elevated (imputed) surface markers vs cohort (z>=1): CD235a(z1.806), CD279(z1.626), CD85g(z1.572), CD25(z1.492), Cadherin(z1.275), CD200(z1.264). Imputed-from-RNA hypotheses; confirm by flow."
-        ]
-      },
-      "opinion": {
-        "confidence": 0.5,
-        "reliability_weight": 0.4,
-        "summary": "Elevated (imputed) surface markers vs cohort (z>=1): CD235a(z1.806), CD279(z1.626), CD85g(z1.572), CD25(z1.492), Cadherin(z1.275), CD200(z1.264). Imputed-from-RNA hypotheses; confirm by flow.",
-        "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
-      }
-    },
-    {
-      "witness": "metabolic",
-      "grounding": "descriptive_aggregate",
-      "independence": "imputed_from_RNA",
-      "evidence": {
-        "witness": "metabolic",
-        "kind": "imputed_omics",
-        "status": "ok",
-        "min_spearman": 0.3,
-        "n_features_passing_fidelity": 1084,
-        "n_named_features": 176,
-        "top_features": [
-          {
-            "feature": "Phosphorylcholine",
-            "z": 2.3,
-            "heldout_spearman": 0.591,
-            "weighted_score": 1.361
-          },
-          {
-            "feature": "Adenosine triphosphate (ATP)",
-            "z": 3.07,
-            "heldout_spearman": 0.372,
-            "weighted_score": 1.141
-          },
-          {
-            "feature": "Fructose 1,6-Bisphosphate",
-            "z": -2.17,
-            "heldout_spearman": 0.453,
-            "weighted_score": -0.983
-          },
-          {
-            "feature": "Lenticin",
-            "z": -1.88,
-            "heldout_spearman": 0.507,
-            "weighted_score": -0.952
-          },
-          {
-            "feature": "Guanosine Diphosphate (GDP)",
-            "z": 2.33,
-            "heldout_spearman": 0.4,
-            "weighted_score": 0.931
-          },
-          {
-            "feature": "Citramalic acid",
-            "z": -1.74,
-            "heldout_spearman": 0.528,
-            "weighted_score": -0.917
-          },
-          {
-            "feature": "N-Acetylthreonine",
-            "z": -1.91,
-            "heldout_spearman": 0.473,
-            "weighted_score": -0.902
-          },
-          {
-            "feature": "Citraconic acid",
-            "z": -2.01,
-            "heldout_spearman": 0.44,
-            "weighted_score": -0.887
-          }
-        ],
-        "median_reported_fidelity": 0.463,
-        "validation_claims": [
-          "metabolite"
-        ],
-        "descriptive_context": [
-          "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.463): Phosphorylcholine+, Adenosine triphosphate (ATP)+, Fructose 1,6-Bisphosphate-, Lenticin-, Guanosine Diphosphate (GDP)+, Citramalic acid-."
-        ]
-      },
-      "opinion": {
-        "confidence": 0.45,
-        "reliability_weight": 0.35,
-        "summary": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.463): Phosphorylcholine+, Adenosine triphosphate (ATP)+, Fructose 1,6-Bisphosphate-, Lenticin-, ",
-        "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
-      }
-    },
-    {
-      "witness": "lipid",
-      "grounding": "descriptive_aggregate",
-      "independence": "imputed_from_RNA",
-      "evidence": {
-        "witness": "lipid",
-        "kind": "imputed_omics",
-        "status": "ok",
-        "min_spearman": 0.3,
-        "n_features_passing_fidelity": 625,
-        "n_named_features": 625,
-        "top_features": [
-          {
-            "feature": "PE O-42:1|PE O-24:0_18:1",
-            "z": 2.31,
-            "heldout_spearman": 0.526,
-            "weighted_score": 1.216
-          },
-          {
-            "feature": "Hex2Cer 44:2;2O|Hex2Cer 18:1;2O/26:1",
-            "z": -1.76,
-            "heldout_spearman": 0.668,
-            "weighted_score": -1.176
-          },
-          {
-            "feature": "PC 37:3|PC 19:1_18:2",
-            "z": 1.65,
-            "heldout_spearman": 0.649,
-            "weighted_score": 1.073
-          },
-          {
-            "feature": "HexCer 36:1;2O|HexCer 18:1;2O/18:0",
-            "z": -1.9,
-            "heldout_spearman": 0.565,
-            "weighted_score": -1.071
-          },
-          {
-            "feature": "FA 28:6;O",
-            "z": -2.58,
-            "heldout_spearman": 0.41,
-            "weighted_score": -1.059
-          },
-          {
-            "feature": "LPE 24:3",
-            "z": -2.71,
-            "heldout_spearman": 0.386,
-            "weighted_score": -1.047
-          },
-          {
-            "feature": "PC O-40:6",
-            "z": -1.88,
-            "heldout_spearman": 0.55,
-            "weighted_score": -1.032
-          },
-          {
-            "feature": "PI 39:5|PI 19:1_20:4",
-            "z": 1.74,
-            "heldout_spearman": 0.577,
-            "weighted_score": 1.006
-          }
-        ],
-        "median_reported_fidelity": 0.557,
-        "validation_claims": [
-          "lipid_profile"
-        ],
-        "descriptive_context": [
-          "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.557): PE O-42:1|PE O-24:0_18:1+, Hex2Cer 44:2;2O|Hex2Cer 18:1;2O/26:1-, PC 37:3|PC 19:1_18:2+, HexCer 36:1;2O|HexCer 18:1;2O/18:0-, FA 28:6;O-, LPE 24:3-."
-        ],
-        "top_lipid_classes": [
-          {
-            "lipid_class": "PC",
-            "score": 2.105
-          },
-          {
-            "lipid_class": "PE",
-            "score": 1.216
-          },
-          {
-            "lipid_class": "Hex2Cer",
-            "score": 1.176
-          },
-          {
-            "lipid_class": "HexCer",
-            "score": 1.071
-          }
-        ]
-      },
-      "opinion": {
-        "confidence": 0.45,
-        "reliability_weight": 0.35,
-        "summary": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.557): PE O-42:1|PE O-24:0_18:1+, Hex2Cer 44:2;2O|Hex2Cer 18:1;2O/26:1-, PC 37:3|PC 19:1_18:2+, HexCe",
-        "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
-      }
-    },
-    {
-      "witness": "GRN-regulon",
-      "grounding": "descriptive_aggregate",
-      "independence": "imputed_from_RNA",
-      "evidence": {
-        "witness": "GRN-regulon",
-        "kind": "imputed_regulon",
-        "status": "ok",
-        "fidelity_status": "unknown",
-        "top_active_tfs": [
-          {
-            "tf": "SPI1",
-            "activity": 43.262
-          },
-          {
-            "tf": "YBX1",
-            "activity": 7.916
-          },
-          {
-            "tf": "FOS",
-            "activity": 6.229
-          },
-          {
-            "tf": "CEBPD",
-            "activity": 5.342
-          },
-          {
-            "tf": "RUNX1",
-            "activity": 4.587
-          },
-          {
-            "tf": "ETV6",
-            "activity": 3.729
-          },
-          {
-            "tf": "MAZ",
-            "activity": 3.697
-          },
-          {
-            "tf": "ELF1",
-            "activity": 2.25
-          }
-        ],
-        "top_active_edges": [
-          {
-            "edge": "SPI1|CSF1R",
-            "activity": 0.405
-          },
-          {
-            "edge": "SPI1|HCST",
-            "activity": 0.393
-          },
-          {
-            "edge": "SPI1|CORO1A",
-            "activity": 0.378
-          },
-          {
-            "edge": "CEBPD|CSF1R",
-            "activity": 0.345
-          },
-          {
-            "edge": "SPI1|ACAP2",
-            "activity": 0.335
-          },
-          {
-            "edge": "FOS|SH3BGRL3",
-            "activity": 0.321
-          },
-          {
-            "edge": "FOS|CYBA",
-            "activity": 0.32
-          },
-          {
-            "edge": "SPI1|FOS",
-            "activity": 0.317
-          }
-        ],
-        "descriptive_context": [
-          "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, YBX1, FOS, CEBPD, RUNX1. Discovery context only."
-        ]
-      },
-      "opinion": {
-        "confidence": 0.4,
-        "reliability_weight": 0.3,
-        "summary": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, YBX1, FOS, CEBPD, RUNX1. Discovery context only.",
-        "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
-      }
-    },
-    {
-      "witness": "cell-communication",
-      "grounding": "descriptive_aggregate",
-      "independence": "independent",
-      "evidence": {
-        "witness": "cell-communication",
-        "kind": "signaling",
-        "status": "ok",
-        "n_edges": 9099,
-        "top_interactions": [
-          {
-            "interaction": "ERP-7|PPIA|BSG|Erythroblast-3",
-            "score": 0.55
-          },
-          {
-            "interaction": "pDC|APP|CD74|cDC2-2",
-            "score": 0.547
-          },
-          {
-            "interaction": "MEP-1|PPIA|BSG|Erythroblast-3",
-            "score": 0.541
-          },
-          {
-            "interaction": "ERP-8|PPIA|BSG|Erythroblast-3",
-            "score": 0.54
-          },
-          {
-            "interaction": "Multilin-1|PPIA|BSG|Erythroblast-3",
-            "score": 0.536
-          },
-          {
-            "interaction": "MultiLin-GMP-3|PPIA|BSG|Erythroblast-3",
-            "score": 0.529
-          },
-          {
-            "interaction": "Erythroblast-1|PPIA|BSG|Erythroblast-3",
-            "score": 0.528
-          },
-          {
-            "interaction": "pDC|APP|CD74|cDC2-1",
-            "score": 0.527
-          },
-          {
-            "interaction": "pDC|APP|CD74|MDP-1",
-            "score": 0.523
-          },
-          {
-            "interaction": "pDC|APP|CD74|cDC1",
-            "score": 0.521
-          },
-          {
-            "interaction": "pre-DC-2|PPIA|BSG|Erythroblast-3",
-            "score": 0.518
-          },
-          {
-            "interaction": "pDC|APP|CD74|LMPP-2",
-            "score": 0.516
-          }
-        ],
-        "top_axes": [
-          {
-            "axis": "PPIA->BSG",
-            "score": 0.55
-          },
-          {
-            "axis": "APP->CD74",
-            "score": 0.547
-          },
-          {
-            "axis": "MIF->CD44+CD74",
-            "score": 0.509
-          },
-          {
-            "axis": "HLA-B->CD8B",
-            "score": 0.486
-          },
-          {
-            "axis": "HLA-A->CD8B",
-            "score": 0.473
-          },
-          {
-            "axis": "MIF->CD74+CXCR4",
-            "score": 0.454
-          },
-          {
-            "axis": "CD69->KLRB1",
-            "score": 0.454
-          },
-          {
-            "axis": "CCL5->ACKR1",
-            "score": 0.416
-          },
-          {
-            "axis": "HLA-E->CD8B",
-            "score": 0.413
-          },
-          {
-            "axis": "HLA-B->CD8A",
-            "score": 0.407
-          }
-        ],
-        "top_sender_states": [
-          "pDC",
-          "MultiLin-GMP-3",
-          "Multilin-1",
-          "MultiLin-GMP-1",
-          "MEP-1",
-          "LMPP-1-cycling"
-        ],
-        "top_receiver_states": [
-          "T CD8 Naive",
-          "CD8 TEM",
-          "NK-Mature",
-          "Non-Classical Mono-2",
-          "pDC",
-          "Intermediate Mono-1"
-        ],
-        "descriptive_context": [
-          "Dominant signaling axes (independent fastComm L-R inference): PPIA->BSG, APP->CD74, MIF->CD44+CD74, HLA-B->CD8B, HLA-A->CD8B; 9099 called interactions."
-        ]
-      },
-      "opinion": {
-        "confidence": 0.5,
-        "reliability_weight": 0.5,
-        "summary": "Dominant signaling axes (independent fastComm L-R inference): PPIA->BSG, APP->CD74, MIF->CD44+CD74, HLA-B->CD8B, HLA-A->CD8B; 9099 called interactions.",
-        "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
-      }
+ "mode": "patient_panel",
+ "sample_key": "WashU::10DD-1002__Diagnosis",
+ "annotation": "TP53 U2AF1",
+ "dataset": "WashU",
+ "provenance": null,
+ "panel": [
+  {
+   "witness": "composition",
+   "grounding": "honest_cv",
+   "independence": "independent",
+   "evidence": {
+    "witness": "composition",
+    "kind": "measured",
+    "status": "ok",
+    "held_out": true,
+    "patient_prediction": "FLT3",
+    "patient_probability": 0.7819,
+    "true_label": "TP53",
+    "cohort_balanced_accuracy": 0.6312,
+    "cohort_permutation_p": 0.09090909090909091,
+    "patient_top_cellstates": {
+     "MDP-2": 0.124,
+     "LMPP-1-cycling": 0.103,
+     "CD8 TEM": 0.082,
+     "NK-Mature": 0.079,
+     "Myeloid intermediate 2": 0.078,
+     "MPP-MEP": 0.066
     }
-  ],
-  "consensus": {
-    "subtype_call": "TP53 (genetic-anchored: direct mutation observation)",
-    "leading_hypothesis": "TP53",
-    "leading_confirmed_by_genetics": true,
-    "concordance": 0.902,
-    "per_witness_consistency": {
-      "composition": "conflict",
-      "genetic": "agree",
-      "cell-state/UDON": "agree"
-    },
-    "conflicts": "composition\u2192FLT3",
-    "ranked_therapy_hypotheses": [
-      {
-        "biomarker": "TP53",
-        "drug": "HMA + venetoclax; consider trial (eprenetapopt) and early allogeneic transplant",
-        "evidence_level": "heuristic",
-        "source": "lit"
-      },
-      {
-        "biomarker": "del7",
-        "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
-        "evidence_level": "heuristic",
-        "source": "lit"
-      }
-    ],
-    "surface_therapy_hypotheses": [],
-    "recommended_validations": [
-      {
-        "claim": "mutation",
-        "validation": "targeted DNA/RNA sequencing (NGS panel)",
-        "source": "standard"
-      },
-      {
-        "claim": "subtype",
-        "validation": "flow cytometry immunophenotyping",
-        "source": "standard"
-      },
-      {
-        "claim": "del7",
-        "validation": "FISH for -7/del(7q) and conventional karyotype",
-        "source": "standard"
-      },
-      {
-        "claim": "surface_marker",
-        "validation": "flow cytometry for the named surface marker",
-        "source": "standard"
-      },
-      {
-        "claim": "lsc",
-        "validation": "ex-vivo drug-sensitivity assay",
-        "source": "heuristic"
-      },
-      {
-        "claim": "metabolite",
-        "validation": "targeted metabolomics / LC-MS confirmation of the imputed metabolite shift",
-        "source": "heuristic"
-      },
-      {
-        "claim": "lipid_profile",
-        "validation": "untargeted lipidomics / mass-spectrometry confirmation of the imputed lipid-class shift",
-        "source": "standard"
-      }
-    ],
-    "descriptive_findings": [
-      {
-        "witness": "GRN-regulon",
-        "domain": "grn",
-        "note": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, YBX1, FOS, CEBPD, RUNX1. Discovery context only."
-      },
-      {
-        "witness": "LSC",
-        "domain": "lsc",
-        "note": "LSC architecture call: p-LSC (MaxProb 0.718, low_confidence=False, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
-      },
-      {
-        "witness": "cell-communication",
-        "domain": "cell_comm",
-        "note": "Dominant signaling axes (independent fastComm L-R inference): PPIA->BSG, APP->CD74, MIF->CD44+CD74, HLA-B->CD8B, HLA-A->CD8B; 9099 called interactions."
-      },
-      {
-        "witness": "lipid",
-        "domain": "lipid",
-        "note": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.557): PE O-42:1|PE O-24:0_18:1+, Hex2Cer 44:2;2O|Hex2Cer 18:1;2O/26:1-, PC 37:3|PC 19:1_18:2+, HexCer 36:1;2O|HexCer 18:1;2O/18:0-, FA 28:6;"
-      },
-      {
-        "witness": "metabolic",
-        "domain": "metabolic",
-        "note": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.463): Phosphorylcholine+, Adenosine triphosphate (ATP)+, Fructose 1,6-Bisphosphate-, Lenticin-, Guanosine Diphosphate (GDP)+, Citramalic"
-      },
-      {
-        "witness": "surfaceome/ADT",
-        "domain": "surfaceome",
-        "note": "Elevated (imputed) surface markers vs cohort (z>=1): CD235a(z1.806), CD279(z1.626), CD85g(z1.572), CD25(z1.492), Cadherin(z1.275), CD200(z1.264). Imputed-from-RNA hypotheses; confirm by flow."
-      }
-    ],
-    "overall_confidence": "high",
-    "rationale": "Leading hypothesis: TP53 (genetic-anchored: direct mutation observation). Concordance 0.90. Conflicts: composition\u2192FLT3. ",
-    "knowledge_version": "kb-2026.07"
+   },
+   "opinion": {
+    "confidence": 0.5,
+    "reliability_weight": 0.425,
+    "summary": "predicts FLT3 (prob 0.7819)",
+    "caveats": "LLM fallback [r1: deferred to observed driver TP53]",
+    "revised": true
+   }
   },
-  "deliberation": {
-    "consensus": {
-      "subtype_call": "TP53 (genetic-anchored: direct mutation observation)",
-      "leading_hypothesis": "TP53",
-      "leading_confirmed_by_genetics": true,
-      "concordance": 0.902,
-      "per_witness_consistency": {
-        "composition": "conflict",
-        "genetic": "agree",
-        "cell-state/UDON": "agree"
-      },
-      "conflicts": "composition\u2192FLT3",
-      "ranked_therapy_hypotheses": [
-        {
-          "biomarker": "TP53",
-          "drug": "HMA + venetoclax; consider trial (eprenetapopt) and early allogeneic transplant",
-          "evidence_level": "heuristic",
-          "source": "lit"
-        },
-        {
-          "biomarker": "del7",
-          "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
-          "evidence_level": "heuristic",
-          "source": "lit"
-        }
-      ],
-      "surface_therapy_hypotheses": [],
-      "recommended_validations": [
-        {
-          "claim": "mutation",
-          "validation": "targeted DNA/RNA sequencing (NGS panel)",
-          "source": "standard"
-        },
-        {
-          "claim": "subtype",
-          "validation": "flow cytometry immunophenotyping",
-          "source": "standard"
-        },
-        {
-          "claim": "del7",
-          "validation": "FISH for -7/del(7q) and conventional karyotype",
-          "source": "standard"
-        },
-        {
-          "claim": "surface_marker",
-          "validation": "flow cytometry for the named surface marker",
-          "source": "standard"
-        },
-        {
-          "claim": "lsc",
-          "validation": "ex-vivo drug-sensitivity assay",
-          "source": "heuristic"
-        },
-        {
-          "claim": "metabolite",
-          "validation": "targeted metabolomics / LC-MS confirmation of the imputed metabolite shift",
-          "source": "heuristic"
-        },
-        {
-          "claim": "lipid_profile",
-          "validation": "untargeted lipidomics / mass-spectrometry confirmation of the imputed lipid-class shift",
-          "source": "standard"
-        }
-      ],
-      "descriptive_findings": [
-        {
-          "witness": "GRN-regulon",
-          "domain": "grn",
-          "note": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, YBX1, FOS, CEBPD, RUNX1. Discovery context only."
-        },
-        {
-          "witness": "LSC",
-          "domain": "lsc",
-          "note": "LSC architecture call: p-LSC (MaxProb 0.718, low_confidence=False, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
-        },
-        {
-          "witness": "cell-communication",
-          "domain": "cell_comm",
-          "note": "Dominant signaling axes (independent fastComm L-R inference): PPIA->BSG, APP->CD74, MIF->CD44+CD74, HLA-B->CD8B, HLA-A->CD8B; 9099 called interactions."
-        },
-        {
-          "witness": "lipid",
-          "domain": "lipid",
-          "note": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.557): PE O-42:1|PE O-24:0_18:1+, Hex2Cer 44:2;2O|Hex2Cer 18:1;2O/26:1-, PC 37:3|PC 19:1_18:2+, HexCer 36:1;2O|HexCer 18:1;2O/18:0-, FA 28:6;"
-        },
-        {
-          "witness": "metabolic",
-          "domain": "metabolic",
-          "note": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.463): Phosphorylcholine+, Adenosine triphosphate (ATP)+, Fructose 1,6-Bisphosphate-, Lenticin-, Guanosine Diphosphate (GDP)+, Citramalic"
-        },
-        {
-          "witness": "surfaceome/ADT",
-          "domain": "surfaceome",
-          "note": "Elevated (imputed) surface markers vs cohort (z>=1): CD235a(z1.806), CD279(z1.626), CD85g(z1.572), CD25(z1.492), Cadherin(z1.275), CD200(z1.264). Imputed-from-RNA hypotheses; confirm by flow."
-        }
-      ],
-      "overall_confidence": "high",
-      "rationale": "Leading hypothesis: TP53 (genetic-anchored: direct mutation observation). Concordance 0.90. Conflicts: composition\u2192FLT3. ",
-      "knowledge_version": "kb-2026.07"
+  {
+   "witness": "genetic",
+   "grounding": "deterministic_fact",
+   "independence": "independent",
+   "evidence": {
+    "witness": "genetic",
+    "kind": "independent",
+    "status": "ok",
+    "present": [
+     "del7",
+     "TP53"
+    ],
+    "targetable": {},
+    "eln": null
+   },
+   "opinion": {
+    "confidence": 0.6,
+    "reliability_weight": 0.85,
+    "summary": "present: ['del7', 'TP53']; targetable: []",
+    "caveats": "LLM fallback"
+   }
+  },
+  {
+   "witness": "cell-state/UDON",
+   "grounding": "discovery",
+   "independence": "rna_derived",
+   "evidence": {
+    "witness": "cell-state/UDON",
+    "kind": "discovery",
+    "status": "ok",
+    "n_pseudobulks": 38,
+    "active_programs": [
+     {
+      "program": "P8",
+      "n_pseudobulks": 18,
+      "marks": "TP53"
+     },
+     {
+      "program": "P2",
+      "n_pseudobulks": 7,
+      "marks": "NPM1"
+     },
+     {
+      "program": "P9",
+      "n_pseudobulks": 5,
+      "marks": null
+     },
+     {
+      "program": "P1",
+      "n_pseudobulks": 2,
+      "marks": null
+     },
+     {
+      "program": "P10",
+      "n_pseudobulks": 2,
+      "marks": "FLT3"
+     },
+     {
+      "program": "P6",
+      "n_pseudobulks": 2,
+      "marks": "NPM1"
+     },
+     {
+      "program": "P3",
+      "n_pseudobulks": 1,
+      "marks": "Inv16"
+     },
+     {
+      "program": "P7",
+      "n_pseudobulks": 1,
+      "marks": "PHIP"
+     }
+    ]
+   },
+   "opinion": {
+    "confidence": 0.6,
+    "reliability_weight": 0.7,
+    "summary": "programs: ['P8', 'P2', 'P9', 'P1', 'P10', 'P6', 'P3', 'P7']",
+    "caveats": "LLM fallback"
+   }
+  },
+  {
+   "witness": "LSC",
+   "grounding": "classifier_call",
+   "independence": "rna_derived",
+   "evidence": {
+    "witness": "LSC",
+    "kind": "classifier_call",
+    "status": "ok",
+    "predicted_class": "p-LSC",
+    "max_prob": 0.718,
+    "class_probs": {
+     "Prob_m-LSC": 0.072,
+     "Prob_p+m-LSC": 0.21,
+     "Prob_p-LSC": 0.718
     },
-    "baseline": {
-      "subtype_call": "TP53 (genetic-anchored: direct mutation observation)",
-      "leading_hypothesis": "TP53",
-      "leading_confirmed_by_genetics": true,
-      "concordance": 0.822,
-      "per_witness_consistency": {
-        "composition": "conflict",
-        "genetic": "agree",
-        "cell-state/UDON": "agree"
-      },
-      "conflicts": "composition\u2192FLT3",
-      "ranked_therapy_hypotheses": [
-        {
-          "biomarker": "TP53",
-          "drug": "HMA + venetoclax; consider trial (eprenetapopt) and early allogeneic transplant",
-          "evidence_level": "heuristic",
-          "source": "lit"
-        },
-        {
-          "biomarker": "del7",
-          "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
-          "evidence_level": "heuristic",
-          "source": "lit"
-        }
-      ],
-      "surface_therapy_hypotheses": [],
-      "recommended_validations": [
-        {
-          "claim": "mutation",
-          "validation": "targeted DNA/RNA sequencing (NGS panel)",
-          "source": "standard"
-        },
-        {
-          "claim": "subtype",
-          "validation": "flow cytometry immunophenotyping",
-          "source": "standard"
-        },
-        {
-          "claim": "del7",
-          "validation": "FISH for -7/del(7q) and conventional karyotype",
-          "source": "standard"
-        },
-        {
-          "claim": "surface_marker",
-          "validation": "flow cytometry for the named surface marker",
-          "source": "standard"
-        },
-        {
-          "claim": "lsc",
-          "validation": "ex-vivo drug-sensitivity assay",
-          "source": "heuristic"
-        },
-        {
-          "claim": "metabolite",
-          "validation": "targeted metabolomics / LC-MS confirmation of the imputed metabolite shift",
-          "source": "heuristic"
-        },
-        {
-          "claim": "lipid_profile",
-          "validation": "untargeted lipidomics / mass-spectrometry confirmation of the imputed lipid-class shift",
-          "source": "standard"
-        }
-      ],
-      "descriptive_findings": [
-        {
-          "witness": "GRN-regulon",
-          "domain": "grn",
-          "note": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, YBX1, FOS, CEBPD, RUNX1. Discovery context only."
-        },
-        {
-          "witness": "LSC",
-          "domain": "lsc",
-          "note": "LSC architecture call: p-LSC (MaxProb 0.718, low_confidence=False, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
-        },
-        {
-          "witness": "cell-communication",
-          "domain": "cell_comm",
-          "note": "Dominant signaling axes (independent fastComm L-R inference): PPIA->BSG, APP->CD74, MIF->CD44+CD74, HLA-B->CD8B, HLA-A->CD8B; 9099 called interactions."
-        },
-        {
-          "witness": "lipid",
-          "domain": "lipid",
-          "note": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.557): PE O-42:1|PE O-24:0_18:1+, Hex2Cer 44:2;2O|Hex2Cer 18:1;2O/26:1-, PC 37:3|PC 19:1_18:2+, HexCer 36:1;2O|HexCer 18:1;2O/18:0-, FA 28:6;"
-        },
-        {
-          "witness": "metabolic",
-          "domain": "metabolic",
-          "note": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.463): Phosphorylcholine+, Adenosine triphosphate (ATP)+, Fructose 1,6-Bisphosphate-, Lenticin-, Guanosine Diphosphate (GDP)+, Citramalic"
-        },
-        {
-          "witness": "surfaceome/ADT",
-          "domain": "surfaceome",
-          "note": "Elevated (imputed) surface markers vs cohort (z>=1): CD235a(z1.806), CD279(z1.626), CD85g(z1.572), CD25(z1.492), Cadherin(z1.275), CD200(z1.264). Imputed-from-RNA hypotheses; confirm by flow."
-        }
-      ],
-      "overall_confidence": "high",
-      "rationale": "Leading hypothesis: TP53 (genetic-anchored: direct mutation observation). Concordance 0.82. Conflicts: composition\u2192FLT3. ",
-      "knowledge_version": "kb-2026.07"
-    },
-    "mode": "continuous",
-    "rounds_run": 2,
-    "stop_reason": "converged",
-    "drift": {
-      "baseline_leading": "TP53",
-      "final_leading": "TP53",
-      "leading_changed": false,
-      "final_genetically_confirmed": true,
-      "groupthink_warning": false,
-      "baseline_concordance": 0.822,
-      "final_concordance": 0.902
-    }
+    "low_confidence": false,
+    "few_cells": false,
+    "total_cells": 6373.0,
+    "confident_call": true,
+    "validation_claims": [
+     "lsc"
+    ],
+    "descriptive_context": [
+     "LSC architecture call: p-LSC (MaxProb 0.718, low_confidence=False, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
+    ]
+   },
+   "opinion": {
+    "confidence": 0.5,
+    "reliability_weight": 0.5,
+    "summary": "LSC architecture call: p-LSC (MaxProb 0.718, low_confidence=False, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth.",
+    "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
+   }
+  },
+  {
+   "witness": "surfaceome/ADT",
+   "grounding": "descriptive_aggregate",
+   "independence": "imputed_from_RNA",
+   "evidence": {
+    "witness": "surfaceome/ADT",
+    "kind": "imputed_surface",
+    "status": "ok",
+    "high_markers": [
+     {
+      "marker": "CD235a",
+      "z": 1.806
+     },
+     {
+      "marker": "CD279",
+      "z": 1.626
+     },
+     {
+      "marker": "CD85g",
+      "z": 1.572
+     },
+     {
+      "marker": "CD25",
+      "z": 1.492
+     },
+     {
+      "marker": "Cadherin",
+      "z": 1.275
+     },
+     {
+      "marker": "CD200",
+      "z": 1.264
+     },
+     {
+      "marker": "CD140b",
+      "z": 1.215
+     },
+     {
+      "marker": "CD150",
+      "z": 1.167
+     },
+     {
+      "marker": "CD135",
+      "z": 1.158
+     },
+     {
+      "marker": "GPR56",
+      "z": 1.128
+     }
+    ],
+    "actionable_markers": [
+     {
+      "marker": "CD25",
+      "z": 1.492
+     },
+     {
+      "marker": "CD135",
+      "z": 1.158
+     }
+    ],
+    "therapy_biomarkers": [],
+    "flow_panel": [
+     "CD135",
+     "CD25"
+    ],
+    "validation_claims": [
+     "surface_marker"
+    ],
+    "descriptive_context": [
+     "Elevated (imputed) surface markers vs cohort (z>=1): CD235a(z1.806), CD279(z1.626), CD85g(z1.572), CD25(z1.492), Cadherin(z1.275), CD200(z1.264). Imputed-from-RNA hypotheses; confirm by flow."
+    ]
+   },
+   "opinion": {
+    "confidence": 0.5,
+    "reliability_weight": 0.4,
+    "summary": "Elevated (imputed) surface markers vs cohort (z>=1): CD235a(z1.806), CD279(z1.626), CD85g(z1.572), CD25(z1.492), Cadherin(z1.275), CD200(z1.264). Imputed-from-RNA hypotheses; confirm by flow.",
+    "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
+   }
+  },
+  {
+   "witness": "metabolic",
+   "grounding": "descriptive_aggregate",
+   "independence": "imputed_from_RNA",
+   "evidence": {
+    "witness": "metabolic",
+    "kind": "imputed_omics",
+    "status": "ok",
+    "min_spearman": 0.3,
+    "n_features_passing_fidelity": 1084,
+    "n_named_features": 176,
+    "top_features": [
+     {
+      "feature": "Phosphorylcholine",
+      "z": 2.3,
+      "heldout_spearman": 0.591,
+      "weighted_score": 1.361
+     },
+     {
+      "feature": "Adenosine triphosphate (ATP)",
+      "z": 3.07,
+      "heldout_spearman": 0.372,
+      "weighted_score": 1.141
+     },
+     {
+      "feature": "Fructose 1,6-Bisphosphate",
+      "z": -2.17,
+      "heldout_spearman": 0.453,
+      "weighted_score": -0.983
+     },
+     {
+      "feature": "Lenticin",
+      "z": -1.88,
+      "heldout_spearman": 0.507,
+      "weighted_score": -0.952
+     },
+     {
+      "feature": "Guanosine Diphosphate (GDP)",
+      "z": 2.33,
+      "heldout_spearman": 0.4,
+      "weighted_score": 0.931
+     },
+     {
+      "feature": "Citramalic acid",
+      "z": -1.74,
+      "heldout_spearman": 0.528,
+      "weighted_score": -0.917
+     },
+     {
+      "feature": "N-Acetylthreonine",
+      "z": -1.91,
+      "heldout_spearman": 0.473,
+      "weighted_score": -0.902
+     },
+     {
+      "feature": "Citraconic acid",
+      "z": -2.01,
+      "heldout_spearman": 0.44,
+      "weighted_score": -0.887
+     }
+    ],
+    "median_reported_fidelity": 0.463,
+    "validation_claims": [
+     "metabolite"
+    ],
+    "descriptive_context": [
+     "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.463): Phosphorylcholine+, Adenosine triphosphate (ATP)+, Fructose 1,6-Bisphosphate-, Lenticin-, Guanosine Diphosphate (GDP)+, Citramalic acid-."
+    ]
+   },
+   "opinion": {
+    "confidence": 0.45,
+    "reliability_weight": 0.35,
+    "summary": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.463): Phosphorylcholine+, Adenosine triphosphate (ATP)+, Fructose 1,6-Bisphosphate-, Lenticin-, ",
+    "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
+   }
+  },
+  {
+   "witness": "lipid",
+   "grounding": "descriptive_aggregate",
+   "independence": "imputed_from_RNA",
+   "evidence": {
+    "witness": "lipid",
+    "kind": "imputed_omics",
+    "status": "ok",
+    "min_spearman": 0.3,
+    "n_features_passing_fidelity": 625,
+    "n_named_features": 625,
+    "top_features": [
+     {
+      "feature": "PE O-42:1|PE O-24:0_18:1",
+      "z": 2.31,
+      "heldout_spearman": 0.526,
+      "weighted_score": 1.216
+     },
+     {
+      "feature": "Hex2Cer 44:2;2O|Hex2Cer 18:1;2O/26:1",
+      "z": -1.76,
+      "heldout_spearman": 0.668,
+      "weighted_score": -1.176
+     },
+     {
+      "feature": "PC 37:3|PC 19:1_18:2",
+      "z": 1.65,
+      "heldout_spearman": 0.649,
+      "weighted_score": 1.073
+     },
+     {
+      "feature": "HexCer 36:1;2O|HexCer 18:1;2O/18:0",
+      "z": -1.9,
+      "heldout_spearman": 0.565,
+      "weighted_score": -1.071
+     },
+     {
+      "feature": "FA 28:6;O",
+      "z": -2.58,
+      "heldout_spearman": 0.41,
+      "weighted_score": -1.059
+     },
+     {
+      "feature": "LPE 24:3",
+      "z": -2.71,
+      "heldout_spearman": 0.386,
+      "weighted_score": -1.047
+     },
+     {
+      "feature": "PC O-40:6",
+      "z": -1.88,
+      "heldout_spearman": 0.55,
+      "weighted_score": -1.032
+     },
+     {
+      "feature": "PI 39:5|PI 19:1_20:4",
+      "z": 1.74,
+      "heldout_spearman": 0.577,
+      "weighted_score": 1.006
+     }
+    ],
+    "median_reported_fidelity": 0.557,
+    "validation_claims": [
+     "lipid_profile"
+    ],
+    "descriptive_context": [
+     "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.557): PE O-42:1|PE O-24:0_18:1+, Hex2Cer 44:2;2O|Hex2Cer 18:1;2O/26:1-, PC 37:3|PC 19:1_18:2+, HexCer 36:1;2O|HexCer 18:1;2O/18:0-, FA 28:6;O-, LPE 24:3-."
+    ],
+    "top_lipid_classes": [
+     {
+      "lipid_class": "PC",
+      "score": 2.105
+     },
+     {
+      "lipid_class": "PE",
+      "score": 1.216
+     },
+     {
+      "lipid_class": "Hex2Cer",
+      "score": 1.176
+     },
+     {
+      "lipid_class": "HexCer",
+      "score": 1.071
+     }
+    ]
+   },
+   "opinion": {
+    "confidence": 0.45,
+    "reliability_weight": 0.35,
+    "summary": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.557): PE O-42:1|PE O-24:0_18:1+, Hex2Cer 44:2;2O|Hex2Cer 18:1;2O/26:1-, PC 37:3|PC 19:1_18:2+, HexCe",
+    "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
+   }
+  },
+  {
+   "witness": "GRN-regulon",
+   "grounding": "descriptive_aggregate",
+   "independence": "imputed_from_RNA",
+   "evidence": {
+    "witness": "GRN-regulon",
+    "kind": "imputed_regulon",
+    "status": "ok",
+    "fidelity_status": "unknown",
+    "top_active_tfs": [
+     {
+      "tf": "SPI1",
+      "activity": 43.262
+     },
+     {
+      "tf": "YBX1",
+      "activity": 7.916
+     },
+     {
+      "tf": "FOS",
+      "activity": 6.229
+     },
+     {
+      "tf": "CEBPD",
+      "activity": 5.342
+     },
+     {
+      "tf": "RUNX1",
+      "activity": 4.587
+     },
+     {
+      "tf": "ETV6",
+      "activity": 3.729
+     },
+     {
+      "tf": "MAZ",
+      "activity": 3.697
+     },
+     {
+      "tf": "ELF1",
+      "activity": 2.25
+     }
+    ],
+    "top_active_edges": [
+     {
+      "edge": "SPI1|CSF1R",
+      "activity": 0.405
+     },
+     {
+      "edge": "SPI1|HCST",
+      "activity": 0.393
+     },
+     {
+      "edge": "SPI1|CORO1A",
+      "activity": 0.378
+     },
+     {
+      "edge": "CEBPD|CSF1R",
+      "activity": 0.345
+     },
+     {
+      "edge": "SPI1|ACAP2",
+      "activity": 0.335
+     },
+     {
+      "edge": "FOS|SH3BGRL3",
+      "activity": 0.321
+     },
+     {
+      "edge": "FOS|CYBA",
+      "activity": 0.32
+     },
+     {
+      "edge": "SPI1|FOS",
+      "activity": 0.317
+     }
+    ],
+    "descriptive_context": [
+     "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, YBX1, FOS, CEBPD, RUNX1. Discovery context only."
+    ]
+   },
+   "opinion": {
+    "confidence": 0.4,
+    "reliability_weight": 0.3,
+    "summary": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, YBX1, FOS, CEBPD, RUNX1. Discovery context only.",
+    "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
+   }
+  },
+  {
+   "witness": "cell-communication",
+   "grounding": "descriptive_aggregate",
+   "independence": "independent",
+   "evidence": {
+    "witness": "cell-communication",
+    "kind": "signaling",
+    "status": "ok",
+    "n_edges": 9099,
+    "top_interactions": [
+     {
+      "interaction": "ERP-7|PPIA|BSG|Erythroblast-3",
+      "score": 0.55
+     },
+     {
+      "interaction": "pDC|APP|CD74|cDC2-2",
+      "score": 0.547
+     },
+     {
+      "interaction": "MEP-1|PPIA|BSG|Erythroblast-3",
+      "score": 0.541
+     },
+     {
+      "interaction": "ERP-8|PPIA|BSG|Erythroblast-3",
+      "score": 0.54
+     },
+     {
+      "interaction": "Multilin-1|PPIA|BSG|Erythroblast-3",
+      "score": 0.536
+     },
+     {
+      "interaction": "MultiLin-GMP-3|PPIA|BSG|Erythroblast-3",
+      "score": 0.529
+     },
+     {
+      "interaction": "Erythroblast-1|PPIA|BSG|Erythroblast-3",
+      "score": 0.528
+     },
+     {
+      "interaction": "pDC|APP|CD74|cDC2-1",
+      "score": 0.527
+     },
+     {
+      "interaction": "pDC|APP|CD74|MDP-1",
+      "score": 0.523
+     },
+     {
+      "interaction": "pDC|APP|CD74|cDC1",
+      "score": 0.521
+     },
+     {
+      "interaction": "pre-DC-2|PPIA|BSG|Erythroblast-3",
+      "score": 0.518
+     },
+     {
+      "interaction": "pDC|APP|CD74|LMPP-2",
+      "score": 0.516
+     }
+    ],
+    "top_axes": [
+     {
+      "axis": "PPIA->BSG",
+      "score": 0.55
+     },
+     {
+      "axis": "APP->CD74",
+      "score": 0.547
+     },
+     {
+      "axis": "MIF->CD44+CD74",
+      "score": 0.509
+     },
+     {
+      "axis": "HLA-B->CD8B",
+      "score": 0.486
+     },
+     {
+      "axis": "HLA-A->CD8B",
+      "score": 0.473
+     },
+     {
+      "axis": "MIF->CD74+CXCR4",
+      "score": 0.454
+     },
+     {
+      "axis": "CD69->KLRB1",
+      "score": 0.454
+     },
+     {
+      "axis": "CCL5->ACKR1",
+      "score": 0.416
+     },
+     {
+      "axis": "HLA-E->CD8B",
+      "score": 0.413
+     },
+     {
+      "axis": "HLA-B->CD8A",
+      "score": 0.407
+     }
+    ],
+    "top_sender_states": [
+     "pDC",
+     "MultiLin-GMP-3",
+     "Multilin-1",
+     "MultiLin-GMP-1",
+     "MEP-1",
+     "LMPP-1-cycling"
+    ],
+    "top_receiver_states": [
+     "T CD8 Naive",
+     "CD8 TEM",
+     "NK-Mature",
+     "Non-Classical Mono-2",
+     "pDC",
+     "Intermediate Mono-1"
+    ],
+    "descriptive_context": [
+     "Dominant signaling axes (independent fastComm L-R inference): PPIA->BSG, APP->CD74, MIF->CD44+CD74, HLA-B->CD8B, HLA-A->CD8B; 9099 called interactions."
+    ]
+   },
+   "opinion": {
+    "confidence": 0.5,
+    "reliability_weight": 0.5,
+    "summary": "Dominant signaling axes (independent fastComm L-R inference): PPIA->BSG, APP->CD74, MIF->CD44+CD74, HLA-B->CD8B, HLA-A->CD8B; 9099 called interactions.",
+    "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
+   }
   }
+ ],
+ "consensus": {
+  "subtype_call": "TP53 (genetic-anchored: direct mutation observation)",
+  "leading_hypothesis": "TP53",
+  "leading_confirmed_by_genetics": true,
+  "concordance": 0.902,
+  "per_witness_consistency": {
+   "composition": "conflict",
+   "genetic": "agree",
+   "cell-state/UDON": "agree"
+  },
+  "conflicts": "composition\u2192FLT3",
+  "ranked_therapy_hypotheses": [
+   {
+    "biomarker": "TP53",
+    "drug": "HMA + venetoclax; consider trial (eprenetapopt) and early allogeneic transplant",
+    "evidence_level": "heuristic",
+    "source": "lit"
+   },
+   {
+    "biomarker": "del7",
+    "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
+    "evidence_level": "heuristic",
+    "source": "lit"
+   }
+  ],
+  "surface_therapy_hypotheses": [],
+  "recommended_validations": [
+   {
+    "claim": "mutation",
+    "validation": "targeted DNA/RNA sequencing (NGS panel)",
+    "source": "standard"
+   },
+   {
+    "claim": "subtype",
+    "validation": "flow cytometry immunophenotyping",
+    "source": "standard"
+   },
+   {
+    "claim": "del7",
+    "validation": "FISH for -7/del(7q) and conventional karyotype",
+    "source": "standard"
+   },
+   {
+    "claim": "surface_marker",
+    "validation": "flow cytometry for the named surface marker",
+    "source": "standard"
+   },
+   {
+    "claim": "lsc",
+    "validation": "ex-vivo drug-sensitivity assay",
+    "source": "heuristic"
+   },
+   {
+    "claim": "metabolite",
+    "validation": "targeted metabolomics / LC-MS confirmation of the imputed metabolite shift",
+    "source": "heuristic"
+   },
+   {
+    "claim": "lipid_profile",
+    "validation": "untargeted lipidomics / mass-spectrometry confirmation of the imputed lipid-class shift",
+    "source": "standard"
+   }
+  ],
+  "descriptive_findings": [
+   {
+    "witness": "GRN-regulon",
+    "domain": "grn",
+    "note": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, YBX1, FOS, CEBPD, RUNX1. Discovery context only."
+   },
+   {
+    "witness": "LSC",
+    "domain": "lsc",
+    "note": "LSC architecture call: p-LSC (MaxProb 0.718, low_confidence=False, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
+   },
+   {
+    "witness": "cell-communication",
+    "domain": "cell_comm",
+    "note": "Dominant signaling axes (independent fastComm L-R inference): PPIA->BSG, APP->CD74, MIF->CD44+CD74, HLA-B->CD8B, HLA-A->CD8B; 9099 called interactions."
+   },
+   {
+    "witness": "lipid",
+    "domain": "lipid",
+    "note": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.557): PE O-42:1|PE O-24:0_18:1+, Hex2Cer 44:2;2O|Hex2Cer 18:1;2O/26:1-, PC 37:3|PC 19:1_18:2+, HexCer 36:1;2O|HexCer 18:1;2O/18:0-, FA 28:6;"
+   },
+   {
+    "witness": "metabolic",
+    "domain": "metabolic",
+    "note": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.463): Phosphorylcholine+, Adenosine triphosphate (ATP)+, Fructose 1,6-Bisphosphate-, Lenticin-, Guanosine Diphosphate (GDP)+, Citramalic"
+   },
+   {
+    "witness": "surfaceome/ADT",
+    "domain": "surfaceome",
+    "note": "Elevated (imputed) surface markers vs cohort (z>=1): CD235a(z1.806), CD279(z1.626), CD85g(z1.572), CD25(z1.492), Cadherin(z1.275), CD200(z1.264). Imputed-from-RNA hypotheses; confirm by flow."
+   }
+  ],
+  "overall_confidence": "high",
+  "rationale": "Leading hypothesis: TP53 (genetic-anchored: direct mutation observation). Concordance 0.90. Conflicts: composition\u2192FLT3. ",
+  "knowledge_version": "kb-2026.07"
+ },
+ "deliberation": {
+  "consensus": {
+   "subtype_call": "TP53 (genetic-anchored: direct mutation observation)",
+   "leading_hypothesis": "TP53",
+   "leading_confirmed_by_genetics": true,
+   "concordance": 0.902,
+   "per_witness_consistency": {
+    "composition": "conflict",
+    "genetic": "agree",
+    "cell-state/UDON": "agree"
+   },
+   "conflicts": "composition\u2192FLT3",
+   "ranked_therapy_hypotheses": [
+    {
+     "biomarker": "TP53",
+     "drug": "HMA + venetoclax; consider trial (eprenetapopt) and early allogeneic transplant",
+     "evidence_level": "heuristic",
+     "source": "lit"
+    },
+    {
+     "biomarker": "del7",
+     "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
+     "evidence_level": "heuristic",
+     "source": "lit"
+    }
+   ],
+   "surface_therapy_hypotheses": [],
+   "recommended_validations": [
+    {
+     "claim": "mutation",
+     "validation": "targeted DNA/RNA sequencing (NGS panel)",
+     "source": "standard"
+    },
+    {
+     "claim": "subtype",
+     "validation": "flow cytometry immunophenotyping",
+     "source": "standard"
+    },
+    {
+     "claim": "del7",
+     "validation": "FISH for -7/del(7q) and conventional karyotype",
+     "source": "standard"
+    },
+    {
+     "claim": "surface_marker",
+     "validation": "flow cytometry for the named surface marker",
+     "source": "standard"
+    },
+    {
+     "claim": "lsc",
+     "validation": "ex-vivo drug-sensitivity assay",
+     "source": "heuristic"
+    },
+    {
+     "claim": "metabolite",
+     "validation": "targeted metabolomics / LC-MS confirmation of the imputed metabolite shift",
+     "source": "heuristic"
+    },
+    {
+     "claim": "lipid_profile",
+     "validation": "untargeted lipidomics / mass-spectrometry confirmation of the imputed lipid-class shift",
+     "source": "standard"
+    }
+   ],
+   "descriptive_findings": [
+    {
+     "witness": "GRN-regulon",
+     "domain": "grn",
+     "note": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, YBX1, FOS, CEBPD, RUNX1. Discovery context only."
+    },
+    {
+     "witness": "LSC",
+     "domain": "lsc",
+     "note": "LSC architecture call: p-LSC (MaxProb 0.718, low_confidence=False, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
+    },
+    {
+     "witness": "cell-communication",
+     "domain": "cell_comm",
+     "note": "Dominant signaling axes (independent fastComm L-R inference): PPIA->BSG, APP->CD74, MIF->CD44+CD74, HLA-B->CD8B, HLA-A->CD8B; 9099 called interactions."
+    },
+    {
+     "witness": "lipid",
+     "domain": "lipid",
+     "note": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.557): PE O-42:1|PE O-24:0_18:1+, Hex2Cer 44:2;2O|Hex2Cer 18:1;2O/26:1-, PC 37:3|PC 19:1_18:2+, HexCer 36:1;2O|HexCer 18:1;2O/18:0-, FA 28:6;"
+    },
+    {
+     "witness": "metabolic",
+     "domain": "metabolic",
+     "note": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.463): Phosphorylcholine+, Adenosine triphosphate (ATP)+, Fructose 1,6-Bisphosphate-, Lenticin-, Guanosine Diphosphate (GDP)+, Citramalic"
+    },
+    {
+     "witness": "surfaceome/ADT",
+     "domain": "surfaceome",
+     "note": "Elevated (imputed) surface markers vs cohort (z>=1): CD235a(z1.806), CD279(z1.626), CD85g(z1.572), CD25(z1.492), Cadherin(z1.275), CD200(z1.264). Imputed-from-RNA hypotheses; confirm by flow."
+    }
+   ],
+   "overall_confidence": "high",
+   "rationale": "Leading hypothesis: TP53 (genetic-anchored: direct mutation observation). Concordance 0.90. Conflicts: composition\u2192FLT3. ",
+   "knowledge_version": "kb-2026.07"
+  },
+  "baseline": {
+   "subtype_call": "TP53 (genetic-anchored: direct mutation observation)",
+   "leading_hypothesis": "TP53",
+   "leading_confirmed_by_genetics": true,
+   "concordance": 0.822,
+   "per_witness_consistency": {
+    "composition": "conflict",
+    "genetic": "agree",
+    "cell-state/UDON": "agree"
+   },
+   "conflicts": "composition\u2192FLT3",
+   "ranked_therapy_hypotheses": [
+    {
+     "biomarker": "TP53",
+     "drug": "HMA + venetoclax; consider trial (eprenetapopt) and early allogeneic transplant",
+     "evidence_level": "heuristic",
+     "source": "lit"
+    },
+    {
+     "biomarker": "del7",
+     "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
+     "evidence_level": "heuristic",
+     "source": "lit"
+    }
+   ],
+   "surface_therapy_hypotheses": [],
+   "recommended_validations": [
+    {
+     "claim": "mutation",
+     "validation": "targeted DNA/RNA sequencing (NGS panel)",
+     "source": "standard"
+    },
+    {
+     "claim": "subtype",
+     "validation": "flow cytometry immunophenotyping",
+     "source": "standard"
+    },
+    {
+     "claim": "del7",
+     "validation": "FISH for -7/del(7q) and conventional karyotype",
+     "source": "standard"
+    },
+    {
+     "claim": "surface_marker",
+     "validation": "flow cytometry for the named surface marker",
+     "source": "standard"
+    },
+    {
+     "claim": "lsc",
+     "validation": "ex-vivo drug-sensitivity assay",
+     "source": "heuristic"
+    },
+    {
+     "claim": "metabolite",
+     "validation": "targeted metabolomics / LC-MS confirmation of the imputed metabolite shift",
+     "source": "heuristic"
+    },
+    {
+     "claim": "lipid_profile",
+     "validation": "untargeted lipidomics / mass-spectrometry confirmation of the imputed lipid-class shift",
+     "source": "standard"
+    }
+   ],
+   "descriptive_findings": [
+    {
+     "witness": "GRN-regulon",
+     "domain": "grn",
+     "note": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, YBX1, FOS, CEBPD, RUNX1. Discovery context only."
+    },
+    {
+     "witness": "LSC",
+     "domain": "lsc",
+     "note": "LSC architecture call: p-LSC (MaxProb 0.718, low_confidence=False, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
+    },
+    {
+     "witness": "cell-communication",
+     "domain": "cell_comm",
+     "note": "Dominant signaling axes (independent fastComm L-R inference): PPIA->BSG, APP->CD74, MIF->CD44+CD74, HLA-B->CD8B, HLA-A->CD8B; 9099 called interactions."
+    },
+    {
+     "witness": "lipid",
+     "domain": "lipid",
+     "note": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.557): PE O-42:1|PE O-24:0_18:1+, Hex2Cer 44:2;2O|Hex2Cer 18:1;2O/26:1-, PC 37:3|PC 19:1_18:2+, HexCer 36:1;2O|HexCer 18:1;2O/18:0-, FA 28:6;"
+    },
+    {
+     "witness": "metabolic",
+     "domain": "metabolic",
+     "note": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.463): Phosphorylcholine+, Adenosine triphosphate (ATP)+, Fructose 1,6-Bisphosphate-, Lenticin-, Guanosine Diphosphate (GDP)+, Citramalic"
+    },
+    {
+     "witness": "surfaceome/ADT",
+     "domain": "surfaceome",
+     "note": "Elevated (imputed) surface markers vs cohort (z>=1): CD235a(z1.806), CD279(z1.626), CD85g(z1.572), CD25(z1.492), Cadherin(z1.275), CD200(z1.264). Imputed-from-RNA hypotheses; confirm by flow."
+    }
+   ],
+   "overall_confidence": "high",
+   "rationale": "Leading hypothesis: TP53 (genetic-anchored: direct mutation observation). Concordance 0.82. Conflicts: composition\u2192FLT3. ",
+   "knowledge_version": "kb-2026.07"
+  },
+  "mode": "continuous",
+  "rounds_run": 2,
+  "stop_reason": "converged",
+  "drift": {
+   "baseline_leading": "TP53",
+   "final_leading": "TP53",
+   "leading_changed": false,
+   "final_genetically_confirmed": true,
+   "groupthink_warning": false,
+   "baseline_concordance": 0.822,
+   "final_concordance": 0.902
+  }
+ },
+ "drug_response": {
+  "available": true,
+  "n_drugs_modelled": 118,
+  "n_drugs_reported": 118,
+  "n_abstained": 0,
+  "patient": {
+   "genes_shared_with_model": 14237,
+   "ood_distance": 1.1323854114572174,
+   "ood_percentile": 0.8113695090439277,
+   "differentiation_axis_percentile": 0.501,
+   "single_cell_states": 46
+  },
+  "top_by_tier": {
+   "approved_AML": [
+    {
+     "inhibitor": "Venetoclax",
+     "utility": 0.6514,
+     "prob_sensitive": 0.9495,
+     "n_challenges": 2
+    },
+    {
+     "inhibitor": "Midostaurin",
+     "utility": 0.4152,
+     "prob_sensitive": 0.5619,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Gilteritinib",
+     "utility": 0.2526,
+     "prob_sensitive": 0.2701,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Cytarabine",
+     "utility": 0.2058,
+     "prob_sensitive": 0.5606,
+     "n_challenges": 2
+    },
+    {
+     "inhibitor": "Azacytidine",
+     "utility": 0.1955,
+     "prob_sensitive": 0.4473,
+     "n_challenges": 2
+    }
+   ],
+   "approved_other": [
+    {
+     "inhibitor": "Ponatinib (AP24534)",
+     "utility": 0.611,
+     "prob_sensitive": 0.8628,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Bosutinib (SKI-606)",
+     "utility": 0.6087,
+     "prob_sensitive": 0.8692,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Neratinib (HKI-272)",
+     "utility": 0.5504,
+     "prob_sensitive": 0.7654,
+     "n_challenges": 2
+    },
+    {
+     "inhibitor": "Palbociclib",
+     "utility": 0.5088,
+     "prob_sensitive": 0.6834,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Lenalidomide",
+     "utility": 0.5051,
+     "prob_sensitive": 0.6067,
+     "n_challenges": 0
+    }
+   ],
+   "trial": [
+    {
+     "inhibitor": "Volasertib (BI-6727)",
+     "utility": 0.5593,
+     "prob_sensitive": 0.6903,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "OTX-015",
+     "utility": 0.5426,
+     "prob_sensitive": 0.7057,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Cediranib (AZD2171)",
+     "utility": 0.489,
+     "prob_sensitive": 0.6756,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Motesanib (AMG-706)",
+     "utility": 0.445,
+     "prob_sensitive": 0.6,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Elesclomol",
+     "utility": 0.4388,
+     "prob_sensitive": 0.7855,
+     "n_challenges": 2
+    }
+   ],
+   "research": [
+    {
+     "inhibitor": "Nutlin 3a",
+     "utility": 0.4992,
+     "prob_sensitive": 0.7652,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "JQ1",
+     "utility": 0.4754,
+     "prob_sensitive": 0.7239,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "ABT-737",
+     "utility": 0.4179,
+     "prob_sensitive": 0.589,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "DBZ",
+     "utility": 0.3809,
+     "prob_sensitive": 0.5888,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "JAK Inhibitor I",
+     "utility": 0.3617,
+     "prob_sensitive": 0.3901,
+     "n_challenges": 0
+    }
+   ]
+  },
+  "caveat": "predicted EX-VIVO sensitivity from the BeatAML2 functional screen; a prioritisation for trial matching or laboratory validation, not a treatment recommendation"
+ }
 }

@@ -1,0 +1,7 @@
+Model input	Drivers	Mean AUROC	Mean MCC	Balanced accuracy	Mean F1	Drivers beating permutation null
+Bulk RNA alone	28	0.744	0.251	0.635	0.283	21/28
+RNA + cell-state composition	28	0.823	0.335	0.675	0.358	27/28
+Measured modalities only (imputed removed)	28	0.847	0.371	0.689	0.394	28/28
+All eight modalities	28	0.889	0.388	0.712	0.413	28/28
+Deployed (8 modalities, single-cell only)	28	0.889	0.403	0.722	0.428	—
++ BeatAML cross-assay augmentation	28	0.908	0.432	0.729	0.456	—

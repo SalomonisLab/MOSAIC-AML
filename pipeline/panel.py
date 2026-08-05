@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""MATRIX-AML panel CLI.
+"""MOSAIC-AML panel CLI.
 
 Cohort mode (default): which witnesses can predict the target across the cohort.
   python panel.py --target subtype
@@ -33,7 +33,7 @@ def _provenance(ctx, args):
 
 
 def main(argv=None):
-    ap = argparse.ArgumentParser(description="MATRIX-AML per-witness panel")
+    ap = argparse.ArgumentParser(description="MOSAIC-AML per-witness panel")
     ap.add_argument("--target", default="subtype")
     ap.add_argument("--patient", default=None, help="sample_key (Dataset::Sample) -> per-patient report")
     ap.add_argument("--blocks", default="composition",

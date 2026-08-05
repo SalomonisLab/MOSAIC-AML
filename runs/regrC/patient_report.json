@@ -1,853 +1,997 @@
 {
-  "mode": "patient_panel",
-  "sample_key": "CCHMC::0018_Af_N1c",
-  "annotation": "NPM1c",
-  "dataset": "CCHMC",
-  "provenance": null,
-  "panel": [
-    {
-      "witness": "composition",
-      "grounding": "honest_cv",
-      "independence": "independent",
-      "evidence": {
-        "witness": "composition",
-        "kind": "measured",
-        "status": "ok",
-        "held_out": true,
-        "patient_prediction": "NPM1",
-        "patient_probability": 0.9161,
-        "true_label": "NPM1",
-        "cohort_balanced_accuracy": 0.6312,
-        "cohort_permutation_p": 0.09090909090909091,
-        "patient_top_cellstates": {
-          "MultiLin-GMP-1": 0.516,
-          "B Memory-1": 0.086,
-          "CD4 TCM": 0.059,
-          "Intermediate Mono-3": 0.041,
-          "MEP-2": 0.035,
-          "MPP-MEP": 0.034
-        }
-      },
-      "opinion": {
-        "confidence": 0.5,
-        "reliability_weight": 0.85,
-        "summary": "predicts NPM1 (prob 0.9161)",
-        "caveats": "LLM fallback"
-      }
-    },
-    {
-      "witness": "genetic",
-      "grounding": "deterministic_fact",
-      "independence": "independent",
-      "evidence": {
-        "witness": "genetic",
-        "kind": "independent",
-        "status": "ok",
-        "present": [
-          "complex",
-          "NPM1"
-        ],
-        "targetable": {
-          "NPM1": "menin inhibitor (NPM1/KMT2A-rearranged context)"
-        },
-        "eln": null
-      },
-      "opinion": {
-        "confidence": 0.6,
-        "reliability_weight": 0.85,
-        "summary": "present: ['complex', 'NPM1']; targetable: ['NPM1']",
-        "caveats": "LLM fallback"
-      }
-    },
-    {
-      "witness": "cell-state/UDON",
-      "grounding": "discovery",
-      "independence": "rna_derived",
-      "evidence": {
-        "witness": "cell-state/UDON",
-        "kind": "discovery",
-        "status": "ok",
-        "n_pseudobulks": 23,
-        "active_programs": [
-          {
-            "program": "P3",
-            "n_pseudobulks": 10,
-            "marks": "Inv16"
-          },
-          {
-            "program": "P14",
-            "n_pseudobulks": 8,
-            "marks": "NPM1"
-          },
-          {
-            "program": "P6",
-            "n_pseudobulks": 2,
-            "marks": "NPM1"
-          },
-          {
-            "program": "P7",
-            "n_pseudobulks": 2,
-            "marks": "PHIP"
-          },
-          {
-            "program": "P2",
-            "n_pseudobulks": 1,
-            "marks": "NPM1"
-          }
-        ]
-      },
-      "opinion": {
-        "confidence": 0.6,
-        "reliability_weight": 0.35,
-        "summary": "programs: ['P3', 'P14', 'P6', 'P7', 'P2']",
-        "caveats": "LLM fallback [r1: deferred to observed driver NPM1]",
-        "revised": true
-      }
-    },
-    {
-      "witness": "LSC",
-      "grounding": "classifier_call",
-      "independence": "rna_derived",
-      "evidence": {
-        "witness": "LSC",
-        "kind": "classifier_call",
-        "status": "ok",
-        "predicted_class": "p-LSC",
-        "max_prob": 0.39,
-        "class_probs": {
-          "Prob_m-LSC": 0.302,
-          "Prob_p+m-LSC": 0.307,
-          "Prob_p-LSC": 0.39
-        },
-        "low_confidence": true,
-        "few_cells": false,
-        "total_cells": 2147.0,
-        "confident_call": false,
-        "validation_claims": [],
-        "descriptive_context": [
-          "LSC architecture call: p-LSC (MaxProb 0.39, low_confidence=True, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
-        ]
-      },
-      "opinion": {
-        "confidence": 0.1,
-        "reliability_weight": 0.0,
-        "summary": "LSC architecture call: p-LSC (MaxProb 0.39, low_confidence=True, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth.",
-        "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
-      }
-    },
-    {
-      "witness": "surfaceome/ADT",
-      "grounding": "descriptive_aggregate",
-      "independence": "imputed_from_RNA",
-      "evidence": {
-        "witness": "surfaceome/ADT",
-        "kind": "imputed_surface",
-        "status": "ok",
-        "high_markers": [
-          {
-            "marker": "CD90",
-            "z": 1.219
-          }
-        ],
-        "actionable_markers": [],
-        "therapy_biomarkers": [],
-        "flow_panel": [],
-        "validation_claims": [
-          "surface_marker"
-        ],
-        "descriptive_context": [
-          "Elevated (imputed) surface markers vs cohort (z>=1): CD90(z1.219). Imputed-from-RNA hypotheses; confirm by flow."
-        ]
-      },
-      "opinion": {
-        "confidence": 0.5,
-        "reliability_weight": 0.4,
-        "summary": "Elevated (imputed) surface markers vs cohort (z>=1): CD90(z1.219). Imputed-from-RNA hypotheses; confirm by flow.",
-        "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
-      }
-    },
-    {
-      "witness": "metabolic",
-      "grounding": "descriptive_aggregate",
-      "independence": "imputed_from_RNA",
-      "evidence": {
-        "witness": "metabolic",
-        "kind": "imputed_omics",
-        "status": "ok",
-        "min_spearman": 0.3,
-        "n_features_passing_fidelity": 1084,
-        "n_named_features": 176,
-        "top_features": [
-          {
-            "feature": "Leucine methyl ester",
-            "z": -1.8,
-            "heldout_spearman": 0.548,
-            "weighted_score": -0.984
-          },
-          {
-            "feature": "6-Methylnicotinamide",
-            "z": 1.6,
-            "heldout_spearman": 0.599,
-            "weighted_score": 0.961
-          },
-          {
-            "feature": "epsilon-(gamma-Glutamyl)lysine",
-            "z": 1.24,
-            "heldout_spearman": 0.701,
-            "weighted_score": 0.87
-          },
-          {
-            "feature": "Homostachydrine",
-            "z": -1.54,
-            "heldout_spearman": 0.551,
-            "weighted_score": -0.847
-          },
-          {
-            "feature": "Prolinamide",
-            "z": -2.44,
-            "heldout_spearman": 0.341,
-            "weighted_score": -0.83
-          },
-          {
-            "feature": "Neopterin",
-            "z": -1.72,
-            "heldout_spearman": 0.481,
-            "weighted_score": -0.829
-          },
-          {
-            "feature": "Aspartate",
-            "z": -1.74,
-            "heldout_spearman": 0.47,
-            "weighted_score": -0.821
-          },
-          {
-            "feature": "Citramalic acid",
-            "z": 1.53,
-            "heldout_spearman": 0.528,
-            "weighted_score": 0.807
-          }
-        ],
-        "median_reported_fidelity": 0.538,
-        "validation_claims": [
-          "metabolite"
-        ],
-        "descriptive_context": [
-          "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.538): Leucine methyl ester-, 6-Methylnicotinamide+, epsilon-(gamma-Glutamyl)lysine+, Homostachydrine-, Prolinamide-, Neopterin-."
-        ]
-      },
-      "opinion": {
-        "confidence": 0.45,
-        "reliability_weight": 0.35,
-        "summary": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.538): Leucine methyl ester-, 6-Methylnicotinamide+, epsilon-(gamma-Glutamyl)lysine+, Homostachyd",
-        "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
-      }
-    },
-    {
-      "witness": "lipid",
-      "grounding": "descriptive_aggregate",
-      "independence": "imputed_from_RNA",
-      "evidence": {
-        "witness": "lipid",
-        "kind": "imputed_omics",
-        "status": "ok",
-        "min_spearman": 0.3,
-        "n_features_passing_fidelity": 625,
-        "n_named_features": 625,
-        "top_features": [
-          {
-            "feature": "DG 38:5|DG 18:2_20:3",
-            "z": -2.63,
-            "heldout_spearman": 0.549,
-            "weighted_score": -1.445
-          },
-          {
-            "feature": "FA 28:1",
-            "z": 1.95,
-            "heldout_spearman": 0.664,
-            "weighted_score": 1.295
-          },
-          {
-            "feature": "Cer 44:1;2O|Cer 18:1;2O/26:0",
-            "z": 2.21,
-            "heldout_spearman": 0.575,
-            "weighted_score": 1.273
-          },
-          {
-            "feature": "PC 38:4|PC 18:0_20:4",
-            "z": -1.84,
-            "heldout_spearman": 0.689,
-            "weighted_score": -1.272
-          },
-          {
-            "feature": "TG 58:8|TG 18:1_18:2_22:5",
-            "z": 3.11,
-            "heldout_spearman": 0.378,
-            "weighted_score": 1.177
-          },
-          {
-            "feature": "PC 44:2|PC 18:1_26:1",
-            "z": 1.68,
-            "heldout_spearman": 0.691,
-            "weighted_score": 1.161
-          },
-          {
-            "feature": "PC 42:1|PC 16:0_26:1",
-            "z": 1.65,
-            "heldout_spearman": 0.668,
-            "weighted_score": 1.102
-          },
-          {
-            "feature": "PE 44:1|PE 26:0_18:1",
-            "z": 1.72,
-            "heldout_spearman": 0.637,
-            "weighted_score": 1.094
-          }
-        ],
-        "median_reported_fidelity": 0.651,
-        "validation_claims": [
-          "lipid_profile"
-        ],
-        "descriptive_context": [
-          "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.651): DG 38:5|DG 18:2_20:3-, FA 28:1+, Cer 44:1;2O|Cer 18:1;2O/26:0+, PC 38:4|PC 18:0_20:4-, TG 58:8|TG 18:1_18:2_22:5+, PC 44:2|PC 18:1_26:1+."
-        ],
-        "top_lipid_classes": [
-          {
-            "lipid_class": "PC",
-            "score": 3.535
-          },
-          {
-            "lipid_class": "DG",
-            "score": 1.445
-          },
-          {
-            "lipid_class": "FA",
-            "score": 1.295
-          },
-          {
-            "lipid_class": "Cer",
-            "score": 1.273
-          }
-        ]
-      },
-      "opinion": {
-        "confidence": 0.45,
-        "reliability_weight": 0.35,
-        "summary": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.651): DG 38:5|DG 18:2_20:3-, FA 28:1+, Cer 44:1;2O|Cer 18:1;2O/26:0+, PC 38:4|PC 18:0_20:4-, TG 58:8",
-        "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
-      }
-    },
-    {
-      "witness": "GRN-regulon",
-      "grounding": "descriptive_aggregate",
-      "independence": "imputed_from_RNA",
-      "evidence": {
-        "witness": "GRN-regulon",
-        "kind": "imputed_regulon",
-        "status": "ok",
-        "fidelity_status": "unknown",
-        "top_active_tfs": [
-          {
-            "tf": "SPI1",
-            "activity": 51.893
-          },
-          {
-            "tf": "ELF1",
-            "activity": 47.448
-          },
-          {
-            "tf": "RUNX1",
-            "activity": 16.449
-          },
-          {
-            "tf": "ELF2",
-            "activity": 11.177
-          },
-          {
-            "tf": "ATF6",
-            "activity": 10.798
-          },
-          {
-            "tf": "JUND",
-            "activity": 10.189
-          },
-          {
-            "tf": "FOSL2",
-            "activity": 8.941
-          },
-          {
-            "tf": "NFIL3",
-            "activity": 8.754
-          }
-        ],
-        "top_active_edges": [
-          {
-            "edge": "ELF1|VAPA",
-            "activity": 0.594
-          },
-          {
-            "edge": "ELF1|CD44",
-            "activity": 0.59
-          },
-          {
-            "edge": "ELF1|USP3",
-            "activity": 0.571
-          },
-          {
-            "edge": "JUND|CDC42",
-            "activity": 0.548
-          },
-          {
-            "edge": "ELF1|MAP3K2",
-            "activity": 0.499
-          },
-          {
-            "edge": "ELF1|MALAT1",
-            "activity": 0.496
-          },
-          {
-            "edge": "ELF1|PPP1CB",
-            "activity": 0.491
-          },
-          {
-            "edge": "ELF1|KLF6",
-            "activity": 0.485
-          }
-        ],
-        "descriptive_context": [
-          "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, ELF1, RUNX1, ELF2, ATF6. Discovery context only."
-        ]
-      },
-      "opinion": {
-        "confidence": 0.4,
-        "reliability_weight": 0.3,
-        "summary": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, ELF1, RUNX1, ELF2, ATF6. Discovery context only.",
-        "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
-      }
-    },
-    {
-      "witness": "cell-communication",
-      "grounding": "descriptive_aggregate",
-      "independence": "independent",
-      "evidence": {
-        "witness": "cell-communication",
-        "kind": "signaling",
-        "status": "ok",
-        "n_edges": 2172,
-        "top_interactions": [
-          {
-            "interaction": "Intermediate Mono-1|CD55|ADGRE5|T CD4 Activated",
-            "score": 0.55
-          },
-          {
-            "interaction": "Non-Classical Mono-2|NAMPT|ITGA5+ITGB1|Intermediate Mono-1",
-            "score": 0.546
-          },
-          {
-            "interaction": "Intermediate Mono-1|CD55|ADGRE5|CD8 TEM",
-            "score": 0.531
-          },
-          {
-            "interaction": "Intermediate Mono-1|CD55|ADGRE5|MAIT",
-            "score": 0.526
-          },
-          {
-            "interaction": "Intermediate Mono-1|NAMPT|ITGA5+ITGB1|Non-Classical Mono-2",
-            "score": 0.525
-          },
-          {
-            "interaction": "Intermediate Mono-1|CD55|ADGRE5|NK-Mature",
-            "score": 0.521
-          },
-          {
-            "interaction": "NK-Mature|CD69|KLRB1|MAIT",
-            "score": 0.518
-          },
-          {
-            "interaction": "CD8 TEM|CD69|KLRB1|MAIT",
-            "score": 0.506
-          },
-          {
-            "interaction": "preNeu|MIF|CD44+CD74|B Memory-1",
-            "score": 0.487
-          },
-          {
-            "interaction": "CD4 TCM|CD69|KLRB1|MAIT",
-            "score": 0.484
-          },
-          {
-            "interaction": "B Memory-1|CD55|ADGRE5|T CD4 Activated",
-            "score": 0.477
-          },
-          {
-            "interaction": "BMCP-1|NAMPT|ITGA5+ITGB1|Intermediate Mono-1",
-            "score": 0.475
-          }
-        ],
-        "top_axes": [
-          {
-            "axis": "CD55->ADGRE5",
-            "score": 0.55
-          },
-          {
-            "axis": "NAMPT->ITGA5+ITGB1",
-            "score": 0.546
-          },
-          {
-            "axis": "CD69->KLRB1",
-            "score": 0.518
-          },
-          {
-            "axis": "MIF->CD44+CD74",
-            "score": 0.487
-          },
-          {
-            "axis": "MIF->CD74+CXCR4",
-            "score": 0.46
-          },
-          {
-            "axis": "CD99->CD99",
-            "score": 0.453
-          },
-          {
-            "axis": "CD6->ALCAM",
-            "score": 0.447
-          },
-          {
-            "axis": "THBS1->CD36",
-            "score": 0.416
-          },
-          {
-            "axis": "CLEC2B->KLRB1",
-            "score": 0.412
-          },
-          {
-            "axis": "PPIA->BSG",
-            "score": 0.396
-          }
-        ],
-        "top_sender_states": [
-          "Intermediate Mono-1",
-          "preNeu",
-          "MultiLin-GMP-1",
-          "immNeu-2",
-          "Non-Classical Mono-2",
-          "BMCP-1"
-        ],
-        "top_receiver_states": [
-          "MAIT",
-          "NK-Mature",
-          "B Memory-1",
-          "CD8 TEM",
-          "MultiLin-GMP-1",
-          "Mono-1"
-        ],
-        "descriptive_context": [
-          "Dominant signaling axes (independent fastComm L-R inference): CD55->ADGRE5, NAMPT->ITGA5+ITGB1, CD69->KLRB1, MIF->CD44+CD74, MIF->CD74+CXCR4; 2172 called interactions."
-        ]
-      },
-      "opinion": {
-        "confidence": 0.5,
-        "reliability_weight": 0.5,
-        "summary": "Dominant signaling axes (independent fastComm L-R inference): CD55->ADGRE5, NAMPT->ITGA5+ITGB1, CD69->KLRB1, MIF->CD44+CD74, MIF->CD74+CXCR4; 2172 called interactions.",
-        "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
-      }
+ "mode": "patient_panel",
+ "sample_key": "CCHMC::0018_Af_N1c",
+ "annotation": "NPM1c",
+ "dataset": "CCHMC",
+ "provenance": null,
+ "panel": [
+  {
+   "witness": "composition",
+   "grounding": "honest_cv",
+   "independence": "independent",
+   "evidence": {
+    "witness": "composition",
+    "kind": "measured",
+    "status": "ok",
+    "held_out": true,
+    "patient_prediction": "NPM1",
+    "patient_probability": 0.9161,
+    "true_label": "NPM1",
+    "cohort_balanced_accuracy": 0.6312,
+    "cohort_permutation_p": 0.09090909090909091,
+    "patient_top_cellstates": {
+     "MultiLin-GMP-1": 0.516,
+     "B Memory-1": 0.086,
+     "CD4 TCM": 0.059,
+     "Intermediate Mono-3": 0.041,
+     "MEP-2": 0.035,
+     "MPP-MEP": 0.034
     }
-  ],
-  "consensus": {
-    "subtype_call": "NPM1 (genetic-anchored: direct mutation observation)",
-    "leading_hypothesis": "NPM1",
-    "leading_confirmed_by_genetics": true,
-    "concordance": 0.911,
-    "per_witness_consistency": {
-      "composition": "agree",
-      "genetic": "agree",
-      "cell-state/UDON": "conflict"
-    },
-    "conflicts": "cell-state/UDON\u2192Inv16",
-    "ranked_therapy_hypotheses": [
-      {
-        "biomarker": "NPM1",
-        "drug": "menin inhibitor (revumenib)",
-        "evidence_level": "guideline",
-        "source": "NCCN-2024"
-      },
-      {
-        "biomarker": "complex",
-        "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
-        "evidence_level": "heuristic",
-        "source": "lit"
-      }
-    ],
-    "surface_therapy_hypotheses": [],
-    "recommended_validations": [
-      {
-        "claim": "mutation",
-        "validation": "targeted DNA/RNA sequencing (NGS panel)",
-        "source": "standard"
-      },
-      {
-        "claim": "subtype",
-        "validation": "flow cytometry immunophenotyping",
-        "source": "standard"
-      },
-      {
-        "claim": "complex",
-        "validation": "conventional karyotype / SNP-array cytogenetics",
-        "source": "standard"
-      },
-      {
-        "claim": "surface_marker",
-        "validation": "flow cytometry for the named surface marker",
-        "source": "standard"
-      },
-      {
-        "claim": "metabolite",
-        "validation": "targeted metabolomics / LC-MS confirmation of the imputed metabolite shift",
-        "source": "heuristic"
-      },
-      {
-        "claim": "lipid_profile",
-        "validation": "untargeted lipidomics / mass-spectrometry confirmation of the imputed lipid-class shift",
-        "source": "standard"
-      }
-    ],
-    "descriptive_findings": [
-      {
-        "witness": "GRN-regulon",
-        "domain": "grn",
-        "note": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, ELF1, RUNX1, ELF2, ATF6. Discovery context only."
-      },
-      {
-        "witness": "LSC",
-        "domain": "lsc",
-        "note": "LSC architecture call: p-LSC (MaxProb 0.39, low_confidence=True, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
-      },
-      {
-        "witness": "cell-communication",
-        "domain": "cell_comm",
-        "note": "Dominant signaling axes (independent fastComm L-R inference): CD55->ADGRE5, NAMPT->ITGA5+ITGB1, CD69->KLRB1, MIF->CD44+CD74, MIF->CD74+CXCR4; 2172 called interactions."
-      },
-      {
-        "witness": "lipid",
-        "domain": "lipid",
-        "note": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.651): DG 38:5|DG 18:2_20:3-, FA 28:1+, Cer 44:1;2O|Cer 18:1;2O/26:0+, PC 38:4|PC 18:0_20:4-, TG 58:8|TG 18:1_18:2_22:5+, PC 44:2|PC 18:1_26:"
-      },
-      {
-        "witness": "metabolic",
-        "domain": "metabolic",
-        "note": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.538): Leucine methyl ester-, 6-Methylnicotinamide+, epsilon-(gamma-Glutamyl)lysine+, Homostachydrine-, Prolinamide-, Neopterin-."
-      },
-      {
-        "witness": "surfaceome/ADT",
-        "domain": "surfaceome",
-        "note": "Elevated (imputed) surface markers vs cohort (z>=1): CD90(z1.219). Imputed-from-RNA hypotheses; confirm by flow."
-      }
-    ],
-    "overall_confidence": "high",
-    "rationale": "Leading hypothesis: NPM1 (genetic-anchored: direct mutation observation). Concordance 0.91. Conflicts: cell-state/UDON\u2192Inv16. ",
-    "knowledge_version": "kb-2026.07"
+   },
+   "opinion": {
+    "confidence": 0.5,
+    "reliability_weight": 0.85,
+    "summary": "predicts NPM1 (prob 0.9161)",
+    "caveats": "LLM fallback"
+   }
   },
-  "deliberation": {
-    "consensus": {
-      "subtype_call": "NPM1 (genetic-anchored: direct mutation observation)",
-      "leading_hypothesis": "NPM1",
-      "leading_confirmed_by_genetics": true,
-      "concordance": 0.911,
-      "per_witness_consistency": {
-        "composition": "agree",
-        "genetic": "agree",
-        "cell-state/UDON": "conflict"
-      },
-      "conflicts": "cell-state/UDON\u2192Inv16",
-      "ranked_therapy_hypotheses": [
-        {
-          "biomarker": "NPM1",
-          "drug": "menin inhibitor (revumenib)",
-          "evidence_level": "guideline",
-          "source": "NCCN-2024"
-        },
-        {
-          "biomarker": "complex",
-          "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
-          "evidence_level": "heuristic",
-          "source": "lit"
-        }
-      ],
-      "surface_therapy_hypotheses": [],
-      "recommended_validations": [
-        {
-          "claim": "mutation",
-          "validation": "targeted DNA/RNA sequencing (NGS panel)",
-          "source": "standard"
-        },
-        {
-          "claim": "subtype",
-          "validation": "flow cytometry immunophenotyping",
-          "source": "standard"
-        },
-        {
-          "claim": "complex",
-          "validation": "conventional karyotype / SNP-array cytogenetics",
-          "source": "standard"
-        },
-        {
-          "claim": "surface_marker",
-          "validation": "flow cytometry for the named surface marker",
-          "source": "standard"
-        },
-        {
-          "claim": "metabolite",
-          "validation": "targeted metabolomics / LC-MS confirmation of the imputed metabolite shift",
-          "source": "heuristic"
-        },
-        {
-          "claim": "lipid_profile",
-          "validation": "untargeted lipidomics / mass-spectrometry confirmation of the imputed lipid-class shift",
-          "source": "standard"
-        }
-      ],
-      "descriptive_findings": [
-        {
-          "witness": "GRN-regulon",
-          "domain": "grn",
-          "note": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, ELF1, RUNX1, ELF2, ATF6. Discovery context only."
-        },
-        {
-          "witness": "LSC",
-          "domain": "lsc",
-          "note": "LSC architecture call: p-LSC (MaxProb 0.39, low_confidence=True, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
-        },
-        {
-          "witness": "cell-communication",
-          "domain": "cell_comm",
-          "note": "Dominant signaling axes (independent fastComm L-R inference): CD55->ADGRE5, NAMPT->ITGA5+ITGB1, CD69->KLRB1, MIF->CD44+CD74, MIF->CD74+CXCR4; 2172 called interactions."
-        },
-        {
-          "witness": "lipid",
-          "domain": "lipid",
-          "note": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.651): DG 38:5|DG 18:2_20:3-, FA 28:1+, Cer 44:1;2O|Cer 18:1;2O/26:0+, PC 38:4|PC 18:0_20:4-, TG 58:8|TG 18:1_18:2_22:5+, PC 44:2|PC 18:1_26:"
-        },
-        {
-          "witness": "metabolic",
-          "domain": "metabolic",
-          "note": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.538): Leucine methyl ester-, 6-Methylnicotinamide+, epsilon-(gamma-Glutamyl)lysine+, Homostachydrine-, Prolinamide-, Neopterin-."
-        },
-        {
-          "witness": "surfaceome/ADT",
-          "domain": "surfaceome",
-          "note": "Elevated (imputed) surface markers vs cohort (z>=1): CD90(z1.219). Imputed-from-RNA hypotheses; confirm by flow."
-        }
-      ],
-      "overall_confidence": "high",
-      "rationale": "Leading hypothesis: NPM1 (genetic-anchored: direct mutation observation). Concordance 0.91. Conflicts: cell-state/UDON\u2192Inv16. ",
-      "knowledge_version": "kb-2026.07"
+  {
+   "witness": "genetic",
+   "grounding": "deterministic_fact",
+   "independence": "independent",
+   "evidence": {
+    "witness": "genetic",
+    "kind": "independent",
+    "status": "ok",
+    "present": [
+     "complex",
+     "NPM1"
+    ],
+    "targetable": {
+     "NPM1": "menin inhibitor (NPM1/KMT2A-rearranged context)"
     },
-    "baseline": {
-      "subtype_call": "NPM1 (genetic-anchored: direct mutation observation)",
-      "leading_hypothesis": "NPM1",
-      "leading_confirmed_by_genetics": true,
-      "concordance": 0.837,
-      "per_witness_consistency": {
-        "composition": "agree",
-        "genetic": "agree",
-        "cell-state/UDON": "conflict"
-      },
-      "conflicts": "cell-state/UDON\u2192Inv16",
-      "ranked_therapy_hypotheses": [
-        {
-          "biomarker": "NPM1",
-          "drug": "menin inhibitor (revumenib)",
-          "evidence_level": "guideline",
-          "source": "NCCN-2024"
-        },
-        {
-          "biomarker": "complex",
-          "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
-          "evidence_level": "heuristic",
-          "source": "lit"
-        }
-      ],
-      "surface_therapy_hypotheses": [],
-      "recommended_validations": [
-        {
-          "claim": "mutation",
-          "validation": "targeted DNA/RNA sequencing (NGS panel)",
-          "source": "standard"
-        },
-        {
-          "claim": "subtype",
-          "validation": "flow cytometry immunophenotyping",
-          "source": "standard"
-        },
-        {
-          "claim": "complex",
-          "validation": "conventional karyotype / SNP-array cytogenetics",
-          "source": "standard"
-        },
-        {
-          "claim": "surface_marker",
-          "validation": "flow cytometry for the named surface marker",
-          "source": "standard"
-        },
-        {
-          "claim": "metabolite",
-          "validation": "targeted metabolomics / LC-MS confirmation of the imputed metabolite shift",
-          "source": "heuristic"
-        },
-        {
-          "claim": "lipid_profile",
-          "validation": "untargeted lipidomics / mass-spectrometry confirmation of the imputed lipid-class shift",
-          "source": "standard"
-        }
-      ],
-      "descriptive_findings": [
-        {
-          "witness": "GRN-regulon",
-          "domain": "grn",
-          "note": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, ELF1, RUNX1, ELF2, ATF6. Discovery context only."
-        },
-        {
-          "witness": "LSC",
-          "domain": "lsc",
-          "note": "LSC architecture call: p-LSC (MaxProb 0.39, low_confidence=True, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
-        },
-        {
-          "witness": "cell-communication",
-          "domain": "cell_comm",
-          "note": "Dominant signaling axes (independent fastComm L-R inference): CD55->ADGRE5, NAMPT->ITGA5+ITGB1, CD69->KLRB1, MIF->CD44+CD74, MIF->CD74+CXCR4; 2172 called interactions."
-        },
-        {
-          "witness": "lipid",
-          "domain": "lipid",
-          "note": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.651): DG 38:5|DG 18:2_20:3-, FA 28:1+, Cer 44:1;2O|Cer 18:1;2O/26:0+, PC 38:4|PC 18:0_20:4-, TG 58:8|TG 18:1_18:2_22:5+, PC 44:2|PC 18:1_26:"
-        },
-        {
-          "witness": "metabolic",
-          "domain": "metabolic",
-          "note": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.538): Leucine methyl ester-, 6-Methylnicotinamide+, epsilon-(gamma-Glutamyl)lysine+, Homostachydrine-, Prolinamide-, Neopterin-."
-        },
-        {
-          "witness": "surfaceome/ADT",
-          "domain": "surfaceome",
-          "note": "Elevated (imputed) surface markers vs cohort (z>=1): CD90(z1.219). Imputed-from-RNA hypotheses; confirm by flow."
-        }
-      ],
-      "overall_confidence": "high",
-      "rationale": "Leading hypothesis: NPM1 (genetic-anchored: direct mutation observation). Concordance 0.84. Conflicts: cell-state/UDON\u2192Inv16. ",
-      "knowledge_version": "kb-2026.07"
+    "eln": null
+   },
+   "opinion": {
+    "confidence": 0.6,
+    "reliability_weight": 0.85,
+    "summary": "present: ['complex', 'NPM1']; targetable: ['NPM1']",
+    "caveats": "LLM fallback"
+   }
+  },
+  {
+   "witness": "cell-state/UDON",
+   "grounding": "discovery",
+   "independence": "rna_derived",
+   "evidence": {
+    "witness": "cell-state/UDON",
+    "kind": "discovery",
+    "status": "ok",
+    "n_pseudobulks": 23,
+    "active_programs": [
+     {
+      "program": "P3",
+      "n_pseudobulks": 10,
+      "marks": "Inv16"
+     },
+     {
+      "program": "P14",
+      "n_pseudobulks": 8,
+      "marks": "NPM1"
+     },
+     {
+      "program": "P6",
+      "n_pseudobulks": 2,
+      "marks": "NPM1"
+     },
+     {
+      "program": "P7",
+      "n_pseudobulks": 2,
+      "marks": "PHIP"
+     },
+     {
+      "program": "P2",
+      "n_pseudobulks": 1,
+      "marks": "NPM1"
+     }
+    ]
+   },
+   "opinion": {
+    "confidence": 0.6,
+    "reliability_weight": 0.35,
+    "summary": "programs: ['P3', 'P14', 'P6', 'P7', 'P2']",
+    "caveats": "LLM fallback [r1: deferred to observed driver NPM1]",
+    "revised": true
+   }
+  },
+  {
+   "witness": "LSC",
+   "grounding": "classifier_call",
+   "independence": "rna_derived",
+   "evidence": {
+    "witness": "LSC",
+    "kind": "classifier_call",
+    "status": "ok",
+    "predicted_class": "p-LSC",
+    "max_prob": 0.39,
+    "class_probs": {
+     "Prob_m-LSC": 0.302,
+     "Prob_p+m-LSC": 0.307,
+     "Prob_p-LSC": 0.39
     },
-    "mode": "continuous",
-    "stop_reason": "converged",
-    "rounds_run": 2,
-    "deliberation_rounds": 1,
-    "drift": {
-      "baseline_leading": "NPM1",
-      "final_leading": "NPM1",
-      "leading_changed": false,
-      "final_genetically_confirmed": true,
-      "groupthink_warning": false,
-      "baseline_concordance": 0.837,
-      "final_concordance": 0.911
-    }
+    "low_confidence": true,
+    "few_cells": false,
+    "total_cells": 2147.0,
+    "confident_call": false,
+    "validation_claims": [],
+    "descriptive_context": [
+     "LSC architecture call: p-LSC (MaxProb 0.39, low_confidence=True, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
+    ]
+   },
+   "opinion": {
+    "confidence": 0.1,
+    "reliability_weight": 0.0,
+    "summary": "LSC architecture call: p-LSC (MaxProb 0.39, low_confidence=True, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth.",
+    "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
+   }
+  },
+  {
+   "witness": "surfaceome/ADT",
+   "grounding": "descriptive_aggregate",
+   "independence": "imputed_from_RNA",
+   "evidence": {
+    "witness": "surfaceome/ADT",
+    "kind": "imputed_surface",
+    "status": "ok",
+    "high_markers": [
+     {
+      "marker": "CD90",
+      "z": 1.219
+     }
+    ],
+    "actionable_markers": [],
+    "therapy_biomarkers": [],
+    "flow_panel": [],
+    "validation_claims": [
+     "surface_marker"
+    ],
+    "descriptive_context": [
+     "Elevated (imputed) surface markers vs cohort (z>=1): CD90(z1.219). Imputed-from-RNA hypotheses; confirm by flow."
+    ]
+   },
+   "opinion": {
+    "confidence": 0.5,
+    "reliability_weight": 0.4,
+    "summary": "Elevated (imputed) surface markers vs cohort (z>=1): CD90(z1.219). Imputed-from-RNA hypotheses; confirm by flow.",
+    "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
+   }
+  },
+  {
+   "witness": "metabolic",
+   "grounding": "descriptive_aggregate",
+   "independence": "imputed_from_RNA",
+   "evidence": {
+    "witness": "metabolic",
+    "kind": "imputed_omics",
+    "status": "ok",
+    "min_spearman": 0.3,
+    "n_features_passing_fidelity": 1084,
+    "n_named_features": 176,
+    "top_features": [
+     {
+      "feature": "Leucine methyl ester",
+      "z": -1.8,
+      "heldout_spearman": 0.548,
+      "weighted_score": -0.984
+     },
+     {
+      "feature": "6-Methylnicotinamide",
+      "z": 1.6,
+      "heldout_spearman": 0.599,
+      "weighted_score": 0.961
+     },
+     {
+      "feature": "epsilon-(gamma-Glutamyl)lysine",
+      "z": 1.24,
+      "heldout_spearman": 0.701,
+      "weighted_score": 0.87
+     },
+     {
+      "feature": "Homostachydrine",
+      "z": -1.54,
+      "heldout_spearman": 0.551,
+      "weighted_score": -0.847
+     },
+     {
+      "feature": "Prolinamide",
+      "z": -2.44,
+      "heldout_spearman": 0.341,
+      "weighted_score": -0.83
+     },
+     {
+      "feature": "Neopterin",
+      "z": -1.72,
+      "heldout_spearman": 0.481,
+      "weighted_score": -0.829
+     },
+     {
+      "feature": "Aspartate",
+      "z": -1.74,
+      "heldout_spearman": 0.47,
+      "weighted_score": -0.821
+     },
+     {
+      "feature": "Citramalic acid",
+      "z": 1.53,
+      "heldout_spearman": 0.528,
+      "weighted_score": 0.807
+     }
+    ],
+    "median_reported_fidelity": 0.538,
+    "validation_claims": [
+     "metabolite"
+    ],
+    "descriptive_context": [
+     "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.538): Leucine methyl ester-, 6-Methylnicotinamide+, epsilon-(gamma-Glutamyl)lysine+, Homostachydrine-, Prolinamide-, Neopterin-."
+    ]
+   },
+   "opinion": {
+    "confidence": 0.45,
+    "reliability_weight": 0.35,
+    "summary": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.538): Leucine methyl ester-, 6-Methylnicotinamide+, epsilon-(gamma-Glutamyl)lysine+, Homostachyd",
+    "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
+   }
+  },
+  {
+   "witness": "lipid",
+   "grounding": "descriptive_aggregate",
+   "independence": "imputed_from_RNA",
+   "evidence": {
+    "witness": "lipid",
+    "kind": "imputed_omics",
+    "status": "ok",
+    "min_spearman": 0.3,
+    "n_features_passing_fidelity": 625,
+    "n_named_features": 625,
+    "top_features": [
+     {
+      "feature": "DG 38:5|DG 18:2_20:3",
+      "z": -2.63,
+      "heldout_spearman": 0.549,
+      "weighted_score": -1.445
+     },
+     {
+      "feature": "FA 28:1",
+      "z": 1.95,
+      "heldout_spearman": 0.664,
+      "weighted_score": 1.295
+     },
+     {
+      "feature": "Cer 44:1;2O|Cer 18:1;2O/26:0",
+      "z": 2.21,
+      "heldout_spearman": 0.575,
+      "weighted_score": 1.273
+     },
+     {
+      "feature": "PC 38:4|PC 18:0_20:4",
+      "z": -1.84,
+      "heldout_spearman": 0.689,
+      "weighted_score": -1.272
+     },
+     {
+      "feature": "TG 58:8|TG 18:1_18:2_22:5",
+      "z": 3.11,
+      "heldout_spearman": 0.378,
+      "weighted_score": 1.177
+     },
+     {
+      "feature": "PC 44:2|PC 18:1_26:1",
+      "z": 1.68,
+      "heldout_spearman": 0.691,
+      "weighted_score": 1.161
+     },
+     {
+      "feature": "PC 42:1|PC 16:0_26:1",
+      "z": 1.65,
+      "heldout_spearman": 0.668,
+      "weighted_score": 1.102
+     },
+     {
+      "feature": "PE 44:1|PE 26:0_18:1",
+      "z": 1.72,
+      "heldout_spearman": 0.637,
+      "weighted_score": 1.094
+     }
+    ],
+    "median_reported_fidelity": 0.651,
+    "validation_claims": [
+     "lipid_profile"
+    ],
+    "descriptive_context": [
+     "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.651): DG 38:5|DG 18:2_20:3-, FA 28:1+, Cer 44:1;2O|Cer 18:1;2O/26:0+, PC 38:4|PC 18:0_20:4-, TG 58:8|TG 18:1_18:2_22:5+, PC 44:2|PC 18:1_26:1+."
+    ],
+    "top_lipid_classes": [
+     {
+      "lipid_class": "PC",
+      "score": 3.535
+     },
+     {
+      "lipid_class": "DG",
+      "score": 1.445
+     },
+     {
+      "lipid_class": "FA",
+      "score": 1.295
+     },
+     {
+      "lipid_class": "Cer",
+      "score": 1.273
+     }
+    ]
+   },
+   "opinion": {
+    "confidence": 0.45,
+    "reliability_weight": 0.35,
+    "summary": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.651): DG 38:5|DG 18:2_20:3-, FA 28:1+, Cer 44:1;2O|Cer 18:1;2O/26:0+, PC 38:4|PC 18:0_20:4-, TG 58:8",
+    "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
+   }
+  },
+  {
+   "witness": "GRN-regulon",
+   "grounding": "descriptive_aggregate",
+   "independence": "imputed_from_RNA",
+   "evidence": {
+    "witness": "GRN-regulon",
+    "kind": "imputed_regulon",
+    "status": "ok",
+    "fidelity_status": "unknown",
+    "top_active_tfs": [
+     {
+      "tf": "SPI1",
+      "activity": 51.893
+     },
+     {
+      "tf": "ELF1",
+      "activity": 47.448
+     },
+     {
+      "tf": "RUNX1",
+      "activity": 16.449
+     },
+     {
+      "tf": "ELF2",
+      "activity": 11.177
+     },
+     {
+      "tf": "ATF6",
+      "activity": 10.798
+     },
+     {
+      "tf": "JUND",
+      "activity": 10.189
+     },
+     {
+      "tf": "FOSL2",
+      "activity": 8.941
+     },
+     {
+      "tf": "NFIL3",
+      "activity": 8.754
+     }
+    ],
+    "top_active_edges": [
+     {
+      "edge": "ELF1|VAPA",
+      "activity": 0.594
+     },
+     {
+      "edge": "ELF1|CD44",
+      "activity": 0.59
+     },
+     {
+      "edge": "ELF1|USP3",
+      "activity": 0.571
+     },
+     {
+      "edge": "JUND|CDC42",
+      "activity": 0.548
+     },
+     {
+      "edge": "ELF1|MAP3K2",
+      "activity": 0.499
+     },
+     {
+      "edge": "ELF1|MALAT1",
+      "activity": 0.496
+     },
+     {
+      "edge": "ELF1|PPP1CB",
+      "activity": 0.491
+     },
+     {
+      "edge": "ELF1|KLF6",
+      "activity": 0.485
+     }
+    ],
+    "descriptive_context": [
+     "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, ELF1, RUNX1, ELF2, ATF6. Discovery context only."
+    ]
+   },
+   "opinion": {
+    "confidence": 0.4,
+    "reliability_weight": 0.3,
+    "summary": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, ELF1, RUNX1, ELF2, ATF6. Discovery context only.",
+    "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
+   }
+  },
+  {
+   "witness": "cell-communication",
+   "grounding": "descriptive_aggregate",
+   "independence": "independent",
+   "evidence": {
+    "witness": "cell-communication",
+    "kind": "signaling",
+    "status": "ok",
+    "n_edges": 2172,
+    "top_interactions": [
+     {
+      "interaction": "Intermediate Mono-1|CD55|ADGRE5|T CD4 Activated",
+      "score": 0.55
+     },
+     {
+      "interaction": "Non-Classical Mono-2|NAMPT|ITGA5+ITGB1|Intermediate Mono-1",
+      "score": 0.546
+     },
+     {
+      "interaction": "Intermediate Mono-1|CD55|ADGRE5|CD8 TEM",
+      "score": 0.531
+     },
+     {
+      "interaction": "Intermediate Mono-1|CD55|ADGRE5|MAIT",
+      "score": 0.526
+     },
+     {
+      "interaction": "Intermediate Mono-1|NAMPT|ITGA5+ITGB1|Non-Classical Mono-2",
+      "score": 0.525
+     },
+     {
+      "interaction": "Intermediate Mono-1|CD55|ADGRE5|NK-Mature",
+      "score": 0.521
+     },
+     {
+      "interaction": "NK-Mature|CD69|KLRB1|MAIT",
+      "score": 0.518
+     },
+     {
+      "interaction": "CD8 TEM|CD69|KLRB1|MAIT",
+      "score": 0.506
+     },
+     {
+      "interaction": "preNeu|MIF|CD44+CD74|B Memory-1",
+      "score": 0.487
+     },
+     {
+      "interaction": "CD4 TCM|CD69|KLRB1|MAIT",
+      "score": 0.484
+     },
+     {
+      "interaction": "B Memory-1|CD55|ADGRE5|T CD4 Activated",
+      "score": 0.477
+     },
+     {
+      "interaction": "BMCP-1|NAMPT|ITGA5+ITGB1|Intermediate Mono-1",
+      "score": 0.475
+     }
+    ],
+    "top_axes": [
+     {
+      "axis": "CD55->ADGRE5",
+      "score": 0.55
+     },
+     {
+      "axis": "NAMPT->ITGA5+ITGB1",
+      "score": 0.546
+     },
+     {
+      "axis": "CD69->KLRB1",
+      "score": 0.518
+     },
+     {
+      "axis": "MIF->CD44+CD74",
+      "score": 0.487
+     },
+     {
+      "axis": "MIF->CD74+CXCR4",
+      "score": 0.46
+     },
+     {
+      "axis": "CD99->CD99",
+      "score": 0.453
+     },
+     {
+      "axis": "CD6->ALCAM",
+      "score": 0.447
+     },
+     {
+      "axis": "THBS1->CD36",
+      "score": 0.416
+     },
+     {
+      "axis": "CLEC2B->KLRB1",
+      "score": 0.412
+     },
+     {
+      "axis": "PPIA->BSG",
+      "score": 0.396
+     }
+    ],
+    "top_sender_states": [
+     "Intermediate Mono-1",
+     "preNeu",
+     "MultiLin-GMP-1",
+     "immNeu-2",
+     "Non-Classical Mono-2",
+     "BMCP-1"
+    ],
+    "top_receiver_states": [
+     "MAIT",
+     "NK-Mature",
+     "B Memory-1",
+     "CD8 TEM",
+     "MultiLin-GMP-1",
+     "Mono-1"
+    ],
+    "descriptive_context": [
+     "Dominant signaling axes (independent fastComm L-R inference): CD55->ADGRE5, NAMPT->ITGA5+ITGB1, CD69->KLRB1, MIF->CD44+CD74, MIF->CD74+CXCR4; 2172 called interactions."
+    ]
+   },
+   "opinion": {
+    "confidence": 0.5,
+    "reliability_weight": 0.5,
+    "summary": "Dominant signaling axes (independent fastComm L-R inference): CD55->ADGRE5, NAMPT->ITGA5+ITGB1, CD69->KLRB1, MIF->CD44+CD74, MIF->CD74+CXCR4; 2172 called interactions.",
+    "caveats": "LLM unavailable; deterministic fallback (descriptive, capped weight)"
+   }
   }
+ ],
+ "consensus": {
+  "subtype_call": "NPM1 (genetic-anchored: direct mutation observation)",
+  "leading_hypothesis": "NPM1",
+  "leading_confirmed_by_genetics": true,
+  "concordance": 0.911,
+  "per_witness_consistency": {
+   "composition": "agree",
+   "genetic": "agree",
+   "cell-state/UDON": "conflict"
+  },
+  "conflicts": "cell-state/UDON\u2192Inv16",
+  "ranked_therapy_hypotheses": [
+   {
+    "biomarker": "NPM1",
+    "drug": "menin inhibitor (revumenib)",
+    "evidence_level": "guideline",
+    "source": "NCCN-2024"
+   },
+   {
+    "biomarker": "complex",
+    "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
+    "evidence_level": "heuristic",
+    "source": "lit"
+   }
+  ],
+  "surface_therapy_hypotheses": [],
+  "recommended_validations": [
+   {
+    "claim": "mutation",
+    "validation": "targeted DNA/RNA sequencing (NGS panel)",
+    "source": "standard"
+   },
+   {
+    "claim": "subtype",
+    "validation": "flow cytometry immunophenotyping",
+    "source": "standard"
+   },
+   {
+    "claim": "complex",
+    "validation": "conventional karyotype / SNP-array cytogenetics",
+    "source": "standard"
+   },
+   {
+    "claim": "surface_marker",
+    "validation": "flow cytometry for the named surface marker",
+    "source": "standard"
+   },
+   {
+    "claim": "metabolite",
+    "validation": "targeted metabolomics / LC-MS confirmation of the imputed metabolite shift",
+    "source": "heuristic"
+   },
+   {
+    "claim": "lipid_profile",
+    "validation": "untargeted lipidomics / mass-spectrometry confirmation of the imputed lipid-class shift",
+    "source": "standard"
+   }
+  ],
+  "descriptive_findings": [
+   {
+    "witness": "GRN-regulon",
+    "domain": "grn",
+    "note": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, ELF1, RUNX1, ELF2, ATF6. Discovery context only."
+   },
+   {
+    "witness": "LSC",
+    "domain": "lsc",
+    "note": "LSC architecture call: p-LSC (MaxProb 0.39, low_confidence=True, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
+   },
+   {
+    "witness": "cell-communication",
+    "domain": "cell_comm",
+    "note": "Dominant signaling axes (independent fastComm L-R inference): CD55->ADGRE5, NAMPT->ITGA5+ITGB1, CD69->KLRB1, MIF->CD44+CD74, MIF->CD74+CXCR4; 2172 called interactions."
+   },
+   {
+    "witness": "lipid",
+    "domain": "lipid",
+    "note": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.651): DG 38:5|DG 18:2_20:3-, FA 28:1+, Cer 44:1;2O|Cer 18:1;2O/26:0+, PC 38:4|PC 18:0_20:4-, TG 58:8|TG 18:1_18:2_22:5+, PC 44:2|PC 18:1_26:"
+   },
+   {
+    "witness": "metabolic",
+    "domain": "metabolic",
+    "note": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.538): Leucine methyl ester-, 6-Methylnicotinamide+, epsilon-(gamma-Glutamyl)lysine+, Homostachydrine-, Prolinamide-, Neopterin-."
+   },
+   {
+    "witness": "surfaceome/ADT",
+    "domain": "surfaceome",
+    "note": "Elevated (imputed) surface markers vs cohort (z>=1): CD90(z1.219). Imputed-from-RNA hypotheses; confirm by flow."
+   }
+  ],
+  "overall_confidence": "high",
+  "rationale": "Leading hypothesis: NPM1 (genetic-anchored: direct mutation observation). Concordance 0.91. Conflicts: cell-state/UDON\u2192Inv16. ",
+  "knowledge_version": "kb-2026.07"
+ },
+ "deliberation": {
+  "consensus": {
+   "subtype_call": "NPM1 (genetic-anchored: direct mutation observation)",
+   "leading_hypothesis": "NPM1",
+   "leading_confirmed_by_genetics": true,
+   "concordance": 0.911,
+   "per_witness_consistency": {
+    "composition": "agree",
+    "genetic": "agree",
+    "cell-state/UDON": "conflict"
+   },
+   "conflicts": "cell-state/UDON\u2192Inv16",
+   "ranked_therapy_hypotheses": [
+    {
+     "biomarker": "NPM1",
+     "drug": "menin inhibitor (revumenib)",
+     "evidence_level": "guideline",
+     "source": "NCCN-2024"
+    },
+    {
+     "biomarker": "complex",
+     "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
+     "evidence_level": "heuristic",
+     "source": "lit"
+    }
+   ],
+   "surface_therapy_hypotheses": [],
+   "recommended_validations": [
+    {
+     "claim": "mutation",
+     "validation": "targeted DNA/RNA sequencing (NGS panel)",
+     "source": "standard"
+    },
+    {
+     "claim": "subtype",
+     "validation": "flow cytometry immunophenotyping",
+     "source": "standard"
+    },
+    {
+     "claim": "complex",
+     "validation": "conventional karyotype / SNP-array cytogenetics",
+     "source": "standard"
+    },
+    {
+     "claim": "surface_marker",
+     "validation": "flow cytometry for the named surface marker",
+     "source": "standard"
+    },
+    {
+     "claim": "metabolite",
+     "validation": "targeted metabolomics / LC-MS confirmation of the imputed metabolite shift",
+     "source": "heuristic"
+    },
+    {
+     "claim": "lipid_profile",
+     "validation": "untargeted lipidomics / mass-spectrometry confirmation of the imputed lipid-class shift",
+     "source": "standard"
+    }
+   ],
+   "descriptive_findings": [
+    {
+     "witness": "GRN-regulon",
+     "domain": "grn",
+     "note": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, ELF1, RUNX1, ELF2, ATF6. Discovery context only."
+    },
+    {
+     "witness": "LSC",
+     "domain": "lsc",
+     "note": "LSC architecture call: p-LSC (MaxProb 0.39, low_confidence=True, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
+    },
+    {
+     "witness": "cell-communication",
+     "domain": "cell_comm",
+     "note": "Dominant signaling axes (independent fastComm L-R inference): CD55->ADGRE5, NAMPT->ITGA5+ITGB1, CD69->KLRB1, MIF->CD44+CD74, MIF->CD74+CXCR4; 2172 called interactions."
+    },
+    {
+     "witness": "lipid",
+     "domain": "lipid",
+     "note": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.651): DG 38:5|DG 18:2_20:3-, FA 28:1+, Cer 44:1;2O|Cer 18:1;2O/26:0+, PC 38:4|PC 18:0_20:4-, TG 58:8|TG 18:1_18:2_22:5+, PC 44:2|PC 18:1_26:"
+    },
+    {
+     "witness": "metabolic",
+     "domain": "metabolic",
+     "note": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.538): Leucine methyl ester-, 6-Methylnicotinamide+, epsilon-(gamma-Glutamyl)lysine+, Homostachydrine-, Prolinamide-, Neopterin-."
+    },
+    {
+     "witness": "surfaceome/ADT",
+     "domain": "surfaceome",
+     "note": "Elevated (imputed) surface markers vs cohort (z>=1): CD90(z1.219). Imputed-from-RNA hypotheses; confirm by flow."
+    }
+   ],
+   "overall_confidence": "high",
+   "rationale": "Leading hypothesis: NPM1 (genetic-anchored: direct mutation observation). Concordance 0.91. Conflicts: cell-state/UDON\u2192Inv16. ",
+   "knowledge_version": "kb-2026.07"
+  },
+  "baseline": {
+   "subtype_call": "NPM1 (genetic-anchored: direct mutation observation)",
+   "leading_hypothesis": "NPM1",
+   "leading_confirmed_by_genetics": true,
+   "concordance": 0.837,
+   "per_witness_consistency": {
+    "composition": "agree",
+    "genetic": "agree",
+    "cell-state/UDON": "conflict"
+   },
+   "conflicts": "cell-state/UDON\u2192Inv16",
+   "ranked_therapy_hypotheses": [
+    {
+     "biomarker": "NPM1",
+     "drug": "menin inhibitor (revumenib)",
+     "evidence_level": "guideline",
+     "source": "NCCN-2024"
+    },
+    {
+     "biomarker": "complex",
+     "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
+     "evidence_level": "heuristic",
+     "source": "lit"
+    }
+   ],
+   "surface_therapy_hypotheses": [],
+   "recommended_validations": [
+    {
+     "claim": "mutation",
+     "validation": "targeted DNA/RNA sequencing (NGS panel)",
+     "source": "standard"
+    },
+    {
+     "claim": "subtype",
+     "validation": "flow cytometry immunophenotyping",
+     "source": "standard"
+    },
+    {
+     "claim": "complex",
+     "validation": "conventional karyotype / SNP-array cytogenetics",
+     "source": "standard"
+    },
+    {
+     "claim": "surface_marker",
+     "validation": "flow cytometry for the named surface marker",
+     "source": "standard"
+    },
+    {
+     "claim": "metabolite",
+     "validation": "targeted metabolomics / LC-MS confirmation of the imputed metabolite shift",
+     "source": "heuristic"
+    },
+    {
+     "claim": "lipid_profile",
+     "validation": "untargeted lipidomics / mass-spectrometry confirmation of the imputed lipid-class shift",
+     "source": "standard"
+    }
+   ],
+   "descriptive_findings": [
+    {
+     "witness": "GRN-regulon",
+     "domain": "grn",
+     "note": "Top active regulators (imputed GRN \u2014 fidelity UNKNOWN, no held-out metric): SPI1, ELF1, RUNX1, ELF2, ATF6. Discovery context only."
+    },
+    {
+     "witness": "LSC",
+     "domain": "lsc",
+     "note": "LSC architecture call: p-LSC (MaxProb 0.39, low_confidence=True, few_cells=False); upstream RF honest balanced-acc ~0.59 \u2014 corroborating stemness/risk context, not ground truth."
+    },
+    {
+     "witness": "cell-communication",
+     "domain": "cell_comm",
+     "note": "Dominant signaling axes (independent fastComm L-R inference): CD55->ADGRE5, NAMPT->ITGA5+ITGB1, CD69->KLRB1, MIF->CD44+CD74, MIF->CD74+CXCR4; 2172 called interactions."
+    },
+    {
+     "witness": "lipid",
+     "domain": "lipid",
+     "note": "lipid: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.651): DG 38:5|DG 18:2_20:3-, FA 28:1+, Cer 44:1;2O|Cer 18:1;2O/26:0+, PC 38:4|PC 18:0_20:4-, TG 58:8|TG 18:1_18:2_22:5+, PC 44:2|PC 18:1_26:"
+    },
+    {
+     "witness": "metabolic",
+     "domain": "metabolic",
+     "note": "metabolic: most-distinctive features (imputed, min held-out Spearman 0.3; median fidelity of reported 0.538): Leucine methyl ester-, 6-Methylnicotinamide+, epsilon-(gamma-Glutamyl)lysine+, Homostachydrine-, Prolinamide-, Neopterin-."
+    },
+    {
+     "witness": "surfaceome/ADT",
+     "domain": "surfaceome",
+     "note": "Elevated (imputed) surface markers vs cohort (z>=1): CD90(z1.219). Imputed-from-RNA hypotheses; confirm by flow."
+    }
+   ],
+   "overall_confidence": "high",
+   "rationale": "Leading hypothesis: NPM1 (genetic-anchored: direct mutation observation). Concordance 0.84. Conflicts: cell-state/UDON\u2192Inv16. ",
+   "knowledge_version": "kb-2026.07"
+  },
+  "mode": "continuous",
+  "stop_reason": "converged",
+  "rounds_run": 2,
+  "deliberation_rounds": 1,
+  "drift": {
+   "baseline_leading": "NPM1",
+   "final_leading": "NPM1",
+   "leading_changed": false,
+   "final_genetically_confirmed": true,
+   "groupthink_warning": false,
+   "baseline_concordance": 0.837,
+   "final_concordance": 0.911
+  }
+ },
+ "drug_response": {
+  "available": true,
+  "n_drugs_modelled": 118,
+  "n_drugs_reported": 118,
+  "n_abstained": 0,
+  "patient": {
+   "genes_shared_with_model": 14237,
+   "ood_distance": 1.0452243356307331,
+   "ood_percentile": 0.6718346253229974,
+   "differentiation_axis_percentile": 0.832,
+   "single_cell_states": 23
+  },
+  "top_by_tier": {
+   "approved_AML": [
+    {
+     "inhibitor": "Venetoclax",
+     "utility": 0.6727,
+     "prob_sensitive": 0.9452,
+     "n_challenges": 2
+    },
+    {
+     "inhibitor": "Quizartinib (AC220)",
+     "utility": 0.6149,
+     "prob_sensitive": 0.5213,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Midostaurin",
+     "utility": 0.5467,
+     "prob_sensitive": 0.4336,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Cytarabine",
+     "utility": 0.5435,
+     "prob_sensitive": 0.6436,
+     "n_challenges": 2
+    },
+    {
+     "inhibitor": "Gilteritinib",
+     "utility": 0.2242,
+     "prob_sensitive": 0.2759,
+     "n_challenges": 1
+    }
+   ],
+   "approved_other": [
+    {
+     "inhibitor": "Lenvatinib",
+     "utility": 0.772,
+     "prob_sensitive": 0.902,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Gefitinib",
+     "utility": 0.7649,
+     "prob_sensitive": 0.8355,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Regorafenib (BAY 73-4506)",
+     "utility": 0.7621,
+     "prob_sensitive": 0.8816,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Panobinostat",
+     "utility": 0.7211,
+     "prob_sensitive": 0.9198,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Selumetinib (AZD6244)",
+     "utility": 0.6687,
+     "prob_sensitive": 0.7053,
+     "n_challenges": 0
+    }
+   ],
+   "trial": [
+    {
+     "inhibitor": "Saracatinib (AZD0530)",
+     "utility": 0.729,
+     "prob_sensitive": 0.8757,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "RAF265 (CHIR-265)",
+     "utility": 0.7179,
+     "prob_sensitive": 0.8713,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Entospletinib (GS-9973)",
+     "utility": 0.6824,
+     "prob_sensitive": 0.9493,
+     "n_challenges": 2
+    },
+    {
+     "inhibitor": "Cediranib (AZD2171)",
+     "utility": 0.6198,
+     "prob_sensitive": 0.666,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "CI-1040 (PD184352)",
+     "utility": 0.6183,
+     "prob_sensitive": 0.7,
+     "n_challenges": 0
+    }
+   ],
+   "research": [
+    {
+     "inhibitor": "SU11274",
+     "utility": 0.6941,
+     "prob_sensitive": 0.875,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Doramapimod (BIRB 796)",
+     "utility": 0.5948,
+     "prob_sensitive": 0.7922,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "JNJ-38877605",
+     "utility": 0.594,
+     "prob_sensitive": 0.704,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Nutlin 3a",
+     "utility": 0.5908,
+     "prob_sensitive": 0.7561,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "PRT062607",
+     "utility": 0.5631,
+     "prob_sensitive": 0.7136,
+     "n_challenges": 0
+    }
+   ]
+  },
+  "caveat": "predicted EX-VIVO sensitivity from the BeatAML2 functional screen; a prioritisation for trial matching or laboratory validation, not a treatment recommendation"
+ }
 }

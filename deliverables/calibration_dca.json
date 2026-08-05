@@ -1,0 +1,18 @@
+{
+ "calibration": {
+  "raw_brier": 0.2763,
+  "cal_brier": 0.0385,
+  "raw_ece": 0.4541,
+  "cal_ece": 0.0143,
+  "n": 8568,
+  "prevalence": 0.0474
+ },
+ "dca_mutations": [
+  "NPM1",
+  "inv16",
+  "TP53",
+  "TET2",
+  "FLT3-ITD",
+  "complex"
+ ]
+}

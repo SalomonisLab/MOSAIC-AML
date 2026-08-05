@@ -2,15 +2,25 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "matrix-board",
+      "name": "mosaic-board",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["gui/gui_server.py", "runs", "8765"],
+      "runtimeArgs": [
+        "gui/gui_server.py",
+        "runs",
+        "8765"
+      ],
       "port": 8765
     },
     {
       "name": "cebpa-demo",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8771", "--directory", "gui"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8771",
+        "--directory",
+        "gui"
+      ],
       "port": 8771
     }
   ]

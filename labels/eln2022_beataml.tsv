@@ -1,0 +1,943 @@
+dbgap_dnaseq_sample	dbgap_rnaseq_sample	dbgap_subject_id	ELN2017	fusion	karyotype_normal	ELN2022	basis	abstain_reason
+BA2102D	nan	2476	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2005D	nan	2476	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3074D	nan	2476	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2555D	nan	2476	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA3073R	2476	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2452D	BA2452R	2157	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2673D	nan	2053	FavorableOrIntermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2803D	nan	2053	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA2922R	2269	NonInitial	DEK-NUP214	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2216D	nan	2295	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2859D	nan	2295	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2336D	nan	2030	FavorableOrIntermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2708D	nan	2030	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2643D	nan	2551	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2265D	nan	2551	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2460D	nan	2551	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2067D	nan	2401	IntermediateOrAdverse	nan	False	Adverse	MDS-related gene mutation: SRSF2	
+BA2881D	nan	2302	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2012D	nan	2479	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2352D	nan	2479	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2630D	nan	2479	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2335D	nan	2451	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2707D	BA2707R	2313	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2825D	nan	2380	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2435D	nan	2380	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2916D	nan	2164	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3035D	nan	2164	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3039D	nan	2207	NonInitial	DEK-NUP214	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3172D	nan	2751	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA2409R	2418	Intermediate	nan	True			no WES
+BA3021D	nan	2374	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA2480R	2374	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA2496R	2099	MissingMutations	nan	True			no WES
+BA2136D	nan	2503	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA3037R	2391	FavorableOrIntermediate	nan	True			no WES
+BA2831D	nan	2059	Adverse	nan	True	Adverse	MDS-related gene mutation: RUNX1,SF3B1	
+BA2847D	nan	2059	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2045D	nan	2059	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2236D	BA2236R	2446	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3439D	nan	2799	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2918D	nan	2007	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+nan	BA2172R	2398	NonInitial	KMT2A_re	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3042D	BA3042R	2580	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA2865R	2271	Favorable	nan	False			no WES
+nan	BA2923R	2545	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2003D	BA2003R	2491	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA2751R	2518	Adverse	nan	True			no WES
+nan	BA2055R	2193	Favorable	CBFB-MYH11	False			no WES
+nan	BA3395R	2771	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA2286R	2340	Intermediate	nan	True			no WES
+BA2763D	nan	2384	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2488D	BA2488R	2489	Favorable	PML-RARA	False			APL (PML-RARA) - separate entity, not ELN-risk classified
+BA3379D	BA3379R	2606	Intermediate	nan	True	Intermediate	FLT3-ITD, NPM1 wild-type + normal karyotype, no adverse lesion	
+nan	BA2887R	2038	Intermediate	nan	False			no WES
+BA2712D	BA2712R	2034	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1	
+BA2858D	BA2858R	2087	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3354D	nan	2787	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,BCOR,EZH2,RUNX1,STAG2	
+BA3409D	nan	2762	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3097D	nan	2642	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3288D	nan	2710	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3387D	nan	2635	Favorable	RUNX1-RUNX1T1	False			TP53 VAF>=10%% + favorable lesion - guideline does not resolve precedence
+BA3159D	nan	2821	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2068D	BA2068R	2469	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2104D	BA2104R	2378	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA3124D	BA3124R	2832	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3106D	nan	2828	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3259D	nan	2745	Adverse	nan	True	Adverse	MDS-related gene mutation: RUNX1,SRSF2	
+BA2921D	BA2921R	2466	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA2449R	2081	Favorable	RUNX1-RUNX1T1	False			no WES
+BA2360D	BA2360R	2298	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2802D	BA2802R	2005	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2235D	BA2235R	2407	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3038D	BA3038R	2278	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3006D	BA3006R	2239	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2245D	BA2245R	2173	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2667D	BA2667R	2286	Adverse	nan	True	Adverse	MDS-related gene mutation: RUNX1,SRSF2	
+BA2239D	BA2239R	2326	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2359D	nan	2501	FavorableOrIntermediate	nan	True	Adverse	MDS-related gene mutation: STAG2	
+BA2782D	BA2782R	2235	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2649D	BA2649R	2097	Favorable	PML-RARA	False			APL (PML-RARA) - separate entity, not ELN-risk classified
+BA2117D	nan	2125	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2257D	nan	2249	Favorable	RUNX1-RUNX1T1	False	Favorable	CBF fusion RUNX1-RUNX1T1	
+BA2258D	nan	2070	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2592D	BA2592R	2070	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2861D	BA2861R	2015	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2684D	nan	2091	NonInitial	KMT2A_re	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2598D	nan	2417	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,EZH2,ZRSR2	
+nan	BA2134R	2417	Adverse	nan	False			no WES
+BA2337D	nan	2312	Favorable	RUNX1-RUNX1T1	False	Favorable	CBF fusion RUNX1-RUNX1T1	
+BA2909D	BA2909R	2509	Favorable	RUNX1-RUNX1T1	False	Favorable	CBF fusion RUNX1-RUNX1T1	
+BA2429D	BA2429R	2473	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2653D	BA2653R	2191	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+nan	BA2947R	2506	Favorable	RUNX1-RUNX1T1	False			no WES
+BA2032D	BA2032R	2022	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2162D	BA2162R	2220	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,SRSF2	
+BA2991D	nan	2142	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2564D	BA2564R	2339	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3043D	BA3043R	2578	FavorableOrIntermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2597D	BA2597R	2290	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,BCOR	
+BA2315D	nan	2396	FavorableOrIntermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3262D	nan	2682	MissingKaryo	nan	False			no WES
+nan	BA3243R	2683	Favorable	PML-RARA	False			no WES
+BA2106D	BA2106R	2055	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA2939R	2055	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2427D	BA2427R	2559	NonInitial	CBFB-MYH11	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2841D	BA2841R	2274	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2446D	BA2446R	2429	Intermediate	MLLT3-KMT2A	False	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA2025D	BA2025R	2429	NonInitial	MLLT3-KMT2A	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3045D	nan	2579	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2645D	BA2645R	2230	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2525D	BA2525R	2543	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2542D	nan	2198	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2876D	BA2876R	2198	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2357D	BA2357R	2245	Adverse	nan	False	Adverse	MDS-related gene mutation: RUNX1,SRSF2,STAG2	
+BA2640D	nan	2245	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2546D	BA2546R	2259	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2742D	BA2742R	2403	Adverse	nan	True	Adverse	MDS-related gene mutation: RUNX1	
+BA2316D	BA2316R	2403	Adverse	nan	True	Adverse	MDS-related gene mutation: RUNX1	
+BA2007D	nan	2071	FavorableOrIntermediate	nan	True	Adverse	MDS-related gene mutation: SF3B1	
+BA2421D	BA2421R	2195	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2225D	nan	2188	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2087D	BA2087R	2221	Intermediate	MLLT3-KMT2A	False	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA2910D	BA2910R	2261	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2148D	BA2148R	2128	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2329D	BA2329R	2186	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2677D	BA2677R	2186	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA3178R	2789	Intermediate	MLLT3-KMT2A	False			no WES
+BA3282D	nan	2789	NonInitial	MLLT3-KMT2A	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3093D	nan	2826	Adverse	nan	False	Adverse	MDS-related gene mutation: SRSF2	
+BA2060D	nan	2256	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2072D	BA2072R	2115	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3029D	BA3029R	2079	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2735D	BA2735R	2079	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2733D	BA2733R	2408	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2193D	nan	2408	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2995D	BA2995R	2281	Adverse	nan	False	Adverse	MDS-related gene mutation: BCOR,RUNX1,SRSF2	
+BA2069D	BA2069R	2179	Intermediate	MLLT3-KMT2A	False	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA2100D	BA2100R	2485	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2953D	BA2953R	2485	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2681D	BA2681R	2288	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1	
+BA2248D	BA2248R	2105	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2191D	nan	2504	Favorable	PML-RARA	False			APL (PML-RARA) - separate entity, not ELN-risk classified
+nan	BA2832R	2108	Adverse	nan	False			no WES
+BA2308D	BA2308R	2248	NonInitial	GATA2-MECOM	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA2413R	2248	NonInitial	GATA2-MECOM	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2701D	BA2701R	2419	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2634D	BA2634R	2047	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2996D	nan	2272	Adverse	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2937D	BA2937R	2212	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2600D	BA2600R	2254	Adverse	nan	False	Adverse	MDS-related gene mutation: RUNX1,SF3B1	
+BA2019D	BA2019R	2365	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2412D	BA2412R	2260	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2334D	BA2334R	2270	NonInitial	DEK-NUP214	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA2050R	2270	NonInitial	DEK-NUP214	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2894D	nan	2109	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3230D	BA3230R	2777	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,SF3B1	
+BA2779D	nan	2229	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2481D	BA2481R	2159	NonAML	nan	True			not AML
+BA2731D	BA2731R	2036	Adverse	nan	False	Adverse	MDS-related gene mutation: EZH2	
+BA2418D	BA2418R	2405	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2672D	nan	2359	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2294D	BA2294R	2499	Favorable	RUNX1-RUNX1T1	False	Favorable	CBF fusion RUNX1-RUNX1T1	
+BA2616D	nan	2012	NonInitial	GATA2-MECOM	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2816D	BA2816R	2016	Adverse	nan	False	Adverse	MDS-related gene mutation: EZH2,RUNX1	
+BA2255D	nan	2539	Intermediate	MLLT3-KMT2A	False	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA2814D	BA2814R	2539	Intermediate	MLLT3-KMT2A	False	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA2631D	BA2631R	2369	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2023D	BA2023R	2075	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1	
+BA2375D	BA2375R	2330	Adverse	nan	False	Adverse	MDS-related gene mutation: U2AF1	
+nan	BA2485R	2540	FavorableOrIntermediate	nan	True			no WES
+BA2254D	nan	2540	FavorableOrIntermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2455D	BA2455R	2373	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA2636D	BA2636R	2576	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,U2AF1	
+BA2325D	BA2325R	2492	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA2169D	BA2169R	2399	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2246D	nan	2399	NonInitial	GATA2-MECOM	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2156D	BA2156R	2017	Favorable	nan	True	Favorable	bZIP in-frame CEBPA + normal karyotype	
+BA2511D	BA2511R	2567	Adverse	GATA2-MECOM	False	Adverse	adverse class-defining fusion GATA2-MECOM	
+BA2168D	BA2168R	2297	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2834D	nan	2023	Adverse	GATA2-MECOM	False	Adverse	adverse class-defining fusion GATA2-MECOM	
+nan	BA2505R	2023	Adverse	GATA2-MECOM	False			no WES
+BA2860D	BA2860R	2413	NonAML	nan	False			not AML
+BA2871D	BA2871R	2273	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2655D	BA2655R	2458	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2628D	nan	2045	NonAML	nan	False			not AML
+BA2665D	nan	2006	NonAML	nan	False			not AML
+BA2227D	BA2227R	2345	Intermediate	nan	True	Adverse	MDS-related gene mutation: STAG2	
+BA2812D	BA2812R	2563	MissingKaryo	nan	False	Adverse	MDS-related gene mutation: STAG2	
+BA2125D	BA2125R	2562	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2603D	BA2603R	2314	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2808D	BA2808R	2300	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2282D	BA2282R	2574	NonInitial	PML-RARA	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2482D	BA2482R	2067	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2822D	BA2822R	2227	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3047D	nan	2581	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2594D	BA2594R	2554	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2747D	BA2747R	2205	Intermediate	nan	True	Adverse	MDS-related gene mutation: BCOR,U2AF1	
+BA2864D	nan	2325	Intermediate	nan	False	Adverse	MDS-related gene mutation: SRSF2,STAG2	
+BA2561D	BA2561R	2231	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2977D	nan	2231	Intermediate	nan	False			no WES
+nan	BA2094R	2231	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2332D	nan	2331	Adverse	nan	True	Adverse	MDS-related gene mutation: RUNX1	
+BA2567D	BA2567R	2162	MissingKaryo	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2906D	BA2906R	2561	Adverse	KMT2A_re	True	Adverse	adverse class-defining fusion KMT2A_re	
+BA2956D	BA2956R	2123	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2963D	nan	2204	NonAML	nan	False			not AML
+BA2768D	nan	2569	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2474D	BA2474R	2029	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2065D	BA2065R	2029	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA2737R	2241	Adverse	RUNX1-RUNX1T1	False			no WES
+nan	BA2463R	2241	NonInitial	RUNX1-RUNX1T1	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2998D	nan	2512	NonAML	nan	True			not AML
+BA2006D	BA2006R	2020	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2936D	nan	2027	Adverse	nan	False	Adverse	MDS-related gene mutation: SRSF2	
+BA2110D	BA2110R	2305	FavorableOrIntermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2438D	nan	2560	Adverse	nan	False	Adverse	MDS-related gene mutation: BCOR,RUNX1,U2AF1	
+BA2071D	nan	2459	NonAML	nan	True			not AML
+BA2199D	nan	2317	Favorable	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2915D	BA2915R	2317	Favorable	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2992D	BA2992R	2348	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2220D	BA2220R	2394	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2720D	BA2720R	2394	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2063D	BA2063R	2165	MissingKaryo	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3330D	nan	2165	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2759D	nan	2243	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2982D	nan	2474	Adverse	GATA2-MECOM	False	Adverse	adverse class-defining fusion GATA2-MECOM	
+BA2772D	BA2772R	2397	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2960D	nan	2252	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2935D	BA2935R	2130	Adverse	nan	True	Adverse	MDS-related gene mutation: U2AF1	
+BA2260D	BA2260R	2447	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2787D	BA2787R	2447	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2073D	nan	2042	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2676D	BA2676R	2008	NonAML	nan	False			not AML
+BA2948D	BA2948R	2279	Adverse	nan	False			no WES
+BA2498D	nan	2102	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2161D	nan	2082	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3296D	BA3296R	2684	Intermediate	nan	True			no WES
+BA2524D	BA2524R	2134	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2811D	BA2811R	2448	Favorable	PML-RARA	False			APL (PML-RARA) - separate entity, not ELN-risk classified
+BA2540D	BA2540R	2176	Intermediate	MLLT3-KMT2A	True	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA2358D	nan	2423	Adverse	nan	False	Adverse	MDS-related gene mutation: RUNX1,SRSF2	
+BA2928D	BA2928R	2490	Intermediate	MLLT3-KMT2A	False	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA2302D	BA2302R	2336	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2343D	nan	2336	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2147D	nan	2388	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2792D	BA2792R	2166	NonAML	nan	False			not AML
+BA2651D	BA2651R	2160	Intermediate	MLLT3-KMT2A	False	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA2595D	BA2595R	2148	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2619D	BA2619R	2184	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3013D	BA3013R	2457	Adverse	KMT2A_re	False	Adverse	adverse class-defining fusion KMT2A_re	
+BA2278D	nan	2457	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2356D	nan	2416	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2018D	nan	2354	IntermediateOrAdverse	nan	True	Intermediate	FLT3-ITD, NPM1 wild-type + normal karyotype, no adverse lesion	
+BA2405D	BA2405R	2354	Adverse	nan	True	Adverse	MDS-related gene mutation: RUNX1	
+BA2856D	BA2856R	2376	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2557D	nan	2352	Adverse	nan	False	Adverse	MDS-related gene mutation: U2AF1	
+BA2781D	nan	2233	Adverse	nan	True	Adverse	MDS-related gene mutation: RUNX1	
+BA2753D	nan	2406	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2699D	nan	2113	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1	
+BA2377D	BA2377R	2385	Intermediate	MLLT3-KMT2A	False	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA2499D	BA2499R	2003	Adverse	nan	False	Adverse	MDS-related gene mutation: EZH2,RUNX1,STAG2,ZRSR2	
+BA2059D	nan	2118	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2016D	nan	2167	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2330D	nan	2089	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2350D	BA2350R	2112	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3023D	BA3023R	2149	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA2074D	nan	2149	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+nan	BA2095R	2054	Favorable	PML-RARA	False			no WES
+BA3026D	nan	2452	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2275D	BA2275R	2199	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2901D	BA2901R	2529	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA2221D	BA2221R	2529	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2387D	BA2387R	2454	Intermediate	nan	False	Adverse	MDS-related gene mutation: BCOR	
+BA2313D	nan	2104	Adverse	nan	False	Adverse	MDS-related gene mutation: EZH2,RUNX1	
+BA2517D	nan	2104	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2657D	BA2657R	2104	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2962D	BA2962R	2558	IntermediateOrAdverse	nan	True	Intermediate	FLT3-ITD, NPM1 wild-type + normal karyotype, no adverse lesion	
+BA2195D	BA2195R	2013	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2688D	BA2688R	2289	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2420D	BA2420R	2106	Adverse	nan	False	Adverse	MDS-related gene mutation: RUNX1,U2AF1	
+BA2727D	BA2727R	2510	NonInitial	GATA2-MECOM	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2756D	BA2756R	2169	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2086D	nan	2169	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2122D	BA2122R	2026	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2053D	BA2053R	2370	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2080D	BA2080R	2135	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2415D	BA2415R	2200	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2081D	BA2081R	2358	Adverse	nan	False	Adverse	MDS-related gene mutation: BCOR,RUNX1	
+BA2354D	BA2354R	2050	Favorable	RUNX1-RUNX1T1	False	Favorable	CBF fusion RUNX1-RUNX1T1 (MDS genes present but footnote ++ applies)	
+BA3273D	BA3273R	2729	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2893D	BA2893R	2455	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2266D	nan	2389	Adverse	nan	True	Adverse	MDS-related gene mutation: RUNX1,SRSF2	
+BA2044D	BA2044R	2267	Adverse	nan	False	Adverse	MDS-related gene mutation: RUNX1,U2AF1	
+BA2309D	BA2309R	2335	NonAML	nan	False			not AML
+BA2489D	BA2489R	2480	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,SRSF2,STAG2	
+BA2908D	BA2908R	2516	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2054D	BA2054R	2058	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA2872D	BA2872R	2415	Adverse	nan	False	Adverse	MDS-related gene mutation: SRSF2	
+nan	BA2526R	2308	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2197D	nan	2308	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2232D	nan	2523	Adverse	DEK-NUP214	False	Adverse	adverse class-defining fusion DEK-NUP214	
+BA3145D	BA3145R	2523	NonInitial	DEK-NUP214	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2041D	BA2041R	2121	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+nan	BA2096R	2121	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2464D	BA2464R	2575	Favorable	PML-RARA	False			APL (PML-RARA) - separate entity, not ELN-risk classified
+BA2902D	BA2902R	2144	Intermediate	nan	True	Adverse	MDS-related gene mutation: ZRSR2	
+BA2491D	nan	2124	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2541D	BA2541R	2484	Adverse	KMT2A_re	False	Adverse	adverse class-defining fusion KMT2A_re	
+BA2143D	BA2143R	2127	NonAML	PML-RARA	False			not AML
+BA2380D	nan	2051	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3301D	nan	2813	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2769D	BA2769R	2482	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2843D	BA2843R	2178	Adverse	nan	True	Adverse	MDS-related gene mutation: BCOR,SRSF2,ZRSR2	
+BA2974D	nan	2435	Favorable	nan	True	Favorable	bZIP in-frame CEBPA + normal karyotype	
+BA2497D	BA2497R	2517	Adverse	KMT2A_re	False	Adverse	adverse class-defining fusion KMT2A_re	
+BA2718D	BA2718R	2119	Favorable	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2575D	BA2575R	2043	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3008D	BA3008R	2404	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3049D	BA3049R	2582	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2008D	nan	2477	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+nan	BA2593R	2461	Adverse	nan	True			no WES
+BA2791D	BA2791R	2573	Favorable	PML-RARA	False			APL (PML-RARA) - separate entity, not ELN-risk classified
+BA2620D	BA2620R	2150	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1	
+BA2629D	BA2629R	2486	Adverse	nan	False	Adverse	MDS-related gene mutation: BCOR,RUNX1,ZRSR2	
+BA3020D	nan	2180	Intermediate	nan	True			no WES
+BA2965D	nan	2180	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2870D	BA2870R	2364	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA2423D	BA2423R	2151	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2682D	BA2682R	2103	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2276D	BA2276R	2294	Intermediate	nan	True	Adverse	MDS-related gene mutation: SRSF2,STAG2	
+BA2348D	BA2348R	2032	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2709D	BA2709R	2346	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2789D	BA2789R	2141	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA2650D	nan	2552	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2694D	BA2694R	2552	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2722D	BA2722R	2244	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3051D	BA3051R	2583	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2538D	BA2538R	2283	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,RUNX1,SRSF2	
+BA2583D	BA2583R	2175	Adverse	nan	False	Adverse	MDS-related gene mutation: RUNX1,SRSF2	
+BA2292D	BA2292R	2056	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2806D	BA2806R	2285	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1	
+BA2268D	nan	2293	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2153D	BA2153R	2301	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2674D	BA2674R	2301	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2809D	BA2809R	2301	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3025D	BA3025R	2262	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2777D	nan	2258	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2523D	BA2523R	2225	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2206D	nan	2225	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3027D	BA3027R	2324	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2835D	nan	2214	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1	
+BA2049D	nan	2189	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2441D	BA2441R	2250	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2514D	BA2514R	2409	Adverse	nan	True	Adverse	TP53 mutated at VAF>=10%	
+BA2695D	BA2695R	2409	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2520D	BA2520R	2400	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,RUNX1,SRSF2	
+BA2671D	nan	2237	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,SRSF2	
+BA2702D	nan	2001	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2805D	nan	2174	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3028D	nan	2362	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+nan	BA2479R	2362	Favorable	nan	True			no WES
+BA2157D	nan	2217	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA2281R	2303	Favorable	PML-RARA	False			no WES
+BA2932D	BA2932R	2069	IntermediateOrAdverse	nan	True	Intermediate	FLT3-ITD, NPM1 wild-type + normal karyotype, no adverse lesion	
+BA2123D	BA2123R	2000	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2844D	BA2844R	2275	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2660D	BA2660R	2170	Adverse	nan	True	Adverse	MDS-related gene mutation: RUNX1	
+BA2836D	BA2836R	2242	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype (footnote ++ over SRSF2)	
+BA2714D	BA2714R	2366	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3317D	BA3317R	2366	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2606D	nan	2024	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,SRSF2,STAG2	
+BA2440D	BA2440R	2263	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2036D	BA2036R	2445	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA2828D	BA2828R	2306	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2251D	BA2251R	2334	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3053D	BA3053R	2584	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2952D	BA2952R	2114	Intermediate	MLLT3-KMT2A	False	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA2410D	BA2410R	2495	Favorable	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2139D	BA2139R	2342	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2051D	BA2051R	2464	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2532D	BA2532R	2323	Favorable	PML-RARA	False			APL (PML-RARA) - separate entity, not ELN-risk classified
+BA2986D	BA2986R	2110	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2494D	BA2494R	2246	Adverse	nan	False	Adverse	MDS-related gene mutation: EZH2,RUNX1	
+BA3056D	nan	2585	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3054D	nan	2585	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2666D	nan	2502	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2515D	BA2515R	2533	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2748D	BA2748R	2566	Favorable	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2577D	BA2577R	2566	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2622D	BA2622R	2453	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,EZH2,RUNX1,SF3B1	
+BA2758D	BA2758R	2453	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2930D	BA2930R	2453	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2164D	nan	2098	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2970D	BA2970R	2327	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1	
+BA3058D	nan	2586	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA3059R	2587	NonAML	nan	False			not AML
+BA3061D	nan	2587	NonAML	nan	False			not AML
+BA2238D	nan	2470	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2839D	BA2839R	2107	Adverse	nan	False	Adverse	MDS-related gene mutation: BCOR,RUNX1,U2AF1	
+BA2112D	nan	2048	Adverse	KMT2A_re	False	Adverse	adverse class-defining fusion KMT2A_re	
+BA3080D	nan	2048	NonInitial	KMT2A_re	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2868D	BA2868R	2442	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA3011D	BA3011R	2236	Favorable	PML-RARA	False			no WES
+BA2052D	BA2052R	2412	Intermediate	nan	False	Adverse	MDS-related gene mutation: BCOR,SRSF2	
+BA2510D	BA2510R	2073	Adverse	KMT2A_re	False	Adverse	adverse class-defining fusion KMT2A_re	
+BA2691D	BA2691R	2521	MissingKaryo	nan	False	Adverse	MDS-related gene mutation: U2AF1	
+BA2366D	nan	2571	Adverse	nan	False	Adverse	MDS-related gene mutation: SRSF2	
+BA2374D	BA2374R	2487	Favorable	PML-RARA	False			APL (PML-RARA) - separate entity, not ELN-risk classified
+BA2804D	BA2804R	2101	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2670D	BA2670R	2456	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2675D	BA2675R	2133	IntermediateOrAdverse	nan	True	Intermediate	FLT3-ITD, NPM1 wild-type + normal karyotype, no adverse lesion	
+BA2031D	BA2031R	2387	Adverse	KMT2A_re	False	Adverse	adverse class-defining fusion KMT2A_re	
+BA2146D	nan	2387	NonInitial	KMT2A_re	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2589D	BA2589R	2064	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2933D	nan	2338	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,RUNX1,U2AF1	
+BA2198D	BA2198R	2338	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,RUNX1,U2AF1	
+BA2066D	BA2066R	2066	Adverse	KMT2A_re	False	Adverse	adverse class-defining fusion KMT2A_re	
+BA2422D	nan	2449	NonAML	nan	False			not AML
+BA2344D	BA2344R	2077	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2534D	BA2534R	2077	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2459D	BA2459R	2350	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2229D	BA2229R	2240	Adverse	nan	False	Adverse	MDS-related gene mutation: BCOR,SRSF2	
+BA2559D	BA2559R	2329	Adverse	nan	True	Intermediate	FLT3-ITD, NPM1 wild-type + normal karyotype, no adverse lesion	
+BA2093D	BA2093R	2343	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2000D	BA2000R	2304	Adverse	nan	True	Intermediate	FLT3-ITD, NPM1 wild-type + normal karyotype, no adverse lesion	
+BA2425D	BA2425R	2532	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2905D	BA2905R	2019	Intermediate	nan	False	Adverse	MDS-related gene mutation: EZH2,STAG2	
+BA2304D	BA2304R	2010	Intermediate	MLLT3-KMT2A	False	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA2976D	BA2976R	2494	Intermediate	nan	False	Adverse	MDS-related gene mutation: U2AF1	
+BA2386D	BA2386R	2292	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2879D	BA2879R	2292	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3400D	BA3400R	2292	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2181D	nan	2147	Adverse	nan	False	Adverse	MDS-related gene mutation: RUNX1	
+BA2035D	BA2035R	2424	Adverse	nan	False	Adverse	MDS-related gene mutation: SRSF2	
+BA2760D	BA2760R	2524	Adverse	nan	False	Adverse	MDS-related gene mutation: BCOR,RUNX1	
+BA2201D	BA2201R	2291	FavorableOrIntermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2642D	nan	2072	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+nan	BA2355R	2072	Adverse	KMT2A_re	False			no WES
+BA2113D	BA2113R	2088	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2155D	BA2155R	2402	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2955D	BA2955R	2039	Adverse	nan	False	Adverse	MDS-related gene mutation: RUNX1	
+BA2502D	BA2502R	2328	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2322D	BA2322R	2060	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3062D	nan	2588	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2020D	BA2020R	2065	FavorableOrIntermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2166D	nan	2357	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype (footnote ++ over STAG2)	
+BA2886D	nan	2076	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2226D	BA2226R	2014	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2376D	BA2376R	2513	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2889D	BA2889R	2360	Favorable	PML-RARA	False			APL (PML-RARA) - separate entity, not ELN-risk classified
+BA2200D	BA2200R	2371	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2121D	BA2121R	2356	Favorable	RUNX1-RUNX1T1	False	Favorable	CBF fusion RUNX1-RUNX1T1	
+BA2944D	BA2944R	2577	Favorable	RUNX1-RUNX1T1	False	Favorable	CBF fusion RUNX1-RUNX1T1	
+BA3064D	BA3064R	2589	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2033D	BA2033R	2432	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2867D	BA2867R	2116	Adverse	nan	True	Adverse	MDS-related gene mutation: RUNX1,SRSF2	
+BA2089D	BA2089R	2080	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,SRSF2,STAG2	
+BA2034D	BA2034R	2080	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2224D	BA2224R	2202	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2470D	BA2470R	2202	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2046D	BA2046R	2265	Adverse	nan	True	Adverse	MDS-related gene mutation: SRSF2	
+BA2972D	BA2972R	2111	Favorable	nan	True	Favorable	bZIP in-frame CEBPA + normal karyotype	
+BA2978D	BA2978R	2411	Favorable	RUNX1-RUNX1T1	False	Favorable	CBF fusion RUNX1-RUNX1T1 (MDS genes present but footnote ++ applies)	
+BA2829D	BA2829R	2238	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2579D	BA2579R	2238	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2249D	BA2249R	2238	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2979D	nan	2238	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2851D	BA2851R	2437	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2587D	BA2587R	2215	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2461D	BA2461R	2025	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2024D	BA2024R	2122	FavorableOrIntermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2623D	BA2623R	2049	NonInitial	CBFB-MYH11	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2426D	BA2426R	2511	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2271D	BA2271R	2386	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA3004D	BA3004R	2420	Favorable	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3010D	BA3010R	2478	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,BCOR,RUNX1,SRSF2,STAG2	
+BA2662D	BA2662R	2393	FavorableOrIntermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2280D	BA2280R	2044	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2277D	BA2277R	2044	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2230D	nan	2137	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA2658D	BA2658R	2218	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2484D	nan	2218	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2512D	BA2512R	2257	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA2457D	nan	2375	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2394D	BA2394R	2381	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2950D	BA2950R	2018	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2981D	BA2981R	2156	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA2934R	2226	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2668D	nan	2226	Intermediate	MLLT3-KMT2A	False	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA2539D	BA2539R	2351	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2339D	BA2339R	2177	NonInitial	MLLT3-KMT2A	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2786D	BA2786R	2177	NonInitial	MLLT3-KMT2A	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2738D	nan	2425	Adverse	nan	False	Adverse	MDS-related gene mutation: ZRSR2	
+BA2256D	BA2256R	2074	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2483D	BA2483R	2172	NonInitial	KMT2A_re	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3002D	BA3002R	2172	NonInitial	KMT2A_re	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2109D	BA2109R	2251	MissingKaryo	nan	False	Adverse	MDS-related gene mutation: SRSF2	
+BA2242D	BA2242R	2507	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA2132D	BA2132R	2140	Adverse	nan	False	Adverse	MDS-related gene mutation: U2AF1	
+BA2618D	BA2618R	2498	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2846D	BA2846R	2004	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype (footnote ++ over SRSF2)	
+BA2521D	BA2521R	2433	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2885D	BA2885R	2139	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype (footnote ++ over ASXL1)	
+BA2639D	BA2639R	2368	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2775D	BA2775R	2138	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2402D	BA2402R	2410	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2925D	nan	2201	IntermediateOrAdverse	nan	True	Adverse	MDS-related gene mutation: SF3B1	
+BA2097D	BA2097R	2201	Adverse	nan	True	Adverse	MDS-related gene mutation: SF3B1	
+BA3065D	nan	2590	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2114D	nan	2421	NonAML	nan	True			not AML
+BA2661D	nan	2287	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2399D	BA2399R	2196	Adverse	nan	True	Intermediate	FLT3-ITD, NPM1 wild-type + normal karyotype, no adverse lesion	
+BA2692D	nan	2068	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2103D	nan	2514	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA2850D	BA2850R	2210	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2993D	BA2993R	2210	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2566D	nan	2210	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3389D	nan	2210	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2027D	nan	2319	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2451D	nan	2009	Adverse	nan	False	Adverse	MDS-related gene mutation: BCOR,RUNX1,STAG2	
+BA3322D	BA3322R	2009	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2174D	BA2174R	2341	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2314D	nan	2341	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2004D	BA2004R	2136	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3001D	BA3001R	2344	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2664D	nan	2565	NonAML	nan	False			not AML
+BA2911D	BA2911R	2090	Favorable	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2311D	BA2311R	2222	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2669D	nan	2155	Favorable	PML-RARA	False			APL (PML-RARA) - separate entity, not ELN-risk classified
+BA3040D	BA3040R	2183	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2724D	BA2724R	2041	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2837D	BA2837R	2322	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2821D	BA2821R	2145	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2363D	BA2363R	2337	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2233D	BA2233R	2316	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype (footnote ++ over SRSF2)	
+BA2744D	BA2744R	2232	Favorable	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2501D	BA2501R	2031	Favorable	PML-RARA	False			no WES
+BA2301D	BA2301R	2197	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2880D	BA2880R	2568	Intermediate	nan	True	Adverse	MDS-related gene mutation: SF3B1	
+BA2621D	BA2621R	2347	Adverse	nan	False	Adverse	MDS-related gene mutation: SRSF2,STAG2	
+BA2852D	BA2852R	2436	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2133D	BA2133R	2383	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2473D	BA2473R	2383	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2222D	nan	2383	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2866D	BA2866R	2465	Adverse	nan	False	Adverse	MDS-related gene mutation: RUNX1	
+BA2212D	BA2212R	2035	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,STAG2	
+BA2477D	BA2477R	2219	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2244D	BA2244R	2219	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3089D	BA3089R	2219	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2190D	nan	2526	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2685D	BA2685R	2266	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,BCOR,SRSF2	
+BA2875D	nan	2266	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2273D	BA2273R	2544	Adverse	nan	True	Adverse	TP53 mutated at VAF>=10%	
+BA2490D	nan	2544	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2659D	BA2659R	2057	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2124D	BA2124R	2310	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype (footnote ++ over ZRSR2)	
+BA2369D	BA2369R	2276	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2586D	nan	2534	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2400D	BA2400R	2426	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA2762D	BA2762R	2061	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2312D	BA2312R	2537	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2813D	BA2813R	2206	Favorable	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2211D	BA2211R	2471	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2171D	BA2171R	2321	Favorable	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2746D	BA2746R	2522	Favorable	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3075D	BA3075R	2522	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2798D	BA2798R	2395	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,RUNX1	
+BA2883D	BA2883R	2395	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3342D	nan	2395	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2288D	BA2288R	2515	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2801D	BA2801R	2146	NonAML	nan	False			not AML
+BA3407D	BA3407R	2691	NonInitial	KMT2A_re	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3030D	BA3030R	2046	NonAML	nan	True			not AML
+BA2588D	BA2588R	2441	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2296D	BA2296R	2497	Favorable	nan	True	Favorable	bZIP in-frame CEBPA + normal karyotype	
+BA2300D	BA2300R	2037	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2903D	BA2903R	2161	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2652D	nan	2430	Intermediate	nan	True	Favorable	bZIP in-frame CEBPA + normal karyotype	
+BA2545D	BA2545R	2488	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2945D	nan	2311	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2529D	nan	2311	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2840D	BA2840R	2468	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2790D	nan	2171	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2528D	BA2528R	2531	Intermediate	nan	True	Adverse	MDS-related gene mutation: SF3B1,STAG2	
+BA2646D	BA2646R	2535	Favorable	PML-RARA	False			APL (PML-RARA) - separate entity, not ELN-risk classified
+BA3067D	BA3067R	2591	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3068D	BA3068R	2591	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2240D	BA2240R	2181	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2613D	nan	2181	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2926D	BA2926R	2185	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2272D	BA2272R	2052	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+nan	BA2306R	2085	Favorable	RUNX1-RUNX1T1	False			no WES
+BA2842D	BA2842R	2085	NonInitial	RUNX1-RUNX1T1	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2855D	BA2855R	2085	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2040D	BA2040R	2085	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3070D	BA3070R	2592	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3071D	BA3071R	2592	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3072D	BA3072R	2592	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2765D	BA2765R	2550	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2904D	BA2904R	2450	NonInitial	CBFB-MYH11	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2365D	nan	2527	NonAML	nan	True			not AML
+BA2726D	BA2726R	2309	Adverse	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA3076D	BA3076R	2309	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3077D	BA3077R	2309	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2234D	BA2234R	2247	Adverse	KMT2A_re	False	Adverse	adverse class-defining fusion KMT2A_re	
+BA2022D	BA2022R	2318	Favorable	PML-RARA	False			no WES
+BA2228D	BA2228R	2572	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2037D	BA2037R	2182	Adverse	GATA2-MECOM	False	Adverse	adverse class-defining fusion GATA2-MECOM	
+BA2184D	BA2184R	2320	Favorable	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2295D	nan	2040	Favorable	CBFB-MYH11	False			no WES
+BA3009D	BA3009R	2213	Adverse	nan	False	Adverse	MDS-related gene mutation: STAG2	
+BA2891D	BA2891R	2355	NonAML	nan	False			not AML
+BA2442D	BA2442R	2549	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2882D	BA2882R	2463	Intermediate	MLLT3-KMT2A	False	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA2656D	BA2656R	2553	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2838D	nan	2078	NonAML	nan	True			not AML
+BA2319D	nan	2078	NonAML	nan	True			not AML
+BA2385D	BA2385R	2277	NonAML	nan	False			not AML
+BA2705D	BA2705R	2100	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2347D	BA2347R	2440	Intermediate	nan	False	Adverse	MDS-related gene mutation: SRSF2	
+BA2379D	BA2379R	2440	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2180D	nan	2440	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2967D	nan	2462	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2752D	nan	2208	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2078D	nan	2062	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2663D	BA2663R	2519	NonAML	nan	False			not AML
+BA2397D	nan	2264	MissingKaryo	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2570D	BA2570R	2367	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2764D	BA2764R	2209	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2209D	BA2209R	2363	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2989D	BA2989R	2332	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2605D	nan	2296	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2261D	BA2261R	2528	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2721D	BA2721R	2556	Adverse	nan	True	Adverse	MDS-related gene mutation: SF3B1	
+BA2401D	nan	2556	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2728D	BA2728R	2094	Adverse	GATA2-MECOM	False	Adverse	adverse class-defining fusion GATA2-MECOM	
+BA2715D	BA2715R	2192	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2116D	BA2116R	2192	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2469D	BA2469R	2530	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2269D	BA2269R	2033	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2098D	BA2098R	2414	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2090D	nan	2414	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2951D	BA2951R	2228	Adverse	GATA2-MECOM	False	Adverse	adverse class-defining fusion GATA2-MECOM	
+BA2778D	BA2778R	2083	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype (footnote ++ over STAG2)	
+BA2163D	BA2163R	2129	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3153D	BA3153R	2664	Intermediate	nan	True	Favorable	bZIP in-frame CEBPA + normal karyotype	
+BA2817D	BA2817R	2557	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2820D	BA2820R	2542	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2704D	BA2704R	2255	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2723D	BA2723R	2390	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2492D	BA2492R	2390	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2088D	BA2088R	2153	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+nan	BA3202R	2153	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2614D	nan	2095	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3139D	BA3139R	2618	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3285D	BA3285R	2618	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2784D	nan	2536	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2584D	BA2584R	2422	Adverse	KMT2A_re	False			no WES
+BA3132D	nan	2599	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2443D	nan	2187	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2083D	nan	2158	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3079D	BA3079R	2830	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA2547D	nan	2439	MissingKaryo	nan	False	Adverse	MDS-related gene mutation: SRSF2	
+BA2417D	BA2417R	2333	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2361D	BA2361R	2444	Adverse	nan	False	Adverse	MDS-related gene mutation: SRSF2	
+BA2450D	BA2450R	2284	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2994D	BA2994R	2284	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2824D	BA2824R	2284	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2987D	nan	2224	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2079D	BA2079R	2224	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3099D	BA3099R	2224	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3024D	nan	2379	MissingKaryo	nan	False			no WES
+BA2552D	BA2552R	2203	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2472D	BA2472R	2546	Adverse	nan	True	Adverse	MDS-related gene mutation: RUNX1,SRSF2,STAG2	
+BA2144D	nan	2028	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,BCOR,RUNX1	
+BA3420D	nan	2816	NonAML	nan	False			not AML
+BA2047D	BA2047R	2467	Favorable	PML-RARA	False			APL (PML-RARA) - separate entity, not ELN-risk classified
+BA2101D	BA2101R	2483	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2082D	BA2082R	2126	Intermediate	nan	False	Adverse	MDS-related gene mutation: ZRSR2	
+BA2284D	nan	2555	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2456D	BA2456R	2481	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA2175D	BA2175R	2382	Adverse	nan	False			no WES
+BA2507D	BA2507R	2377	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA2563D	BA2563R	2493	Favorable	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2092D	nan	2194	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3164D	BA3164R	2194	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3235D	BA3235R	2194	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3298D	nan	2803	Favorable	nan	False	Adverse	MDS-related gene mutation: ASXL1	
+BA2734D	nan	2190	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2576D	nan	2434	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2984D	BA2984R	2520	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype (footnote ++ over EZH2)	
+BA2414D	BA2414R	2307	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2697D	BA2697R	2168	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA2999D	BA2999R	2117	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2644D	BA2644R	2280	Intermediate	nan	True	Adverse	MDS-related gene mutation: BCOR	
+BA2011D	BA2011R	2280	Intermediate	nan	True	Adverse	MDS-related gene mutation: BCOR	
+BA2217D	BA2217R	2538	Favorable	nan	True	Favorable	bZIP in-frame CEBPA + normal karyotype	
+BA2454D	BA2454R	2234	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,BCOR,RUNX1,U2AF1	
+BA2776D	BA2776R	2431	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2218D	BA2218R	2282	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2135D	BA2135R	2547	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1	
+BA3321D	nan	2547	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3292D	nan	2756	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA2914D	BA2914R	2508	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3272D	nan	2670	NonInitial	CBFB-MYH11	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2500D	BA2500R	2120	Favorable	PML-RARA	False			APL (PML-RARA) - separate entity, not ELN-risk classified
+BA2519D	nan	2315	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2406D	BA2406R	2143	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2830D	BA2830R	2268	NonInitial	CBFB-MYH11	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2353D	BA2353R	2268	NonInitial	CBFB-MYH11	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3108D	BA3108R	2673	Adverse	nan	False	Adverse	MDS-related gene mutation: U2AF1	
+BA2924D	BA2924R	2475	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3192D	BA3192R	2475	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2303D	BA2303R	2570	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA2647D	BA2647R	2163	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA2160D	BA2160R	2216	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA2590D	BA2590R	2131	Intermediate	nan	True	Adverse	MDS-related gene mutation: SRSF2	
+BA3195D	BA3195R	2827	Adverse	nan	True	Adverse	MDS-related gene mutation: RUNX1,SRSF2	
+BA2516D	BA2516R	2500	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3036D	BA3036R	2372	Intermediate	nan	True	Intermediate	FLT3-ITD, NPM1 wild-type + normal karyotype, no adverse lesion	
+BA2971D	BA2971R	2086	Adverse	nan	True	Adverse	MDS-related gene mutation: RUNX1,SRSF2	
+BA3410D	BA3410R	2695	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3118D	BA3118R	2709	Favorable	CBFB-MYH11	True	Favorable	CBF fusion CBFB-MYH11	
+BA3206D	BA3206R	2668	Favorable	RUNX1-RUNX1T1	False	Favorable	CBF fusion RUNX1-RUNX1T1	
+BA3432D	nan	2735	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3217D	BA3217R	2624	Adverse	nan	True	Adverse	MDS-related gene mutation: STAG2	
+BA3405D	BA3405R	2701	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,RUNX1,SRSF2	
+BA3306D	BA3306R	2811	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3371D	BA3371R	2809	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3179D	nan	2761	Intermediate	nan	False	Adverse	MDS-related gene mutation: BCOR,SRSF2,STAG2	
+BA3413D	BA3413R	2666	Adverse	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA3411D	BA3411R	2615	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,STAG2	
+BA3133D	BA3133R	2747	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3451D	BA3451R	2780	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3286D	BA3286R	2645	Intermediate	nan	True	Intermediate	FLT3-ITD, NPM1 wild-type + normal karyotype, no adverse lesion	
+BA3221D	BA3221R	2645	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3212D	BA3212R	2727	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3103D	BA3103R	2790	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3271D	BA3271R	2792	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3152D	BA3152R	2758	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3095D	BA3095R	2626	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3168D	nan	2661	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3251D	BA3251R	2815	Adverse	nan	True	Intermediate	FLT3-ITD, NPM1 wild-type + normal karyotype, no adverse lesion	
+BA3201D	nan	2801	NonAML	nan	False			not AML
+BA3358D	nan	2801	NonAML	nan	True			not AML
+BA3362D	BA3362R	2655	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3135D	BA3135R	2733	Favorable	nan	False	Adverse	MDS-related gene mutation: SRSF2	
+BA3408D	BA3408R	2689	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,BCOR,STAG2	
+BA3160D	nan	2819	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1	
+BA3187D	BA3187R	2823	NonInitial	CBFB-MYH11	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3098D	BA3098R	2630	Favorable	CBFB-MYH11	False			no WES
+BA3435D	BA3435R	2613	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,RUNX1,U2AF1	
+BA3261D	BA3261R	2633	Favorable	nan	False	Adverse	MDS-related gene mutation: ASXL1	
+BA3203D	BA3203R	2767	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3082D	nan	2822	NonInitial	MLLT3-KMT2A	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3174D	BA3174R	2652	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3299D	BA3299R	2608	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3347D	BA3347R	2708	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3126D	BA3126R	2686	Adverse	KMT2A_re	True	Adverse	adverse class-defining fusion KMT2A_re	
+BA3372D	nan	2598	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3223D	nan	2678	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3380D	BA3380R	2766	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3114D	BA3114R	2631	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3109D	BA3109R	2835	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3452D	BA3452R	2835	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3343D	nan	2835	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3418D	BA3418R	2824	Adverse	GATA2-MECOM	False	Adverse	adverse class-defining fusion GATA2-MECOM	
+BA3245D	BA3245R	2829	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3085D	BA3085R	2785	Favorable	RUNX1-RUNX1T1	False	Favorable	CBF fusion RUNX1-RUNX1T1	
+BA3128D	BA3128R	2596	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3423D	BA3423R	2605	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3173D	BA3173R	2784	NonInitial	RUNX1-RUNX1T1	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3171D	BA3171R	2719	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3277D	BA3277R	2818	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype (footnote ++ over SRSF2)	
+BA3210D	BA3210R	2644	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3157D	BA3157R	2614	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA3433D	BA3433R	2681	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3374D	BA3374R	2617	Adverse	KMT2A_re	False	Adverse	adverse class-defining fusion KMT2A_re	
+BA3403D	BA3403R	2617	NonInitial	KMT2A_re	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3222D	BA3222R	2617	NonInitial	KMT2A_re	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3450D	BA3450R	2627	Adverse	nan	False			no WES
+BA3167D	BA3167R	2704	Intermediate	MLLT3-KMT2A	False	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA3269D	BA3269R	2622	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3246D	nan	2732	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3110D	BA3110R	2713	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA3156D	BA3156R	2702	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3151D	nan	2656	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3226D	BA3226R	2734	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3421D	BA3421R	2659	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3232D	BA3232R	2714	Favorable	nan	True	Adverse	MDS-related gene mutation: BCOR	
+BA3365D	nan	2671	NonInitial	MLLT3-KMT2A	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3289D	BA3289R	2677	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3430D	BA3430R	2728	Intermediate	MLLT3-KMT2A	False	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA3399D	BA3399R	2643	NonAML	nan	False			not AML
+BA3327D	nan	2794	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3428D	nan	2698	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3419D	nan	2690	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3384D	BA3384R	2736	Adverse	KMT2A_re	False	Adverse	adverse class-defining fusion KMT2A_re	
+BA3427D	BA3427R	2807	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3449D	BA3449R	2609	Adverse	GATA2-MECOM	False	Adverse	adverse class-defining fusion GATA2-MECOM	
+BA3163D	BA3163R	2638	Intermediate	MLLT3-KMT2A	False	Intermediate	t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)	
+BA3158D	BA3158R	2646	Favorable	RUNX1-RUNX1T1	False	Favorable	CBF fusion RUNX1-RUNX1T1	
+BA3436D	BA3436R	2755	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype (footnote ++ over EZH2)	
+BA3154D	BA3154R	2768	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3162D	BA3162R	2740	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3355D	nan	2616	NonInitial	GATA2-MECOM	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3081D	nan	2705	Adverse	nan	False	Adverse	MDS-related gene mutation: EZH2,RUNX1	
+BA3352D	BA3352R	2699	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3084D	BA3084R	2694	Adverse	KMT2A_re	False	Adverse	adverse class-defining fusion KMT2A_re	
+BA3149D	BA3149R	2597	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,RUNX1,U2AF1	
+BA3169D	BA3169R	2662	Adverse	KMT2A_re	False			conflict: adverse fusion KMT2A_re + favorable lesion - guideline does not resolve
+BA3180D	BA3180R	2770	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3255D	BA3255R	2725	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3438D	BA3438R	2834	Adverse	KMT2A_re	False	Adverse	adverse class-defining fusion KMT2A_re	
+BA3345D	BA3345R	2775	Adverse	nan	False	Adverse	MDS-related gene mutation: RUNX1,SRSF2	
+BA3431D	BA3431R	2647	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA3181D	BA3181R	2667	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,SRSF2,STAG2	
+BA3341D	BA3341R	2628	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3191D	BA3191R	2700	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3197D	BA3197R	2738	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3370D	nan	2675	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,SRSF2,STAG2	
+BA3448D	BA3448R	2752	Adverse	KMT2A_re	False	Adverse	adverse class-defining fusion KMT2A_re	
+BA3453D	BA3453R	2764	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype (footnote ++ over STAG2)	
+BA3406D	BA3406R	2796	Intermediate	nan	False	Adverse	MDS-related gene mutation: BCOR	
+BA3308D	BA3308R	2772	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3134D	nan	2601	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,SRSF2,STAG2	
+BA3248D	nan	2663	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3186D	BA3186R	2743	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3334D	BA3334R	2640	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,SRSF2,STAG2	
+BA3447D	BA3447R	2669	Intermediate	nan	False	Adverse	MDS-related gene mutation: BCOR,STAG2,U2AF1	
+BA3116D	BA3116R	2810	Adverse	nan	False	Adverse	MDS-related gene mutation: U2AF1	
+BA3280D	BA3280R	2648	Favorable	nan	True	Adverse	MDS-related gene mutation: STAG2	
+BA3185D	BA3185R	2769	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,EZH2,RUNX1,SRSF2,STAG2	
+BA3094D	BA3094R	2660	Adverse	KMT2A_re	False	Adverse	adverse class-defining fusion KMT2A_re	
+BA3318D	BA3318R	2593	Adverse	nan	False	Adverse	MDS-related gene mutation: STAG2	
+BA3216D	BA3216R	2632	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3332D	BA3332R	2748	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA3214D	BA3214R	2820	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3204D	nan	2802	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3141D	BA3141R	2831	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3373D	BA3373R	2680	Adverse	GATA2-MECOM	False	Adverse	adverse class-defining fusion GATA2-MECOM	
+BA3319D	BA3319R	2707	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3328D	BA3328R	2741	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3240D	BA3240R	2711	Adverse	BCR-ABL1	False	Adverse	adverse class-defining fusion BCR-ABL1	
+BA3142D	BA3142R	2612	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3339D	BA3339R	2742	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3333D	BA3333R	2746	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype (footnote ++ over SRSF2)	
+BA3381D	BA3381R	2754	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,RUNX1,SF3B1	
+BA3290D	BA3290R	2753	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,SF3B1,SRSF2,STAG2	
+BA3207D	BA3207R	2641	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,RUNX1,SRSF2,STAG2	
+BA3305D	BA3305R	2634	Intermediate	nan	False	Adverse	MDS-related gene mutation: SRSF2	
+BA3434D	BA3434R	2651	Adverse	nan	False	Adverse	MDS-related gene mutation: RUNX1,SF3B1	
+BA3189D	BA3189R	2676	Adverse	nan	False			no WES
+BA3264D	BA3264R	2603	Favorable	PML-RARA	False			APL (PML-RARA) - separate entity, not ELN-risk classified
+BA3329D	BA3329R	2715	Intermediate	nan	False	Adverse	MDS-related gene mutation: SRSF2,STAG2	
+BA3417D	BA3417R	2600	NonInitial	BCR-ABL1	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3367D	BA3367R	2730	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3225D	BA3225R	2658	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA3183D	BA3183R	2798	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3397D	BA3397R	2674	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3311D	BA3311R	2720	Intermediate	nan	False	Adverse	MDS-related gene mutation: U2AF1	
+BA3175D	BA3175R	2783	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3422D	BA3422R	2636	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3228D	BA3228R	2717	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3213D	BA3213R	2817	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3368D	nan	2637	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,BCOR,EZH2,RUNX1	
+BA3415D	BA3415R	2825	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3270D	BA3270R	2814	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA3324D	BA3324R	2625	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3401D	nan	2808	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3194D	BA3194R	2757	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3335D	BA3335R	2602	FavorableOrIntermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3199D	BA3199R	2724	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,RUNX1,SRSF2	
+BA3326D	BA3326R	2797	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1	
+BA3297D	BA3297R	2657	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3227D	BA3227R	2650	Favorable	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3394D	BA3394R	2653	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3412D	BA3412R	2833	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3293D	BA3293R	2685	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3250D	BA3250R	2718	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3205D	nan	2779	Adverse	GATA2-MECOM	False	Adverse	adverse class-defining fusion GATA2-MECOM	
+BA3177D	BA3177R	2793	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3315D	BA3315R	2812	Adverse	nan	False	Adverse	TP53 mutated at VAF>=10%	
+BA3182D	BA3182R	2804	Favorable	CBFB-MYH11	False			no WES
+BA3260D	BA3260R	2806	NonAML	nan	True			not AML
+BA3369D	BA3369R	2621	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3078D	BA3078R	2737	Intermediate	nan	True	Adverse	MDS-related gene mutation: U2AF1	
+BA3386D	BA3386R	2654	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3445D	BA3445R	2786	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3176D	BA3176R	2765	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA3258D	BA3258R	2739	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3446D	BA3446R	2739	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3295D	BA3295R	2763	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3283D	BA3283R	2723	NonInitial	CBFB-MYH11	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3390D	BA3390R	2744	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3275D	BA3275R	2639	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3136D	BA3136R	2649	Adverse	KMT2A_re	False	Adverse	adverse class-defining fusion KMT2A_re	
+BA3190D	BA3190R	2726	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3234D	BA3234R	2688	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype (footnote ++ over SRSF2)	
+BA3087D	BA3087R	2693	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1	
+BA3454D	BA3454R	2679	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3302D	BA3302R	2805	Adverse	nan	True	Adverse	MDS-related gene mutation: RUNX1,SF3B1	
+BA3242D	BA3242R	2805	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3117D	BA3117R	2629	Favorable	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3083D	BA3083R	2692	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3266D	BA3266R	2672	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3268D	BA3268R	2773	Adverse	nan	False	Adverse	MDS-related gene mutation: STAG2	
+BA3229D	BA3229R	2619	Adverse	nan	False	Adverse	MDS-related gene mutation: ASXL1,RUNX1	
+BA3138D	BA3138R	2619	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3388D	BA3388R	2619	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3353D	BA3353R	2696	Adverse	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3312D	BA3312R	2703	Favorable	nan	False	Adverse	MDS-related gene mutation: EZH2	
+BA3119D	BA3119R	2778	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3219D	BA3219R	2731	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3351D	BA3351R	2623	Favorable	PML-RARA	False			APL (PML-RARA) - separate entity, not ELN-risk classified
+BA3357D	BA3357R	2788	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3208D	BA3208R	2620	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA3310D	BA3310R	2716	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype (footnote ++ over SRSF2)	
+BA3200D	BA3200R	2665	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	
+BA3325D	BA3325R	2782	NonInitial	nan	True			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3146D	BA3146R	2776	Favorable	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3211D	BA3211R	2697	Adverse	nan	False	Adverse	MDS-related gene mutation: RUNX1,U2AF1	
+BA3237D	BA3237R	2760	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3130D	BA3130R	2610	Intermediate	nan	False	Adverse	MDS-related gene mutation: ZRSR2	
+BA3376D	BA3376R	2781	Intermediate	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3196D	nan	2721	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3125D	nan	2706	Favorable	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3137D	BA3137R	2759	Favorable	CBFB-MYH11	False	Favorable	CBF fusion CBFB-MYH11	
+BA3300D	BA3300R	2595	Intermediate	nan	False			no WES
+BA3375D	BA3375R	2749	Intermediate	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3249D	BA3249R	2774	NonInitial	KMT2A_re	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3385D	BA3385R	2594	Favorable	nan	True	Intermediate	NPM1mut with FLT3-ITD + normal karyotype	
+BA3416D	BA3416R	2607	Intermediate	nan	True	Intermediate	normal karyotype, no favorable/adverse marker	
+BA3281D	nan	2604	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3123D	BA3123R	2611	Adverse	nan	True	Adverse	MDS-related gene mutation: ASXL1,SRSF2	
+BA3088D	nan	2712	Favorable	nan	False			favorable molecular lesion but karyotype not definitively normal - footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded
+BA3309D	nan	2795	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3129D	nan	2791	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3284D	nan	2800	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype (footnote ++ over STAG2)	
+BA3111D	nan	2722	MissingKaryo	nan	False			no decisive molecular marker and karyotype not definitively normal - complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing
+BA3209D	nan	2687	NonInitial	nan	False			not an initial-diagnosis specimen (ELN is a diagnosis-time label)
+BA3100D	nan	2750	Favorable	nan	True	Favorable	NPM1mut without FLT3-ITD + normal karyotype	

@@ -1,4 +1,4 @@
-"""Per-modality expert agent panel + cross-modality arbiter (MATRIX-AML core).
+"""Per-modality expert agent panel + cross-modality arbiter (MOSAIC-AML core).
 
 A "tumor board": each witness owns one kind of evidence and returns a structured,
 grounded read; a chair (arbiter) reconciles them into a consensus that accounts for
@@ -747,7 +747,7 @@ def _write_patient_md(ctx, report):
 
 
 def _write_md(ctx, report):
-    L = [f"# MATRIX-AML panel — {report['target']}", "",
+    L = [f"# MOSAIC-AML panel — {report['target']}", "",
          "| witness | kind | bal.acc | perm p | confidence | weight |",
          "|---|---|---|---|---|---|"]
     for it in report["panel"]:

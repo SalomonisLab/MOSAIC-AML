@@ -1,0 +1,251 @@
+{
+ "model": "bulk_mutation_predictor.pkl (BeatAML CV-OOF)",
+ "n_positive_calls": 1312,
+ "vaf_strata": [
+  {
+   "bin": "subclonal <0.10",
+   "vaf_lo": 0.0,
+   "vaf_hi": 0.1,
+   "n_positive": 31,
+   "n_called": 9,
+   "sensitivity": 0.2903
+  },
+  {
+   "bin": "0.10\u20130.25",
+   "vaf_lo": 0.1,
+   "vaf_hi": 0.25,
+   "n_positive": 212,
+   "n_called": 94,
+   "sensitivity": 0.4434
+  },
+  {
+   "bin": "0.25\u20130.40",
+   "vaf_lo": 0.25,
+   "vaf_hi": 0.4,
+   "n_positive": 399,
+   "n_called": 258,
+   "sensitivity": 0.6466
+  },
+  {
+   "bin": "clonal \u22650.40",
+   "vaf_lo": 0.4,
+   "vaf_hi": 1.01,
+   "n_positive": 670,
+   "n_called": 460,
+   "sensitivity": 0.6866
+  }
+ ],
+ "by_gene": [
+  {
+   "gene": "NPM1",
+   "n_positive": 140,
+   "sensitivity": 0.9571,
+   "median_vaf": 0.295
+  },
+  {
+   "gene": "DNMT3A",
+   "n_positive": 140,
+   "sensitivity": 0.7929,
+   "median_vaf": 0.44
+  },
+  {
+   "gene": "NRAS",
+   "n_positive": 95,
+   "sensitivity": 0.3789,
+   "median_vaf": 0.382
+  },
+  {
+   "gene": "FLT3",
+   "n_positive": 79,
+   "sensitivity": 0.3038,
+   "median_vaf": 0.282
+  },
+  {
+   "gene": "RUNX1",
+   "n_positive": 75,
+   "sensitivity": 0.8533,
+   "median_vaf": 0.467
+  },
+  {
+   "gene": "IDH2",
+   "n_positive": 72,
+   "sensitivity": 0.5972,
+   "median_vaf": 0.437
+  },
+  {
+   "gene": "SRSF2",
+   "n_positive": 72,
+   "sensitivity": 0.9167,
+   "median_vaf": 0.454
+  },
+  {
+   "gene": "ASXL1",
+   "n_positive": 63,
+   "sensitivity": 0.5556,
+   "median_vaf": 0.35
+  },
+  {
+   "gene": "CEBPA",
+   "n_positive": 62,
+   "sensitivity": 0.629,
+   "median_vaf": 0.399
+  },
+  {
+   "gene": "IDH1",
+   "n_positive": 49,
+   "sensitivity": 0.8163,
+   "median_vaf": 0.437
+  },
+  {
+   "gene": "WT1",
+   "n_positive": 47,
+   "sensitivity": 0.5319,
+   "median_vaf": 0.337
+  },
+  {
+   "gene": "STAG2",
+   "n_positive": 43,
+   "sensitivity": 0.6744,
+   "median_vaf": 0.614
+  },
+  {
+   "gene": "BCOR",
+   "n_positive": 34,
+   "sensitivity": 0.7647,
+   "median_vaf": 0.639
+  },
+  {
+   "gene": "U2AF1",
+   "n_positive": 33,
+   "sensitivity": 0.8182,
+   "median_vaf": 0.427
+  },
+  {
+   "gene": "GATA2",
+   "n_positive": 29,
+   "sensitivity": 0.4138,
+   "median_vaf": 0.393
+  },
+  {
+   "gene": "SF3B1",
+   "n_positive": 28,
+   "sensitivity": 0.8571,
+   "median_vaf": 0.461
+  },
+  {
+   "gene": "KRAS",
+   "n_positive": 25,
+   "sensitivity": 0.4,
+   "median_vaf": 0.324
+  },
+  {
+   "gene": "PHF6",
+   "n_positive": 21,
+   "sensitivity": 0.619,
+   "median_vaf": 0.454
+  },
+  {
+   "gene": "PTPN11",
+   "n_positive": 20,
+   "sensitivity": 0.35,
+   "median_vaf": 0.319
+  },
+  {
+   "gene": "EZH2",
+   "n_positive": 19,
+   "sensitivity": 0.1579,
+   "median_vaf": 0.437
+  },
+  {
+   "gene": "JAK2",
+   "n_positive": 18,
+   "sensitivity": 0.2222,
+   "median_vaf": 0.447
+  },
+  {
+   "gene": "NF1",
+   "n_positive": 16,
+   "sensitivity": 0.4375,
+   "median_vaf": 0.355
+  },
+  {
+   "gene": "RAD21",
+   "n_positive": 15,
+   "sensitivity": 0.1333,
+   "median_vaf": 0.418
+  },
+  {
+   "gene": "KIT",
+   "n_positive": 13,
+   "sensitivity": 0.4615,
+   "median_vaf": 0.43
+  },
+  {
+   "gene": "CBL",
+   "n_positive": 13,
+   "sensitivity": 0.3846,
+   "median_vaf": 0.5
+  },
+  {
+   "gene": "BCORL1",
+   "n_positive": 13,
+   "sensitivity": 0.5385,
+   "median_vaf": 0.389
+  },
+  {
+   "gene": "SMC3",
+   "n_positive": 10,
+   "sensitivity": 0.1,
+   "median_vaf": 0.382
+  },
+  {
+   "gene": "SMC1A",
+   "n_positive": 10,
+   "sensitivity": 0.2,
+   "median_vaf": 0.461
+  },
+  {
+   "gene": "ZRSR2",
+   "n_positive": 10,
+   "sensitivity": 0.3,
+   "median_vaf": 0.894
+  },
+  {
+   "gene": "CREBBP",
+   "n_positive": 10,
+   "sensitivity": 0.4,
+   "median_vaf": 0.326
+  },
+  {
+   "gene": "IKZF1",
+   "n_positive": 9,
+   "sensitivity": 0.5556,
+   "median_vaf": 0.339
+  },
+  {
+   "gene": "CSF3R",
+   "n_positive": 9,
+   "sensitivity": 0.3333,
+   "median_vaf": 0.434
+  },
+  {
+   "gene": "SUZ12",
+   "n_positive": 7,
+   "sensitivity": 0.1429,
+   "median_vaf": 0.364
+  },
+  {
+   "gene": "SETBP1",
+   "n_positive": 7,
+   "sensitivity": 0.4286,
+   "median_vaf": 0.458
+  },
+  {
+   "gene": "ETV6",
+   "n_positive": 6,
+   "sensitivity": 0.0,
+   "median_vaf": 0.344
+  }
+ ],
+ "note": "VAF = that gene's max t_vaf in the sample (mutations.txt); a proxy for the driver's clonality. Sensitivity = fraction of positives the honest CV-OOF call caught, at the deployed threshold."
+}

@@ -1,0 +1,9308 @@
+{
+ "meta": {
+  "metric": "per-state donor-grouped OOF AUROC (mutant vs non-mutant), measured RNA + composition shift",
+  "min_pos": 5,
+  "min_neg": 8,
+  "topk": 300,
+  "n_states": 89,
+  "built": "2026-07-07 17:02"
+ },
+ "drivers": {
+  "complex": {
+   "n_mut": 24,
+   "n_non": 337,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.65,
+     "n_mut": 15,
+     "n_non": 217,
+     "comp_shift": -16.5,
+     "comp_p": 0.4433
+    },
+    "B Memory-2": {
+     "auroc": 0.535,
+     "n_mut": 17,
+     "n_non": 147,
+     "comp_shift": 10.5,
+     "comp_p": 0.1261
+    },
+    "BMCP-1": {
+     "auroc": 0.694,
+     "n_mut": 11,
+     "n_non": 131,
+     "comp_shift": 2.0,
+     "comp_p": 0.2986
+    },
+    "CD4 TCM": {
+     "auroc": 0.517,
+     "n_mut": 22,
+     "n_non": 289,
+     "comp_shift": 12.0,
+     "comp_p": 0.705
+    },
+    "CD8 TEM": {
+     "auroc": 0.751,
+     "n_mut": 21,
+     "n_non": 272,
+     "comp_shift": 11.5,
+     "comp_p": 0.6509
+    },
+    "CLP": {
+     "auroc": 0.909,
+     "n_mut": 5,
+     "n_non": 70,
+     "comp_shift": 0.0,
+     "comp_p": 0.5811
+    },
+    "Classical-Mono": {
+     "auroc": 0.625,
+     "n_mut": 19,
+     "n_non": 201,
+     "comp_shift": 70.0,
+     "comp_p": 0.061
+    },
+    "ERP-1": {
+     "auroc": 0.824,
+     "n_mut": 7,
+     "n_non": 78,
+     "comp_shift": 0.0,
+     "comp_p": 0.8474
+    },
+    "ERP-2": {
+     "auroc": 0.944,
+     "n_mut": 6,
+     "n_non": 65,
+     "comp_shift": 1.5,
+     "comp_p": 0.3188
+    },
+    "ERP-3": {
+     "auroc": 0.936,
+     "n_mut": 7,
+     "n_non": 38,
+     "comp_shift": 1.0,
+     "comp_p": 0.0193
+    },
+    "ERP-4": {
+     "auroc": 0.835,
+     "n_mut": 8,
+     "n_non": 60,
+     "comp_shift": 0.0,
+     "comp_p": 0.2978
+    },
+    "ERP-5": {
+     "auroc": 0.74,
+     "n_mut": 9,
+     "n_non": 79,
+     "comp_shift": 2.0,
+     "comp_p": 0.4799
+    },
+    "ERP-6": {
+     "auroc": 0.801,
+     "n_mut": 8,
+     "n_non": 69,
+     "comp_shift": -0.5,
+     "comp_p": 0.9941
+    },
+    "ERP-7": {
+     "auroc": 0.792,
+     "n_mut": 8,
+     "n_non": 98,
+     "comp_shift": 1.5,
+     "comp_p": 0.9078
+    },
+    "ERP-8": {
+     "auroc": 0.913,
+     "n_mut": 12,
+     "n_non": 137,
+     "comp_shift": 3.0,
+     "comp_p": 0.5929
+    },
+    "Erythroblast-1": {
+     "auroc": 0.744,
+     "n_mut": 8,
+     "n_non": 113,
+     "comp_shift": 0.5,
+     "comp_p": 0.9812
+    },
+    "Erythroblast-3": {
+     "auroc": 0.795,
+     "n_mut": 19,
+     "n_non": 177,
+     "comp_shift": 17.5,
+     "comp_p": 0.1374
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.807,
+     "n_mut": 19,
+     "n_non": 236,
+     "comp_shift": 22.5,
+     "comp_p": 0.6413
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.766,
+     "n_mut": 19,
+     "n_non": 207,
+     "comp_shift": 14.0,
+     "comp_p": 0.3291
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.765,
+     "n_mut": 20,
+     "n_non": 244,
+     "comp_shift": 17.5,
+     "comp_p": 0.4392
+    },
+    "LMPP-1": {
+     "auroc": 0.961,
+     "n_mut": 14,
+     "n_non": 163,
+     "comp_shift": 14.5,
+     "comp_p": 0.6896
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.834,
+     "n_mut": 21,
+     "n_non": 216,
+     "comp_shift": -4.5,
+     "comp_p": 0.9089
+    },
+    "LMPP-2": {
+     "auroc": 0.653,
+     "n_mut": 14,
+     "n_non": 208,
+     "comp_shift": -21.0,
+     "comp_p": 0.3722
+    },
+    "MAIT": {
+     "auroc": 0.613,
+     "n_mut": 20,
+     "n_non": 251,
+     "comp_shift": 1.5,
+     "comp_p": 0.8159
+    },
+    "MDP-1": {
+     "auroc": 0.614,
+     "n_mut": 14,
+     "n_non": 173,
+     "comp_shift": 1.0,
+     "comp_p": 0.5471
+    },
+    "MDP-2": {
+     "auroc": 0.685,
+     "n_mut": 13,
+     "n_non": 186,
+     "comp_shift": 1.5,
+     "comp_p": 0.9031
+    },
+    "MDP-3": {
+     "auroc": 0.897,
+     "n_mut": 5,
+     "n_non": 60,
+     "comp_shift": 0.0,
+     "comp_p": 0.9621
+    },
+    "MEP-1": {
+     "auroc": 0.918,
+     "n_mut": 17,
+     "n_non": 153,
+     "comp_shift": 5.0,
+     "comp_p": 0.3041
+    },
+    "MEP-2": {
+     "auroc": 0.793,
+     "n_mut": 15,
+     "n_non": 224,
+     "comp_shift": -9.5,
+     "comp_p": 0.4202
+    },
+    "MEP-Eryth-1": {
+     "auroc": 0.749,
+     "n_mut": 7,
+     "n_non": 69,
+     "comp_shift": 2.0,
+     "comp_p": 0.3621
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.863,
+     "n_mut": 12,
+     "n_non": 130,
+     "comp_shift": 4.5,
+     "comp_p": 0.3383
+    },
+    "MKP-early": {
+     "auroc": 0.75,
+     "n_mut": 7,
+     "n_non": 79,
+     "comp_shift": 1.0,
+     "comp_p": 0.2726
+    },
+    "MPP-1": {
+     "auroc": 0.693,
+     "n_mut": 9,
+     "n_non": 120,
+     "comp_shift": 0.0,
+     "comp_p": 0.7709
+    },
+    "MPP-2": {
+     "auroc": 0.959,
+     "n_mut": 5,
+     "n_non": 98,
+     "comp_shift": 2.5,
+     "comp_p": 0.0698
+    },
+    "MPP-MEP": {
+     "auroc": 0.838,
+     "n_mut": 21,
+     "n_non": 286,
+     "comp_shift": -123.0,
+     "comp_p": 0.018
+    },
+    "Mono-1": {
+     "auroc": 0.644,
+     "n_mut": 13,
+     "n_non": 186,
+     "comp_shift": 3.5,
+     "comp_p": 0.7948
+    },
+    "Mono-2": {
+     "auroc": 0.755,
+     "n_mut": 19,
+     "n_non": 209,
+     "comp_shift": 29.0,
+     "comp_p": 0.097
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.679,
+     "n_mut": 15,
+     "n_non": 271,
+     "comp_shift": -116.0,
+     "comp_p": 0.0584
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.906,
+     "n_mut": 14,
+     "n_non": 197,
+     "comp_shift": 0.5,
+     "comp_p": 0.2934
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.893,
+     "n_mut": 13,
+     "n_non": 148,
+     "comp_shift": 5.5,
+     "comp_p": 0.6886
+    },
+    "Multilin-1": {
+     "auroc": 0.91,
+     "n_mut": 14,
+     "n_non": 210,
+     "comp_shift": 6.5,
+     "comp_p": 0.7489
+    },
+    "Multilin-2": {
+     "auroc": 0.928,
+     "n_mut": 9,
+     "n_non": 131,
+     "comp_shift": 0.0,
+     "comp_p": 0.9119
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.651,
+     "n_mut": 7,
+     "n_non": 160,
+     "comp_shift": -4.0,
+     "comp_p": 0.3708
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.801,
+     "n_mut": 14,
+     "n_non": 186,
+     "comp_shift": 4.0,
+     "comp_p": 0.7316
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.791,
+     "n_mut": 11,
+     "n_non": 187,
+     "comp_shift": -7.5,
+     "comp_p": 0.7026
+    },
+    "NK-Mature": {
+     "auroc": 0.657,
+     "n_mut": 22,
+     "n_non": 307,
+     "comp_shift": 42.0,
+     "comp_p": 0.5362
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.665,
+     "n_mut": 20,
+     "n_non": 221,
+     "comp_shift": 9.0,
+     "comp_p": 0.5914
+    },
+    "Plasma Cell": {
+     "auroc": 0.536,
+     "n_mut": 10,
+     "n_non": 118,
+     "comp_shift": 2.0,
+     "comp_p": 0.4309
+    },
+    "T CD4 Activated": {
+     "auroc": 0.562,
+     "n_mut": 9,
+     "n_non": 118,
+     "comp_shift": -2.0,
+     "comp_p": 0.2285
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.653,
+     "n_mut": 21,
+     "n_non": 240,
+     "comp_shift": 17.0,
+     "comp_p": 0.1806
+    },
+    "T CD4 Naive-2": {
+     "auroc": 0.648,
+     "n_mut": 11,
+     "n_non": 97,
+     "comp_shift": 5.5,
+     "comp_p": 0.1702
+    },
+    "T CD8 Naive": {
+     "auroc": 0.645,
+     "n_mut": 10,
+     "n_non": 134,
+     "comp_shift": 2.0,
+     "comp_p": 0.4425
+    },
+    "cDC1": {
+     "auroc": 0.675,
+     "n_mut": 13,
+     "n_non": 171,
+     "comp_shift": 2.5,
+     "comp_p": 0.7271
+    },
+    "cDC2-1": {
+     "auroc": 0.845,
+     "n_mut": 11,
+     "n_non": 168,
+     "comp_shift": -0.5,
+     "comp_p": 0.7855
+    },
+    "cDC2-2": {
+     "auroc": 0.736,
+     "n_mut": 9,
+     "n_non": 151,
+     "comp_shift": -5.5,
+     "comp_p": 0.0975
+    },
+    "cMOP": {
+     "auroc": 0.601,
+     "n_mut": 11,
+     "n_non": 135,
+     "comp_shift": 2.0,
+     "comp_p": 0.5874
+    },
+    "immNeu-1": {
+     "auroc": 0.858,
+     "n_mut": 10,
+     "n_non": 106,
+     "comp_shift": 2.0,
+     "comp_p": 0.856
+    },
+    "pDC": {
+     "auroc": 0.65,
+     "n_mut": 8,
+     "n_non": 112,
+     "comp_shift": 0.0,
+     "comp_p": 0.8579
+    },
+    "pre-DC-1": {
+     "auroc": 0.661,
+     "n_mut": 5,
+     "n_non": 66,
+     "comp_shift": 0.0,
+     "comp_p": 0.62
+    },
+    "pre-DC-2": {
+     "auroc": 0.723,
+     "n_mut": 11,
+     "n_non": 139,
+     "comp_shift": 3.5,
+     "comp_p": 0.591
+    },
+    "preNeu": {
+     "auroc": 0.89,
+     "n_mut": 13,
+     "n_non": 200,
+     "comp_shift": -2.5,
+     "comp_p": 0.294
+    }
+   },
+   "top_states": [
+    "LMPP-1",
+    "MPP-2",
+    "ERP-2",
+    "ERP-3",
+    "Multilin-2"
+   ]
+  },
+  "del5": {
+   "n_mut": 15,
+   "n_non": 346,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.517,
+     "n_mut": 7,
+     "n_non": 225,
+     "comp_shift": -29.0,
+     "comp_p": 0.0558
+    },
+    "B Memory-2": {
+     "auroc": 0.579,
+     "n_mut": 13,
+     "n_non": 151,
+     "comp_shift": 14.0,
+     "comp_p": 0.0367
+    },
+    "BMCP-1": {
+     "auroc": 0.81,
+     "n_mut": 9,
+     "n_non": 133,
+     "comp_shift": 10.0,
+     "comp_p": 0.0398
+    },
+    "CD4 TCM": {
+     "auroc": 0.587,
+     "n_mut": 14,
+     "n_non": 297,
+     "comp_shift": -4.0,
+     "comp_p": 0.7703
+    },
+    "CD8 TEM": {
+     "auroc": 0.83,
+     "n_mut": 13,
+     "n_non": 280,
+     "comp_shift": 43.0,
+     "comp_p": 0.2896
+    },
+    "Classical-Mono": {
+     "auroc": 0.55,
+     "n_mut": 12,
+     "n_non": 208,
+     "comp_shift": 84.5,
+     "comp_p": 0.0578
+    },
+    "ERP-1": {
+     "auroc": 0.802,
+     "n_mut": 6,
+     "n_non": 79,
+     "comp_shift": 3.0,
+     "comp_p": 0.1268
+    },
+    "ERP-2": {
+     "auroc": 0.909,
+     "n_mut": 5,
+     "n_non": 66,
+     "comp_shift": 5.0,
+     "comp_p": 0.0171
+    },
+    "ERP-3": {
+     "auroc": 0.947,
+     "n_mut": 7,
+     "n_non": 38,
+     "comp_shift": 4.0,
+     "comp_p": 0.0001
+    },
+    "ERP-4": {
+     "auroc": 0.836,
+     "n_mut": 7,
+     "n_non": 61,
+     "comp_shift": 3.0,
+     "comp_p": 0.0298
+    },
+    "ERP-5": {
+     "auroc": 0.848,
+     "n_mut": 8,
+     "n_non": 80,
+     "comp_shift": 4.0,
+     "comp_p": 0.104
+    },
+    "ERP-6": {
+     "auroc": 0.716,
+     "n_mut": 7,
+     "n_non": 70,
+     "comp_shift": 5.0,
+     "comp_p": 0.1567
+    },
+    "ERP-7": {
+     "auroc": 0.888,
+     "n_mut": 8,
+     "n_non": 98,
+     "comp_shift": 3.0,
+     "comp_p": 0.1107
+    },
+    "ERP-8": {
+     "auroc": 0.756,
+     "n_mut": 11,
+     "n_non": 138,
+     "comp_shift": 10.0,
+     "comp_p": 0.0901
+    },
+    "Erythroblast-1": {
+     "auroc": 0.885,
+     "n_mut": 7,
+     "n_non": 114,
+     "comp_shift": 2.0,
+     "comp_p": 0.3521
+    },
+    "Erythroblast-3": {
+     "auroc": 0.777,
+     "n_mut": 12,
+     "n_non": 184,
+     "comp_shift": 30.0,
+     "comp_p": 0.1453
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.732,
+     "n_mut": 11,
+     "n_non": 244,
+     "comp_shift": 2.5,
+     "comp_p": 0.6627
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.665,
+     "n_mut": 14,
+     "n_non": 212,
+     "comp_shift": 15.0,
+     "comp_p": 0.2565
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.734,
+     "n_mut": 11,
+     "n_non": 253,
+     "comp_shift": -25.0,
+     "comp_p": 0.5151
+    },
+    "LMPP-1": {
+     "auroc": 0.882,
+     "n_mut": 13,
+     "n_non": 164,
+     "comp_shift": 33.0,
+     "comp_p": 0.0105
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.815,
+     "n_mut": 15,
+     "n_non": 222,
+     "comp_shift": 20.0,
+     "comp_p": 0.2135
+    },
+    "LMPP-2": {
+     "auroc": 0.577,
+     "n_mut": 7,
+     "n_non": 215,
+     "comp_shift": -24.0,
+     "comp_p": 0.2401
+    },
+    "MAIT": {
+     "auroc": 0.716,
+     "n_mut": 13,
+     "n_non": 258,
+     "comp_shift": 8.0,
+     "comp_p": 0.9305
+    },
+    "MDP-1": {
+     "auroc": 0.515,
+     "n_mut": 8,
+     "n_non": 179,
+     "comp_shift": -1.0,
+     "comp_p": 0.1667
+    },
+    "MDP-2": {
+     "auroc": 0.705,
+     "n_mut": 8,
+     "n_non": 191,
+     "comp_shift": -1.0,
+     "comp_p": 0.5054
+    },
+    "MEP-1": {
+     "auroc": 0.86,
+     "n_mut": 13,
+     "n_non": 157,
+     "comp_shift": 8.0,
+     "comp_p": 0.0571
+    },
+    "MEP-2": {
+     "auroc": 0.736,
+     "n_mut": 10,
+     "n_non": 229,
+     "comp_shift": -5.5,
+     "comp_p": 0.778
+    },
+    "MEP-Eryth-1": {
+     "auroc": 0.705,
+     "n_mut": 6,
+     "n_non": 70,
+     "comp_shift": 3.0,
+     "comp_p": 0.0171
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.833,
+     "n_mut": 10,
+     "n_non": 132,
+     "comp_shift": 9.5,
+     "comp_p": 0.0438
+    },
+    "MKP-early": {
+     "auroc": 0.877,
+     "n_mut": 5,
+     "n_non": 81,
+     "comp_shift": 2.0,
+     "comp_p": 0.1534
+    },
+    "MPP-1": {
+     "auroc": 0.741,
+     "n_mut": 7,
+     "n_non": 122,
+     "comp_shift": 3.0,
+     "comp_p": 0.3003
+    },
+    "MPP-2": {
+     "auroc": 0.883,
+     "n_mut": 6,
+     "n_non": 97,
+     "comp_shift": 6.0,
+     "comp_p": 0.0033
+    },
+    "MPP-MEP": {
+     "auroc": 0.834,
+     "n_mut": 14,
+     "n_non": 293,
+     "comp_shift": -100.0,
+     "comp_p": 0.1281
+    },
+    "Mono-1": {
+     "auroc": 0.667,
+     "n_mut": 7,
+     "n_non": 192,
+     "comp_shift": -7.0,
+     "comp_p": 0.4467
+    },
+    "Mono-2": {
+     "auroc": 0.736,
+     "n_mut": 11,
+     "n_non": 217,
+     "comp_shift": 13.0,
+     "comp_p": 0.724
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.814,
+     "n_mut": 7,
+     "n_non": 279,
+     "comp_shift": -159.5,
+     "comp_p": 0.0175
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.841,
+     "n_mut": 13,
+     "n_non": 198,
+     "comp_shift": 6.0,
+     "comp_p": 0.4748
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.819,
+     "n_mut": 12,
+     "n_non": 149,
+     "comp_shift": 7.5,
+     "comp_p": 0.107
+    },
+    "Multilin-1": {
+     "auroc": 0.868,
+     "n_mut": 11,
+     "n_non": 213,
+     "comp_shift": 12.5,
+     "comp_p": 0.2061
+    },
+    "Multilin-2": {
+     "auroc": 0.812,
+     "n_mut": 7,
+     "n_non": 133,
+     "comp_shift": -1.0,
+     "comp_p": 0.5075
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.731,
+     "n_mut": 5,
+     "n_non": 162,
+     "comp_shift": -2.0,
+     "comp_p": 0.8918
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.678,
+     "n_mut": 7,
+     "n_non": 193,
+     "comp_shift": -5.0,
+     "comp_p": 0.5516
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.795,
+     "n_mut": 8,
+     "n_non": 190,
+     "comp_shift": -8.5,
+     "comp_p": 0.426
+    },
+    "NK-Mature": {
+     "auroc": 0.599,
+     "n_mut": 14,
+     "n_non": 315,
+     "comp_shift": 163.5,
+     "comp_p": 0.1201
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.574,
+     "n_mut": 12,
+     "n_non": 229,
+     "comp_shift": 5.5,
+     "comp_p": 0.7721
+    },
+    "Plasma Cell": {
+     "auroc": 0.602,
+     "n_mut": 6,
+     "n_non": 122,
+     "comp_shift": 1.0,
+     "comp_p": 0.562
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.705,
+     "n_mut": 12,
+     "n_non": 249,
+     "comp_shift": 6.5,
+     "comp_p": 0.9808
+    },
+    "T CD4 Naive-2": {
+     "auroc": 0.708,
+     "n_mut": 10,
+     "n_non": 98,
+     "comp_shift": 25.0,
+     "comp_p": 0.0227
+    },
+    "T CD8 Naive": {
+     "auroc": 0.624,
+     "n_mut": 7,
+     "n_non": 137,
+     "comp_shift": 3.0,
+     "comp_p": 0.6276
+    },
+    "cDC1": {
+     "auroc": 0.569,
+     "n_mut": 6,
+     "n_non": 178,
+     "comp_shift": -3.0,
+     "comp_p": 0.3448
+    },
+    "cDC2-1": {
+     "auroc": 0.581,
+     "n_mut": 7,
+     "n_non": 172,
+     "comp_shift": 0.0,
+     "comp_p": 0.9505
+    },
+    "cDC2-2": {
+     "auroc": 0.608,
+     "n_mut": 6,
+     "n_non": 154,
+     "comp_shift": -5.0,
+     "comp_p": 0.2178
+    },
+    "cMOP": {
+     "auroc": 0.751,
+     "n_mut": 7,
+     "n_non": 139,
+     "comp_shift": 2.0,
+     "comp_p": 0.6012
+    },
+    "immNeu-1": {
+     "auroc": 0.953,
+     "n_mut": 7,
+     "n_non": 109,
+     "comp_shift": 4.0,
+     "comp_p": 0.3096
+    },
+    "pDC": {
+     "auroc": 0.635,
+     "n_mut": 6,
+     "n_non": 114,
+     "comp_shift": 0.0,
+     "comp_p": 0.6162
+    },
+    "preNeu": {
+     "auroc": 0.897,
+     "n_mut": 9,
+     "n_non": 204,
+     "comp_shift": -2.0,
+     "comp_p": 0.9435
+    }
+   },
+   "top_states": [
+    "immNeu-1",
+    "ERP-3",
+    "ERP-2",
+    "preNeu",
+    "ERP-7"
+   ]
+  },
+  "del7": {
+   "n_mut": 18,
+   "n_non": 343,
+   "states": {
+    "B Memory-2": {
+     "auroc": 0.803,
+     "n_mut": 9,
+     "n_non": 155,
+     "comp_shift": -2.0,
+     "comp_p": 0.1138
+    },
+    "BMCP-1": {
+     "auroc": 0.653,
+     "n_mut": 14,
+     "n_non": 128,
+     "comp_shift": 13.5,
+     "comp_p": 0.0088
+    },
+    "CD4 TCM": {
+     "auroc": 0.731,
+     "n_mut": 12,
+     "n_non": 299,
+     "comp_shift": -50.0,
+     "comp_p": 0.007
+    },
+    "CD8 TEM": {
+     "auroc": 0.659,
+     "n_mut": 11,
+     "n_non": 282,
+     "comp_shift": -20.5,
+     "comp_p": 0.0244
+    },
+    "CLP": {
+     "auroc": 0.734,
+     "n_mut": 5,
+     "n_non": 70,
+     "comp_shift": 1.5,
+     "comp_p": 0.1678
+    },
+    "Classical-Mono": {
+     "auroc": 0.753,
+     "n_mut": 11,
+     "n_non": 209,
+     "comp_shift": -15.0,
+     "comp_p": 0.5108
+    },
+    "ERP-1": {
+     "auroc": 0.899,
+     "n_mut": 11,
+     "n_non": 74,
+     "comp_shift": 12.5,
+     "comp_p": 0.0145
+    },
+    "ERP-2": {
+     "auroc": 0.871,
+     "n_mut": 9,
+     "n_non": 62,
+     "comp_shift": 9.0,
+     "comp_p": 0.0108
+    },
+    "ERP-3": {
+     "auroc": 0.744,
+     "n_mut": 7,
+     "n_non": 38,
+     "comp_shift": 1.0,
+     "comp_p": 0.0053
+    },
+    "ERP-4": {
+     "auroc": 0.721,
+     "n_mut": 8,
+     "n_non": 60,
+     "comp_shift": 2.5,
+     "comp_p": 0.0739
+    },
+    "ERP-5": {
+     "auroc": 0.601,
+     "n_mut": 7,
+     "n_non": 81,
+     "comp_shift": 3.0,
+     "comp_p": 0.4731
+    },
+    "ERP-6": {
+     "auroc": 0.643,
+     "n_mut": 7,
+     "n_non": 70,
+     "comp_shift": 2.0,
+     "comp_p": 0.48
+    },
+    "ERP-7": {
+     "auroc": 0.687,
+     "n_mut": 6,
+     "n_non": 100,
+     "comp_shift": -0.5,
+     "comp_p": 0.9349
+    },
+    "ERP-8": {
+     "auroc": 0.837,
+     "n_mut": 9,
+     "n_non": 140,
+     "comp_shift": 4.5,
+     "comp_p": 0.846
+    },
+    "Erythroblast-1": {
+     "auroc": 0.938,
+     "n_mut": 5,
+     "n_non": 116,
+     "comp_shift": -2.0,
+     "comp_p": 0.2347
+    },
+    "Erythroblast-3": {
+     "auroc": 0.649,
+     "n_mut": 7,
+     "n_non": 189,
+     "comp_shift": -13.5,
+     "comp_p": 0.0351
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.52,
+     "n_mut": 9,
+     "n_non": 246,
+     "comp_shift": -30.5,
+     "comp_p": 0.0278
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.717,
+     "n_mut": 13,
+     "n_non": 213,
+     "comp_shift": -15.0,
+     "comp_p": 0.7663
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.843,
+     "n_mut": 10,
+     "n_non": 254,
+     "comp_shift": -59.0,
+     "comp_p": 0.0162
+    },
+    "LMPP-1": {
+     "auroc": 0.832,
+     "n_mut": 13,
+     "n_non": 164,
+     "comp_shift": 51.0,
+     "comp_p": 0.014
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.787,
+     "n_mut": 18,
+     "n_non": 219,
+     "comp_shift": 181.0,
+     "comp_p": 0.0
+    },
+    "LMPP-2": {
+     "auroc": 0.899,
+     "n_mut": 15,
+     "n_non": 207,
+     "comp_shift": 347.5,
+     "comp_p": 0.001
+    },
+    "MAIT": {
+     "auroc": 0.745,
+     "n_mut": 10,
+     "n_non": 261,
+     "comp_shift": -20.0,
+     "comp_p": 0.0048
+    },
+    "MDP-1": {
+     "auroc": 0.963,
+     "n_mut": 13,
+     "n_non": 174,
+     "comp_shift": 11.5,
+     "comp_p": 0.3637
+    },
+    "MDP-2": {
+     "auroc": 0.88,
+     "n_mut": 15,
+     "n_non": 184,
+     "comp_shift": 25.5,
+     "comp_p": 0.0847
+    },
+    "MDP-3": {
+     "auroc": 0.687,
+     "n_mut": 5,
+     "n_non": 60,
+     "comp_shift": 1.0,
+     "comp_p": 0.2744
+    },
+    "MEP-1": {
+     "auroc": 0.786,
+     "n_mut": 15,
+     "n_non": 155,
+     "comp_shift": 28.5,
+     "comp_p": 0.003
+    },
+    "MEP-2": {
+     "auroc": 0.897,
+     "n_mut": 17,
+     "n_non": 222,
+     "comp_shift": 154.5,
+     "comp_p": 0.0013
+    },
+    "MEP-Eryth-1": {
+     "auroc": 0.807,
+     "n_mut": 8,
+     "n_non": 68,
+     "comp_shift": 5.5,
+     "comp_p": 0.0187
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.628,
+     "n_mut": 14,
+     "n_non": 128,
+     "comp_shift": 12.5,
+     "comp_p": 0.0026
+    },
+    "MKP-early": {
+     "auroc": 0.869,
+     "n_mut": 9,
+     "n_non": 77,
+     "comp_shift": 7.0,
+     "comp_p": 0.0223
+    },
+    "MPP-1": {
+     "auroc": 0.942,
+     "n_mut": 13,
+     "n_non": 116,
+     "comp_shift": 38.0,
+     "comp_p": 0.0013
+    },
+    "MPP-2": {
+     "auroc": 0.922,
+     "n_mut": 12,
+     "n_non": 91,
+     "comp_shift": 35.0,
+     "comp_p": 0.0001
+    },
+    "MPP-MEP": {
+     "auroc": 0.862,
+     "n_mut": 17,
+     "n_non": 290,
+     "comp_shift": 318.5,
+     "comp_p": 0.0465
+    },
+    "Mono-1": {
+     "auroc": 0.563,
+     "n_mut": 6,
+     "n_non": 193,
+     "comp_shift": -10.0,
+     "comp_p": 0.0275
+    },
+    "Mono-2": {
+     "auroc": 0.686,
+     "n_mut": 8,
+     "n_non": 220,
+     "comp_shift": -21.5,
+     "comp_p": 0.071
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.889,
+     "n_mut": 14,
+     "n_non": 272,
+     "comp_shift": -125.0,
+     "comp_p": 0.0163
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.727,
+     "n_mut": 13,
+     "n_non": 198,
+     "comp_shift": 14.0,
+     "comp_p": 0.4814
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.591,
+     "n_mut": 13,
+     "n_non": 148,
+     "comp_shift": 7.5,
+     "comp_p": 0.1541
+    },
+    "Multilin-1": {
+     "auroc": 0.825,
+     "n_mut": 17,
+     "n_non": 207,
+     "comp_shift": 76.5,
+     "comp_p": 0.0013
+    },
+    "Multilin-2": {
+     "auroc": 0.749,
+     "n_mut": 14,
+     "n_non": 126,
+     "comp_shift": 62.5,
+     "comp_p": 0.0003
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.514,
+     "n_mut": 5,
+     "n_non": 162,
+     "comp_shift": -4.0,
+     "comp_p": 0.1999
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.619,
+     "n_mut": 11,
+     "n_non": 189,
+     "comp_shift": 8.0,
+     "comp_p": 0.6674
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.515,
+     "n_mut": 9,
+     "n_non": 189,
+     "comp_shift": -6.5,
+     "comp_p": 0.2586
+    },
+    "NK-Mature": {
+     "auroc": 0.749,
+     "n_mut": 14,
+     "n_non": 315,
+     "comp_shift": 32.5,
+     "comp_p": 0.5068
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.769,
+     "n_mut": 12,
+     "n_non": 229,
+     "comp_shift": -15.5,
+     "comp_p": 0.3104
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.687,
+     "n_mut": 9,
+     "n_non": 252,
+     "comp_shift": -24.5,
+     "comp_p": 0.0019
+    },
+    "T CD4 Naive-2": {
+     "auroc": 0.747,
+     "n_mut": 6,
+     "n_non": 102,
+     "comp_shift": 0.0,
+     "comp_p": 0.716
+    },
+    "cDC1": {
+     "auroc": 0.77,
+     "n_mut": 9,
+     "n_non": 175,
+     "comp_shift": -0.5,
+     "comp_p": 0.7557
+    },
+    "cDC2-1": {
+     "auroc": 0.789,
+     "n_mut": 9,
+     "n_non": 170,
+     "comp_shift": -1.5,
+     "comp_p": 0.6791
+    },
+    "cDC2-2": {
+     "auroc": 0.844,
+     "n_mut": 7,
+     "n_non": 153,
+     "comp_shift": -4.0,
+     "comp_p": 0.3917
+    },
+    "cMOP": {
+     "auroc": 0.652,
+     "n_mut": 6,
+     "n_non": 140,
+     "comp_shift": -4.5,
+     "comp_p": 0.1836
+    },
+    "immNeu-1": {
+     "auroc": 0.755,
+     "n_mut": 6,
+     "n_non": 110,
+     "comp_shift": -2.5,
+     "comp_p": 0.2807
+    },
+    "pDC": {
+     "auroc": 0.697,
+     "n_mut": 6,
+     "n_non": 114,
+     "comp_shift": -0.5,
+     "comp_p": 0.759
+    },
+    "pre-DC-1": {
+     "auroc": 0.838,
+     "n_mut": 6,
+     "n_non": 65,
+     "comp_shift": -0.5,
+     "comp_p": 0.9616
+    },
+    "pre-DC-2": {
+     "auroc": 0.726,
+     "n_mut": 9,
+     "n_non": 141,
+     "comp_shift": 3.5,
+     "comp_p": 0.9805
+    },
+    "preNeu": {
+     "auroc": 0.507,
+     "n_mut": 8,
+     "n_non": 205,
+     "comp_shift": -7.5,
+     "comp_p": 0.5317
+    }
+   },
+   "top_states": [
+    "MDP-1",
+    "MPP-1",
+    "Erythroblast-1",
+    "MPP-2",
+    "ERP-1"
+   ]
+  },
+  "inv16": {
+   "n_mut": 11,
+   "n_non": 350,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.888,
+     "n_mut": 9,
+     "n_non": 223,
+     "comp_shift": -5.0,
+     "comp_p": 0.9742
+    },
+    "BMCP-1": {
+     "auroc": 0.991,
+     "n_mut": 10,
+     "n_non": 132,
+     "comp_shift": 50.0,
+     "comp_p": 0.0009
+    },
+    "CD4 TCM": {
+     "auroc": 0.718,
+     "n_mut": 11,
+     "n_non": 300,
+     "comp_shift": 9.5,
+     "comp_p": 0.6931
+    },
+    "CD8 TEM": {
+     "auroc": 0.73,
+     "n_mut": 8,
+     "n_non": 285,
+     "comp_shift": -49.5,
+     "comp_p": 0.063
+    },
+    "Classical-Mono": {
+     "auroc": 0.981,
+     "n_mut": 6,
+     "n_non": 214,
+     "comp_shift": -15.0,
+     "comp_p": 0.2392
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.906,
+     "n_mut": 11,
+     "n_non": 244,
+     "comp_shift": 851.5,
+     "comp_p": 0.0001
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.967,
+     "n_mut": 11,
+     "n_non": 215,
+     "comp_shift": 43.5,
+     "comp_p": 0.0757
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.99,
+     "n_mut": 11,
+     "n_non": 253,
+     "comp_shift": 555.0,
+     "comp_p": 0.0001
+    },
+    "LMPP-1": {
+     "auroc": 0.998,
+     "n_mut": 5,
+     "n_non": 172,
+     "comp_shift": -2.0,
+     "comp_p": 0.6804
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.98,
+     "n_mut": 10,
+     "n_non": 227,
+     "comp_shift": 57.5,
+     "comp_p": 0.2553
+    },
+    "LMPP-2": {
+     "auroc": 0.973,
+     "n_mut": 10,
+     "n_non": 212,
+     "comp_shift": 111.5,
+     "comp_p": 0.039
+    },
+    "MAIT": {
+     "auroc": 0.754,
+     "n_mut": 10,
+     "n_non": 261,
+     "comp_shift": -2.0,
+     "comp_p": 0.7502
+    },
+    "MDP-1": {
+     "auroc": 0.981,
+     "n_mut": 10,
+     "n_non": 177,
+     "comp_shift": 65.0,
+     "comp_p": 0.0014
+    },
+    "MDP-2": {
+     "auroc": 0.973,
+     "n_mut": 9,
+     "n_non": 190,
+     "comp_shift": 59.0,
+     "comp_p": 0.0724
+    },
+    "MDP-3": {
+     "auroc": 0.937,
+     "n_mut": 5,
+     "n_non": 60,
+     "comp_shift": 8.5,
+     "comp_p": 0.0259
+    },
+    "MEP-1": {
+     "auroc": 0.985,
+     "n_mut": 5,
+     "n_non": 165,
+     "comp_shift": 0.0,
+     "comp_p": 0.9158
+    },
+    "MEP-2": {
+     "auroc": 0.992,
+     "n_mut": 8,
+     "n_non": 231,
+     "comp_shift": -5.0,
+     "comp_p": 0.8098
+    },
+    "MPP-MEP": {
+     "auroc": 0.986,
+     "n_mut": 10,
+     "n_non": 297,
+     "comp_shift": 176.5,
+     "comp_p": 0.3591
+    },
+    "Mono-1": {
+     "auroc": 0.954,
+     "n_mut": 10,
+     "n_non": 189,
+     "comp_shift": 101.0,
+     "comp_p": 0.001
+    },
+    "Mono-2": {
+     "auroc": 0.985,
+     "n_mut": 10,
+     "n_non": 218,
+     "comp_shift": 159.0,
+     "comp_p": 0.0084
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.989,
+     "n_mut": 11,
+     "n_non": 275,
+     "comp_shift": 2554.5,
+     "comp_p": 0.0
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.979,
+     "n_mut": 10,
+     "n_non": 201,
+     "comp_shift": 72.0,
+     "comp_p": 0.1
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.94,
+     "n_mut": 6,
+     "n_non": 155,
+     "comp_shift": 5.0,
+     "comp_p": 0.9092
+    },
+    "Multilin-1": {
+     "auroc": 0.985,
+     "n_mut": 10,
+     "n_non": 214,
+     "comp_shift": 13.0,
+     "comp_p": 0.56
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.975,
+     "n_mut": 7,
+     "n_non": 160,
+     "comp_shift": 5.0,
+     "comp_p": 0.3863
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.928,
+     "n_mut": 10,
+     "n_non": 190,
+     "comp_shift": 89.0,
+     "comp_p": 0.0035
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.962,
+     "n_mut": 10,
+     "n_non": 188,
+     "comp_shift": 24.0,
+     "comp_p": 0.0984
+    },
+    "NK-Mature": {
+     "auroc": 0.511,
+     "n_mut": 9,
+     "n_non": 320,
+     "comp_shift": -100.5,
+     "comp_p": 0.0007
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.977,
+     "n_mut": 11,
+     "n_non": 230,
+     "comp_shift": 73.5,
+     "comp_p": 0.0138
+    },
+    "T CD4 Activated": {
+     "auroc": 0.782,
+     "n_mut": 9,
+     "n_non": 118,
+     "comp_shift": 22.0,
+     "comp_p": 0.0019
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.642,
+     "n_mut": 10,
+     "n_non": 251,
+     "comp_shift": 10.5,
+     "comp_p": 0.9625
+    },
+    "cDC1": {
+     "auroc": 0.969,
+     "n_mut": 10,
+     "n_non": 174,
+     "comp_shift": 88.0,
+     "comp_p": 0.0014
+    },
+    "cDC2-1": {
+     "auroc": 0.971,
+     "n_mut": 10,
+     "n_non": 169,
+     "comp_shift": 96.0,
+     "comp_p": 0.0001
+    },
+    "cDC2-2": {
+     "auroc": 0.961,
+     "n_mut": 11,
+     "n_non": 149,
+     "comp_shift": 328.5,
+     "comp_p": 0.0
+    },
+    "cMOP": {
+     "auroc": 0.975,
+     "n_mut": 8,
+     "n_non": 138,
+     "comp_shift": 7.0,
+     "comp_p": 0.2116
+    },
+    "pDC": {
+     "auroc": 0.989,
+     "n_mut": 7,
+     "n_non": 113,
+     "comp_shift": 14.0,
+     "comp_p": 0.0526
+    },
+    "pre-DC-2": {
+     "auroc": 0.962,
+     "n_mut": 8,
+     "n_non": 142,
+     "comp_shift": 24.0,
+     "comp_p": 0.0125
+    },
+    "pre-DC-3": {
+     "auroc": 0.946,
+     "n_mut": 7,
+     "n_non": 88,
+     "comp_shift": 16.0,
+     "comp_p": 0.0025
+    },
+    "preNeu": {
+     "auroc": 0.984,
+     "n_mut": 10,
+     "n_non": 203,
+     "comp_shift": 18.0,
+     "comp_p": 0.226
+    }
+   },
+   "top_states": [
+    "LMPP-1",
+    "MEP-2",
+    "BMCP-1",
+    "Intermediate Mono-3",
+    "MultiLin-GMP-1"
+   ]
+  },
+  "kmt2a": {
+   "n_mut": 12,
+   "n_non": 349,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.625,
+     "n_mut": 11,
+     "n_non": 221,
+     "comp_shift": 105.5,
+     "comp_p": 0.0117
+    },
+    "B Memory-2": {
+     "auroc": 0.635,
+     "n_mut": 8,
+     "n_non": 156,
+     "comp_shift": 24.5,
+     "comp_p": 0.217
+    },
+    "CD4 TCM": {
+     "auroc": 0.598,
+     "n_mut": 10,
+     "n_non": 301,
+     "comp_shift": 2.5,
+     "comp_p": 0.7569
+    },
+    "CD8 TEM": {
+     "auroc": 0.618,
+     "n_mut": 11,
+     "n_non": 282,
+     "comp_shift": -28.5,
+     "comp_p": 0.3125
+    },
+    "Classical-Mono": {
+     "auroc": 0.898,
+     "n_mut": 10,
+     "n_non": 210,
+     "comp_shift": 287.5,
+     "comp_p": 0.0169
+    },
+    "Erythroblast-3": {
+     "auroc": 0.811,
+     "n_mut": 10,
+     "n_non": 186,
+     "comp_shift": 16.0,
+     "comp_p": 0.4164
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.843,
+     "n_mut": 11,
+     "n_non": 244,
+     "comp_shift": 145.0,
+     "comp_p": 0.191
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.864,
+     "n_mut": 9,
+     "n_non": 217,
+     "comp_shift": 136.5,
+     "comp_p": 0.074
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.886,
+     "n_mut": 12,
+     "n_non": 252,
+     "comp_shift": 486.5,
+     "comp_p": 0.0023
+    },
+    "MAIT": {
+     "auroc": 0.583,
+     "n_mut": 11,
+     "n_non": 260,
+     "comp_shift": 3.0,
+     "comp_p": 0.8219
+    },
+    "MDP-1": {
+     "auroc": 0.933,
+     "n_mut": 5,
+     "n_non": 182,
+     "comp_shift": -5.5,
+     "comp_p": 0.8415
+    },
+    "MDP-2": {
+     "auroc": 0.896,
+     "n_mut": 6,
+     "n_non": 193,
+     "comp_shift": -5.0,
+     "comp_p": 0.8868
+    },
+    "MEP-2": {
+     "auroc": 0.889,
+     "n_mut": 6,
+     "n_non": 233,
+     "comp_shift": -13.5,
+     "comp_p": 0.3822
+    },
+    "MPP-MEP": {
+     "auroc": 0.896,
+     "n_mut": 9,
+     "n_non": 298,
+     "comp_shift": -121.0,
+     "comp_p": 0.0206
+    },
+    "Mono-1": {
+     "auroc": 0.885,
+     "n_mut": 8,
+     "n_non": 191,
+     "comp_shift": 37.5,
+     "comp_p": 0.2003
+    },
+    "Mono-2": {
+     "auroc": 0.966,
+     "n_mut": 11,
+     "n_non": 217,
+     "comp_shift": 90.0,
+     "comp_p": 0.0218
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.846,
+     "n_mut": 11,
+     "n_non": 275,
+     "comp_shift": 18.5,
+     "comp_p": 0.6155
+    },
+    "Multilin-1": {
+     "auroc": 0.825,
+     "n_mut": 6,
+     "n_non": 218,
+     "comp_shift": -7.5,
+     "comp_p": 0.2404
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.959,
+     "n_mut": 7,
+     "n_non": 193,
+     "comp_shift": 2.0,
+     "comp_p": 0.2534
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.988,
+     "n_mut": 5,
+     "n_non": 193,
+     "comp_shift": -9.0,
+     "comp_p": 0.6115
+    },
+    "NK-Mature": {
+     "auroc": 0.572,
+     "n_mut": 12,
+     "n_non": 317,
+     "comp_shift": -32.5,
+     "comp_p": 0.5481
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.951,
+     "n_mut": 11,
+     "n_non": 230,
+     "comp_shift": 20.0,
+     "comp_p": 0.4281
+    },
+    "T CD4 Activated": {
+     "auroc": 0.677,
+     "n_mut": 5,
+     "n_non": 122,
+     "comp_shift": -1.0,
+     "comp_p": 0.8074
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.559,
+     "n_mut": 10,
+     "n_non": 251,
+     "comp_shift": 61.5,
+     "comp_p": 0.0646
+    },
+    "T CD8 Naive": {
+     "auroc": 0.604,
+     "n_mut": 10,
+     "n_non": 134,
+     "comp_shift": 28.0,
+     "comp_p": 0.0183
+    },
+    "cDC1": {
+     "auroc": 0.89,
+     "n_mut": 7,
+     "n_non": 177,
+     "comp_shift": 11.5,
+     "comp_p": 0.1688
+    },
+    "cDC2-1": {
+     "auroc": 0.986,
+     "n_mut": 6,
+     "n_non": 173,
+     "comp_shift": -0.5,
+     "comp_p": 0.7756
+    },
+    "cMOP": {
+     "auroc": 0.936,
+     "n_mut": 5,
+     "n_non": 141,
+     "comp_shift": 3.0,
+     "comp_p": 0.7554
+    },
+    "pre-DC-2": {
+     "auroc": 0.89,
+     "n_mut": 9,
+     "n_non": 141,
+     "comp_shift": 52.0,
+     "comp_p": 0.0167
+    },
+    "preNeu": {
+     "auroc": 0.606,
+     "n_mut": 5,
+     "n_non": 208,
+     "comp_shift": -10.5,
+     "comp_p": 0.2246
+    }
+   },
+   "top_states": [
+    "Myeloid intermediate 3",
+    "cDC2-1",
+    "Mono-2",
+    "Myeloid intermediate 2",
+    "Non-Classical Mono-2"
+   ]
+  },
+  "t8_21": {
+   "n_mut": 5,
+   "n_non": 356,
+   "states": {
+    "BMCP-1": {
+     "auroc": 0.829,
+     "n_mut": 5,
+     "n_non": 137,
+     "comp_shift": 124.0,
+     "comp_p": 0.0051
+    },
+    "CD4 TCM": {
+     "auroc": 0.753,
+     "n_mut": 5,
+     "n_non": 306,
+     "comp_shift": 30.5,
+     "comp_p": 0.5216
+    },
+    "CD8 TEM": {
+     "auroc": 0.571,
+     "n_mut": 5,
+     "n_non": 288,
+     "comp_shift": 49.0,
+     "comp_p": 0.498
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.981,
+     "n_mut": 5,
+     "n_non": 232,
+     "comp_shift": 84.0,
+     "comp_p": 0.2571
+    },
+    "MAIT": {
+     "auroc": 0.604,
+     "n_mut": 5,
+     "n_non": 266,
+     "comp_shift": 15.0,
+     "comp_p": 0.3166
+    },
+    "MEP-1": {
+     "auroc": 0.965,
+     "n_mut": 5,
+     "n_non": 165,
+     "comp_shift": 30.0,
+     "comp_p": 0.0221
+    },
+    "MEP-2": {
+     "auroc": 0.979,
+     "n_mut": 5,
+     "n_non": 234,
+     "comp_shift": 5.0,
+     "comp_p": 0.2863
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.896,
+     "n_mut": 5,
+     "n_non": 137,
+     "comp_shift": 66.0,
+     "comp_p": 0.0042
+    },
+    "MPP-MEP": {
+     "auroc": 0.903,
+     "n_mut": 5,
+     "n_non": 302,
+     "comp_shift": 413.5,
+     "comp_p": 0.0524
+    },
+    "Mono-1": {
+     "auroc": 0.945,
+     "n_mut": 5,
+     "n_non": 194,
+     "comp_shift": 34.0,
+     "comp_p": 0.2186
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.889,
+     "n_mut": 5,
+     "n_non": 281,
+     "comp_shift": 137.5,
+     "comp_p": 0.1761
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.967,
+     "n_mut": 5,
+     "n_non": 206,
+     "comp_shift": 591.0,
+     "comp_p": 0.0057
+    },
+    "Multilin-1": {
+     "auroc": 0.949,
+     "n_mut": 5,
+     "n_non": 219,
+     "comp_shift": 43.0,
+     "comp_p": 0.0977
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.904,
+     "n_mut": 5,
+     "n_non": 193,
+     "comp_shift": 171.0,
+     "comp_p": 0.0162
+    },
+    "NK-Mature": {
+     "auroc": 0.687,
+     "n_mut": 5,
+     "n_non": 324,
+     "comp_shift": -23.0,
+     "comp_p": 0.8919
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.508,
+     "n_mut": 5,
+     "n_non": 256,
+     "comp_shift": 12.0,
+     "comp_p": 0.618
+    },
+    "preNeu": {
+     "auroc": 0.959,
+     "n_mut": 5,
+     "n_non": 208,
+     "comp_shift": 625.5,
+     "comp_p": 0.0054
+    }
+   },
+   "top_states": [
+    "LMPP-1-cycling",
+    "MEP-2",
+    "MultiLin-GMP-2",
+    "MEP-1",
+    "preNeu"
+   ]
+  },
+  "trisomy8": {
+   "n_mut": 18,
+   "n_non": 343,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.504,
+     "n_mut": 11,
+     "n_non": 221,
+     "comp_shift": -19.5,
+     "comp_p": 0.4868
+    },
+    "B Memory-2": {
+     "auroc": 0.654,
+     "n_mut": 9,
+     "n_non": 155,
+     "comp_shift": 0.0,
+     "comp_p": 0.8368
+    },
+    "BMCP-1": {
+     "auroc": 0.565,
+     "n_mut": 10,
+     "n_non": 132,
+     "comp_shift": 8.0,
+     "comp_p": 0.3957
+    },
+    "CD4 TCM": {
+     "auroc": 0.575,
+     "n_mut": 17,
+     "n_non": 294,
+     "comp_shift": -5.5,
+     "comp_p": 0.729
+    },
+    "CD8 TEM": {
+     "auroc": 0.58,
+     "n_mut": 16,
+     "n_non": 277,
+     "comp_shift": 35.5,
+     "comp_p": 0.5585
+    },
+    "CLP": {
+     "auroc": 0.571,
+     "n_mut": 5,
+     "n_non": 70,
+     "comp_shift": 0.0,
+     "comp_p": 0.9483
+    },
+    "Classical-Mono": {
+     "auroc": 0.719,
+     "n_mut": 13,
+     "n_non": 207,
+     "comp_shift": 37.0,
+     "comp_p": 0.4336
+    },
+    "ERP-1": {
+     "auroc": 0.758,
+     "n_mut": 7,
+     "n_non": 78,
+     "comp_shift": 2.0,
+     "comp_p": 0.6857
+    },
+    "ERP-2": {
+     "auroc": 0.759,
+     "n_mut": 6,
+     "n_non": 65,
+     "comp_shift": 0.0,
+     "comp_p": 0.6817
+    },
+    "ERP-3": {
+     "auroc": 0.865,
+     "n_mut": 7,
+     "n_non": 38,
+     "comp_shift": 1.5,
+     "comp_p": 0.0863
+    },
+    "ERP-4": {
+     "auroc": 0.838,
+     "n_mut": 7,
+     "n_non": 61,
+     "comp_shift": 0.0,
+     "comp_p": 0.5428
+    },
+    "ERP-5": {
+     "auroc": 0.795,
+     "n_mut": 8,
+     "n_non": 80,
+     "comp_shift": 1.5,
+     "comp_p": 0.5715
+    },
+    "ERP-6": {
+     "auroc": 0.667,
+     "n_mut": 7,
+     "n_non": 70,
+     "comp_shift": -1.0,
+     "comp_p": 0.8389
+    },
+    "ERP-7": {
+     "auroc": 0.801,
+     "n_mut": 7,
+     "n_non": 99,
+     "comp_shift": -1.0,
+     "comp_p": 0.9641
+    },
+    "ERP-8": {
+     "auroc": 0.804,
+     "n_mut": 9,
+     "n_non": 140,
+     "comp_shift": 0.5,
+     "comp_p": 0.7397
+    },
+    "Erythroblast-1": {
+     "auroc": 0.706,
+     "n_mut": 6,
+     "n_non": 115,
+     "comp_shift": -0.5,
+     "comp_p": 0.5914
+    },
+    "Erythroblast-3": {
+     "auroc": 0.56,
+     "n_mut": 9,
+     "n_non": 187,
+     "comp_shift": -5.5,
+     "comp_p": 0.4704
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.652,
+     "n_mut": 16,
+     "n_non": 239,
+     "comp_shift": 0.5,
+     "comp_p": 0.28
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.681,
+     "n_mut": 13,
+     "n_non": 213,
+     "comp_shift": 25.0,
+     "comp_p": 0.3788
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.544,
+     "n_mut": 17,
+     "n_non": 247,
+     "comp_shift": 98.5,
+     "comp_p": 0.0367
+    },
+    "LMPP-1": {
+     "auroc": 0.796,
+     "n_mut": 8,
+     "n_non": 169,
+     "comp_shift": -4.5,
+     "comp_p": 0.4025
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.528,
+     "n_mut": 15,
+     "n_non": 222,
+     "comp_shift": -1.0,
+     "comp_p": 0.9778
+    },
+    "LMPP-2": {
+     "auroc": 0.54,
+     "n_mut": 12,
+     "n_non": 210,
+     "comp_shift": -1.5,
+     "comp_p": 0.8976
+    },
+    "MAIT": {
+     "auroc": 0.586,
+     "n_mut": 14,
+     "n_non": 257,
+     "comp_shift": 0.0,
+     "comp_p": 0.7368
+    },
+    "MDP-1": {
+     "auroc": 0.664,
+     "n_mut": 9,
+     "n_non": 178,
+     "comp_shift": 0.0,
+     "comp_p": 0.4713
+    },
+    "MDP-2": {
+     "auroc": 0.552,
+     "n_mut": 10,
+     "n_non": 189,
+     "comp_shift": -5.5,
+     "comp_p": 0.6432
+    },
+    "MEP-1": {
+     "auroc": 0.645,
+     "n_mut": 11,
+     "n_non": 159,
+     "comp_shift": 11.0,
+     "comp_p": 0.262
+    },
+    "MEP-2": {
+     "auroc": 0.66,
+     "n_mut": 13,
+     "n_non": 226,
+     "comp_shift": 2.5,
+     "comp_p": 0.6978
+    },
+    "MEP-Eryth-1": {
+     "auroc": 0.733,
+     "n_mut": 6,
+     "n_non": 70,
+     "comp_shift": 1.5,
+     "comp_p": 0.8177
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.747,
+     "n_mut": 12,
+     "n_non": 130,
+     "comp_shift": 10.5,
+     "comp_p": 0.0513
+    },
+    "MPP-1": {
+     "auroc": 0.607,
+     "n_mut": 7,
+     "n_non": 122,
+     "comp_shift": 0.0,
+     "comp_p": 0.9047
+    },
+    "MPP-2": {
+     "auroc": 0.567,
+     "n_mut": 5,
+     "n_non": 98,
+     "comp_shift": 1.5,
+     "comp_p": 0.5195
+    },
+    "MPP-MEP": {
+     "auroc": 0.545,
+     "n_mut": 15,
+     "n_non": 292,
+     "comp_shift": 73.5,
+     "comp_p": 0.7988
+    },
+    "Mono-1": {
+     "auroc": 0.72,
+     "n_mut": 14,
+     "n_non": 185,
+     "comp_shift": 38.5,
+     "comp_p": 0.0335
+    },
+    "Mono-2": {
+     "auroc": 0.878,
+     "n_mut": 15,
+     "n_non": 213,
+     "comp_shift": 81.5,
+     "comp_p": 0.0201
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.546,
+     "n_mut": 14,
+     "n_non": 272,
+     "comp_shift": 46.5,
+     "comp_p": 0.7756
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.602,
+     "n_mut": 8,
+     "n_non": 203,
+     "comp_shift": -12.0,
+     "comp_p": 0.0538
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.692,
+     "n_mut": 9,
+     "n_non": 152,
+     "comp_shift": -4.5,
+     "comp_p": 0.4518
+    },
+    "Multilin-1": {
+     "auroc": 0.502,
+     "n_mut": 9,
+     "n_non": 215,
+     "comp_shift": -12.0,
+     "comp_p": 0.3495
+    },
+    "Multilin-2": {
+     "auroc": 0.514,
+     "n_mut": 5,
+     "n_non": 135,
+     "comp_shift": -2.5,
+     "comp_p": 0.0897
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.627,
+     "n_mut": 8,
+     "n_non": 159,
+     "comp_shift": 0.5,
+     "comp_p": 0.9777
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.574,
+     "n_mut": 11,
+     "n_non": 189,
+     "comp_shift": 0.0,
+     "comp_p": 0.8644
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.656,
+     "n_mut": 12,
+     "n_non": 186,
+     "comp_shift": 1.5,
+     "comp_p": 0.647
+    },
+    "NK-Mature": {
+     "auroc": 0.506,
+     "n_mut": 15,
+     "n_non": 314,
+     "comp_shift": -34.0,
+     "comp_p": 0.3996
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.579,
+     "n_mut": 15,
+     "n_non": 226,
+     "comp_shift": 14.0,
+     "comp_p": 0.1489
+    },
+    "Plasma Cell": {
+     "auroc": 0.643,
+     "n_mut": 7,
+     "n_non": 121,
+     "comp_shift": 0.5,
+     "comp_p": 0.5822
+    },
+    "T CD4 Activated": {
+     "auroc": 0.652,
+     "n_mut": 8,
+     "n_non": 119,
+     "comp_shift": 5.5,
+     "comp_p": 0.9771
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.598,
+     "n_mut": 15,
+     "n_non": 246,
+     "comp_shift": 24.5,
+     "comp_p": 0.4394
+    },
+    "T CD4 Naive-2": {
+     "auroc": 0.546,
+     "n_mut": 5,
+     "n_non": 103,
+     "comp_shift": 0.5,
+     "comp_p": 0.9742
+    },
+    "T CD8 Naive": {
+     "auroc": 0.604,
+     "n_mut": 5,
+     "n_non": 139,
+     "comp_shift": -1.0,
+     "comp_p": 0.5032
+    },
+    "cDC1": {
+     "auroc": 0.738,
+     "n_mut": 12,
+     "n_non": 172,
+     "comp_shift": 5.5,
+     "comp_p": 0.3876
+    },
+    "cDC2-1": {
+     "auroc": 0.595,
+     "n_mut": 10,
+     "n_non": 169,
+     "comp_shift": 1.5,
+     "comp_p": 0.9583
+    },
+    "cDC2-2": {
+     "auroc": 0.653,
+     "n_mut": 11,
+     "n_non": 149,
+     "comp_shift": 9.5,
+     "comp_p": 0.8268
+    },
+    "cMOP": {
+     "auroc": 0.701,
+     "n_mut": 12,
+     "n_non": 134,
+     "comp_shift": 10.5,
+     "comp_p": 0.0248
+    },
+    "immNeu-1": {
+     "auroc": 0.806,
+     "n_mut": 6,
+     "n_non": 110,
+     "comp_shift": -1.0,
+     "comp_p": 0.9565
+    },
+    "pDC": {
+     "auroc": 0.537,
+     "n_mut": 5,
+     "n_non": 115,
+     "comp_shift": -1.0,
+     "comp_p": 0.3446
+    },
+    "pre-DC-2": {
+     "auroc": 0.608,
+     "n_mut": 10,
+     "n_non": 140,
+     "comp_shift": 2.5,
+     "comp_p": 0.935
+    },
+    "preNeu": {
+     "auroc": 0.727,
+     "n_mut": 10,
+     "n_non": 203,
+     "comp_shift": -4.5,
+     "comp_p": 0.28
+    }
+   },
+   "top_states": [
+    "Mono-2",
+    "ERP-3",
+    "ERP-4",
+    "immNeu-1",
+    "ERP-8"
+   ]
+  },
+  "ASXL1": {
+   "n_mut": 12,
+   "n_non": 349,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.763,
+     "n_mut": 9,
+     "n_non": 223,
+     "comp_shift": -2.5,
+     "comp_p": 0.6616
+    },
+    "B Memory-2": {
+     "auroc": 0.612,
+     "n_mut": 6,
+     "n_non": 158,
+     "comp_shift": -1.5,
+     "comp_p": 0.8443
+    },
+    "CD4 TCM": {
+     "auroc": 0.631,
+     "n_mut": 12,
+     "n_non": 299,
+     "comp_shift": -1.0,
+     "comp_p": 0.2616
+    },
+    "CD8 TEM": {
+     "auroc": 0.793,
+     "n_mut": 11,
+     "n_non": 282,
+     "comp_shift": 53.0,
+     "comp_p": 0.3978
+    },
+    "Classical-Mono": {
+     "auroc": 0.597,
+     "n_mut": 11,
+     "n_non": 209,
+     "comp_shift": 67.5,
+     "comp_p": 0.0774
+    },
+    "Erythroblast-3": {
+     "auroc": 0.612,
+     "n_mut": 10,
+     "n_non": 186,
+     "comp_shift": 29.0,
+     "comp_p": 0.1515
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.632,
+     "n_mut": 12,
+     "n_non": 243,
+     "comp_shift": 743.5,
+     "comp_p": 0.0027
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.667,
+     "n_mut": 11,
+     "n_non": 215,
+     "comp_shift": 563.5,
+     "comp_p": 0.0004
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.576,
+     "n_mut": 12,
+     "n_non": 252,
+     "comp_shift": 375.5,
+     "comp_p": 0.001
+    },
+    "LMPP-1": {
+     "auroc": 0.793,
+     "n_mut": 7,
+     "n_non": 170,
+     "comp_shift": 7.5,
+     "comp_p": 0.7308
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.54,
+     "n_mut": 9,
+     "n_non": 228,
+     "comp_shift": 68.0,
+     "comp_p": 0.4055
+    },
+    "LMPP-2": {
+     "auroc": 0.643,
+     "n_mut": 7,
+     "n_non": 215,
+     "comp_shift": 26.0,
+     "comp_p": 0.9798
+    },
+    "MAIT": {
+     "auroc": 0.746,
+     "n_mut": 12,
+     "n_non": 259,
+     "comp_shift": 30.0,
+     "comp_p": 0.444
+    },
+    "MDP-1": {
+     "auroc": 0.569,
+     "n_mut": 7,
+     "n_non": 180,
+     "comp_shift": 20.0,
+     "comp_p": 0.7152
+    },
+    "MDP-2": {
+     "auroc": 0.705,
+     "n_mut": 7,
+     "n_non": 192,
+     "comp_shift": -0.5,
+     "comp_p": 0.9562
+    },
+    "MEP-1": {
+     "auroc": 0.533,
+     "n_mut": 7,
+     "n_non": 163,
+     "comp_shift": 3.0,
+     "comp_p": 0.7048
+    },
+    "MEP-2": {
+     "auroc": 0.576,
+     "n_mut": 6,
+     "n_non": 233,
+     "comp_shift": -10.0,
+     "comp_p": 0.9888
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.632,
+     "n_mut": 7,
+     "n_non": 135,
+     "comp_shift": 8.0,
+     "comp_p": 0.143
+    },
+    "MPP-MEP": {
+     "auroc": 0.564,
+     "n_mut": 9,
+     "n_non": 298,
+     "comp_shift": 1.5,
+     "comp_p": 0.7177
+    },
+    "Mono-1": {
+     "auroc": 0.658,
+     "n_mut": 9,
+     "n_non": 190,
+     "comp_shift": 3.0,
+     "comp_p": 0.579
+    },
+    "Mono-2": {
+     "auroc": 0.758,
+     "n_mut": 10,
+     "n_non": 218,
+     "comp_shift": 16.0,
+     "comp_p": 0.2497
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.626,
+     "n_mut": 11,
+     "n_non": 275,
+     "comp_shift": -16.5,
+     "comp_p": 0.7602
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.505,
+     "n_mut": 5,
+     "n_non": 206,
+     "comp_shift": -13.0,
+     "comp_p": 0.3396
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.574,
+     "n_mut": 5,
+     "n_non": 156,
+     "comp_shift": -5.5,
+     "comp_p": 0.3158
+    },
+    "Multilin-1": {
+     "auroc": 0.531,
+     "n_mut": 8,
+     "n_non": 216,
+     "comp_shift": -0.5,
+     "comp_p": 0.9338
+    },
+    "Multilin-2": {
+     "auroc": 0.812,
+     "n_mut": 5,
+     "n_non": 135,
+     "comp_shift": -1.0,
+     "comp_p": 0.7059
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.667,
+     "n_mut": 8,
+     "n_non": 192,
+     "comp_shift": -0.5,
+     "comp_p": 0.7255
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.702,
+     "n_mut": 6,
+     "n_non": 192,
+     "comp_shift": -6.5,
+     "comp_p": 0.9079
+    },
+    "NK-Mature": {
+     "auroc": 0.526,
+     "n_mut": 11,
+     "n_non": 318,
+     "comp_shift": 56.5,
+     "comp_p": 0.8981
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.606,
+     "n_mut": 11,
+     "n_non": 230,
+     "comp_shift": 47.5,
+     "comp_p": 0.0128
+    },
+    "Plasma Cell": {
+     "auroc": 0.721,
+     "n_mut": 7,
+     "n_non": 121,
+     "comp_shift": 4.0,
+     "comp_p": 0.4627
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.601,
+     "n_mut": 11,
+     "n_non": 250,
+     "comp_shift": 51.0,
+     "comp_p": 0.1487
+    },
+    "T CD8 Naive": {
+     "auroc": 0.558,
+     "n_mut": 5,
+     "n_non": 139,
+     "comp_shift": 0.5,
+     "comp_p": 0.965
+    },
+    "cDC1": {
+     "auroc": 0.561,
+     "n_mut": 9,
+     "n_non": 175,
+     "comp_shift": 14.0,
+     "comp_p": 0.1684
+    },
+    "cDC2-1": {
+     "auroc": 0.74,
+     "n_mut": 9,
+     "n_non": 170,
+     "comp_shift": 44.0,
+     "comp_p": 0.0382
+    },
+    "cDC2-2": {
+     "auroc": 0.802,
+     "n_mut": 9,
+     "n_non": 151,
+     "comp_shift": 43.0,
+     "comp_p": 0.01
+    },
+    "cMOP": {
+     "auroc": 0.601,
+     "n_mut": 7,
+     "n_non": 139,
+     "comp_shift": 4.0,
+     "comp_p": 0.274
+    },
+    "pDC": {
+     "auroc": 0.903,
+     "n_mut": 5,
+     "n_non": 115,
+     "comp_shift": 1.5,
+     "comp_p": 0.9966
+    },
+    "pre-DC-1": {
+     "auroc": 0.885,
+     "n_mut": 5,
+     "n_non": 66,
+     "comp_shift": 0.5,
+     "comp_p": 0.7737
+    },
+    "pre-DC-2": {
+     "auroc": 0.776,
+     "n_mut": 8,
+     "n_non": 142,
+     "comp_shift": 12.5,
+     "comp_p": 0.1823
+    },
+    "pre-DC-3": {
+     "auroc": 0.579,
+     "n_mut": 6,
+     "n_non": 89,
+     "comp_shift": 1.5,
+     "comp_p": 0.6145
+    }
+   },
+   "top_states": [
+    "pDC",
+    "pre-DC-1",
+    "Multilin-2",
+    "cDC2-2",
+    "CD8 TEM"
+   ]
+  },
+  "CEBPA": {
+   "n_mut": 9,
+   "n_non": 352,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.611,
+     "n_mut": 5,
+     "n_non": 227,
+     "comp_shift": -4.5,
+     "comp_p": 0.9407
+    },
+    "B Memory-2": {
+     "auroc": 0.531,
+     "n_mut": 8,
+     "n_non": 156,
+     "comp_shift": 35.5,
+     "comp_p": 0.0167
+    },
+    "BMCP-1": {
+     "auroc": 0.712,
+     "n_mut": 5,
+     "n_non": 137,
+     "comp_shift": 66.0,
+     "comp_p": 0.0601
+    },
+    "CD4 TCM": {
+     "auroc": 0.592,
+     "n_mut": 9,
+     "n_non": 302,
+     "comp_shift": -10.0,
+     "comp_p": 0.3549
+    },
+    "CD8 TEM": {
+     "auroc": 0.621,
+     "n_mut": 9,
+     "n_non": 284,
+     "comp_shift": 31.0,
+     "comp_p": 0.5218
+    },
+    "Classical-Mono": {
+     "auroc": 0.777,
+     "n_mut": 7,
+     "n_non": 213,
+     "comp_shift": 5.0,
+     "comp_p": 0.6603
+    },
+    "ERP-1": {
+     "auroc": 0.952,
+     "n_mut": 7,
+     "n_non": 78,
+     "comp_shift": 29.0,
+     "comp_p": 0.0017
+    },
+    "ERP-2": {
+     "auroc": 0.967,
+     "n_mut": 7,
+     "n_non": 64,
+     "comp_shift": 20.0,
+     "comp_p": 0.0023
+    },
+    "ERP-4": {
+     "auroc": 0.921,
+     "n_mut": 5,
+     "n_non": 63,
+     "comp_shift": 9.0,
+     "comp_p": 0.0101
+    },
+    "ERP-5": {
+     "auroc": 0.892,
+     "n_mut": 5,
+     "n_non": 83,
+     "comp_shift": 10.0,
+     "comp_p": 0.013
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.834,
+     "n_mut": 6,
+     "n_non": 249,
+     "comp_shift": -4.5,
+     "comp_p": 0.3965
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.731,
+     "n_mut": 7,
+     "n_non": 219,
+     "comp_shift": -3.5,
+     "comp_p": 0.7238
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.696,
+     "n_mut": 7,
+     "n_non": 257,
+     "comp_shift": -15.0,
+     "comp_p": 0.6658
+    },
+    "LMPP-1": {
+     "auroc": 0.856,
+     "n_mut": 8,
+     "n_non": 169,
+     "comp_shift": 30.0,
+     "comp_p": 0.0621
+    },
+    "MAIT": {
+     "auroc": 0.667,
+     "n_mut": 9,
+     "n_non": 262,
+     "comp_shift": 5.0,
+     "comp_p": 0.8996
+    },
+    "MDP-1": {
+     "auroc": 0.83,
+     "n_mut": 5,
+     "n_non": 182,
+     "comp_shift": 7.0,
+     "comp_p": 0.3585
+    },
+    "MDP-2": {
+     "auroc": 0.66,
+     "n_mut": 8,
+     "n_non": 191,
+     "comp_shift": 201.0,
+     "comp_p": 0.01
+    },
+    "MEP-1": {
+     "auroc": 0.909,
+     "n_mut": 6,
+     "n_non": 164,
+     "comp_shift": 9.0,
+     "comp_p": 0.2239
+    },
+    "MEP-2": {
+     "auroc": 0.782,
+     "n_mut": 8,
+     "n_non": 231,
+     "comp_shift": 265.0,
+     "comp_p": 0.0045
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.777,
+     "n_mut": 8,
+     "n_non": 134,
+     "comp_shift": 79.0,
+     "comp_p": 0.0001
+    },
+    "MPP-MEP": {
+     "auroc": 0.728,
+     "n_mut": 9,
+     "n_non": 298,
+     "comp_shift": 158.5,
+     "comp_p": 0.2887
+    },
+    "Mono-1": {
+     "auroc": 0.66,
+     "n_mut": 6,
+     "n_non": 193,
+     "comp_shift": 3.0,
+     "comp_p": 0.5513
+    },
+    "Mono-2": {
+     "auroc": 0.878,
+     "n_mut": 6,
+     "n_non": 222,
+     "comp_shift": 11.5,
+     "comp_p": 0.7893
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.611,
+     "n_mut": 5,
+     "n_non": 281,
+     "comp_shift": -67.5,
+     "comp_p": 0.4627
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.831,
+     "n_mut": 9,
+     "n_non": 202,
+     "comp_shift": 468.0,
+     "comp_p": 0.0004
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.919,
+     "n_mut": 6,
+     "n_non": 155,
+     "comp_shift": 18.5,
+     "comp_p": 0.0426
+    },
+    "Multilin-1": {
+     "auroc": 0.789,
+     "n_mut": 8,
+     "n_non": 216,
+     "comp_shift": 7.5,
+     "comp_p": 0.4
+    },
+    "Multilin-2": {
+     "auroc": 0.633,
+     "n_mut": 6,
+     "n_non": 134,
+     "comp_shift": 23.0,
+     "comp_p": 0.0215
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.821,
+     "n_mut": 8,
+     "n_non": 192,
+     "comp_shift": 69.0,
+     "comp_p": 0.0632
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.782,
+     "n_mut": 7,
+     "n_non": 191,
+     "comp_shift": 10.0,
+     "comp_p": 0.3426
+    },
+    "NK-Mature": {
+     "auroc": 0.541,
+     "n_mut": 9,
+     "n_non": 320,
+     "comp_shift": 28.0,
+     "comp_p": 0.8843
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.705,
+     "n_mut": 8,
+     "n_non": 233,
+     "comp_shift": -2.0,
+     "comp_p": 0.951
+    },
+    "Plasma Cell": {
+     "auroc": 0.53,
+     "n_mut": 5,
+     "n_non": 123,
+     "comp_shift": 6.0,
+     "comp_p": 0.5276
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.684,
+     "n_mut": 8,
+     "n_non": 253,
+     "comp_shift": 7.5,
+     "comp_p": 0.7438
+    },
+    "T CD8 Naive": {
+     "auroc": 0.538,
+     "n_mut": 5,
+     "n_non": 139,
+     "comp_shift": 6.0,
+     "comp_p": 0.2545
+    },
+    "cDC1": {
+     "auroc": 0.655,
+     "n_mut": 5,
+     "n_non": 179,
+     "comp_shift": 4.0,
+     "comp_p": 0.9974
+    },
+    "cMOP": {
+     "auroc": 0.671,
+     "n_mut": 5,
+     "n_non": 141,
+     "comp_shift": 6.0,
+     "comp_p": 0.9335
+    },
+    "preNeu": {
+     "auroc": 0.66,
+     "n_mut": 5,
+     "n_non": 208,
+     "comp_shift": -6.0,
+     "comp_p": 0.9638
+    }
+   },
+   "top_states": [
+    "ERP-2",
+    "ERP-1",
+    "ERP-4",
+    "MultiLin-GMP-3",
+    "MEP-1"
+   ]
+  },
+  "DNMT3A": {
+   "n_mut": 23,
+   "n_non": 338,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.634,
+     "n_mut": 15,
+     "n_non": 217,
+     "comp_shift": 1.0,
+     "comp_p": 0.6281
+    },
+    "B Memory-2": {
+     "auroc": 0.519,
+     "n_mut": 10,
+     "n_non": 154,
+     "comp_shift": -2.5,
+     "comp_p": 0.0926
+    },
+    "BMCP-1": {
+     "auroc": 0.589,
+     "n_mut": 9,
+     "n_non": 133,
+     "comp_shift": 1.0,
+     "comp_p": 0.7499
+    },
+    "CD4 TCM": {
+     "auroc": 0.594,
+     "n_mut": 20,
+     "n_non": 291,
+     "comp_shift": -10.0,
+     "comp_p": 0.4296
+    },
+    "CD8 TEM": {
+     "auroc": 0.502,
+     "n_mut": 20,
+     "n_non": 273,
+     "comp_shift": -16.0,
+     "comp_p": 0.6437
+    },
+    "Classical-Mono": {
+     "auroc": 0.633,
+     "n_mut": 15,
+     "n_non": 205,
+     "comp_shift": 10.0,
+     "comp_p": 0.4504
+    },
+    "ERP-7": {
+     "auroc": 0.596,
+     "n_mut": 5,
+     "n_non": 101,
+     "comp_shift": -3.0,
+     "comp_p": 0.0154
+    },
+    "ERP-8": {
+     "auroc": 0.626,
+     "n_mut": 5,
+     "n_non": 144,
+     "comp_shift": -5.0,
+     "comp_p": 0.0142
+    },
+    "Erythroblast-1": {
+     "auroc": 0.51,
+     "n_mut": 5,
+     "n_non": 116,
+     "comp_shift": -2.0,
+     "comp_p": 0.0513
+    },
+    "Erythroblast-3": {
+     "auroc": 0.777,
+     "n_mut": 11,
+     "n_non": 185,
+     "comp_shift": -5.0,
+     "comp_p": 0.683
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.55,
+     "n_mut": 20,
+     "n_non": 235,
+     "comp_shift": 75.0,
+     "comp_p": 0.0569
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.578,
+     "n_mut": 21,
+     "n_non": 205,
+     "comp_shift": 54.0,
+     "comp_p": 0.0249
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.502,
+     "n_mut": 21,
+     "n_non": 243,
+     "comp_shift": 210.0,
+     "comp_p": 0.0165
+    },
+    "LMPP-1": {
+     "auroc": 0.613,
+     "n_mut": 14,
+     "n_non": 163,
+     "comp_shift": 7.0,
+     "comp_p": 0.4432
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.676,
+     "n_mut": 19,
+     "n_non": 218,
+     "comp_shift": 34.0,
+     "comp_p": 0.3254
+    },
+    "LMPP-2": {
+     "auroc": 0.588,
+     "n_mut": 18,
+     "n_non": 204,
+     "comp_shift": 24.0,
+     "comp_p": 0.2443
+    },
+    "MAIT": {
+     "auroc": 0.635,
+     "n_mut": 17,
+     "n_non": 254,
+     "comp_shift": -12.0,
+     "comp_p": 0.1652
+    },
+    "MDP-1": {
+     "auroc": 0.567,
+     "n_mut": 16,
+     "n_non": 171,
+     "comp_shift": 26.0,
+     "comp_p": 0.048
+    },
+    "MDP-2": {
+     "auroc": 0.553,
+     "n_mut": 16,
+     "n_non": 183,
+     "comp_shift": 7.0,
+     "comp_p": 0.0774
+    },
+    "MEP-1": {
+     "auroc": 0.537,
+     "n_mut": 13,
+     "n_non": 157,
+     "comp_shift": 2.0,
+     "comp_p": 0.916
+    },
+    "MEP-2": {
+     "auroc": 0.684,
+     "n_mut": 18,
+     "n_non": 221,
+     "comp_shift": 3.0,
+     "comp_p": 0.2969
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.612,
+     "n_mut": 7,
+     "n_non": 135,
+     "comp_shift": -2.0,
+     "comp_p": 0.2709
+    },
+    "MKP-early": {
+     "auroc": 0.606,
+     "n_mut": 6,
+     "n_non": 80,
+     "comp_shift": 0.0,
+     "comp_p": 0.8857
+    },
+    "MPP-1": {
+     "auroc": 0.799,
+     "n_mut": 6,
+     "n_non": 123,
+     "comp_shift": -3.0,
+     "comp_p": 0.1512
+    },
+    "MPP-2": {
+     "auroc": 0.508,
+     "n_mut": 5,
+     "n_non": 98,
+     "comp_shift": 0.0,
+     "comp_p": 0.418
+    },
+    "MPP-MEP": {
+     "auroc": 0.71,
+     "n_mut": 22,
+     "n_non": 285,
+     "comp_shift": 127.0,
+     "comp_p": 0.0298
+    },
+    "Mono-1": {
+     "auroc": 0.542,
+     "n_mut": 18,
+     "n_non": 181,
+     "comp_shift": 4.5,
+     "comp_p": 0.219
+    },
+    "Mono-2": {
+     "auroc": 0.53,
+     "n_mut": 19,
+     "n_non": 209,
+     "comp_shift": 11.0,
+     "comp_p": 0.1877
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.6,
+     "n_mut": 20,
+     "n_non": 266,
+     "comp_shift": 533.5,
+     "comp_p": 0.0624
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.673,
+     "n_mut": 17,
+     "n_non": 194,
+     "comp_shift": 56.0,
+     "comp_p": 0.1006
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.748,
+     "n_mut": 16,
+     "n_non": 145,
+     "comp_shift": 10.5,
+     "comp_p": 0.1141
+    },
+    "Multilin-1": {
+     "auroc": 0.603,
+     "n_mut": 19,
+     "n_non": 205,
+     "comp_shift": 20.0,
+     "comp_p": 0.0837
+    },
+    "Multilin-2": {
+     "auroc": 0.537,
+     "n_mut": 12,
+     "n_non": 128,
+     "comp_shift": 0.0,
+     "comp_p": 0.4197
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.511,
+     "n_mut": 10,
+     "n_non": 157,
+     "comp_shift": 0.0,
+     "comp_p": 0.556
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.635,
+     "n_mut": 18,
+     "n_non": 182,
+     "comp_shift": 9.0,
+     "comp_p": 0.1417
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.578,
+     "n_mut": 18,
+     "n_non": 180,
+     "comp_shift": 13.0,
+     "comp_p": 0.1972
+    },
+    "NK-Mature": {
+     "auroc": 0.567,
+     "n_mut": 21,
+     "n_non": 308,
+     "comp_shift": -29.0,
+     "comp_p": 0.9153
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.522,
+     "n_mut": 22,
+     "n_non": 219,
+     "comp_shift": 36.0,
+     "comp_p": 0.0121
+    },
+    "Plasma Cell": {
+     "auroc": 0.62,
+     "n_mut": 9,
+     "n_non": 119,
+     "comp_shift": 3.0,
+     "comp_p": 0.7716
+    },
+    "T CD4 Activated": {
+     "auroc": 0.587,
+     "n_mut": 7,
+     "n_non": 120,
+     "comp_shift": -2.0,
+     "comp_p": 0.3529
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.531,
+     "n_mut": 17,
+     "n_non": 244,
+     "comp_shift": -10.5,
+     "comp_p": 0.4721
+    },
+    "T CD4 Naive-2": {
+     "auroc": 0.542,
+     "n_mut": 5,
+     "n_non": 103,
+     "comp_shift": 1.0,
+     "comp_p": 0.8019
+    },
+    "T CD8 Naive": {
+     "auroc": 0.656,
+     "n_mut": 6,
+     "n_non": 138,
+     "comp_shift": -3.0,
+     "comp_p": 0.1108
+    },
+    "cDC1": {
+     "auroc": 0.503,
+     "n_mut": 19,
+     "n_non": 165,
+     "comp_shift": 37.5,
+     "comp_p": 0.0105
+    },
+    "cDC2-1": {
+     "auroc": 0.72,
+     "n_mut": 17,
+     "n_non": 162,
+     "comp_shift": 19.0,
+     "comp_p": 0.1574
+    },
+    "cDC2-2": {
+     "auroc": 0.647,
+     "n_mut": 16,
+     "n_non": 144,
+     "comp_shift": 30.5,
+     "comp_p": 0.0336
+    },
+    "cMOP": {
+     "auroc": 0.725,
+     "n_mut": 8,
+     "n_non": 138,
+     "comp_shift": 1.0,
+     "comp_p": 0.855
+    },
+    "immNeu-1": {
+     "auroc": 0.644,
+     "n_mut": 9,
+     "n_non": 107,
+     "comp_shift": 0.5,
+     "comp_p": 0.4971
+    },
+    "pDC": {
+     "auroc": 0.547,
+     "n_mut": 6,
+     "n_non": 114,
+     "comp_shift": 0.0,
+     "comp_p": 0.6484
+    },
+    "pre-DC-1": {
+     "auroc": 0.599,
+     "n_mut": 9,
+     "n_non": 62,
+     "comp_shift": 2.0,
+     "comp_p": 0.2326
+    },
+    "pre-DC-2": {
+     "auroc": 0.657,
+     "n_mut": 15,
+     "n_non": 135,
+     "comp_shift": 14.0,
+     "comp_p": 0.0852
+    },
+    "pre-DC-3": {
+     "auroc": 0.563,
+     "n_mut": 9,
+     "n_non": 86,
+     "comp_shift": 3.0,
+     "comp_p": 0.1958
+    },
+    "preNeu": {
+     "auroc": 0.699,
+     "n_mut": 17,
+     "n_non": 196,
+     "comp_shift": 47.0,
+     "comp_p": 0.1206
+    }
+   },
+   "top_states": [
+    "MPP-1",
+    "Erythroblast-3",
+    "MultiLin-GMP-3",
+    "cMOP",
+    "cDC2-1"
+   ]
+  },
+  "EZH2": {
+   "n_mut": 5,
+   "n_non": 356,
+   "states": {
+    "CD4 TCM": {
+     "auroc": 0.551,
+     "n_mut": 5,
+     "n_non": 306,
+     "comp_shift": -6.0,
+     "comp_p": 0.5077
+    },
+    "CD8 TEM": {
+     "auroc": 0.724,
+     "n_mut": 5,
+     "n_non": 288,
+     "comp_shift": 61.0,
+     "comp_p": 0.394
+    },
+    "Classical-Mono": {
+     "auroc": 0.715,
+     "n_mut": 5,
+     "n_non": 215,
+     "comp_shift": 100.5,
+     "comp_p": 0.0919
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.696,
+     "n_mut": 5,
+     "n_non": 221,
+     "comp_shift": 400.0,
+     "comp_p": 0.0755
+    },
+    "MAIT": {
+     "auroc": 0.511,
+     "n_mut": 5,
+     "n_non": 266,
+     "comp_shift": -0.5,
+     "comp_p": 0.9209
+    },
+    "NK-Mature": {
+     "auroc": 0.695,
+     "n_mut": 5,
+     "n_non": 324,
+     "comp_shift": 148.0,
+     "comp_p": 0.8342
+    }
+   },
+   "top_states": [
+    "CD8 TEM",
+    "Classical-Mono",
+    "Intermediate Mono-2",
+    "NK-Mature",
+    "CD4 TCM"
+   ]
+  },
+  "FLT3": {
+   "n_mut": 33,
+   "n_non": 328,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.603,
+     "n_mut": 18,
+     "n_non": 214,
+     "comp_shift": -15.5,
+     "comp_p": 0.6988
+    },
+    "B Memory-2": {
+     "auroc": 0.597,
+     "n_mut": 17,
+     "n_non": 147,
+     "comp_shift": 3.0,
+     "comp_p": 0.5793
+    },
+    "BMCP-1": {
+     "auroc": 0.708,
+     "n_mut": 17,
+     "n_non": 125,
+     "comp_shift": 5.0,
+     "comp_p": 0.2054
+    },
+    "CD4 TCM": {
+     "auroc": 0.552,
+     "n_mut": 25,
+     "n_non": 286,
+     "comp_shift": -39.0,
+     "comp_p": 0.0156
+    },
+    "CD8 TEM": {
+     "auroc": 0.616,
+     "n_mut": 21,
+     "n_non": 272,
+     "comp_shift": -39.0,
+     "comp_p": 0.0063
+    },
+    "CLP": {
+     "auroc": 0.838,
+     "n_mut": 7,
+     "n_non": 68,
+     "comp_shift": 1.0,
+     "comp_p": 0.9414
+    },
+    "Classical-Mono": {
+     "auroc": 0.673,
+     "n_mut": 19,
+     "n_non": 201,
+     "comp_shift": -10.0,
+     "comp_p": 0.2848
+    },
+    "ERP-1": {
+     "auroc": 0.66,
+     "n_mut": 5,
+     "n_non": 80,
+     "comp_shift": -2.0,
+     "comp_p": 0.0106
+    },
+    "Erythroblast-1": {
+     "auroc": 0.568,
+     "n_mut": 6,
+     "n_non": 115,
+     "comp_shift": -4.0,
+     "comp_p": 0.0002
+    },
+    "Erythroblast-3": {
+     "auroc": 0.507,
+     "n_mut": 12,
+     "n_non": 184,
+     "comp_shift": -14.5,
+     "comp_p": 0.0027
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.591,
+     "n_mut": 22,
+     "n_non": 233,
+     "comp_shift": 37.0,
+     "comp_p": 0.7727
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.604,
+     "n_mut": 20,
+     "n_non": 206,
+     "comp_shift": 14.5,
+     "comp_p": 0.8149
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.532,
+     "n_mut": 22,
+     "n_non": 242,
+     "comp_shift": 106.5,
+     "comp_p": 0.2298
+    },
+    "LMPP-1": {
+     "auroc": 0.724,
+     "n_mut": 18,
+     "n_non": 159,
+     "comp_shift": 16.0,
+     "comp_p": 0.3244
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.66,
+     "n_mut": 27,
+     "n_non": 210,
+     "comp_shift": 45.0,
+     "comp_p": 0.1501
+    },
+    "LMPP-2": {
+     "auroc": 0.65,
+     "n_mut": 25,
+     "n_non": 197,
+     "comp_shift": 17.5,
+     "comp_p": 0.026
+    },
+    "MAIT": {
+     "auroc": 0.557,
+     "n_mut": 18,
+     "n_non": 253,
+     "comp_shift": -17.5,
+     "comp_p": 0.0111
+    },
+    "MDP-1": {
+     "auroc": 0.654,
+     "n_mut": 20,
+     "n_non": 167,
+     "comp_shift": 5.5,
+     "comp_p": 0.3503
+    },
+    "MDP-2": {
+     "auroc": 0.795,
+     "n_mut": 26,
+     "n_non": 173,
+     "comp_shift": 58.0,
+     "comp_p": 0.0004
+    },
+    "MEP-1": {
+     "auroc": 0.678,
+     "n_mut": 21,
+     "n_non": 149,
+     "comp_shift": 10.0,
+     "comp_p": 0.017
+    },
+    "MEP-2": {
+     "auroc": 0.769,
+     "n_mut": 25,
+     "n_non": 214,
+     "comp_shift": 10.0,
+     "comp_p": 0.1317
+    },
+    "MEP-Eryth-1": {
+     "auroc": 0.854,
+     "n_mut": 5,
+     "n_non": 71,
+     "comp_shift": -2.5,
+     "comp_p": 0.0188
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.78,
+     "n_mut": 14,
+     "n_non": 128,
+     "comp_shift": 0.0,
+     "comp_p": 0.7761
+    },
+    "MKP-early": {
+     "auroc": 0.716,
+     "n_mut": 8,
+     "n_non": 78,
+     "comp_shift": 0.0,
+     "comp_p": 0.7323
+    },
+    "MPP-1": {
+     "auroc": 0.754,
+     "n_mut": 8,
+     "n_non": 121,
+     "comp_shift": -3.0,
+     "comp_p": 0.0818
+    },
+    "MPP-MEP": {
+     "auroc": 0.565,
+     "n_mut": 29,
+     "n_non": 278,
+     "comp_shift": 239.0,
+     "comp_p": 0.0141
+    },
+    "Mono-1": {
+     "auroc": 0.616,
+     "n_mut": 21,
+     "n_non": 178,
+     "comp_shift": 11.0,
+     "comp_p": 0.2875
+    },
+    "Mono-2": {
+     "auroc": 0.69,
+     "n_mut": 20,
+     "n_non": 208,
+     "comp_shift": -2.5,
+     "comp_p": 0.9993
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.715,
+     "n_mut": 28,
+     "n_non": 258,
+     "comp_shift": 138.0,
+     "comp_p": 0.1237
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.726,
+     "n_mut": 25,
+     "n_non": 186,
+     "comp_shift": 73.0,
+     "comp_p": 0.0183
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.716,
+     "n_mut": 23,
+     "n_non": 138,
+     "comp_shift": 19.0,
+     "comp_p": 0.0157
+    },
+    "Multilin-1": {
+     "auroc": 0.696,
+     "n_mut": 26,
+     "n_non": 198,
+     "comp_shift": 44.0,
+     "comp_p": 0.0043
+    },
+    "Multilin-2": {
+     "auroc": 0.667,
+     "n_mut": 21,
+     "n_non": 119,
+     "comp_shift": 26.0,
+     "comp_p": 0.0374
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.736,
+     "n_mut": 16,
+     "n_non": 151,
+     "comp_shift": 1.0,
+     "comp_p": 0.3023
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.778,
+     "n_mut": 23,
+     "n_non": 177,
+     "comp_shift": 40.0,
+     "comp_p": 0.0089
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.642,
+     "n_mut": 22,
+     "n_non": 176,
+     "comp_shift": 26.0,
+     "comp_p": 0.0419
+    },
+    "NK-Mature": {
+     "auroc": 0.613,
+     "n_mut": 30,
+     "n_non": 299,
+     "comp_shift": -69.5,
+     "comp_p": 0.152
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.746,
+     "n_mut": 23,
+     "n_non": 218,
+     "comp_shift": 10.0,
+     "comp_p": 0.5866
+    },
+    "Plasma Cell": {
+     "auroc": 0.561,
+     "n_mut": 9,
+     "n_non": 119,
+     "comp_shift": -1.0,
+     "comp_p": 0.2363
+    },
+    "T CD4 Activated": {
+     "auroc": 0.558,
+     "n_mut": 6,
+     "n_non": 121,
+     "comp_shift": -3.0,
+     "comp_p": 0.0047
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.662,
+     "n_mut": 21,
+     "n_non": 240,
+     "comp_shift": -5.5,
+     "comp_p": 0.5331
+    },
+    "T CD8 Naive": {
+     "auroc": 0.602,
+     "n_mut": 9,
+     "n_non": 135,
+     "comp_shift": -2.0,
+     "comp_p": 0.2436
+    },
+    "cDC1": {
+     "auroc": 0.733,
+     "n_mut": 25,
+     "n_non": 159,
+     "comp_shift": 19.0,
+     "comp_p": 0.0203
+    },
+    "cDC2-1": {
+     "auroc": 0.685,
+     "n_mut": 18,
+     "n_non": 161,
+     "comp_shift": 6.0,
+     "comp_p": 0.8572
+    },
+    "cDC2-2": {
+     "auroc": 0.724,
+     "n_mut": 15,
+     "n_non": 145,
+     "comp_shift": 1.0,
+     "comp_p": 0.6699
+    },
+    "cMOP": {
+     "auroc": 0.637,
+     "n_mut": 14,
+     "n_non": 132,
+     "comp_shift": 1.0,
+     "comp_p": 0.9344
+    },
+    "immNeu-1": {
+     "auroc": 0.794,
+     "n_mut": 9,
+     "n_non": 107,
+     "comp_shift": -1.0,
+     "comp_p": 0.8011
+    },
+    "pre-DC-2": {
+     "auroc": 0.583,
+     "n_mut": 18,
+     "n_non": 132,
+     "comp_shift": 10.0,
+     "comp_p": 0.1014
+    },
+    "pre-DC-3": {
+     "auroc": 0.633,
+     "n_mut": 9,
+     "n_non": 86,
+     "comp_shift": -1.0,
+     "comp_p": 0.3346
+    },
+    "preNeu": {
+     "auroc": 0.793,
+     "n_mut": 24,
+     "n_non": 189,
+     "comp_shift": 81.5,
+     "comp_p": 0.0155
+    }
+   },
+   "top_states": [
+    "MEP-Eryth-1",
+    "CLP",
+    "MDP-2",
+    "immNeu-1",
+    "preNeu"
+   ]
+  },
+  "FLT3-ITD": {
+   "n_mut": 22,
+   "n_non": 339,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.814,
+     "n_mut": 10,
+     "n_non": 222,
+     "comp_shift": -28.0,
+     "comp_p": 0.1671
+    },
+    "B Memory-2": {
+     "auroc": 0.665,
+     "n_mut": 11,
+     "n_non": 153,
+     "comp_shift": 3.0,
+     "comp_p": 0.9342
+    },
+    "BMCP-1": {
+     "auroc": 0.701,
+     "n_mut": 11,
+     "n_non": 131,
+     "comp_shift": 4.0,
+     "comp_p": 0.2829
+    },
+    "CD4 TCM": {
+     "auroc": 0.533,
+     "n_mut": 15,
+     "n_non": 296,
+     "comp_shift": -50.5,
+     "comp_p": 0.0015
+    },
+    "CD8 TEM": {
+     "auroc": 0.683,
+     "n_mut": 11,
+     "n_non": 282,
+     "comp_shift": -60.5,
+     "comp_p": 0.0012
+    },
+    "Classical-Mono": {
+     "auroc": 0.749,
+     "n_mut": 12,
+     "n_non": 208,
+     "comp_shift": -13.0,
+     "comp_p": 0.2484
+    },
+    "Erythroblast-3": {
+     "auroc": 0.539,
+     "n_mut": 6,
+     "n_non": 190,
+     "comp_shift": -16.5,
+     "comp_p": 0.0008
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.607,
+     "n_mut": 13,
+     "n_non": 242,
+     "comp_shift": -15.0,
+     "comp_p": 0.1055
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.766,
+     "n_mut": 13,
+     "n_non": 213,
+     "comp_shift": 43.0,
+     "comp_p": 0.8757
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.579,
+     "n_mut": 12,
+     "n_non": 252,
+     "comp_shift": 58.5,
+     "comp_p": 0.9454
+    },
+    "LMPP-1": {
+     "auroc": 0.649,
+     "n_mut": 14,
+     "n_non": 163,
+     "comp_shift": 17.5,
+     "comp_p": 0.1806
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.773,
+     "n_mut": 18,
+     "n_non": 219,
+     "comp_shift": 80.0,
+     "comp_p": 0.0383
+    },
+    "LMPP-2": {
+     "auroc": 0.684,
+     "n_mut": 16,
+     "n_non": 206,
+     "comp_shift": 39.0,
+     "comp_p": 0.0101
+    },
+    "MAIT": {
+     "auroc": 0.592,
+     "n_mut": 10,
+     "n_non": 261,
+     "comp_shift": -27.5,
+     "comp_p": 0.001
+    },
+    "MDP-1": {
+     "auroc": 0.785,
+     "n_mut": 12,
+     "n_non": 175,
+     "comp_shift": 2.5,
+     "comp_p": 0.9983
+    },
+    "MDP-2": {
+     "auroc": 0.864,
+     "n_mut": 19,
+     "n_non": 180,
+     "comp_shift": 80.0,
+     "comp_p": 0.0004
+    },
+    "MEP-1": {
+     "auroc": 0.857,
+     "n_mut": 16,
+     "n_non": 154,
+     "comp_shift": 20.0,
+     "comp_p": 0.0139
+    },
+    "MEP-2": {
+     "auroc": 0.836,
+     "n_mut": 17,
+     "n_non": 222,
+     "comp_shift": 51.5,
+     "comp_p": 0.0508
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.653,
+     "n_mut": 11,
+     "n_non": 131,
+     "comp_shift": 3.0,
+     "comp_p": 0.6933
+    },
+    "MKP-early": {
+     "auroc": 0.77,
+     "n_mut": 7,
+     "n_non": 79,
+     "comp_shift": 2.5,
+     "comp_p": 0.5119
+    },
+    "MPP-1": {
+     "auroc": 0.902,
+     "n_mut": 6,
+     "n_non": 123,
+     "comp_shift": -2.5,
+     "comp_p": 0.1879
+    },
+    "MPP-MEP": {
+     "auroc": 0.743,
+     "n_mut": 19,
+     "n_non": 288,
+     "comp_shift": 294.0,
+     "comp_p": 0.0299
+    },
+    "Mono-1": {
+     "auroc": 0.713,
+     "n_mut": 13,
+     "n_non": 186,
+     "comp_shift": 5.0,
+     "comp_p": 0.8965
+    },
+    "Mono-2": {
+     "auroc": 0.654,
+     "n_mut": 12,
+     "n_non": 216,
+     "comp_shift": -5.0,
+     "comp_p": 0.3989
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.686,
+     "n_mut": 17,
+     "n_non": 269,
+     "comp_shift": 117.0,
+     "comp_p": 0.5706
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.853,
+     "n_mut": 18,
+     "n_non": 193,
+     "comp_shift": 81.5,
+     "comp_p": 0.028
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.857,
+     "n_mut": 16,
+     "n_non": 145,
+     "comp_shift": 14.0,
+     "comp_p": 0.0367
+    },
+    "Multilin-1": {
+     "auroc": 0.851,
+     "n_mut": 19,
+     "n_non": 205,
+     "comp_shift": 52.0,
+     "comp_p": 0.0038
+    },
+    "Multilin-2": {
+     "auroc": 0.63,
+     "n_mut": 17,
+     "n_non": 123,
+     "comp_shift": 45.0,
+     "comp_p": 0.0008
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.579,
+     "n_mut": 11,
+     "n_non": 156,
+     "comp_shift": 3.0,
+     "comp_p": 0.465
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.801,
+     "n_mut": 15,
+     "n_non": 185,
+     "comp_shift": 47.0,
+     "comp_p": 0.0305
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.772,
+     "n_mut": 13,
+     "n_non": 185,
+     "comp_shift": 36.5,
+     "comp_p": 0.1803
+    },
+    "NK-Mature": {
+     "auroc": 0.554,
+     "n_mut": 20,
+     "n_non": 309,
+     "comp_shift": -57.0,
+     "comp_p": 0.3146
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.853,
+     "n_mut": 13,
+     "n_non": 228,
+     "comp_shift": 4.0,
+     "comp_p": 0.5463
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.7,
+     "n_mut": 12,
+     "n_non": 249,
+     "comp_shift": -13.5,
+     "comp_p": 0.0754
+    },
+    "T CD8 Naive": {
+     "auroc": 0.571,
+     "n_mut": 5,
+     "n_non": 139,
+     "comp_shift": -3.5,
+     "comp_p": 0.0797
+    },
+    "cDC1": {
+     "auroc": 0.838,
+     "n_mut": 16,
+     "n_non": 168,
+     "comp_shift": 25.0,
+     "comp_p": 0.0357
+    },
+    "cDC2-1": {
+     "auroc": 0.84,
+     "n_mut": 12,
+     "n_non": 167,
+     "comp_shift": 4.5,
+     "comp_p": 0.9561
+    },
+    "cDC2-2": {
+     "auroc": 0.67,
+     "n_mut": 9,
+     "n_non": 151,
+     "comp_shift": -1.5,
+     "comp_p": 0.4586
+    },
+    "cMOP": {
+     "auroc": 0.708,
+     "n_mut": 9,
+     "n_non": 137,
+     "comp_shift": 0.0,
+     "comp_p": 0.6421
+    },
+    "immNeu-1": {
+     "auroc": 0.865,
+     "n_mut": 6,
+     "n_non": 110,
+     "comp_shift": -0.5,
+     "comp_p": 0.9174
+    },
+    "pre-DC-2": {
+     "auroc": 0.697,
+     "n_mut": 11,
+     "n_non": 139,
+     "comp_shift": 4.0,
+     "comp_p": 0.2169
+    },
+    "pre-DC-3": {
+     "auroc": 0.734,
+     "n_mut": 6,
+     "n_non": 89,
+     "comp_shift": -1.0,
+     "comp_p": 0.5114
+    },
+    "preNeu": {
+     "auroc": 0.744,
+     "n_mut": 16,
+     "n_non": 197,
+     "comp_shift": 101.5,
+     "comp_p": 0.0279
+    }
+   },
+   "top_states": [
+    "MPP-1",
+    "immNeu-1",
+    "MDP-2",
+    "MEP-1",
+    "MultiLin-GMP-3"
+   ]
+  },
+  "FLT3-TKD": {
+   "n_mut": 8,
+   "n_non": 353,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.575,
+     "n_mut": 6,
+     "n_non": 226,
+     "comp_shift": 57.0,
+     "comp_p": 0.1858
+    },
+    "B Memory-2": {
+     "auroc": 0.562,
+     "n_mut": 6,
+     "n_non": 158,
+     "comp_shift": 5.0,
+     "comp_p": 0.3134
+    },
+    "CD4 TCM": {
+     "auroc": 0.583,
+     "n_mut": 6,
+     "n_non": 305,
+     "comp_shift": 9.5,
+     "comp_p": 0.4267
+    },
+    "CD8 TEM": {
+     "auroc": 0.535,
+     "n_mut": 6,
+     "n_non": 287,
+     "comp_shift": 34.5,
+     "comp_p": 0.9576
+    },
+    "Classical-Mono": {
+     "auroc": 0.621,
+     "n_mut": 6,
+     "n_non": 214,
+     "comp_shift": 51.0,
+     "comp_p": 0.1405
+    },
+    "Erythroblast-3": {
+     "auroc": 0.582,
+     "n_mut": 5,
+     "n_non": 191,
+     "comp_shift": 5.5,
+     "comp_p": 0.8767
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.725,
+     "n_mut": 6,
+     "n_non": 249,
+     "comp_shift": 222.0,
+     "comp_p": 0.0981
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.599,
+     "n_mut": 6,
+     "n_non": 220,
+     "comp_shift": 114.0,
+     "comp_p": 0.1219
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.539,
+     "n_mut": 6,
+     "n_non": 258,
+     "comp_shift": 597.5,
+     "comp_p": 0.0086
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.526,
+     "n_mut": 5,
+     "n_non": 232,
+     "comp_shift": 12.5,
+     "comp_p": 0.6277
+    },
+    "LMPP-2": {
+     "auroc": 0.669,
+     "n_mut": 6,
+     "n_non": 216,
+     "comp_shift": 6.0,
+     "comp_p": 0.3405
+    },
+    "MAIT": {
+     "auroc": 0.706,
+     "n_mut": 6,
+     "n_non": 265,
+     "comp_shift": 15.5,
+     "comp_p": 0.7708
+    },
+    "MDP-1": {
+     "auroc": 0.512,
+     "n_mut": 5,
+     "n_non": 182,
+     "comp_shift": 2.5,
+     "comp_p": 0.845
+    },
+    "MDP-2": {
+     "auroc": 0.556,
+     "n_mut": 5,
+     "n_non": 194,
+     "comp_shift": 5.0,
+     "comp_p": 0.2397
+    },
+    "MEP-2": {
+     "auroc": 0.574,
+     "n_mut": 6,
+     "n_non": 233,
+     "comp_shift": 29.5,
+     "comp_p": 0.4265
+    },
+    "MPP-MEP": {
+     "auroc": 0.654,
+     "n_mut": 6,
+     "n_non": 301,
+     "comp_shift": 325.5,
+     "comp_p": 0.2553
+    },
+    "Mono-1": {
+     "auroc": 0.618,
+     "n_mut": 7,
+     "n_non": 192,
+     "comp_shift": 13.0,
+     "comp_p": 0.1443
+    },
+    "Mono-2": {
+     "auroc": 0.616,
+     "n_mut": 6,
+     "n_non": 222,
+     "comp_shift": 86.0,
+     "comp_p": 0.1226
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.647,
+     "n_mut": 7,
+     "n_non": 279,
+     "comp_shift": 328.0,
+     "comp_p": 0.2155
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.51,
+     "n_mut": 5,
+     "n_non": 206,
+     "comp_shift": 160.0,
+     "comp_p": 0.3791
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.727,
+     "n_mut": 5,
+     "n_non": 156,
+     "comp_shift": 11.0,
+     "comp_p": 0.4674
+    },
+    "Multilin-1": {
+     "auroc": 0.615,
+     "n_mut": 5,
+     "n_non": 219,
+     "comp_shift": 39.5,
+     "comp_p": 0.5635
+    },
+    "Multilin-2": {
+     "auroc": 0.641,
+     "n_mut": 5,
+     "n_non": 135,
+     "comp_shift": 61.0,
+     "comp_p": 0.273
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.52,
+     "n_mut": 5,
+     "n_non": 195,
+     "comp_shift": 40.0,
+     "comp_p": 0.3094
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.72,
+     "n_mut": 6,
+     "n_non": 192,
+     "comp_shift": 7.0,
+     "comp_p": 0.2237
+    },
+    "NK-Mature": {
+     "auroc": 0.601,
+     "n_mut": 7,
+     "n_non": 322,
+     "comp_shift": 20.5,
+     "comp_p": 0.7203
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.558,
+     "n_mut": 6,
+     "n_non": 235,
+     "comp_shift": 56.0,
+     "comp_p": 0.0689
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.803,
+     "n_mut": 6,
+     "n_non": 255,
+     "comp_shift": 5.5,
+     "comp_p": 0.7318
+    },
+    "cDC1": {
+     "auroc": 0.722,
+     "n_mut": 7,
+     "n_non": 177,
+     "comp_shift": 14.0,
+     "comp_p": 0.3766
+    },
+    "cDC2-1": {
+     "auroc": 0.685,
+     "n_mut": 5,
+     "n_non": 174,
+     "comp_shift": 8.5,
+     "comp_p": 0.7571
+    },
+    "pre-DC-2": {
+     "auroc": 0.692,
+     "n_mut": 5,
+     "n_non": 145,
+     "comp_shift": 40.0,
+     "comp_p": 0.0968
+    },
+    "preNeu": {
+     "auroc": 0.703,
+     "n_mut": 5,
+     "n_non": 208,
+     "comp_shift": 36.0,
+     "comp_p": 0.4796
+    }
+   },
+   "top_states": [
+    "T CD4 Naive-1",
+    "MultiLin-GMP-3",
+    "Intermediate Mono-1",
+    "cDC1",
+    "Myeloid intermediate 3"
+   ]
+  },
+  "GATA2": {
+   "n_mut": 8,
+   "n_non": 353,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.655,
+     "n_mut": 7,
+     "n_non": 225,
+     "comp_shift": 184.0,
+     "comp_p": 0.0334
+    },
+    "B Memory-2": {
+     "auroc": 0.574,
+     "n_mut": 6,
+     "n_non": 158,
+     "comp_shift": 19.5,
+     "comp_p": 0.5632
+    },
+    "CD4 TCM": {
+     "auroc": 0.523,
+     "n_mut": 7,
+     "n_non": 304,
+     "comp_shift": -14.0,
+     "comp_p": 0.9073
+    },
+    "CD8 TEM": {
+     "auroc": 0.569,
+     "n_mut": 6,
+     "n_non": 287,
+     "comp_shift": 9.0,
+     "comp_p": 0.974
+    },
+    "Erythroblast-3": {
+     "auroc": 0.574,
+     "n_mut": 5,
+     "n_non": 191,
+     "comp_shift": 5.5,
+     "comp_p": 0.9382
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.517,
+     "n_mut": 6,
+     "n_non": 249,
+     "comp_shift": 32.5,
+     "comp_p": 0.6771
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.616,
+     "n_mut": 6,
+     "n_non": 220,
+     "comp_shift": 32.5,
+     "comp_p": 0.6765
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.601,
+     "n_mut": 8,
+     "n_non": 256,
+     "comp_shift": 96.0,
+     "comp_p": 0.3287
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.542,
+     "n_mut": 5,
+     "n_non": 232,
+     "comp_shift": -17.0,
+     "comp_p": 0.1687
+    },
+    "MAIT": {
+     "auroc": 0.506,
+     "n_mut": 6,
+     "n_non": 265,
+     "comp_shift": -12.5,
+     "comp_p": 0.5283
+    },
+    "MDP-1": {
+     "auroc": 0.801,
+     "n_mut": 5,
+     "n_non": 182,
+     "comp_shift": 4.0,
+     "comp_p": 0.4341
+    },
+    "MDP-2": {
+     "auroc": 0.913,
+     "n_mut": 6,
+     "n_non": 193,
+     "comp_shift": 28.0,
+     "comp_p": 0.3549
+    },
+    "MEP-1": {
+     "auroc": 0.89,
+     "n_mut": 6,
+     "n_non": 164,
+     "comp_shift": 8.5,
+     "comp_p": 0.3706
+    },
+    "MEP-2": {
+     "auroc": 0.848,
+     "n_mut": 6,
+     "n_non": 233,
+     "comp_shift": 89.5,
+     "comp_p": 0.1247
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.658,
+     "n_mut": 6,
+     "n_non": 136,
+     "comp_shift": 55.0,
+     "comp_p": 0.0392
+    },
+    "MPP-MEP": {
+     "auroc": 0.798,
+     "n_mut": 8,
+     "n_non": 299,
+     "comp_shift": 232.5,
+     "comp_p": 0.2447
+    },
+    "Mono-1": {
+     "auroc": 0.779,
+     "n_mut": 5,
+     "n_non": 194,
+     "comp_shift": 2.0,
+     "comp_p": 0.7168
+    },
+    "Mono-2": {
+     "auroc": 0.511,
+     "n_mut": 5,
+     "n_non": 223,
+     "comp_shift": -18.0,
+     "comp_p": 0.6212
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.611,
+     "n_mut": 7,
+     "n_non": 279,
+     "comp_shift": 177.0,
+     "comp_p": 0.3917
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.836,
+     "n_mut": 5,
+     "n_non": 206,
+     "comp_shift": 270.5,
+     "comp_p": 0.492
+    },
+    "Multilin-1": {
+     "auroc": 0.783,
+     "n_mut": 6,
+     "n_non": 218,
+     "comp_shift": 66.5,
+     "comp_p": 0.5093
+    },
+    "NK-Mature": {
+     "auroc": 0.694,
+     "n_mut": 7,
+     "n_non": 322,
+     "comp_shift": -56.0,
+     "comp_p": 0.267
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.628,
+     "n_mut": 8,
+     "n_non": 233,
+     "comp_shift": 45.0,
+     "comp_p": 0.0624
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.65,
+     "n_mut": 6,
+     "n_non": 255,
+     "comp_shift": 32.0,
+     "comp_p": 0.6423
+    },
+    "cDC1": {
+     "auroc": 0.618,
+     "n_mut": 5,
+     "n_non": 179,
+     "comp_shift": 2.0,
+     "comp_p": 0.6005
+    }
+   },
+   "top_states": [
+    "MDP-2",
+    "MEP-1",
+    "MEP-2",
+    "MultiLin-GMP-2",
+    "MDP-1"
+   ]
+  },
+  "IDH1": {
+   "n_mut": 12,
+   "n_non": 349,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.593,
+     "n_mut": 10,
+     "n_non": 222,
+     "comp_shift": 126.0,
+     "comp_p": 0.0734
+    },
+    "B Memory-2": {
+     "auroc": 0.581,
+     "n_mut": 6,
+     "n_non": 158,
+     "comp_shift": -1.5,
+     "comp_p": 0.7452
+    },
+    "CD4 TCM": {
+     "auroc": 0.503,
+     "n_mut": 11,
+     "n_non": 300,
+     "comp_shift": 11.5,
+     "comp_p": 0.2933
+    },
+    "CD8 TEM": {
+     "auroc": 0.589,
+     "n_mut": 10,
+     "n_non": 283,
+     "comp_shift": 72.0,
+     "comp_p": 0.4097
+    },
+    "Classical-Mono": {
+     "auroc": 0.784,
+     "n_mut": 7,
+     "n_non": 213,
+     "comp_shift": -14.0,
+     "comp_p": 0.1592
+    },
+    "ERP-1": {
+     "auroc": 0.818,
+     "n_mut": 5,
+     "n_non": 80,
+     "comp_shift": 1.0,
+     "comp_p": 0.9034
+    },
+    "ERP-8": {
+     "auroc": 0.865,
+     "n_mut": 6,
+     "n_non": 143,
+     "comp_shift": -1.0,
+     "comp_p": 0.8792
+    },
+    "Erythroblast-1": {
+     "auroc": 0.784,
+     "n_mut": 6,
+     "n_non": 115,
+     "comp_shift": 6.5,
+     "comp_p": 0.3715
+    },
+    "Erythroblast-3": {
+     "auroc": 0.609,
+     "n_mut": 8,
+     "n_non": 188,
+     "comp_shift": 25.0,
+     "comp_p": 0.3073
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.63,
+     "n_mut": 8,
+     "n_non": 247,
+     "comp_shift": -12.0,
+     "comp_p": 0.7794
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.644,
+     "n_mut": 7,
+     "n_non": 219,
+     "comp_shift": -24.0,
+     "comp_p": 0.6058
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.607,
+     "n_mut": 10,
+     "n_non": 254,
+     "comp_shift": 107.0,
+     "comp_p": 0.1468
+    },
+    "LMPP-1": {
+     "auroc": 0.805,
+     "n_mut": 6,
+     "n_non": 171,
+     "comp_shift": 2.5,
+     "comp_p": 0.6014
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.596,
+     "n_mut": 11,
+     "n_non": 226,
+     "comp_shift": 30.5,
+     "comp_p": 0.262
+    },
+    "LMPP-2": {
+     "auroc": 0.741,
+     "n_mut": 12,
+     "n_non": 210,
+     "comp_shift": 165.5,
+     "comp_p": 0.0008
+    },
+    "MAIT": {
+     "auroc": 0.62,
+     "n_mut": 10,
+     "n_non": 261,
+     "comp_shift": 12.0,
+     "comp_p": 0.6424
+    },
+    "MDP-1": {
+     "auroc": 0.582,
+     "n_mut": 10,
+     "n_non": 177,
+     "comp_shift": 39.5,
+     "comp_p": 0.0168
+    },
+    "MDP-2": {
+     "auroc": 0.602,
+     "n_mut": 7,
+     "n_non": 192,
+     "comp_shift": -2.5,
+     "comp_p": 0.8074
+    },
+    "MEP-1": {
+     "auroc": 0.688,
+     "n_mut": 8,
+     "n_non": 162,
+     "comp_shift": 9.0,
+     "comp_p": 0.3453
+    },
+    "MEP-2": {
+     "auroc": 0.589,
+     "n_mut": 11,
+     "n_non": 228,
+     "comp_shift": 8.0,
+     "comp_p": 0.1999
+    },
+    "MEP-Eryth-1": {
+     "auroc": 0.699,
+     "n_mut": 5,
+     "n_non": 71,
+     "comp_shift": 0.5,
+     "comp_p": 0.8651
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.605,
+     "n_mut": 6,
+     "n_non": 136,
+     "comp_shift": 4.0,
+     "comp_p": 0.4752
+    },
+    "MPP-1": {
+     "auroc": 0.582,
+     "n_mut": 7,
+     "n_non": 122,
+     "comp_shift": 8.0,
+     "comp_p": 0.2513
+    },
+    "MPP-MEP": {
+     "auroc": 0.728,
+     "n_mut": 12,
+     "n_non": 295,
+     "comp_shift": 256.5,
+     "comp_p": 0.0236
+    },
+    "Mono-1": {
+     "auroc": 0.817,
+     "n_mut": 8,
+     "n_non": 191,
+     "comp_shift": 1.5,
+     "comp_p": 0.8005
+    },
+    "Mono-2": {
+     "auroc": 0.505,
+     "n_mut": 9,
+     "n_non": 219,
+     "comp_shift": 3.5,
+     "comp_p": 0.7922
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.545,
+     "n_mut": 12,
+     "n_non": 274,
+     "comp_shift": 613.0,
+     "comp_p": 0.0089
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.562,
+     "n_mut": 8,
+     "n_non": 203,
+     "comp_shift": -9.0,
+     "comp_p": 0.485
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.661,
+     "n_mut": 6,
+     "n_non": 155,
+     "comp_shift": -4.0,
+     "comp_p": 0.5815
+    },
+    "Multilin-1": {
+     "auroc": 0.721,
+     "n_mut": 11,
+     "n_non": 213,
+     "comp_shift": 25.0,
+     "comp_p": 0.1215
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.602,
+     "n_mut": 6,
+     "n_non": 161,
+     "comp_shift": -2.0,
+     "comp_p": 0.455
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.551,
+     "n_mut": 7,
+     "n_non": 193,
+     "comp_shift": -2.0,
+     "comp_p": 0.8149
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.526,
+     "n_mut": 8,
+     "n_non": 190,
+     "comp_shift": 1.5,
+     "comp_p": 0.806
+    },
+    "NK-Mature": {
+     "auroc": 0.65,
+     "n_mut": 11,
+     "n_non": 318,
+     "comp_shift": 16.0,
+     "comp_p": 0.6567
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.52,
+     "n_mut": 7,
+     "n_non": 234,
+     "comp_shift": -23.5,
+     "comp_p": 0.5357
+    },
+    "Plasma Cell": {
+     "auroc": 0.66,
+     "n_mut": 8,
+     "n_non": 120,
+     "comp_shift": 6.0,
+     "comp_p": 0.3874
+    },
+    "T CD4 Activated": {
+     "auroc": 0.763,
+     "n_mut": 6,
+     "n_non": 121,
+     "comp_shift": 6.0,
+     "comp_p": 0.1215
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.585,
+     "n_mut": 11,
+     "n_non": 250,
+     "comp_shift": 29.5,
+     "comp_p": 0.4008
+    },
+    "cDC1": {
+     "auroc": 0.565,
+     "n_mut": 7,
+     "n_non": 177,
+     "comp_shift": 2.5,
+     "comp_p": 0.4406
+    },
+    "cDC2-1": {
+     "auroc": 0.572,
+     "n_mut": 8,
+     "n_non": 171,
+     "comp_shift": 1.5,
+     "comp_p": 0.7767
+    },
+    "cDC2-2": {
+     "auroc": 0.698,
+     "n_mut": 6,
+     "n_non": 154,
+     "comp_shift": 1.0,
+     "comp_p": 0.9516
+    },
+    "cMOP": {
+     "auroc": 0.732,
+     "n_mut": 5,
+     "n_non": 141,
+     "comp_shift": -2.5,
+     "comp_p": 0.2527
+    },
+    "pre-DC-2": {
+     "auroc": 0.586,
+     "n_mut": 7,
+     "n_non": 143,
+     "comp_shift": -0.5,
+     "comp_p": 0.9402
+    },
+    "preNeu": {
+     "auroc": 0.581,
+     "n_mut": 8,
+     "n_non": 205,
+     "comp_shift": -6.5,
+     "comp_p": 0.4638
+    }
+   },
+   "top_states": [
+    "ERP-8",
+    "ERP-1",
+    "Mono-1",
+    "LMPP-1",
+    "Classical-Mono"
+   ]
+  },
+  "IDH2": {
+   "n_mut": 14,
+   "n_non": 347,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.666,
+     "n_mut": 7,
+     "n_non": 225,
+     "comp_shift": -25.0,
+     "comp_p": 0.3181
+    },
+    "B Memory-2": {
+     "auroc": 0.658,
+     "n_mut": 7,
+     "n_non": 157,
+     "comp_shift": -6.0,
+     "comp_p": 0.241
+    },
+    "CD4 TCM": {
+     "auroc": 0.674,
+     "n_mut": 13,
+     "n_non": 298,
+     "comp_shift": 33.0,
+     "comp_p": 0.4765
+    },
+    "CD8 TEM": {
+     "auroc": 0.517,
+     "n_mut": 13,
+     "n_non": 280,
+     "comp_shift": 60.0,
+     "comp_p": 0.1626
+    },
+    "Classical-Mono": {
+     "auroc": 0.622,
+     "n_mut": 8,
+     "n_non": 212,
+     "comp_shift": -14.5,
+     "comp_p": 0.5219
+    },
+    "ERP-7": {
+     "auroc": 0.56,
+     "n_mut": 5,
+     "n_non": 101,
+     "comp_shift": -1.5,
+     "comp_p": 0.5781
+    },
+    "ERP-8": {
+     "auroc": 0.6,
+     "n_mut": 5,
+     "n_non": 144,
+     "comp_shift": -1.5,
+     "comp_p": 0.8318
+    },
+    "Erythroblast-3": {
+     "auroc": 0.638,
+     "n_mut": 8,
+     "n_non": 188,
+     "comp_shift": 27.0,
+     "comp_p": 0.8344
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.527,
+     "n_mut": 12,
+     "n_non": 243,
+     "comp_shift": -5.0,
+     "comp_p": 0.7193
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.682,
+     "n_mut": 11,
+     "n_non": 215,
+     "comp_shift": 27.5,
+     "comp_p": 0.4014
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.574,
+     "n_mut": 12,
+     "n_non": 252,
+     "comp_shift": 44.5,
+     "comp_p": 0.5698
+    },
+    "LMPP-1": {
+     "auroc": 0.508,
+     "n_mut": 6,
+     "n_non": 171,
+     "comp_shift": -2.5,
+     "comp_p": 0.3313
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.566,
+     "n_mut": 8,
+     "n_non": 229,
+     "comp_shift": 22.5,
+     "comp_p": 0.999
+    },
+    "LMPP-2": {
+     "auroc": 0.507,
+     "n_mut": 11,
+     "n_non": 211,
+     "comp_shift": 14.0,
+     "comp_p": 0.4021
+    },
+    "MAIT": {
+     "auroc": 0.645,
+     "n_mut": 13,
+     "n_non": 258,
+     "comp_shift": 5.5,
+     "comp_p": 0.6503
+    },
+    "MDP-1": {
+     "auroc": 0.529,
+     "n_mut": 8,
+     "n_non": 179,
+     "comp_shift": 24.0,
+     "comp_p": 0.6948
+    },
+    "MDP-2": {
+     "auroc": 0.718,
+     "n_mut": 8,
+     "n_non": 191,
+     "comp_shift": -2.5,
+     "comp_p": 0.5709
+    },
+    "MEP-1": {
+     "auroc": 0.578,
+     "n_mut": 7,
+     "n_non": 163,
+     "comp_shift": -2.5,
+     "comp_p": 0.5882
+    },
+    "MEP-2": {
+     "auroc": 0.504,
+     "n_mut": 7,
+     "n_non": 232,
+     "comp_shift": -6.0,
+     "comp_p": 0.5426
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.543,
+     "n_mut": 5,
+     "n_non": 137,
+     "comp_shift": -1.5,
+     "comp_p": 0.4687
+    },
+    "MKP-early": {
+     "auroc": 0.788,
+     "n_mut": 5,
+     "n_non": 81,
+     "comp_shift": 3.0,
+     "comp_p": 0.4754
+    },
+    "MPP-1": {
+     "auroc": 0.549,
+     "n_mut": 6,
+     "n_non": 123,
+     "comp_shift": 0.5,
+     "comp_p": 0.8478
+    },
+    "MPP-MEP": {
+     "auroc": 0.532,
+     "n_mut": 12,
+     "n_non": 295,
+     "comp_shift": -74.5,
+     "comp_p": 0.9075
+    },
+    "Mono-1": {
+     "auroc": 0.536,
+     "n_mut": 11,
+     "n_non": 188,
+     "comp_shift": 3.5,
+     "comp_p": 0.759
+    },
+    "Mono-2": {
+     "auroc": 0.566,
+     "n_mut": 12,
+     "n_non": 216,
+     "comp_shift": 14.0,
+     "comp_p": 0.8496
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.565,
+     "n_mut": 12,
+     "n_non": 274,
+     "comp_shift": -8.5,
+     "comp_p": 0.8182
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.526,
+     "n_mut": 6,
+     "n_non": 205,
+     "comp_shift": -14.0,
+     "comp_p": 0.1066
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.519,
+     "n_mut": 7,
+     "n_non": 154,
+     "comp_shift": -4.5,
+     "comp_p": 0.4387
+    },
+    "Multilin-1": {
+     "auroc": 0.523,
+     "n_mut": 8,
+     "n_non": 216,
+     "comp_shift": -13.0,
+     "comp_p": 0.4508
+    },
+    "Multilin-2": {
+     "auroc": 0.57,
+     "n_mut": 5,
+     "n_non": 135,
+     "comp_shift": -1.5,
+     "comp_p": 0.3821
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.503,
+     "n_mut": 11,
+     "n_non": 189,
+     "comp_shift": 0.0,
+     "comp_p": 0.661
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.589,
+     "n_mut": 8,
+     "n_non": 190,
+     "comp_shift": -3.0,
+     "comp_p": 0.8452
+    },
+    "NK-Mature": {
+     "auroc": 0.568,
+     "n_mut": 14,
+     "n_non": 315,
+     "comp_shift": 228.5,
+     "comp_p": 0.045
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.568,
+     "n_mut": 12,
+     "n_non": 229,
+     "comp_shift": 34.5,
+     "comp_p": 0.1141
+    },
+    "Plasma Cell": {
+     "auroc": 0.603,
+     "n_mut": 7,
+     "n_non": 121,
+     "comp_shift": 2.5,
+     "comp_p": 0.8523
+    },
+    "T CD4 Activated": {
+     "auroc": 0.566,
+     "n_mut": 6,
+     "n_non": 121,
+     "comp_shift": 1.5,
+     "comp_p": 0.5686
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.542,
+     "n_mut": 11,
+     "n_non": 250,
+     "comp_shift": 52.5,
+     "comp_p": 0.4276
+    },
+    "cDC1": {
+     "auroc": 0.54,
+     "n_mut": 9,
+     "n_non": 175,
+     "comp_shift": 14.0,
+     "comp_p": 0.5332
+    },
+    "cDC2-1": {
+     "auroc": 0.738,
+     "n_mut": 8,
+     "n_non": 171,
+     "comp_shift": 4.5,
+     "comp_p": 0.8473
+    },
+    "cDC2-2": {
+     "auroc": 0.637,
+     "n_mut": 10,
+     "n_non": 150,
+     "comp_shift": 12.0,
+     "comp_p": 0.5603
+    },
+    "cMOP": {
+     "auroc": 0.563,
+     "n_mut": 7,
+     "n_non": 139,
+     "comp_shift": 3.5,
+     "comp_p": 0.8203
+    },
+    "pre-DC-2": {
+     "auroc": 0.688,
+     "n_mut": 7,
+     "n_non": 143,
+     "comp_shift": 2.0,
+     "comp_p": 0.9059
+    },
+    "pre-DC-3": {
+     "auroc": 0.613,
+     "n_mut": 5,
+     "n_non": 90,
+     "comp_shift": 3.0,
+     "comp_p": 0.5793
+    },
+    "preNeu": {
+     "auroc": 0.564,
+     "n_mut": 6,
+     "n_non": 207,
+     "comp_shift": -13.0,
+     "comp_p": 0.1554
+    }
+   },
+   "top_states": [
+    "MKP-early",
+    "cDC2-1",
+    "MDP-2",
+    "pre-DC-2",
+    "Intermediate Mono-2"
+   ]
+  },
+  "JAK2": {
+   "n_mut": 5,
+   "n_non": 356,
+   "states": {
+    "CD4 TCM": {
+     "auroc": 0.671,
+     "n_mut": 5,
+     "n_non": 306,
+     "comp_shift": 36.0,
+     "comp_p": 0.2655
+    },
+    "CD8 TEM": {
+     "auroc": 0.537,
+     "n_mut": 5,
+     "n_non": 288,
+     "comp_shift": 454.0,
+     "comp_p": 0.0157
+    },
+    "Erythroblast-3": {
+     "auroc": 0.63,
+     "n_mut": 5,
+     "n_non": 191,
+     "comp_shift": 283.0,
+     "comp_p": 0.0267
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.613,
+     "n_mut": 5,
+     "n_non": 250,
+     "comp_shift": 72.5,
+     "comp_p": 0.2455
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.588,
+     "n_mut": 5,
+     "n_non": 259,
+     "comp_shift": 85.5,
+     "comp_p": 0.5356
+    },
+    "MAIT": {
+     "auroc": 0.801,
+     "n_mut": 5,
+     "n_non": 266,
+     "comp_shift": 25.5,
+     "comp_p": 0.2729
+    },
+    "MEP-1": {
+     "auroc": 0.526,
+     "n_mut": 5,
+     "n_non": 165,
+     "comp_shift": 16.0,
+     "comp_p": 0.1412
+    },
+    "MPP-MEP": {
+     "auroc": 0.504,
+     "n_mut": 5,
+     "n_non": 302,
+     "comp_shift": 264.0,
+     "comp_p": 0.523
+    },
+    "Mono-2": {
+     "auroc": 0.65,
+     "n_mut": 5,
+     "n_non": 223,
+     "comp_shift": 21.5,
+     "comp_p": 0.5002
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.57,
+     "n_mut": 5,
+     "n_non": 281,
+     "comp_shift": -41.5,
+     "comp_p": 0.3262
+    },
+    "Multilin-1": {
+     "auroc": 0.615,
+     "n_mut": 5,
+     "n_non": 219,
+     "comp_shift": 126.5,
+     "comp_p": 0.0938
+    },
+    "NK-Mature": {
+     "auroc": 0.51,
+     "n_mut": 5,
+     "n_non": 324,
+     "comp_shift": 213.5,
+     "comp_p": 0.2163
+    },
+    "Plasma Cell": {
+     "auroc": 0.52,
+     "n_mut": 5,
+     "n_non": 123,
+     "comp_shift": 6.0,
+     "comp_p": 0.0742
+    },
+    "cDC2-2": {
+     "auroc": 0.64,
+     "n_mut": 5,
+     "n_non": 155,
+     "comp_shift": 23.0,
+     "comp_p": 0.3084
+    }
+   },
+   "top_states": [
+    "MAIT",
+    "CD4 TCM",
+    "Mono-2",
+    "cDC2-2",
+    "Erythroblast-3"
+   ]
+  },
+  "KIT": {
+   "n_mut": 12,
+   "n_non": 349,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.691,
+     "n_mut": 10,
+     "n_non": 222,
+     "comp_shift": -5.0,
+     "comp_p": 0.5432
+    },
+    "B Memory-2": {
+     "auroc": 0.663,
+     "n_mut": 5,
+     "n_non": 159,
+     "comp_shift": 0.0,
+     "comp_p": 0.4038
+    },
+    "BMCP-1": {
+     "auroc": 0.6,
+     "n_mut": 11,
+     "n_non": 131,
+     "comp_shift": 31.5,
+     "comp_p": 0.0006
+    },
+    "CD4 TCM": {
+     "auroc": 0.555,
+     "n_mut": 11,
+     "n_non": 300,
+     "comp_shift": 26.0,
+     "comp_p": 0.7849
+    },
+    "CD8 TEM": {
+     "auroc": 0.636,
+     "n_mut": 9,
+     "n_non": 284,
+     "comp_shift": 54.5,
+     "comp_p": 0.6957
+    },
+    "Classical-Mono": {
+     "auroc": 0.81,
+     "n_mut": 7,
+     "n_non": 213,
+     "comp_shift": -16.5,
+     "comp_p": 0.1443
+    },
+    "Erythroblast-3": {
+     "auroc": 0.599,
+     "n_mut": 5,
+     "n_non": 191,
+     "comp_shift": -12.0,
+     "comp_p": 0.0702
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.677,
+     "n_mut": 8,
+     "n_non": 247,
+     "comp_shift": 63.0,
+     "comp_p": 0.8526
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.73,
+     "n_mut": 8,
+     "n_non": 218,
+     "comp_shift": -15.0,
+     "comp_p": 0.5076
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.548,
+     "n_mut": 11,
+     "n_non": 253,
+     "comp_shift": 63.5,
+     "comp_p": 0.2958
+    },
+    "LMPP-1": {
+     "auroc": 0.762,
+     "n_mut": 5,
+     "n_non": 172,
+     "comp_shift": -3.5,
+     "comp_p": 0.7901
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.658,
+     "n_mut": 10,
+     "n_non": 227,
+     "comp_shift": 53.5,
+     "comp_p": 0.2261
+    },
+    "LMPP-2": {
+     "auroc": 0.726,
+     "n_mut": 9,
+     "n_non": 213,
+     "comp_shift": 42.5,
+     "comp_p": 0.2293
+    },
+    "MAIT": {
+     "auroc": 0.531,
+     "n_mut": 10,
+     "n_non": 261,
+     "comp_shift": 20.0,
+     "comp_p": 0.4994
+    },
+    "MDP-1": {
+     "auroc": 0.541,
+     "n_mut": 8,
+     "n_non": 179,
+     "comp_shift": 5.0,
+     "comp_p": 0.4511
+    },
+    "MDP-2": {
+     "auroc": 0.543,
+     "n_mut": 12,
+     "n_non": 187,
+     "comp_shift": 29.5,
+     "comp_p": 0.0262
+    },
+    "MEP-1": {
+     "auroc": 0.559,
+     "n_mut": 8,
+     "n_non": 162,
+     "comp_shift": 18.0,
+     "comp_p": 0.1565
+    },
+    "MEP-2": {
+     "auroc": 0.603,
+     "n_mut": 9,
+     "n_non": 230,
+     "comp_shift": -6.0,
+     "comp_p": 0.8339
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.761,
+     "n_mut": 6,
+     "n_non": 136,
+     "comp_shift": 5.0,
+     "comp_p": 0.1719
+    },
+    "MPP-MEP": {
+     "auroc": 0.676,
+     "n_mut": 12,
+     "n_non": 295,
+     "comp_shift": 364.0,
+     "comp_p": 0.0864
+    },
+    "Mono-1": {
+     "auroc": 0.667,
+     "n_mut": 10,
+     "n_non": 189,
+     "comp_shift": 85.5,
+     "comp_p": 0.0155
+    },
+    "Mono-2": {
+     "auroc": 0.779,
+     "n_mut": 7,
+     "n_non": 221,
+     "comp_shift": 53.5,
+     "comp_p": 0.9069
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.599,
+     "n_mut": 12,
+     "n_non": 274,
+     "comp_shift": 1313.5,
+     "comp_p": 0.0005
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.592,
+     "n_mut": 11,
+     "n_non": 200,
+     "comp_shift": 167.0,
+     "comp_p": 0.0063
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.705,
+     "n_mut": 9,
+     "n_non": 152,
+     "comp_shift": 13.0,
+     "comp_p": 0.042
+    },
+    "Multilin-1": {
+     "auroc": 0.57,
+     "n_mut": 10,
+     "n_non": 214,
+     "comp_shift": 91.0,
+     "comp_p": 0.0606
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.52,
+     "n_mut": 9,
+     "n_non": 158,
+     "comp_shift": 36.0,
+     "comp_p": 0.0185
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.684,
+     "n_mut": 10,
+     "n_non": 190,
+     "comp_shift": 79.0,
+     "comp_p": 0.0036
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.683,
+     "n_mut": 11,
+     "n_non": 187,
+     "comp_shift": 48.0,
+     "comp_p": 0.0054
+    },
+    "NK-Mature": {
+     "auroc": 0.657,
+     "n_mut": 10,
+     "n_non": 319,
+     "comp_shift": -59.5,
+     "comp_p": 0.1235
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.74,
+     "n_mut": 8,
+     "n_non": 233,
+     "comp_shift": 18.5,
+     "comp_p": 0.6392
+    },
+    "Plasma Cell": {
+     "auroc": 0.874,
+     "n_mut": 6,
+     "n_non": 122,
+     "comp_shift": 3.5,
+     "comp_p": 0.407
+    },
+    "T CD4 Activated": {
+     "auroc": 0.642,
+     "n_mut": 7,
+     "n_non": 120,
+     "comp_shift": 11.0,
+     "comp_p": 0.0922
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.536,
+     "n_mut": 10,
+     "n_non": 251,
+     "comp_shift": -4.5,
+     "comp_p": 0.9417
+    },
+    "T CD8 Naive": {
+     "auroc": 0.504,
+     "n_mut": 5,
+     "n_non": 139,
+     "comp_shift": 0.0,
+     "comp_p": 0.9628
+    },
+    "cDC1": {
+     "auroc": 0.702,
+     "n_mut": 10,
+     "n_non": 174,
+     "comp_shift": 45.0,
+     "comp_p": 0.0233
+    },
+    "cDC2-1": {
+     "auroc": 0.726,
+     "n_mut": 8,
+     "n_non": 171,
+     "comp_shift": 20.0,
+     "comp_p": 0.326
+    },
+    "cDC2-2": {
+     "auroc": 0.843,
+     "n_mut": 8,
+     "n_non": 152,
+     "comp_shift": 31.5,
+     "comp_p": 0.253
+    },
+    "cMOP": {
+     "auroc": 0.862,
+     "n_mut": 7,
+     "n_non": 139,
+     "comp_shift": 5.0,
+     "comp_p": 0.6551
+    },
+    "pre-DC-2": {
+     "auroc": 0.642,
+     "n_mut": 6,
+     "n_non": 144,
+     "comp_shift": 4.5,
+     "comp_p": 0.3498
+    },
+    "preNeu": {
+     "auroc": 0.689,
+     "n_mut": 11,
+     "n_non": 202,
+     "comp_shift": 73.0,
+     "comp_p": 0.0156
+    }
+   },
+   "top_states": [
+    "Plasma Cell",
+    "cMOP",
+    "cDC2-2",
+    "Classical-Mono",
+    "Mono-2"
+   ]
+  },
+  "KMT2A-rearrangement": {
+   "n_mut": 12,
+   "n_non": 349,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.625,
+     "n_mut": 11,
+     "n_non": 221,
+     "comp_shift": 105.5,
+     "comp_p": 0.0117
+    },
+    "B Memory-2": {
+     "auroc": 0.635,
+     "n_mut": 8,
+     "n_non": 156,
+     "comp_shift": 24.5,
+     "comp_p": 0.217
+    },
+    "CD4 TCM": {
+     "auroc": 0.598,
+     "n_mut": 10,
+     "n_non": 301,
+     "comp_shift": 2.5,
+     "comp_p": 0.7569
+    },
+    "CD8 TEM": {
+     "auroc": 0.618,
+     "n_mut": 11,
+     "n_non": 282,
+     "comp_shift": -28.5,
+     "comp_p": 0.3125
+    },
+    "Classical-Mono": {
+     "auroc": 0.898,
+     "n_mut": 10,
+     "n_non": 210,
+     "comp_shift": 287.5,
+     "comp_p": 0.0169
+    },
+    "Erythroblast-3": {
+     "auroc": 0.811,
+     "n_mut": 10,
+     "n_non": 186,
+     "comp_shift": 16.0,
+     "comp_p": 0.4164
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.843,
+     "n_mut": 11,
+     "n_non": 244,
+     "comp_shift": 145.0,
+     "comp_p": 0.191
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.864,
+     "n_mut": 9,
+     "n_non": 217,
+     "comp_shift": 136.5,
+     "comp_p": 0.074
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.886,
+     "n_mut": 12,
+     "n_non": 252,
+     "comp_shift": 486.5,
+     "comp_p": 0.0023
+    },
+    "MAIT": {
+     "auroc": 0.583,
+     "n_mut": 11,
+     "n_non": 260,
+     "comp_shift": 3.0,
+     "comp_p": 0.8219
+    },
+    "MDP-1": {
+     "auroc": 0.933,
+     "n_mut": 5,
+     "n_non": 182,
+     "comp_shift": -5.5,
+     "comp_p": 0.8415
+    },
+    "MDP-2": {
+     "auroc": 0.896,
+     "n_mut": 6,
+     "n_non": 193,
+     "comp_shift": -5.0,
+     "comp_p": 0.8868
+    },
+    "MEP-2": {
+     "auroc": 0.889,
+     "n_mut": 6,
+     "n_non": 233,
+     "comp_shift": -13.5,
+     "comp_p": 0.3822
+    },
+    "MPP-MEP": {
+     "auroc": 0.896,
+     "n_mut": 9,
+     "n_non": 298,
+     "comp_shift": -121.0,
+     "comp_p": 0.0206
+    },
+    "Mono-1": {
+     "auroc": 0.885,
+     "n_mut": 8,
+     "n_non": 191,
+     "comp_shift": 37.5,
+     "comp_p": 0.2003
+    },
+    "Mono-2": {
+     "auroc": 0.966,
+     "n_mut": 11,
+     "n_non": 217,
+     "comp_shift": 90.0,
+     "comp_p": 0.0218
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.846,
+     "n_mut": 11,
+     "n_non": 275,
+     "comp_shift": 18.5,
+     "comp_p": 0.6155
+    },
+    "Multilin-1": {
+     "auroc": 0.825,
+     "n_mut": 6,
+     "n_non": 218,
+     "comp_shift": -7.5,
+     "comp_p": 0.2404
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.959,
+     "n_mut": 7,
+     "n_non": 193,
+     "comp_shift": 2.0,
+     "comp_p": 0.2534
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.988,
+     "n_mut": 5,
+     "n_non": 193,
+     "comp_shift": -9.0,
+     "comp_p": 0.6115
+    },
+    "NK-Mature": {
+     "auroc": 0.572,
+     "n_mut": 12,
+     "n_non": 317,
+     "comp_shift": -32.5,
+     "comp_p": 0.5481
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.951,
+     "n_mut": 11,
+     "n_non": 230,
+     "comp_shift": 20.0,
+     "comp_p": 0.4281
+    },
+    "T CD4 Activated": {
+     "auroc": 0.677,
+     "n_mut": 5,
+     "n_non": 122,
+     "comp_shift": -1.0,
+     "comp_p": 0.8074
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.559,
+     "n_mut": 10,
+     "n_non": 251,
+     "comp_shift": 61.5,
+     "comp_p": 0.0646
+    },
+    "T CD8 Naive": {
+     "auroc": 0.604,
+     "n_mut": 10,
+     "n_non": 134,
+     "comp_shift": 28.0,
+     "comp_p": 0.0183
+    },
+    "cDC1": {
+     "auroc": 0.89,
+     "n_mut": 7,
+     "n_non": 177,
+     "comp_shift": 11.5,
+     "comp_p": 0.1688
+    },
+    "cDC2-1": {
+     "auroc": 0.986,
+     "n_mut": 6,
+     "n_non": 173,
+     "comp_shift": -0.5,
+     "comp_p": 0.7756
+    },
+    "cMOP": {
+     "auroc": 0.936,
+     "n_mut": 5,
+     "n_non": 141,
+     "comp_shift": 3.0,
+     "comp_p": 0.7554
+    },
+    "pre-DC-2": {
+     "auroc": 0.89,
+     "n_mut": 9,
+     "n_non": 141,
+     "comp_shift": 52.0,
+     "comp_p": 0.0167
+    },
+    "preNeu": {
+     "auroc": 0.606,
+     "n_mut": 5,
+     "n_non": 208,
+     "comp_shift": -10.5,
+     "comp_p": 0.2246
+    }
+   },
+   "top_states": [
+    "Myeloid intermediate 3",
+    "cDC2-1",
+    "Mono-2",
+    "Myeloid intermediate 2",
+    "Non-Classical Mono-2"
+   ]
+  },
+  "KRAS": {
+   "n_mut": 13,
+   "n_non": 348,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.571,
+     "n_mut": 11,
+     "n_non": 221,
+     "comp_shift": 1.0,
+     "comp_p": 0.3686
+    },
+    "B Memory-2": {
+     "auroc": 0.54,
+     "n_mut": 7,
+     "n_non": 157,
+     "comp_shift": -1.0,
+     "comp_p": 0.9296
+    },
+    "BMCP-1": {
+     "auroc": 0.77,
+     "n_mut": 6,
+     "n_non": 136,
+     "comp_shift": 3.0,
+     "comp_p": 0.7781
+    },
+    "CD4 TCM": {
+     "auroc": 0.534,
+     "n_mut": 13,
+     "n_non": 298,
+     "comp_shift": 10.0,
+     "comp_p": 0.6222
+    },
+    "CD8 TEM": {
+     "auroc": 0.74,
+     "n_mut": 12,
+     "n_non": 281,
+     "comp_shift": -3.0,
+     "comp_p": 0.8285
+    },
+    "Classical-Mono": {
+     "auroc": 0.509,
+     "n_mut": 10,
+     "n_non": 210,
+     "comp_shift": 1.0,
+     "comp_p": 0.2998
+    },
+    "Erythroblast-3": {
+     "auroc": 0.637,
+     "n_mut": 6,
+     "n_non": 190,
+     "comp_shift": -10.0,
+     "comp_p": 0.1128
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.614,
+     "n_mut": 10,
+     "n_non": 245,
+     "comp_shift": 429.0,
+     "comp_p": 0.0598
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.569,
+     "n_mut": 10,
+     "n_non": 216,
+     "comp_shift": 124.5,
+     "comp_p": 0.0261
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.508,
+     "n_mut": 13,
+     "n_non": 251,
+     "comp_shift": 296.0,
+     "comp_p": 0.009
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.596,
+     "n_mut": 7,
+     "n_non": 230,
+     "comp_shift": -14.0,
+     "comp_p": 0.1913
+    },
+    "LMPP-2": {
+     "auroc": 0.517,
+     "n_mut": 8,
+     "n_non": 214,
+     "comp_shift": 6.5,
+     "comp_p": 0.5235
+    },
+    "MAIT": {
+     "auroc": 0.623,
+     "n_mut": 13,
+     "n_non": 258,
+     "comp_shift": 6.0,
+     "comp_p": 0.7638
+    },
+    "MDP-1": {
+     "auroc": 0.527,
+     "n_mut": 8,
+     "n_non": 179,
+     "comp_shift": 15.0,
+     "comp_p": 0.5058
+    },
+    "MDP-2": {
+     "auroc": 0.511,
+     "n_mut": 8,
+     "n_non": 191,
+     "comp_shift": -1.0,
+     "comp_p": 0.5012
+    },
+    "MEP-1": {
+     "auroc": 0.503,
+     "n_mut": 5,
+     "n_non": 165,
+     "comp_shift": 0.0,
+     "comp_p": 0.7034
+    },
+    "MEP-2": {
+     "auroc": 0.576,
+     "n_mut": 10,
+     "n_non": 229,
+     "comp_shift": 23.0,
+     "comp_p": 0.6279
+    },
+    "MPP-MEP": {
+     "auroc": 0.621,
+     "n_mut": 12,
+     "n_non": 295,
+     "comp_shift": -69.5,
+     "comp_p": 0.9213
+    },
+    "Mono-1": {
+     "auroc": 0.551,
+     "n_mut": 10,
+     "n_non": 189,
+     "comp_shift": 44.0,
+     "comp_p": 0.0469
+    },
+    "Mono-2": {
+     "auroc": 0.58,
+     "n_mut": 12,
+     "n_non": 216,
+     "comp_shift": 158.5,
+     "comp_p": 0.0217
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.509,
+     "n_mut": 12,
+     "n_non": 274,
+     "comp_shift": 180.5,
+     "comp_p": 0.3968
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.709,
+     "n_mut": 8,
+     "n_non": 203,
+     "comp_shift": 13.0,
+     "comp_p": 0.8007
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.713,
+     "n_mut": 6,
+     "n_non": 155,
+     "comp_shift": -1.5,
+     "comp_p": 0.709
+    },
+    "Multilin-1": {
+     "auroc": 0.671,
+     "n_mut": 10,
+     "n_non": 214,
+     "comp_shift": 12.5,
+     "comp_p": 0.9008
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.699,
+     "n_mut": 6,
+     "n_non": 161,
+     "comp_shift": 1.0,
+     "comp_p": 0.748
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.51,
+     "n_mut": 8,
+     "n_non": 192,
+     "comp_shift": 5.5,
+     "comp_p": 0.2718
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.693,
+     "n_mut": 8,
+     "n_non": 190,
+     "comp_shift": -1.5,
+     "comp_p": 0.3976
+    },
+    "NK-Mature": {
+     "auroc": 0.632,
+     "n_mut": 13,
+     "n_non": 316,
+     "comp_shift": -59.5,
+     "comp_p": 0.2584
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.583,
+     "n_mut": 13,
+     "n_non": 228,
+     "comp_shift": 33.0,
+     "comp_p": 0.0624
+    },
+    "Plasma Cell": {
+     "auroc": 0.561,
+     "n_mut": 5,
+     "n_non": 123,
+     "comp_shift": 0.0,
+     "comp_p": 0.73
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.663,
+     "n_mut": 12,
+     "n_non": 249,
+     "comp_shift": 10.5,
+     "comp_p": 0.6336
+    },
+    "T CD8 Naive": {
+     "auroc": 0.634,
+     "n_mut": 6,
+     "n_non": 138,
+     "comp_shift": 1.0,
+     "comp_p": 0.6773
+    },
+    "cDC1": {
+     "auroc": 0.648,
+     "n_mut": 9,
+     "n_non": 175,
+     "comp_shift": 20.0,
+     "comp_p": 0.2326
+    },
+    "cDC2-1": {
+     "auroc": 0.625,
+     "n_mut": 9,
+     "n_non": 170,
+     "comp_shift": 6.5,
+     "comp_p": 0.162
+    },
+    "cDC2-2": {
+     "auroc": 0.523,
+     "n_mut": 7,
+     "n_non": 153,
+     "comp_shift": 14.0,
+     "comp_p": 0.4039
+    },
+    "cMOP": {
+     "auroc": 0.543,
+     "n_mut": 7,
+     "n_non": 139,
+     "comp_shift": 3.0,
+     "comp_p": 0.1133
+    },
+    "pDC": {
+     "auroc": 0.739,
+     "n_mut": 5,
+     "n_non": 115,
+     "comp_shift": 1.0,
+     "comp_p": 0.9845
+    },
+    "pre-DC-2": {
+     "auroc": 0.589,
+     "n_mut": 11,
+     "n_non": 139,
+     "comp_shift": 31.0,
+     "comp_p": 0.0044
+    },
+    "preNeu": {
+     "auroc": 0.751,
+     "n_mut": 8,
+     "n_non": 205,
+     "comp_shift": 5.0,
+     "comp_p": 0.8304
+    }
+   },
+   "top_states": [
+    "BMCP-1",
+    "preNeu",
+    "CD8 TEM",
+    "pDC",
+    "MultiLin-GMP-3"
+   ]
+  },
+  "NF1": {
+   "n_mut": 5,
+   "n_non": 356,
+   "states": {
+    "LMPP-1-cycling": {
+     "auroc": 0.674,
+     "n_mut": 5,
+     "n_non": 232,
+     "comp_shift": 2.0,
+     "comp_p": 0.9983
+    },
+    "MDP-2": {
+     "auroc": 0.572,
+     "n_mut": 5,
+     "n_non": 194,
+     "comp_shift": 58.0,
+     "comp_p": 0.113
+    },
+    "MPP-MEP": {
+     "auroc": 0.551,
+     "n_mut": 5,
+     "n_non": 302,
+     "comp_shift": 123.5,
+     "comp_p": 0.3424
+    },
+    "Multilin-1": {
+     "auroc": 0.5,
+     "n_mut": 5,
+     "n_non": 219,
+     "comp_shift": 46.5,
+     "comp_p": 0.0938
+    },
+    "NK-Mature": {
+     "auroc": 0.63,
+     "n_mut": 5,
+     "n_non": 324,
+     "comp_shift": 3.0,
+     "comp_p": 0.8902
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.745,
+     "n_mut": 5,
+     "n_non": 236,
+     "comp_shift": -15.5,
+     "comp_p": 0.5908
+    }
+   },
+   "top_states": [
+    "Non-Classical Mono-2",
+    "LMPP-1-cycling",
+    "NK-Mature",
+    "MDP-2",
+    "MPP-MEP"
+   ]
+  },
+  "NPM1": {
+   "n_mut": 54,
+   "n_non": 307,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.686,
+     "n_mut": 31,
+     "n_non": 201,
+     "comp_shift": -3.0,
+     "comp_p": 0.2817
+    },
+    "B Memory-2": {
+     "auroc": 0.633,
+     "n_mut": 21,
+     "n_non": 143,
+     "comp_shift": -6.0,
+     "comp_p": 0.0067
+    },
+    "BMCP-1": {
+     "auroc": 0.756,
+     "n_mut": 22,
+     "n_non": 120,
+     "comp_shift": 1.5,
+     "comp_p": 0.7153
+    },
+    "CD4 TCM": {
+     "auroc": 0.694,
+     "n_mut": 38,
+     "n_non": 273,
+     "comp_shift": -51.5,
+     "comp_p": 0.0006
+    },
+    "CD8 TEM": {
+     "auroc": 0.587,
+     "n_mut": 32,
+     "n_non": 261,
+     "comp_shift": -61.5,
+     "comp_p": 0.0
+    },
+    "CLP": {
+     "auroc": 0.566,
+     "n_mut": 5,
+     "n_non": 70,
+     "comp_shift": -1.0,
+     "comp_p": 0.0028
+    },
+    "Classical-Mono": {
+     "auroc": 0.838,
+     "n_mut": 26,
+     "n_non": 194,
+     "comp_shift": -21.5,
+     "comp_p": 0.0134
+    },
+    "ERP-1": {
+     "auroc": 0.776,
+     "n_mut": 6,
+     "n_non": 79,
+     "comp_shift": -1.0,
+     "comp_p": 0.0276
+    },
+    "ERP-4": {
+     "auroc": 0.517,
+     "n_mut": 5,
+     "n_non": 63,
+     "comp_shift": -1.0,
+     "comp_p": 0.004
+    },
+    "ERP-5": {
+     "auroc": 0.514,
+     "n_mut": 6,
+     "n_non": 82,
+     "comp_shift": -2.0,
+     "comp_p": 0.0001
+    },
+    "ERP-6": {
+     "auroc": 0.542,
+     "n_mut": 6,
+     "n_non": 71,
+     "comp_shift": -1.0,
+     "comp_p": 0.0002
+    },
+    "ERP-7": {
+     "auroc": 0.81,
+     "n_mut": 7,
+     "n_non": 99,
+     "comp_shift": -3.0,
+     "comp_p": 0.0
+    },
+    "ERP-8": {
+     "auroc": 0.741,
+     "n_mut": 10,
+     "n_non": 139,
+     "comp_shift": -6.0,
+     "comp_p": 0.0
+    },
+    "Erythroblast-1": {
+     "auroc": 0.588,
+     "n_mut": 9,
+     "n_non": 112,
+     "comp_shift": -4.0,
+     "comp_p": 0.0
+    },
+    "Erythroblast-2": {
+     "auroc": 0.752,
+     "n_mut": 5,
+     "n_non": 62,
+     "comp_shift": -1.0,
+     "comp_p": 0.0
+    },
+    "Erythroblast-3": {
+     "auroc": 0.648,
+     "n_mut": 18,
+     "n_non": 178,
+     "comp_shift": -17.0,
+     "comp_p": 0.0
+    },
+    "HSC-1": {
+     "auroc": 0.779,
+     "n_mut": 8,
+     "n_non": 30,
+     "comp_shift": 0.0,
+     "comp_p": 0.4004
+    },
+    "HSC-2": {
+     "auroc": 0.825,
+     "n_mut": 12,
+     "n_non": 48,
+     "comp_shift": 0.0,
+     "comp_p": 0.637
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.794,
+     "n_mut": 38,
+     "n_non": 217,
+     "comp_shift": -9.0,
+     "comp_p": 0.6863
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.753,
+     "n_mut": 33,
+     "n_non": 193,
+     "comp_shift": -23.5,
+     "comp_p": 0.2463
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.842,
+     "n_mut": 36,
+     "n_non": 228,
+     "comp_shift": 24.0,
+     "comp_p": 0.8814
+    },
+    "LMPP-1": {
+     "auroc": 0.862,
+     "n_mut": 24,
+     "n_non": 153,
+     "comp_shift": -3.0,
+     "comp_p": 0.1921
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.809,
+     "n_mut": 34,
+     "n_non": 203,
+     "comp_shift": -12.0,
+     "comp_p": 0.302
+    },
+    "LMPP-2": {
+     "auroc": 0.805,
+     "n_mut": 38,
+     "n_non": 184,
+     "comp_shift": 11.0,
+     "comp_p": 0.4347
+    },
+    "MAIT": {
+     "auroc": 0.524,
+     "n_mut": 29,
+     "n_non": 242,
+     "comp_shift": -23.5,
+     "comp_p": 0.0
+    },
+    "MDP-1": {
+     "auroc": 0.826,
+     "n_mut": 31,
+     "n_non": 156,
+     "comp_shift": 7.5,
+     "comp_p": 0.0808
+    },
+    "MDP-2": {
+     "auroc": 0.794,
+     "n_mut": 32,
+     "n_non": 167,
+     "comp_shift": 1.0,
+     "comp_p": 0.8036
+    },
+    "MEP-1": {
+     "auroc": 0.831,
+     "n_mut": 23,
+     "n_non": 147,
+     "comp_shift": -3.0,
+     "comp_p": 0.1927
+    },
+    "MEP-2": {
+     "auroc": 0.816,
+     "n_mut": 39,
+     "n_non": 200,
+     "comp_shift": 7.0,
+     "comp_p": 0.5572
+    },
+    "MEP-Eryth-1": {
+     "auroc": 0.538,
+     "n_mut": 5,
+     "n_non": 71,
+     "comp_shift": -2.0,
+     "comp_p": 0.0006
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.77,
+     "n_mut": 12,
+     "n_non": 130,
+     "comp_shift": -3.0,
+     "comp_p": 0.0019
+    },
+    "MKP-early": {
+     "auroc": 0.71,
+     "n_mut": 11,
+     "n_non": 75,
+     "comp_shift": -1.0,
+     "comp_p": 0.7349
+    },
+    "MPP-1": {
+     "auroc": 0.796,
+     "n_mut": 21,
+     "n_non": 108,
+     "comp_shift": 1.0,
+     "comp_p": 0.8861
+    },
+    "MPP-2": {
+     "auroc": 0.836,
+     "n_mut": 8,
+     "n_non": 95,
+     "comp_shift": 0.0,
+     "comp_p": 0.21
+    },
+    "MPP-MEP": {
+     "auroc": 0.849,
+     "n_mut": 49,
+     "n_non": 258,
+     "comp_shift": 145.5,
+     "comp_p": 0.1208
+    },
+    "Mono-1": {
+     "auroc": 0.873,
+     "n_mut": 31,
+     "n_non": 168,
+     "comp_shift": 2.5,
+     "comp_p": 0.8132
+    },
+    "Mono-2": {
+     "auroc": 0.77,
+     "n_mut": 34,
+     "n_non": 194,
+     "comp_shift": 2.0,
+     "comp_p": 0.7651
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.863,
+     "n_mut": 45,
+     "n_non": 241,
+     "comp_shift": 231.5,
+     "comp_p": 0.0099
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.918,
+     "n_mut": 28,
+     "n_non": 183,
+     "comp_shift": -7.0,
+     "comp_p": 0.0616
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.832,
+     "n_mut": 23,
+     "n_non": 138,
+     "comp_shift": -2.0,
+     "comp_p": 0.1638
+    },
+    "Multilin-1": {
+     "auroc": 0.784,
+     "n_mut": 29,
+     "n_non": 195,
+     "comp_shift": -4.0,
+     "comp_p": 0.0708
+    },
+    "Multilin-2": {
+     "auroc": 0.803,
+     "n_mut": 18,
+     "n_non": 122,
+     "comp_shift": -4.0,
+     "comp_p": 0.0063
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.835,
+     "n_mut": 20,
+     "n_non": 147,
+     "comp_shift": -3.0,
+     "comp_p": 0.1593
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.889,
+     "n_mut": 30,
+     "n_non": 170,
+     "comp_shift": -2.0,
+     "comp_p": 0.3433
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.773,
+     "n_mut": 30,
+     "n_non": 168,
+     "comp_shift": 3.0,
+     "comp_p": 0.8699
+    },
+    "NK-Mature": {
+     "auroc": 0.691,
+     "n_mut": 47,
+     "n_non": 282,
+     "comp_shift": -61.5,
+     "comp_p": 0.0407
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.848,
+     "n_mut": 38,
+     "n_non": 203,
+     "comp_shift": 16.5,
+     "comp_p": 0.3742
+    },
+    "Plasma Cell": {
+     "auroc": 0.614,
+     "n_mut": 17,
+     "n_non": 111,
+     "comp_shift": -2.0,
+     "comp_p": 0.0653
+    },
+    "T CD4 Activated": {
+     "auroc": 0.552,
+     "n_mut": 14,
+     "n_non": 113,
+     "comp_shift": -2.0,
+     "comp_p": 0.0194
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.711,
+     "n_mut": 31,
+     "n_non": 230,
+     "comp_shift": -16.0,
+     "comp_p": 0.0246
+    },
+    "T CD4 Naive-2": {
+     "auroc": 0.6,
+     "n_mut": 5,
+     "n_non": 103,
+     "comp_shift": -1.0,
+     "comp_p": 0.0002
+    },
+    "T CD8 Naive": {
+     "auroc": 0.519,
+     "n_mut": 10,
+     "n_non": 134,
+     "comp_shift": -6.0,
+     "comp_p": 0.0
+    },
+    "cDC1": {
+     "auroc": 0.843,
+     "n_mut": 36,
+     "n_non": 148,
+     "comp_shift": 13.0,
+     "comp_p": 0.0465
+    },
+    "cDC2-1": {
+     "auroc": 0.794,
+     "n_mut": 23,
+     "n_non": 156,
+     "comp_shift": -8.0,
+     "comp_p": 0.0562
+    },
+    "cDC2-2": {
+     "auroc": 0.848,
+     "n_mut": 26,
+     "n_non": 134,
+     "comp_shift": 2.0,
+     "comp_p": 0.9909
+    },
+    "cMOP": {
+     "auroc": 0.802,
+     "n_mut": 17,
+     "n_non": 129,
+     "comp_shift": -4.0,
+     "comp_p": 0.0367
+    },
+    "immNeu-1": {
+     "auroc": 0.797,
+     "n_mut": 16,
+     "n_non": 100,
+     "comp_shift": -1.0,
+     "comp_p": 0.4796
+    },
+    "immNeu-2": {
+     "auroc": 0.917,
+     "n_mut": 7,
+     "n_non": 31,
+     "comp_shift": 0.0,
+     "comp_p": 0.1739
+    },
+    "pDC": {
+     "auroc": 0.594,
+     "n_mut": 6,
+     "n_non": 114,
+     "comp_shift": -3.0,
+     "comp_p": 0.0
+    },
+    "pre-DC-1": {
+     "auroc": 0.696,
+     "n_mut": 7,
+     "n_non": 64,
+     "comp_shift": -1.0,
+     "comp_p": 0.0407
+    },
+    "pre-DC-2": {
+     "auroc": 0.813,
+     "n_mut": 24,
+     "n_non": 126,
+     "comp_shift": 1.0,
+     "comp_p": 0.7254
+    },
+    "pre-DC-3": {
+     "auroc": 0.732,
+     "n_mut": 13,
+     "n_non": 82,
+     "comp_shift": -1.0,
+     "comp_p": 0.1545
+    },
+    "preNeu": {
+     "auroc": 0.864,
+     "n_mut": 36,
+     "n_non": 177,
+     "comp_shift": 8.0,
+     "comp_p": 0.4126
+    }
+   },
+   "top_states": [
+    "MultiLin-GMP-2",
+    "immNeu-2",
+    "Myeloid intermediate 2",
+    "Mono-1",
+    "preNeu"
+   ]
+  },
+  "NRAS": {
+   "n_mut": 28,
+   "n_non": 333,
+   "states": {
+    "ASDC": {
+     "auroc": 0.863,
+     "n_mut": 5,
+     "n_non": 38,
+     "comp_shift": 0.0,
+     "comp_p": 0.5526
+    },
+    "B Memory-1": {
+     "auroc": 0.762,
+     "n_mut": 23,
+     "n_non": 209,
+     "comp_shift": 7.0,
+     "comp_p": 0.2865
+    },
+    "B Memory-2": {
+     "auroc": 0.622,
+     "n_mut": 9,
+     "n_non": 155,
+     "comp_shift": -3.5,
+     "comp_p": 0.1249
+    },
+    "BMCP-1": {
+     "auroc": 0.712,
+     "n_mut": 13,
+     "n_non": 129,
+     "comp_shift": 3.5,
+     "comp_p": 0.5882
+    },
+    "CD4 TCM": {
+     "auroc": 0.724,
+     "n_mut": 28,
+     "n_non": 283,
+     "comp_shift": 40.5,
+     "comp_p": 0.0772
+    },
+    "CD8 TEM": {
+     "auroc": 0.723,
+     "n_mut": 24,
+     "n_non": 269,
+     "comp_shift": -30.0,
+     "comp_p": 0.1932
+    },
+    "Classical-Mono": {
+     "auroc": 0.611,
+     "n_mut": 15,
+     "n_non": 205,
+     "comp_shift": -11.5,
+     "comp_p": 0.2166
+    },
+    "Erythroblast-3": {
+     "auroc": 0.66,
+     "n_mut": 11,
+     "n_non": 185,
+     "comp_shift": -15.0,
+     "comp_p": 0.0082
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.7,
+     "n_mut": 23,
+     "n_non": 232,
+     "comp_shift": 407.0,
+     "comp_p": 0.0079
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.711,
+     "n_mut": 19,
+     "n_non": 207,
+     "comp_shift": 65.0,
+     "comp_p": 0.1261
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.678,
+     "n_mut": 26,
+     "n_non": 238,
+     "comp_shift": 393.0,
+     "comp_p": 0.0
+    },
+    "LMPP-1": {
+     "auroc": 0.813,
+     "n_mut": 7,
+     "n_non": 170,
+     "comp_shift": -8.5,
+     "comp_p": 0.0037
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.741,
+     "n_mut": 20,
+     "n_non": 217,
+     "comp_shift": 10.5,
+     "comp_p": 0.9091
+    },
+    "LMPP-2": {
+     "auroc": 0.785,
+     "n_mut": 22,
+     "n_non": 200,
+     "comp_shift": 47.0,
+     "comp_p": 0.1167
+    },
+    "MAIT": {
+     "auroc": 0.63,
+     "n_mut": 27,
+     "n_non": 244,
+     "comp_shift": 4.5,
+     "comp_p": 0.3153
+    },
+    "MDP-1": {
+     "auroc": 0.833,
+     "n_mut": 18,
+     "n_non": 169,
+     "comp_shift": 15.0,
+     "comp_p": 0.0444
+    },
+    "MDP-2": {
+     "auroc": 0.8,
+     "n_mut": 18,
+     "n_non": 181,
+     "comp_shift": 7.5,
+     "comp_p": 0.3231
+    },
+    "MDP-3": {
+     "auroc": 0.813,
+     "n_mut": 5,
+     "n_non": 60,
+     "comp_shift": -1.0,
+     "comp_p": 0.122
+    },
+    "MEP-1": {
+     "auroc": 0.615,
+     "n_mut": 10,
+     "n_non": 160,
+     "comp_shift": -3.5,
+     "comp_p": 0.1966
+    },
+    "MEP-2": {
+     "auroc": 0.768,
+     "n_mut": 18,
+     "n_non": 221,
+     "comp_shift": -3.0,
+     "comp_p": 0.6782
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.667,
+     "n_mut": 10,
+     "n_non": 132,
+     "comp_shift": -1.0,
+     "comp_p": 0.5911
+    },
+    "MPP-1": {
+     "auroc": 0.873,
+     "n_mut": 6,
+     "n_non": 123,
+     "comp_shift": -3.0,
+     "comp_p": 0.043
+    },
+    "MPP-MEP": {
+     "auroc": 0.729,
+     "n_mut": 24,
+     "n_non": 283,
+     "comp_shift": 54.0,
+     "comp_p": 0.7679
+    },
+    "Mono-1": {
+     "auroc": 0.771,
+     "n_mut": 24,
+     "n_non": 175,
+     "comp_shift": 54.0,
+     "comp_p": 0.0005
+    },
+    "Mono-2": {
+     "auroc": 0.68,
+     "n_mut": 21,
+     "n_non": 207,
+     "comp_shift": 115.0,
+     "comp_p": 0.014
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.756,
+     "n_mut": 27,
+     "n_non": 259,
+     "comp_shift": 444.5,
+     "comp_p": 0.002
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.646,
+     "n_mut": 13,
+     "n_non": 198,
+     "comp_shift": -11.0,
+     "comp_p": 0.1666
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.796,
+     "n_mut": 7,
+     "n_non": 154,
+     "comp_shift": -5.0,
+     "comp_p": 0.0343
+    },
+    "Multilin-1": {
+     "auroc": 0.814,
+     "n_mut": 15,
+     "n_non": 209,
+     "comp_shift": -6.5,
+     "comp_p": 0.2186
+    },
+    "Multilin-2": {
+     "auroc": 0.61,
+     "n_mut": 5,
+     "n_non": 135,
+     "comp_shift": -4.0,
+     "comp_p": 0.0098
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.762,
+     "n_mut": 12,
+     "n_non": 155,
+     "comp_shift": -3.5,
+     "comp_p": 0.2082
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.722,
+     "n_mut": 23,
+     "n_non": 177,
+     "comp_shift": 32.5,
+     "comp_p": 0.0079
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.748,
+     "n_mut": 20,
+     "n_non": 178,
+     "comp_shift": 15.0,
+     "comp_p": 0.0329
+    },
+    "NK-Mature": {
+     "auroc": 0.753,
+     "n_mut": 26,
+     "n_non": 303,
+     "comp_shift": -64.5,
+     "comp_p": 0.0297
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.651,
+     "n_mut": 26,
+     "n_non": 215,
+     "comp_shift": 50.5,
+     "comp_p": 0.0018
+    },
+    "Plasma Cell": {
+     "auroc": 0.749,
+     "n_mut": 10,
+     "n_non": 118,
+     "comp_shift": -1.0,
+     "comp_p": 0.7426
+    },
+    "T CD4 Activated": {
+     "auroc": 0.744,
+     "n_mut": 14,
+     "n_non": 113,
+     "comp_shift": 9.0,
+     "comp_p": 0.0318
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.785,
+     "n_mut": 27,
+     "n_non": 234,
+     "comp_shift": 55.0,
+     "comp_p": 0.0004
+    },
+    "T CD8 Naive": {
+     "auroc": 0.794,
+     "n_mut": 11,
+     "n_non": 133,
+     "comp_shift": 2.0,
+     "comp_p": 0.1533
+    },
+    "cDC1": {
+     "auroc": 0.795,
+     "n_mut": 23,
+     "n_non": 161,
+     "comp_shift": 56.5,
+     "comp_p": 0.0002
+    },
+    "cDC2-1": {
+     "auroc": 0.755,
+     "n_mut": 18,
+     "n_non": 161,
+     "comp_shift": 30.0,
+     "comp_p": 0.0341
+    },
+    "cDC2-2": {
+     "auroc": 0.773,
+     "n_mut": 19,
+     "n_non": 141,
+     "comp_shift": 43.5,
+     "comp_p": 0.0012
+    },
+    "cMOP": {
+     "auroc": 0.771,
+     "n_mut": 15,
+     "n_non": 131,
+     "comp_shift": 7.0,
+     "comp_p": 0.1829
+    },
+    "pDC": {
+     "auroc": 0.78,
+     "n_mut": 9,
+     "n_non": 111,
+     "comp_shift": -1.5,
+     "comp_p": 0.1996
+    },
+    "pre-DC-1": {
+     "auroc": 0.636,
+     "n_mut": 6,
+     "n_non": 65,
+     "comp_shift": -0.5,
+     "comp_p": 0.3931
+    },
+    "pre-DC-2": {
+     "auroc": 0.617,
+     "n_mut": 19,
+     "n_non": 131,
+     "comp_shift": 18.0,
+     "comp_p": 0.0097
+    },
+    "pre-DC-3": {
+     "auroc": 0.791,
+     "n_mut": 10,
+     "n_non": 85,
+     "comp_shift": 2.5,
+     "comp_p": 0.4767
+    },
+    "preNeu": {
+     "auroc": 0.706,
+     "n_mut": 13,
+     "n_non": 200,
+     "comp_shift": -9.0,
+     "comp_p": 0.1438
+    }
+   },
+   "top_states": [
+    "MPP-1",
+    "ASDC",
+    "MDP-1",
+    "Multilin-1",
+    "LMPP-1"
+   ]
+  },
+  "PHIP": {
+   "n_mut": 7,
+   "n_non": 354,
+   "states": {
+    "BMCP-1": {
+     "auroc": 0.692,
+     "n_mut": 7,
+     "n_non": 135,
+     "comp_shift": 28.0,
+     "comp_p": 0.0042
+    },
+    "CD4 TCM": {
+     "auroc": 0.773,
+     "n_mut": 7,
+     "n_non": 304,
+     "comp_shift": 31.0,
+     "comp_p": 0.421
+    },
+    "CD8 TEM": {
+     "auroc": 0.649,
+     "n_mut": 6,
+     "n_non": 287,
+     "comp_shift": -47.5,
+     "comp_p": 0.1254
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.688,
+     "n_mut": 6,
+     "n_non": 249,
+     "comp_shift": 308.5,
+     "comp_p": 0.105
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.842,
+     "n_mut": 5,
+     "n_non": 221,
+     "comp_shift": 34.5,
+     "comp_p": 0.8965
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.633,
+     "n_mut": 7,
+     "n_non": 257,
+     "comp_shift": 213.5,
+     "comp_p": 0.194
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.786,
+     "n_mut": 7,
+     "n_non": 230,
+     "comp_shift": 57.0,
+     "comp_p": 0.1644
+    },
+    "LMPP-2": {
+     "auroc": 0.712,
+     "n_mut": 7,
+     "n_non": 215,
+     "comp_shift": 73.5,
+     "comp_p": 0.03
+    },
+    "MAIT": {
+     "auroc": 0.895,
+     "n_mut": 7,
+     "n_non": 264,
+     "comp_shift": 6.0,
+     "comp_p": 0.5461
+    },
+    "MDP-1": {
+     "auroc": 0.554,
+     "n_mut": 6,
+     "n_non": 181,
+     "comp_shift": 43.0,
+     "comp_p": 0.092
+    },
+    "MEP-2": {
+     "auroc": 0.77,
+     "n_mut": 7,
+     "n_non": 232,
+     "comp_shift": 1.0,
+     "comp_p": 0.3161
+    },
+    "MPP-MEP": {
+     "auroc": 0.827,
+     "n_mut": 7,
+     "n_non": 300,
+     "comp_shift": 439.5,
+     "comp_p": 0.0553
+    },
+    "Mono-1": {
+     "auroc": 0.835,
+     "n_mut": 5,
+     "n_non": 194,
+     "comp_shift": 50.0,
+     "comp_p": 0.1919
+    },
+    "Mono-2": {
+     "auroc": 0.539,
+     "n_mut": 5,
+     "n_non": 223,
+     "comp_shift": 88.5,
+     "comp_p": 0.6682
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.844,
+     "n_mut": 7,
+     "n_non": 279,
+     "comp_shift": 1391.5,
+     "comp_p": 0.0007
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.82,
+     "n_mut": 6,
+     "n_non": 205,
+     "comp_shift": 35.0,
+     "comp_p": 0.3948
+    },
+    "Multilin-1": {
+     "auroc": 0.919,
+     "n_mut": 6,
+     "n_non": 218,
+     "comp_shift": 12.5,
+     "comp_p": 0.552
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.798,
+     "n_mut": 5,
+     "n_non": 162,
+     "comp_shift": 19.0,
+     "comp_p": 0.1694
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.832,
+     "n_mut": 6,
+     "n_non": 192,
+     "comp_shift": 27.0,
+     "comp_p": 0.1683
+    },
+    "NK-Mature": {
+     "auroc": 0.504,
+     "n_mut": 7,
+     "n_non": 322,
+     "comp_shift": -91.0,
+     "comp_p": 0.0107
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.703,
+     "n_mut": 5,
+     "n_non": 236,
+     "comp_shift": 30.5,
+     "comp_p": 0.5668
+    },
+    "T CD4 Activated": {
+     "auroc": 0.8,
+     "n_mut": 6,
+     "n_non": 121,
+     "comp_shift": 37.5,
+     "comp_p": 0.0065
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.886,
+     "n_mut": 6,
+     "n_non": 255,
+     "comp_shift": 10.5,
+     "comp_p": 0.8995
+    },
+    "cDC2-2": {
+     "auroc": 0.822,
+     "n_mut": 5,
+     "n_non": 155,
+     "comp_shift": 109.0,
+     "comp_p": 0.0489
+    },
+    "preNeu": {
+     "auroc": 0.796,
+     "n_mut": 6,
+     "n_non": 207,
+     "comp_shift": 24.5,
+     "comp_p": 0.1747
+    }
+   },
+   "top_states": [
+    "Multilin-1",
+    "MAIT",
+    "T CD4 Naive-1",
+    "MultiLin-GMP-1",
+    "Intermediate Mono-2"
+   ]
+  },
+  "PTPN11": {
+   "n_mut": 9,
+   "n_non": 352,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.554,
+     "n_mut": 9,
+     "n_non": 223,
+     "comp_shift": 153.0,
+     "comp_p": 0.003
+    },
+    "CD4 TCM": {
+     "auroc": 0.596,
+     "n_mut": 8,
+     "n_non": 303,
+     "comp_shift": -6.0,
+     "comp_p": 0.9987
+    },
+    "CD8 TEM": {
+     "auroc": 0.546,
+     "n_mut": 9,
+     "n_non": 284,
+     "comp_shift": -8.0,
+     "comp_p": 1.0
+    },
+    "Classical-Mono": {
+     "auroc": 0.817,
+     "n_mut": 6,
+     "n_non": 214,
+     "comp_shift": 17.0,
+     "comp_p": 0.956
+    },
+    "Erythroblast-3": {
+     "auroc": 0.519,
+     "n_mut": 7,
+     "n_non": 189,
+     "comp_shift": 13.0,
+     "comp_p": 0.6115
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.681,
+     "n_mut": 9,
+     "n_non": 246,
+     "comp_shift": 409.5,
+     "comp_p": 0.168
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.698,
+     "n_mut": 7,
+     "n_non": 219,
+     "comp_shift": 58.5,
+     "comp_p": 0.3885
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.643,
+     "n_mut": 9,
+     "n_non": 255,
+     "comp_shift": 156.0,
+     "comp_p": 0.0061
+    },
+    "MAIT": {
+     "auroc": 0.712,
+     "n_mut": 9,
+     "n_non": 262,
+     "comp_shift": 14.5,
+     "comp_p": 0.4461
+    },
+    "MDP-1": {
+     "auroc": 0.612,
+     "n_mut": 5,
+     "n_non": 182,
+     "comp_shift": 4.0,
+     "comp_p": 0.7265
+    },
+    "MEP-2": {
+     "auroc": 0.506,
+     "n_mut": 5,
+     "n_non": 234,
+     "comp_shift": -13.5,
+     "comp_p": 0.2116
+    },
+    "MPP-MEP": {
+     "auroc": 0.539,
+     "n_mut": 7,
+     "n_non": 300,
+     "comp_shift": -142.0,
+     "comp_p": 0.0366
+    },
+    "Mono-1": {
+     "auroc": 0.527,
+     "n_mut": 7,
+     "n_non": 192,
+     "comp_shift": 13.0,
+     "comp_p": 0.2143
+    },
+    "Mono-2": {
+     "auroc": 0.657,
+     "n_mut": 9,
+     "n_non": 219,
+     "comp_shift": 68.0,
+     "comp_p": 0.0351
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.711,
+     "n_mut": 9,
+     "n_non": 277,
+     "comp_shift": 179.5,
+     "comp_p": 0.5176
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.606,
+     "n_mut": 6,
+     "n_non": 192,
+     "comp_shift": 1.0,
+     "comp_p": 0.7127
+    },
+    "NK-Mature": {
+     "auroc": 0.654,
+     "n_mut": 9,
+     "n_non": 320,
+     "comp_shift": -29.0,
+     "comp_p": 0.6979
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.614,
+     "n_mut": 8,
+     "n_non": 233,
+     "comp_shift": 31.0,
+     "comp_p": 0.1286
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.659,
+     "n_mut": 8,
+     "n_non": 253,
+     "comp_shift": 39.0,
+     "comp_p": 0.228
+    },
+    "cDC1": {
+     "auroc": 0.521,
+     "n_mut": 8,
+     "n_non": 176,
+     "comp_shift": 21.0,
+     "comp_p": 0.0348
+    },
+    "cDC2-1": {
+     "auroc": 0.862,
+     "n_mut": 5,
+     "n_non": 174,
+     "comp_shift": 2.0,
+     "comp_p": 0.9083
+    },
+    "pre-DC-2": {
+     "auroc": 0.854,
+     "n_mut": 6,
+     "n_non": 144,
+     "comp_shift": 31.0,
+     "comp_p": 0.0763
+    },
+    "preNeu": {
+     "auroc": 0.662,
+     "n_mut": 6,
+     "n_non": 207,
+     "comp_shift": 1.0,
+     "comp_p": 0.5035
+    }
+   },
+   "top_states": [
+    "cDC2-1",
+    "pre-DC-2",
+    "Classical-Mono",
+    "MAIT",
+    "MultiLin-GMP-1"
+   ]
+  },
+  "RUNX1": {
+   "n_mut": 13,
+   "n_non": 348,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.521,
+     "n_mut": 8,
+     "n_non": 224,
+     "comp_shift": -10.5,
+     "comp_p": 0.8571
+    },
+    "B Memory-2": {
+     "auroc": 0.813,
+     "n_mut": 5,
+     "n_non": 159,
+     "comp_shift": 1.0,
+     "comp_p": 0.908
+    },
+    "BMCP-1": {
+     "auroc": 0.651,
+     "n_mut": 6,
+     "n_non": 136,
+     "comp_shift": 3.0,
+     "comp_p": 0.3726
+    },
+    "CD4 TCM": {
+     "auroc": 0.522,
+     "n_mut": 13,
+     "n_non": 298,
+     "comp_shift": -6.0,
+     "comp_p": 0.8998
+    },
+    "CD8 TEM": {
+     "auroc": 0.673,
+     "n_mut": 12,
+     "n_non": 281,
+     "comp_shift": -5.0,
+     "comp_p": 0.9052
+    },
+    "Classical-Mono": {
+     "auroc": 0.675,
+     "n_mut": 11,
+     "n_non": 209,
+     "comp_shift": -4.0,
+     "comp_p": 0.5985
+    },
+    "ERP-1": {
+     "auroc": 0.907,
+     "n_mut": 5,
+     "n_non": 80,
+     "comp_shift": 3.0,
+     "comp_p": 0.4264
+    },
+    "ERP-7": {
+     "auroc": 0.8,
+     "n_mut": 5,
+     "n_non": 101,
+     "comp_shift": 0.0,
+     "comp_p": 0.7897
+    },
+    "ERP-8": {
+     "auroc": 0.672,
+     "n_mut": 6,
+     "n_non": 143,
+     "comp_shift": 1.0,
+     "comp_p": 0.6838
+    },
+    "Erythroblast-3": {
+     "auroc": 0.535,
+     "n_mut": 9,
+     "n_non": 187,
+     "comp_shift": 4.0,
+     "comp_p": 0.1409
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.616,
+     "n_mut": 10,
+     "n_non": 245,
+     "comp_shift": 20.5,
+     "comp_p": 0.7146
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.683,
+     "n_mut": 8,
+     "n_non": 218,
+     "comp_shift": 23.0,
+     "comp_p": 0.7314
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.554,
+     "n_mut": 12,
+     "n_non": 252,
+     "comp_shift": 153.0,
+     "comp_p": 0.095
+    },
+    "LMPP-1": {
+     "auroc": 0.72,
+     "n_mut": 8,
+     "n_non": 169,
+     "comp_shift": 12.0,
+     "comp_p": 0.4053
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.751,
+     "n_mut": 12,
+     "n_non": 225,
+     "comp_shift": 114.0,
+     "comp_p": 0.0337
+    },
+    "LMPP-2": {
+     "auroc": 0.523,
+     "n_mut": 11,
+     "n_non": 211,
+     "comp_shift": 65.0,
+     "comp_p": 0.0304
+    },
+    "MAIT": {
+     "auroc": 0.518,
+     "n_mut": 11,
+     "n_non": 260,
+     "comp_shift": 8.0,
+     "comp_p": 0.7658
+    },
+    "MDP-1": {
+     "auroc": 0.557,
+     "n_mut": 11,
+     "n_non": 176,
+     "comp_shift": 32.0,
+     "comp_p": 0.0338
+    },
+    "MDP-2": {
+     "auroc": 0.524,
+     "n_mut": 9,
+     "n_non": 190,
+     "comp_shift": 2.0,
+     "comp_p": 0.2212
+    },
+    "MEP-1": {
+     "auroc": 0.716,
+     "n_mut": 9,
+     "n_non": 161,
+     "comp_shift": 54.0,
+     "comp_p": 0.0042
+    },
+    "MEP-2": {
+     "auroc": 0.699,
+     "n_mut": 10,
+     "n_non": 229,
+     "comp_shift": 7.0,
+     "comp_p": 0.3151
+    },
+    "MEP-Eryth-1": {
+     "auroc": 0.714,
+     "n_mut": 6,
+     "n_non": 70,
+     "comp_shift": 5.0,
+     "comp_p": 0.0238
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.503,
+     "n_mut": 8,
+     "n_non": 134,
+     "comp_shift": 10.0,
+     "comp_p": 0.0621
+    },
+    "MPP-1": {
+     "auroc": 0.656,
+     "n_mut": 8,
+     "n_non": 121,
+     "comp_shift": 10.0,
+     "comp_p": 0.0883
+    },
+    "MPP-2": {
+     "auroc": 0.792,
+     "n_mut": 5,
+     "n_non": 98,
+     "comp_shift": 1.0,
+     "comp_p": 0.4306
+    },
+    "MPP-MEP": {
+     "auroc": 0.663,
+     "n_mut": 13,
+     "n_non": 294,
+     "comp_shift": 289.0,
+     "comp_p": 0.0054
+    },
+    "Mono-1": {
+     "auroc": 0.506,
+     "n_mut": 8,
+     "n_non": 191,
+     "comp_shift": 1.0,
+     "comp_p": 0.9415
+    },
+    "Mono-2": {
+     "auroc": 0.599,
+     "n_mut": 12,
+     "n_non": 216,
+     "comp_shift": 8.0,
+     "comp_p": 0.5276
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.697,
+     "n_mut": 12,
+     "n_non": 274,
+     "comp_shift": 118.5,
+     "comp_p": 0.1637
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.796,
+     "n_mut": 8,
+     "n_non": 203,
+     "comp_shift": 48.5,
+     "comp_p": 0.3851
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.658,
+     "n_mut": 8,
+     "n_non": 153,
+     "comp_shift": 12.0,
+     "comp_p": 0.2594
+    },
+    "Multilin-1": {
+     "auroc": 0.693,
+     "n_mut": 11,
+     "n_non": 213,
+     "comp_shift": 35.0,
+     "comp_p": 0.0313
+    },
+    "Multilin-2": {
+     "auroc": 0.599,
+     "n_mut": 5,
+     "n_non": 135,
+     "comp_shift": 0.0,
+     "comp_p": 0.8705
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.612,
+     "n_mut": 8,
+     "n_non": 159,
+     "comp_shift": 14.5,
+     "comp_p": 0.2648
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.511,
+     "n_mut": 7,
+     "n_non": 193,
+     "comp_shift": 0.0,
+     "comp_p": 0.7581
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.55,
+     "n_mut": 10,
+     "n_non": 188,
+     "comp_shift": 10.0,
+     "comp_p": 0.2311
+    },
+    "NK-Mature": {
+     "auroc": 0.526,
+     "n_mut": 12,
+     "n_non": 317,
+     "comp_shift": -86.5,
+     "comp_p": 0.0736
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.532,
+     "n_mut": 10,
+     "n_non": 231,
+     "comp_shift": -8.5,
+     "comp_p": 0.9989
+    },
+    "Plasma Cell": {
+     "auroc": 0.708,
+     "n_mut": 6,
+     "n_non": 122,
+     "comp_shift": 4.0,
+     "comp_p": 0.126
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.757,
+     "n_mut": 11,
+     "n_non": 250,
+     "comp_shift": -3.0,
+     "comp_p": 0.888
+    },
+    "T CD8 Naive": {
+     "auroc": 0.561,
+     "n_mut": 5,
+     "n_non": 139,
+     "comp_shift": -4.0,
+     "comp_p": 0.5817
+    },
+    "cDC1": {
+     "auroc": 0.602,
+     "n_mut": 10,
+     "n_non": 174,
+     "comp_shift": 16.0,
+     "comp_p": 0.1648
+    },
+    "cDC2-1": {
+     "auroc": 0.711,
+     "n_mut": 8,
+     "n_non": 171,
+     "comp_shift": 9.5,
+     "comp_p": 0.4998
+    },
+    "cDC2-2": {
+     "auroc": 0.68,
+     "n_mut": 8,
+     "n_non": 152,
+     "comp_shift": 10.0,
+     "comp_p": 0.5238
+    },
+    "cMOP": {
+     "auroc": 0.588,
+     "n_mut": 6,
+     "n_non": 140,
+     "comp_shift": 3.0,
+     "comp_p": 0.585
+    },
+    "immNeu-1": {
+     "auroc": 0.792,
+     "n_mut": 6,
+     "n_non": 110,
+     "comp_shift": 0.5,
+     "comp_p": 0.6653
+    },
+    "pre-DC-2": {
+     "auroc": 0.833,
+     "n_mut": 7,
+     "n_non": 143,
+     "comp_shift": 8.0,
+     "comp_p": 0.2348
+    },
+    "preNeu": {
+     "auroc": 0.655,
+     "n_mut": 9,
+     "n_non": 204,
+     "comp_shift": 24.5,
+     "comp_p": 0.4962
+    }
+   },
+   "top_states": [
+    "ERP-1",
+    "pre-DC-2",
+    "B Memory-2",
+    "ERP-7",
+    "MultiLin-GMP-2"
+   ]
+  },
+  "SF3B1": {
+   "n_mut": 6,
+   "n_non": 355,
+   "states": {
+    "B Memory-2": {
+     "auroc": 0.554,
+     "n_mut": 6,
+     "n_non": 158,
+     "comp_shift": 28.5,
+     "comp_p": 0.0347
+    },
+    "CD4 TCM": {
+     "auroc": 0.54,
+     "n_mut": 6,
+     "n_non": 305,
+     "comp_shift": -14.5,
+     "comp_p": 0.8467
+    },
+    "CD8 TEM": {
+     "auroc": 0.505,
+     "n_mut": 6,
+     "n_non": 287,
+     "comp_shift": 68.0,
+     "comp_p": 0.1145
+    },
+    "Classical-Mono": {
+     "auroc": 0.615,
+     "n_mut": 6,
+     "n_non": 214,
+     "comp_shift": 424.5,
+     "comp_p": 0.0042
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.701,
+     "n_mut": 6,
+     "n_non": 249,
+     "comp_shift": 77.5,
+     "comp_p": 0.2848
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.687,
+     "n_mut": 6,
+     "n_non": 220,
+     "comp_shift": 792.0,
+     "comp_p": 0.0045
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.558,
+     "n_mut": 6,
+     "n_non": 258,
+     "comp_shift": 13.5,
+     "comp_p": 0.9843
+    },
+    "LMPP-1": {
+     "auroc": 0.734,
+     "n_mut": 5,
+     "n_non": 172,
+     "comp_shift": 184.5,
+     "comp_p": 0.0244
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.603,
+     "n_mut": 5,
+     "n_non": 232,
+     "comp_shift": 3.5,
+     "comp_p": 0.8839
+    },
+    "MAIT": {
+     "auroc": 0.59,
+     "n_mut": 6,
+     "n_non": 265,
+     "comp_shift": 36.0,
+     "comp_p": 0.4849
+    },
+    "MEP-2": {
+     "auroc": 0.815,
+     "n_mut": 5,
+     "n_non": 234,
+     "comp_shift": -4.0,
+     "comp_p": 0.469
+    },
+    "MPP-2": {
+     "auroc": 0.692,
+     "n_mut": 5,
+     "n_non": 98,
+     "comp_shift": 34.5,
+     "comp_p": 0.0213
+    },
+    "MPP-MEP": {
+     "auroc": 0.644,
+     "n_mut": 5,
+     "n_non": 302,
+     "comp_shift": -125.5,
+     "comp_p": 0.0637
+    },
+    "Mono-1": {
+     "auroc": 0.754,
+     "n_mut": 5,
+     "n_non": 194,
+     "comp_shift": 21.0,
+     "comp_p": 0.2152
+    },
+    "Mono-2": {
+     "auroc": 0.707,
+     "n_mut": 6,
+     "n_non": 222,
+     "comp_shift": 193.5,
+     "comp_p": 0.0397
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.597,
+     "n_mut": 5,
+     "n_non": 206,
+     "comp_shift": 35.0,
+     "comp_p": 0.4017
+    },
+    "Multilin-1": {
+     "auroc": 0.774,
+     "n_mut": 5,
+     "n_non": 219,
+     "comp_shift": 23.5,
+     "comp_p": 0.4509
+    },
+    "Multilin-2": {
+     "auroc": 0.524,
+     "n_mut": 5,
+     "n_non": 135,
+     "comp_shift": 100.0,
+     "comp_p": 0.0525
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.745,
+     "n_mut": 5,
+     "n_non": 195,
+     "comp_shift": 10.0,
+     "comp_p": 0.4668
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.841,
+     "n_mut": 5,
+     "n_non": 193,
+     "comp_shift": 6.5,
+     "comp_p": 0.4356
+    },
+    "NK-Mature": {
+     "auroc": 0.691,
+     "n_mut": 6,
+     "n_non": 323,
+     "comp_shift": 119.0,
+     "comp_p": 0.195
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.513,
+     "n_mut": 6,
+     "n_non": 235,
+     "comp_shift": 16.5,
+     "comp_p": 0.2324
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.67,
+     "n_mut": 5,
+     "n_non": 256,
+     "comp_shift": 38.5,
+     "comp_p": 0.6051
+    },
+    "T CD4 Naive-2": {
+     "auroc": 0.567,
+     "n_mut": 5,
+     "n_non": 103,
+     "comp_shift": 132.0,
+     "comp_p": 0.0144
+    },
+    "cDC2-1": {
+     "auroc": 0.52,
+     "n_mut": 5,
+     "n_non": 174,
+     "comp_shift": 62.5,
+     "comp_p": 0.0234
+    },
+    "cDC2-2": {
+     "auroc": 0.792,
+     "n_mut": 6,
+     "n_non": 154,
+     "comp_shift": 49.0,
+     "comp_p": 0.0172
+    },
+    "pDC": {
+     "auroc": 0.645,
+     "n_mut": 6,
+     "n_non": 114,
+     "comp_shift": 81.5,
+     "comp_p": 0.0005
+    },
+    "pre-DC-2": {
+     "auroc": 0.557,
+     "n_mut": 5,
+     "n_non": 145,
+     "comp_shift": 11.0,
+     "comp_p": 0.198
+    }
+   },
+   "top_states": [
+    "Myeloid intermediate 3",
+    "MEP-2",
+    "cDC2-2",
+    "Multilin-1",
+    "Mono-1"
+   ]
+  },
+  "SMC1A": {
+   "n_mut": 5,
+   "n_non": 356,
+   "states": {
+    "CD4 TCM": {
+     "auroc": 0.558,
+     "n_mut": 5,
+     "n_non": 306,
+     "comp_shift": 34.5,
+     "comp_p": 0.5558
+    },
+    "CD8 TEM": {
+     "auroc": 0.65,
+     "n_mut": 5,
+     "n_non": 288,
+     "comp_shift": 5.0,
+     "comp_p": 0.5386
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.623,
+     "n_mut": 5,
+     "n_non": 259,
+     "comp_shift": 81.0,
+     "comp_p": 0.133
+    },
+    "MAIT": {
+     "auroc": 0.57,
+     "n_mut": 5,
+     "n_non": 266,
+     "comp_shift": 3.0,
+     "comp_p": 0.8987
+    },
+    "Mono-1": {
+     "auroc": 0.647,
+     "n_mut": 5,
+     "n_non": 194,
+     "comp_shift": 58.0,
+     "comp_p": 0.0813
+    },
+    "Mono-2": {
+     "auroc": 0.779,
+     "n_mut": 5,
+     "n_non": 223,
+     "comp_shift": 80.5,
+     "comp_p": 0.2132
+    },
+    "NK-Mature": {
+     "auroc": 0.613,
+     "n_mut": 5,
+     "n_non": 324,
+     "comp_shift": -56.0,
+     "comp_p": 0.4605
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.828,
+     "n_mut": 5,
+     "n_non": 236,
+     "comp_shift": -5.0,
+     "comp_p": 0.885
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.734,
+     "n_mut": 5,
+     "n_non": 256,
+     "comp_shift": 50.0,
+     "comp_p": 0.1421
+    },
+    "cDC1": {
+     "auroc": 0.785,
+     "n_mut": 5,
+     "n_non": 179,
+     "comp_shift": 91.0,
+     "comp_p": 0.0527
+    }
+   },
+   "top_states": [
+    "Non-Classical Mono-2",
+    "cDC1",
+    "Mono-2",
+    "T CD4 Naive-1",
+    "CD8 TEM"
+   ]
+  },
+  "SRSF2": {
+   "n_mut": 7,
+   "n_non": 354,
+   "states": {
+    "CD4 TCM": {
+     "auroc": 0.521,
+     "n_mut": 6,
+     "n_non": 305,
+     "comp_shift": 34.5,
+     "comp_p": 0.4446
+    },
+    "CD8 TEM": {
+     "auroc": 0.656,
+     "n_mut": 6,
+     "n_non": 287,
+     "comp_shift": 3.5,
+     "comp_p": 0.5535
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.51,
+     "n_mut": 6,
+     "n_non": 258,
+     "comp_shift": 81.0,
+     "comp_p": 0.3396
+    },
+    "LMPP-2": {
+     "auroc": 0.796,
+     "n_mut": 5,
+     "n_non": 217,
+     "comp_shift": 3.5,
+     "comp_p": 0.9446
+    },
+    "MAIT": {
+     "auroc": 0.603,
+     "n_mut": 6,
+     "n_non": 265,
+     "comp_shift": 14.0,
+     "comp_p": 0.5933
+    },
+    "MPP-MEP": {
+     "auroc": 0.581,
+     "n_mut": 6,
+     "n_non": 301,
+     "comp_shift": 362.0,
+     "comp_p": 0.5245
+    },
+    "Mono-1": {
+     "auroc": 0.592,
+     "n_mut": 6,
+     "n_non": 193,
+     "comp_shift": 10.0,
+     "comp_p": 0.2574
+    },
+    "Mono-2": {
+     "auroc": 0.595,
+     "n_mut": 6,
+     "n_non": 222,
+     "comp_shift": 95.5,
+     "comp_p": 0.2718
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.539,
+     "n_mut": 6,
+     "n_non": 280,
+     "comp_shift": -22.0,
+     "comp_p": 0.9388
+    },
+    "NK-Mature": {
+     "auroc": 0.51,
+     "n_mut": 6,
+     "n_non": 323,
+     "comp_shift": -56.0,
+     "comp_p": 0.4242
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.57,
+     "n_mut": 5,
+     "n_non": 236,
+     "comp_shift": -5.0,
+     "comp_p": 0.6805
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.551,
+     "n_mut": 6,
+     "n_non": 255,
+     "comp_shift": 85.0,
+     "comp_p": 0.2498
+    },
+    "cDC1": {
+     "auroc": 0.536,
+     "n_mut": 6,
+     "n_non": 178,
+     "comp_shift": 26.0,
+     "comp_p": 0.0846
+    }
+   },
+   "top_states": [
+    "LMPP-2",
+    "CD8 TEM",
+    "MAIT",
+    "Mono-2",
+    "Mono-1"
+   ]
+  },
+  "TET2": {
+   "n_mut": 20,
+   "n_non": 341,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.665,
+     "n_mut": 16,
+     "n_non": 216,
+     "comp_shift": 13.0,
+     "comp_p": 0.5753
+    },
+    "B Memory-2": {
+     "auroc": 0.849,
+     "n_mut": 13,
+     "n_non": 151,
+     "comp_shift": 12.0,
+     "comp_p": 0.0862
+    },
+    "BMCP-1": {
+     "auroc": 0.54,
+     "n_mut": 13,
+     "n_non": 129,
+     "comp_shift": 17.5,
+     "comp_p": 0.006
+    },
+    "CD4 TCM": {
+     "auroc": 0.719,
+     "n_mut": 18,
+     "n_non": 293,
+     "comp_shift": -18.5,
+     "comp_p": 0.4846
+    },
+    "CD8 TEM": {
+     "auroc": 0.714,
+     "n_mut": 17,
+     "n_non": 276,
+     "comp_shift": 11.0,
+     "comp_p": 0.9044
+    },
+    "Classical-Mono": {
+     "auroc": 0.815,
+     "n_mut": 18,
+     "n_non": 202,
+     "comp_shift": 93.5,
+     "comp_p": 0.0073
+    },
+    "ERP-1": {
+     "auroc": 0.807,
+     "n_mut": 5,
+     "n_non": 80,
+     "comp_shift": 0.5,
+     "comp_p": 0.9928
+    },
+    "ERP-2": {
+     "auroc": 0.815,
+     "n_mut": 5,
+     "n_non": 66,
+     "comp_shift": 0.0,
+     "comp_p": 0.9506
+    },
+    "ERP-5": {
+     "auroc": 0.694,
+     "n_mut": 5,
+     "n_non": 83,
+     "comp_shift": 1.0,
+     "comp_p": 0.5099
+    },
+    "Erythroblast-1": {
+     "auroc": 0.797,
+     "n_mut": 5,
+     "n_non": 116,
+     "comp_shift": 0.0,
+     "comp_p": 0.5848
+    },
+    "Erythroblast-3": {
+     "auroc": 0.791,
+     "n_mut": 14,
+     "n_non": 182,
+     "comp_shift": 16.5,
+     "comp_p": 0.2352
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.672,
+     "n_mut": 19,
+     "n_non": 236,
+     "comp_shift": 617.0,
+     "comp_p": 0.0015
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.726,
+     "n_mut": 20,
+     "n_non": 206,
+     "comp_shift": 128.0,
+     "comp_p": 0.0003
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.698,
+     "n_mut": 19,
+     "n_non": 245,
+     "comp_shift": 202.5,
+     "comp_p": 0.0042
+    },
+    "LMPP-1": {
+     "auroc": 0.799,
+     "n_mut": 15,
+     "n_non": 162,
+     "comp_shift": 12.5,
+     "comp_p": 0.4499
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.592,
+     "n_mut": 13,
+     "n_non": 224,
+     "comp_shift": -6.0,
+     "comp_p": 0.4526
+    },
+    "LMPP-2": {
+     "auroc": 0.643,
+     "n_mut": 9,
+     "n_non": 213,
+     "comp_shift": -28.5,
+     "comp_p": 0.0157
+    },
+    "MAIT": {
+     "auroc": 0.73,
+     "n_mut": 17,
+     "n_non": 254,
+     "comp_shift": 6.0,
+     "comp_p": 0.7086
+    },
+    "MDP-1": {
+     "auroc": 0.7,
+     "n_mut": 11,
+     "n_non": 176,
+     "comp_shift": 1.5,
+     "comp_p": 0.9209
+    },
+    "MDP-2": {
+     "auroc": 0.722,
+     "n_mut": 14,
+     "n_non": 185,
+     "comp_shift": 4.0,
+     "comp_p": 0.2426
+    },
+    "MEP-1": {
+     "auroc": 0.595,
+     "n_mut": 9,
+     "n_non": 161,
+     "comp_shift": 0.5,
+     "comp_p": 0.8659
+    },
+    "MEP-2": {
+     "auroc": 0.569,
+     "n_mut": 12,
+     "n_non": 227,
+     "comp_shift": -8.0,
+     "comp_p": 0.9122
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.646,
+     "n_mut": 8,
+     "n_non": 134,
+     "comp_shift": -1.0,
+     "comp_p": 0.8232
+    },
+    "MPP-1": {
+     "auroc": 0.673,
+     "n_mut": 5,
+     "n_non": 124,
+     "comp_shift": 1.5,
+     "comp_p": 0.8154
+    },
+    "MPP-MEP": {
+     "auroc": 0.741,
+     "n_mut": 18,
+     "n_non": 289,
+     "comp_shift": 198.0,
+     "comp_p": 0.1352
+    },
+    "Mono-1": {
+     "auroc": 0.671,
+     "n_mut": 16,
+     "n_non": 183,
+     "comp_shift": 13.0,
+     "comp_p": 0.0058
+    },
+    "Mono-2": {
+     "auroc": 0.738,
+     "n_mut": 17,
+     "n_non": 211,
+     "comp_shift": 111.5,
+     "comp_p": 0.007
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.726,
+     "n_mut": 17,
+     "n_non": 269,
+     "comp_shift": 218.0,
+     "comp_p": 0.236
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.8,
+     "n_mut": 13,
+     "n_non": 198,
+     "comp_shift": 88.5,
+     "comp_p": 0.1832
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.634,
+     "n_mut": 11,
+     "n_non": 150,
+     "comp_shift": 12.0,
+     "comp_p": 0.2948
+    },
+    "Multilin-1": {
+     "auroc": 0.731,
+     "n_mut": 13,
+     "n_non": 211,
+     "comp_shift": 3.5,
+     "comp_p": 0.8374
+    },
+    "Multilin-2": {
+     "auroc": 0.68,
+     "n_mut": 6,
+     "n_non": 134,
+     "comp_shift": -0.5,
+     "comp_p": 0.2785
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.566,
+     "n_mut": 12,
+     "n_non": 155,
+     "comp_shift": 15.5,
+     "comp_p": 0.0794
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.691,
+     "n_mut": 13,
+     "n_non": 187,
+     "comp_shift": 3.5,
+     "comp_p": 0.3614
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.679,
+     "n_mut": 16,
+     "n_non": 182,
+     "comp_shift": 25.0,
+     "comp_p": 0.0154
+    },
+    "NK-Mature": {
+     "auroc": 0.528,
+     "n_mut": 17,
+     "n_non": 312,
+     "comp_shift": -45.0,
+     "comp_p": 0.0816
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.758,
+     "n_mut": 19,
+     "n_non": 222,
+     "comp_shift": 43.5,
+     "comp_p": 0.0129
+    },
+    "Plasma Cell": {
+     "auroc": 0.675,
+     "n_mut": 12,
+     "n_non": 116,
+     "comp_shift": 6.0,
+     "comp_p": 0.0844
+    },
+    "T CD4 Activated": {
+     "auroc": 0.736,
+     "n_mut": 5,
+     "n_non": 122,
+     "comp_shift": 0.0,
+     "comp_p": 0.5696
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.699,
+     "n_mut": 16,
+     "n_non": 245,
+     "comp_shift": -9.0,
+     "comp_p": 0.7333
+    },
+    "T CD8 Naive": {
+     "auroc": 0.562,
+     "n_mut": 6,
+     "n_non": 138,
+     "comp_shift": -2.5,
+     "comp_p": 0.209
+    },
+    "cDC1": {
+     "auroc": 0.721,
+     "n_mut": 15,
+     "n_non": 169,
+     "comp_shift": 21.0,
+     "comp_p": 0.142
+    },
+    "cDC2-1": {
+     "auroc": 0.802,
+     "n_mut": 11,
+     "n_non": 168,
+     "comp_shift": 8.0,
+     "comp_p": 0.5948
+    },
+    "cDC2-2": {
+     "auroc": 0.897,
+     "n_mut": 12,
+     "n_non": 148,
+     "comp_shift": 19.5,
+     "comp_p": 0.0355
+    },
+    "cMOP": {
+     "auroc": 0.718,
+     "n_mut": 12,
+     "n_non": 134,
+     "comp_shift": 7.5,
+     "comp_p": 0.013
+    },
+    "immNeu-1": {
+     "auroc": 0.67,
+     "n_mut": 8,
+     "n_non": 108,
+     "comp_shift": -0.5,
+     "comp_p": 0.4817
+    },
+    "pre-DC-2": {
+     "auroc": 0.848,
+     "n_mut": 11,
+     "n_non": 139,
+     "comp_shift": 12.5,
+     "comp_p": 0.1902
+    },
+    "pre-DC-3": {
+     "auroc": 0.582,
+     "n_mut": 5,
+     "n_non": 90,
+     "comp_shift": -0.5,
+     "comp_p": 0.576
+    },
+    "preNeu": {
+     "auroc": 0.813,
+     "n_mut": 13,
+     "n_non": 200,
+     "comp_shift": 1.5,
+     "comp_p": 0.4501
+    }
+   },
+   "top_states": [
+    "cDC2-2",
+    "B Memory-2",
+    "pre-DC-2",
+    "Classical-Mono",
+    "ERP-2"
+   ]
+  },
+  "TP53": {
+   "n_mut": 12,
+   "n_non": 349,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.653,
+     "n_mut": 6,
+     "n_non": 226,
+     "comp_shift": -20.0,
+     "comp_p": 0.4127
+    },
+    "B Memory-2": {
+     "auroc": 0.515,
+     "n_mut": 9,
+     "n_non": 155,
+     "comp_shift": 21.0,
+     "comp_p": 0.0884
+    },
+    "BMCP-1": {
+     "auroc": 0.744,
+     "n_mut": 6,
+     "n_non": 136,
+     "comp_shift": 3.5,
+     "comp_p": 0.1367
+    },
+    "CD4 TCM": {
+     "auroc": 0.635,
+     "n_mut": 12,
+     "n_non": 299,
+     "comp_shift": 22.5,
+     "comp_p": 0.2634
+    },
+    "CD8 TEM": {
+     "auroc": 0.763,
+     "n_mut": 12,
+     "n_non": 281,
+     "comp_shift": 88.5,
+     "comp_p": 0.0405
+    },
+    "Classical-Mono": {
+     "auroc": 0.798,
+     "n_mut": 11,
+     "n_non": 209,
+     "comp_shift": 85.0,
+     "comp_p": 0.0712
+    },
+    "ERP-7": {
+     "auroc": 0.752,
+     "n_mut": 5,
+     "n_non": 101,
+     "comp_shift": 4.0,
+     "comp_p": 0.1723
+    },
+    "ERP-8": {
+     "auroc": 0.699,
+     "n_mut": 7,
+     "n_non": 142,
+     "comp_shift": 8.5,
+     "comp_p": 0.1678
+    },
+    "Erythroblast-1": {
+     "auroc": 0.503,
+     "n_mut": 5,
+     "n_non": 116,
+     "comp_shift": 1.5,
+     "comp_p": 0.2757
+    },
+    "Erythroblast-3": {
+     "auroc": 0.756,
+     "n_mut": 11,
+     "n_non": 185,
+     "comp_shift": 61.5,
+     "comp_p": 0.0095
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.855,
+     "n_mut": 9,
+     "n_non": 246,
+     "comp_shift": 29.0,
+     "comp_p": 0.9439
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.633,
+     "n_mut": 9,
+     "n_non": 217,
+     "comp_shift": 4.0,
+     "comp_p": 0.7747
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.787,
+     "n_mut": 9,
+     "n_non": 255,
+     "comp_shift": -25.5,
+     "comp_p": 0.7827
+    },
+    "LMPP-1": {
+     "auroc": 0.916,
+     "n_mut": 10,
+     "n_non": 167,
+     "comp_shift": 44.0,
+     "comp_p": 0.0691
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.773,
+     "n_mut": 12,
+     "n_non": 225,
+     "comp_shift": -1.0,
+     "comp_p": 0.4694
+    },
+    "LMPP-2": {
+     "auroc": 0.657,
+     "n_mut": 6,
+     "n_non": 216,
+     "comp_shift": -25.0,
+     "comp_p": 0.1563
+    },
+    "MAIT": {
+     "auroc": 0.692,
+     "n_mut": 12,
+     "n_non": 259,
+     "comp_shift": 11.0,
+     "comp_p": 0.4853
+    },
+    "MDP-1": {
+     "auroc": 0.731,
+     "n_mut": 7,
+     "n_non": 180,
+     "comp_shift": 0.0,
+     "comp_p": 0.2856
+    },
+    "MDP-2": {
+     "auroc": 0.716,
+     "n_mut": 6,
+     "n_non": 193,
+     "comp_shift": -3.5,
+     "comp_p": 0.6848
+    },
+    "MEP-1": {
+     "auroc": 0.871,
+     "n_mut": 11,
+     "n_non": 159,
+     "comp_shift": 9.5,
+     "comp_p": 0.0932
+    },
+    "MEP-2": {
+     "auroc": 0.73,
+     "n_mut": 8,
+     "n_non": 231,
+     "comp_shift": -8.0,
+     "comp_p": 0.8681
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.831,
+     "n_mut": 5,
+     "n_non": 137,
+     "comp_shift": 1.5,
+     "comp_p": 0.7306
+    },
+    "MKP-early": {
+     "auroc": 0.667,
+     "n_mut": 5,
+     "n_non": 81,
+     "comp_shift": 3.0,
+     "comp_p": 0.1336
+    },
+    "MPP-1": {
+     "auroc": 0.767,
+     "n_mut": 6,
+     "n_non": 123,
+     "comp_shift": 7.0,
+     "comp_p": 0.1712
+    },
+    "MPP-MEP": {
+     "auroc": 0.818,
+     "n_mut": 11,
+     "n_non": 296,
+     "comp_shift": -74.0,
+     "comp_p": 0.157
+    },
+    "Mono-1": {
+     "auroc": 0.693,
+     "n_mut": 6,
+     "n_non": 193,
+     "comp_shift": -3.5,
+     "comp_p": 0.8555
+    },
+    "Mono-2": {
+     "auroc": 0.933,
+     "n_mut": 10,
+     "n_non": 218,
+     "comp_shift": 8.0,
+     "comp_p": 0.4426
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.752,
+     "n_mut": 6,
+     "n_non": 280,
+     "comp_shift": -153.0,
+     "comp_p": 0.0747
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.954,
+     "n_mut": 9,
+     "n_non": 202,
+     "comp_shift": 23.5,
+     "comp_p": 0.465
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.896,
+     "n_mut": 8,
+     "n_non": 153,
+     "comp_shift": 12.0,
+     "comp_p": 0.279
+    },
+    "Multilin-1": {
+     "auroc": 0.847,
+     "n_mut": 8,
+     "n_non": 216,
+     "comp_shift": 21.5,
+     "comp_p": 0.3536
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.833,
+     "n_mut": 5,
+     "n_non": 162,
+     "comp_shift": -2.5,
+     "comp_p": 0.8841
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.651,
+     "n_mut": 7,
+     "n_non": 193,
+     "comp_shift": 2.0,
+     "comp_p": 0.8292
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.713,
+     "n_mut": 5,
+     "n_non": 193,
+     "comp_shift": -9.5,
+     "comp_p": 0.6679
+    },
+    "NK-Mature": {
+     "auroc": 0.745,
+     "n_mut": 12,
+     "n_non": 317,
+     "comp_shift": 176.0,
+     "comp_p": 0.0724
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.617,
+     "n_mut": 9,
+     "n_non": 232,
+     "comp_shift": -2.5,
+     "comp_p": 0.8947
+    },
+    "Plasma Cell": {
+     "auroc": 0.514,
+     "n_mut": 8,
+     "n_non": 120,
+     "comp_shift": 11.0,
+     "comp_p": 0.0263
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.762,
+     "n_mut": 11,
+     "n_non": 250,
+     "comp_shift": 26.5,
+     "comp_p": 0.1206
+    },
+    "T CD4 Naive-2": {
+     "auroc": 0.666,
+     "n_mut": 8,
+     "n_non": 100,
+     "comp_shift": 27.0,
+     "comp_p": 0.0142
+    },
+    "T CD8 Naive": {
+     "auroc": 0.706,
+     "n_mut": 8,
+     "n_non": 136,
+     "comp_shift": 7.5,
+     "comp_p": 0.0443
+    },
+    "cDC1": {
+     "auroc": 0.916,
+     "n_mut": 6,
+     "n_non": 178,
+     "comp_shift": 0.0,
+     "comp_p": 0.7964
+    },
+    "cDC2-1": {
+     "auroc": 0.537,
+     "n_mut": 5,
+     "n_non": 174,
+     "comp_shift": -0.5,
+     "comp_p": 0.9023
+    },
+    "cMOP": {
+     "auroc": 0.623,
+     "n_mut": 6,
+     "n_non": 140,
+     "comp_shift": 4.0,
+     "comp_p": 0.6408
+    },
+    "immNeu-1": {
+     "auroc": 0.883,
+     "n_mut": 7,
+     "n_non": 109,
+     "comp_shift": 12.0,
+     "comp_p": 0.1652
+    },
+    "preNeu": {
+     "auroc": 0.912,
+     "n_mut": 9,
+     "n_non": 204,
+     "comp_shift": 15.5,
+     "comp_p": 0.482
+    }
+   },
+   "top_states": [
+    "MultiLin-GMP-2",
+    "Mono-2",
+    "LMPP-1",
+    "cDC1",
+    "preNeu"
+   ]
+  },
+  "WT1": {
+   "n_mut": 9,
+   "n_non": 352,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.597,
+     "n_mut": 6,
+     "n_non": 226,
+     "comp_shift": 99.5,
+     "comp_p": 0.3632
+    },
+    "B Memory-2": {
+     "auroc": 0.615,
+     "n_mut": 5,
+     "n_non": 159,
+     "comp_shift": 7.0,
+     "comp_p": 0.2069
+    },
+    "CD4 TCM": {
+     "auroc": 0.65,
+     "n_mut": 7,
+     "n_non": 304,
+     "comp_shift": -35.0,
+     "comp_p": 0.3391
+    },
+    "CD8 TEM": {
+     "auroc": 0.8,
+     "n_mut": 8,
+     "n_non": 285,
+     "comp_shift": -37.5,
+     "comp_p": 0.0824
+    },
+    "Classical-Mono": {
+     "auroc": 0.536,
+     "n_mut": 7,
+     "n_non": 213,
+     "comp_shift": 17.0,
+     "comp_p": 0.4735
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.564,
+     "n_mut": 7,
+     "n_non": 248,
+     "comp_shift": 20.5,
+     "comp_p": 0.8983
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.639,
+     "n_mut": 6,
+     "n_non": 220,
+     "comp_shift": -20.5,
+     "comp_p": 0.7507
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.509,
+     "n_mut": 8,
+     "n_non": 256,
+     "comp_shift": 79.0,
+     "comp_p": 0.4084
+    },
+    "LMPP-1": {
+     "auroc": 0.527,
+     "n_mut": 5,
+     "n_non": 172,
+     "comp_shift": 51.0,
+     "comp_p": 0.2762
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.631,
+     "n_mut": 8,
+     "n_non": 229,
+     "comp_shift": -11.5,
+     "comp_p": 0.8651
+    },
+    "LMPP-2": {
+     "auroc": 0.738,
+     "n_mut": 6,
+     "n_non": 216,
+     "comp_shift": 15.5,
+     "comp_p": 0.9961
+    },
+    "MAIT": {
+     "auroc": 0.528,
+     "n_mut": 6,
+     "n_non": 265,
+     "comp_shift": -20.0,
+     "comp_p": 0.1432
+    },
+    "MDP-1": {
+     "auroc": 0.505,
+     "n_mut": 5,
+     "n_non": 182,
+     "comp_shift": 61.0,
+     "comp_p": 0.2866
+    },
+    "MDP-2": {
+     "auroc": 0.53,
+     "n_mut": 7,
+     "n_non": 192,
+     "comp_shift": 16.0,
+     "comp_p": 0.2805
+    },
+    "MEP-1": {
+     "auroc": 0.549,
+     "n_mut": 6,
+     "n_non": 164,
+     "comp_shift": 7.0,
+     "comp_p": 0.5919
+    },
+    "MEP-2": {
+     "auroc": 0.772,
+     "n_mut": 7,
+     "n_non": 232,
+     "comp_shift": 112.0,
+     "comp_p": 0.0837
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.515,
+     "n_mut": 5,
+     "n_non": 137,
+     "comp_shift": 5.0,
+     "comp_p": 0.244
+    },
+    "MPP-MEP": {
+     "auroc": 0.511,
+     "n_mut": 9,
+     "n_non": 298,
+     "comp_shift": 164.5,
+     "comp_p": 0.2555
+    },
+    "Mono-2": {
+     "auroc": 0.557,
+     "n_mut": 6,
+     "n_non": 222,
+     "comp_shift": -15.5,
+     "comp_p": 0.8879
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.611,
+     "n_mut": 8,
+     "n_non": 278,
+     "comp_shift": -95.5,
+     "comp_p": 0.9935
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.546,
+     "n_mut": 6,
+     "n_non": 205,
+     "comp_shift": 321.5,
+     "comp_p": 0.044
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.525,
+     "n_mut": 6,
+     "n_non": 155,
+     "comp_shift": 18.0,
+     "comp_p": 0.0915
+    },
+    "Multilin-1": {
+     "auroc": 0.533,
+     "n_mut": 7,
+     "n_non": 217,
+     "comp_shift": 9.0,
+     "comp_p": 0.4193
+    },
+    "Multilin-2": {
+     "auroc": 0.919,
+     "n_mut": 5,
+     "n_non": 135,
+     "comp_shift": 20.0,
+     "comp_p": 0.5327
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.535,
+     "n_mut": 5,
+     "n_non": 195,
+     "comp_shift": 2.0,
+     "comp_p": 0.6062
+    },
+    "NK-Mature": {
+     "auroc": 0.541,
+     "n_mut": 8,
+     "n_non": 321,
+     "comp_shift": -82.0,
+     "comp_p": 0.3006
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.705,
+     "n_mut": 8,
+     "n_non": 233,
+     "comp_shift": 21.0,
+     "comp_p": 0.262
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.505,
+     "n_mut": 5,
+     "n_non": 256,
+     "comp_shift": -20.0,
+     "comp_p": 0.8384
+    },
+    "cDC1": {
+     "auroc": 0.518,
+     "n_mut": 5,
+     "n_non": 179,
+     "comp_shift": 0.0,
+     "comp_p": 0.7409
+    },
+    "preNeu": {
+     "auroc": 0.519,
+     "n_mut": 6,
+     "n_non": 207,
+     "comp_shift": 4.0,
+     "comp_p": 0.5941
+    }
+   },
+   "top_states": [
+    "Multilin-2",
+    "CD8 TEM",
+    "MEP-2",
+    "LMPP-2",
+    "Non-Classical Mono-2"
+   ]
+  },
+  "inv(16)_CBFB-MYH11": {
+   "n_mut": 11,
+   "n_non": 350,
+   "states": {
+    "B Memory-1": {
+     "auroc": 0.888,
+     "n_mut": 9,
+     "n_non": 223,
+     "comp_shift": -5.0,
+     "comp_p": 0.9742
+    },
+    "BMCP-1": {
+     "auroc": 0.991,
+     "n_mut": 10,
+     "n_non": 132,
+     "comp_shift": 50.0,
+     "comp_p": 0.0009
+    },
+    "CD4 TCM": {
+     "auroc": 0.718,
+     "n_mut": 11,
+     "n_non": 300,
+     "comp_shift": 9.5,
+     "comp_p": 0.6931
+    },
+    "CD8 TEM": {
+     "auroc": 0.73,
+     "n_mut": 8,
+     "n_non": 285,
+     "comp_shift": -49.5,
+     "comp_p": 0.063
+    },
+    "Classical-Mono": {
+     "auroc": 0.981,
+     "n_mut": 6,
+     "n_non": 214,
+     "comp_shift": -15.0,
+     "comp_p": 0.2392
+    },
+    "Intermediate Mono-1": {
+     "auroc": 0.906,
+     "n_mut": 11,
+     "n_non": 244,
+     "comp_shift": 851.5,
+     "comp_p": 0.0001
+    },
+    "Intermediate Mono-2": {
+     "auroc": 0.967,
+     "n_mut": 11,
+     "n_non": 215,
+     "comp_shift": 43.5,
+     "comp_p": 0.0757
+    },
+    "Intermediate Mono-3": {
+     "auroc": 0.99,
+     "n_mut": 11,
+     "n_non": 253,
+     "comp_shift": 555.0,
+     "comp_p": 0.0001
+    },
+    "LMPP-1": {
+     "auroc": 0.998,
+     "n_mut": 5,
+     "n_non": 172,
+     "comp_shift": -2.0,
+     "comp_p": 0.6804
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.98,
+     "n_mut": 10,
+     "n_non": 227,
+     "comp_shift": 57.5,
+     "comp_p": 0.2553
+    },
+    "LMPP-2": {
+     "auroc": 0.973,
+     "n_mut": 10,
+     "n_non": 212,
+     "comp_shift": 111.5,
+     "comp_p": 0.039
+    },
+    "MAIT": {
+     "auroc": 0.754,
+     "n_mut": 10,
+     "n_non": 261,
+     "comp_shift": -2.0,
+     "comp_p": 0.7502
+    },
+    "MDP-1": {
+     "auroc": 0.981,
+     "n_mut": 10,
+     "n_non": 177,
+     "comp_shift": 65.0,
+     "comp_p": 0.0014
+    },
+    "MDP-2": {
+     "auroc": 0.973,
+     "n_mut": 9,
+     "n_non": 190,
+     "comp_shift": 59.0,
+     "comp_p": 0.0724
+    },
+    "MDP-3": {
+     "auroc": 0.937,
+     "n_mut": 5,
+     "n_non": 60,
+     "comp_shift": 8.5,
+     "comp_p": 0.0259
+    },
+    "MEP-1": {
+     "auroc": 0.985,
+     "n_mut": 5,
+     "n_non": 165,
+     "comp_shift": 0.0,
+     "comp_p": 0.9158
+    },
+    "MEP-2": {
+     "auroc": 0.992,
+     "n_mut": 8,
+     "n_non": 231,
+     "comp_shift": -5.0,
+     "comp_p": 0.8098
+    },
+    "MPP-MEP": {
+     "auroc": 0.986,
+     "n_mut": 10,
+     "n_non": 297,
+     "comp_shift": 176.5,
+     "comp_p": 0.3591
+    },
+    "Mono-1": {
+     "auroc": 0.954,
+     "n_mut": 10,
+     "n_non": 189,
+     "comp_shift": 101.0,
+     "comp_p": 0.001
+    },
+    "Mono-2": {
+     "auroc": 0.985,
+     "n_mut": 10,
+     "n_non": 218,
+     "comp_shift": 159.0,
+     "comp_p": 0.0084
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.989,
+     "n_mut": 11,
+     "n_non": 275,
+     "comp_shift": 2554.5,
+     "comp_p": 0.0
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.979,
+     "n_mut": 10,
+     "n_non": 201,
+     "comp_shift": 72.0,
+     "comp_p": 0.1
+    },
+    "MultiLin-GMP-3": {
+     "auroc": 0.94,
+     "n_mut": 6,
+     "n_non": 155,
+     "comp_shift": 5.0,
+     "comp_p": 0.9092
+    },
+    "Multilin-1": {
+     "auroc": 0.985,
+     "n_mut": 10,
+     "n_non": 214,
+     "comp_shift": 13.0,
+     "comp_p": 0.56
+    },
+    "Myeloid intermediate 1": {
+     "auroc": 0.975,
+     "n_mut": 7,
+     "n_non": 160,
+     "comp_shift": 5.0,
+     "comp_p": 0.3863
+    },
+    "Myeloid intermediate 2": {
+     "auroc": 0.928,
+     "n_mut": 10,
+     "n_non": 190,
+     "comp_shift": 89.0,
+     "comp_p": 0.0035
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.962,
+     "n_mut": 10,
+     "n_non": 188,
+     "comp_shift": 24.0,
+     "comp_p": 0.0984
+    },
+    "NK-Mature": {
+     "auroc": 0.511,
+     "n_mut": 9,
+     "n_non": 320,
+     "comp_shift": -100.5,
+     "comp_p": 0.0007
+    },
+    "Non-Classical Mono-2": {
+     "auroc": 0.977,
+     "n_mut": 11,
+     "n_non": 230,
+     "comp_shift": 73.5,
+     "comp_p": 0.0138
+    },
+    "T CD4 Activated": {
+     "auroc": 0.782,
+     "n_mut": 9,
+     "n_non": 118,
+     "comp_shift": 22.0,
+     "comp_p": 0.0019
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.642,
+     "n_mut": 10,
+     "n_non": 251,
+     "comp_shift": 10.5,
+     "comp_p": 0.9625
+    },
+    "cDC1": {
+     "auroc": 0.969,
+     "n_mut": 10,
+     "n_non": 174,
+     "comp_shift": 88.0,
+     "comp_p": 0.0014
+    },
+    "cDC2-1": {
+     "auroc": 0.971,
+     "n_mut": 10,
+     "n_non": 169,
+     "comp_shift": 96.0,
+     "comp_p": 0.0001
+    },
+    "cDC2-2": {
+     "auroc": 0.961,
+     "n_mut": 11,
+     "n_non": 149,
+     "comp_shift": 328.5,
+     "comp_p": 0.0
+    },
+    "cMOP": {
+     "auroc": 0.975,
+     "n_mut": 8,
+     "n_non": 138,
+     "comp_shift": 7.0,
+     "comp_p": 0.2116
+    },
+    "pDC": {
+     "auroc": 0.989,
+     "n_mut": 7,
+     "n_non": 113,
+     "comp_shift": 14.0,
+     "comp_p": 0.0526
+    },
+    "pre-DC-2": {
+     "auroc": 0.962,
+     "n_mut": 8,
+     "n_non": 142,
+     "comp_shift": 24.0,
+     "comp_p": 0.0125
+    },
+    "pre-DC-3": {
+     "auroc": 0.946,
+     "n_mut": 7,
+     "n_non": 88,
+     "comp_shift": 16.0,
+     "comp_p": 0.0025
+    },
+    "preNeu": {
+     "auroc": 0.984,
+     "n_mut": 10,
+     "n_non": 203,
+     "comp_shift": 18.0,
+     "comp_p": 0.226
+    }
+   },
+   "top_states": [
+    "LMPP-1",
+    "MEP-2",
+    "BMCP-1",
+    "Intermediate Mono-3",
+    "MultiLin-GMP-1"
+   ]
+  },
+  "t(8;21)_RUNX1-RUNX1T1": {
+   "n_mut": 5,
+   "n_non": 356,
+   "states": {
+    "BMCP-1": {
+     "auroc": 0.829,
+     "n_mut": 5,
+     "n_non": 137,
+     "comp_shift": 124.0,
+     "comp_p": 0.0051
+    },
+    "CD4 TCM": {
+     "auroc": 0.753,
+     "n_mut": 5,
+     "n_non": 306,
+     "comp_shift": 30.5,
+     "comp_p": 0.5216
+    },
+    "CD8 TEM": {
+     "auroc": 0.571,
+     "n_mut": 5,
+     "n_non": 288,
+     "comp_shift": 49.0,
+     "comp_p": 0.498
+    },
+    "LMPP-1-cycling": {
+     "auroc": 0.981,
+     "n_mut": 5,
+     "n_non": 232,
+     "comp_shift": 84.0,
+     "comp_p": 0.2571
+    },
+    "MAIT": {
+     "auroc": 0.604,
+     "n_mut": 5,
+     "n_non": 266,
+     "comp_shift": 15.0,
+     "comp_p": 0.3166
+    },
+    "MEP-1": {
+     "auroc": 0.965,
+     "n_mut": 5,
+     "n_non": 165,
+     "comp_shift": 30.0,
+     "comp_p": 0.0221
+    },
+    "MEP-2": {
+     "auroc": 0.979,
+     "n_mut": 5,
+     "n_non": 234,
+     "comp_shift": 5.0,
+     "comp_p": 0.2863
+    },
+    "MEP-Eryth-2": {
+     "auroc": 0.896,
+     "n_mut": 5,
+     "n_non": 137,
+     "comp_shift": 66.0,
+     "comp_p": 0.0042
+    },
+    "MPP-MEP": {
+     "auroc": 0.903,
+     "n_mut": 5,
+     "n_non": 302,
+     "comp_shift": 413.5,
+     "comp_p": 0.0524
+    },
+    "Mono-1": {
+     "auroc": 0.945,
+     "n_mut": 5,
+     "n_non": 194,
+     "comp_shift": 34.0,
+     "comp_p": 0.2186
+    },
+    "MultiLin-GMP-1": {
+     "auroc": 0.889,
+     "n_mut": 5,
+     "n_non": 281,
+     "comp_shift": 137.5,
+     "comp_p": 0.1761
+    },
+    "MultiLin-GMP-2": {
+     "auroc": 0.967,
+     "n_mut": 5,
+     "n_non": 206,
+     "comp_shift": 591.0,
+     "comp_p": 0.0057
+    },
+    "Multilin-1": {
+     "auroc": 0.949,
+     "n_mut": 5,
+     "n_non": 219,
+     "comp_shift": 43.0,
+     "comp_p": 0.0977
+    },
+    "Myeloid intermediate 3": {
+     "auroc": 0.904,
+     "n_mut": 5,
+     "n_non": 193,
+     "comp_shift": 171.0,
+     "comp_p": 0.0162
+    },
+    "NK-Mature": {
+     "auroc": 0.687,
+     "n_mut": 5,
+     "n_non": 324,
+     "comp_shift": -23.0,
+     "comp_p": 0.8919
+    },
+    "T CD4 Naive-1": {
+     "auroc": 0.508,
+     "n_mut": 5,
+     "n_non": 256,
+     "comp_shift": 12.0,
+     "comp_p": 0.618
+    },
+    "preNeu": {
+     "auroc": 0.959,
+     "n_mut": 5,
+     "n_non": 208,
+     "comp_shift": 625.5,
+     "comp_p": 0.0054
+    }
+   },
+   "top_states": [
+    "LMPP-1-cycling",
+    "MEP-2",
+    "MultiLin-GMP-2",
+    "MEP-1",
+    "preNeu"
+   ]
+  }
+ }
+}

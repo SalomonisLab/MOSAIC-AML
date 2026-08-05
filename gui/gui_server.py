@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""MATRIX-AML decision-board GUI server (stdlib only — no pip installs).
+"""MOSAIC-AML decision-board GUI server (stdlib only — no pip installs).
 
-Serves the single-file front-end `matrix_board.html` plus a tiny JSON API that
+Serves the single-file front-end `mosaic_board.html` plus a tiny JSON API that
 auto-discovers per-patient reports under a `runs/` tree:
 
     python gui_server.py [runs_dir] [port]
@@ -45,7 +45,7 @@ class ThreadingHTTPServer(socketserver.ThreadingMixIn, HTTPServer):
     daemon_threads = True
 
 HERE = Path(__file__).resolve().parent
-HTML_PATH = HERE / "matrix_board.html"
+HTML_PATH = HERE / "mosaic_board.html"
 DEFAULT_RUNS = HERE.parent / "runs"
 REPORT_GLOB = "patient_report.json"   # canonical pipeline output (ignore *_test stubs)
 
@@ -56,6 +56,9 @@ PIPELINE_DIR = Path(os.environ.get("AMLMM_PIPELINE") or (HERE.parent / "pipeline
 INGEST_SCRIPT = PIPELINE_DIR / "ingest_patient.py"
 INBOX_DIR = Path(os.environ.get("AMLMM_INBOX") or (HERE.parent / "inbox")).resolve()
 LSF_MEM = os.environ.get("AMLMM_LSF_MEM", "8000")
+# Queue for dispatched ingests. Left at the site default, but exposed so a busy shared queue (a long
+# unrelated job ahead of you) does not silently stall a patient upload: AMLMM_LSF_QUEUE=<queue>.
+LSF_QUEUE = os.environ.get("AMLMM_LSF_QUEUE", "normal")
 USE_LSF = (shutil.which("bsub") is not None) and os.environ.get("AMLMM_NO_LSF") != "1"
 # The SERVER is stdlib-only and runs under ANY python3 (incl. the stock 3.6.8). The INGEST JOB
 # needs the analysis python (anndata/scanpy/sklearn). Under LSF the job runs on a COMPUTE node,
@@ -108,6 +111,8 @@ def _report_file(run: str) -> "Path | None":
 # override (show every dir with a report).
 BOARD_GROUPS = [("predict_", "Held-out validation (sealed test)"),
                 ("trumpp_", "Trumpp/Waclawiczek cohort"),
+                ("gse_", "GSE281087 (single-cell external · n=15)"),
+                ("leucegene_", "Leucegene (bulk external · n=367)"),
                 ("ingest_", "Uploaded patients")]
 SHOW_ALL = os.environ.get("AMLMM_SHOW_ALL") == "1"
 
@@ -132,16 +137,33 @@ def scan_runs() -> "list[dict]":
         if not hits:
             continue
         rep = _load_json(hits[0])
+        # Hide reports still carrying pre-bulk-caller calls. A few samples (Colorado::AML-05/-06,
+        # Milan::PT01__D14) are no longer in the atlas, so rescore_all_bulk could not recompute their
+        # bulk-equivalent and they kept the old 26-mutation sc predictions — showing them next to
+        # 58-category reports is misleading. Set AMLMM_SHOW_ALL=1 to see them anyway.
+        # `predictor` is the multimodal trainer's stamp, `mutation_caller` the bulk caller's — a report
+        # carrying EITHER is current; only ones with neither are pre-rescore leftovers.
+        if not SHOW_ALL and isinstance(rep, dict) and rep.get("mutation_predictions") \
+                and not rep.get("mutation_caller") and not rep.get("predictor"):
+            continue
         con = rep.get("consensus", {}) if isinstance(rep, dict) else {}
         preds = rep.get("mutation_predictions") if isinstance(rep, dict) else None
+        # GENE-LEVEL validation (gene_validation.py): a gene's variant categories are aggregated to one
+        # gene-level call (present iff any variant is called present) vs the gene's known status. This
+        # scores ~40 genes+cyto units, not just the ~17 categories whose exact variant is known.
         n_correct = n_labeled = None
-        if isinstance(preds, list):             # validation accuracy at a glance (predicted call vs known)
+        vg = rep.get("validation_gene") if isinstance(rep, dict) else None
+        if isinstance(vg, dict) and vg.get("n_labeled"):
+            n_labeled = vg["n_labeled"]; n_correct = vg["n_correct"]
+        elif isinstance(preds, list):           # fallback: variant-level, for reports without a gene pass
             labeled = [p for p in preds if p.get("true_label")]
-            n_labeled = len(labeled)
-            n_correct = sum(1 for p in labeled if p.get("true_label") == p.get("call"))
+            n_labeled = len(labeled) or None
+            n_correct = sum(1 for p in labeled if p.get("true_label") == p.get("call")) if labeled else None
         out.append({
             "run": d.name,
             "group": group,
+            # so the drug page can offer only the runs it can actually show
+            "has_drug_report": (d / "drug_report.json").is_file(),
             "sample_key": rep.get("sample_key"),
             "annotation": rep.get("annotation"),
             "dataset": rep.get("dataset"),
@@ -193,12 +215,41 @@ def _set_status(run_dir: Path, state, step, message=""):
         pass
 
 
+def _spawn_explainer(run_id, run_dir):
+    """After a dispatched ingest lands, add the AGENT's therapy explanations.
+
+    The pipeline runs via bsub on a COMPUTE node, and compute nodes are firewalled from the LLM gateway
+    (port 4000 answers only on the login node) — so the report would otherwise show deterministic [RULES]
+    text. THIS server runs on the login node, so a watcher spawned from here can reach the gateway.
+    Best-effort: if it fails, the report still has its deterministic explanation."""
+    w = PIPELINE_DIR / "await_and_explain.py"
+    if not w.is_file():
+        return
+    try:
+        subprocess.Popen([PYTHON, str(w), str(run_dir), run_id],
+                         stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT,
+                         cwd=str(PIPELINE_DIR), start_new_session=True)
+    except Exception:  # noqa: BLE001
+        pass
+
+
 def dispatch_ingest(name, sample, mutations="", dataset="uploaded", kind="scrna",
                     bulk_ref="beataml", bulk_scale="auto"):
     """Kick off ingest_patient.py for a new sample (single-cell or bulk RNA). Returns {run_id, job_id, mode}
     or {error}. argv is a list (no shell) so user-supplied fields cannot inject commands."""
     if not INGEST_SCRIPT.is_file():
         return {"error": f"ingest script not found: {INGEST_SCRIPT}"}
+    # Resolve the sample the caller gave us. /api/samples hands back full paths, but a user typing into
+    # the box (or a script posting the label it just listed) will send a bare filename — which the child
+    # process cannot find, since its working directory is not the inbox. Resolve against the inbox and
+    # fail HERE with a readable message rather than launching a job that dies on a file-open error.
+    sample = str(sample).strip()
+    if sample and not os.path.exists(sample):
+        cand = INBOX_DIR / sample
+        if cand.exists():
+            sample = str(cand)
+        else:
+            return {"error": f"sample not found: {sample!r} (also looked in the inbox, {INBOX_DIR})"}
     run_id = _slug(name)
     run_dir = RUNS_DIR / run_id
     _set_status(run_dir, "queued", "submitting", name)
@@ -217,7 +268,7 @@ def dispatch_ingest(name, sample, mutations="", dataset="uploaded", kind="scrna"
     try:
         if USE_LSF:
             mem = "4000" if kind == "bulk" else LSF_MEM      # bulk skips the atlas load -> lighter job
-            bsub = ["bsub", "-q", "normal", "-J", f"aml_{run_id}", "-M", mem,
+            bsub = ["bsub", "-q", LSF_QUEUE, "-J", f"aml_{run_id}", "-M", mem,
                     "-R", f"rusage[mem={mem}]", "-o", log, "-e", log] + cmd
             p = subprocess.run(bsub, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                universal_newlines=True, timeout=90)
@@ -225,6 +276,7 @@ def dispatch_ingest(name, sample, mutations="", dataset="uploaded", kind="scrna"
                 _set_status(run_dir, "error", "submit", (p.stderr or p.stdout or "bsub failed")[:300])
                 return {"error": (p.stderr or p.stdout or "bsub failed")[:300], "run_id": run_id}
             m = re.search(r"Job <(\d+)>", p.stdout or "")
+            _spawn_explainer(run_id, run_dir)
             return {"run_id": run_id, "job_id": (m.group(1) if m else None), "mode": "lsf"}
         # local fallback: detached background process
         fh = open(log, "w", encoding="utf-8")
@@ -267,7 +319,7 @@ def list_samples() -> "list[dict]":
 
 
 class Handler(BaseHTTPRequestHandler):
-    server_version = "MatrixAMLBoard/1.0"
+    server_version = "MosaicAMLBoard/1.0"
 
     def _send(self, code, body: bytes, ctype: str):
         self.send_response(code)
@@ -285,17 +337,43 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):  # noqa: N802
         u = urlparse(self.path)
         path, qs = u.path, parse_qs(u.query)
-        if path in ("/", "/index.html", "/matrix_board.html"):
+        if path in ("/", "/index.html", "/mosaic_board.html"):
             if not HTML_PATH.is_file():
-                return self._send(500, b"matrix_board.html not found next to gui_server.py",
+                return self._send(500, b"mosaic_board.html not found next to gui_server.py",
                                   "text/plain; charset=utf-8")
             return self._send(200, HTML_PATH.read_bytes(), "text/html; charset=utf-8")
-        if path in ("/evidence.html", "/evidence.json", "/mutation_frequency.json", "/reliability.json",
-                    "/calibration.html", "/cellstate_localization.json", "/vaf_by_mutation.json"):
+        if path in ("/evidence.html", "/evidence.json", "/evidence_samples.json",
+                    "/mutation_frequency.json", "/reliability.json", "/validation.html", "/validation_stats.json",
+                    "/calibration.html", "/cellstate_localization.json", "/vaf_by_mutation.json",
+                    "/therapy.html", "/rx_validation.html",
+                    "/cebpa_evidence.html", "/cebpa_violin_data.json", "/bulk_bakeoff_results.json"):
             fp = HERE / path.lstrip("/")
             if not fp.is_file():
                 return self._send(404, path.encode() + b" not found", "text/plain; charset=utf-8")
             ctype = "text/html; charset=utf-8" if path.endswith(".html") else "application/json; charset=utf-8"
+            return self._send(200, fp.read_bytes(), ctype)
+        if path.startswith("/vendor/"):                 # third-party JS vendored so the pages work offline
+            name = os.path.basename(path[len("/vendor/"):])
+            fp = HERE / "vendor" / name
+            if not name.endswith(".js") or not fp.is_file():
+                return self._send(404, path.encode() + b" not found", "text/plain; charset=utf-8")
+            return self._send(200, fp.read_bytes(), "application/javascript; charset=utf-8")
+        if path.startswith("/val/"):                    # validation assets from ../deliverables (figures, tables)
+            rel = path[len("/val/"):]
+            # one optional whitelisted subdirectory (deliverables/figures/), basename only otherwise --
+            # the basename strip is the path-traversal guard, so the subdir must be an exact match
+            sub = ""
+            if "/" in rel:
+                head, rel = rel.split("/", 1)
+                if head in ("figures", "tables"):
+                    sub = head
+            name = os.path.basename(rel)
+            ext = os.path.splitext(name)[1].lower()
+            ctype = {".png": "image/png", ".pdf": "application/pdf", ".tsv": "text/tab-separated-values; charset=utf-8",
+                     ".md": "text/markdown; charset=utf-8", ".json": "application/json; charset=utf-8"}.get(ext)
+            fp = (HERE.parent / "deliverables" / sub / name) if sub else (HERE.parent / "deliverables" / name)
+            if ctype is None or not fp.is_file():
+                return self._send(404, path.encode() + b" not found", "text/plain; charset=utf-8")
             return self._send(200, fp.read_bytes(), ctype)
         if path == "/api/runs":
             return self._json({"runs_dir": str(RUNS_DIR), "runs": scan_runs()})
@@ -305,6 +383,15 @@ class Handler(BaseHTTPRequestHandler):
             if rep is None:
                 return self._json({"error": f"no report for run {run!r}"}, code=404)
             return self._json(rep)
+        if path == "/api/drug_report":
+            # COMPASS-AML per-patient prioritisation, written next to the patient report by predict_drugs.py
+            run = (qs.get("run") or [""])[0]
+            f = _report_file(run)
+            dr = (f.parent / "drug_report.json") if f is not None else None
+            if dr is None or not dr.is_file():
+                return self._json({"error": f"no drug report for run {run!r}",
+                                   "hint": "run pipeline/predict_drugs.py for this sample"}, code=404)
+            return self._json(_load_json(dr))
         if path == "/api/capabilities":
             return self._json({"ingest": INGEST_SCRIPT.is_file(), "lsf": USE_LSF,
                                "inbox": str(INBOX_DIR), "inbox_exists": INBOX_DIR.is_dir(),
@@ -350,7 +437,7 @@ def main():
     n = len(scan_runs())
     httpd = ThreadingHTTPServer(("127.0.0.1", port), Handler)
     url = f"http://127.0.0.1:{port}/"
-    print(f"MATRIX-AML board -> {url}")
+    print(f"MOSAIC-AML board -> {url}")
     print(f"  runs dir : {RUNS_DIR}")
     print(f"  reports  : {n} found")
     if INGEST_SCRIPT.is_file():

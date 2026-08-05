@@ -1,4 +1,4 @@
-# MATRIX-AML — Developer / Experiment Log
+# MOSAIC-AML — Developer / Experiment Log
 
 Running log of the multimodal mutation-prediction work: every experiment, its method, its result, and
 the decisions taken. Newest sections at the bottom of each theme. Companion to `OVERVIEW.md`
@@ -128,9 +128,9 @@ even their oracle is only 0.80–0.91), NOT cleverer combining.
 
 ---
 
-## 6. UDON for RNA (nathan request)
+## 6. UDON for RNA (boss request)
 
-- **Question (nathan):** is RNA using UDON clusters + control-normalized fold-change vectors? They're most
+- **Question (boss):** is RNA using UDON clusters + control-normalized fold-change vectors? They're most
   relevant for RNA.
 - **Finding (code-grounded):** the RNA modality used only the UDON marker **gene list** to subset, on **raw
   log1p expression**. The control-normalized **fold vectors** (`RNA/clusters/udon_result.h5ad`, verified
@@ -149,7 +149,7 @@ even their oracle is only 0.80–0.91), NOT cleverer combining.
 
 ---
 
-## 7. Healthy-vs-diseased control + control gate (nathan request)
+## 7. Healthy-vs-diseased control + control gate (boss request)
 
 - **First control** — `control_healthy_vs_disease.py`. 24 Control vs 263 diseased, donor-grouped CV.
   AUC 0.90–0.985 across 7/8 modalities (Lipid 0.985 best; **LSC fails 0.46**; ADT 0.902). spec(controls→healthy)
@@ -253,14 +253,14 @@ AUC SE ≈ 0.2 → those rows are not individually trustworthy and the combiner 
   The lever is data/feature quality (more positives; real non-imputed measurements), not the model or fusion
   method. Model + architecture space is exhausted.
 
-- **2026-06-30 13:29 EDT** — **Trumpp/Waclawiczek venetoclax-AML cohort ingestion (nathan task).** 16 scRNA
+- **2026-06-30 13:29 EDT** — **Trumpp/Waclawiczek venetoclax-AML cohort ingestion (boss task).** 16 scRNA
   samples (8 paired Diagnosis+Refractory; Waclawiczek et al., Cell Stem Cell 2025; LSC subtypes + mutations
-  + VEN/HMA response in `Trumpp.xlsx` Table S4). Submitted nathan's cellHarmony_lite alignment to the
+  + VEN/HMA response in `Trumpp.xlsx` Table S4). Submitted boss's cellHarmony_lite alignment to the
   Hs-BM-titrated 89-state reference → integrated h5ad. Job **777433 `h5ad_combine`** (12h/128G), script
   `/data/salomonis2/LabFiles/Frank-Li/scTriangulate/Hs_AML_UDON/run_cellHarmony_Trumpp.lsf`, out → that
   dir's `output/`. Pre-flight: all 16 soupX inputs (matrix.mtx+barcodes+genes) populated; caught CRLF in
   SoupX_filepaths_Trumpp.txt (harmless — cellHarmony does line.strip()). NOTE: salomonis2 share (NOT the
-  salomonis-archive MATRIX-AML data). Next: aligned h5ad → composition → run through mutation predictor +
+  salomonis-archive MOSAIC-AML data). Next: aligned h5ad → composition → run through mutation predictor +
   control gate as a VALIDATION cohort (known mutations = ground truth).
 
 - **2026-06-30 15:30 EDT — Trumpp validation, composition-only = the deployment gap (honest negative).**
@@ -321,7 +321,7 @@ AUC SE ≈ 0.2 → those rows are not individually trustworthy and the combiner 
     (per-driver prob/call/truth/✓✗ + per-modality contribution weight·score·cohort-OOF-AUC + provenance +
     abstention) alongside `patient_report.json`. Featured P13_Diagnosis (known NPM1/FLT3/DNMT3A): NPM1 0.82 TP
     (RNA+GRN), DNMT3A 0.85 TP (GRN), FLT3 0.32 FN (83%-ADT-weighted; imputed ADT score 0.30 — honest transfer
-    miss). Packaged as `MATRIX-AML_Trumpp_Report.docx` (answers + full table + P13 detail + methods + limits).
+    miss). Packaged as `MOSAIC-AML_Trumpp_Report.docx` (answers + full table + P13 detail + methods + limits).
   * Known limitation surfaced: binary calls over-call at a fixed 0.5 threshold (probs skew high in diseased
     marrow) → use probability ranking + abstention, per-driver calibrated thresholds are a quick add.
 
@@ -345,7 +345,7 @@ AUC SE ≈ 0.2 → those rows are not individually trustworthy and the combiner 
   * **RESULT: MEAN FULL 0.661 over 12 (unchanged mean — the sub-0.5 drivers are n⁺=2–4 noise, not modality
     gaps; 0/12 significantly below chance). Qualitative win: DNMT3A a confident 0.82, coverage complete for
     all but the 4 Metabolite drivers.** All 16 board reports + P13 `PREDICTION_REPORT.md` regenerated with the
-    full 7-modality contributions; deliverable `MATRIX-AML_Trumpp_Report.docx` refreshed.
+    full 7-modality contributions; deliverable `MOSAIC-AML_Trumpp_Report.docx` refreshed.
 
 - **2026-07-01 — Metabolite FOUND, all 8 modalities live, OOF-calibrated calls, runs/ cleaned + reran.**
   * **Metabolite bundle located** at `/data/salomonis-archive/LabFiles/Nathan/Revio/altanalyze3/altanalyze3/
@@ -362,7 +362,7 @@ AUC SE ≈ 0.2 → those rows are not individually trustworthy and the combiner 
     (Milan::PT01 = no atlas data). predictor.py gained `self.thresholds`.
   * **Board (gui): placeholders removed.** `scan_runs` now filters to real reports (predict_/trumpp_/ingest_)
     + groups them (Held-out / Trumpp / Uploaded) + per-sample predicted-vs-known accuracy pill; `AMLMM_SHOW_ALL=1`
-    overrides. matrix_board.html grouped roster. Verified in preview: 47 real runs render, no placeholders.
+    overrides. mosaic_board.html grouped roster. Verified in preview: 47 real runs render, no placeholders.
   * **runs/ cleared + reran with the new predictor.** Deleted **50 stale dev/scratch dirs** (probe/regr/disc/
     gpu/model/phase/patient_/run/subtype__; list saved `runs/_cleared_dev_runs.txt`). Kept 29 predict_ + 16
     trumpp_ (already regenerated OOF-calibrated 8-modality) + single_modality caches. **Reran the 2 old
@@ -372,12 +372,12 @@ AUC SE ≈ 0.2 → those rows are not individually trustworthy and the combiner 
     (scanpy pulls numba, incompatible w/ cluster numpy 2.4). AML7 = diseased (WT1 0.92, trisomy8 0.89 top);
     BF71-CD34 = **control** (CD34-sorted, face-valid; only RUNX1). `deploy_scrna.py` is the reusable
     arbitrary-scRNA full-chain path (what the GUI "Add patient" should call next).
-  * Deliverable for Nathan refreshed to final: `MATRIX-AML_Trumpp_Report.docx` (8 modalities, 0.677, calibrated
+  * Deliverable for Nathan refreshed to final: `MOSAIC-AML_Trumpp_Report.docx` (8 modalities, 0.677, calibrated
     calls, P13 report) — the "Metabolite off-cluster" note was corrected.
 
 ### 2026-07-02 — Therapy hypotheses + Recommended validations added to the deliverable report
 - **What:** Added two clinician-facing subsections to the P13 detailed prediction report (§3 of the combined
-  `MATRIX-AML_Trumpp_Report` and the standalone `PREDICTION_REPORT.md`): **Therapy hypotheses** (maps the
+  `MOSAIC-AML_Trumpp_Report` and the standalone `PREDICTION_REPORT.md`): **Therapy hypotheses** (maps the
   model's confident *present* calls — NPM1, DNMT3A, complex-karyotype — to a literature therapeutic rationale;
   explicitly flags the FLT3 negative call as low-trust because its signal is ~83% imputed-ADT-weighted) and
   **Recommended validations** (orthogonal confirmatory assays per driver, ordered by management impact:
@@ -386,7 +386,7 @@ AUC SE ≈ 0.2 → those rows are not individually trustworthy and the combiner 
   `targetable_therapies`/`recommended_validations`, but the external-cohort deliverable for Nathan did not.
 - **How:** edited both markdown reports; both sections are hypothesis-generating and carry a "not clinical
   guidance" banner (rendered as a styled blockquote). Added a `>` blockquote branch to `convert.js`
-  (left-rule + light-blue shading) so the disclaimer renders in Word; regenerated `MATRIX-AML_Trumpp_Report.docx`.
+  (left-rule + light-blue shading) so the disclaimer renders in Word; regenerated `MOSAIC-AML_Trumpp_Report.docx`.
 - **Result:** docx 17,412 → 19,190 bytes; verified via document.xml that both headings, all six validation
   rows, and the blockquote shading (`F2F6FB`) are present. Artifacts in `scratchpad/artifacts/`.
 
@@ -421,7 +421,7 @@ classification track, mirrored to the archive). Tested the two concrete things i
   Artifacts: `scratchpad/exp_nathan.py`, `exp_nathan_results.json`, `build_v2_labels.py`, `mutation_matrix_explicit_v2.tsv`.
 
 ### 2026-07-02 — Project presentation (.pptx) built
-- **What:** 15-slide `MATRIX-AML_Presentation.pptx` (in `scratchpad/artifacts/`), framed on the abstract
+- **What:** 15-slide `MOSAIC-AML_Presentation.pptx` (in `scratchpad/artifacts/`), framed on the abstract
   "A precision AI molecular-diagnostic & drug-repositioning platform for AML." Sections: challenge → vision →
   data foundation (383 samples / 12,255 pseudobulks / 89 states / 8 modalities) → Pillar 1 imputation →
   Pillar 2 late-fusion classification → Pillar 3 multi-agent engine → internal results (0.795 / ≈0.86 / control
@@ -437,16 +437,16 @@ classification track, mirrored to the archive). Tested the two concrete things i
 ### 2026-07-06 — Full head-to-head vs Nathan's marker-discovery pipeline (Lee thread)
 Nathan CC'd Lee with `singlecell_classification_metrics.xlsx` (per covariate x modality x cell_type OOF AUROC,
 5,473 rows, 31 covariates) + `bulk_cohort_classifiers_imputed_to_sc.xlsx` (bulk->sc transfer). Built a
-comprehensive comparison workbook (`Desktop/MATRIX-AML_vs_marker-pipeline.xlsx`, 7 sheets).
-- **exp_allcov.py** (LSF `long`/`test`, job 814440): ran MATRIX-AML fused multimodal donor-grouped OOF AUROC
+comprehensive comparison workbook (`Desktop/MOSAIC-AML_vs_marker-pipeline.xlsx`, 7 sheets).
+- **exp_allcov.py** (LSF `long`/`test`, job 814440): ran MOSAIC-AML fused multimodal donor-grouped OOF AUROC
   on EVERY covariate the pipeline ran, incl. ones our deployed predictor skipped (PHIP 0.978, SF3B1 0.858,
   JAK2 0.834, SRSF2 0.769, NF1 0.899, CEBPA 0.917, GATA2 0.919, KMT2A-rearr 0.965) + clinical (AML-vs-control
   0.995, FAB_monocytic 0.931, ELN_adverse 0.889, relapse 0.800, sex_M 0.693). 40 covariates.
 - **exp_percelltype.py** (LSF, job 814289): scored our features at his exact granularity — per
   (mutation x modality x cell-state), donor-grouped OOF + 200-perm null → 7,005 rows (his schema), 4,024 signal.
 - **Results (apples-to-apples, same metric both sides):** on fused OOF vs his median-across-cell-types OOF,
-  **MATRIX-AML wins 29/31 covariates** (losses: sex_M — his XIST/DDX3Y cell-type markers; ELN_adverse 0.889 vs
-  0.894 tie). Paired per-cell-type (3,032 identically-defined cells): **MATRIX-AML higher on 56% (1,690), mean
+  **MOSAIC-AML wins 29/31 covariates** (losses: sex_M — his XIST/DDX3Y cell-type markers; ELN_adverse 0.889 vs
+  0.894 tie). Paired per-cell-type (3,032 identically-defined cells): **MOSAIC-AML higher on 56% (1,690), mean
   0.716 vs 0.687**. Bulk->sc transfer: we win 31/31 (his transfer median AUROC_all ~0.55-0.63). Our per-modality
   mean OOF and full 7,005-row table included as sheets.
 - **Honest framing captured in the sheet:** his "best cell-type (max)" is optimistic best-of-hundreds (his own
@@ -454,58 +454,135 @@ comprehensive comparison workbook (`Desktop/MATRIX-AML_vs_marker-pipeline.xlsx`,
   number is kept as a separate column. LSF note: per-user 125-slot cap (A549 array) blocked scheduling;
   bswitch to `test` + bmod -n 1 got allcov running immediately.
 
-### 2026-07-09 → 07-13 — Variant-level bulk predictor becomes the PRIMARY mutation caller
-Cross-cohort bake-off pushed to **variant level** and promoted to the platform's primary caller.
-- **Variant-level relabeling (`pipeline/bulk_external.py`):** genes with distinct functional hotspots are
-  split into sub-categories parsed from BeatAML `hgvsp_short` / `variant_classification` / clinical fusions
-  (FLT3_ITD vs TKD_D835-I836 vs other; DNMT3A_R882 vs nonR882; NRAS/KRAS G12/G13/Q61; TP53 hotspot-DBD vs
-  LOF; SF3B1 K700/K666; U2AF1 S34 / Q157-R156; CEBPA bZIP/N-term/biallelic; …). Genes with no hotspot stay
-  gene-level. **58 categories; ~50 clear ≥6 positives** in BeatAML (5-fold CV-OOF, the primary metric).
-- **Result — splitting recovers hidden signal:** DNMT3A_R882 CV-AUROC **0.88 vs nonR882 0.61**; FLT3_ITD 0.91
-  vs TKD 0.69; U2AF1_S34 1.00 vs Q157 0.80. TP53 hotspot-DBD 0.90 ≈ LOF 0.89 (clean split, no gap). No-FS beats
-  MarkerFinder (+0.05, 73% of pairs); ENSEMBLE/PLS/logL2/shrLDA > trees > linSVM > MLP (worst). BeatAML→Leucegene
-  transfers (NPM1/SRSF2/U2AF1_S34/STAG2/RUNX1 on-diagonal); TET2 the notable non-transfer (0.83→0.65).
-- **Per-modality breakdown of the deployed sc system:** imputed Metabolite/Lipid/GRN carry it (single-best for
-  19/26 mutations); RNA is the reliable backbone (weighted 17/26) but rarely single-best; LSC/Cell-comm weak;
-  **fusion beats best-single in 26/26**. Base-learner sweep (8 families through the exact deployed recipe)
-  **confirmed the deployed LinearSVC is optimal** — no learner beats it on train CV-OOF; percentile-calibration
-  + NNLS late-fusion neutralize the base-learner differences that mattered on raw bulk.
-- **Decision (boss):** the bulk variant-level predictor covers ~2× the mutations at comparable accuracy on
-  cheap ubiquitous bulk RNA, so it becomes the **PRIMARY mutation caller**; the sc multimodal system is kept for
-  cytogenetics (inv16/del5/del7/complex/trisomy8/KMT2A) + multimodal depth. Head-to-head on 18 shared mutations:
-  sc 0.853 vs bulk comparable; bulk adds 25 categories sc can't reach (U2AF1_S34 1.00, SF3B1 1.00, JAK2_V617F,
-  variant splits).
-- **Deployable (`amlmm/bulk_predictor.py` + `pipeline/train_bulk_predictor.py` → `bulk_mutation_predictor.pkl`,
-  3.9 MB):** `BulkMutationPredictor` trains on BeatAML2 (n=707 WES) over 50 categories on the 14,237 shared genes;
-  logL2 / no-FS / top-2500-variance / percentile / F1-max. Per-cohort z-refs (sc/beataml/leucegene) so ONE model
-  scores plain bulk RNA and any single-cell sample collapsed to its bulk-equivalent. Mean 5-fold CV AUROC 0.829;
-  validated on the sealed sc held-out via bulk-equivalent (SRSF2 0.91, FLT3_ITD 0.83, TET2 0.76).
-- **Wired into `pipeline/ingest_patient.py`:** every upload's scRNA → `bulk_equiv_from_adata` (sum cells → CP10k)
-  → `predict(ref="sc")` → new top-level `mutation_predictions` report block (mode `bulk_variant_primary`) — the
-  first time the ingest path calls mutations from expression. Kept OUT of the arbiter (predicted ≠ ground truth;
-  user-supplied mutations stay the deterministic anchor); degrades gracefully if the pkl is absent. Real-data
-  sanity: median 3 confident-present calls/sample.
-- **Caveat:** variant-level labels need full WES, feasible only in bulk cohorts — our sc cohort's per-sample HGVS
-  is too sparse (only FLT3_ITD clears ≥8), so the sc system stays gene-level.
+### 2026-07-07 — Re-derived per-mutation call thresholds (Youden → F1-max); fixed over-calling
+The board's calibration audit showed held-out **call accuracy collapsing to 0.27–0.37 in the 0.70–0.90
+probability band** — the predictor over-called. Root cause: the present/absent threshold used Youden's J
+(TPR−FPR), which ignores base rate and keeps the cutoff low for rare drivers, admitting many false positives.
+- **Fix (`pipeline/train_predictor.py`):** the present/absent threshold now **maximizes F1** on the deployed
+  OOF blend per mutation (penalizes false positives via precision). Retrained on LSF (job 820977, `test` queue
+  after the A549 125-slot cap blocked `long`; bswitch + bmod -n 1). Thresholds rose from ~0.5 median to
+  **median 0.89, range 0.70–0.97**. Mean held-out AUC unchanged (0.795 over 21 covariates).
+- **Impact (676 sealed held-out predictions, 29 samples):** overall call accuracy **0.726 → 0.862**; the
+  0.7–0.9 danger band healed (p~0.7 decile 0.371→0.914, p~0.8 0.273→0.688). Present-call **precision (PPV)
+  0.518**, recall 0.598, F1 0.555 — over-calling in the mid-band is gone, but top-end precision is still
+  capped ~0.5 by the weak drivers (KIT 0.60, PTPN11 0.60, WT1 0.44, IDH2 0.65) whose scores aren't sharply
+  separable even at high probability. Next lever for those = **abstention on low-AUC drivers**, not another
+  threshold.
+- **Artifacts:** rebuilt `gui/reliability.json` from the new reports (bins/deciles/per-mutation
+  sens·spec·ppv·npv·sens_weight; `calib_src="bin-observed"`). `gui/calibration.html` panel 1 is now a
+  **before(Youden, grey-dotted) vs after(F1, teal) overlay** showing the danger zone healing; panel 2 (raw
+  score still over-confident — 0.85 → ~26% present) unchanged and still valid.
 
-### 2026-07-13 — Bulk-RNA upload path for patient ingest (single-cell OR bulk)
-The platform now accepts a **bulk RNA expression file** as a sample, not just single-cell.
-- **Pipeline (`pipeline/ingest_patient.py`):** new `--bulk <file>` (mutually exclusive with `--sample`) +
-  `--bulk-ref {beataml,leucegene,sc}` + `--bulk-scale {auto,linear,log2,log1p}`. `parse_bulk_expression`
-  reads any delimited gene×value table and auto-detects scale (negatives→log2→2^x; compressed→log1p→expm1;
-  else linear). `main_bulk` skips the atlas load entirely (fast, `-M 4000`) → runs the PRIMARY bulk
-  variant-level caller (`ref=bulk_ref`) + genetic anchor → report mode `bulk_panel`. Cell-state composition,
-  subtype, cytogenetics, and the control gate need single cells and are skipped (clearly noted in the report).
-- **Schema fix:** `bulk_mutation_result` now returns `(predictions_list, caller_meta, AgentResult)` so
-  `mutation_predictions` is the GUI-native **list** (was a block dict) with `heldout_auc := CV AUROC` for the
-  reliability/abstain logic — this fixes a latent render bug for BOTH the sc and bulk ingest report paths.
-- **GUI (`gui/gui_server.py`, `gui/matrix_board.html`):** `dispatch_ingest` routes `kind=bulk` → `--bulk`;
-  `POST /api/ingest` reads `kind/bulk_ref/bulk_scale`; `/api/samples` surfaces `.tsv/.csv/.txt` as bulk. The
-  add-patient modal gained an Input-type toggle (single-cell / bulk RNA) + a bulk-reference selector, the
-  inbox auto-detects input type, and `renderPredMeta` + the footer are bulk-aware (show the bulk caller, not
-  the sc multimodal boilerplate). (This commit also brings the GUI up to the current deployed cluster state.)
-- **Verified end-to-end:** bulk ingest of a BeatAML sample (14,237 genes, auto→linear, ref=beataml) → 7
-  confident-present variant calls (FLT3_TKD, NPM1_exon12, DNMT3A_R882, IDH1_R132, IDH2_R140, NRAS_Q61,
-  PTPN11_other); calibration sane (median 2–3 present/sample over 60 samples); rendered live in the board GUI.
+### 2026-07-07 — Review response: cell-state map, honest-framing, model card, VAF resource
+Acted on an external technical review. Ground-truthed its claims first (the "7,005 cell-state classifier bank"
+it cites is NOT a persisted asset — it was the one-off `exp_percelltype.py` comparison; deployed call is
+sample-level, `dataio.py:262` n_cells-weighted collapse).
+- **Cell-state localization map** (`pipeline/cellstate_localize.py`, runs LOCALLY — head node has old glibc,
+  but all modality h5ads + build_context work locally): per (driver × 89-state) donor-grouped OOF AUROC on
+  **measured RNA** (mutant vs non-mutant, the classifier's own contrast) + orthogonal composition-shift.
+  Deliberately not imputed → "where the signal lives" isn't circular. Biologically sensible (DNMT3A→MPP,
+  NPM1→GMP/neutrophil, TP53→LMPP). → `gui/cellstate_localization.json`; surfaced as an evidence-page heatmap
+  (section 4) + inline "signal concentrates in" line on the board.
+- **Honest-framing pass:** board now flags low-confidence drivers (held-out AUC<0.65 or n+<3) with ⚠ +
+  "confirm by sequencing" (baked into `train_predictor.py` `confidence`); imputed modalities (ADT/GRN/Lipid/
+  Metabolite) tagged ᴿᴺᴬ = "RNA-conditioned, not independent"; "probability"→"model score". `panel.py`
+  arbiter already framed imputed-as-corroborating — gap was only the GUI.
+- **Model card + train-vs-heldout** (`train_predictor.py` now persists `P.train_auc` = fused donor-grouped
+  CV-OOF AUROC; writes `pipeline/model_card.json`). Ranking worst→best by held-out (dumbbell): worst 3
+  (WT1/KIT/ASXL1) are OVERFITTING — train 0.77–0.89 but held-out 0.48–0.52 (gap 0.27–0.41); best (NPM1, del7,
+  RUNX1) generalize. Small-n held-out is noisy (±0.1 run-to-run at n+≤5) — take train+held-out from the SAME run.
+- **Coverage:** only 26 of 77 label columns clear the ≥8-positive training floor (supervised prediction needs
+  examples — unlike a DNA detection panel). Of a collaborator's 53-mutation list: 22 deployed, 26 too-rare
+  (1–7 pos), 5 absent. Borderline (SRSF2 7, SF3B1 6, t8_21 5) are 1–3 samples from trainable → more cohorts
+  is the direct lever.
+- **VAF resource** (`pipeline/build_vaf.py` → `labels/vaf_per_sample.tsv` + `gui/vaf_by_mutation.json`):
+  harvested VAF from banked `labels/vaf_sources/` (Meta-CCHMC structured + harmonized Variant_Detail parsed),
+  mapped to drivers (FLT3 split ITD/TKD). Per-deployed-mutation slot: **has_vaf** (17; median+distribution),
+  **awaiting** (SNV, no data yet — e.g. TP53; auto-fills on re-run), **not_applicable** (8 cytogenetic).
+  Surfaced on the board expanded row as a per-sample VAF strip + median. VAF↔predictability is DECOUPLED
+  (Spearman 0.03): RUNX1/FLT3-ITD subclonal yet strong, so weakness = no transcriptional imprint, not rarity.
 
-_Last updated: 2026-07-13._
+_Last updated: 2026-07-07._
+
+### 2026-07-09 17:55 — Variant-level relabeling of the cross-cohort mutation bake-off
+- **What:** Replaced gene-level driver labels with **58 variant-level categories** (per Nathan's spec) in `pipeline/bulk_external.py` + regenerated `aml-bakeoff/bundle_data.npz`; repackaged `Downloads/aml-bakeoff.zip`.
+- **Why:** Distinct hotspots have distinct biology/expression signatures (FLT3_ITD vs TKD; DNMT3A_R882 vs nonR882; TP53 hotspot-DBD vs LOF; NRAS/KRAS G12/G13/Q61; etc.) — lumping by gene blurs the very signal the classifier should learn.
+- **How:** New `_fine(sym,hgvsp,vc)` parser maps BeatAML `hgvsp_short` protein position -> sub-category; CEBPA biallelic = >=2 variants/sample; FLT3_ITD + KMT2A_fusion from curated clinical (`FLT3-ITD`, `consensusAMLFusions`). Leucegene mapped via its residue-level columns (FLT3-ITD/TKD, IDH1-R132, IDH2-R140, U2AF1-S34/Q157, NPM1, CEBPA-biallelic, MLL-PTD); sc stays gene-level + FLT3_ITD.
+- **Result:** 58 categories, **~50 clear >=6 positives** in BeatAML (scored by 5-fold CV-OOF, the primary metric) — up from 15. Rare splits (<6: FLT3_N676, KRAS_Q61, PTPN11 E76/D61/A72, KMT2D, KIT_N822/D820, KMT2A_PTD) are labeled but auto-skipped. Bundle 68 MB / 14,237 genes; ready to run on the 9800X3D desktop.
+- **File:** `pipeline/bulk_external.py`, `scratchpad/precompute_bundle.py`, `aml-bakeoff/{run_bakeoff.py,README.md,bundle_data.npz}`
+
+### 2026-07-09 21:33 — Variant-level bake-off RESULTS (50 categories, run on 9800X3D desktop)
+- **What:** Analyzed the completed variant-level cross-cohort bake-off (`results.zip` -> `scratchpad/results2/`). Built `scratchpad/variant_bakeoff_analysis.png` (3-panel: within-gene split contrast, worst->best ranking, cross-cohort concordance).
+- **Result — variant-splitting validated:** DNMT3A_R882 CV-AUROC **0.88 vs nonR882 0.61**; FLT3_ITD **0.91 vs TKD 0.69 / other 0.73**; U2AF1_S34 **1.00 vs Q157 0.80**; NRAS Q61>G13>G12 (0.82/0.74/0.67). TP53 hotspot-DBD 0.90 ~ LOF 0.89 (clean split, no predictability gap).
+- **Result — ranking (fixed shrLDA/no-FS, fair):** mean **0.82** over 50 cats. Solved (>=0.95): U2AF1_S34, SF3B1_K666, SRSF2, NPM1_exon12, CEBPA_Nterm, BCOR. Weakest real (n>=15): DNMT3A_nonR882 0.61, NF1 0.67, NRAS_G12 0.67, FLT3_TKD 0.69. n<15 = provisional.
+- **Result — methods (replicate prior run):** no-FS beats MarkerFinder **+0.05 in 73%** of pairs; ENSEMBLE/PLS/logL2/shrLDA > trees > linSVM > **MLP 0.67 (worst)**.
+- **Result — cross-cohort:** BeatAML->Leucegene transfers (NPM1/SRSF2/U2AF1_S34/STAG2/RUNX1 on-diagonal); **TET2 non-transfer 0.83->0.65**. FLT3_ITD holds across all 3 cohorts (0.91/0.87/0.90).
+- **Next / implication:** deployed sc system should predict FLT3_ITD (not gene-level FLT3), split DNMT3A R882-vs-nonR882, abstain on TET2/nonR882/NF1.
+- **File:** `scratchpad/results2/{bakeoff_results.json,bakeoff_summary.txt}`, `scratchpad/variant_bakeoff_analysis.png`, `scratchpad/analyze_results2.py`
+
+### 2026-07-10 10:37 — Per-modality breakdown of deployed sc predictor + base-learner optimization bundle
+- **What:** Extracted per-(mutation x modality) CV-OOF AUROC from deployed `mutation_predictor.pkl` (`scratchpad/extract_modality_breakdown.py` -> `deployed_modality_breakdown.{png,csv}`). Built portable base-learner sweep (`Downloads/aml-modality-bakeoff.zip`).
+- **Result — per-modality:** imputed **Metabolite (0.797, best 7x), Lipid (0.790, best 6x), GRN (0.789, best 6x)** carry the system (single-best for 19/26 muts); RNA (0.796) = reliable backbone (weighted 17/26) rarely single-best; **LSC (0.627) + Cell-comm (0.675) weak**. Fusion beats best-single in **26/26** (0.875 vs 0.842). FLT3-ITD best=Lipid 0.83, fused 0.838, heldout 0.895.
+- **Result — sc variant-level NOT feasible:** `vaf_per_sample.tsv` HGVS detail is sparse; only FLT3_ITD (33) clears >=8. DNMT3A_R882=1, NPM1=4, NRAS subtypes 1-2. Variant-level stays the bulk bake-off's domain (full WES).
+- **New optimization lever:** deployed base learner = LinearSVC, which was WEAK in the bulk bake-off (0.77 vs 0.82-0.84). Built `aml-modality-bakeoff` (30MB bundle: 8 blocks capped at 8000 var feats + labels + donor groups + holdout) + `run_modality_bakeoff.py` sweeping 8 base learners through the exact deployed recipe (diff-select 500 -> learner -> percentile -> grouped CV-OOF -> NNLS fusion -> F1-max), ENSEMBLE derived from cached linear scores. ~8min on 9800X3D. Smoke (NPM1): linSVM already top (0.988) -> bulk finding may not transfer; full run to settle.
+- **File:** `scratchpad/{extract_modality_breakdown.py,extract_modality_bundle.py,deployed_modality_breakdown.png}`, `aml-modality-bakeoff/*`
+
+### 2026-07-10 11:23 — Base-learner sweep RESULT: deployed LinearSVC confirmed optimal
+- **What:** Ran `aml-modality-bakeoff` (26 muts x 8 modalities x 8 learners, deployed recipe) on the desktop.
+- **Result:** **Don't swap.** linSVM (deployed) best on train CV-OOF **0.875**; paired mean-delta vs linSVM negative for ALL (logL2 -0.009, ENSEMBLE -0.012, shrLDA/HistGB -0.020, RF -0.027, PLS -0.036, MLP -0.087). HistGB +0.009 on held-out but -0.020 train + held-out n~21 = noise. MLP worst again.
+- **Why bulk finding didn't transfer:** percentile-calibration + NNLS late-fusion neutralize base-learner differences that mattered on raw single-modality bulk. Deployed design validated.
+- **Conclusion:** deployed system at the ceiling for modeling levers; remaining gains = DATA (more sc variant-level genotyping + larger held-out).
+- **File:** `scratchpad/modres/*` (results.json, summary.txt, charts.png)
+
+### 2026-07-13 09:26 — Bulk variant-level predictor promoted to PRIMARY mutation caller + wired into ingest
+- **What:** Per boss decision (bulk "almost as good, many more mutations"), made the bulk variant-level predictor the primary mutation caller. Built `amlmm/bulk_predictor.py` (BulkMutationPredictor) + `pipeline/train_bulk_predictor.py` -> `bulk_mutation_predictor.pkl` + `bulk_model_card.json`; wired into `pipeline/ingest_patient.py`.
+- **Phase 1 (deployable):** trained on BeatAML2 (n=707 WES), 50 variant-level categories, 14,237 shared genes; logL2 / no-FS / top-2500-var / percentile / F1-max (bulk-bakeoff winning config). Per-cohort z-refs (sc/beataml/leucegene) for cross-cohort calibration. Mean 5-fold CV AUROC **0.829**. Validated on sealed sc held-out via bulk-equivalent: SRSF2 0.91, FLT3_ITD 0.83, TET2 0.76 (n>=5).
+- **Phase 2 (ingest wiring):** `bulk_equiv_from_adata` (sum cells -> CP10k) -> `bulk_mutation_result` -> `predict(ref='sc')` -> report top-level `mutation_predictions` (mode `bulk_variant_primary`). Kept OUT of arbiter (predicted != truth; user mutations stay the deterministic anchor). Graceful skip if pkl absent. Real-data sanity: median **3** confident-present calls/sample (random-noise mock gave 21 = garbage-in).
+- **Grounding:** head-to-head - 18 shared muts sc 0.853 vs bulk comparable; bulk adds **25 categories** sc can't reach (U2AF1_S34, SF3B1, JAK2_V617F, variant splits) on cheap bulk input; sc keeps 8 cytogenetic events.
+- **Next:** sync pkl + edited ingest to the cluster for the live GUI; optionally add cytogenetics to the bulk caller.
+- **File:** `amlmm/bulk_predictor.py`, `pipeline/{train_bulk_predictor.py,ingest_patient.py,bulk_mutation_predictor.pkl,bulk_model_card.json}`
+
+### 2026-07-13 15:24 — Bulk-RNA upload path added to patient ingest (single-cell OR bulk)
+- **What:** The platform now accepts a **bulk RNA expression file** as a sample, not just single-cell. Extends `pipeline/ingest_patient.py` + the GUI (`gui/gui_server.py`, `gui/mosaic_board.html`).
+- **Pipeline:** new `--bulk <file>` (exclusive with `--sample`) + `--bulk-ref {beataml,leucegene,sc}` + `--bulk-scale {auto,linear,log2,log1p}`. `parse_bulk_expression` reads any delimited gene×value table, auto-detects scale (negatives→log2→2^x; compressed→log1p→expm1; else linear). `main_bulk` skips the atlas load (fast, `-M 4000`) → runs the PRIMARY bulk variant-level caller (`ref=bulk_ref`) + genetic anchor → report mode `bulk_panel` (no composition/subtype/cytogenetics/control-gate — needs single cells, clearly noted).
+- **Schema fix:** refactored `bulk_mutation_result` → `(predictions_list, caller_meta, AgentResult)` so `mutation_predictions` is the GUI-native **list** (was a block dict) with `heldout_auc := CV AUROC` for the reliability/abstain logic. Applied to BOTH the sc and bulk report paths.
+- **GUI:** `dispatch_ingest` routes `kind=bulk` → `--bulk`; POST reads `kind/bulk_ref/bulk_scale`; `/api/samples` surfaces `.tsv/.csv/.txt` as bulk. Add-patient modal: Input-type toggle (single-cell / bulk RNA) + bulk-reference selector + inbox auto-detects type; `renderPredMeta` + footer now bulk-aware (shows the bulk caller, not the sc multimodal boilerplate).
+- **Verified end-to-end:** bulk ingest of a BeatAML sample (14,237 genes, auto→linear, ref=beataml) → 7 confident-present variant calls (FLT3_TKD, NPM1_exon12, DNMT3A_R882, IDH1_R132, IDH2_R140, NRAS_Q61, PTPN11_other); calibration sane (median 2–3 present/sample over 60 samples); rendered in the live GUI (correct bulk predictor box + honest footer).
+- **Next:** sync to cluster + fold into the Mosaic-AML PR.
+- **File:** `pipeline/ingest_patient.py`, `gui/gui_server.py`, `gui/mosaic_board.html`
+
+### 2026-08-04 20:45 — COMPASS-AML: ex-vivo drug-response layer built end-to-end + platform renamed MATRIX-AML -> MOSAIC-AML
+- **Rename:** MATRIX-AML -> **MOSAIC-AML** (*Multimodal Omics and State-Aware Inference of Cancer Drivers in Acute Myeloid Leukemia*). Byte-level rewrite of 38 files + 12 file renames (`mosaic_board.html`, `start_mosaic_board.bat`, `MOSAIC-AML_*` deliverables); board branding + launch.json entries + server_version updated. Bare "matrix" (mutation_matrix / confusion matrix / build_full_matrix) deliberately untouched.
+- **Data:** fetched `beataml_probit_curve_fits_v4_dbgap.txt` (19 MB) + drug families/sample-mapping/clinical from the public BeatAML2 repo into `data/external/beataml/` — the lab did NOT have the drug file anywhere on the cluster (checked). 63,395 single-agent curves -> 53,571 with shared-space expression -> **48,998 measurements / 520 specimens / 479 patients / 118 inhibitors** after QC + inclusion.
+- **Data layer** (`amlmm/drug/data.py`): per-row curve-quality flags (non-convergent 10, off-panel window 10, within-drug extreme deviance 603; 7,092 *increasing* curves kept-but-flagged and never callable sensitive); robust within-drug median/MAD z; tail classes (bottom/top 20%, middle 60% kept for regression only). 115 inhibitors pass the primary inclusion filter; Cytarabine / Nutlin 3a / GDC-0941 fail ONLY the wave-stability test -> new `wave_conditional` tier rather than deleting the induction backbone; 47 excluded with per-compound reasons.
+- **Annotation** (`knowledge/drug_annotation.tsv`, 118 rows): targets, family, mechanism, clinical tier (6 approved-AML / 36 approved-other / 36 trial / 40 research), clinically available analogue, coarse exposure class, known resistance mechanisms. 16 coarse `family_group`s for hierarchical pooling.
+- **Model A:** hierarchical `f_group(X, D) + w_j*f_j(X)`, drug descriptor = z-expression of the inhibitor's own targets. Four blocks (`rna`/`state`/`mut`/`clin`) **late-fused by NNLS on inner donor-grouped OOF, floored to the best single block** — a single ridge over the concatenation LOSES to RNA alone (0.742 vs 0.766); fusion recovers **0.772**.
+- **`state` block:** built lineage signatures from our own atlas (`build_state_signatures.py`): 89 states -> 10 lineage groups -> top-60 specificity markers, in the shared ENSG space. Recovers textbook markers unprompted (AVP/CRHBP/MECOM, PRTN3/ELANE/MPO, S100A8/9/FCN1, HBB/AHSP, PPBP/PF4/ITGA2B, CXCL12/VCAM1).
+- **THE bug worth remembering:** calibrating Platt on the RAW decision score made every single-cell sample come back at P(sensitive)~0.99 for all 118 drugs. Fix = calibrate the **OOF percentile** + cohort-matched score references (`beataml` / `sc_sample` / `sc_state`) + a matched expression z-reference. Same lesson `bulk_predictor.py` already documented. A cell state needs its OWN reference — against the sample-level one every state is an outlier.
+- **Model B** (`statemodel.py`): Model A re-applied per cell-state pseudobulk -> blast/LSC coverage, escape state, dispersion, bulk-vs-sc disagreement. "Blast compartment" is labelled a COMPARTMENT everywhere — no per-cell genotype is used.
+- **Model C** (`mechanism.py`): target expression pct, curated transcriptional OUTPUT readouts per pathway family, BCL2/(BCL2+MCL1+BCL2L1+BCL2A1) dependency, genetic activation tagged observed-vs-predicted, measurable resistance proxies. Kept OUT of A on purpose.
+- **Utility + agents:** S_ij with every penalty itemised (uncertainty / resistance+escape / infeasibility / OOD), positive part renormalised by *evaluable* weight so bulk patients aren't penalised for absent coverage; rankings **per clinical tier**, never merged. Eight agents, all `therapeutic`-domain and **non-voting** on the anchored subtype call. The combination agent explicitly REFUSES to add single-agent scores (BeatAML2 has no combination data) and only proposes complementary-coverage pairs across different pathways.
+- **Validation** (`eval_drug_model.py`): per-inhibitor mean AUROC **0.774** (approved-agent subset **0.809**), Spearman 0.365, AUPRC 0.748 vs 0.475 baseline, 100% of inhibitors p<0.05. Deployment task (per-patient across drugs): top-1 **34%** vs 10% matched chance (**3.4x**), top-5 76% vs 42%. ECE **0.012**, Brier 0.185 vs 0.249. Abstention: 28% -> **4.7%** error at 10% coverage. Leave-wave-out 0.722/0.733; leave-centre-out 0.731-0.890; survives every differentiation stratum (0.721-0.762); ~15 null SDs above a specimen-repointing permutation null. Sealed 15%-of-PATIENTS hold-out: 0.784.
+- **Model B's falsifiable test PASSED:** fitted only on BeatAML bulk, never shown a cell-state label, it predicts higher venetoclax sensitivity in primitive than monocytic states in **93.2%** of all 387 atlas samples (mean +0.662 z, Wilcoxon p=8.4e-51) — **rank 1 of 118 inhibitors**, so not a "primitive looks sensitive to everything" artefact (ABT-737, the other BH3 mimetic, ranks 8th). Bulk-vs-weighted-state consistency Spearman 0.970.
+- **Honest negatives recorded:** `state` and `clin` add ~nothing on AVERAGE (rna+mut 0.7730 vs all-four 0.7718) — but the fitted weights show they matter per family (FLT3 leans 0.36 on `mut`, cell_cycle 0.61 on `state`, JAK_STAT 0.46 on `clin`); a high fusion weight = complementary info, NOT standalone strength (state alone is 0.635 for cell-cycle drugs vs rna 0.712). 100% of single-cell bulk-equivalents lie beyond BeatAML's own p95 distance — the assay transfer is real and stated as a limitation.
+- **Wiring:** `predict_drugs.py` (one sample), `drug_layer.py` (non-fatal hook in BOTH ingest paths, writes `runs/<id>/drug_report.json` + `DRUG_REPORT.md`, summary into `patient_report.json.drug_response`), `batch_drug_reports.py` (backfilled 30 atlas runs). GUI: `/therapy.html` (tiered, click-a-row evidence, combination hypotheses, abstention list) + `/rx_validation.html`; `/api/drug_report`, `has_drug_report` on `/api/runs`, `/val/figures/` sub-path. Verified live in the browser preview.
+- **Perf note:** `amlmm/drug/h5rows.py` reads only the needed CSR rows out of the 1 GB atlas h5ad (contiguous-run reads), and `StateResponse._z` gathers with numpy instead of assigning 14,237 DataFrame columns — together 25+ min -> 3 s for the state validation.
+- **File:** `pipeline/amlmm/drug/*`, `pipeline/{train_drug_model.py,eval_drug_model.py,build_drug_score_refs.py,build_state_signatures.py,validate_state_response.py,build_drug_figures.py,predict_drugs.py,drug_layer.py,batch_drug_reports.py}`, `deliverables/{METHODS_COMPASS-AML.md,drug_model_validation.json,drug_model_card.json,state_response_validation.json,figures/Rx1-Rx6}`, `gui/{therapy.html,rx_validation.html}`
+
+### 2026-08-04 21:40 — Static export of the whole web UI (hand it to people, no server)
+- **What:** `pipeline/build_static_site.py` freezes every page of the MOSAIC-AML GUI into a browsable bundle that works by **double-clicking `index.html`** — no install, no server, no internet. -> `deliverables/mosaic_static/` (28 MB) + `deliverables/MOSAIC-AML_static_site.zip` (**8.2 MB**).
+- **The constraint that shapes it:** browsers block `fetch()` against `file://`, so the frozen API responses CANNOT ship as `.json` files the pages fetch. They ship as `.js` files assigning to a global (`<script src>` is not subject to that restriction) and a shim swaps `window.fetch` for a lookup against it. Images/PDFs/TSVs stay ordinary files — `<img src>` and download links work fine from `file://`.
+- **Contents:** all 7 pages (board -> `index.html`, therapy, rx_validation, validation, calibration, evidence, cebpa_evidence), **429 patient reports**, **26 drug reports**, 66 figure/PDF/TSV assets, 476 baked API keys. Data shards: core 3.3 MB / reports 8.0 MB / drugs 10.0 MB, all minified; drug reports additionally pruned of `agents[*].evidence.all` (duplicates `per_drug`, ~65 kB x 30).
+- **Nothing may look interactive when it isn't:** `/api/capabilities` reports `ingest:false` so the "+ Add patient" button never renders; any non-GET returns an explicit "this is a static export" message instead of failing quietly; a banner states it on every page. Drag-and-drop "Open report…" still works (pure FileReader).
+- **Gotcha fixed during the build:** the build rewrites `/val/` -> `val/` so `<img>`/download links resolve relative to the bundle, but that same rewrite lands inside `fetch('/val/x.json')` calls, whose baked key still has the leading `/val/`. Rather than rewriting only some occurrences, the shim tries a small list of candidate keys (`/p`, `/val/<base>`, `/<base>`).
+- **Verified from `file://`** in the browser: all 7 pages render, 429-row roster, 118 drug rows on therapy.html, all 6 Rx figures + the mutation-caller figures load, zero console errors, `addBtn` display none.
+- **File:** `pipeline/build_static_site.py`, `deliverables/mosaic_static/*`, `deliverables/MOSAIC-AML_static_site.zip`
+
+### 2026-08-04 22:15 — Last three dark pages restyled to the formal light theme + Plotly vendored for offline use
+- **What:** `evidence.html`, `calibration.html` and `cebpa_evidence.html` were still on the old dark theme (`#0f1112` background, teal `#57b3a6` accent) while everything else had moved to the formal light palette. All three rebuilt on the shared design language used by validation / therapy / rx_validation: `--bg #ffffff / --panel #f7f7f4 / --ink #1a1a19 / --muted #6b6b63 / --line #e4e3dc / --accent #8a6a18`, sticky top bar with cross-links, uppercase kicker + `h2` + bordered `.card` per section, and a lead paragraph explaining what the page answers. **Zero dark hexes remain anywhere in `gui/`.**
+- **Chart palette migrated too, not just the page chrome:** the Plotly `DARK` layout became `LIGHT` (white paper/plot, ink text, `#e4e3dc` gridlines); teal -> accent gold `#8a6a18` for the used/mutant series, dark `#2b3034` -> pale `#dcd9cd` for unused bars, grey -> warm neutral `#b9b6a8` for controls, warm/cool localisation colours -> `--bad`/`--good`. The "this patient" diamond moved from gold `#ffcf4d` (invisible on white) to deep blue `#2f6690` with a white outline, which stays distinct from both the accent and the neutral.
+- **Plotly vendored:** the three pages loaded plotly from a CDN, which meant the static export rendered **no charts at all** on a laptop with no internet — the exact use case the export exists for. Now `gui/vendor/plotly.min.js` (4.6 MB) with a CDN `document.write` fallback if the local copy is missing; relative `src` so the same tag works live (`/vendor/...`) and in the bundle. Added a `/vendor/` route to `gui_server.py` and a copy step to `build_static_site.py`.
+- **Also fixed while in there:** `cebpa_evidence.html`, `cebpa_violin_data.json` and `bulk_bakeoff_results.json` were never in the server's static whitelist, so that page 404'd on the live board; bar-chart y-axes got `automargin` (long labels like "Metabolite ᴿ" were clipped) and the x-ranges widened to 1.11-1.13 so the outside value labels fit when every bar sits near 0.99.
+- **Verified:** live server screenshots of all three pages; static bundle re-verified from `file://` — plotly resolves from `vendor/`, the CDN tag never fires, all plots render, banner present.
+- **Static bundle rebuilt:** 7 pages, 429 reports, 26 drug reports, 67 assets, zip **9.5 MB** (was 8.2 MB; +1.3 MB is the vendored Plotly).
+- **File:** `gui/{evidence,calibration,cebpa_evidence}.html`, `gui/vendor/plotly.min.js`, `gui/gui_server.py`, `pipeline/build_static_site.py`

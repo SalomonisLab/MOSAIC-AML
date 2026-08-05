@@ -1,0 +1,605 @@
+{
+  "strategy": "donor_kfold",
+  "n_samples": 97,
+  "n_classes": 5,
+  "classes": [
+    "FLT3",
+    "Inv16",
+    "NPM1",
+    "TET2",
+    "TP53"
+  ],
+  "class_counts": {
+    "FLT3": 14,
+    "Inv16": 18,
+    "NPM1": 43,
+    "TET2": 12,
+    "TP53": 10
+  },
+  "balanced_accuracy": 0.6312,
+  "macro_f1": 0.6233,
+  "per_class_f1": {
+    "FLT3": 0.5926,
+    "Inv16": 0.8333,
+    "NPM1": 0.6747,
+    "TET2": 0.4444,
+    "TP53": 0.5714
+  },
+  "balanced_accuracy_fold_mean": 0.6222,
+  "balanced_accuracy_fold_std": 0.1407,
+  "confusion_matrix": [
+    [
+      8,
+      0,
+      3,
+      3,
+      0
+    ],
+    [
+      1,
+      15,
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      3,
+      28,
+      5,
+      5
+    ],
+    [
+      1,
+      0,
+      5,
+      6,
+      0
+    ],
+    [
+      1,
+      0,
+      2,
+      1,
+      6
+    ]
+  ],
+  "model_wins": {
+    "rf": 1,
+    "logreg": 4
+  },
+  "per_fold": [
+    {
+      "fold": 0,
+      "n_test": 20,
+      "balanced_accuracy": 0.6666666666666667,
+      "model": "logreg",
+      "inner_score": 0.5555,
+      "test_cohort": null
+    },
+    {
+      "fold": 1,
+      "n_test": 20,
+      "balanced_accuracy": 0.5722222222222222,
+      "model": "rf",
+      "inner_score": 0.6206,
+      "test_cohort": null
+    },
+    {
+      "fold": 2,
+      "n_test": 19,
+      "balanced_accuracy": 0.5055555555555555,
+      "model": "logreg",
+      "inner_score": 0.6152,
+      "test_cohort": null
+    },
+    {
+      "fold": 3,
+      "n_test": 19,
+      "balanced_accuracy": 0.875,
+      "model": "logreg",
+      "inner_score": 0.5775,
+      "test_cohort": null
+    },
+    {
+      "fold": 4,
+      "n_test": 19,
+      "balanced_accuracy": 0.4916666666666666,
+      "model": "logreg",
+      "inner_score": 0.588,
+      "test_cohort": null
+    }
+  ],
+  "oof": {
+    "CCHMC::171_Af_N1c": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.9975
+    },
+    "CCHMC::1827_Af_N1c": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.9636
+    },
+    "CCHMC::3114_EInv_45F": {
+      "true": "Inv16",
+      "pred": "Inv16",
+      "prob": 0.8732
+    },
+    "CCHMC::4440_AfInv16_P24M": {
+      "true": "Inv16",
+      "pred": "Inv16",
+      "prob": 0.9996
+    },
+    "CCHMC::4924_AfInv16_P49M": {
+      "true": "Inv16",
+      "pred": "NPM1",
+      "prob": 0.7888
+    },
+    "Colorado::AML-04": {
+      "true": "FLT3",
+      "pred": "NPM1",
+      "prob": 0.8783
+    },
+    "Colorado::AML-09": {
+      "true": "FLT3",
+      "pred": "FLT3",
+      "prob": 0.4896
+    },
+    "Colorado::AML-21": {
+      "true": "FLT3",
+      "pred": "FLT3",
+      "prob": 0.9924
+    },
+    "Columbia::AML2": {
+      "true": "TET2",
+      "pred": "NPM1",
+      "prob": 0.8422
+    },
+    "Columbia::AML3": {
+      "true": "TET2",
+      "pred": "NPM1",
+      "prob": 0.6261
+    },
+    "Columbia::AML4": {
+      "true": "TET2",
+      "pred": "TET2",
+      "prob": 0.5468
+    },
+    "Milan::PT02__D30": {
+      "true": "NPM1",
+      "pred": "TET2",
+      "prob": 0.9985
+    },
+    "Milan::PT02__Diagnosis": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.9008
+    },
+    "Milan::PT08__D14": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.6749
+    },
+    "Milan::PT08__D30": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.9948
+    },
+    "Milan::PT08__Diagnosis": {
+      "true": "NPM1",
+      "pred": "Inv16",
+      "prob": 0.7285
+    },
+    "Milan::PT08__Relapse": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.8957
+    },
+    "WashU::10DD-1062__Diagnosis": {
+      "true": "TP53",
+      "pred": "TP53",
+      "prob": 0.9882
+    },
+    "WashU::10DD-1062__Treatment": {
+      "true": "TP53",
+      "pred": "TP53",
+      "prob": 0.9999
+    },
+    "WashU::868442__Diagnosis": {
+      "true": "NPM1",
+      "pred": "TET2",
+      "prob": 0.4325
+    },
+    "CCHMC::0316_E_N1c": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.73
+    },
+    "CCHMC::1036_EInv16_22M": {
+      "true": "Inv16",
+      "pred": "NPM1",
+      "prob": 0.3675
+    },
+    "CCHMC::1060_EInv16_19M": {
+      "true": "Inv16",
+      "pred": "Inv16",
+      "prob": 0.56
+    },
+    "CCHMC::1893_Af_N1c": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.865
+    },
+    "CCHMC::301_AfInv16_29M": {
+      "true": "Inv16",
+      "pred": "Inv16",
+      "prob": 0.83
+    },
+    "CCHMC::562_AfInv16_25F": {
+      "true": "Inv16",
+      "pred": "Inv16",
+      "prob": 0.6325
+    },
+    "Colorado::AML-01": {
+      "true": "TET2",
+      "pred": "FLT3",
+      "prob": 0.465
+    },
+    "Colorado::AML-10": {
+      "true": "FLT3",
+      "pred": "FLT3",
+      "prob": 0.5325
+    },
+    "Colorado::AML-19": {
+      "true": "FLT3",
+      "pred": "NPM1",
+      "prob": 0.55
+    },
+    "Colorado::AML-24": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.365
+    },
+    "Colorado::Pt-20_Dx": {
+      "true": "FLT3",
+      "pred": "NPM1",
+      "prob": 0.52
+    },
+    "Columbia::AML7": {
+      "true": "TET2",
+      "pred": "NPM1",
+      "prob": 0.5575
+    },
+    "Milan::PT06__Diagnosis": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.605
+    },
+    "Milan::PT12__D30": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.605
+    },
+    "Milan::PT12__Diagnosis": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.5625
+    },
+    "WashU::10DD-1065__Diagnosis": {
+      "true": "TP53",
+      "pred": "TP53",
+      "prob": 0.695
+    },
+    "WashU::10DD-1065__Treatment": {
+      "true": "TP53",
+      "pred": "TP53",
+      "prob": 0.5325
+    },
+    "WashU::220882__Diagnosis": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.33
+    },
+    "WashU::220882__Relapse": {
+      "true": "NPM1",
+      "pred": "TP53",
+      "prob": 0.395
+    },
+    "WashU::220882__Treatment": {
+      "true": "NPM1",
+      "pred": "TP53",
+      "prob": 0.445
+    },
+    "CCHMC::0018_Af_N1c": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.9161
+    },
+    "CCHMC::1076_AfInv16_51M": {
+      "true": "Inv16",
+      "pred": "Inv16",
+      "prob": 0.8782
+    },
+    "CCHMC::2140_E_N1c": {
+      "true": "NPM1",
+      "pred": "Inv16",
+      "prob": 0.4617
+    },
+    "CCHMC::2698_EInv16_P47M": {
+      "true": "Inv16",
+      "pred": "Inv16",
+      "prob": 0.8544
+    },
+    "CCHMC::287_AfInv_P53F_N1c": {
+      "true": "Inv16",
+      "pred": "FLT3",
+      "prob": 0.4287
+    },
+    "CCHMC::5381v2_AfInv16_P49M": {
+      "true": "Inv16",
+      "pred": "Inv16",
+      "prob": 0.9994
+    },
+    "CCHMC::596_E_N1c": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.7586
+    },
+    "Colorado::AML-18": {
+      "true": "FLT3",
+      "pred": "FLT3",
+      "prob": 0.7183
+    },
+    "Columbia::AML11": {
+      "true": "TET2",
+      "pred": "NPM1",
+      "prob": 0.5429
+    },
+    "Columbia::AML9": {
+      "true": "TET2",
+      "pred": "TET2",
+      "prob": 0.9895
+    },
+    "Milan::PT01__D30": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.9063
+    },
+    "Milan::PT01__Diagnosis": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.8169
+    },
+    "Milan::PT09__D14": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.4572
+    },
+    "Milan::PT09__Diagnosis": {
+      "true": "NPM1",
+      "pred": "FLT3",
+      "prob": 0.7546
+    },
+    "Milan::PT13__Diagnosis": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.7861
+    },
+    "Milan::PT19__Relapse": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.7046
+    },
+    "WashU::10DD-1002__Diagnosis": {
+      "true": "TP53",
+      "pred": "FLT3",
+      "prob": 0.7819
+    },
+    "WashU::10DD-1002__Treatment": {
+      "true": "TP53",
+      "pred": "TET2",
+      "prob": 0.5117
+    },
+    "WashU::332131__Diagnosis": {
+      "true": "FLT3",
+      "pred": "TET2",
+      "prob": 0.498
+    },
+    "CCHMC::0817_E_N1c": {
+      "true": "NPM1",
+      "pred": "Inv16",
+      "prob": 0.45
+    },
+    "CCHMC::1009_AfInv16_29M": {
+      "true": "Inv16",
+      "pred": "Inv16",
+      "prob": 0.8403
+    },
+    "CCHMC::1102_E_N1c": {
+      "true": "NPM1",
+      "pred": "TP53",
+      "prob": 0.6408
+    },
+    "CCHMC::1147_EInv16_44M": {
+      "true": "Inv16",
+      "pred": "Inv16",
+      "prob": 0.3463
+    },
+    "CCHMC::376_Af_N1c": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.5106
+    },
+    "CCHMC::98-31_AfInv16_34F": {
+      "true": "Inv16",
+      "pred": "Inv16",
+      "prob": 0.9366
+    },
+    "Colorado::AML-16": {
+      "true": "FLT3",
+      "pred": "FLT3",
+      "prob": 0.2896
+    },
+    "Colorado::Pt-16_Dx": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.4978
+    },
+    "Columbia::AML1": {
+      "true": "TET2",
+      "pred": "TET2",
+      "prob": 0.5573
+    },
+    "Columbia::AML10": {
+      "true": "TET2",
+      "pred": "TET2",
+      "prob": 0.4594
+    },
+    "Columbia::AML6": {
+      "true": "TET2",
+      "pred": "TET2",
+      "prob": 0.9049
+    },
+    "Milan::PT07__D14": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.7888
+    },
+    "Milan::PT07__Diagnosis": {
+      "true": "NPM1",
+      "pred": "TET2",
+      "prob": 0.751
+    },
+    "WashU::10DD-1085__Diagnosis": {
+      "true": "TP53",
+      "pred": "TP53",
+      "prob": 0.9628
+    },
+    "WashU::10DD-1085__Relapse": {
+      "true": "TP53",
+      "pred": "TP53",
+      "prob": 0.6957
+    },
+    "WashU::452198__Diagnosis": {
+      "true": "NPM1",
+      "pred": "FLT3",
+      "prob": 0.4945
+    },
+    "WashU::452198__Relapse": {
+      "true": "NPM1",
+      "pred": "TET2",
+      "prob": 0.6994
+    },
+    "WashU::508084__Diagnosis": {
+      "true": "FLT3",
+      "pred": "FLT3",
+      "prob": 0.8361
+    },
+    "WashU::508084__Relapse": {
+      "true": "FLT3",
+      "pred": "FLT3",
+      "prob": 0.4991
+    },
+    "CCHMC::1239_EST8_44M_N1c": {
+      "true": "NPM1",
+      "pred": "TET2",
+      "prob": 0.3983
+    },
+    "CCHMC::1744_E_N1c": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.8584
+    },
+    "CCHMC::550_EInv16_38M": {
+      "true": "Inv16",
+      "pred": "Inv16",
+      "prob": 0.7753
+    },
+    "CCHMC::568_AfInv16_P24M": {
+      "true": "Inv16",
+      "pred": "Inv16",
+      "prob": 0.7239
+    },
+    "CCHMC::727_EInv16_35M": {
+      "true": "Inv16",
+      "pred": "Inv16",
+      "prob": 0.6514
+    },
+    "CCHMC::754_EInv16_47M": {
+      "true": "Inv16",
+      "pred": "Inv16",
+      "prob": 0.4995
+    },
+    "Colorado::AML-13": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.5507
+    },
+    "Colorado::AML-17": {
+      "true": "FLT3",
+      "pred": "FLT3",
+      "prob": 0.4995
+    },
+    "Columbia::AML12": {
+      "true": "TET2",
+      "pred": "NPM1",
+      "prob": 0.5678
+    },
+    "Columbia::AML5": {
+      "true": "TET2",
+      "pred": "TET2",
+      "prob": 0.4369
+    },
+    "Milan::PT10__D14": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.9162
+    },
+    "Milan::PT10__Diagnosis": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.5695
+    },
+    "Milan::PT10__Relapse": {
+      "true": "NPM1",
+      "pred": "TP53",
+      "prob": 1.0
+    },
+    "Milan::PT15__Diagnosis": {
+      "true": "NPM1",
+      "pred": "NPM1",
+      "prob": 0.4377
+    },
+    "Milan::PT15__Relapse": {
+      "true": "NPM1",
+      "pred": "TP53",
+      "prob": 0.6128
+    },
+    "WashU::10DD-1009__Diagnosis": {
+      "true": "FLT3",
+      "pred": "TET2",
+      "prob": 0.6158
+    },
+    "WashU::10DD-1009__Relapse": {
+      "true": "FLT3",
+      "pred": "TET2",
+      "prob": 0.5347
+    },
+    "WashU::10DD-1014__Diagnosis": {
+      "true": "TP53",
+      "pred": "NPM1",
+      "prob": 0.6569
+    },
+    "WashU::10DD-1014__Treatment": {
+      "true": "TP53",
+      "pred": "NPM1",
+      "prob": 0.526
+    }
+  },
+  "permutation_balanced_accuracy_p95": 0.2912,
+  "permutation_balanced_accuracy_mean": 0.1948,
+  "permutation_observed_reference": 0.5721,
+  "permutation_pvalue": 0.024390243902439025,
+  "n_permutations": 40
+}

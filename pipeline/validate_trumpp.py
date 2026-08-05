@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the MATRIX-AML mutation predictor against the Trumpp/Waclawiczek cohort known mutations.
+"""Validate the MOSAIC-AML mutation predictor against the Trumpp/Waclawiczek cohort known mutations.
 
 Trumpp samples are NEW EXTERNAL, so only COMPOSITION is available (from the cellHarmony alignment) —
 the imputed modalities (ADT/Lipid/Metabolite/GRN) that carry most of the predictor's signal were never

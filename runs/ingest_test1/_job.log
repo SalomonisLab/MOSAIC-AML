@@ -1,0 +1,22 @@
+C:\Users\krog5w\.gemini\antigravity\scratch\AML-multimodal\pipeline\amlmm\dataio.py:183: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  meta = meta.replace("", np.nan).drop_duplicates("sample_key").set_index("sample_key")
+Traceback (most recent call last):
+  File "C:\Users\krog5w\.gemini\antigravity\scratch\AML-multimodal\pipeline\ingest_patient.py", line 387, in main
+    adata, how = load_query(args.sample)
+                 ~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\krog5w\.gemini\antigravity\scratch\AML-multimodal\pipeline\ingest_patient.py", line 83, in load_query
+    a = sc.read_10x_h5(p, gex_only=False)
+  File "C:\Users\krog5w\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\legacy_api_wrap\__init__.py", line 88, in fn_compatible
+    return fn(*args_all, **kw)
+  File "C:\Users\krog5w\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\scanpy\readwrite.py", line 226, in read_10x_h5
+    with h5py.File(str(path), "r") as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\krog5w\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\h5py\_hl\files.py", line 555, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "C:\Users\krog5w\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\h5py\_hl\files.py", line 232, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 106, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = '\data\salomonis-archive\FASTQs\Grimes\RNA\scRNASeq\10X-Genomics\BK_AK_black_aml\CBF\organized_samples\1009_AfInv16_29M\CITE\1009_AfInv16_29M\outs\filtered_feature_bc_matrix.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+ERROR FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = '\data\salomonis-archive\FASTQs\Grimes\RNA\scRNASeq\10X-Genomics\BK_AK_black_aml\CBF\organized_samples\1009_AfInv16_29M\CITE\1009_AfInv16_29M\outs\filtered_feature_bc_matrix.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)

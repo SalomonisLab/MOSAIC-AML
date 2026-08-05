@@ -8,7 +8,7 @@
   {
    "probability": 0.848,
    "call": "absent",
-   "threshold": 0.955,
+   "threshold": 0.957,
    "n_modalities": 1,
    "contributions": [
     {
@@ -18,7 +18,7 @@
      "oof_auc": 0.523
     }
    ],
-   "heldout_auc": 0.966,
+   "heldout_auc": 0.955,
    "mutation": "inv16",
    "true_label": null,
    "confidence": "ok"
@@ -26,7 +26,7 @@
   {
    "probability": 0.848,
    "call": "absent",
-   "threshold": 0.955,
+   "threshold": 0.957,
    "n_modalities": 1,
    "contributions": [
     {
@@ -36,15 +36,15 @@
      "oof_auc": 0.523
     }
    ],
-   "heldout_auc": 0.966,
+   "heldout_auc": 0.955,
    "mutation": "inv(16)_CBFB-MYH11",
    "true_label": null,
    "confidence": "ok"
   },
   {
    "probability": 0.812,
-   "call": "present",
-   "threshold": 0.748,
+   "call": "absent",
+   "threshold": 0.909,
    "n_modalities": 1,
    "contributions": [
     {
@@ -57,12 +57,12 @@
    "heldout_auc": null,
    "mutation": "kmt2a",
    "true_label": null,
-   "confidence": "ok"
+   "confidence": "abstain: no held-out positives (reliability unknown)"
   },
   {
    "probability": 0.812,
-   "call": "present",
-   "threshold": 0.748,
+   "call": "absent",
+   "threshold": 0.91,
    "n_modalities": 1,
    "contributions": [
     {
@@ -75,84 +75,48 @@
    "heldout_auc": null,
    "mutation": "KMT2A-rearrangement",
    "true_label": null,
-   "confidence": "ok"
+   "confidence": "abstain: no held-out positives (reliability unknown)"
   },
   {
    "probability": 0.812,
-   "call": "present",
-   "threshold": 0.516,
+   "call": "absent",
+   "threshold": 0.951,
    "n_modalities": 1,
    "contributions": [
     {
      "modality": "LSC",
-     "weight": 0.126,
+     "weight": 0.068,
      "score": 0.812,
      "oof_auc": 0.732
     }
    ],
-   "heldout_auc": 0.6,
+   "heldout_auc": 0.44,
    "mutation": "PTPN11",
    "true_label": null,
-   "confidence": "ok"
-  },
-  {
-   "probability": 0.803,
-   "call": "present",
-   "threshold": 0.708,
-   "n_modalities": 1,
-   "contributions": [
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 0.803,
-     "oof_auc": 0.631
-    }
-   ],
-   "heldout_auc": 0.676,
-   "mutation": "NRAS",
-   "true_label": null,
-   "confidence": "ok"
+   "confidence": "abstain: weak separability (held-out AUC 0.44 < 0.65)"
   },
   {
    "probability": 0.781,
-   "call": "present",
-   "threshold": 0.629,
+   "call": "absent",
+   "threshold": 0.787,
    "n_modalities": 1,
    "contributions": [
     {
      "modality": "LSC",
      "weight": 0.0,
      "score": 0.781,
-     "oof_auc": 0.51
+     "oof_auc": 0.525
     }
    ],
-   "heldout_auc": 0.65,
-   "mutation": "IDH2",
-   "true_label": null,
-   "confidence": "ok"
-  },
-  {
-   "probability": 0.767,
-   "call": "present",
-   "threshold": 0.633,
-   "n_modalities": 1,
-   "contributions": [
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 0.767,
-     "oof_auc": 0.516
-    }
-   ],
-   "heldout_auc": 0.84,
-   "mutation": "KRAS",
+   "heldout_auc": 0.976,
+   "mutation": "NPM1",
    "true_label": null,
    "confidence": "ok"
   },
   {
    "probability": 0.765,
-   "call": "present",
-   "threshold": 0.751,
+   "call": "absent",
+   "threshold": 0.886,
    "n_modalities": 1,
    "contributions": [
     {
@@ -162,33 +126,69 @@
      "oof_auc": 0.54
     }
    ],
-   "heldout_auc": 0.924,
+   "heldout_auc": 0.933,
    "mutation": "trisomy8",
    "true_label": null,
    "confidence": "ok"
   },
   {
-   "probability": 0.737,
-   "call": "absent",
-   "threshold": 0.795,
+   "probability": 0.765,
+   "call": "present",
+   "threshold": 0.726,
    "n_modalities": 1,
    "contributions": [
     {
      "modality": "LSC",
      "weight": 0.0,
-     "score": 0.737,
-     "oof_auc": 0.551
+     "score": 0.765,
+     "oof_auc": 0.63
     }
    ],
-   "heldout_auc": 0.952,
-   "mutation": "NPM1",
+   "heldout_auc": 0.714,
+   "mutation": "NRAS",
+   "true_label": null,
+   "confidence": "ok"
+  },
+  {
+   "probability": 0.762,
+   "call": "absent",
+   "threshold": 0.782,
+   "n_modalities": 1,
+   "contributions": [
+    {
+     "modality": "LSC",
+     "weight": 0.0,
+     "score": 0.762,
+     "oof_auc": 0.524
+    }
+   ],
+   "heldout_auc": 0.72,
+   "mutation": "KRAS",
+   "true_label": null,
+   "confidence": "ok"
+  },
+  {
+   "probability": 0.706,
+   "call": "absent",
+   "threshold": 0.896,
+   "n_modalities": 1,
+   "contributions": [
+    {
+     "modality": "LSC",
+     "weight": 0.0,
+     "score": 0.706,
+     "oof_auc": 0.669
+    }
+   ],
+   "heldout_auc": 0.657,
+   "mutation": "SRSF2",
    "true_label": null,
    "confidence": "ok"
   },
   {
    "probability": 0.668,
    "call": "absent",
-   "threshold": 0.734,
+   "threshold": 0.849,
    "n_modalities": 1,
    "contributions": [
     {
@@ -198,51 +198,33 @@
      "oof_auc": 0.556
     }
    ],
-   "heldout_auc": 0.797,
+   "heldout_auc": 0.758,
    "mutation": "TET2",
    "true_label": null,
    "confidence": "ok"
   },
   {
-   "probability": 0.346,
+   "probability": 0.352,
    "call": "absent",
-   "threshold": 0.659,
+   "threshold": 0.941,
    "n_modalities": 1,
    "contributions": [
     {
      "modality": "LSC",
      "weight": 0.0,
-     "score": 0.346,
-     "oof_auc": 0.621
+     "score": 0.352,
+     "oof_auc": 0.522
     }
    ],
-   "heldout_auc": 0.72,
-   "mutation": "ASXL1",
-   "true_label": null,
-   "confidence": "ok"
-  },
-  {
-   "probability": 0.335,
-   "call": "absent",
-   "threshold": 0.667,
-   "n_modalities": 1,
-   "contributions": [
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 0.335,
-     "oof_auc": 0.54
-    }
-   ],
-   "heldout_auc": 0.705,
-   "mutation": "FLT3-TKD",
+   "heldout_auc": 0.717,
+   "mutation": "IDH2",
    "true_label": null,
    "confidence": "ok"
   },
   {
    "probability": 0.316,
    "call": "absent",
-   "threshold": 0.899,
+   "threshold": 0.975,
    "n_modalities": 1,
    "contributions": [
     {
@@ -255,12 +237,48 @@
    "heldout_auc": null,
    "mutation": "GATA2",
    "true_label": null,
+   "confidence": "abstain: no held-out positives (reliability unknown)"
+  },
+  {
+   "probability": 0.296,
+   "call": "absent",
+   "threshold": 0.901,
+   "n_modalities": 1,
+   "contributions": [
+    {
+     "modality": "LSC",
+     "weight": 0.0,
+     "score": 0.296,
+     "oof_auc": 0.626
+    }
+   ],
+   "heldout_auc": 1.0,
+   "mutation": "ASXL1",
+   "true_label": null,
+   "confidence": "ok"
+  },
+  {
+   "probability": 0.247,
+   "call": "absent",
+   "threshold": 0.988,
+   "n_modalities": 1,
+   "contributions": [
+    {
+     "modality": "LSC",
+     "weight": 0.0,
+     "score": 0.247,
+     "oof_auc": 0.643
+    }
+   ],
+   "heldout_auc": 0.909,
+   "mutation": "FLT3-TKD",
+   "true_label": null,
    "confidence": "ok"
   },
   {
    "probability": 0.244,
    "call": "absent",
-   "threshold": 0.701,
+   "threshold": 0.791,
    "n_modalities": 1,
    "contributions": [
     {
@@ -270,15 +288,51 @@
      "oof_auc": 0.628
     }
    ],
-   "heldout_auc": 0.604,
+   "heldout_auc": 0.792,
    "mutation": "KIT",
    "true_label": null,
    "confidence": "ok"
   },
   {
+   "probability": 0.216,
+   "call": "absent",
+   "threshold": 0.867,
+   "n_modalities": 1,
+   "contributions": [
+    {
+     "modality": "LSC",
+     "weight": 0.0,
+     "score": 0.216,
+     "oof_auc": 0.685
+    }
+   ],
+   "heldout_auc": 0.94,
+   "mutation": "FLT3-ITD",
+   "true_label": null,
+   "confidence": "ok"
+  },
+  {
+   "probability": 0.216,
+   "call": "absent",
+   "threshold": 0.975,
+   "n_modalities": 1,
+   "contributions": [
+    {
+     "modality": "LSC",
+     "weight": 0.0,
+     "score": 0.216,
+     "oof_auc": 0.5
+    }
+   ],
+   "heldout_auc": 0.56,
+   "mutation": "WT1",
+   "true_label": null,
+   "confidence": "abstain: weak separability (held-out AUC 0.56 < 0.65)"
+  },
+  {
    "probability": 0.205,
    "call": "absent",
-   "threshold": 0.662,
+   "threshold": 0.851,
    "n_modalities": 1,
    "contributions": [
     {
@@ -288,51 +342,51 @@
      "oof_auc": 0.588
     }
    ],
-   "heldout_auc": 0.92,
+   "heldout_auc": 0.966,
    "mutation": "complex",
-   "true_label": null,
-   "confidence": "ok"
-  },
-  {
-   "probability": 0.202,
-   "call": "absent",
-   "threshold": 0.724,
-   "n_modalities": 1,
-   "contributions": [
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 0.202,
-     "oof_auc": 0.637
-    }
-   ],
-   "heldout_auc": 0.694,
-   "mutation": "FLT3",
    "true_label": null,
    "confidence": "ok"
   },
   {
    "probability": 0.199,
    "call": "absent",
-   "threshold": 0.701,
+   "threshold": 0.967,
    "n_modalities": 1,
    "contributions": [
     {
      "modality": "LSC",
      "weight": 0.0,
      "score": 0.199,
-     "oof_auc": 0.525
+     "oof_auc": 0.619
     }
    ],
-   "heldout_auc": 0.785,
-   "mutation": "DNMT3A",
+   "heldout_auc": 0.792,
+   "mutation": "SF3B1",
+   "true_label": null,
+   "confidence": "ok"
+  },
+  {
+   "probability": 0.194,
+   "call": "absent",
+   "threshold": 0.854,
+   "n_modalities": 1,
+   "contributions": [
+    {
+     "modality": "LSC",
+     "weight": 0.0,
+     "score": 0.194,
+     "oof_auc": 0.668
+    }
+   ],
+   "heldout_auc": 0.81,
+   "mutation": "FLT3",
    "true_label": null,
    "confidence": "ok"
   },
   {
    "probability": 0.188,
    "call": "absent",
-   "threshold": 0.697,
+   "threshold": 0.915,
    "n_modalities": 1,
    "contributions": [
     {
@@ -345,48 +399,30 @@
    "heldout_auc": null,
    "mutation": "del5",
    "true_label": null,
-   "confidence": "ok"
+   "confidence": "abstain: no held-out positives (reliability unknown)"
   },
   {
-   "probability": 0.18,
+   "probability": 0.188,
    "call": "absent",
-   "threshold": 0.796,
+   "threshold": 0.908,
    "n_modalities": 1,
    "contributions": [
     {
      "modality": "LSC",
      "weight": 0.0,
-     "score": 0.18,
-     "oof_auc": 0.568
+     "score": 0.188,
+     "oof_auc": 0.601
     }
    ],
-   "heldout_auc": 0.807,
+   "heldout_auc": 0.761,
    "mutation": "TP53",
-   "true_label": null,
-   "confidence": "ok"
-  },
-  {
-   "probability": 0.172,
-   "call": "absent",
-   "threshold": 0.734,
-   "n_modalities": 1,
-   "contributions": [
-    {
-     "modality": "LSC",
-     "weight": 0.0,
-     "score": 0.172,
-     "oof_auc": 0.723
-    }
-   ],
-   "heldout_auc": 0.902,
-   "mutation": "FLT3-ITD",
    "true_label": null,
    "confidence": "ok"
   },
   {
    "probability": 0.169,
    "call": "absent",
-   "threshold": 0.781,
+   "threshold": 0.921,
    "n_modalities": 1,
    "contributions": [
     {
@@ -404,68 +440,68 @@
   {
    "probability": 0.169,
    "call": "absent",
-   "threshold": 0.727,
+   "threshold": 0.841,
    "n_modalities": 1,
    "contributions": [
     {
      "modality": "LSC",
-     "weight": 0.246,
+     "weight": 0.0,
      "score": 0.169,
-     "oof_auc": 0.686
+     "oof_auc": 0.539
     }
    ],
-   "heldout_auc": 0.44,
-   "mutation": "WT1",
+   "heldout_auc": 0.708,
+   "mutation": "DNMT3A",
    "true_label": null,
    "confidence": "ok"
   },
   {
    "probability": 0.166,
    "call": "absent",
-   "threshold": 0.626,
+   "threshold": 0.932,
    "n_modalities": 1,
    "contributions": [
     {
      "modality": "LSC",
      "weight": 0.0,
      "score": 0.166,
-     "oof_auc": 0.566
+     "oof_auc": 0.564
     }
    ],
    "heldout_auc": null,
    "mutation": "CEBPA",
    "true_label": null,
-   "confidence": "ok"
+   "confidence": "abstain: no held-out positives (reliability unknown)"
   },
   {
-   "probability": 0.161,
+   "probability": 0.166,
    "call": "absent",
-   "threshold": 0.689,
+   "threshold": 0.985,
    "n_modalities": 1,
    "contributions": [
     {
      "modality": "LSC",
      "weight": 0.0,
-     "score": 0.161,
-     "oof_auc": 0.53
+     "score": 0.166,
+     "oof_auc": 0.592
     }
    ],
-   "heldout_auc": 0.971,
+   "heldout_auc": 1.0,
    "mutation": "RUNX1",
    "true_label": null,
    "confidence": "ok"
   },
   {
-   "probability": 0.091,
+   "probability": 0.139,
    "call": "absent",
-   "threshold": 0.709,
+   "threshold": 0.894,
    "n_modalities": 1,
    "contributions": [
     {
      "modality": "LSC",
      "weight": 0.0,
-     "score": 0.091,
-     "oof_auc": 0.576
+     "score": 0.139,
+     "oof_auc": 0.549
     }
    ],
    "heldout_auc": 0.783,
@@ -476,7 +512,7 @@
  ],
  "predictor": {
   "version": "1.0",
-  "n_mutations": 26,
+  "n_mutations": 28,
   "modalities": [
    "RNA",
    "Composition",
@@ -485,15 +521,74 @@
    "Metabolite",
    "GRN",
    "LSC",
-   "Cell-comm"
+   "Cell-comm",
+   "BulkRNA"
   ],
-  "mean_heldout_auc": 0.795,
+  "mean_heldout_auc": 0.819,
   "rna": "raw+prog (UDON markers + program fractions)",
   "base_model": "linSVM",
   "n_train_samples": 361,
-  "trained": "2026-07-01 00:29"
+  "trained": "2026-07-27 20:28"
  },
  "validation": true,
+ "treatment_panel": [
+  {
+   "driver": "NRAS",
+   "match": "gene",
+   "status": "PREDICTED \u2014 confirm before acting",
+   "predicted": true,
+   "confidence": 0.765,
+   "reliability_auc": 0.714,
+   "drugs": [
+    {
+     "drug": "trametinib",
+     "class": "MEK inhibitor",
+     "tier": "investigational \u00b7 RAS-pathway",
+     "note": ""
+    },
+    {
+     "drug": "SHP2 inhibitor",
+     "class": "SHP2",
+     "tier": "investigational",
+     "note": ""
+    }
+   ],
+   "rationale": "RAS-pathway activation is linked to venetoclax resistance and relapse",
+   "explanation": "This driver was PREDICTED from expression (model score 0.77, reliability AUROC 0.71) and has NOT been sequenced \u2014 trametinib, SHP2 inhibitor is implicated only if the call is confirmed. RAS-pathway activation is linked to venetoclax resistance and relapse",
+   "explained_by": "rules"
+  }
+ ],
+ "tests_panel": [
+  {
+   "test": "RAS-pathway NGS (NRAS/KRAS/PTPN11/NF1/CBL)",
+   "why": "RAS-pathway activation is linked to venetoclax resistance and relapse",
+   "driver": "NRAS",
+   "priority": "confirm",
+   "reason": "confirm the predicted driver before any targeted decision"
+  },
+  {
+   "test": "Karyotype + FISH",
+   "why": "cytogenetic risk (inv16, t(8;21), -5/-7, complex) \u2014 bulk RNA does not call these",
+   "priority": "baseline",
+   "driver": null,
+   "reason": "standard workup"
+  },
+  {
+   "test": "Targeted myeloid NGS panel",
+   "why": "the ground truth this panel's predictions must be confirmed against",
+   "priority": "baseline",
+   "driver": null,
+   "reason": "standard workup"
+  },
+  {
+   "test": "Flow cytometry immunophenotype",
+   "why": "blast %, lineage, and an MRD baseline",
+   "priority": "baseline",
+   "driver": null,
+   "reason": "standard workup"
+  }
+ ],
+ "panels_note": "RESEARCH DECISION SUPPORT \u2014 not medical advice. Drivers marked PREDICTED were inferred from expression and have NOT been sequenced; confirm them before any targeted decision. Close the loop: re-run with --mutations <confirmed drivers> to engage the deterministic genetic anchor.",
  "modalities_available": [
   "LSC"
  ],

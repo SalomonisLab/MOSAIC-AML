@@ -1,168 +1,312 @@
 {
-  "mode": "patient_panel",
-  "sample_key": "WashU::10DD-1002__Diagnosis",
-  "annotation": "TP53 U2AF1",
-  "dataset": "WashU",
-  "provenance": {
-    "layout": "local"
-  },
-  "panel": [
-    {
-      "witness": "composition",
-      "grounding": "honest_cv",
-      "independence": "independent",
-      "evidence": {
-        "witness": "composition",
-        "kind": "measured",
-        "status": "ok",
-        "held_out": true,
-        "patient_prediction": "FLT3",
-        "patient_probability": 0.7819,
-        "true_label": "TP53",
-        "cohort_balanced_accuracy": 0.6312,
-        "cohort_permutation_p": 0.047619047619047616,
-        "patient_top_cellstates": {
-          "MDP-2": 0.124,
-          "LMPP-1-cycling": 0.103,
-          "CD8 TEM": 0.082,
-          "NK-Mature": 0.079,
-          "Myeloid intermediate 2": 0.078,
-          "MPP-MEP": 0.066
-        }
-      },
-      "opinion": {
-        "confidence": 0.5,
-        "reliability_weight": 0.85,
-        "summary": "predicts FLT3 (prob 0.7819)",
-        "caveats": "LLM fallback"
-      }
-    },
-    {
-      "witness": "genetic",
-      "grounding": "deterministic_fact",
-      "independence": "independent",
-      "evidence": {
-        "witness": "genetic",
-        "kind": "independent",
-        "status": "ok",
-        "present": [
-          "del7",
-          "TP53"
-        ],
-        "targetable": {},
-        "eln": null
-      },
-      "opinion": {
-        "confidence": 0.6,
-        "reliability_weight": 0.85,
-        "summary": "present: ['del7', 'TP53']; targetable: []",
-        "caveats": "LLM fallback"
-      }
-    },
-    {
-      "witness": "cell-state/UDON",
-      "grounding": "discovery",
-      "independence": "rna_derived",
-      "evidence": {
-        "witness": "cell-state/UDON",
-        "kind": "discovery",
-        "status": "ok",
-        "n_pseudobulks": 38,
-        "active_programs": [
-          {
-            "program": "P8",
-            "n_pseudobulks": 18,
-            "marks": "TP53"
-          },
-          {
-            "program": "P2",
-            "n_pseudobulks": 7,
-            "marks": "NPM1"
-          },
-          {
-            "program": "P9",
-            "n_pseudobulks": 5,
-            "marks": null
-          },
-          {
-            "program": "P6",
-            "n_pseudobulks": 2,
-            "marks": "NPM1"
-          },
-          {
-            "program": "P1",
-            "n_pseudobulks": 2,
-            "marks": null
-          },
-          {
-            "program": "P10",
-            "n_pseudobulks": 2,
-            "marks": "FLT3"
-          },
-          {
-            "program": "P7",
-            "n_pseudobulks": 1,
-            "marks": "PHIP"
-          },
-          {
-            "program": "P3",
-            "n_pseudobulks": 1,
-            "marks": "Inv16"
-          }
-        ]
-      },
-      "opinion": {
-        "confidence": 0.6,
-        "reliability_weight": 0.7,
-        "summary": "programs: ['P8', 'P2', 'P9', 'P6', 'P1', 'P10', 'P7', 'P3']",
-        "caveats": "LLM fallback"
-      }
+ "mode": "patient_panel",
+ "sample_key": "WashU::10DD-1002__Diagnosis",
+ "annotation": "TP53 U2AF1",
+ "dataset": "WashU",
+ "provenance": {
+  "layout": "local"
+ },
+ "panel": [
+  {
+   "witness": "composition",
+   "grounding": "honest_cv",
+   "independence": "independent",
+   "evidence": {
+    "witness": "composition",
+    "kind": "measured",
+    "status": "ok",
+    "held_out": true,
+    "patient_prediction": "FLT3",
+    "patient_probability": 0.7819,
+    "true_label": "TP53",
+    "cohort_balanced_accuracy": 0.6312,
+    "cohort_permutation_p": 0.047619047619047616,
+    "patient_top_cellstates": {
+     "MDP-2": 0.124,
+     "LMPP-1-cycling": 0.103,
+     "CD8 TEM": 0.082,
+     "NK-Mature": 0.079,
+     "Myeloid intermediate 2": 0.078,
+     "MPP-MEP": 0.066
     }
-  ],
-  "consensus": {
-    "subtype_call": "TP53 (genetic-anchored: direct mutation observation)",
-    "leading_hypothesis": "TP53",
-    "leading_confirmed_by_genetics": true,
-    "concordance": 0.581,
-    "per_witness_consistency": {
-      "composition": "conflict",
-      "genetic": "agree",
-      "cell-state/UDON": "agree"
-    },
-    "conflicts": "composition\u2192FLT3",
-    "ranked_therapy_hypotheses": [
-      {
-        "biomarker": "TP53",
-        "drug": "HMA + venetoclax; consider trial (eprenetapopt) and early allogeneic transplant",
-        "evidence_level": "heuristic",
-        "source": "lit"
-      },
-      {
-        "biomarker": "del7",
-        "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
-        "evidence_level": "heuristic",
-        "source": "lit"
-      }
+   },
+   "opinion": {
+    "confidence": 0.5,
+    "reliability_weight": 0.85,
+    "summary": "predicts FLT3 (prob 0.7819)",
+    "caveats": "LLM fallback"
+   }
+  },
+  {
+   "witness": "genetic",
+   "grounding": "deterministic_fact",
+   "independence": "independent",
+   "evidence": {
+    "witness": "genetic",
+    "kind": "independent",
+    "status": "ok",
+    "present": [
+     "del7",
+     "TP53"
     ],
-    "recommended_validations": [
-      {
-        "claim": "mutation",
-        "validation": "targeted DNA/RNA sequencing (NGS panel)",
-        "source": "standard"
-      },
-      {
-        "claim": "subtype",
-        "validation": "flow cytometry immunophenotyping",
-        "source": "standard"
-      },
-      {
-        "claim": "del7",
-        "validation": "FISH for -7/del(7q) and conventional karyotype",
-        "source": "standard"
-      }
-    ],
-    "overall_confidence": "medium",
-    "rationale": "Leading hypothesis: TP53 (genetic-anchored: direct mutation observation). Concordance 0.58. Conflicts: composition\u2192FLT3. ",
-    "knowledge_version": "kb-2026.06"
+    "targetable": {},
+    "eln": null
+   },
+   "opinion": {
+    "confidence": 0.6,
+    "reliability_weight": 0.85,
+    "summary": "present: ['del7', 'TP53']; targetable: []",
+    "caveats": "LLM fallback"
+   }
+  },
+  {
+   "witness": "cell-state/UDON",
+   "grounding": "discovery",
+   "independence": "rna_derived",
+   "evidence": {
+    "witness": "cell-state/UDON",
+    "kind": "discovery",
+    "status": "ok",
+    "n_pseudobulks": 38,
+    "active_programs": [
+     {
+      "program": "P8",
+      "n_pseudobulks": 18,
+      "marks": "TP53"
+     },
+     {
+      "program": "P2",
+      "n_pseudobulks": 7,
+      "marks": "NPM1"
+     },
+     {
+      "program": "P9",
+      "n_pseudobulks": 5,
+      "marks": null
+     },
+     {
+      "program": "P6",
+      "n_pseudobulks": 2,
+      "marks": "NPM1"
+     },
+     {
+      "program": "P1",
+      "n_pseudobulks": 2,
+      "marks": null
+     },
+     {
+      "program": "P10",
+      "n_pseudobulks": 2,
+      "marks": "FLT3"
+     },
+     {
+      "program": "P7",
+      "n_pseudobulks": 1,
+      "marks": "PHIP"
+     },
+     {
+      "program": "P3",
+      "n_pseudobulks": 1,
+      "marks": "Inv16"
+     }
+    ]
+   },
+   "opinion": {
+    "confidence": 0.6,
+    "reliability_weight": 0.7,
+    "summary": "programs: ['P8', 'P2', 'P9', 'P6', 'P1', 'P10', 'P7', 'P3']",
+    "caveats": "LLM fallback"
+   }
   }
+ ],
+ "consensus": {
+  "subtype_call": "TP53 (genetic-anchored: direct mutation observation)",
+  "leading_hypothesis": "TP53",
+  "leading_confirmed_by_genetics": true,
+  "concordance": 0.581,
+  "per_witness_consistency": {
+   "composition": "conflict",
+   "genetic": "agree",
+   "cell-state/UDON": "agree"
+  },
+  "conflicts": "composition\u2192FLT3",
+  "ranked_therapy_hypotheses": [
+   {
+    "biomarker": "TP53",
+    "drug": "HMA + venetoclax; consider trial (eprenetapopt) and early allogeneic transplant",
+    "evidence_level": "heuristic",
+    "source": "lit"
+   },
+   {
+    "biomarker": "del7",
+    "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
+    "evidence_level": "heuristic",
+    "source": "lit"
+   }
+  ],
+  "recommended_validations": [
+   {
+    "claim": "mutation",
+    "validation": "targeted DNA/RNA sequencing (NGS panel)",
+    "source": "standard"
+   },
+   {
+    "claim": "subtype",
+    "validation": "flow cytometry immunophenotyping",
+    "source": "standard"
+   },
+   {
+    "claim": "del7",
+    "validation": "FISH for -7/del(7q) and conventional karyotype",
+    "source": "standard"
+   }
+  ],
+  "overall_confidence": "medium",
+  "rationale": "Leading hypothesis: TP53 (genetic-anchored: direct mutation observation). Concordance 0.58. Conflicts: composition\u2192FLT3. ",
+  "knowledge_version": "kb-2026.06"
+ },
+ "drug_response": {
+  "available": true,
+  "n_drugs_modelled": 118,
+  "n_drugs_reported": 118,
+  "n_abstained": 0,
+  "patient": {
+   "genes_shared_with_model": 14237,
+   "ood_distance": 1.1323854114572174,
+   "ood_percentile": 0.8113695090439277,
+   "differentiation_axis_percentile": 0.501,
+   "single_cell_states": 46
+  },
+  "top_by_tier": {
+   "approved_AML": [
+    {
+     "inhibitor": "Venetoclax",
+     "utility": 0.6514,
+     "prob_sensitive": 0.9495,
+     "n_challenges": 2
+    },
+    {
+     "inhibitor": "Midostaurin",
+     "utility": 0.4152,
+     "prob_sensitive": 0.5619,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Gilteritinib",
+     "utility": 0.2526,
+     "prob_sensitive": 0.2701,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Cytarabine",
+     "utility": 0.2058,
+     "prob_sensitive": 0.5606,
+     "n_challenges": 2
+    },
+    {
+     "inhibitor": "Azacytidine",
+     "utility": 0.1955,
+     "prob_sensitive": 0.4473,
+     "n_challenges": 2
+    }
+   ],
+   "approved_other": [
+    {
+     "inhibitor": "Ponatinib (AP24534)",
+     "utility": 0.611,
+     "prob_sensitive": 0.8628,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Bosutinib (SKI-606)",
+     "utility": 0.6087,
+     "prob_sensitive": 0.8692,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Neratinib (HKI-272)",
+     "utility": 0.5504,
+     "prob_sensitive": 0.7654,
+     "n_challenges": 2
+    },
+    {
+     "inhibitor": "Palbociclib",
+     "utility": 0.5088,
+     "prob_sensitive": 0.6834,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Lenalidomide",
+     "utility": 0.5051,
+     "prob_sensitive": 0.6067,
+     "n_challenges": 0
+    }
+   ],
+   "trial": [
+    {
+     "inhibitor": "Volasertib (BI-6727)",
+     "utility": 0.5593,
+     "prob_sensitive": 0.6903,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "OTX-015",
+     "utility": 0.5426,
+     "prob_sensitive": 0.7057,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Cediranib (AZD2171)",
+     "utility": 0.489,
+     "prob_sensitive": 0.6756,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Motesanib (AMG-706)",
+     "utility": 0.445,
+     "prob_sensitive": 0.6,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Elesclomol",
+     "utility": 0.4388,
+     "prob_sensitive": 0.7855,
+     "n_challenges": 2
+    }
+   ],
+   "research": [
+    {
+     "inhibitor": "Nutlin 3a",
+     "utility": 0.4992,
+     "prob_sensitive": 0.7652,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "JQ1",
+     "utility": 0.4754,
+     "prob_sensitive": 0.7239,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "ABT-737",
+     "utility": 0.4179,
+     "prob_sensitive": 0.589,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "DBZ",
+     "utility": 0.3809,
+     "prob_sensitive": 0.5888,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "JAK Inhibitor I",
+     "utility": 0.3617,
+     "prob_sensitive": 0.3901,
+     "n_challenges": 0
+    }
+   ]
+  },
+  "caveat": "predicted EX-VIVO sensitivity from the BeatAML2 functional screen; a prioritisation for trial matching or laboratory validation, not a treatment recommendation"
+ }
 }

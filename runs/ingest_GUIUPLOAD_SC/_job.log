@@ -1,0 +1,6 @@
+C:\Users\krog5w\.gemini\antigravity\scratch\AML-multimodal\pipeline\amlmm\dataio.py:183: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  meta = meta.replace("", np.nan).drop_duplicates("sample_key").set_index("sample_key")
+OK C:\Users\krog5w\.gemini\antigravity\scratch\AML-multimodal\runs\ingest_GUIUPLOAD_SC
+  sample_key: upload-test::GUIUPLOAD_SC
+  specimen_class: diseased (gate p_diseased=0.9773)
+  leading: Inv16 (confirmed_by_genetics=False, medium)

@@ -3,6 +3,18 @@
 A curated local copy of the Salomonis-lab AML multimodal atlas, pulled for building
 and testing an agent / modeling framework on top of it.
 
+## The three names
+
+| name | what it is |
+|---|---|
+| **MOSAIC-AML** | the platform — *Multimodal Omics and State-Aware Inference of Cancer Drivers in Acute Myeloid Leukemia*. The atlas, the ingest path, the witness panel, the arbiter, the decision board. |
+| **CIPHER-AML** | the **mutation predictor** — *Cell-state Inference of Pathogenic Hits from Expression and Regulation*. Infers driver lesions from expression, cell state and regulon activity, without sequencing. |
+| **COMPASS-AML** | the **drug predictor** — *Cell-state Oriented Modelling of Pharmacologic Assay Sensitivity*. Predicts ex-vivo inhibitor sensitivity from the BeatAML2 functional screen, resolved by cell state. |
+
+CIPHER-AML and COMPASS-AML are deliberately **parallel** layers, not a chain: a mutation call enters the
+drug layer as one piece of evidence among several, never as a look-up key for a therapy.
+
+
 ## Provenance
 - **Data + scripts** copied from the cluster: `bmiclusterp-head:/data/salomonis-archive/LabFiles/Nicholas/AML-multimodal`
   (that folder is a *deposit* — outputs + deploy/eval scripts + reports, not the live engine).
@@ -28,6 +40,8 @@ AML-multimodal/
 │   ├─ RNA_UDON_final_program_assignments.tsv       UDON program per pseudobulk
 │   ├─ {ADT,GRN,Lipid,Metabolite}_udon_clusters.txt UDON clusters per modality
 │   ├─ LSC_prediction_subtype_RF.tsv                deployed LSC subtype calls
+│   ├─ cellstate_signatures.json                   10 lineage signatures learned from the atlas
+│                                                  (used by the COMPASS-AML `state` feature block)
 │   └─ cellcomm_sample_manifest.tsv
 └─ scripts/                   deposit deploy/eval code + imputation reports
     ├─ LSC-prediction/algorithm/   honest_model_bakeoff.py (CV template), RF model .joblib
@@ -68,3 +82,15 @@ AML-multimodal/
 ## Loading
 Needs Python with `anndata`/`scanpy` (e.g. an AltAnalyze/scanpy conda env). Large matrices:
 `ad.read_h5ad(path, backed='r')` to avoid loading fully into RAM.
+
+## COMPASS-AML (the drug-response layer)
+
+`pipeline/amlmm/drug/` predicts ex-vivo inhibitor sensitivity from the transcriptome, trained on the
+BeatAML2 functional screen (`data/external/beataml/beataml_probit_curve_fits_v4_dbgap.txt`, fetched
+from the public BeatAML2 repo). Three separate models — patient-level response (A), the same model
+re-applied per cell state (B), and independent mechanistic target evidence (C) — combined into a
+per-tier prioritisation. See `deliverables/METHODS_COMPASS-AML.md` for methods and validation, and
+`gui/therapy.html` / `gui/rx_validation.html` for the two front ends.
+
+**Ex-vivo sensitivity is a prioritisation signal for trial matching or laboratory validation, not an
+estimate of clinical benefit.**

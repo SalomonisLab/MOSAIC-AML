@@ -1,0 +1,65 @@
+cell	scope	mutation	sensitivity	specificity	n_pos
+Bulk·BeatAML(CV)	OVERALL	(mean)	0.532	0.956	
+Bulk·BeatAML(CV)	per-mut	NPM1	0.957	0.958	140
+Bulk·BeatAML(CV)	per-mut	FLT3	0.709	0.945	158
+Bulk·BeatAML(CV)	per-mut	TP53	0.500	0.998	22
+Bulk·BeatAML(CV)	per-mut	KMT2A	0.837	1.000	43
+Bulk·BeatAML(CV)	per-mut	TET2	0.512	0.949	82
+Bulk·BeatAML(CV)	per-mut	DNMT3A	0.875	0.341	64
+Bulk·BeatAML(CV)	per-mut	ASXL1	0.556	0.964	63
+Bulk·BeatAML(CV)	per-mut	NRAS	0.487	0.901	39
+Bulk·BeatAML(CV)	per-mut	KRAS	0.300	0.998	10
+Bulk·BeatAML(CV)	per-mut	RUNX1	0.867	0.943	75
+Bulk·BeatAML(CV)	per-mut	IDH1	0.816	0.892	49
+Bulk·BeatAML(CV)	per-mut	IDH2	0.600	0.995	10
+Bulk·BeatAML(CV)	per-mut	WT1	0.532	0.975	47
+Bulk·BeatAML(CV)	per-mut	CEBPA	0.750	0.982	16
+Bulk·BeatAML(CV)	per-mut	KIT	0.538	0.998	13
+Bulk·BeatAML(CV)	per-mut	GATA2	0.448	0.985	29
+Bulk·BeatAML(CV)	per-mut	PTPN11	0.350	0.924	20
+Bulk·Leucegene	OVERALL	(mean)	0.546	0.956	
+Bulk·Leucegene	per-mut	NPM1	0.869	0.987	99
+Bulk·Leucegene	per-mut	FLT3	0.250	0.947	4
+Bulk·Leucegene	per-mut	TET2	0.235	0.937	98
+Bulk·Leucegene	per-mut	ASXL1	0.250	0.960	8
+Bulk·Leucegene	per-mut	IDH1	0.500	0.859	26
+Bulk·Leucegene	per-mut	IDH2	0.667	0.914	30
+Bulk·Leucegene	per-mut	WT1	0.300	0.944	10
+Bulk·Leucegene	per-mut	CEBPA	0.727	0.983	11
+Bulk·Leucegene	per-mut	GATA2	0.333	0.987	3
+Bulk·held-out sc	OVERALL	(mean)	0.605	0.929	
+Bulk·held-out sc	per-mut	FLT3	0.571	0.895	7
+Bulk·held-out sc	per-mut	TET2	0.444	0.941	9
+Bulk·all sc	OVERALL	(mean)	0.303	0.946	
+Bulk·all sc	per-mut	FLT3	0.586	0.821	29
+Bulk·all sc	per-mut	TET2	0.345	0.905	29
+Bulk·all sc	per-mut	ASXL1	0.538	0.928	13
+Bulk·all sc	per-mut	GATA2	0.375	0.974	8
+MM·held-out sc	OVERALL	(mean)	0.549	0.921	
+MM·held-out sc	per-mut	inv16	0.500	1.000	8
+MM·held-out sc	per-mut	NPM1	0.667	0.929	12
+MM·held-out sc	per-mut	FLT3	0.545	0.927	11
+MM·held-out sc	per-mut	TET2	0.444	0.941	9
+MM·held-out sc	per-mut	ASXL1	0.000	0.840	1
+MM·held-out sc	per-mut	RUNX1	1.000	0.905	5
+MM·held-out sc	per-mut	IDH1	0.333	0.870	3
+MM·held-out sc	per-mut	WT1	0.000	0.960	1
+MM·all sc(CV)	OVERALL	(mean)	0.498	0.962	
+MM·all sc(CV)	per-mut	inv16	1.000	0.988	11
+MM·all sc(CV)	per-mut	NPM1	0.648	0.980	54
+MM·all sc(CV)	per-mut	FLT3	0.143	1.000	7
+MM·all sc(CV)	per-mut	TP53	0.917	0.948	12
+MM·all sc(CV)	per-mut	KMT2A	0.500	0.986	12
+MM·all sc(CV)	per-mut	TET2	0.550	0.988	20
+MM·all sc(CV)	per-mut	DNMT3A	0.522	0.928	23
+MM·all sc(CV)	per-mut	ASXL1	0.417	0.965	12
+MM·all sc(CV)	per-mut	NRAS	0.643	0.912	28
+MM·all sc(CV)	per-mut	KRAS	0.385	0.930	13
+MM·all sc(CV)	per-mut	RUNX1	0.462	0.904	13
+MM·all sc(CV)	per-mut	IDH1	0.250	0.991	12
+MM·all sc(CV)	per-mut	IDH2	0.143	0.997	14
+MM·all sc(CV)	per-mut	WT1	0.222	0.989	9
+MM·all sc(CV)	per-mut	CEBPA	0.333	0.991	9
+MM·all sc(CV)	per-mut	KIT	0.500	0.968	12
+MM·all sc(CV)	per-mut	GATA2	0.625	0.948	8
+MM·all sc(CV)	per-mut	PTPN11	0.222	0.994	9

@@ -1,0 +1,312 @@
+{
+ "trained": "2026-07-07 17:34",
+ "n_train_samples": 361,
+ "mean_heldout_auc": 0.788,
+ "note": "train_auc = donor-grouped cross-validated out-of-fold AUROC of the deployed fused combiner on the training cohort; heldout_auc = same combiner on the sealed 29-sample held-out set.",
+ "mutations": {
+  "complex": {
+   "train_auc": 0.884,
+   "heldout_auc": 0.909,
+   "n_pos": 24,
+   "gap": -0.025,
+   "threshold": 0.895,
+   "top_modalities": [
+    "Metabolite",
+    "Lipid"
+   ]
+  },
+  "del5": {
+   "train_auc": 0.922,
+   "heldout_auc": null,
+   "n_pos": 15,
+   "gap": null,
+   "threshold": 0.929,
+   "top_modalities": [
+    "Metabolite",
+    "RNA",
+    "Lipid"
+   ]
+  },
+  "del7": {
+   "train_auc": 0.986,
+   "heldout_auc": 1.0,
+   "n_pos": 18,
+   "gap": -0.014,
+   "threshold": 0.948,
+   "top_modalities": [
+    "GRN",
+    "RNA",
+    "Lipid"
+   ]
+  },
+  "inv16": {
+   "train_auc": 0.997,
+   "heldout_auc": 0.875,
+   "n_pos": 11,
+   "gap": 0.122,
+   "threshold": 0.961,
+   "top_modalities": [
+    "Metabolite"
+   ]
+  },
+  "kmt2a": {
+   "train_auc": 0.953,
+   "heldout_auc": null,
+   "n_pos": 12,
+   "gap": null,
+   "threshold": 0.972,
+   "top_modalities": [
+    "Metabolite",
+    "Lipid",
+    "RNA"
+   ]
+  },
+  "trisomy8": {
+   "train_auc": 0.71,
+   "heldout_auc": 0.867,
+   "n_pos": 18,
+   "gap": -0.157,
+   "threshold": 0.788,
+   "top_modalities": [
+    "Lipid",
+    "ADT",
+    "RNA"
+   ]
+  },
+  "ASXL1": {
+   "train_auc": 0.833,
+   "heldout_auc": 0.52,
+   "n_pos": 12,
+   "gap": 0.313,
+   "threshold": 0.807,
+   "top_modalities": [
+    "RNA",
+    "Composition",
+    "LSC"
+   ]
+  },
+  "CEBPA": {
+   "train_auc": 0.938,
+   "heldout_auc": null,
+   "n_pos": 9,
+   "gap": null,
+   "threshold": 0.914,
+   "top_modalities": [
+    "Metabolite",
+    "RNA",
+    "Cell-comm"
+   ]
+  },
+  "DNMT3A": {
+   "train_auc": 0.784,
+   "heldout_auc": 0.75,
+   "n_pos": 23,
+   "gap": 0.034,
+   "threshold": 0.885,
+   "top_modalities": [
+    "GRN",
+    "RNA"
+   ]
+  },
+  "FLT3": {
+   "train_auc": 0.822,
+   "heldout_auc": 0.706,
+   "n_pos": 33,
+   "gap": 0.116,
+   "threshold": 0.846,
+   "top_modalities": [
+    "ADT",
+    "GRN",
+    "Metabolite"
+   ]
+  },
+  "FLT3-ITD": {
+   "train_auc": 0.838,
+   "heldout_auc": 0.895,
+   "n_pos": 22,
+   "gap": -0.057,
+   "threshold": 0.917,
+   "top_modalities": [
+    "Lipid",
+    "RNA",
+    "GRN"
+   ]
+  },
+  "FLT3-TKD": {
+   "train_auc": 0.942,
+   "heldout_auc": 0.977,
+   "n_pos": 8,
+   "gap": -0.035,
+   "threshold": 0.811,
+   "top_modalities": [
+    "RNA",
+    "ADT",
+    "Composition"
+   ]
+  },
+  "GATA2": {
+   "train_auc": 0.82,
+   "heldout_auc": null,
+   "n_pos": 8,
+   "gap": null,
+   "threshold": 0.927,
+   "top_modalities": [
+    "ADT",
+    "Lipid",
+    "RNA"
+   ]
+  },
+  "IDH1": {
+   "train_auc": 0.901,
+   "heldout_auc": 0.681,
+   "n_pos": 12,
+   "gap": 0.22,
+   "threshold": 0.897,
+   "top_modalities": [
+    "Lipid",
+    "Cell-comm",
+    "RNA"
+   ]
+  },
+  "IDH2": {
+   "train_auc": 0.792,
+   "heldout_auc": 0.717,
+   "n_pos": 14,
+   "gap": 0.075,
+   "threshold": 0.784,
+   "top_modalities": [
+    "Metabolite",
+    "LSC",
+    "ADT"
+   ]
+  },
+  "KIT": {
+   "train_auc": 0.768,
+   "heldout_auc": 0.5,
+   "n_pos": 12,
+   "gap": 0.268,
+   "threshold": 0.792,
+   "top_modalities": [
+    "Composition",
+    "ADT",
+    "Cell-comm"
+   ]
+  },
+  "KMT2A-rearrangement": {
+   "train_auc": 0.953,
+   "heldout_auc": null,
+   "n_pos": 12,
+   "gap": null,
+   "threshold": 0.972,
+   "top_modalities": [
+    "Metabolite",
+    "Lipid",
+    "RNA"
+   ]
+  },
+  "KRAS": {
+   "train_auc": 0.804,
+   "heldout_auc": 0.84,
+   "n_pos": 13,
+   "gap": -0.036,
+   "threshold": 0.755,
+   "top_modalities": [
+    "GRN",
+    "Lipid",
+    "ADT"
+   ]
+  },
+  "NPM1": {
+   "train_auc": 0.895,
+   "heldout_auc": 0.988,
+   "n_pos": 54,
+   "gap": -0.093,
+   "threshold": 0.827,
+   "top_modalities": [
+    "RNA",
+    "GRN",
+    "Metabolite"
+   ]
+  },
+  "NRAS": {
+   "train_auc": 0.803,
+   "heldout_auc": 0.676,
+   "n_pos": 28,
+   "gap": 0.127,
+   "threshold": 0.869,
+   "top_modalities": [
+    "GRN",
+    "Cell-comm",
+    "Composition"
+   ]
+  },
+  "PTPN11": {
+   "train_auc": 0.798,
+   "heldout_auc": 0.76,
+   "n_pos": 9,
+   "gap": 0.038,
+   "threshold": 0.872,
+   "top_modalities": [
+    "Metabolite",
+    "Cell-comm",
+    "Lipid"
+   ]
+  },
+  "RUNX1": {
+   "train_auc": 0.833,
+   "heldout_auc": 0.981,
+   "n_pos": 13,
+   "gap": -0.148,
+   "threshold": 0.933,
+   "top_modalities": [
+    "GRN",
+    "Metabolite",
+    "RNA"
+   ]
+  },
+  "TET2": {
+   "train_auc": 0.93,
+   "heldout_auc": 0.791,
+   "n_pos": 20,
+   "gap": 0.139,
+   "threshold": 0.936,
+   "top_modalities": [
+    "GRN",
+    "Metabolite",
+    "Lipid"
+   ]
+  },
+  "TP53": {
+   "train_auc": 0.952,
+   "heldout_auc": 0.767,
+   "n_pos": 12,
+   "gap": 0.185,
+   "threshold": 0.931,
+   "top_modalities": [
+    "Metabolite"
+   ]
+  },
+  "WT1": {
+   "train_auc": 0.894,
+   "heldout_auc": 0.48,
+   "n_pos": 9,
+   "gap": 0.414,
+   "threshold": 0.776,
+   "top_modalities": [
+    "Composition",
+    "LSC",
+    "ADT"
+   ]
+  },
+  "inv(16)_CBFB-MYH11": {
+   "train_auc": 0.997,
+   "heldout_auc": 0.875,
+   "n_pos": 11,
+   "gap": 0.122,
+   "threshold": 0.961,
+   "top_modalities": [
+    "Metabolite"
+   ]
+  }
+ }
+}

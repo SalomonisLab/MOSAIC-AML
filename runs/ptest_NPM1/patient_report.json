@@ -1,155 +1,299 @@
 {
-  "mode": "patient_panel",
-  "sample_key": "CCHMC::0018_Af_N1c",
-  "annotation": "NPM1c",
-  "dataset": "CCHMC",
-  "provenance": {
-    "layout": "local"
-  },
-  "panel": [
-    {
-      "witness": "composition",
-      "grounding": "honest_cv",
-      "independence": "independent",
-      "evidence": {
-        "witness": "composition",
-        "kind": "measured",
-        "status": "ok",
-        "held_out": true,
-        "patient_prediction": "NPM1",
-        "patient_probability": 0.9161,
-        "true_label": "NPM1",
-        "cohort_balanced_accuracy": 0.6312,
-        "cohort_permutation_p": 0.047619047619047616,
-        "patient_top_cellstates": {
-          "MultiLin-GMP-1": 0.516,
-          "B Memory-1": 0.086,
-          "CD4 TCM": 0.059,
-          "Intermediate Mono-3": 0.041,
-          "MEP-2": 0.035,
-          "MPP-MEP": 0.034
-        }
-      },
-      "opinion": {
-        "confidence": 0.5,
-        "reliability_weight": 0.85,
-        "summary": "predicts NPM1 (prob 0.9161)",
-        "caveats": "LLM fallback"
-      }
-    },
-    {
-      "witness": "genetic",
-      "grounding": "deterministic_fact",
-      "independence": "independent",
-      "evidence": {
-        "witness": "genetic",
-        "kind": "independent",
-        "status": "ok",
-        "present": [
-          "complex",
-          "NPM1"
-        ],
-        "targetable": {
-          "NPM1": "menin inhibitor (NPM1/KMT2A-rearranged context)"
-        },
-        "eln": null
-      },
-      "opinion": {
-        "confidence": 0.6,
-        "reliability_weight": 0.85,
-        "summary": "present: ['complex', 'NPM1']; targetable: ['NPM1']",
-        "caveats": "LLM fallback"
-      }
-    },
-    {
-      "witness": "cell-state/UDON",
-      "grounding": "discovery",
-      "independence": "rna_derived",
-      "evidence": {
-        "witness": "cell-state/UDON",
-        "kind": "discovery",
-        "status": "ok",
-        "n_pseudobulks": 23,
-        "active_programs": [
-          {
-            "program": "P3",
-            "n_pseudobulks": 10,
-            "marks": "Inv16"
-          },
-          {
-            "program": "P14",
-            "n_pseudobulks": 8,
-            "marks": "NPM1"
-          },
-          {
-            "program": "P7",
-            "n_pseudobulks": 2,
-            "marks": "PHIP"
-          },
-          {
-            "program": "P6",
-            "n_pseudobulks": 2,
-            "marks": "NPM1"
-          },
-          {
-            "program": "P2",
-            "n_pseudobulks": 1,
-            "marks": "NPM1"
-          }
-        ]
-      },
-      "opinion": {
-        "confidence": 0.6,
-        "reliability_weight": 0.7,
-        "summary": "programs: ['P3', 'P14', 'P7', 'P6', 'P2']",
-        "caveats": "LLM fallback"
-      }
+ "mode": "patient_panel",
+ "sample_key": "CCHMC::0018_Af_N1c",
+ "annotation": "NPM1c",
+ "dataset": "CCHMC",
+ "provenance": {
+  "layout": "local"
+ },
+ "panel": [
+  {
+   "witness": "composition",
+   "grounding": "honest_cv",
+   "independence": "independent",
+   "evidence": {
+    "witness": "composition",
+    "kind": "measured",
+    "status": "ok",
+    "held_out": true,
+    "patient_prediction": "NPM1",
+    "patient_probability": 0.9161,
+    "true_label": "NPM1",
+    "cohort_balanced_accuracy": 0.6312,
+    "cohort_permutation_p": 0.047619047619047616,
+    "patient_top_cellstates": {
+     "MultiLin-GMP-1": 0.516,
+     "B Memory-1": 0.086,
+     "CD4 TCM": 0.059,
+     "Intermediate Mono-3": 0.041,
+     "MEP-2": 0.035,
+     "MPP-MEP": 0.034
     }
-  ],
-  "consensus": {
-    "subtype_call": "NPM1 (genetic-anchored: direct mutation observation)",
-    "leading_hypothesis": "NPM1",
-    "leading_confirmed_by_genetics": true,
-    "concordance": 0.885,
-    "per_witness_consistency": {
-      "composition": "agree",
-      "genetic": "agree",
-      "cell-state/UDON": "conflict"
+   },
+   "opinion": {
+    "confidence": 0.5,
+    "reliability_weight": 0.85,
+    "summary": "predicts NPM1 (prob 0.9161)",
+    "caveats": "LLM fallback"
+   }
+  },
+  {
+   "witness": "genetic",
+   "grounding": "deterministic_fact",
+   "independence": "independent",
+   "evidence": {
+    "witness": "genetic",
+    "kind": "independent",
+    "status": "ok",
+    "present": [
+     "complex",
+     "NPM1"
+    ],
+    "targetable": {
+     "NPM1": "menin inhibitor (NPM1/KMT2A-rearranged context)"
     },
-    "conflicts": "cell-state/UDON\u2192Inv16",
-    "ranked_therapy_hypotheses": [
-      {
-        "biomarker": "NPM1",
-        "drug": "menin inhibitor (revumenib)",
-        "evidence_level": "guideline",
-        "source": "NCCN-2024"
-      },
-      {
-        "biomarker": "complex",
-        "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
-        "evidence_level": "heuristic",
-        "source": "lit"
-      }
-    ],
-    "recommended_validations": [
-      {
-        "claim": "mutation",
-        "validation": "targeted DNA/RNA sequencing (NGS panel)",
-        "source": "standard"
-      },
-      {
-        "claim": "subtype",
-        "validation": "flow cytometry immunophenotyping",
-        "source": "standard"
-      },
-      {
-        "claim": "complex",
-        "validation": "conventional karyotype / SNP-array cytogenetics",
-        "source": "standard"
-      }
-    ],
-    "overall_confidence": "high",
-    "rationale": "Leading hypothesis: NPM1 (genetic-anchored: direct mutation observation). Concordance 0.89. Conflicts: cell-state/UDON\u2192Inv16. ",
-    "knowledge_version": "kb-2026.06"
+    "eln": null
+   },
+   "opinion": {
+    "confidence": 0.6,
+    "reliability_weight": 0.85,
+    "summary": "present: ['complex', 'NPM1']; targetable: ['NPM1']",
+    "caveats": "LLM fallback"
+   }
+  },
+  {
+   "witness": "cell-state/UDON",
+   "grounding": "discovery",
+   "independence": "rna_derived",
+   "evidence": {
+    "witness": "cell-state/UDON",
+    "kind": "discovery",
+    "status": "ok",
+    "n_pseudobulks": 23,
+    "active_programs": [
+     {
+      "program": "P3",
+      "n_pseudobulks": 10,
+      "marks": "Inv16"
+     },
+     {
+      "program": "P14",
+      "n_pseudobulks": 8,
+      "marks": "NPM1"
+     },
+     {
+      "program": "P7",
+      "n_pseudobulks": 2,
+      "marks": "PHIP"
+     },
+     {
+      "program": "P6",
+      "n_pseudobulks": 2,
+      "marks": "NPM1"
+     },
+     {
+      "program": "P2",
+      "n_pseudobulks": 1,
+      "marks": "NPM1"
+     }
+    ]
+   },
+   "opinion": {
+    "confidence": 0.6,
+    "reliability_weight": 0.7,
+    "summary": "programs: ['P3', 'P14', 'P7', 'P6', 'P2']",
+    "caveats": "LLM fallback"
+   }
   }
+ ],
+ "consensus": {
+  "subtype_call": "NPM1 (genetic-anchored: direct mutation observation)",
+  "leading_hypothesis": "NPM1",
+  "leading_confirmed_by_genetics": true,
+  "concordance": 0.885,
+  "per_witness_consistency": {
+   "composition": "agree",
+   "genetic": "agree",
+   "cell-state/UDON": "conflict"
+  },
+  "conflicts": "cell-state/UDON\u2192Inv16",
+  "ranked_therapy_hypotheses": [
+   {
+    "biomarker": "NPM1",
+    "drug": "menin inhibitor (revumenib)",
+    "evidence_level": "guideline",
+    "source": "NCCN-2024"
+   },
+   {
+    "biomarker": "complex",
+    "drug": "HMA + venetoclax; consider allogeneic transplant / trial",
+    "evidence_level": "heuristic",
+    "source": "lit"
+   }
+  ],
+  "recommended_validations": [
+   {
+    "claim": "mutation",
+    "validation": "targeted DNA/RNA sequencing (NGS panel)",
+    "source": "standard"
+   },
+   {
+    "claim": "subtype",
+    "validation": "flow cytometry immunophenotyping",
+    "source": "standard"
+   },
+   {
+    "claim": "complex",
+    "validation": "conventional karyotype / SNP-array cytogenetics",
+    "source": "standard"
+   }
+  ],
+  "overall_confidence": "high",
+  "rationale": "Leading hypothesis: NPM1 (genetic-anchored: direct mutation observation). Concordance 0.89. Conflicts: cell-state/UDON\u2192Inv16. ",
+  "knowledge_version": "kb-2026.06"
+ },
+ "drug_response": {
+  "available": true,
+  "n_drugs_modelled": 118,
+  "n_drugs_reported": 118,
+  "n_abstained": 0,
+  "patient": {
+   "genes_shared_with_model": 14237,
+   "ood_distance": 1.0452243356307331,
+   "ood_percentile": 0.6718346253229974,
+   "differentiation_axis_percentile": 0.832,
+   "single_cell_states": 23
+  },
+  "top_by_tier": {
+   "approved_AML": [
+    {
+     "inhibitor": "Venetoclax",
+     "utility": 0.6727,
+     "prob_sensitive": 0.9452,
+     "n_challenges": 2
+    },
+    {
+     "inhibitor": "Quizartinib (AC220)",
+     "utility": 0.6149,
+     "prob_sensitive": 0.5213,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Midostaurin",
+     "utility": 0.5467,
+     "prob_sensitive": 0.4336,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Cytarabine",
+     "utility": 0.5435,
+     "prob_sensitive": 0.6436,
+     "n_challenges": 2
+    },
+    {
+     "inhibitor": "Gilteritinib",
+     "utility": 0.2242,
+     "prob_sensitive": 0.2759,
+     "n_challenges": 1
+    }
+   ],
+   "approved_other": [
+    {
+     "inhibitor": "Lenvatinib",
+     "utility": 0.772,
+     "prob_sensitive": 0.902,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Gefitinib",
+     "utility": 0.7649,
+     "prob_sensitive": 0.8355,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Regorafenib (BAY 73-4506)",
+     "utility": 0.7621,
+     "prob_sensitive": 0.8816,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Panobinostat",
+     "utility": 0.7211,
+     "prob_sensitive": 0.9198,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Selumetinib (AZD6244)",
+     "utility": 0.6687,
+     "prob_sensitive": 0.7053,
+     "n_challenges": 0
+    }
+   ],
+   "trial": [
+    {
+     "inhibitor": "Saracatinib (AZD0530)",
+     "utility": 0.729,
+     "prob_sensitive": 0.8757,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "RAF265 (CHIR-265)",
+     "utility": 0.7179,
+     "prob_sensitive": 0.8713,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Entospletinib (GS-9973)",
+     "utility": 0.6824,
+     "prob_sensitive": 0.9493,
+     "n_challenges": 2
+    },
+    {
+     "inhibitor": "Cediranib (AZD2171)",
+     "utility": 0.6198,
+     "prob_sensitive": 0.666,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "CI-1040 (PD184352)",
+     "utility": 0.6183,
+     "prob_sensitive": 0.7,
+     "n_challenges": 0
+    }
+   ],
+   "research": [
+    {
+     "inhibitor": "SU11274",
+     "utility": 0.6941,
+     "prob_sensitive": 0.875,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Doramapimod (BIRB 796)",
+     "utility": 0.5948,
+     "prob_sensitive": 0.7922,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "JNJ-38877605",
+     "utility": 0.594,
+     "prob_sensitive": 0.704,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Nutlin 3a",
+     "utility": 0.5908,
+     "prob_sensitive": 0.7561,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "PRT062607",
+     "utility": 0.5631,
+     "prob_sensitive": 0.7136,
+     "n_challenges": 0
+    }
+   ]
+  },
+  "caveat": "predicted EX-VIVO sensitivity from the BeatAML2 functional screen; a prioritisation for trial matching or laboratory validation, not a treatment recommendation"
+ }
 }

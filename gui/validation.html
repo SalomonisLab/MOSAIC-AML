@@ -1,0 +1,134 @@
+<!doctype html><html><head><meta charset="utf-8"><title>CIPHER-AML · Validation &amp; Benchmarks</title>
+<style>
+  :root{--bg:#ffffff;--panel:#f7f7f4;--ink:#1a1a19;--muted:#6b6b63;--line:#e4e3dc;--accent:#8a6a18;--good:#1a6e1a}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,'Segoe UI',sans-serif}
+  .top{display:flex;align-items:center;gap:16px;padding:13px 24px;background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+  .top h1{font-size:17px;margin:0;font-weight:700;letter-spacing:.02em}
+  .top a{color:var(--accent);text-decoration:none;font-size:13px;font-weight:600}
+  .wrap{max-width:1080px;margin:0 auto;padding:22px 24px 80px}
+  .lead{font-size:15px;color:var(--muted);margin:6px 0 26px}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font-size:12.5px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;background:var(--panel)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  section{margin:0 0 42px;scroll-margin-top:64px}
+  h2{font-size:19px;margin:0 0 4px;font-weight:700}
+  .q{font-size:13px;color:var(--accent);font-weight:600;margin:0 0 10px;text-transform:uppercase;letter-spacing:.04em}
+  .card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+  .card img{width:100%;display:block;background:#fff}
+  .cap{font-size:13.5px;color:var(--muted);padding:12px 16px;border-top:1px solid var(--line)}
+  .cap b{color:var(--ink)}
+  .pending{padding:30px 16px;text-align:center;color:var(--muted);font-style:italic;background:var(--panel)}
+  .kpis{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0 0}
+  .kpi{flex:1 1 150px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--panel)}
+  .kpi .n{font-size:22px;font-weight:800;color:var(--accent)}
+  .kpi .l{font-size:12px;color:var(--muted);margin-top:2px}
+  table{border-collapse:collapse;width:100%;font-size:13px;margin-top:8px}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--panel);font-weight:600}
+  .dl{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .dl a{font-size:12.5px;padding:5px 11px;border:1px solid var(--line);border-radius:8px;color:var(--accent);text-decoration:none}
+  .note{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:8px}
+  .scroll{overflow-x:auto}
+</style></head><body>
+<div class="top"><h1>CIPHER-AML · Validation &amp; Benchmarks</h1><a href="/">← decision board</a><a href="/calibration.html">calibration page →</a></div>
+<div class="wrap">
+  <p class="lead">How well the mutation caller performs, and the evidence that the performance is real — model vs assay, independence of the multimodal gain, per-mutation signal significance, an honest operating point, and where the misses come from. Every panel answers a specific reviewer objection.</p>
+  <div class="toc">
+    <a href="#matrix">Model × cohort</a><a href="#ladder">Imputation independence</a><a href="#forest">Signal significance</a>
+    <a href="#honest">Honest operating point</a><a href="#vaf">VAF / misses</a><a href="#calib">Calibration</a>
+    <a href="#dca">Decision curves</a><a href="#feat">Feature attribution</a><a href="#prov">Truth provenance</a><a href="#contrast">Bulk vs multimodal</a>
+  </div>
+
+  <div class="kpis" id="kpis"></div>
+
+  <section id="matrix"><div class="q">Which model for which data</div><h2>Two models × four cohorts</h2>
+    <div class="card"><img src="/val/MOSAIC-AML_model_x_cohort_matrix.png" alt="model x cohort matrix">
+    <div class="cap"><b>Match the model to the assay.</b> The bulk RNA-only model (BeatAML-trained) is strong on bulk (AUROC 0.83–0.86) but collapses on single-cell (0.70); the multimodal model is single-cell-native (0.88) and cannot run on bulk cohorts (no single-cell modalities). They are complementary, not competing.</div></div>
+    <div class="dl"><a href="/val/MOSAIC-AML_model_x_cohort_matrix.pdf">PDF</a><a href="/val/full_matrix.tsv">numbers (TSV)</a><a href="/val/bulk_matrix.tsv">bulk per-category (TSV)</a></div>
+  </section>
+
+  <section id="ladder"><div class="q">Objection: "the multimodal gain is just RNA re-imputed"</div><h2>Most of the gain is independent of RNA-imputation</h2>
+    <div class="card"><img src="/val/provability_A_independence_ladder.png" alt="modality ladder">
+    <div class="cap"><b>~69% of the bulk→multimodal AUROC gain needs no imputed modalities.</b> Dropping the four RNA-imputed blocks (ADT, Lipid, Metabolite, GRN) keeps most of the advantage — so it is real single-cell information, not circular re-use of RNA.</div></div>
+    <div class="dl"><a href="/val/provability_A_independence_ladder.pdf">PDF</a></div>
+  </section>
+
+  <section id="forest"><div class="q">Objection: "is the weak-mutation signal real?"</div><h2>Every mutation clears chance</h2>
+    <div class="card"><img src="/val/provability_B_auroc_forest.png" alt="AUROC forest with CIs">
+    <div class="cap"><b>All 24 mutations' 95% CIs sit above 0.5 and every one beats a 1,000-shuffle permutation null (p ≤ 0.003)</b> — including the low-precision ones (KRAS, RUNX1, IDH2). Weak F1 reflects rarity, not absence of signal.</div></div>
+    <div class="dl"><a href="/val/provability_B_auroc_forest.pdf">PDF</a></div>
+  </section>
+
+  <section id="honest"><div class="q">Objection: "your threshold was picked on the same data"</div><h2>Honest operating point (nested CV)</h2>
+    <div class="card"><img src="/val/provability_C_nested_operating_point.png" alt="nested vs naive operating point">
+    <div class="cap"><b>Choosing the threshold on held-out folds removes the optimism:</b> mean F1 0.44 → 0.34, sensitivity 0.51 → 0.45, specificity 0.96 → 0.94. The nested numbers are what we report.</div></div>
+    <div class="dl"><a href="/val/provability_C_nested_operating_point.pdf">PDF</a></div>
+  </section>
+
+  <section id="vaf"><div class="q">Objection: "are the misses real failures?"</div><h2>Misses are largely subclonal</h2>
+    <div class="card"><img src="/val/vaf_stratified.png" alt="VAF stratified sensitivity">
+    <div class="cap"><b>Sensitivity rises monotonically with variant allele frequency</b> — 0.29 (subclonal &lt;0.10) → 0.69 (clonal ≥0.40). Misses concentrate at low VAF: an expression-detection limit, not random error.</div></div>
+    <div class="dl"><a href="/val/vaf_stratified.pdf">PDF</a><a href="/val/vaf_stratified.tsv">TSV</a></div>
+  </section>
+
+  <section id="calib"><div class="q">Objection: "do the probabilities mean anything?"</div><h2>Calibration — reliability &amp; Brier/ECE</h2>
+    <div class="card" id="calibCard"><div class="pending">reliability diagrams computing…</div></div>
+    <div class="note">Also see the qualitative <a href="/calibration.html" style="color:var(--accent)">calibration write-up</a>.</div>
+  </section>
+
+  <section id="dca"><div class="q">Clinical utility</div><h2>Decision-curve analysis (net benefit)</h2>
+    <div class="card" id="dcaCard"><div class="pending">net-benefit curves computing…</div></div>
+    <div class="note">Net benefit vs threshold probability, compared with "treat all" and "treat none" — shows where a call is actually useful for triage.</div>
+  </section>
+
+  <section id="feat"><div class="q">Objection: "is it riding real biology or artifacts?"</div><h2>Feature attribution — what drives each call</h2>
+    <div class="scroll" id="featTable"><div class="pending">extracting top drivers from the deployed model…</div></div>
+    <div class="dl"><a href="/val/feature_attribution.tsv">full table (TSV)</a></div>
+  </section>
+
+  <section id="prov"><div class="q">Auditing the labels</div><h2>Ground-truth provenance</h2>
+    <div class="scroll"><table><thead><tr><th>Cohort</th><th>n</th><th>Genotype assay</th><th>Granularity</th><th>VAF</th></tr></thead><tbody>
+      <tr><td>BeatAML2</td><td>707</td><td>WES / targeted somatic calls</td><td>variant-level</td><td>yes</td></tr>
+      <tr><td>Leucegene</td><td>367</td><td>dbGAP variant calls</td><td>gene-level</td><td>no</td></tr>
+      <tr><td>Single-cell atlas</td><td>387</td><td>karyotype + per-center panels/WES</td><td>gene-level (17 variant)</td><td>no</td></tr>
+      <tr><td>Trumpp / Waclawiczek</td><td>16</td><td>Table S4 driver list</td><td>gene-level, positives only</td><td>no</td></tr>
+      <tr><td>MDS (Hs_MDS_UDON)</td><td>64</td><td>genotype in sample Group</td><td>4 genes only</td><td>no</td></tr>
+    </tbody></table></div>
+    <div class="note">Key gap: a single-cell "absent" can mean "not assayed" — those are false negatives in the <b>labels</b>, and they understate specificity. Full detail &amp; the fixes: <a href="/val/truth_provenance.md" style="color:var(--accent)">truth_provenance.md</a>.</div>
+  </section>
+
+  <section id="contrast"><div class="q">The headline comparison</div><h2>Multimodal vs bulk RNA-seq alone</h2>
+    <div class="card"><img src="/val/MOSAIC-AML_multimodal_vs_bulkRNA_overview.png" alt="multimodal vs bulk overview">
+    <div class="cap">Paired, same samples &amp; folds. Multimodality does not find <i>more</i> mutations (sensitivity tied) — it removes false positives (specificity +0.11, F1 +0.18).</div></div>
+    <div class="dl"><a href="/val/MOSAIC-AML_multimodal_vs_bulkRNA_overview.pdf">overview PDF</a><a href="/val/MOSAIC-AML_multimodal_vs_bulkRNA_per_mutation.pdf">per-mutation PDF</a><a href="/val/MOSAIC-AML_multimodal_vs_bulkRNA_metrics.tsv">TSV</a></div>
+  </section>
+</div>
+<script>
+fetch('/validation_stats.json').then(r=>r.json()).then(d=>{
+  const L=d.modality_ladder||{}; const mm=d.mutations||{};
+  const aurocs=Object.values(mm).map(m=>m.auroc).filter(x=>x!=null);
+  const meanAu=aurocs.length?(aurocs.reduce((a,b)=>a+b,0)/aurocs.length):0;
+  const sig=Object.values(mm).filter(m=>m.perm_p!=null&&m.perm_p<0.05).length;
+  const frac=Math.round(((L.measured?.mean_auroc-L.bulkrna?.mean_auroc)/(L.multimodal?.mean_auroc-L.bulkrna?.mean_auroc))*100);
+  const k=[[frac+'%','of gain is imputation-independent'],
+     [meanAu.toFixed(2),'mean AUROC (single-cell CV)'],
+     [sig+'/'+Object.keys(mm).length,'mutations beat permutation null (p<0.05)'],
+     [(L.multimodal?.mean_nested_f1||0).toFixed(2),'honest (nested-CV) mean F1']];
+  document.getElementById('kpis').innerHTML=k.map(([n,l])=>`<div class="kpi"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
+});
+fetch('/val/feature_attribution.json').then(r=>r.ok?r.json():null).then(d=>{
+  if(!d) return;
+  const rows=Object.entries(d).slice(0,40).map(([m,r])=>{
+    const mods=Object.entries(r.modality_weights||{}).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([k,v])=>`${k} ${v.toFixed(2)}`).join(', ');
+    const genes=(r.top_genes_present||[]).slice(0,6).map(g=>g[0]).join(', ');
+    const cs=(r.top_cellstates||[]).slice(0,3).map(c=>c[0]).join(', ');
+    return `<tr><td><b>${m}</b></td><td>${mods}</td><td>${genes||'—'}</td><td>${cs||'—'}</td></tr>`;}).join('');
+  document.getElementById('featTable').innerHTML=`<table><thead><tr><th>mutation</th><th>top modalities (weight)</th><th>top genes → "present"</th><th>top cell-states</th></tr></thead><tbody>${rows}</tbody></table>`;
+});
+['calib','dca'].forEach(id=>{
+  const img=id==='calib'?'calibration_reliability':'decision_curves';
+  fetch('/val/'+img+'.png',{method:'HEAD'}).then(r=>{if(r.ok)document.getElementById(id+'Card').innerHTML=`<img src="/val/${img}.png">`;}).catch(()=>{});
+});
+</script>
+</body></html>

@@ -1,0 +1,444 @@
+{
+ "meta": {
+  "built": "2026-07-07 20:16",
+  "definition": "VAF = variant allele fraction (~clonal burden). External DNA-panel data, not produced by the single-cell pipeline.",
+  "sources": [
+   "Meta-CCHMC.xlsx (structured)",
+   "AML_harmonized_metadata.xlsx / Variant_Detail (parsed)"
+  ],
+  "status_key": "has_vaf = VAF available | awaiting = SNV driver, no VAF yet (slot ready) | not_applicable = cytogenetic/structural lesion, VAF undefined",
+  "n_has_vaf": 17,
+  "n_awaiting": 1,
+  "n_cytogenetic": 8,
+  "n_variant_rows": 120
+ },
+ "mutations": {
+  "complex": {
+   "kind": "cytogenetic",
+   "status": "not_applicable",
+   "median": null,
+   "n_samples": 0,
+   "note": "structural/karyotype lesion \u2014 VAF not defined"
+  },
+  "del5": {
+   "kind": "cytogenetic",
+   "status": "not_applicable",
+   "median": null,
+   "n_samples": 0,
+   "note": "structural/karyotype lesion \u2014 VAF not defined"
+  },
+  "del7": {
+   "kind": "cytogenetic",
+   "status": "not_applicable",
+   "median": null,
+   "n_samples": 0,
+   "note": "structural/karyotype lesion \u2014 VAF not defined"
+  },
+  "inv16": {
+   "kind": "cytogenetic",
+   "status": "not_applicable",
+   "median": null,
+   "n_samples": 0,
+   "note": "structural/karyotype lesion \u2014 VAF not defined"
+  },
+  "kmt2a": {
+   "kind": "cytogenetic",
+   "status": "not_applicable",
+   "median": null,
+   "n_samples": 0,
+   "note": "structural/karyotype lesion \u2014 VAF not defined"
+  },
+  "trisomy8": {
+   "kind": "cytogenetic",
+   "status": "not_applicable",
+   "median": null,
+   "n_samples": 0,
+   "note": "structural/karyotype lesion \u2014 VAF not defined"
+  },
+  "ASXL1": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 3,
+   "median": 0.39,
+   "q1": 0.375,
+   "q3": 0.695,
+   "min": 0.36,
+   "max": 1.0,
+   "values": [
+    0.36,
+    0.39,
+    1.0
+   ],
+   "by_cohort": {
+    "Colorado": 3
+   }
+  },
+  "CEBPA": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 2,
+   "median": 0.41,
+   "q1": 0.405,
+   "q3": 0.415,
+   "min": 0.4,
+   "max": 0.42,
+   "values": [
+    0.4,
+    0.42
+   ],
+   "by_cohort": {
+    "Colorado": 3
+   }
+  },
+  "DNMT3A": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 6,
+   "median": 0.475,
+   "q1": 0.44,
+   "q3": 0.483,
+   "min": 0.105,
+   "max": 0.498,
+   "values": [
+    0.105,
+    0.43,
+    0.47,
+    0.48,
+    0.484,
+    0.498
+   ],
+   "by_cohort": {
+    "CCHMC": 3,
+    "Colorado": 4
+   }
+  },
+  "FLT3": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 7,
+   "median": 0.293,
+   "q1": 0.187,
+   "q3": 0.48,
+   "min": 0.16,
+   "max": 0.73,
+   "values": [
+    0.16,
+    0.162,
+    0.212,
+    0.293,
+    0.38,
+    0.58,
+    0.73
+   ],
+   "by_cohort": {
+    "CCHMC": 6,
+    "Colorado": 3
+   }
+  },
+  "FLT3-ITD": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 4,
+   "median": 0.48,
+   "q1": 0.358,
+   "q3": 0.617,
+   "min": 0.293,
+   "max": 0.73,
+   "values": [
+    0.293,
+    0.38,
+    0.58,
+    0.73
+   ],
+   "by_cohort": {
+    "CCHMC": 2,
+    "Colorado": 2
+   }
+  },
+  "FLT3-TKD": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 3,
+   "median": 0.192,
+   "q1": 0.177,
+   "q3": 0.202,
+   "min": 0.162,
+   "max": 0.212,
+   "values": [
+    0.162,
+    0.192,
+    0.212
+   ],
+   "by_cohort": {
+    "CCHMC": 3
+   }
+  },
+  "GATA2": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 4,
+   "median": 0.436,
+   "q1": 0.335,
+   "q3": 0.533,
+   "min": 0.08,
+   "max": 0.78,
+   "values": [
+    0.08,
+    0.42,
+    0.451,
+    0.78
+   ],
+   "by_cohort": {
+    "CCHMC": 1,
+    "Colorado": 3
+   }
+  },
+  "IDH1": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 3,
+   "median": 0.392,
+   "q1": 0.365,
+   "q3": 0.434,
+   "min": 0.338,
+   "max": 0.475,
+   "values": [
+    0.338,
+    0.392,
+    0.475
+   ],
+   "by_cohort": {
+    "CCHMC": 4
+   }
+  },
+  "IDH2": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 1,
+   "median": 0.529,
+   "q1": 0.529,
+   "q3": 0.529,
+   "min": 0.529,
+   "max": 0.529,
+   "values": [
+    0.529
+   ],
+   "by_cohort": {
+    "CCHMC": 1
+   }
+  },
+  "KIT": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 3,
+   "median": 0.035,
+   "q1": 0.033,
+   "q3": 0.131,
+   "min": 0.03,
+   "max": 0.226,
+   "values": [
+    0.03,
+    0.035,
+    0.226
+   ],
+   "by_cohort": {
+    "CCHMC": 5
+   }
+  },
+  "KMT2A-rearrangement": {
+   "kind": "cytogenetic",
+   "status": "not_applicable",
+   "median": null,
+   "n_samples": 0,
+   "note": "structural/karyotype lesion \u2014 VAF not defined"
+  },
+  "KRAS": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 7,
+   "median": 0.16,
+   "q1": 0.047,
+   "q3": 0.27,
+   "min": 0.025,
+   "max": 0.487,
+   "values": [
+    0.025,
+    0.044,
+    0.05,
+    0.16,
+    0.23,
+    0.31,
+    0.487
+   ],
+   "by_cohort": {
+    "CCHMC": 4,
+    "Colorado": 4
+   }
+  },
+  "NPM1": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 18,
+   "median": 0.424,
+   "q1": 0.39,
+   "q3": 0.448,
+   "min": 0.05,
+   "max": 0.506,
+   "values": [
+    0.05,
+    0.319,
+    0.362,
+    0.37,
+    0.39,
+    0.391,
+    0.4,
+    0.405,
+    0.41,
+    0.438,
+    0.439,
+    0.44,
+    0.443,
+    0.45,
+    0.464,
+    0.466,
+    0.479,
+    0.506
+   ],
+   "by_cohort": {
+    "CCHMC": 15,
+    "Colorado": 6
+   }
+  },
+  "NRAS": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 16,
+   "median": 0.219,
+   "q1": 0.112,
+   "q3": 0.352,
+   "min": 0.035,
+   "max": 0.46,
+   "values": [
+    0.035,
+    0.047,
+    0.051,
+    0.06,
+    0.13,
+    0.13,
+    0.13,
+    0.208,
+    0.229,
+    0.338,
+    0.342,
+    0.346,
+    0.371,
+    0.4,
+    0.423,
+    0.46
+   ],
+   "by_cohort": {
+    "CCHMC": 18,
+    "Colorado": 2
+   }
+  },
+  "PTPN11": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 5,
+   "median": 0.413,
+   "q1": 0.291,
+   "q3": 0.43,
+   "min": 0.07,
+   "max": 0.47,
+   "values": [
+    0.07,
+    0.291,
+    0.413,
+    0.43,
+    0.47
+   ],
+   "by_cohort": {
+    "CCHMC": 3,
+    "Colorado": 3
+   }
+  },
+  "RUNX1": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 6,
+   "median": 0.286,
+   "q1": 0.204,
+   "q3": 0.324,
+   "min": 0.06,
+   "max": 0.406,
+   "values": [
+    0.06,
+    0.188,
+    0.252,
+    0.32,
+    0.325,
+    0.406
+   ],
+   "by_cohort": {
+    "CCHMC": 6,
+    "Colorado": 2
+   }
+  },
+  "TET2": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 7,
+   "median": 0.48,
+   "q1": 0.425,
+   "q3": 0.505,
+   "min": 0.24,
+   "max": 0.635,
+   "values": [
+    0.24,
+    0.37,
+    0.48,
+    0.48,
+    0.5,
+    0.51,
+    0.635
+   ],
+   "by_cohort": {
+    "CCHMC": 1,
+    "Colorado": 9
+   }
+  },
+  "TP53": {
+   "kind": "snv",
+   "status": "awaiting",
+   "median": null,
+   "n_samples": 0,
+   "note": "awaiting VAF \u2014 slot ready; add a cohort file to labels/vaf_sources/ and re-run"
+  },
+  "WT1": {
+   "kind": "snv",
+   "status": "has_vaf",
+   "n_samples": 3,
+   "median": 0.351,
+   "q1": 0.23,
+   "q3": 0.369,
+   "min": 0.11,
+   "max": 0.387,
+   "values": [
+    0.11,
+    0.351,
+    0.387
+   ],
+   "by_cohort": {
+    "CCHMC": 3,
+    "Colorado": 1
+   }
+  },
+  "inv(16)_CBFB-MYH11": {
+   "kind": "cytogenetic",
+   "status": "not_applicable",
+   "median": null,
+   "n_samples": 0,
+   "note": "structural/karyotype lesion \u2014 VAF not defined"
+  }
+ }
+}

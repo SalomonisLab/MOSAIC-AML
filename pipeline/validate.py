@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""MATRIX-AML retrospective clinical validation CLI (Phase D).
+"""MOSAIC-AML retrospective clinical validation CLI (Phase D).
 
 Tests whether the engine's deterministic cohort outputs (the genetic-anchored driver + its
 ELN-expected risk, the LSC stemness call) ASSOCIATE with the sparse clinical labels actually
@@ -19,7 +19,7 @@ from amlmm.retrospective import run_validation
 
 
 def main(argv=None):
-    ap = argparse.ArgumentParser(description="MATRIX-AML retrospective clinical validation")
+    ap = argparse.ArgumentParser(description="MOSAIC-AML retrospective clinical validation")
     ap.add_argument("--base", default=None)
     ap.add_argument("--out", default=None)
     ap.add_argument("--run-id", default="validation")

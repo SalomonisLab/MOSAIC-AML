@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""MATRIX-AML Discovery agent CLI (three-agent rebuild — Discovery first).
+"""MOSAIC-AML Discovery agent CLI (three-agent rebuild — Discovery first).
 
 Learns per-(metadata field x modality x cell-state) permutation-calibrated weights at pseudobulk
 resolution via donor-grouped 5-fold CV, and writes the three Discovery tables + association index +
@@ -31,7 +31,7 @@ def _csv(s):
 
 
 def main(argv=None):
-    ap = argparse.ArgumentParser(description="MATRIX-AML Discovery agent")
+    ap = argparse.ArgumentParser(description="MOSAIC-AML Discovery agent")
     ap.add_argument("--base", default=None)
     ap.add_argument("--out", default=None)
     ap.add_argument("--run-id", default="discovery")

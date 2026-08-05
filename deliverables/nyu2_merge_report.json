@@ -1,0 +1,29 @@
+{
+ "source": "AML_harmonized_metadata_v2_NYU2.xlsx",
+ "rows_changed": 28,
+ "flips": {
+  "mut_IDH1": 4,
+  "mut_NPM1": 12,
+  "mut_FLT3-ITD": 11,
+  "mut_ASXL1": 2,
+  "mut_CEBPA": 1,
+  "mut_IDH2": 25,
+  "mut_KRAS": 4,
+  "mut_SRSF2": 9,
+  "mut_NRAS": 20,
+  "mut_TP53": 1,
+  "mut_BCORL1": 6,
+  "mut_DNMT3A": 23,
+  "mut_RUNX1": 7,
+  "mut_WT1": 6,
+  "mut_SF3B1": 6,
+  "mut_FLT3-TKD": 7,
+  "mut_BCOR": 1,
+  "mut_PTPN11": 1,
+  "mut_U2AF1": 1,
+  "mut_FLT3": 1,
+  "mut_SMC1A": 1
+ },
+ "total_flips": 149,
+ "output": "mutation_matrix_explicit_v3.tsv"
+}

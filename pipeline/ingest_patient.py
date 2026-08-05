@@ -36,7 +36,7 @@ import numpy as np
 import pandas as pd
 
 from amlmm.context import Config, build_context
-from amlmm import scrna, genetics, arbiter
+from amlmm import scrna, genetics, arbiter, therapy
 from amlmm import ledger as _led
 from amlmm.agent import AgentResult
 from amlmm.panel import evidence_predictive, _write_patient_md
@@ -66,25 +66,61 @@ def _status(run_dir, state, step, message=""):
         pass
 
 
+def _read_10x_h5_nosc(path):
+    """Read a CellRanger 10x .h5 WITHOUT scanpy -> AnnData (cells x genes, Gene Expression only).
+
+    scanpy pulls in numba, which refuses NumPy 2.x on the cluster python:
+        ImportError: Numba needs NumPy 2.0 or less. Got NumPy 2.4.
+    A bare `import scanpy` therefore kills the whole ingest on a compute node. anndata / h5py / scipy
+    are clean there, and all we need is the count matrix + gene names, so read the CSC arrays directly.
+    10x stores genes x cells; AnnData wants cells x genes. CITE-seq files also carry Antibody Capture
+    rows — keep only Gene Expression (what gex_only did).
+    """
+    import h5py
+    import anndata as ad
+    import scipy.sparse as sp
+    with h5py.File(path, "r") as h:
+        if "matrix" not in h:
+            raise ValueError("not a CellRanger v3 10x .h5 (no /matrix group): %s" % path)
+        g = h["matrix"]
+        data = g["data"][:]
+        indices = g["indices"][:]
+        indptr = g["indptr"][:]
+        shape = tuple(int(x) for x in g["shape"][:])            # (n_genes, n_cells)
+        barcodes = [x.decode() if isinstance(x, bytes) else str(x) for x in g["barcodes"][:]]
+        names = [x.decode() if isinstance(x, bytes) else str(x) for x in g["features/name"][:]]
+        try:
+            ftype = [x.decode() if isinstance(x, bytes) else str(x) for x in g["features/feature_type"][:]]
+        except Exception:
+            ftype = ["Gene Expression"] * len(names)
+    M = sp.csc_matrix((data, indices, indptr), shape=shape)      # genes x cells
+    a = ad.AnnData(X=M.T.tocsr().astype("float32"))              # -> cells x genes
+    a.obs_names = barcodes
+    a.var_names = names
+    a.var["feature_types"] = ftype
+    keep = [t == "Gene Expression" for t in ftype]
+    if not all(keep):
+        a = a[:, keep].copy()                                    # drop Antibody Capture (CITE-seq)
+    a.var_names_make_unique()
+    return a
+
+
 def load_query(path):
-    """gene-level scRNA -> AnnData with Gene-Expression features only (drops ADT). 10x h5/dir via
-    scanpy; .h5ad read directly. Returns (adata, note)."""
+    """gene-level scRNA -> AnnData with Gene-Expression features only (drops ADT). Returns (adata, note).
+    Reads 10x .h5 and .h5ad WITHOUT scanpy (see _read_10x_h5_nosc)."""
     p = path
     if os.path.isdir(p):
         h5 = os.path.join(p, "filtered_feature_bc_matrix.h5")
         p = h5 if os.path.exists(h5) else p
-    if p.endswith(".h5ad"):
+    if str(p).endswith(".h5ad"):
         import anndata as ad
         a = ad.read_h5ad(p)
         a.var_names_make_unique()
         return a, "h5ad"
-    # 10x feature-barcode HDF5 (CITE-seq: split off Antibody Capture)
-    import scanpy as sc
-    a = sc.read_10x_h5(p, gex_only=False)
-    if "feature_types" in a.var:
-        a = a[:, a.var["feature_types"].astype(str) == "Gene Expression"].copy()
-    a.var_names_make_unique()
-    return a, "10x_h5"
+    if str(p).endswith(".h5"):
+        return _read_10x_h5_nosc(p), "10x_h5"
+    raise ValueError("unsupported sample input %r — give a 10x dir containing "
+                     "filtered_feature_bc_matrix.h5, that .h5 itself, or a .h5ad" % path)
 
 
 def normalize_mutations(tokens):
@@ -273,6 +309,18 @@ def provenance(layout, sample_path, deferred):
     return out
 
 
+def make_client(args):
+    """The narrating agent (therapy explanations + arbiter rationale). None with --no-llm or if the
+    gateway is unreachable — every downstream consumer degrades to its deterministic text."""
+    if getattr(args, "no_llm", False):
+        return None
+    try:
+        from amlmm.llm import LLMClient
+        return LLMClient()
+    except Exception:
+        return None
+
+
 def main_bulk(args, cfg, run_dir, sample_key):
     """BULK-RNA ingest path: an expression file -> the PRIMARY variant-level mutation panel (+ genetic anchor).
     No cell-state composition / subtype / cytogenetics / control-gate — those require single-cell input — so
@@ -291,6 +339,18 @@ def main_bulk(args, cfg, run_dir, sample_key):
             raise RuntimeError("bulk mutation predictor not found (pipeline/bulk_mutation_predictor.pkl)")
         top_present = [p["mutation"] for p in mut_preds
                        if p["call"] == "present" and p["confidence"] == "ok"]
+        panels = therapy.build_panels(mut_preds, present, client=make_client(args),
+                                      context={"input": "bulk RNA", "dataset": args.dataset})
+
+        # COMPASS-AML on bulk: Models A and C only. Without cells there is no state layer, so coverage
+        # and escape-clone terms are simply absent rather than guessed.
+        _status(run_dir, "running", "drug_layer", "predicting ex-vivo drug response (COMPASS-AML)")
+        try:
+            import drug_layer
+            drug_summary = drug_layer.run_for_bulk(ser, run_dir, mut_preds=mut_preds, observed=present)
+        except Exception as _e:
+            print("WARN COMPASS-AML drug layer skipped: %s" % _e, file=sys.stderr)
+            drug_summary = {"available": False, "reason": "%s: %s" % (type(_e).__name__, _e)}
 
         consensus = {
             "leading_hypothesis": ("predicted drivers: " + ", ".join(top_present[:4])) if top_present
@@ -307,6 +367,10 @@ def main_bulk(args, cfg, run_dir, sample_key):
                        "independence": gen_res.independence, "evidence": gen_res.evidence,
                        "opinion": gen_res.opinion}],
             "mutation_predictions": mut_preds, "mutation_caller": mut_caller,
+            "treatment_panel": panels.get("treatments"),           # therapy hypotheses (research decision support)
+            "tests_panel": panels.get("tests"),                    # what to sequence/order to close the loop
+            "panels_note": panels.get("note"),
+            "drug_response": drug_summary,     # COMPASS-AML summary; full detail in runs/<id>/drug_report.json
             "consensus": consensus, "deliberation": None,
             "ingest": {"source": args.bulk, "input_kind": "bulk_rna", "name": args.name,
                        "bulk_ref": args.bulk_ref, "bulk_scale_detected": scale, "bulk_column": col,
@@ -332,7 +396,7 @@ def main_bulk(args, cfg, run_dir, sample_key):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Ingest an scRNA or bulk-RNA sample as a MATRIX-AML patient.")
+    ap = argparse.ArgumentParser(description="Ingest an scRNA or bulk-RNA sample as a MOSAIC-AML patient.")
     ap.add_argument("--sample", help="single-cell input: 10x filtered_feature_bc_matrix.h5, a 10x dir, or .h5ad")
     ap.add_argument("--bulk", help="BULK RNA input: a gene x value table (tsv/csv/txt). Mutually exclusive with --sample")
     ap.add_argument("--bulk-ref", default="beataml", choices=["beataml", "leucegene", "sc"],
@@ -374,10 +438,14 @@ def main():
         present, unknown = normalize_mutations(args.mutations.split(","))
         gen_res = genetic_result(present, unknown, args.eln)
 
+        client = make_client(args)                               # shared by the therapy agent + the arbiter
+
         _status(run_dir, "running", "mutation_calling", "predicting drivers from bulk-equivalent (primary)")
-        mut_preds, mut_caller = None, None
+        mut_preds, mut_caller, panels = None, None, None
         try:
             mut_preds, mut_caller, _ = bulk_mutation_result(bulk_equiv_from_adata(adata), present, ref="sc")
+            panels = therapy.build_panels(mut_preds, present, client=client,
+                                          context={"input": "single-cell", "dataset": args.dataset})
         except Exception as _e:
             print("WARN bulk mutation caller skipped: %s" % _e, file=sys.stderr)
 
@@ -388,17 +456,21 @@ def main():
         led.append(gen_res, round=0)
         led.persist(ctx)
 
-        client = None
-        if not args.no_llm:
-            try:
-                from amlmm.llm import LLMClient
-                client = LLMClient()
-            except Exception:
-                client = None
         consensus = arbiter.reconcile_patient(client, ctx, led)
         led.set_arbiter(consensus, round=0)
         led.finalize("single_pass")
         led.persist(ctx)
+
+        # COMPASS-AML: ex-vivo drug-response prioritisation. Additive and non-fatal by design — a missing
+        # model or an odd input must cost the drug report, never the mutation panel.
+        _status(run_dir, "running", "drug_layer", "predicting ex-vivo drug response (COMPASS-AML)")
+        drug_summary = None
+        try:
+            import drug_layer
+            drug_summary = drug_layer.run_for_adata(adata, run_dir, mut_preds=mut_preds, observed=present)
+        except Exception as _e:
+            print("WARN COMPASS-AML drug layer skipped: %s" % _e, file=sys.stderr)
+            drug_summary = {"available": False, "reason": "%s: %s" % (type(_e).__name__, _e)}
 
         gate_call = meta.get("control_gate")
         if gate_call and gate_call.get("call") == "control":     # healthy-vs-diseased gate fires before mutation calling
@@ -414,6 +486,10 @@ def main():
                        "opinion": e["opinion"]} for e in led.current_entries()],
             "mutation_predictions": mut_preds,        # PRIMARY variant-level mutation caller (bulk-equivalent)
             "mutation_caller": mut_caller,
+            "treatment_panel": (panels or {}).get("treatments"),   # therapy hypotheses (research decision support)
+            "tests_panel": (panels or {}).get("tests"),            # what to sequence/order to close the loop
+            "panels_note": (panels or {}).get("note"),
+            "drug_response": drug_summary,     # COMPASS-AML summary; full detail in runs/<id>/drug_report.json
             "consensus": consensus, "deliberation": None,
             "ingest": {"source": args.sample, "input_kind": how, "name": args.name,
                        "mutations_supplied": present, "unrecognized_mutations": unknown,

@@ -1,0 +1,1889 @@
+{
+ "generated": "2026-07-27 20:15",
+ "aug_max_pos": 25,
+ "poolable_blocks": {
+  "BulkRNA": 14237,
+  "ADT": 129,
+  "Metabolite": 995,
+  "GRN": 7486
+ },
+ "n_augmented": 15,
+ "augmented_mutations": [
+  "ASXL1",
+  "CEBPA",
+  "FLT3-TKD",
+  "GATA2",
+  "IDH1",
+  "KIT",
+  "KRAS",
+  "PTPN11",
+  "RUNX1",
+  "SF3B1",
+  "SRSF2",
+  "TET2",
+  "TP53",
+  "WT1",
+  "kmt2a"
+ ],
+ "summary": {
+  "deployed": {
+   "auroc": 0.8887,
+   "sensitivity": 0.4935,
+   "specificity": 0.9501,
+   "f1": 0.4282,
+   "n_mutations": 28,
+   "pooled_sensitivity": 0.5242,
+   "pooled_specificity": 0.9504
+  },
+  "fused_all": {
+   "auroc": 0.9079,
+   "sensitivity": 0.5047,
+   "specificity": 0.9538,
+   "f1": 0.4555,
+   "n_mutations": 28,
+   "pooled_sensitivity": 0.5332,
+   "pooled_specificity": 0.9541
+  },
+  "fused_selective": {
+   "auroc": 0.902,
+   "sensitivity": 0.4969,
+   "specificity": 0.9552,
+   "f1": 0.4531,
+   "n_mutations": 28,
+   "pooled_sensitivity": 0.5206,
+   "pooled_specificity": 0.9556
+  },
+  "wilcoxon_selective_vs_deployed_auroc_p": 0.016389587860593358
+ },
+ "per_mutation": {
+  "ASXL1": {
+   "deployed": {
+    "tp": 8,
+    "fp": 39,
+    "fn": 5,
+    "tn": 305,
+    "sensitivity": 0.6154,
+    "specificity": 0.8866,
+    "precision": 0.1702,
+    "f1": 0.2667,
+    "mutation": "ASXL1",
+    "auroc": 0.9027,
+    "n_pos_atlas": 14,
+    "n_pos_beataml": 63,
+    "augmented": false,
+    "weights": {
+     "Lipid": 0.324,
+     "GRN": 0.194,
+     "Cell-comm": 0.482
+    }
+   },
+   "fused_all": {
+    "tp": 5,
+    "fp": 10,
+    "fn": 8,
+    "tn": 334,
+    "sensitivity": 0.3846,
+    "specificity": 0.9709,
+    "precision": 0.3333,
+    "f1": 0.3571,
+    "mutation": "ASXL1",
+    "auroc": 0.9211,
+    "n_pos_atlas": 14,
+    "n_pos_beataml": 63,
+    "augmented": true,
+    "weights": {
+     "Lipid": 0.229,
+     "GRN": 0.369,
+     "Cell-comm": 0.402
+    }
+   },
+   "fused_selective": {
+    "tp": 5,
+    "fp": 10,
+    "fn": 8,
+    "tn": 334,
+    "sensitivity": 0.3846,
+    "specificity": 0.9709,
+    "precision": 0.3333,
+    "f1": 0.3571,
+    "mutation": "ASXL1",
+    "auroc": 0.9211,
+    "n_pos_atlas": 14,
+    "n_pos_beataml": 63,
+    "augmented": true,
+    "weights": {
+     "Lipid": 0.229,
+     "GRN": 0.369,
+     "Cell-comm": 0.402
+    }
+   }
+  },
+  "CEBPA": {
+   "deployed": {
+    "tp": 5,
+    "fp": 4,
+    "fn": 5,
+    "tn": 343,
+    "sensitivity": 0.5,
+    "specificity": 0.9885,
+    "precision": 0.5556,
+    "f1": 0.5263,
+    "mutation": "CEBPA",
+    "auroc": 0.8971,
+    "n_pos_atlas": 10,
+    "n_pos_beataml": 37,
+    "augmented": false,
+    "weights": {
+     "Composition": 0.216,
+     "Metabolite": 0.456,
+     "Cell-comm": 0.329
+    }
+   },
+   "fused_all": {
+    "tp": 5,
+    "fp": 2,
+    "fn": 5,
+    "tn": 345,
+    "sensitivity": 0.5,
+    "specificity": 0.9942,
+    "precision": 0.7143,
+    "f1": 0.5882,
+    "mutation": "CEBPA",
+    "auroc": 0.955,
+    "n_pos_atlas": 10,
+    "n_pos_beataml": 37,
+    "augmented": true,
+    "weights": {
+     "Composition": 0.049,
+     "Cell-comm": 0.182,
+     "BulkRNA": 0.768
+    }
+   },
+   "fused_selective": {
+    "tp": 5,
+    "fp": 2,
+    "fn": 5,
+    "tn": 345,
+    "sensitivity": 0.5,
+    "specificity": 0.9942,
+    "precision": 0.7143,
+    "f1": 0.5882,
+    "mutation": "CEBPA",
+    "auroc": 0.955,
+    "n_pos_atlas": 10,
+    "n_pos_beataml": 37,
+    "augmented": true,
+    "weights": {
+     "Composition": 0.049,
+     "Cell-comm": 0.182,
+     "BulkRNA": 0.768
+    }
+   }
+  },
+  "DNMT3A": {
+   "deployed": {
+    "tp": 23,
+    "fp": 27,
+    "fn": 19,
+    "tn": 288,
+    "sensitivity": 0.5476,
+    "specificity": 0.9143,
+    "precision": 0.46,
+    "f1": 0.5,
+    "mutation": "DNMT3A",
+    "auroc": 0.8361,
+    "n_pos_atlas": 45,
+    "n_pos_beataml": 138,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.174,
+     "Composition": 0.055,
+     "Lipid": 0.197,
+     "GRN": 0.406,
+     "Cell-comm": 0.168
+    }
+   },
+   "fused_all": {
+    "tp": 23,
+    "fp": 14,
+    "fn": 19,
+    "tn": 301,
+    "sensitivity": 0.5476,
+    "specificity": 0.9556,
+    "precision": 0.6216,
+    "f1": 0.5823,
+    "mutation": "DNMT3A",
+    "auroc": 0.8698,
+    "n_pos_atlas": 45,
+    "n_pos_beataml": 138,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.046,
+     "Lipid": 0.044,
+     "Metabolite": 0.465,
+     "Cell-comm": 0.094,
+     "BulkRNA": 0.35
+    }
+   },
+   "fused_selective": {
+    "tp": 23,
+    "fp": 27,
+    "fn": 19,
+    "tn": 288,
+    "sensitivity": 0.5476,
+    "specificity": 0.9143,
+    "precision": 0.46,
+    "f1": 0.5,
+    "mutation": "DNMT3A",
+    "auroc": 0.8361,
+    "n_pos_atlas": 45,
+    "n_pos_beataml": 138,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.174,
+     "Composition": 0.055,
+     "Lipid": 0.197,
+     "GRN": 0.406,
+     "Cell-comm": 0.168
+    }
+   }
+  },
+  "FLT3": {
+   "deployed": {
+    "tp": 13,
+    "fp": 25,
+    "fn": 17,
+    "tn": 302,
+    "sensitivity": 0.4333,
+    "specificity": 0.9235,
+    "precision": 0.3421,
+    "f1": 0.3824,
+    "mutation": "FLT3",
+    "auroc": 0.8226,
+    "n_pos_atlas": 31,
+    "n_pos_beataml": 215,
+    "augmented": false,
+    "weights": {
+     "ADT": 0.711,
+     "Lipid": 0.019,
+     "Metabolite": 0.25,
+     "GRN": 0.019
+    }
+   },
+   "fused_all": {
+    "tp": 15,
+    "fp": 43,
+    "fn": 15,
+    "tn": 284,
+    "sensitivity": 0.5,
+    "specificity": 0.8685,
+    "precision": 0.2586,
+    "f1": 0.3409,
+    "mutation": "FLT3",
+    "auroc": 0.826,
+    "n_pos_atlas": 31,
+    "n_pos_beataml": 215,
+    "augmented": true,
+    "weights": {
+     "ADT": 0.637,
+     "Lipid": 0.11,
+     "Metabolite": 0.253
+    }
+   },
+   "fused_selective": {
+    "tp": 13,
+    "fp": 25,
+    "fn": 17,
+    "tn": 302,
+    "sensitivity": 0.4333,
+    "specificity": 0.9235,
+    "precision": 0.3421,
+    "f1": 0.3824,
+    "mutation": "FLT3",
+    "auroc": 0.8225,
+    "n_pos_atlas": 31,
+    "n_pos_beataml": 215,
+    "augmented": false,
+    "weights": {
+     "ADT": 0.711,
+     "Lipid": 0.019,
+     "Metabolite": 0.25,
+     "GRN": 0.019
+    }
+   }
+  },
+  "FLT3-ITD": {
+   "deployed": {
+    "tp": 16,
+    "fp": 19,
+    "fn": 15,
+    "tn": 307,
+    "sensitivity": 0.5161,
+    "specificity": 0.9417,
+    "precision": 0.4571,
+    "f1": 0.4848,
+    "mutation": "FLT3-ITD",
+    "auroc": 0.8456,
+    "n_pos_atlas": 33,
+    "n_pos_beataml": 158,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.145,
+     "ADT": 0.114,
+     "Lipid": 0.255,
+     "GRN": 0.399,
+     "LSC": 0.051,
+     "Cell-comm": 0.033
+    }
+   },
+   "fused_all": {
+    "tp": 14,
+    "fp": 18,
+    "fn": 17,
+    "tn": 308,
+    "sensitivity": 0.4516,
+    "specificity": 0.9448,
+    "precision": 0.4375,
+    "f1": 0.4444,
+    "mutation": "FLT3-ITD",
+    "auroc": 0.868,
+    "n_pos_atlas": 33,
+    "n_pos_beataml": 158,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.067,
+     "ADT": 0.406,
+     "Lipid": 0.116,
+     "Metabolite": 0.246,
+     "BulkRNA": 0.165
+    }
+   },
+   "fused_selective": {
+    "tp": 11,
+    "fp": 6,
+    "fn": 20,
+    "tn": 320,
+    "sensitivity": 0.3548,
+    "specificity": 0.9816,
+    "precision": 0.6471,
+    "f1": 0.4583,
+    "mutation": "FLT3-ITD",
+    "auroc": 0.851,
+    "n_pos_atlas": 33,
+    "n_pos_beataml": 158,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.048,
+     "ADT": 0.125,
+     "Lipid": 0.188,
+     "GRN": 0.301,
+     "BulkRNA": 0.339
+    }
+   }
+  },
+  "FLT3-TKD": {
+   "deployed": {
+    "tp": 5,
+    "fp": 29,
+    "fn": 8,
+    "tn": 315,
+    "sensitivity": 0.3846,
+    "specificity": 0.9157,
+    "precision": 0.1471,
+    "f1": 0.2128,
+    "mutation": "FLT3-TKD",
+    "auroc": 0.943,
+    "n_pos_atlas": 14,
+    "n_pos_beataml": 66,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.66,
+     "Composition": 0.081,
+     "Cell-comm": 0.259
+    }
+   },
+   "fused_all": {
+    "tp": 4,
+    "fp": 24,
+    "fn": 9,
+    "tn": 320,
+    "sensitivity": 0.3077,
+    "specificity": 0.9302,
+    "precision": 0.1429,
+    "f1": 0.1951,
+    "mutation": "FLT3-TKD",
+    "auroc": 0.9432,
+    "n_pos_atlas": 14,
+    "n_pos_beataml": 66,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.656,
+     "Composition": 0.079,
+     "Cell-comm": 0.258
+    }
+   },
+   "fused_selective": {
+    "tp": 4,
+    "fp": 24,
+    "fn": 9,
+    "tn": 320,
+    "sensitivity": 0.3077,
+    "specificity": 0.9302,
+    "precision": 0.1429,
+    "f1": 0.1951,
+    "mutation": "FLT3-TKD",
+    "auroc": 0.9432,
+    "n_pos_atlas": 14,
+    "n_pos_beataml": 66,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.656,
+     "Composition": 0.079,
+     "Cell-comm": 0.258
+    }
+   }
+  },
+  "GATA2": {
+   "deployed": {
+    "tp": 3,
+    "fp": 16,
+    "fn": 5,
+    "tn": 333,
+    "sensitivity": 0.375,
+    "specificity": 0.9542,
+    "precision": 0.1579,
+    "f1": 0.2222,
+    "mutation": "GATA2",
+    "auroc": 0.9176,
+    "n_pos_atlas": 8,
+    "n_pos_beataml": 29,
+    "augmented": false,
+    "weights": {
+     "ADT": 0.987,
+     "Lipid": 0.013
+    }
+   },
+   "fused_all": {
+    "tp": 3,
+    "fp": 17,
+    "fn": 5,
+    "tn": 332,
+    "sensitivity": 0.375,
+    "specificity": 0.9513,
+    "precision": 0.15,
+    "f1": 0.2143,
+    "mutation": "GATA2",
+    "auroc": 0.8463,
+    "n_pos_atlas": 8,
+    "n_pos_beataml": 29,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.028,
+     "ADT": 0.564,
+     "Lipid": 0.205,
+     "GRN": 0.117,
+     "BulkRNA": 0.085
+    }
+   },
+   "fused_selective": {
+    "tp": 3,
+    "fp": 17,
+    "fn": 5,
+    "tn": 332,
+    "sensitivity": 0.375,
+    "specificity": 0.9513,
+    "precision": 0.15,
+    "f1": 0.2143,
+    "mutation": "GATA2",
+    "auroc": 0.8463,
+    "n_pos_atlas": 8,
+    "n_pos_beataml": 29,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.028,
+     "ADT": 0.564,
+     "Lipid": 0.205,
+     "GRN": 0.117,
+     "BulkRNA": 0.085
+    }
+   }
+  },
+  "IDH1": {
+   "deployed": {
+    "tp": 5,
+    "fp": 30,
+    "fn": 8,
+    "tn": 314,
+    "sensitivity": 0.3846,
+    "specificity": 0.9128,
+    "precision": 0.1429,
+    "f1": 0.2083,
+    "mutation": "IDH1",
+    "auroc": 0.8491,
+    "n_pos_atlas": 15,
+    "n_pos_beataml": 49,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.53,
+     "Lipid": 0.183,
+     "Cell-comm": 0.287
+    }
+   },
+   "fused_all": {
+    "tp": 5,
+    "fp": 22,
+    "fn": 8,
+    "tn": 322,
+    "sensitivity": 0.3846,
+    "specificity": 0.936,
+    "precision": 0.1852,
+    "f1": 0.25,
+    "mutation": "IDH1",
+    "auroc": 0.8929,
+    "n_pos_atlas": 15,
+    "n_pos_beataml": 49,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.333,
+     "Cell-comm": 0.139,
+     "BulkRNA": 0.528
+    }
+   },
+   "fused_selective": {
+    "tp": 5,
+    "fp": 22,
+    "fn": 8,
+    "tn": 322,
+    "sensitivity": 0.3846,
+    "specificity": 0.936,
+    "precision": 0.1852,
+    "f1": 0.25,
+    "mutation": "IDH1",
+    "auroc": 0.8927,
+    "n_pos_atlas": 15,
+    "n_pos_beataml": 49,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.333,
+     "Cell-comm": 0.139,
+     "BulkRNA": 0.528
+    }
+   }
+  },
+  "IDH2": {
+   "deployed": {
+    "tp": 17,
+    "fp": 12,
+    "fn": 18,
+    "tn": 310,
+    "sensitivity": 0.4857,
+    "specificity": 0.9627,
+    "precision": 0.5862,
+    "f1": 0.5312,
+    "mutation": "IDH2",
+    "auroc": 0.85,
+    "n_pos_atlas": 37,
+    "n_pos_beataml": 72,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.226,
+     "Composition": 0.131,
+     "Metabolite": 0.132,
+     "GRN": 0.51
+    }
+   },
+   "fused_all": {
+    "tp": 18,
+    "fp": 17,
+    "fn": 17,
+    "tn": 305,
+    "sensitivity": 0.5143,
+    "specificity": 0.9472,
+    "precision": 0.5143,
+    "f1": 0.5143,
+    "mutation": "IDH2",
+    "auroc": 0.9059,
+    "n_pos_atlas": 37,
+    "n_pos_beataml": 72,
+    "augmented": true,
+    "weights": {
+     "Metabolite": 0.485,
+     "GRN": 0.162,
+     "BulkRNA": 0.35
+    }
+   },
+   "fused_selective": {
+    "tp": 17,
+    "fp": 12,
+    "fn": 18,
+    "tn": 310,
+    "sensitivity": 0.4857,
+    "specificity": 0.9627,
+    "precision": 0.5862,
+    "f1": 0.5312,
+    "mutation": "IDH2",
+    "auroc": 0.85,
+    "n_pos_atlas": 37,
+    "n_pos_beataml": 72,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.226,
+     "Composition": 0.131,
+     "Metabolite": 0.132,
+     "GRN": 0.51
+    }
+   }
+  },
+  "KIT": {
+   "deployed": {
+    "tp": 7,
+    "fp": 21,
+    "fn": 5,
+    "tn": 324,
+    "sensitivity": 0.5833,
+    "specificity": 0.9391,
+    "precision": 0.25,
+    "f1": 0.35,
+    "mutation": "KIT",
+    "auroc": 0.9191,
+    "n_pos_atlas": 12,
+    "n_pos_beataml": 13,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.422,
+     "ADT": 0.223,
+     "Cell-comm": 0.355
+    }
+   },
+   "fused_all": {
+    "tp": 6,
+    "fp": 24,
+    "fn": 6,
+    "tn": 321,
+    "sensitivity": 0.5,
+    "specificity": 0.9304,
+    "precision": 0.2,
+    "f1": 0.2857,
+    "mutation": "KIT",
+    "auroc": 0.9237,
+    "n_pos_atlas": 12,
+    "n_pos_beataml": 13,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.476,
+     "GRN": 0.112,
+     "Cell-comm": 0.411
+    }
+   },
+   "fused_selective": {
+    "tp": 6,
+    "fp": 24,
+    "fn": 6,
+    "tn": 321,
+    "sensitivity": 0.5,
+    "specificity": 0.9304,
+    "precision": 0.2,
+    "f1": 0.2857,
+    "mutation": "KIT",
+    "auroc": 0.9237,
+    "n_pos_atlas": 12,
+    "n_pos_beataml": 13,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.476,
+     "GRN": 0.112,
+     "Cell-comm": 0.411
+    }
+   }
+  },
+  "KMT2A-rearrangement": {
+   "deployed": {
+    "tp": 6,
+    "fp": 12,
+    "fn": 6,
+    "tn": 333,
+    "sensitivity": 0.5,
+    "specificity": 0.9652,
+    "precision": 0.3333,
+    "f1": 0.4,
+    "mutation": "KMT2A-rearrangement",
+    "auroc": 0.9524,
+    "n_pos_atlas": 12,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.31,
+     "ADT": 0.097,
+     "Metabolite": 0.25,
+     "GRN": 0.342
+    }
+   },
+   "fused_all": {
+    "tp": 4,
+    "fp": 10,
+    "fn": 8,
+    "tn": 335,
+    "sensitivity": 0.3333,
+    "specificity": 0.971,
+    "precision": 0.2857,
+    "f1": 0.3077,
+    "mutation": "KMT2A-rearrangement",
+    "auroc": 0.9652,
+    "n_pos_atlas": 12,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.204,
+     "Metabolite": 0.202,
+     "GRN": 0.283,
+     "BulkRNA": 0.311
+    }
+   },
+   "fused_selective": {
+    "tp": 4,
+    "fp": 10,
+    "fn": 8,
+    "tn": 335,
+    "sensitivity": 0.3333,
+    "specificity": 0.971,
+    "precision": 0.2857,
+    "f1": 0.3077,
+    "mutation": "KMT2A-rearrangement",
+    "auroc": 0.9652,
+    "n_pos_atlas": 12,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.204,
+     "Metabolite": 0.202,
+     "GRN": 0.283,
+     "BulkRNA": 0.311
+    }
+   }
+  },
+  "KRAS": {
+   "deployed": {
+    "tp": 2,
+    "fp": 30,
+    "fn": 13,
+    "tn": 312,
+    "sensitivity": 0.1333,
+    "specificity": 0.9123,
+    "precision": 0.0625,
+    "f1": 0.0851,
+    "mutation": "KRAS",
+    "auroc": 0.717,
+    "n_pos_atlas": 17,
+    "n_pos_beataml": 28,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.227,
+     "Composition": 0.044,
+     "ADT": 0.107,
+     "Lipid": 0.309,
+     "GRN": 0.313
+    }
+   },
+   "fused_all": {
+    "tp": 8,
+    "fp": 59,
+    "fn": 7,
+    "tn": 283,
+    "sensitivity": 0.5333,
+    "specificity": 0.8275,
+    "precision": 0.1194,
+    "f1": 0.1951,
+    "mutation": "KRAS",
+    "auroc": 0.8037,
+    "n_pos_atlas": 17,
+    "n_pos_beataml": 28,
+    "augmented": true,
+    "weights": {
+     "ADT": 0.889,
+     "Lipid": 0.111
+    }
+   },
+   "fused_selective": {
+    "tp": 8,
+    "fp": 59,
+    "fn": 7,
+    "tn": 283,
+    "sensitivity": 0.5333,
+    "specificity": 0.8275,
+    "precision": 0.1194,
+    "f1": 0.1951,
+    "mutation": "KRAS",
+    "auroc": 0.8037,
+    "n_pos_atlas": 17,
+    "n_pos_beataml": 28,
+    "augmented": true,
+    "weights": {
+     "ADT": 0.889,
+     "Lipid": 0.111
+    }
+   }
+  },
+  "NPM1": {
+   "deployed": {
+    "tp": 48,
+    "fp": 19,
+    "fn": 16,
+    "tn": 274,
+    "sensitivity": 0.75,
+    "specificity": 0.9352,
+    "precision": 0.7164,
+    "f1": 0.7328,
+    "mutation": "NPM1",
+    "auroc": 0.908,
+    "n_pos_atlas": 65,
+    "n_pos_beataml": 140,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.485,
+     "Lipid": 0.139,
+     "Metabolite": 0.224,
+     "GRN": 0.153
+    }
+   },
+   "fused_all": {
+    "tp": 48,
+    "fp": 15,
+    "fn": 16,
+    "tn": 278,
+    "sensitivity": 0.75,
+    "specificity": 0.9488,
+    "precision": 0.7619,
+    "f1": 0.7559,
+    "mutation": "NPM1",
+    "auroc": 0.9121,
+    "n_pos_atlas": 65,
+    "n_pos_beataml": 140,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.401,
+     "ADT": 0.065,
+     "Lipid": 0.092,
+     "Metabolite": 0.202,
+     "GRN": 0.058,
+     "BulkRNA": 0.182
+    }
+   },
+   "fused_selective": {
+    "tp": 49,
+    "fp": 28,
+    "fn": 15,
+    "tn": 265,
+    "sensitivity": 0.7656,
+    "specificity": 0.9044,
+    "precision": 0.6364,
+    "f1": 0.695,
+    "mutation": "NPM1",
+    "auroc": 0.9113,
+    "n_pos_atlas": 65,
+    "n_pos_beataml": 140,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.41,
+     "Lipid": 0.084,
+     "Metabolite": 0.176,
+     "GRN": 0.071,
+     "BulkRNA": 0.259
+    }
+   }
+  },
+  "NRAS": {
+   "deployed": {
+    "tp": 30,
+    "fp": 16,
+    "fn": 17,
+    "tn": 294,
+    "sensitivity": 0.6383,
+    "specificity": 0.9484,
+    "precision": 0.6522,
+    "f1": 0.6452,
+    "mutation": "NRAS",
+    "auroc": 0.8787,
+    "n_pos_atlas": 48,
+    "n_pos_beataml": 94,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.218,
+     "Composition": 0.35,
+     "Metabolite": 0.319,
+     "Cell-comm": 0.113
+    }
+   },
+   "fused_all": {
+    "tp": 30,
+    "fp": 18,
+    "fn": 17,
+    "tn": 292,
+    "sensitivity": 0.6383,
+    "specificity": 0.9419,
+    "precision": 0.625,
+    "f1": 0.6316,
+    "mutation": "NRAS",
+    "auroc": 0.9318,
+    "n_pos_atlas": 48,
+    "n_pos_beataml": 94,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.021,
+     "Composition": 0.218,
+     "GRN": 0.301,
+     "BulkRNA": 0.46
+    }
+   },
+   "fused_selective": {
+    "tp": 28,
+    "fp": 13,
+    "fn": 19,
+    "tn": 297,
+    "sensitivity": 0.5957,
+    "specificity": 0.9581,
+    "precision": 0.6829,
+    "f1": 0.6364,
+    "mutation": "NRAS",
+    "auroc": 0.8792,
+    "n_pos_atlas": 48,
+    "n_pos_beataml": 94,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.21,
+     "Composition": 0.347,
+     "Metabolite": 0.303,
+     "Cell-comm": 0.108,
+     "BulkRNA": 0.032
+    }
+   }
+  },
+  "PTPN11": {
+   "deployed": {
+    "tp": 3,
+    "fp": 23,
+    "fn": 6,
+    "tn": 325,
+    "sensitivity": 0.3333,
+    "specificity": 0.9339,
+    "precision": 0.1154,
+    "f1": 0.1714,
+    "mutation": "PTPN11",
+    "auroc": 0.8349,
+    "n_pos_atlas": 9,
+    "n_pos_beataml": 32,
+    "augmented": false,
+    "weights": {
+     "Composition": 0.012,
+     "ADT": 0.477,
+     "Lipid": 0.386,
+     "LSC": 0.126
+    }
+   },
+   "fused_all": {
+    "tp": 3,
+    "fp": 26,
+    "fn": 6,
+    "tn": 322,
+    "sensitivity": 0.3333,
+    "specificity": 0.9253,
+    "precision": 0.1034,
+    "f1": 0.1579,
+    "mutation": "PTPN11",
+    "auroc": 0.8487,
+    "n_pos_atlas": 9,
+    "n_pos_beataml": 32,
+    "augmented": true,
+    "weights": {
+     "ADT": 0.157,
+     "Lipid": 0.24,
+     "Metabolite": 0.247,
+     "GRN": 0.189,
+     "LSC": 0.068,
+     "BulkRNA": 0.099
+    }
+   },
+   "fused_selective": {
+    "tp": 3,
+    "fp": 26,
+    "fn": 6,
+    "tn": 322,
+    "sensitivity": 0.3333,
+    "specificity": 0.9253,
+    "precision": 0.1034,
+    "f1": 0.1579,
+    "mutation": "PTPN11",
+    "auroc": 0.8487,
+    "n_pos_atlas": 9,
+    "n_pos_beataml": 32,
+    "augmented": true,
+    "weights": {
+     "ADT": 0.157,
+     "Lipid": 0.24,
+     "Metabolite": 0.247,
+     "GRN": 0.189,
+     "LSC": 0.068,
+     "BulkRNA": 0.099
+    }
+   }
+  },
+  "RUNX1": {
+   "deployed": {
+    "tp": 10,
+    "fp": 15,
+    "fn": 9,
+    "tn": 323,
+    "sensitivity": 0.5263,
+    "specificity": 0.9556,
+    "precision": 0.4,
+    "f1": 0.4545,
+    "mutation": "RUNX1",
+    "auroc": 0.9021,
+    "n_pos_atlas": 19,
+    "n_pos_beataml": 75,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.15,
+     "ADT": 0.095,
+     "Metabolite": 0.722,
+     "GRN": 0.032
+    }
+   },
+   "fused_all": {
+    "tp": 7,
+    "fp": 6,
+    "fn": 12,
+    "tn": 332,
+    "sensitivity": 0.3684,
+    "specificity": 0.9822,
+    "precision": 0.5385,
+    "f1": 0.4375,
+    "mutation": "RUNX1",
+    "auroc": 0.8687,
+    "n_pos_atlas": 19,
+    "n_pos_beataml": 75,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.321,
+     "Metabolite": 0.481,
+     "BulkRNA": 0.198
+    }
+   },
+   "fused_selective": {
+    "tp": 7,
+    "fp": 6,
+    "fn": 12,
+    "tn": 332,
+    "sensitivity": 0.3684,
+    "specificity": 0.9822,
+    "precision": 0.5385,
+    "f1": 0.4375,
+    "mutation": "RUNX1",
+    "auroc": 0.8687,
+    "n_pos_atlas": 19,
+    "n_pos_beataml": 75,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.321,
+     "Metabolite": 0.481,
+     "BulkRNA": 0.198
+    }
+   }
+  },
+  "SF3B1": {
+   "deployed": {
+    "tp": 5,
+    "fp": 8,
+    "fn": 7,
+    "tn": 337,
+    "sensitivity": 0.4167,
+    "specificity": 0.9768,
+    "precision": 0.3846,
+    "f1": 0.4,
+    "mutation": "SF3B1",
+    "auroc": 0.9498,
+    "n_pos_atlas": 12,
+    "n_pos_beataml": 28,
+    "augmented": false,
+    "weights": {
+     "Metabolite": 0.513,
+     "GRN": 0.077,
+     "Cell-comm": 0.41
+    }
+   },
+   "fused_all": {
+    "tp": 6,
+    "fp": 2,
+    "fn": 6,
+    "tn": 343,
+    "sensitivity": 0.5,
+    "specificity": 0.9942,
+    "precision": 0.75,
+    "f1": 0.6,
+    "mutation": "SF3B1",
+    "auroc": 0.9585,
+    "n_pos_atlas": 12,
+    "n_pos_beataml": 28,
+    "augmented": true,
+    "weights": {
+     "Metabolite": 0.507,
+     "Cell-comm": 0.325,
+     "BulkRNA": 0.168
+    }
+   },
+   "fused_selective": {
+    "tp": 6,
+    "fp": 2,
+    "fn": 6,
+    "tn": 343,
+    "sensitivity": 0.5,
+    "specificity": 0.9942,
+    "precision": 0.75,
+    "f1": 0.6,
+    "mutation": "SF3B1",
+    "auroc": 0.9585,
+    "n_pos_atlas": 12,
+    "n_pos_beataml": 28,
+    "augmented": true,
+    "weights": {
+     "Metabolite": 0.507,
+     "Cell-comm": 0.325,
+     "BulkRNA": 0.168
+    }
+   }
+  },
+  "SRSF2": {
+   "deployed": {
+    "tp": 6,
+    "fp": 3,
+    "fn": 9,
+    "tn": 339,
+    "sensitivity": 0.4,
+    "specificity": 0.9912,
+    "precision": 0.6667,
+    "f1": 0.5,
+    "mutation": "SRSF2",
+    "auroc": 0.852,
+    "n_pos_atlas": 15,
+    "n_pos_beataml": 72,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.342,
+     "ADT": 0.16,
+     "Lipid": 0.427,
+     "Metabolite": 0.064
+    }
+   },
+   "fused_all": {
+    "tp": 5,
+    "fp": 4,
+    "fn": 10,
+    "tn": 338,
+    "sensitivity": 0.3333,
+    "specificity": 0.9883,
+    "precision": 0.5556,
+    "f1": 0.4167,
+    "mutation": "SRSF2",
+    "auroc": 0.9142,
+    "n_pos_atlas": 15,
+    "n_pos_beataml": 72,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.108,
+     "ADT": 0.393,
+     "Lipid": 0.049,
+     "Metabolite": 0.21,
+     "GRN": 0.045,
+     "BulkRNA": 0.196
+    }
+   },
+   "fused_selective": {
+    "tp": 5,
+    "fp": 4,
+    "fn": 10,
+    "tn": 338,
+    "sensitivity": 0.3333,
+    "specificity": 0.9883,
+    "precision": 0.5556,
+    "f1": 0.4167,
+    "mutation": "SRSF2",
+    "auroc": 0.9142,
+    "n_pos_atlas": 15,
+    "n_pos_beataml": 72,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.108,
+     "ADT": 0.393,
+     "Lipid": 0.048,
+     "Metabolite": 0.21,
+     "GRN": 0.045,
+     "BulkRNA": 0.196
+    }
+   }
+  },
+  "TET2": {
+   "deployed": {
+    "tp": 12,
+    "fp": 10,
+    "fn": 8,
+    "tn": 327,
+    "sensitivity": 0.6,
+    "specificity": 0.9703,
+    "precision": 0.5455,
+    "f1": 0.5714,
+    "mutation": "TET2",
+    "auroc": 0.9473,
+    "n_pos_atlas": 20,
+    "n_pos_beataml": 82,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.336,
+     "ADT": 0.092,
+     "Metabolite": 0.116,
+     "GRN": 0.456
+    }
+   },
+   "fused_all": {
+    "tp": 13,
+    "fp": 20,
+    "fn": 7,
+    "tn": 317,
+    "sensitivity": 0.65,
+    "specificity": 0.9407,
+    "precision": 0.3939,
+    "f1": 0.4906,
+    "mutation": "TET2",
+    "auroc": 0.9368,
+    "n_pos_atlas": 20,
+    "n_pos_beataml": 82,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.384,
+     "ADT": 0.297,
+     "Lipid": 0.107,
+     "Metabolite": 0.087,
+     "GRN": 0.126
+    }
+   },
+   "fused_selective": {
+    "tp": 13,
+    "fp": 20,
+    "fn": 7,
+    "tn": 317,
+    "sensitivity": 0.65,
+    "specificity": 0.9407,
+    "precision": 0.3939,
+    "f1": 0.4906,
+    "mutation": "TET2",
+    "auroc": 0.9368,
+    "n_pos_atlas": 20,
+    "n_pos_beataml": 82,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.384,
+     "ADT": 0.297,
+     "Lipid": 0.107,
+     "Metabolite": 0.087,
+     "GRN": 0.126
+    }
+   }
+  },
+  "TP53": {
+   "deployed": {
+    "tp": 5,
+    "fp": 17,
+    "fn": 8,
+    "tn": 327,
+    "sensitivity": 0.3846,
+    "specificity": 0.9506,
+    "precision": 0.2273,
+    "f1": 0.2857,
+    "mutation": "TP53",
+    "auroc": 0.9468,
+    "n_pos_atlas": 13,
+    "n_pos_beataml": 57,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.41,
+     "Lipid": 0.055,
+     "Metabolite": 0.451,
+     "GRN": 0.084
+    }
+   },
+   "fused_all": {
+    "tp": 6,
+    "fp": 13,
+    "fn": 7,
+    "tn": 331,
+    "sensitivity": 0.4615,
+    "specificity": 0.9622,
+    "precision": 0.3158,
+    "f1": 0.375,
+    "mutation": "TP53",
+    "auroc": 0.9258,
+    "n_pos_atlas": 13,
+    "n_pos_beataml": 57,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.469,
+     "Lipid": 0.094,
+     "Metabolite": 0.407,
+     "GRN": 0.029
+    }
+   },
+   "fused_selective": {
+    "tp": 6,
+    "fp": 13,
+    "fn": 7,
+    "tn": 331,
+    "sensitivity": 0.4615,
+    "specificity": 0.9622,
+    "precision": 0.3158,
+    "f1": 0.375,
+    "mutation": "TP53",
+    "auroc": 0.9258,
+    "n_pos_atlas": 13,
+    "n_pos_beataml": 57,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.469,
+     "Lipid": 0.094,
+     "Metabolite": 0.407,
+     "GRN": 0.029
+    }
+   }
+  },
+  "WT1": {
+   "deployed": {
+    "tp": 5,
+    "fp": 2,
+    "fn": 10,
+    "tn": 340,
+    "sensitivity": 0.3333,
+    "specificity": 0.9942,
+    "precision": 0.7143,
+    "f1": 0.4545,
+    "mutation": "WT1",
+    "auroc": 0.738,
+    "n_pos_atlas": 15,
+    "n_pos_beataml": 47,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.244,
+     "Metabolite": 0.022,
+     "Cell-comm": 0.734
+    }
+   },
+   "fused_all": {
+    "tp": 5,
+    "fp": 2,
+    "fn": 10,
+    "tn": 340,
+    "sensitivity": 0.3333,
+    "specificity": 0.9942,
+    "precision": 0.7143,
+    "f1": 0.4545,
+    "mutation": "WT1",
+    "auroc": 0.8696,
+    "n_pos_atlas": 15,
+    "n_pos_beataml": 47,
+    "augmented": true,
+    "weights": {
+     "Cell-comm": 0.212,
+     "BulkRNA": 0.788
+    }
+   },
+   "fused_selective": {
+    "tp": 5,
+    "fp": 2,
+    "fn": 10,
+    "tn": 340,
+    "sensitivity": 0.3333,
+    "specificity": 0.9942,
+    "precision": 0.7143,
+    "f1": 0.4545,
+    "mutation": "WT1",
+    "auroc": 0.8696,
+    "n_pos_atlas": 15,
+    "n_pos_beataml": 47,
+    "augmented": true,
+    "weights": {
+     "Cell-comm": 0.212,
+     "BulkRNA": 0.788
+    }
+   }
+  },
+  "complex": {
+   "deployed": {
+    "tp": 10,
+    "fp": 34,
+    "fn": 14,
+    "tn": 299,
+    "sensitivity": 0.4167,
+    "specificity": 0.8979,
+    "precision": 0.2273,
+    "f1": 0.2941,
+    "mutation": "complex",
+    "auroc": 0.866,
+    "n_pos_atlas": 24,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.161,
+     "Lipid": 0.381,
+     "Metabolite": 0.458
+    }
+   },
+   "fused_all": {
+    "tp": 11,
+    "fp": 18,
+    "fn": 13,
+    "tn": 315,
+    "sensitivity": 0.4583,
+    "specificity": 0.9459,
+    "precision": 0.3793,
+    "f1": 0.4151,
+    "mutation": "complex",
+    "auroc": 0.8821,
+    "n_pos_atlas": 24,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.039,
+     "Lipid": 0.264,
+     "Metabolite": 0.371,
+     "BulkRNA": 0.327
+    }
+   },
+   "fused_selective": {
+    "tp": 11,
+    "fp": 18,
+    "fn": 13,
+    "tn": 315,
+    "sensitivity": 0.4583,
+    "specificity": 0.9459,
+    "precision": 0.3793,
+    "f1": 0.4151,
+    "mutation": "complex",
+    "auroc": 0.8821,
+    "n_pos_atlas": 24,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.039,
+     "Lipid": 0.264,
+     "Metabolite": 0.371,
+     "BulkRNA": 0.327
+    }
+   }
+  },
+  "del5": {
+   "deployed": {
+    "tp": 8,
+    "fp": 11,
+    "fn": 7,
+    "tn": 331,
+    "sensitivity": 0.5333,
+    "specificity": 0.9678,
+    "precision": 0.4211,
+    "f1": 0.4706,
+    "mutation": "del5",
+    "auroc": 0.9218,
+    "n_pos_atlas": 15,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.158,
+     "Composition": 0.188,
+     "Metabolite": 0.503,
+     "GRN": 0.142
+    }
+   },
+   "fused_all": {
+    "tp": 9,
+    "fp": 11,
+    "fn": 6,
+    "tn": 331,
+    "sensitivity": 0.6,
+    "specificity": 0.9678,
+    "precision": 0.45,
+    "f1": 0.5143,
+    "mutation": "del5",
+    "auroc": 0.9442,
+    "n_pos_atlas": 15,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "Composition": 0.157,
+     "Metabolite": 0.437,
+     "BulkRNA": 0.406
+    }
+   },
+   "fused_selective": {
+    "tp": 9,
+    "fp": 11,
+    "fn": 6,
+    "tn": 331,
+    "sensitivity": 0.6,
+    "specificity": 0.9678,
+    "precision": 0.45,
+    "f1": 0.5143,
+    "mutation": "del5",
+    "auroc": 0.9442,
+    "n_pos_atlas": 15,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "Composition": 0.157,
+     "Metabolite": 0.437,
+     "BulkRNA": 0.406
+    }
+   }
+  },
+  "del7": {
+   "deployed": {
+    "tp": 10,
+    "fp": 4,
+    "fn": 8,
+    "tn": 335,
+    "sensitivity": 0.5556,
+    "specificity": 0.9882,
+    "precision": 0.7143,
+    "f1": 0.625,
+    "mutation": "del7",
+    "auroc": 0.9702,
+    "n_pos_atlas": 18,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.115,
+     "Metabolite": 0.424,
+     "GRN": 0.434,
+     "Cell-comm": 0.027
+    }
+   },
+   "fused_all": {
+    "tp": 10,
+    "fp": 4,
+    "fn": 8,
+    "tn": 335,
+    "sensitivity": 0.5556,
+    "specificity": 0.9882,
+    "precision": 0.7143,
+    "f1": 0.625,
+    "mutation": "del7",
+    "auroc": 0.9702,
+    "n_pos_atlas": 18,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.115,
+     "Metabolite": 0.424,
+     "GRN": 0.434,
+     "Cell-comm": 0.027
+    }
+   },
+   "fused_selective": {
+    "tp": 10,
+    "fp": 4,
+    "fn": 8,
+    "tn": 335,
+    "sensitivity": 0.5556,
+    "specificity": 0.9882,
+    "precision": 0.7143,
+    "f1": 0.625,
+    "mutation": "del7",
+    "auroc": 0.9702,
+    "n_pos_atlas": 18,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.115,
+     "Metabolite": 0.424,
+     "GRN": 0.434,
+     "Cell-comm": 0.027
+    }
+   }
+  },
+  "inv(16)_CBFB-MYH11": {
+   "deployed": {
+    "tp": 9,
+    "fp": 3,
+    "fn": 2,
+    "tn": 343,
+    "sensitivity": 0.8182,
+    "specificity": 0.9913,
+    "precision": 0.75,
+    "f1": 0.7826,
+    "mutation": "inv(16)_CBFB-MYH11",
+    "auroc": 0.9968,
+    "n_pos_atlas": 11,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.136,
+     "Composition": 0.088,
+     "ADT": 0.178,
+     "Lipid": 0.168,
+     "Metabolite": 0.117,
+     "GRN": 0.112,
+     "Cell-comm": 0.202
+    }
+   },
+   "fused_all": {
+    "tp": 10,
+    "fp": 2,
+    "fn": 1,
+    "tn": 344,
+    "sensitivity": 0.9091,
+    "specificity": 0.9942,
+    "precision": 0.8333,
+    "f1": 0.8696,
+    "mutation": "inv(16)_CBFB-MYH11",
+    "auroc": 0.9971,
+    "n_pos_atlas": 11,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.11,
+     "Composition": 0.077,
+     "ADT": 0.148,
+     "Lipid": 0.147,
+     "Metabolite": 0.106,
+     "GRN": 0.097,
+     "Cell-comm": 0.192,
+     "BulkRNA": 0.122
+    }
+   },
+   "fused_selective": {
+    "tp": 10,
+    "fp": 2,
+    "fn": 1,
+    "tn": 344,
+    "sensitivity": 0.9091,
+    "specificity": 0.9942,
+    "precision": 0.8333,
+    "f1": 0.8696,
+    "mutation": "inv(16)_CBFB-MYH11",
+    "auroc": 0.9971,
+    "n_pos_atlas": 11,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.11,
+     "Composition": 0.077,
+     "ADT": 0.148,
+     "Lipid": 0.147,
+     "Metabolite": 0.106,
+     "GRN": 0.097,
+     "Cell-comm": 0.192,
+     "BulkRNA": 0.122
+    }
+   }
+  },
+  "inv16": {
+   "deployed": {
+    "tp": 9,
+    "fp": 3,
+    "fn": 2,
+    "tn": 343,
+    "sensitivity": 0.8182,
+    "specificity": 0.9913,
+    "precision": 0.75,
+    "f1": 0.7826,
+    "mutation": "inv16",
+    "auroc": 0.9968,
+    "n_pos_atlas": 11,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.136,
+     "Composition": 0.088,
+     "ADT": 0.178,
+     "Lipid": 0.168,
+     "Metabolite": 0.117,
+     "GRN": 0.112,
+     "Cell-comm": 0.202
+    }
+   },
+   "fused_all": {
+    "tp": 10,
+    "fp": 2,
+    "fn": 1,
+    "tn": 344,
+    "sensitivity": 0.9091,
+    "specificity": 0.9942,
+    "precision": 0.8333,
+    "f1": 0.8696,
+    "mutation": "inv16",
+    "auroc": 0.9971,
+    "n_pos_atlas": 11,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.11,
+     "Composition": 0.077,
+     "ADT": 0.148,
+     "Lipid": 0.147,
+     "Metabolite": 0.106,
+     "GRN": 0.097,
+     "Cell-comm": 0.192,
+     "BulkRNA": 0.122
+    }
+   },
+   "fused_selective": {
+    "tp": 10,
+    "fp": 2,
+    "fn": 1,
+    "tn": 344,
+    "sensitivity": 0.9091,
+    "specificity": 0.9942,
+    "precision": 0.8333,
+    "f1": 0.8696,
+    "mutation": "inv16",
+    "auroc": 0.9971,
+    "n_pos_atlas": 11,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.11,
+     "Composition": 0.077,
+     "ADT": 0.148,
+     "Lipid": 0.148,
+     "Metabolite": 0.106,
+     "GRN": 0.097,
+     "Cell-comm": 0.192,
+     "BulkRNA": 0.122
+    }
+   }
+  },
+  "kmt2a": {
+   "deployed": {
+    "tp": 6,
+    "fp": 12,
+    "fn": 6,
+    "tn": 333,
+    "sensitivity": 0.5,
+    "specificity": 0.9652,
+    "precision": 0.3333,
+    "f1": 0.4,
+    "mutation": "kmt2a",
+    "auroc": 0.9524,
+    "n_pos_atlas": 12,
+    "n_pos_beataml": 43,
+    "augmented": false,
+    "weights": {
+     "RNA": 0.31,
+     "ADT": 0.097,
+     "Metabolite": 0.25,
+     "GRN": 0.342
+    }
+   },
+   "fused_all": {
+    "tp": 8,
+    "fp": 6,
+    "fn": 4,
+    "tn": 339,
+    "sensitivity": 0.6667,
+    "specificity": 0.9826,
+    "precision": 0.5714,
+    "f1": 0.6154,
+    "mutation": "kmt2a",
+    "auroc": 0.9742,
+    "n_pos_atlas": 12,
+    "n_pos_beataml": 43,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.121,
+     "ADT": 0.238,
+     "Metabolite": 0.209,
+     "GRN": 0.165,
+     "BulkRNA": 0.267
+    }
+   },
+   "fused_selective": {
+    "tp": 8,
+    "fp": 6,
+    "fn": 4,
+    "tn": 339,
+    "sensitivity": 0.6667,
+    "specificity": 0.9826,
+    "precision": 0.5714,
+    "f1": 0.6154,
+    "mutation": "kmt2a",
+    "auroc": 0.9742,
+    "n_pos_atlas": 12,
+    "n_pos_beataml": 43,
+    "augmented": true,
+    "weights": {
+     "RNA": 0.121,
+     "ADT": 0.238,
+     "Metabolite": 0.209,
+     "GRN": 0.165,
+     "BulkRNA": 0.267
+    }
+   }
+  },
+  "trisomy8": {
+   "deployed": {
+    "tp": 6,
+    "fp": 24,
+    "fn": 12,
+    "tn": 315,
+    "sensitivity": 0.3333,
+    "specificity": 0.9292,
+    "precision": 0.2,
+    "f1": 0.25,
+    "mutation": "trisomy8",
+    "auroc": 0.7686,
+    "n_pos_atlas": 18,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "ADT": 0.013,
+     "Lipid": 0.949,
+     "GRN": 0.033
+    }
+   },
+   "fused_all": {
+    "tp": 6,
+    "fp": 24,
+    "fn": 12,
+    "tn": 315,
+    "sensitivity": 0.3333,
+    "specificity": 0.9292,
+    "precision": 0.2,
+    "f1": 0.25,
+    "mutation": "trisomy8",
+    "auroc": 0.7686,
+    "n_pos_atlas": 18,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "ADT": 0.013,
+     "Lipid": 0.949,
+     "GRN": 0.033
+    }
+   },
+   "fused_selective": {
+    "tp": 6,
+    "fp": 24,
+    "fn": 12,
+    "tn": 315,
+    "sensitivity": 0.3333,
+    "specificity": 0.9292,
+    "precision": 0.2,
+    "f1": 0.25,
+    "mutation": "trisomy8",
+    "auroc": 0.7686,
+    "n_pos_atlas": 18,
+    "n_pos_beataml": 0,
+    "augmented": false,
+    "weights": {
+     "ADT": 0.013,
+     "Lipid": 0.949,
+     "GRN": 0.032
+    }
+   }
+  }
+ }
+}

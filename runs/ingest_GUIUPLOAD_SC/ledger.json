@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "scope_id": "upload-test::GUIUPLOAD_SC",
+  "target": "subtype",
+  "provenance": {
+    "layout": "local",
+    "ingested": true,
+    "source": "C:\\Users\\krog5w\\.gemini\\antigravity\\scratch\\AML-multimodal\\inbox\\UPLOAD_TEST_CCHMC_1009_AfInv16_29M.h5ad",
+    "python": "3.14.5",
+    "deferred_witnesses": [
+      "surfaceome/ADT",
+      "metabolic",
+      "lipid",
+      "GRN-regulon",
+      "LSC",
+      "cell-state/UDON",
+      "cell-communication"
+    ],
+    "scikit-learn": "1.9.0",
+    "numpy": "2.4.6",
+    "anndata": "0.12.16",
+    "scanpy": "1.12.1"
+  },
+  "entries": [
+    {
+      "entry_id": "composition#r0",
+      "witness": "composition",
+      "domain": "predictive",
+      "grounding": "honest_cv",
+      "independence": "independent",
+      "round": 0,
+      "status": "ok",
+      "error": null,
+      "evidence": {
+        "witness": "composition",
+        "kind": "measured",
+        "status": "ok",
+        "held_out": false,
+        "patient_prediction": "Inv16",
+        "patient_probability": 0.705,
+        "true_label": null,
+        "cohort_balanced_accuracy": 0.6312,
+        "cohort_permutation_p": 0.024390243902439025,
+        "patient_top_cellstates": {
+          "MultiLin-GMP-1": 0.208,
+          "Intermediate Mono-3": 0.192,
+          "Intermediate Mono-1": 0.161,
+          "Mono-2": 0.065,
+          "Mono-1": 0.062,
+          "cDC2-2": 0.06
+        },
+        "mean_cosine": 0.484,
+        "n_cells": 3002,
+        "n_shared_markers": 2700,
+        "n_states_present": 34,
+        "trained_classes": [
+          "FLT3",
+          "Inv16",
+          "NPM1",
+          "TET2",
+          "TP53"
+        ]
+      },
+      "opinion": {
+        "confidence": 0.5,
+        "reliability_weight": 0.85,
+        "summary": "predicts Inv16 (prob 0.705); cohort balanced-acc 0.6312",
+        "caveats": "external sample: cohort-trained classifier, NOT held-out for this sample; out-of-cohort domain shift possible"
+      },
+      "read_entry_ids": []
+    },
+    {
+      "entry_id": "genetic#r0",
+      "witness": "genetic",
+      "domain": "genetic",
+      "grounding": "deterministic_fact",
+      "independence": "independent",
+      "round": 0,
+      "status": "ok",
+      "error": null,
+      "evidence": {
+        "witness": "genetic",
+        "kind": "independent",
+        "status": "ok",
+        "present": [],
+        "targetable": {},
+        "eln": null
+      },
+      "opinion": {
+        "confidence": 0.2,
+        "reliability_weight": 0.1,
+        "summary": "present: []; targetable: []",
+        "caveats": "no mutations supplied \u2014 arbiter runs anchor-free"
+      },
+      "read_entry_ids": []
+    }
+  ],
+  "arbiter_rounds": [
+    {
+      "round": 0,
+      "consensus": {
+        "subtype_call": "Inv16 (witness consensus)",
+        "leading_hypothesis": "Inv16",
+        "leading_confirmed_by_genetics": false,
+        "concordance": 1.0,
+        "per_witness_consistency": {
+          "composition": "agree"
+        },
+        "conflicts": "",
+        "ranked_therapy_hypotheses": [],
+        "surface_therapy_hypotheses": [],
+        "recommended_validations": [
+          {
+            "claim": "mutation",
+            "validation": "targeted DNA/RNA sequencing (NGS panel)",
+            "source": "standard"
+          },
+          {
+            "claim": "subtype",
+            "validation": "flow cytometry immunophenotyping",
+            "source": "standard"
+          }
+        ],
+        "descriptive_findings": [],
+        "overall_confidence": "medium",
+        "rationale": "Leading hypothesis: Inv16 (witness consensus). Concordance 1.00. Therapies follow observed drivers; a predicted subtype must be confirmed by sequencing before subtype-directed therapy.",
+        "knowledge_version": "kb-2026.07"
+      }
+    }
+  ],
+  "rounds_run": 1,
+  "stop_reason": "single_pass",
+  "deterministic_evidence_hash": "0f130bb65b174808"
+}

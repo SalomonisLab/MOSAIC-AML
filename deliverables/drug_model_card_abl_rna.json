@@ -1,0 +1,4622 @@
+{
+ "version": "1.0",
+ "trained": "2026-08-04 19:25",
+ "blocks": [
+  "rna"
+ ],
+ "folds": 5,
+ "tail": 0.2,
+ "seed": 0,
+ "n_drugs": 118,
+ "n_specimens": 520,
+ "n_subjects": 479,
+ "n_measurements": 48998,
+ "holdout": {
+  "subjects": 72,
+  "specimens": 74,
+  "measurements": 6648,
+  "fraction_subjects": 0.15
+ },
+ "qc": {
+  "rows_before": 53571,
+  "dropped_by_flag": {
+   "flag_not_converged": 10,
+   "flag_increasing": 114,
+   "flag_auc_missing": 0,
+   "flag_offpanel_conc": 10,
+   "flag_poor_fit": 603
+  }
+ },
+ "summary": {
+  "oof_mean_spearman": [
+   0.3544,
+   118
+  ],
+  "oof_mean_auroc": [
+   0.7664,
+   118
+  ],
+  "oof_mean_auprc": [
+   0.7398,
+   118
+  ],
+  "holdout_mean_spearman": [
+   0.3649,
+   118
+  ],
+  "holdout_mean_auroc": [
+   0.7805,
+   117
+  ],
+  "holdout_mean_auprc": [
+   0.8102,
+   117
+  ]
+ },
+ "per_drug": {
+  "17-AAG (Tanespimycin)": {
+   "oof": {
+    "n": 385,
+    "spearman": 0.5528,
+    "spearman_p": 3.4369699214541975e-32,
+    "rmse_z": 0.8886,
+    "n_tail": 153,
+    "n_sensitive": 75,
+    "auroc": 0.8954,
+    "auprc": 0.8944,
+    "auprc_baseline": 0.4902
+   },
+   "holdout": {
+    "n": 59,
+    "spearman": 0.5013,
+    "spearman_p": 5.238849525674579e-05,
+    "rmse_z": 0.7929,
+    "n_tail": 23,
+    "n_sensitive": 15,
+    "auroc": 0.8917,
+    "auprc": 0.9409,
+    "auprc_baseline": 0.6522
+   },
+   "annotation": {
+    "targets": [
+     "HSP90AA1",
+     "HSP90AB1"
+    ],
+    "family": "HSP90",
+    "mechanism": "HSP90 ATPase inhibitor; destabilises kinase clients",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "proteostasis"
+   },
+   "tier": "primary"
+  },
+  "A-674563": {
+   "oof": {
+    "n": 394,
+    "spearman": 0.4184,
+    "spearman_p": 3.996224431028514e-18,
+    "rmse_z": 1.0343,
+    "n_tail": 157,
+    "n_sensitive": 78,
+    "auroc": 0.7902,
+    "auprc": 0.7532,
+    "auprc_baseline": 0.4968
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.1247,
+    "spearman_p": 0.3341009450707821,
+    "rmse_z": 1.1954,
+    "n_tail": 26,
+    "n_sensitive": 14,
+    "auroc": 0.5476,
+    "auprc": 0.5516,
+    "auprc_baseline": 0.5385
+   },
+   "annotation": {
+    "targets": [
+     "AKT1",
+     "PRKACA"
+    ],
+    "family": "AKT",
+    "mechanism": "ATP-competitive AKT1/PKA inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "MK-2206"
+    ],
+    "exposure": "not_established",
+    "family_group": "PI3K_AKT_mTOR"
+   },
+   "tier": "primary"
+  },
+  "ABT-737": {
+   "oof": {
+    "n": 206,
+    "spearman": 0.3311,
+    "spearman_p": 1.1652380286857866e-06,
+    "rmse_z": 0.9666,
+    "n_tail": 82,
+    "n_sensitive": 40,
+    "auroc": 0.7833,
+    "auprc": 0.7955,
+    "auprc_baseline": 0.4878
+   },
+   "holdout": {
+    "n": 27,
+    "spearman": 0.0061,
+    "spearman_p": 0.9758902707356959,
+    "rmse_z": 0.8522
+   },
+   "annotation": {
+    "targets": [
+     "BCL2",
+     "BCL2L1",
+     "BCL2L2"
+    ],
+    "family": "BCL2",
+    "mechanism": "BH3 mimetic; BCL2/BCL-xL/BCL-w",
+    "clinical_tier": "research",
+    "analogue": [
+     "Venetoclax",
+     "Navitoclax"
+    ],
+    "exposure": "not_established",
+    "family_group": "apoptosis"
+   },
+   "tier": "primary"
+  },
+  "AGI-5198": {
+   "oof": {
+    "n": 256,
+    "spearman": 0.23,
+    "spearman_p": 0.00020553625927959045,
+    "rmse_z": 1.3059,
+    "n_tail": 98,
+    "n_sensitive": 44,
+    "auroc": 0.6481,
+    "auprc": 0.58,
+    "auprc_baseline": 0.449
+   },
+   "holdout": {
+    "n": 40,
+    "spearman": -0.0345,
+    "spearman_p": 0.832518062558212,
+    "rmse_z": 1.9357,
+    "n_tail": 15,
+    "n_sensitive": 10,
+    "auroc": 0.66,
+    "auprc": 0.7791,
+    "auprc_baseline": 0.6667
+   },
+   "annotation": {
+    "targets": [
+     "IDH1"
+    ],
+    "family": "IDH",
+    "mechanism": "mutant-IDH1 R132 inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "Ivosidenib"
+    ],
+    "exposure": "not_established",
+    "family_group": "metabolic"
+   },
+   "tier": "primary"
+  },
+  "AGI-6780": {
+   "oof": {
+    "n": 257,
+    "spearman": 0.3396,
+    "spearman_p": 2.3361479366750268e-08,
+    "rmse_z": 1.2749,
+    "n_tail": 93,
+    "n_sensitive": 40,
+    "auroc": 0.7816,
+    "auprc": 0.7113,
+    "auprc_baseline": 0.4301
+   },
+   "holdout": {
+    "n": 37,
+    "spearman": 0.183,
+    "spearman_p": 0.27824135826214225,
+    "rmse_z": 1.8447,
+    "n_tail": 13,
+    "n_sensitive": 7,
+    "auroc": 0.7857,
+    "auprc": 0.832,
+    "auprc_baseline": 0.5385
+   },
+   "annotation": {
+    "targets": [
+     "IDH2"
+    ],
+    "family": "IDH",
+    "mechanism": "mutant-IDH2 R140 inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "Enasidenib"
+    ],
+    "exposure": "not_established",
+    "family_group": "metabolic"
+   },
+   "tier": "primary"
+  },
+  "AT7519": {
+   "oof": {
+    "n": 379,
+    "spearman": 0.3683,
+    "spearman_p": 1.2886287428457943e-13,
+    "rmse_z": 1.2014,
+    "n_tail": 151,
+    "n_sensitive": 75,
+    "auroc": 0.787,
+    "auprc": 0.784,
+    "auprc_baseline": 0.4967
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.1174,
+    "spearman_p": 0.36338914698433206,
+    "rmse_z": 1.5823,
+    "n_tail": 24,
+    "n_sensitive": 10,
+    "auroc": 0.5786,
+    "auprc": 0.5446,
+    "auprc_baseline": 0.4167
+   },
+   "annotation": {
+    "targets": [
+     "CDK1",
+     "CDK2",
+     "CDK4",
+     "CDK5",
+     "CDK9"
+    ],
+    "family": "CDK",
+    "mechanism": "multi-CDK inhibitor; transcriptional CDK9",
+    "clinical_tier": "trial",
+    "analogue": [
+     "Alvocidib"
+    ],
+    "exposure": "borderline",
+    "family_group": "cell_cycle"
+   },
+   "tier": "primary"
+  },
+  "AZD1152-HQPA (AZD2811)": {
+   "oof": {
+    "n": 391,
+    "spearman": 0.4132,
+    "spearman_p": 1.4913319393479688e-17,
+    "rmse_z": 1.1155,
+    "n_tail": 153,
+    "n_sensitive": 74,
+    "auroc": 0.8153,
+    "auprc": 0.812,
+    "auprc_baseline": 0.4837
+   },
+   "holdout": {
+    "n": 59,
+    "spearman": 0.4292,
+    "spearman_p": 0.000694638937830644,
+    "rmse_z": 1.0943,
+    "n_tail": 26,
+    "n_sensitive": 16,
+    "auroc": 0.7062,
+    "auprc": 0.8021,
+    "auprc_baseline": 0.6154
+   },
+   "annotation": {
+    "targets": [
+     "AURKB"
+    ],
+    "family": "Aurora",
+    "mechanism": "Aurora-B kinase inhibitor (barasertib active metabolite)",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "cell_cycle"
+   },
+   "tier": "primary"
+  },
+  "AZD1480": {
+   "oof": {
+    "n": 391,
+    "spearman": 0.1787,
+    "spearman_p": 0.00038331172211511315,
+    "rmse_z": 1.2028,
+    "n_tail": 152,
+    "n_sensitive": 73,
+    "auroc": 0.6757,
+    "auprc": 0.6441,
+    "auprc_baseline": 0.4803
+   },
+   "holdout": {
+    "n": 60,
+    "spearman": 0.2273,
+    "spearman_p": 0.08069099239634335,
+    "rmse_z": 1.3976,
+    "n_tail": 25,
+    "n_sensitive": 13,
+    "auroc": 0.7564,
+    "auprc": 0.8172,
+    "auprc_baseline": 0.52
+   },
+   "annotation": {
+    "targets": [
+     "JAK2"
+    ],
+    "family": "JAK",
+    "mechanism": "ATP-competitive JAK2 inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [
+     "Ruxolitinib"
+    ],
+    "exposure": "borderline",
+    "family_group": "JAK_STAT"
+   },
+   "tier": "primary"
+  },
+  "Afatinib (BIBW-2992)": {
+   "oof": {
+    "n": 389,
+    "spearman": 0.2466,
+    "spearman_p": 8.458897187044987e-07,
+    "rmse_z": 1.1655,
+    "n_tail": 158,
+    "n_sensitive": 81,
+    "auroc": 0.7114,
+    "auprc": 0.6734,
+    "auprc_baseline": 0.5127
+   },
+   "holdout": {
+    "n": 64,
+    "spearman": 0.2077,
+    "spearman_p": 0.09952236689484309,
+    "rmse_z": 1.2992,
+    "n_tail": 28,
+    "n_sensitive": 20,
+    "auroc": 0.5,
+    "auprc": 0.7272,
+    "auprc_baseline": 0.7143
+   },
+   "annotation": {
+    "targets": [
+     "EGFR",
+     "ERBB2",
+     "ERBB4"
+    ],
+    "family": "ERBB",
+    "mechanism": "irreversible pan-ERBB inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Alisertib (MLN8237)": {
+   "oof": {
+    "n": 393,
+    "spearman": 0.2594,
+    "spearman_p": 1.826786340198531e-07,
+    "rmse_z": 1.1175,
+    "n_tail": 160,
+    "n_sensitive": 78,
+    "auroc": 0.73,
+    "auprc": 0.6895,
+    "auprc_baseline": 0.4875
+   },
+   "holdout": {
+    "n": 61,
+    "spearman": 0.3373,
+    "spearman_p": 0.007847033759055188,
+    "rmse_z": 1.0274,
+    "n_tail": 27,
+    "n_sensitive": 14,
+    "auroc": 0.8352,
+    "auprc": 0.8705,
+    "auprc_baseline": 0.5185
+   },
+   "annotation": {
+    "targets": [
+     "AURKA"
+    ],
+    "family": "Aurora",
+    "mechanism": "selective Aurora-A inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "cell_cycle"
+   },
+   "tier": "primary"
+  },
+  "Artemisinin": {
+   "oof": {
+    "n": 167,
+    "spearman": 0.1648,
+    "spearman_p": 0.0333654740853059,
+    "rmse_z": 2.0251,
+    "n_tail": 58,
+    "n_sensitive": 23,
+    "auroc": 0.6435,
+    "auprc": 0.4651,
+    "auprc_baseline": 0.3966
+   },
+   "holdout": {
+    "n": 27,
+    "spearman": 0.2865,
+    "spearman_p": 0.14744867566808387,
+    "rmse_z": 1.342,
+    "n_tail": 11,
+    "n_sensitive": 6,
+    "auroc": 0.5667,
+    "auprc": 0.7371,
+    "auprc_baseline": 0.5455
+   },
+   "annotation": {
+    "targets": [],
+    "family": "other",
+    "mechanism": "heme-activated endoperoxide; oxidative stress",
+    "clinical_tier": "research",
+    "analogue": [
+     "Artesunate"
+    ],
+    "exposure": "not_established",
+    "family_group": "other"
+   },
+   "tier": "primary"
+  },
+  "Axitinib (AG-013736)": {
+   "oof": {
+    "n": 407,
+    "spearman": 0.4366,
+    "spearman_p": 2.2572810410535964e-20,
+    "rmse_z": 0.9206,
+    "n_tail": 155,
+    "n_sensitive": 74,
+    "auroc": 0.8657,
+    "auprc": 0.8311,
+    "auprc_baseline": 0.4774
+   },
+   "holdout": {
+    "n": 64,
+    "spearman": 0.5576,
+    "spearman_p": 1.7026959615967824e-06,
+    "rmse_z": 1.1743,
+    "n_tail": 23,
+    "n_sensitive": 10,
+    "auroc": 0.8538,
+    "auprc": 0.785,
+    "auprc_baseline": 0.4348
+   },
+   "annotation": {
+    "targets": [
+     "KDR",
+     "FLT1",
+     "FLT4",
+     "PDGFRB",
+     "KIT"
+    ],
+    "family": "VEGFR",
+    "mechanism": "VEGFR1-3 selective inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Azacytidine": {
+   "oof": {
+    "n": 314,
+    "spearman": 0.1905,
+    "spearman_p": 0.0006903245461159457,
+    "rmse_z": 1.3119,
+    "n_tail": 104,
+    "n_sensitive": 39,
+    "auroc": 0.6548,
+    "auprc": 0.5923,
+    "auprc_baseline": 0.375
+   },
+   "holdout": {
+    "n": 49,
+    "spearman": -0.0667,
+    "spearman_p": 0.6486834634068118,
+    "rmse_z": 1.8221,
+    "n_tail": 20,
+    "n_sensitive": 12,
+    "auroc": 0.4896,
+    "auprc": 0.6417,
+    "auprc_baseline": 0.6
+   },
+   "annotation": {
+    "targets": [
+     "DNMT1"
+    ],
+    "family": "hypomethylating",
+    "mechanism": "cytidine analogue; DNMT1 depletion + RNA incorporation",
+    "clinical_tier": "approved_AML",
+    "analogue": [
+     "Decitabine"
+    ],
+    "exposure": "clinically_achievable",
+    "family_group": "epigenetic"
+   },
+   "tier": "primary"
+  },
+  "BEZ235": {
+   "oof": {
+    "n": 386,
+    "spearman": 0.404,
+    "spearman_p": 1.3853327854054992e-16,
+    "rmse_z": 1.0009,
+    "n_tail": 152,
+    "n_sensitive": 74,
+    "auroc": 0.7798,
+    "auprc": 0.7645,
+    "auprc_baseline": 0.4868
+   },
+   "holdout": {
+    "n": 58,
+    "spearman": 0.4769,
+    "spearman_p": 0.000153949092114101,
+    "rmse_z": 1.0906,
+    "n_tail": 27,
+    "n_sensitive": 14,
+    "auroc": 0.7747,
+    "auprc": 0.7541,
+    "auprc_baseline": 0.5185
+   },
+   "annotation": {
+    "targets": [
+     "MTOR",
+     "PIK3CA"
+    ],
+    "family": "PI3K/mTOR",
+    "mechanism": "dual pan-PI3K / mTORC1-2 inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "PI3K_AKT_mTOR"
+   },
+   "tier": "primary"
+  },
+  "BMS-345541": {
+   "oof": {
+    "n": 392,
+    "spearman": -0.024,
+    "spearman_p": 0.6358766939007862,
+    "rmse_z": 1.2549,
+    "n_tail": 161,
+    "n_sensitive": 80,
+    "auroc": 0.5065,
+    "auprc": 0.5075,
+    "auprc_baseline": 0.4969
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.1507,
+    "spearman_p": 0.24229698524389115,
+    "rmse_z": 1.0517,
+    "n_tail": 21,
+    "n_sensitive": 11,
+    "auroc": 0.6273,
+    "auprc": 0.6309,
+    "auprc_baseline": 0.5238
+   },
+   "annotation": {
+    "targets": [
+     "IKBKB",
+     "CHUK"
+    ],
+    "family": "NF-kB",
+    "mechanism": "allosteric IKKb/IKKa inhibitor",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "NF-kB"
+   },
+   "tier": "primary"
+  },
+  "Bay 11-7085": {
+   "oof": {
+    "n": 294,
+    "spearman": 0.237,
+    "spearman_p": 4.0366269062621324e-05,
+    "rmse_z": 1.4084,
+    "n_tail": 98,
+    "n_sensitive": 39,
+    "auroc": 0.6745,
+    "auprc": 0.6149,
+    "auprc_baseline": 0.398
+   },
+   "holdout": {
+    "n": 45,
+    "spearman": 0.228,
+    "spearman_p": 0.1319687698308077,
+    "rmse_z": 2.0402,
+    "n_tail": 14,
+    "n_sensitive": 10,
+    "auroc": 0.7,
+    "auprc": 0.8899,
+    "auprc_baseline": 0.7143
+   },
+   "annotation": {
+    "targets": [
+     "NFKBIA",
+     "IKBKB"
+    ],
+    "family": "NF-kB",
+    "mechanism": "irreversible IkBa phosphorylation inhibitor",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "NF-kB"
+   },
+   "tier": "primary"
+  },
+  "Bortezomib (Velcade)": {
+   "oof": {
+    "n": 395,
+    "spearman": 0.2295,
+    "spearman_p": 4.072364395029906e-06,
+    "rmse_z": 1.0268,
+    "n_tail": 161,
+    "n_sensitive": 80,
+    "auroc": 0.6748,
+    "auprc": 0.6183,
+    "auprc_baseline": 0.4969
+   },
+   "holdout": {
+    "n": 63,
+    "spearman": 0.3172,
+    "spearman_p": 0.01131789209561768,
+    "rmse_z": 0.9985,
+    "n_tail": 25,
+    "n_sensitive": 9,
+    "auroc": 0.8264,
+    "auprc": 0.6922,
+    "auprc_baseline": 0.36
+   },
+   "annotation": {
+    "targets": [
+     "PSMB5"
+    ],
+    "family": "proteasome",
+    "mechanism": "reversible 20S b5 proteasome inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [
+     "Carfilzomib"
+    ],
+    "exposure": "clinically_achievable",
+    "family_group": "proteostasis"
+   },
+   "tier": "primary"
+  },
+  "Bosutinib (SKI-606)": {
+   "oof": {
+    "n": 392,
+    "spearman": 0.414,
+    "spearman_p": 1.1504547993290472e-17,
+    "rmse_z": 0.9837,
+    "n_tail": 153,
+    "n_sensitive": 73,
+    "auroc": 0.8313,
+    "auprc": 0.8139,
+    "auprc_baseline": 0.4771
+   },
+   "holdout": {
+    "n": 59,
+    "spearman": 0.4014,
+    "spearman_p": 0.0016275666036659729,
+    "rmse_z": 1.2811,
+    "n_tail": 25,
+    "n_sensitive": 12,
+    "auroc": 0.8526,
+    "auprc": 0.7861,
+    "auprc_baseline": 0.48
+   },
+   "annotation": {
+    "targets": [
+     "ABL1",
+     "SRC"
+    ],
+    "family": "ABL/SRC",
+    "mechanism": "dual SRC/ABL inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "CI-1040 (PD184352)": {
+   "oof": {
+    "n": 393,
+    "spearman": 0.4268,
+    "spearman_p": 7.846074179392045e-19,
+    "rmse_z": 0.8403,
+    "n_tail": 160,
+    "n_sensitive": 80,
+    "auroc": 0.8172,
+    "auprc": 0.8275,
+    "auprc_baseline": 0.5
+   },
+   "holdout": {
+    "n": 63,
+    "spearman": 0.4587,
+    "spearman_p": 0.00015645102001035635,
+    "rmse_z": 0.9619,
+    "n_tail": 28,
+    "n_sensitive": 16,
+    "auroc": 0.8125,
+    "auprc": 0.7987,
+    "auprc_baseline": 0.5714
+   },
+   "annotation": {
+    "targets": [
+     "MAP2K1",
+     "MAP2K2"
+    ],
+    "family": "MEK",
+    "mechanism": "allosteric MEK1/2 inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [
+     "Trametinib"
+    ],
+    "exposure": "borderline",
+    "family_group": "MAPK"
+   },
+   "tier": "primary"
+  },
+  "CYT387": {
+   "oof": {
+    "n": 387,
+    "spearman": 0.2995,
+    "spearman_p": 1.838285302592196e-09,
+    "rmse_z": 1.0108,
+    "n_tail": 152,
+    "n_sensitive": 75,
+    "auroc": 0.7055,
+    "auprc": 0.6805,
+    "auprc_baseline": 0.4934
+   },
+   "holdout": {
+    "n": 63,
+    "spearman": 0.2656,
+    "spearman_p": 0.03542371789516897,
+    "rmse_z": 1.0596,
+    "n_tail": 25,
+    "n_sensitive": 12,
+    "auroc": 0.5962,
+    "auprc": 0.6254,
+    "auprc_baseline": 0.48
+   },
+   "annotation": {
+    "targets": [
+     "JAK1",
+     "JAK2",
+     "ACVR1"
+    ],
+    "family": "JAK",
+    "mechanism": "JAK1/2 + ACVR1 inhibitor (momelotinib)",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "JAK_STAT"
+   },
+   "tier": "primary"
+  },
+  "Cabozantinib": {
+   "oof": {
+    "n": 384,
+    "spearman": 0.5255,
+    "spearman_p": 1.2041663106153457e-28,
+    "rmse_z": 0.873,
+    "n_tail": 155,
+    "n_sensitive": 79,
+    "auroc": 0.8891,
+    "auprc": 0.9056,
+    "auprc_baseline": 0.5097
+   },
+   "holdout": {
+    "n": 61,
+    "spearman": 0.412,
+    "spearman_p": 0.0009714251458901742,
+    "rmse_z": 0.792,
+    "n_tail": 24,
+    "n_sensitive": 12,
+    "auroc": 0.8889,
+    "auprc": 0.8511,
+    "auprc_baseline": 0.5
+   },
+   "annotation": {
+    "targets": [
+     "MET",
+     "KDR",
+     "AXL",
+     "RET",
+     "FLT3"
+    ],
+    "family": "MET/VEGFR",
+    "mechanism": "multi-kinase MET/VEGFR2/AXL inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Canertinib (CI-1033)": {
+   "oof": {
+    "n": 388,
+    "spearman": 0.3253,
+    "spearman_p": 5.128014092799459e-11,
+    "rmse_z": 1.2133,
+    "n_tail": 159,
+    "n_sensitive": 79,
+    "auroc": 0.766,
+    "auprc": 0.7751,
+    "auprc_baseline": 0.4969
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.4925,
+    "spearman_p": 4.773887605841857e-05,
+    "rmse_z": 1.1695,
+    "n_tail": 28,
+    "n_sensitive": 16,
+    "auroc": 0.8542,
+    "auprc": 0.9088,
+    "auprc_baseline": 0.5714
+   },
+   "annotation": {
+    "targets": [
+     "EGFR",
+     "ERBB2",
+     "ERBB4"
+    ],
+    "family": "ERBB",
+    "mechanism": "irreversible pan-ERBB inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [
+     "Afatinib"
+    ],
+    "exposure": "borderline",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Cediranib (AZD2171)": {
+   "oof": {
+    "n": 389,
+    "spearman": 0.3181,
+    "spearman_p": 1.351492954296463e-10,
+    "rmse_z": 1.0464,
+    "n_tail": 152,
+    "n_sensitive": 73,
+    "auroc": 0.7305,
+    "auprc": 0.6946,
+    "auprc_baseline": 0.4803
+   },
+   "holdout": {
+    "n": 59,
+    "spearman": 0.4035,
+    "spearman_p": 0.0015295983167667255,
+    "rmse_z": 0.7858,
+    "n_tail": 22,
+    "n_sensitive": 10,
+    "auroc": 0.85,
+    "auprc": 0.8252,
+    "auprc_baseline": 0.4545
+   },
+   "annotation": {
+    "targets": [
+     "KDR",
+     "FLT1",
+     "FLT4",
+     "KIT",
+     "PDGFRB"
+    ],
+    "family": "VEGFR",
+    "mechanism": "pan-VEGFR inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Crenolanib": {
+   "oof": {
+    "n": 384,
+    "spearman": 0.5157,
+    "spearman_p": 1.761387165209417e-27,
+    "rmse_z": 0.9527,
+    "n_tail": 139,
+    "n_sensitive": 62,
+    "auroc": 0.8534,
+    "auprc": 0.8484,
+    "auprc_baseline": 0.446
+   },
+   "holdout": {
+    "n": 57,
+    "spearman": 0.648,
+    "spearman_p": 5.05035836129758e-08,
+    "rmse_z": 0.6456,
+    "n_tail": 18,
+    "n_sensitive": 9,
+    "auroc": 0.9753,
+    "auprc": 0.9765,
+    "auprc_baseline": 0.5
+   },
+   "annotation": {
+    "targets": [
+     "FLT3",
+     "PDGFRA",
+     "PDGFRB"
+    ],
+    "family": "FLT3",
+    "mechanism": "type-I FLT3 inhibitor; active against TKD",
+    "clinical_tier": "trial",
+    "analogue": [
+     "Gilteritinib"
+    ],
+    "exposure": "clinically_achievable",
+    "family_group": "FLT3"
+   },
+   "tier": "primary"
+  },
+  "Crizotinib (PF-2341066)": {
+   "oof": {
+    "n": 402,
+    "spearman": 0.353,
+    "spearman_p": 3.0611612222211545e-13,
+    "rmse_z": 1.1164,
+    "n_tail": 159,
+    "n_sensitive": 77,
+    "auroc": 0.7536,
+    "auprc": 0.7757,
+    "auprc_baseline": 0.4843
+   },
+   "holdout": {
+    "n": 63,
+    "spearman": 0.3164,
+    "spearman_p": 0.011516269089376684,
+    "rmse_z": 0.9916,
+    "n_tail": 22,
+    "n_sensitive": 12,
+    "auroc": 0.6417,
+    "auprc": 0.6564,
+    "auprc_baseline": 0.5455
+   },
+   "annotation": {
+    "targets": [
+     "ALK",
+     "MET",
+     "ROS1"
+    ],
+    "family": "ALK/MET",
+    "mechanism": "ATP-competitive ALK/MET/ROS1 inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Cytarabine": {
+   "oof": {
+    "n": 281,
+    "spearman": 0.4497,
+    "spearman_p": 2.150717154688182e-15,
+    "rmse_z": 1.0063,
+    "n_tail": 111,
+    "n_sensitive": 56,
+    "auroc": 0.8221,
+    "auprc": 0.81,
+    "auprc_baseline": 0.5045
+   },
+   "holdout": {
+    "n": 44,
+    "spearman": 0.5029,
+    "spearman_p": 0.000503172486816356,
+    "rmse_z": 1.0097,
+    "n_tail": 19,
+    "n_sensitive": 12,
+    "auroc": 0.8929,
+    "auprc": 0.9403,
+    "auprc_baseline": 0.6316
+   },
+   "annotation": {
+    "targets": [
+     "POLA1",
+     "POLE"
+    ],
+    "family": "antimetabolite",
+    "mechanism": "deoxycytidine analogue; DNA chain termination (DCK-dependent)",
+    "clinical_tier": "approved_AML",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "chemotherapy"
+   },
+   "tier": "wave_conditional"
+  },
+  "DBZ": {
+   "oof": {
+    "n": 312,
+    "spearman": 0.2135,
+    "spearman_p": 0.00014468187581066007,
+    "rmse_z": 1.0859,
+    "n_tail": 112,
+    "n_sensitive": 50,
+    "auroc": 0.6535,
+    "auprc": 0.5734,
+    "auprc_baseline": 0.4464
+   },
+   "holdout": {
+    "n": 50,
+    "spearman": 0.2519,
+    "spearman_p": 0.0776569553427262,
+    "rmse_z": 1.4554,
+    "n_tail": 13,
+    "n_sensitive": 9,
+    "auroc": 0.8056,
+    "auprc": 0.9297,
+    "auprc_baseline": 0.6923
+   },
+   "annotation": {
+    "targets": [
+     "PSEN1",
+     "NOTCH1"
+    ],
+    "family": "NOTCH",
+    "mechanism": "gamma-secretase inhibitor (dibenzazepine)",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "developmental"
+   },
+   "tier": "primary"
+  },
+  "Dasatinib": {
+   "oof": {
+    "n": 418,
+    "spearman": 0.5579,
+    "spearman_p": 1.4451012362501778e-35,
+    "rmse_z": 0.7068,
+    "n_tail": 166,
+    "n_sensitive": 81,
+    "auroc": 0.9028,
+    "auprc": 0.8855,
+    "auprc_baseline": 0.488
+   },
+   "holdout": {
+    "n": 67,
+    "spearman": 0.6133,
+    "spearman_p": 3.4481380614334684e-08,
+    "rmse_z": 0.6723,
+    "n_tail": 26,
+    "n_sensitive": 13,
+    "auroc": 0.9408,
+    "auprc": 0.9463,
+    "auprc_baseline": 0.5
+   },
+   "annotation": {
+    "targets": [
+     "ABL1",
+     "SRC",
+     "LCK",
+     "YES1",
+     "KIT",
+     "PDGFRB",
+     "BTK"
+    ],
+    "family": "ABL/SRC",
+    "mechanism": "multi-kinase SRC-family/ABL inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Doramapimod (BIRB 796)": {
+   "oof": {
+    "n": 387,
+    "spearman": 0.3906,
+    "spearman_p": 1.472210435084472e-15,
+    "rmse_z": 0.9232,
+    "n_tail": 156,
+    "n_sensitive": 76,
+    "auroc": 0.8345,
+    "auprc": 0.7928,
+    "auprc_baseline": 0.4872
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.4098,
+    "spearman_p": 0.0009412081607532247,
+    "rmse_z": 1.0482,
+    "n_tail": 27,
+    "n_sensitive": 18,
+    "auroc": 0.784,
+    "auprc": 0.895,
+    "auprc_baseline": 0.6667
+   },
+   "annotation": {
+    "targets": [
+     "MAPK14",
+     "MAPK11"
+    ],
+    "family": "p38",
+    "mechanism": "allosteric (type-II) p38 MAPK inhibitor",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "stress_MAPK"
+   },
+   "tier": "primary"
+  },
+  "Dovitinib (CHIR-258)": {
+   "oof": {
+    "n": 389,
+    "spearman": 0.5251,
+    "spearman_p": 5.907226438098362e-29,
+    "rmse_z": 0.9226,
+    "n_tail": 151,
+    "n_sensitive": 72,
+    "auroc": 0.901,
+    "auprc": 0.9157,
+    "auprc_baseline": 0.4768
+   },
+   "holdout": {
+    "n": 61,
+    "spearman": 0.5613,
+    "spearman_p": 2.5235055911574953e-06,
+    "rmse_z": 0.7108,
+    "n_tail": 16,
+    "n_sensitive": 5,
+    "auroc": 0.9273,
+    "auprc": 0.81,
+    "auprc_baseline": 0.3125
+   },
+   "annotation": {
+    "targets": [
+     "FGFR1",
+     "FGFR3",
+     "KDR",
+     "FLT3",
+     "KIT"
+    ],
+    "family": "FGFR",
+    "mechanism": "multi-targeted FGFR/VEGFR/FLT3 inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Elesclomol": {
+   "oof": {
+    "n": 369,
+    "spearman": 0.4146,
+    "spearman_p": 9.212480250557179e-17,
+    "rmse_z": 1.5999,
+    "n_tail": 117,
+    "n_sensitive": 43,
+    "auroc": 0.7967,
+    "auprc": 0.7506,
+    "auprc_baseline": 0.3675
+   },
+   "holdout": {
+    "n": 57,
+    "spearman": 0.4322,
+    "spearman_p": 0.0007870511212808358,
+    "rmse_z": 1.3339,
+    "n_tail": 16,
+    "n_sensitive": 6,
+    "auroc": 0.9,
+    "auprc": 0.8965,
+    "auprc_baseline": 0.375
+   },
+   "annotation": {
+    "targets": [
+     "FDX1"
+    ],
+    "family": "metabolic",
+    "mechanism": "copper ionophore; mitochondrial oxidative stress",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "metabolic"
+   },
+   "tier": "primary"
+  },
+  "Entospletinib (GS-9973)": {
+   "oof": {
+    "n": 266,
+    "spearman": 0.4679,
+    "spearman_p": 7.1108792969193765e-16,
+    "rmse_z": 0.9568,
+    "n_tail": 104,
+    "n_sensitive": 51,
+    "auroc": 0.8653,
+    "auprc": 0.8582,
+    "auprc_baseline": 0.4904
+   },
+   "holdout": {
+    "n": 43,
+    "spearman": 0.0782,
+    "spearman_p": 0.6180613696157976,
+    "rmse_z": 1.0858,
+    "n_tail": 17,
+    "n_sensitive": 12,
+    "auroc": 0.55,
+    "auprc": 0.7369,
+    "auprc_baseline": 0.7059
+   },
+   "annotation": {
+    "targets": [
+     "SYK"
+    ],
+    "family": "SYK",
+    "mechanism": "selective SYK inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "immune_signalling"
+   },
+   "tier": "primary"
+  },
+  "Entrectinib": {
+   "oof": {
+    "n": 179,
+    "spearman": 0.2975,
+    "spearman_p": 5.248280930846672e-05,
+    "rmse_z": 1.0696,
+    "n_tail": 71,
+    "n_sensitive": 35,
+    "auroc": 0.7119,
+    "auprc": 0.7419,
+    "auprc_baseline": 0.493
+   },
+   "holdout": {
+    "n": 33,
+    "spearman": 0.4646,
+    "spearman_p": 0.006454587874399936,
+    "rmse_z": 1.0436,
+    "n_tail": 12,
+    "n_sensitive": 8,
+    "auroc": 0.8125,
+    "auprc": 0.8957,
+    "auprc_baseline": 0.6667
+   },
+   "annotation": {
+    "targets": [
+     "NTRK1",
+     "NTRK2",
+     "NTRK3",
+     "ALK",
+     "ROS1"
+    ],
+    "family": "NTRK/ALK",
+    "mechanism": "pan-TRK / ROS1 / ALK inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Erlotinib": {
+   "oof": {
+    "n": 413,
+    "spearman": 0.4437,
+    "spearman_p": 2.3562839705264824e-21,
+    "rmse_z": 0.9738,
+    "n_tail": 165,
+    "n_sensitive": 82,
+    "auroc": 0.8406,
+    "auprc": 0.8363,
+    "auprc_baseline": 0.497
+   },
+   "holdout": {
+    "n": 67,
+    "spearman": 0.472,
+    "spearman_p": 5.526573370072442e-05,
+    "rmse_z": 1.2833,
+    "n_tail": 31,
+    "n_sensitive": 21,
+    "auroc": 0.7619,
+    "auprc": 0.8412,
+    "auprc_baseline": 0.6774
+   },
+   "annotation": {
+    "targets": [
+     "EGFR"
+    ],
+    "family": "EGFR",
+    "mechanism": "reversible EGFR inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Flavopiridol": {
+   "oof": {
+    "n": 384,
+    "spearman": 0.2605,
+    "spearman_p": 2.2576125503609165e-07,
+    "rmse_z": 1.1288,
+    "n_tail": 151,
+    "n_sensitive": 77,
+    "auroc": 0.6936,
+    "auprc": 0.7184,
+    "auprc_baseline": 0.5099
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.4002,
+    "spearman_p": 0.0012684114596079662,
+    "rmse_z": 1.2813,
+    "n_tail": 29,
+    "n_sensitive": 13,
+    "auroc": 0.7404,
+    "auprc": 0.7314,
+    "auprc_baseline": 0.4483
+   },
+   "annotation": {
+    "targets": [
+     "CDK9",
+     "CDK1",
+     "CDK2",
+     "CDK4"
+    ],
+    "family": "CDK",
+    "mechanism": "pan-CDK / transcriptional CDK9 inhibitor (alvocidib)",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "cell_cycle"
+   },
+   "tier": "primary"
+  },
+  "Foretinib (XL880)": {
+   "oof": {
+    "n": 388,
+    "spearman": 0.5492,
+    "spearman_p": 5.965252562382471e-32,
+    "rmse_z": 0.7839,
+    "n_tail": 157,
+    "n_sensitive": 79,
+    "auroc": 0.8984,
+    "auprc": 0.9038,
+    "auprc_baseline": 0.5032
+   },
+   "holdout": {
+    "n": 60,
+    "spearman": 0.5012,
+    "spearman_p": 4.5193677076669503e-05,
+    "rmse_z": 0.8965,
+    "n_tail": 23,
+    "n_sensitive": 12,
+    "auroc": 0.8864,
+    "auprc": 0.8814,
+    "auprc_baseline": 0.5217
+   },
+   "annotation": {
+    "targets": [
+     "MET",
+     "KDR",
+     "AXL",
+     "MST1R"
+    ],
+    "family": "MET/VEGFR",
+    "mechanism": "multi-kinase MET/VEGFR2/AXL inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [
+     "Cabozantinib"
+    ],
+    "exposure": "borderline",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "GDC-0941": {
+   "oof": {
+    "n": 361,
+    "spearman": 0.4391,
+    "spearman_p": 1.9090578891428047e-18,
+    "rmse_z": 0.9193,
+    "n_tail": 146,
+    "n_sensitive": 74,
+    "auroc": 0.8313,
+    "auprc": 0.8062,
+    "auprc_baseline": 0.5068
+   },
+   "holdout": {
+    "n": 58,
+    "spearman": 0.3017,
+    "spearman_p": 0.02137245445314683,
+    "rmse_z": 0.9964,
+    "n_tail": 27,
+    "n_sensitive": 14,
+    "auroc": 0.6868,
+    "auprc": 0.7452,
+    "auprc_baseline": 0.5185
+   },
+   "annotation": {
+    "targets": [
+     "PIK3CA",
+     "PIK3CB",
+     "PIK3CD"
+    ],
+    "family": "PI3K",
+    "mechanism": "pan-class-I PI3K inhibitor (pictilisib)",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "PI3K_AKT_mTOR"
+   },
+   "tier": "wave_conditional"
+  },
+  "GSK-1838705A": {
+   "oof": {
+    "n": 386,
+    "spearman": 0.3444,
+    "spearman_p": 3.4598717676351046e-12,
+    "rmse_z": 1.1944,
+    "n_tail": 151,
+    "n_sensitive": 70,
+    "auroc": 0.746,
+    "auprc": 0.7412,
+    "auprc_baseline": 0.4636
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.4434,
+    "spearman_p": 0.00030665330487452037,
+    "rmse_z": 1.5289,
+    "n_tail": 25,
+    "n_sensitive": 15,
+    "auroc": 0.7733,
+    "auprc": 0.7824,
+    "auprc_baseline": 0.6
+   },
+   "annotation": {
+    "targets": [
+     "IGF1R",
+     "INSR",
+     "ALK"
+    ],
+    "family": "IGF1R",
+    "mechanism": "IGF1R/insulin-receptor/ALK inhibitor",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "GSK-1904529A": {
+   "oof": {
+    "n": 386,
+    "spearman": 0.2726,
+    "spearman_p": 5.263003227962569e-08,
+    "rmse_z": 1.1824,
+    "n_tail": 137,
+    "n_sensitive": 59,
+    "auroc": 0.701,
+    "auprc": 0.5585,
+    "auprc_baseline": 0.4307
+   },
+   "holdout": {
+    "n": 61,
+    "spearman": 0.3097,
+    "spearman_p": 0.015136924919058312,
+    "rmse_z": 1.1175,
+    "n_tail": 18,
+    "n_sensitive": 9,
+    "auroc": 0.7778,
+    "auprc": 0.8575,
+    "auprc_baseline": 0.5
+   },
+   "annotation": {
+    "targets": [
+     "IGF1R",
+     "INSR"
+    ],
+    "family": "IGF1R",
+    "mechanism": "selective IGF1R/INSR inhibitor",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "GSK690693": {
+   "oof": {
+    "n": 380,
+    "spearman": 0.2121,
+    "spearman_p": 3.0672723931342634e-05,
+    "rmse_z": 1.2167,
+    "n_tail": 125,
+    "n_sensitive": 48,
+    "auroc": 0.6585,
+    "auprc": 0.5786,
+    "auprc_baseline": 0.384
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.2419,
+    "spearman_p": 0.05822272125968925,
+    "rmse_z": 1.5225,
+    "n_tail": 27,
+    "n_sensitive": 10,
+    "auroc": 0.8,
+    "auprc": 0.7321,
+    "auprc_baseline": 0.3704
+   },
+   "annotation": {
+    "targets": [
+     "AKT1",
+     "AKT2",
+     "AKT3"
+    ],
+    "family": "AKT",
+    "mechanism": "ATP-competitive pan-AKT inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [
+     "MK-2206"
+    ],
+    "exposure": "borderline",
+    "family_group": "PI3K_AKT_mTOR"
+   },
+   "tier": "primary"
+  },
+  "GW-2580": {
+   "oof": {
+    "n": 376,
+    "spearman": 0.4103,
+    "spearman_p": 1.0574250554355977e-16,
+    "rmse_z": 0.9905,
+    "n_tail": 153,
+    "n_sensitive": 76,
+    "auroc": 0.8423,
+    "auprc": 0.8022,
+    "auprc_baseline": 0.4967
+   },
+   "holdout": {
+    "n": 59,
+    "spearman": 0.3453,
+    "spearman_p": 0.007396597888550407,
+    "rmse_z": 0.9505,
+    "n_tail": 24,
+    "n_sensitive": 15,
+    "auroc": 0.763,
+    "auprc": 0.8101,
+    "auprc_baseline": 0.625
+   },
+   "annotation": {
+    "targets": [
+     "CSF1R"
+    ],
+    "family": "CSF1R",
+    "mechanism": "selective CSF1R (FMS) inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "Pexidartinib"
+    ],
+    "exposure": "not_established",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Gefitinib": {
+   "oof": {
+    "n": 396,
+    "spearman": 0.3945,
+    "spearman_p": 3.3897915389117834e-16,
+    "rmse_z": 1.0653,
+    "n_tail": 156,
+    "n_sensitive": 78,
+    "auroc": 0.8024,
+    "auprc": 0.8241,
+    "auprc_baseline": 0.5
+   },
+   "holdout": {
+    "n": 65,
+    "spearman": 0.3976,
+    "spearman_p": 0.0010378738946248628,
+    "rmse_z": 1.3297,
+    "n_tail": 30,
+    "n_sensitive": 23,
+    "auroc": 0.7019,
+    "auprc": 0.8659,
+    "auprc_baseline": 0.7667
+   },
+   "annotation": {
+    "targets": [
+     "EGFR"
+    ],
+    "family": "EGFR",
+    "mechanism": "reversible EGFR inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Gilteritinib": {
+   "oof": {
+    "n": 238,
+    "spearman": 0.4601,
+    "spearman_p": 7.170273218500269e-14,
+    "rmse_z": 0.787,
+    "n_tail": 92,
+    "n_sensitive": 40,
+    "auroc": 0.8567,
+    "auprc": 0.8325,
+    "auprc_baseline": 0.4348
+   },
+   "holdout": {
+    "n": 37,
+    "spearman": 0.432,
+    "spearman_p": 0.007591575248259028,
+    "rmse_z": 0.781,
+    "n_tail": 12,
+    "n_sensitive": 5,
+    "auroc": 0.7429,
+    "auprc": 0.7342,
+    "auprc_baseline": 0.4167
+   },
+   "annotation": {
+    "targets": [
+     "FLT3",
+     "AXL"
+    ],
+    "family": "FLT3",
+    "mechanism": "type-I FLT3 inhibitor; ITD and TKD active",
+    "clinical_tier": "approved_AML",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "FLT3"
+   },
+   "tier": "primary"
+  },
+  "H-89": {
+   "oof": {
+    "n": 354,
+    "spearman": 0.2268,
+    "spearman_p": 1.639911998953865e-05,
+    "rmse_z": 1.4085,
+    "n_tail": 139,
+    "n_sensitive": 68,
+    "auroc": 0.6877,
+    "auprc": 0.6559,
+    "auprc_baseline": 0.4892
+   },
+   "holdout": {
+    "n": 54,
+    "spearman": 0.3059,
+    "spearman_p": 0.02448466368101371,
+    "rmse_z": 1.3442,
+    "n_tail": 24,
+    "n_sensitive": 14,
+    "auroc": 0.7286,
+    "auprc": 0.8373,
+    "auprc_baseline": 0.5833
+   },
+   "annotation": {
+    "targets": [
+     "PRKACA"
+    ],
+    "family": "PKA",
+    "mechanism": "ATP-competitive PKA inhibitor (poorly selective)",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "stress_MAPK"
+   },
+   "tier": "primary"
+  },
+  "INK-128": {
+   "oof": {
+    "n": 390,
+    "spearman": 0.4091,
+    "spearman_p": 3.644178568305015e-17,
+    "rmse_z": 0.8709,
+    "n_tail": 156,
+    "n_sensitive": 77,
+    "auroc": 0.8139,
+    "auprc": 0.8009,
+    "auprc_baseline": 0.4936
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.4563,
+    "spearman_p": 0.00019366204233810594,
+    "rmse_z": 0.8728,
+    "n_tail": 30,
+    "n_sensitive": 18,
+    "auroc": 0.8241,
+    "auprc": 0.8418,
+    "auprc_baseline": 0.6
+   },
+   "annotation": {
+    "targets": [
+     "MTOR"
+    ],
+    "family": "mTOR",
+    "mechanism": "ATP-competitive mTORC1/2 inhibitor (sapanisertib)",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "PI3K_AKT_mTOR"
+   },
+   "tier": "primary"
+  },
+  "Ibrutinib (PCI-32765)": {
+   "oof": {
+    "n": 376,
+    "spearman": 0.4247,
+    "spearman_p": 6.77698783018897e-18,
+    "rmse_z": 0.914,
+    "n_tail": 144,
+    "n_sensitive": 68,
+    "auroc": 0.8129,
+    "auprc": 0.8023,
+    "auprc_baseline": 0.4722
+   },
+   "holdout": {
+    "n": 57,
+    "spearman": 0.4772,
+    "spearman_p": 0.00017427570239611604,
+    "rmse_z": 1.0468,
+    "n_tail": 21,
+    "n_sensitive": 12,
+    "auroc": 0.8333,
+    "auprc": 0.8811,
+    "auprc_baseline": 0.5714
+   },
+   "annotation": {
+    "targets": [
+     "BTK",
+     "ITK",
+     "TEC"
+    ],
+    "family": "BTK",
+    "mechanism": "irreversible BTK inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "immune_signalling"
+   },
+   "tier": "primary"
+  },
+  "Idelalisib": {
+   "oof": {
+    "n": 379,
+    "spearman": 0.3477,
+    "spearman_p": 3.2930231511315587e-12,
+    "rmse_z": 0.9469,
+    "n_tail": 146,
+    "n_sensitive": 69,
+    "auroc": 0.7706,
+    "auprc": 0.7646,
+    "auprc_baseline": 0.4726
+   },
+   "holdout": {
+    "n": 60,
+    "spearman": 0.4677,
+    "spearman_p": 0.0001647174006793011,
+    "rmse_z": 0.8131,
+    "n_tail": 26,
+    "n_sensitive": 11,
+    "auroc": 0.8303,
+    "auprc": 0.8079,
+    "auprc_baseline": 0.4231
+   },
+   "annotation": {
+    "targets": [
+     "PIK3CD"
+    ],
+    "family": "PI3K",
+    "mechanism": "selective PI3Kdelta inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "PI3K_AKT_mTOR"
+   },
+   "tier": "primary"
+  },
+  "Imatinib": {
+   "oof": {
+    "n": 430,
+    "spearman": 0.2613,
+    "spearman_p": 3.8290080112692075e-08,
+    "rmse_z": 1.1293,
+    "n_tail": 172,
+    "n_sensitive": 83,
+    "auroc": 0.6999,
+    "auprc": 0.6455,
+    "auprc_baseline": 0.4826
+   },
+   "holdout": {
+    "n": 69,
+    "spearman": 0.3312,
+    "spearman_p": 0.0054327696259895124,
+    "rmse_z": 1.1213,
+    "n_tail": 23,
+    "n_sensitive": 11,
+    "auroc": 0.7045,
+    "auprc": 0.7277,
+    "auprc_baseline": 0.4783
+   },
+   "annotation": {
+    "targets": [
+     "ABL1",
+     "KIT",
+     "PDGFRA",
+     "PDGFRB"
+    ],
+    "family": "ABL/KIT",
+    "mechanism": "ATP-competitive ABL/KIT/PDGFR inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "JAK Inhibitor I": {
+   "oof": {
+    "n": 383,
+    "spearman": 0.2395,
+    "spearman_p": 2.133208124537425e-06,
+    "rmse_z": 1.0309,
+    "n_tail": 142,
+    "n_sensitive": 66,
+    "auroc": 0.682,
+    "auprc": 0.6642,
+    "auprc_baseline": 0.4648
+   },
+   "holdout": {
+    "n": 60,
+    "spearman": 0.3589,
+    "spearman_p": 0.004865015708362343,
+    "rmse_z": 0.8201,
+    "n_tail": 18,
+    "n_sensitive": 5,
+    "auroc": 0.8308,
+    "auprc": 0.7203,
+    "auprc_baseline": 0.2778
+   },
+   "annotation": {
+    "targets": [
+     "JAK1",
+     "JAK2",
+     "JAK3",
+     "TYK2"
+    ],
+    "family": "JAK",
+    "mechanism": "pan-JAK tool inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "Ruxolitinib"
+    ],
+    "exposure": "not_established",
+    "family_group": "JAK_STAT"
+   },
+   "tier": "primary"
+  },
+  "JNJ-28312141": {
+   "oof": {
+    "n": 273,
+    "spearman": 0.4608,
+    "spearman_p": 9.337466798084916e-16,
+    "rmse_z": 0.8113,
+    "n_tail": 97,
+    "n_sensitive": 43,
+    "auroc": 0.8273,
+    "auprc": 0.7859,
+    "auprc_baseline": 0.4433
+   },
+   "holdout": {
+    "n": 39,
+    "spearman": 0.4765,
+    "spearman_p": 0.0021641672012052706,
+    "rmse_z": 0.9481,
+    "n_tail": 16,
+    "n_sensitive": 6,
+    "auroc": 0.8667,
+    "auprc": 0.7996,
+    "auprc_baseline": 0.375
+   },
+   "annotation": {
+    "targets": [
+     "CSF1R",
+     "FLT3"
+    ],
+    "family": "CSF1R",
+    "mechanism": "dual CSF1R/FLT3 inhibitor",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "JNJ-38877605": {
+   "oof": {
+    "n": 388,
+    "spearman": 0.2493,
+    "spearman_p": 6.593672899200981e-07,
+    "rmse_z": 1.287,
+    "n_tail": 155,
+    "n_sensitive": 75,
+    "auroc": 0.6917,
+    "auprc": 0.6378,
+    "auprc_baseline": 0.4839
+   },
+   "holdout": {
+    "n": 61,
+    "spearman": 0.2688,
+    "spearman_p": 0.036199404560154934,
+    "rmse_z": 1.0733,
+    "n_tail": 23,
+    "n_sensitive": 15,
+    "auroc": 0.65,
+    "auprc": 0.7733,
+    "auprc_baseline": 0.6522
+   },
+   "annotation": {
+    "targets": [
+     "MET"
+    ],
+    "family": "MET",
+    "mechanism": "selective MET inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "Capmatinib"
+    ],
+    "exposure": "not_established",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "JNJ-7706621": {
+   "oof": {
+    "n": 390,
+    "spearman": 0.214,
+    "spearman_p": 2.031701335607982e-05,
+    "rmse_z": 1.188,
+    "n_tail": 155,
+    "n_sensitive": 77,
+    "auroc": 0.659,
+    "auprc": 0.6379,
+    "auprc_baseline": 0.4968
+   },
+   "holdout": {
+    "n": 60,
+    "spearman": 0.1278,
+    "spearman_p": 0.33066096194430794,
+    "rmse_z": 1.2287,
+    "n_tail": 24,
+    "n_sensitive": 10,
+    "auroc": 0.6286,
+    "auprc": 0.591,
+    "auprc_baseline": 0.4167
+   },
+   "annotation": {
+    "targets": [
+     "AURKA",
+     "AURKB",
+     "CDK1",
+     "CDK2"
+    ],
+    "family": "Aurora/CDK",
+    "mechanism": "dual Aurora / CDK inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "Alisertib"
+    ],
+    "exposure": "not_established",
+    "family_group": "cell_cycle"
+   },
+   "tier": "primary"
+  },
+  "JQ1": {
+   "oof": {
+    "n": 297,
+    "spearman": 0.3291,
+    "spearman_p": 6.249910320349894e-09,
+    "rmse_z": 1.004,
+    "n_tail": 120,
+    "n_sensitive": 60,
+    "auroc": 0.7722,
+    "auprc": 0.7712,
+    "auprc_baseline": 0.5
+   },
+   "holdout": {
+    "n": 47,
+    "spearman": 0.3481,
+    "spearman_p": 0.01651189642344379,
+    "rmse_z": 0.9589,
+    "n_tail": 19,
+    "n_sensitive": 11,
+    "auroc": 0.75,
+    "auprc": 0.8368,
+    "auprc_baseline": 0.5789
+   },
+   "annotation": {
+    "targets": [
+     "BRD4",
+     "BRD2",
+     "BRD3"
+    ],
+    "family": "BET",
+    "mechanism": "BET bromodomain inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "OTX-015",
+     "Pelabresib"
+    ],
+    "exposure": "not_established",
+    "family_group": "epigenetic"
+   },
+   "tier": "primary"
+  },
+  "KI20227": {
+   "oof": {
+    "n": 347,
+    "spearman": 0.4139,
+    "spearman_p": 8.485707013104317e-16,
+    "rmse_z": 0.8027,
+    "n_tail": 138,
+    "n_sensitive": 69,
+    "auroc": 0.8187,
+    "auprc": 0.7737,
+    "auprc_baseline": 0.5
+   },
+   "holdout": {
+    "n": 53,
+    "spearman": 0.3029,
+    "spearman_p": 0.027492780008765382,
+    "rmse_z": 0.9645,
+    "n_tail": 23,
+    "n_sensitive": 14,
+    "auroc": 0.7778,
+    "auprc": 0.7942,
+    "auprc_baseline": 0.6087
+   },
+   "annotation": {
+    "targets": [
+     "CSF1R",
+     "KIT",
+     "KDR",
+     "PDGFRB"
+    ],
+    "family": "CSF1R",
+    "mechanism": "CSF1R-selective multi-kinase inhibitor",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "KU-55933": {
+   "oof": {
+    "n": 388,
+    "spearman": 0.2682,
+    "spearman_p": 8.078950455444049e-08,
+    "rmse_z": 1.1143,
+    "n_tail": 146,
+    "n_sensitive": 69,
+    "auroc": 0.7305,
+    "auprc": 0.6705,
+    "auprc_baseline": 0.4726
+   },
+   "holdout": {
+    "n": 60,
+    "spearman": 0.2066,
+    "spearman_p": 0.11319743047895237,
+    "rmse_z": 1.5515,
+    "n_tail": 32,
+    "n_sensitive": 19,
+    "auroc": 0.5951,
+    "auprc": 0.7188,
+    "auprc_baseline": 0.5938
+   },
+   "annotation": {
+    "targets": [
+     "ATM"
+    ],
+    "family": "DDR",
+    "mechanism": "selective ATM kinase inhibitor",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "cell_cycle"
+   },
+   "tier": "primary"
+  },
+  "KW-2449": {
+   "oof": {
+    "n": 385,
+    "spearman": 0.5583,
+    "spearman_p": 6.23736729897714e-33,
+    "rmse_z": 0.9098,
+    "n_tail": 156,
+    "n_sensitive": 77,
+    "auroc": 0.9022,
+    "auprc": 0.9119,
+    "auprc_baseline": 0.4936
+   },
+   "holdout": {
+    "n": 59,
+    "spearman": 0.4973,
+    "spearman_p": 6.13954836959789e-05,
+    "rmse_z": 1.1323,
+    "n_tail": 21,
+    "n_sensitive": 8,
+    "auroc": 0.9423,
+    "auprc": 0.9085,
+    "auprc_baseline": 0.381
+   },
+   "annotation": {
+    "targets": [
+     "FLT3",
+     "AURKA",
+     "ABL1"
+    ],
+    "family": "FLT3/Aurora",
+    "mechanism": "dual FLT3 / Aurora-A inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "FLT3"
+   },
+   "tier": "primary"
+  },
+  "LY-333531": {
+   "oof": {
+    "n": 355,
+    "spearman": 0.4828,
+    "spearman_p": 3.9772405271962257e-22,
+    "rmse_z": 0.9305,
+    "n_tail": 144,
+    "n_sensitive": 72,
+    "auroc": 0.8682,
+    "auprc": 0.8674,
+    "auprc_baseline": 0.5
+   },
+   "holdout": {
+    "n": 55,
+    "spearman": 0.4889,
+    "spearman_p": 0.000152303969900935,
+    "rmse_z": 1.0608,
+    "n_tail": 22,
+    "n_sensitive": 13,
+    "auroc": 0.8889,
+    "auprc": 0.9303,
+    "auprc_baseline": 0.5909
+   },
+   "annotation": {
+    "targets": [
+     "PRKCB"
+    ],
+    "family": "PKC",
+    "mechanism": "selective PKC-beta inhibitor (ruboxistaurin)",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "immune_signalling"
+   },
+   "tier": "primary"
+  },
+  "Lapatinib": {
+   "oof": {
+    "n": 396,
+    "spearman": 0.3213,
+    "spearman_p": 5.814600854671889e-11,
+    "rmse_z": 1.0821,
+    "n_tail": 156,
+    "n_sensitive": 76,
+    "auroc": 0.739,
+    "auprc": 0.7156,
+    "auprc_baseline": 0.4872
+   },
+   "holdout": {
+    "n": 63,
+    "spearman": 0.309,
+    "spearman_p": 0.013720683823960623,
+    "rmse_z": 1.5759,
+    "n_tail": 26,
+    "n_sensitive": 12,
+    "auroc": 0.7917,
+    "auprc": 0.7146,
+    "auprc_baseline": 0.4615
+   },
+   "annotation": {
+    "targets": [
+     "EGFR",
+     "ERBB2"
+    ],
+    "family": "ERBB",
+    "mechanism": "reversible EGFR/HER2 inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Lenalidomide": {
+   "oof": {
+    "n": 227,
+    "spearman": 0.2144,
+    "spearman_p": 0.0011542974742517244,
+    "rmse_z": 1.1967,
+    "n_tail": 85,
+    "n_sensitive": 38,
+    "auroc": 0.7128,
+    "auprc": 0.6343,
+    "auprc_baseline": 0.4471
+   },
+   "holdout": {
+    "n": 35,
+    "spearman": 0.4036,
+    "spearman_p": 0.01619195759692133,
+    "rmse_z": 1.6218,
+    "n_tail": 19,
+    "n_sensitive": 11,
+    "auroc": 0.8295,
+    "auprc": 0.8927,
+    "auprc_baseline": 0.5789
+   },
+   "annotation": {
+    "targets": [
+     "CRBN",
+     "IKZF1",
+     "IKZF3"
+    ],
+    "family": "IMiD",
+    "mechanism": "cereblon molecular glue; IKZF1/3 degradation",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "epigenetic"
+   },
+   "tier": "primary"
+  },
+  "Lenvatinib": {
+   "oof": {
+    "n": 292,
+    "spearman": 0.4294,
+    "spearman_p": 1.5721836541770566e-14,
+    "rmse_z": 0.9857,
+    "n_tail": 119,
+    "n_sensitive": 59,
+    "auroc": 0.8585,
+    "auprc": 0.8459,
+    "auprc_baseline": 0.4958
+   },
+   "holdout": {
+    "n": 47,
+    "spearman": 0.5889,
+    "spearman_p": 1.3334476331358894e-05,
+    "rmse_z": 1.0107,
+    "n_tail": 27,
+    "n_sensitive": 21,
+    "auroc": 0.8968,
+    "auprc": 0.975,
+    "auprc_baseline": 0.7778
+   },
+   "annotation": {
+    "targets": [
+     "KDR",
+     "FLT1",
+     "FLT4",
+     "FGFR1",
+     "PDGFRA",
+     "RET",
+     "KIT"
+    ],
+    "family": "VEGFR/FGFR",
+    "mechanism": "multi-kinase VEGFR/FGFR inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Linifanib (ABT-869)": {
+   "oof": {
+    "n": 388,
+    "spearman": 0.5264,
+    "spearman_p": 4.8289937924107447e-29,
+    "rmse_z": 0.8138,
+    "n_tail": 163,
+    "n_sensitive": 80,
+    "auroc": 0.8953,
+    "auprc": 0.9043,
+    "auprc_baseline": 0.4908
+   },
+   "holdout": {
+    "n": 60,
+    "spearman": 0.5579,
+    "spearman_p": 3.639696582337974e-06,
+    "rmse_z": 0.6927,
+    "n_tail": 21,
+    "n_sensitive": 14,
+    "auroc": 0.9082,
+    "auprc": 0.9567,
+    "auprc_baseline": 0.6667
+   },
+   "annotation": {
+    "targets": [
+     "KDR",
+     "PDGFRB",
+     "FLT3",
+     "CSF1R"
+    ],
+    "family": "VEGFR/FLT3",
+    "mechanism": "multi-targeted VEGFR/PDGFR/FLT3 inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "MGCD-265": {
+   "oof": {
+    "n": 382,
+    "spearman": 0.486,
+    "spearman_p": 4.896075861820189e-24,
+    "rmse_z": 0.9864,
+    "n_tail": 137,
+    "n_sensitive": 63,
+    "auroc": 0.8348,
+    "auprc": 0.7605,
+    "auprc_baseline": 0.4599
+   },
+   "holdout": {
+    "n": 61,
+    "spearman": 0.4307,
+    "spearman_p": 0.000530020891604964,
+    "rmse_z": 0.8232,
+    "n_tail": 21,
+    "n_sensitive": 9,
+    "auroc": 0.8796,
+    "auprc": 0.8968,
+    "auprc_baseline": 0.4286
+   },
+   "annotation": {
+    "targets": [
+     "MET",
+     "AXL",
+     "KDR",
+     "TEK"
+    ],
+    "family": "MET",
+    "mechanism": "MET/AXL/VEGFR inhibitor (glesatinib)",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "MK-2206": {
+   "oof": {
+    "n": 380,
+    "spearman": 0.3299,
+    "spearman_p": 4.268511756047598e-11,
+    "rmse_z": 0.9449,
+    "n_tail": 138,
+    "n_sensitive": 60,
+    "auroc": 0.7626,
+    "auprc": 0.6837,
+    "auprc_baseline": 0.4348
+   },
+   "holdout": {
+    "n": 63,
+    "spearman": 0.4483,
+    "spearman_p": 0.00022920014966191848,
+    "rmse_z": 0.8787,
+    "n_tail": 23,
+    "n_sensitive": 8,
+    "auroc": 0.925,
+    "auprc": 0.8669,
+    "auprc_baseline": 0.3478
+   },
+   "annotation": {
+    "targets": [
+     "AKT1",
+     "AKT2",
+     "AKT3"
+    ],
+    "family": "AKT",
+    "mechanism": "allosteric pan-AKT inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "PI3K_AKT_mTOR"
+   },
+   "tier": "primary"
+  },
+  "MLN120B": {
+   "oof": {
+    "n": 386,
+    "spearman": 0.1126,
+    "spearman_p": 0.027018401878044728,
+    "rmse_z": 1.2578,
+    "n_tail": 123,
+    "n_sensitive": 45,
+    "auroc": 0.5544,
+    "auprc": 0.4308,
+    "auprc_baseline": 0.3659
+   },
+   "holdout": {
+    "n": 61,
+    "spearman": 0.2108,
+    "spearman_p": 0.10292030440387878,
+    "rmse_z": 1.8651,
+    "n_tail": 22,
+    "n_sensitive": 13,
+    "auroc": 0.6496,
+    "auprc": 0.676,
+    "auprc_baseline": 0.5909
+   },
+   "annotation": {
+    "targets": [
+     "IKBKB"
+    ],
+    "family": "NF-kB",
+    "mechanism": "selective IKKb inhibitor",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "NF-kB"
+   },
+   "tier": "primary"
+  },
+  "MLN8054": {
+   "oof": {
+    "n": 385,
+    "spearman": 0.1746,
+    "spearman_p": 0.0005783144540987728,
+    "rmse_z": 1.3166,
+    "n_tail": 148,
+    "n_sensitive": 71,
+    "auroc": 0.5793,
+    "auprc": 0.5813,
+    "auprc_baseline": 0.4797
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.2892,
+    "spearman_p": 0.022638605716643622,
+    "rmse_z": 1.4848,
+    "n_tail": 29,
+    "n_sensitive": 17,
+    "auroc": 0.7647,
+    "auprc": 0.8831,
+    "auprc_baseline": 0.5862
+   },
+   "annotation": {
+    "targets": [
+     "AURKA"
+    ],
+    "family": "Aurora",
+    "mechanism": "Aurora-A inhibitor (alisertib predecessor)",
+    "clinical_tier": "research",
+    "analogue": [
+     "Alisertib"
+    ],
+    "exposure": "not_established",
+    "family_group": "cell_cycle"
+   },
+   "tier": "primary"
+  },
+  "Masitinib (AB-1010)": {
+   "oof": {
+    "n": 383,
+    "spearman": 0.2689,
+    "spearman_p": 9.100450422469554e-08,
+    "rmse_z": 1.078,
+    "n_tail": 151,
+    "n_sensitive": 74,
+    "auroc": 0.688,
+    "auprc": 0.6602,
+    "auprc_baseline": 0.4901
+   },
+   "holdout": {
+    "n": 60,
+    "spearman": 0.0062,
+    "spearman_p": 0.9623563813505717,
+    "rmse_z": 1.2025,
+    "n_tail": 23,
+    "n_sensitive": 12,
+    "auroc": 0.5833,
+    "auprc": 0.5839,
+    "auprc_baseline": 0.5217
+   },
+   "annotation": {
+    "targets": [
+     "KIT",
+     "PDGFRA",
+     "PDGFRB",
+     "LYN",
+     "FYN"
+    ],
+    "family": "KIT",
+    "mechanism": "KIT/PDGFR/LYN inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Midostaurin": {
+   "oof": {
+    "n": 394,
+    "spearman": 0.4009,
+    "spearman_p": 1.2160626930210334e-16,
+    "rmse_z": 0.9843,
+    "n_tail": 151,
+    "n_sensitive": 70,
+    "auroc": 0.7774,
+    "auprc": 0.7822,
+    "auprc_baseline": 0.4636
+   },
+   "holdout": {
+    "n": 63,
+    "spearman": 0.4963,
+    "spearman_p": 3.523256893101727e-05,
+    "rmse_z": 0.9209,
+    "n_tail": 22,
+    "n_sensitive": 10,
+    "auroc": 0.7667,
+    "auprc": 0.7251,
+    "auprc_baseline": 0.4545
+   },
+   "annotation": {
+    "targets": [
+     "FLT3",
+     "KIT",
+     "PRKCA",
+     "PDGFRA",
+     "PDGFRB"
+    ],
+    "family": "FLT3",
+    "mechanism": "type-II multi-kinase FLT3/KIT/PKC inhibitor",
+    "clinical_tier": "approved_AML",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "FLT3"
+   },
+   "tier": "primary"
+  },
+  "Motesanib (AMG-706)": {
+   "oof": {
+    "n": 388,
+    "spearman": 0.4257,
+    "spearman_p": 1.628406827605022e-18,
+    "rmse_z": 0.8754,
+    "n_tail": 141,
+    "n_sensitive": 63,
+    "auroc": 0.8411,
+    "auprc": 0.7979,
+    "auprc_baseline": 0.4468
+   },
+   "holdout": {
+    "n": 57,
+    "spearman": 0.64,
+    "spearman_p": 8.33649477531908e-08,
+    "rmse_z": 0.7015,
+    "n_tail": 18,
+    "n_sensitive": 7,
+    "auroc": 0.961,
+    "auprc": 0.9571,
+    "auprc_baseline": 0.3889
+   },
+   "annotation": {
+    "targets": [
+     "KDR",
+     "FLT1",
+     "FLT4",
+     "KIT",
+     "PDGFRB",
+     "RET"
+    ],
+    "family": "VEGFR",
+    "mechanism": "multi-kinase VEGFR/KIT/RET inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "NF-kB Activation Inhibitor": {
+   "oof": {
+    "n": 375,
+    "spearman": 0.4284,
+    "spearman_p": 3.576869548128062e-18,
+    "rmse_z": 0.9702,
+    "n_tail": 147,
+    "n_sensitive": 71,
+    "auroc": 0.8415,
+    "auprc": 0.8199,
+    "auprc_baseline": 0.483
+   },
+   "holdout": {
+    "n": 61,
+    "spearman": 0.4241,
+    "spearman_p": 0.0006586774268249593,
+    "rmse_z": 0.8567,
+    "n_tail": 21,
+    "n_sensitive": 14,
+    "auroc": 0.7755,
+    "auprc": 0.8887,
+    "auprc_baseline": 0.6667
+   },
+   "annotation": {
+    "targets": [
+     "NFKB1",
+     "RELA"
+    ],
+    "family": "NF-kB",
+    "mechanism": "NF-kB transcriptional activation inhibitor (tool)",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "NF-kB"
+   },
+   "tier": "primary"
+  },
+  "NVP-ADW742": {
+   "oof": {
+    "n": 380,
+    "spearman": 0.2814,
+    "spearman_p": 2.3933195437077345e-08,
+    "rmse_z": 1.1808,
+    "n_tail": 154,
+    "n_sensitive": 76,
+    "auroc": 0.6953,
+    "auprc": 0.7085,
+    "auprc_baseline": 0.4935
+   },
+   "holdout": {
+    "n": 59,
+    "spearman": 0.2957,
+    "spearman_p": 0.022988482263395452,
+    "rmse_z": 0.8497,
+    "n_tail": 17,
+    "n_sensitive": 6,
+    "auroc": 0.9697,
+    "auprc": 0.9484,
+    "auprc_baseline": 0.3529
+   },
+   "annotation": {
+    "targets": [
+     "IGF1R"
+    ],
+    "family": "IGF1R",
+    "mechanism": "selective IGF1R inhibitor",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "NVP-TAE684": {
+   "oof": {
+    "n": 388,
+    "spearman": 0.5018,
+    "spearman_p": 3.9152959636891326e-26,
+    "rmse_z": 0.9423,
+    "n_tail": 152,
+    "n_sensitive": 75,
+    "auroc": 0.9039,
+    "auprc": 0.8917,
+    "auprc_baseline": 0.4934
+   },
+   "holdout": {
+    "n": 58,
+    "spearman": 0.37,
+    "spearman_p": 0.004251413781569349,
+    "rmse_z": 0.9849,
+    "n_tail": 20,
+    "n_sensitive": 7,
+    "auroc": 0.7253,
+    "auprc": 0.6883,
+    "auprc_baseline": 0.35
+   },
+   "annotation": {
+    "targets": [
+     "ALK"
+    ],
+    "family": "ALK",
+    "mechanism": "selective ALK inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "Alectinib"
+    ],
+    "exposure": "not_established",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Neratinib (HKI-272)": {
+   "oof": {
+    "n": 386,
+    "spearman": 0.2989,
+    "spearman_p": 2.088231666868535e-09,
+    "rmse_z": 1.0194,
+    "n_tail": 158,
+    "n_sensitive": 81,
+    "auroc": 0.7135,
+    "auprc": 0.7382,
+    "auprc_baseline": 0.5127
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.2386,
+    "spearman_p": 0.06182237153963802,
+    "rmse_z": 1.1612,
+    "n_tail": 25,
+    "n_sensitive": 14,
+    "auroc": 0.6688,
+    "auprc": 0.7183,
+    "auprc_baseline": 0.56
+   },
+   "annotation": {
+    "targets": [
+     "EGFR",
+     "ERBB2",
+     "ERBB4"
+    ],
+    "family": "ERBB",
+    "mechanism": "irreversible pan-ERBB inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Nilotinib": {
+   "oof": {
+    "n": 401,
+    "spearman": 0.2874,
+    "spearman_p": 4.585775408571895e-09,
+    "rmse_z": 1.0571,
+    "n_tail": 159,
+    "n_sensitive": 78,
+    "auroc": 0.6708,
+    "auprc": 0.6249,
+    "auprc_baseline": 0.4906
+   },
+   "holdout": {
+    "n": 66,
+    "spearman": 0.5264,
+    "spearman_p": 5.636843260041432e-06,
+    "rmse_z": 0.8618,
+    "n_tail": 33,
+    "n_sensitive": 15,
+    "auroc": 0.8593,
+    "auprc": 0.763,
+    "auprc_baseline": 0.4545
+   },
+   "annotation": {
+    "targets": [
+     "ABL1",
+     "KIT",
+     "PDGFRA",
+     "DDR1"
+    ],
+    "family": "ABL/KIT",
+    "mechanism": "ATP-competitive ABL/KIT inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Nutlin 3a": {
+   "oof": {
+    "n": 275,
+    "spearman": 0.3193,
+    "spearman_p": 6.217644957611092e-08,
+    "rmse_z": 1.5643,
+    "n_tail": 110,
+    "n_sensitive": 53,
+    "auroc": 0.7865,
+    "auprc": 0.7758,
+    "auprc_baseline": 0.4818
+   },
+   "holdout": {
+    "n": 44,
+    "spearman": 0.449,
+    "spearman_p": 0.0022346060406355796,
+    "rmse_z": 1.2411,
+    "n_tail": 19,
+    "n_sensitive": 9,
+    "auroc": 0.9111,
+    "auprc": 0.9189,
+    "auprc_baseline": 0.4737
+   },
+   "annotation": {
+    "targets": [
+     "MDM2"
+    ],
+    "family": "p53",
+    "mechanism": "MDM2-p53 interaction inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "Idasanutlin"
+    ],
+    "exposure": "not_established",
+    "family_group": "apoptosis"
+   },
+   "tier": "wave_conditional"
+  },
+  "OTX-015": {
+   "oof": {
+    "n": 251,
+    "spearman": 0.3689,
+    "spearman_p": 1.6464849314895376e-09,
+    "rmse_z": 0.9445,
+    "n_tail": 99,
+    "n_sensitive": 50,
+    "auroc": 0.7861,
+    "auprc": 0.7513,
+    "auprc_baseline": 0.5051
+   },
+   "holdout": {
+    "n": 38,
+    "spearman": 0.4529,
+    "spearman_p": 0.004300845007897887,
+    "rmse_z": 0.9554,
+    "n_tail": 19,
+    "n_sensitive": 12,
+    "auroc": 0.881,
+    "auprc": 0.9373,
+    "auprc_baseline": 0.6316
+   },
+   "annotation": {
+    "targets": [
+     "BRD4",
+     "BRD2",
+     "BRD3"
+    ],
+    "family": "BET",
+    "mechanism": "BET bromodomain inhibitor (birabresib)",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "epigenetic"
+   },
+   "tier": "primary"
+  },
+  "PD173955": {
+   "oof": {
+    "n": 385,
+    "spearman": 0.3764,
+    "spearman_p": 2.105154639557945e-14,
+    "rmse_z": 0.8488,
+    "n_tail": 155,
+    "n_sensitive": 76,
+    "auroc": 0.7707,
+    "auprc": 0.7383,
+    "auprc_baseline": 0.4903
+   },
+   "holdout": {
+    "n": 63,
+    "spearman": 0.1749,
+    "spearman_p": 0.17029016482756415,
+    "rmse_z": 0.9848,
+    "n_tail": 30,
+    "n_sensitive": 16,
+    "auroc": 0.6339,
+    "auprc": 0.6542,
+    "auprc_baseline": 0.5333
+   },
+   "annotation": {
+    "targets": [
+     "ABL1",
+     "SRC"
+    ],
+    "family": "ABL/SRC",
+    "mechanism": "ATP-competitive ABL/SRC inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "Dasatinib"
+    ],
+    "exposure": "not_established",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "PHA-665752": {
+   "oof": {
+    "n": 387,
+    "spearman": 0.3845,
+    "spearman_p": 4.377333501152513e-15,
+    "rmse_z": 1.089,
+    "n_tail": 157,
+    "n_sensitive": 79,
+    "auroc": 0.8165,
+    "auprc": 0.8122,
+    "auprc_baseline": 0.5032
+   },
+   "holdout": {
+    "n": 60,
+    "spearman": 0.3438,
+    "spearman_p": 0.007155480570665276,
+    "rmse_z": 1.2956,
+    "n_tail": 25,
+    "n_sensitive": 14,
+    "auroc": 0.6429,
+    "auprc": 0.6919,
+    "auprc_baseline": 0.56
+   },
+   "annotation": {
+    "targets": [
+     "MET"
+    ],
+    "family": "MET",
+    "mechanism": "selective MET inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "Capmatinib"
+    ],
+    "exposure": "not_established",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "PHT-427": {
+   "oof": {
+    "n": 381,
+    "spearman": 0.1037,
+    "spearman_p": 0.04304576143928265,
+    "rmse_z": 2.6548,
+    "n_tail": 135,
+    "n_sensitive": 52,
+    "auroc": 0.6193,
+    "auprc": 0.535,
+    "auprc_baseline": 0.3852
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.4337,
+    "spearman_p": 0.0004298329705054157,
+    "rmse_z": 3.2994,
+    "n_tail": 19,
+    "n_sensitive": 10,
+    "auroc": 0.7556,
+    "auprc": 0.791,
+    "auprc_baseline": 0.5263
+   },
+   "annotation": {
+    "targets": [
+     "AKT1",
+     "PDPK1"
+    ],
+    "family": "AKT/PDK1",
+    "mechanism": "PH-domain-binding AKT/PDPK1 inhibitor",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "PI3K_AKT_mTOR"
+   },
+   "tier": "primary"
+  },
+  "PI-103": {
+   "oof": {
+    "n": 388,
+    "spearman": 0.334,
+    "spearman_p": 1.4523443959161674e-11,
+    "rmse_z": 0.9762,
+    "n_tail": 151,
+    "n_sensitive": 77,
+    "auroc": 0.7836,
+    "auprc": 0.7919,
+    "auprc_baseline": 0.5099
+   },
+   "holdout": {
+    "n": 59,
+    "spearman": 0.4041,
+    "spearman_p": 0.0015008436427762922,
+    "rmse_z": 0.9555,
+    "n_tail": 27,
+    "n_sensitive": 18,
+    "auroc": 0.8272,
+    "auprc": 0.8954,
+    "auprc_baseline": 0.6667
+   },
+   "annotation": {
+    "targets": [
+     "PIK3CA",
+     "MTOR"
+    ],
+    "family": "PI3K/mTOR",
+    "mechanism": "dual PI3Ka / mTOR inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "BEZ235"
+    ],
+    "exposure": "not_established",
+    "family_group": "PI3K_AKT_mTOR"
+   },
+   "tier": "primary"
+  },
+  "PP242": {
+   "oof": {
+    "n": 390,
+    "spearman": 0.4215,
+    "spearman_p": 3.1625536116592933e-18,
+    "rmse_z": 0.9294,
+    "n_tail": 156,
+    "n_sensitive": 77,
+    "auroc": 0.8277,
+    "auprc": 0.7899,
+    "auprc_baseline": 0.4936
+   },
+   "holdout": {
+    "n": 63,
+    "spearman": 0.2503,
+    "spearman_p": 0.047835972434207674,
+    "rmse_z": 1.1252,
+    "n_tail": 25,
+    "n_sensitive": 11,
+    "auroc": 0.7078,
+    "auprc": 0.6686,
+    "auprc_baseline": 0.44
+   },
+   "annotation": {
+    "targets": [
+     "MTOR"
+    ],
+    "family": "mTOR",
+    "mechanism": "ATP-competitive mTORC1/2 inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "INK-128"
+    ],
+    "exposure": "not_established",
+    "family_group": "PI3K_AKT_mTOR"
+   },
+   "tier": "primary"
+  },
+  "PRT062607": {
+   "oof": {
+    "n": 382,
+    "spearman": 0.3795,
+    "spearman_p": 1.5508481354558873e-14,
+    "rmse_z": 0.9125,
+    "n_tail": 152,
+    "n_sensitive": 73,
+    "auroc": 0.7952,
+    "auprc": 0.7584,
+    "auprc_baseline": 0.4803
+   },
+   "holdout": {
+    "n": 60,
+    "spearman": 0.4839,
+    "spearman_p": 8.978089474373383e-05,
+    "rmse_z": 0.9837,
+    "n_tail": 27,
+    "n_sensitive": 12,
+    "auroc": 0.8111,
+    "auprc": 0.6979,
+    "auprc_baseline": 0.4444
+   },
+   "annotation": {
+    "targets": [
+     "SYK"
+    ],
+    "family": "SYK",
+    "mechanism": "selective SYK inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "Entospletinib"
+    ],
+    "exposure": "not_established",
+    "family_group": "immune_signalling"
+   },
+   "tier": "primary"
+  },
+  "Palbociclib": {
+   "oof": {
+    "n": 252,
+    "spearman": 0.3784,
+    "spearman_p": 5.286686132503022e-10,
+    "rmse_z": 1.2075,
+    "n_tail": 98,
+    "n_sensitive": 48,
+    "auroc": 0.7783,
+    "auprc": 0.7424,
+    "auprc_baseline": 0.4898
+   },
+   "holdout": {
+    "n": 40,
+    "spearman": 0.4326,
+    "spearman_p": 0.005299525712176672,
+    "rmse_z": 1.139,
+    "n_tail": 13,
+    "n_sensitive": 6,
+    "auroc": 0.9286,
+    "auprc": 0.9444,
+    "auprc_baseline": 0.4615
+   },
+   "annotation": {
+    "targets": [
+     "CDK4",
+     "CDK6"
+    ],
+    "family": "CDK",
+    "mechanism": "selective CDK4/6 inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "cell_cycle"
+   },
+   "tier": "primary"
+  },
+  "Panobinostat": {
+   "oof": {
+    "n": 245,
+    "spearman": 0.4869,
+    "spearman_p": 5.445913642690992e-16,
+    "rmse_z": 1.1714,
+    "n_tail": 88,
+    "n_sensitive": 38,
+    "auroc": 0.8626,
+    "auprc": 0.8725,
+    "auprc_baseline": 0.4318
+   },
+   "holdout": {
+    "n": 38,
+    "spearman": 0.6566,
+    "spearman_p": 7.5702551837935326e-06,
+    "rmse_z": 1.2763,
+    "n_tail": 17,
+    "n_sensitive": 7,
+    "auroc": 0.9,
+    "auprc": 0.9286,
+    "auprc_baseline": 0.4118
+   },
+   "annotation": {
+    "targets": [
+     "HDAC1",
+     "HDAC2",
+     "HDAC3",
+     "HDAC6"
+    ],
+    "family": "HDAC",
+    "mechanism": "pan-HDAC inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [
+     "Vorinostat"
+    ],
+    "exposure": "clinically_achievable",
+    "family_group": "epigenetic"
+   },
+   "tier": "primary"
+  },
+  "Pazopanib (GW786034)": {
+   "oof": {
+    "n": 401,
+    "spearman": 0.4622,
+    "spearman_p": 1.3014149904056647e-22,
+    "rmse_z": 0.9233,
+    "n_tail": 154,
+    "n_sensitive": 72,
+    "auroc": 0.8694,
+    "auprc": 0.8647,
+    "auprc_baseline": 0.4675
+   },
+   "holdout": {
+    "n": 61,
+    "spearman": 0.4054,
+    "spearman_p": 0.0011906925234753045,
+    "rmse_z": 1.0995,
+    "n_tail": 28,
+    "n_sensitive": 14,
+    "auroc": 0.8622,
+    "auprc": 0.8793,
+    "auprc_baseline": 0.5
+   },
+   "annotation": {
+    "targets": [
+     "KDR",
+     "FLT1",
+     "FLT4",
+     "PDGFRA",
+     "PDGFRB",
+     "KIT"
+    ],
+    "family": "VEGFR",
+    "mechanism": "multi-kinase VEGFR/PDGFR/KIT inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Pelitinib (EKB-569)": {
+   "oof": {
+    "n": 386,
+    "spearman": 0.5267,
+    "spearman_p": 6.200652144326749e-29,
+    "rmse_z": 0.9713,
+    "n_tail": 157,
+    "n_sensitive": 78,
+    "auroc": 0.8981,
+    "auprc": 0.9075,
+    "auprc_baseline": 0.4968
+   },
+   "holdout": {
+    "n": 61,
+    "spearman": 0.6045,
+    "spearman_p": 2.4763355073347634e-07,
+    "rmse_z": 0.9285,
+    "n_tail": 25,
+    "n_sensitive": 18,
+    "auroc": 0.8413,
+    "auprc": 0.8785,
+    "auprc_baseline": 0.72
+   },
+   "annotation": {
+    "targets": [
+     "EGFR"
+    ],
+    "family": "EGFR",
+    "mechanism": "irreversible EGFR inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [
+     "Afatinib"
+    ],
+    "exposure": "borderline",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Ponatinib (AP24534)": {
+   "oof": {
+    "n": 261,
+    "spearman": 0.5465,
+    "spearman_p": 9.935812900913071e-22,
+    "rmse_z": 0.7952,
+    "n_tail": 105,
+    "n_sensitive": 53,
+    "auroc": 0.9332,
+    "auprc": 0.9287,
+    "auprc_baseline": 0.5048
+   },
+   "holdout": {
+    "n": 35,
+    "spearman": 0.3345,
+    "spearman_p": 0.049557766309630276,
+    "rmse_z": 0.9568,
+    "n_tail": 15,
+    "n_sensitive": 5,
+    "auroc": 0.58,
+    "auprc": 0.5371,
+    "auprc_baseline": 0.3333
+   },
+   "annotation": {
+    "targets": [
+     "ABL1",
+     "FLT3",
+     "KIT",
+     "FGFR1",
+     "PDGFRA",
+     "RET",
+     "SRC"
+    ],
+    "family": "ABL/FLT3",
+    "mechanism": "pan-ABL inhibitor active against T315I",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "FLT3"
+   },
+   "tier": "primary"
+  },
+  "Quizartinib (AC220)": {
+   "oof": {
+    "n": 393,
+    "spearman": 0.519,
+    "spearman_p": 1.729669271107752e-28,
+    "rmse_z": 0.8797,
+    "n_tail": 151,
+    "n_sensitive": 72,
+    "auroc": 0.8483,
+    "auprc": 0.8068,
+    "auprc_baseline": 0.4768
+   },
+   "holdout": {
+    "n": 63,
+    "spearman": 0.4831,
+    "spearman_p": 6.0747053314129085e-05,
+    "rmse_z": 1.0481,
+    "n_tail": 29,
+    "n_sensitive": 10,
+    "auroc": 0.8947,
+    "auprc": 0.8639,
+    "auprc_baseline": 0.3448
+   },
+   "annotation": {
+    "targets": [
+     "FLT3",
+     "KIT",
+     "PDGFRA",
+     "RET"
+    ],
+    "family": "FLT3",
+    "mechanism": "type-II FLT3-ITD selective inhibitor",
+    "clinical_tier": "approved_AML",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "FLT3"
+   },
+   "tier": "primary"
+  },
+  "RAF265 (CHIR-265)": {
+   "oof": {
+    "n": 385,
+    "spearman": 0.4527,
+    "spearman_p": 7.5405206964609e-21,
+    "rmse_z": 0.9469,
+    "n_tail": 156,
+    "n_sensitive": 76,
+    "auroc": 0.8329,
+    "auprc": 0.855,
+    "auprc_baseline": 0.4872
+   },
+   "holdout": {
+    "n": 60,
+    "spearman": 0.3982,
+    "spearman_p": 0.001626194765120344,
+    "rmse_z": 0.9114,
+    "n_tail": 23,
+    "n_sensitive": 14,
+    "auroc": 0.8333,
+    "auprc": 0.8305,
+    "auprc_baseline": 0.6087
+   },
+   "annotation": {
+    "targets": [
+     "BRAF",
+     "RAF1",
+     "KDR"
+    ],
+    "family": "RAF",
+    "mechanism": "pan-RAF / VEGFR2 inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "MAPK"
+   },
+   "tier": "primary"
+  },
+  "Rapamycin": {
+   "oof": {
+    "n": 396,
+    "spearman": 0.5609,
+    "spearman_p": 3.436487606096929e-34,
+    "rmse_z": 0.8042,
+    "n_tail": 147,
+    "n_sensitive": 71,
+    "auroc": 0.9285,
+    "auprc": 0.8914,
+    "auprc_baseline": 0.483
+   },
+   "holdout": {
+    "n": 65,
+    "spearman": 0.5948,
+    "spearman_p": 1.7395511101623956e-07,
+    "rmse_z": 0.8388,
+    "n_tail": 31,
+    "n_sensitive": 20,
+    "auroc": 0.85,
+    "auprc": 0.8866,
+    "auprc_baseline": 0.6452
+   },
+   "annotation": {
+    "targets": [
+     "MTOR"
+    ],
+    "family": "mTOR",
+    "mechanism": "allosteric mTORC1 inhibitor (sirolimus)",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "PI3K_AKT_mTOR"
+   },
+   "tier": "primary"
+  },
+  "Regorafenib (BAY 73-4506)": {
+   "oof": {
+    "n": 385,
+    "spearman": 0.4542,
+    "spearman_p": 5.356947897307592e-21,
+    "rmse_z": 1.0053,
+    "n_tail": 155,
+    "n_sensitive": 77,
+    "auroc": 0.8198,
+    "auprc": 0.8274,
+    "auprc_baseline": 0.4968
+   },
+   "holdout": {
+    "n": 60,
+    "spearman": 0.4161,
+    "spearman_p": 0.000945458624308823,
+    "rmse_z": 0.9761,
+    "n_tail": 19,
+    "n_sensitive": 13,
+    "auroc": 0.8974,
+    "auprc": 0.9584,
+    "auprc_baseline": 0.6842
+   },
+   "annotation": {
+    "targets": [
+     "KDR",
+     "PDGFRB",
+     "KIT",
+     "RET",
+     "RAF1",
+     "BRAF"
+    ],
+    "family": "VEGFR/RAF",
+    "mechanism": "multi-kinase VEGFR/RAF/KIT inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Roscovitine (CYC-202)": {
+   "oof": {
+    "n": 394,
+    "spearman": 0.1733,
+    "spearman_p": 0.0005516553458722664,
+    "rmse_z": 1.9773,
+    "n_tail": 151,
+    "n_sensitive": 72,
+    "auroc": 0.6153,
+    "auprc": 0.534,
+    "auprc_baseline": 0.4768
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.3396,
+    "spearman_p": 0.006918440702214185,
+    "rmse_z": 1.3193,
+    "n_tail": 32,
+    "n_sensitive": 15,
+    "auroc": 0.7804,
+    "auprc": 0.7911,
+    "auprc_baseline": 0.4688
+   },
+   "annotation": {
+    "targets": [
+     "CDK2",
+     "CDK5",
+     "CDK7",
+     "CDK9"
+    ],
+    "family": "CDK",
+    "mechanism": "pan-CDK inhibitor (seliciclib)",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "cell_cycle"
+   },
+   "tier": "primary"
+  },
+  "Ruxolitinib (INCB018424)": {
+   "oof": {
+    "n": 387,
+    "spearman": 0.2992,
+    "spearman_p": 1.9036799321004214e-09,
+    "rmse_z": 0.9963,
+    "n_tail": 154,
+    "n_sensitive": 80,
+    "auroc": 0.7073,
+    "auprc": 0.7267,
+    "auprc_baseline": 0.5195
+   },
+   "holdout": {
+    "n": 57,
+    "spearman": 0.2474,
+    "spearman_p": 0.06353017766101081,
+    "rmse_z": 1.2852,
+    "n_tail": 27,
+    "n_sensitive": 19,
+    "auroc": 0.6974,
+    "auprc": 0.8393,
+    "auprc_baseline": 0.7037
+   },
+   "annotation": {
+    "targets": [
+     "JAK1",
+     "JAK2"
+    ],
+    "family": "JAK",
+    "mechanism": "ATP-competitive JAK1/2 inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "JAK_STAT"
+   },
+   "tier": "primary"
+  },
+  "S31-201": {
+   "oof": {
+    "n": 344,
+    "spearman": 0.2563,
+    "spearman_p": 1.454771257395092e-06,
+    "rmse_z": 1.3148,
+    "n_tail": 132,
+    "n_sensitive": 62,
+    "auroc": 0.682,
+    "auprc": 0.6267,
+    "auprc_baseline": 0.4697
+   },
+   "holdout": {
+    "n": 54,
+    "spearman": 0.2452,
+    "spearman_p": 0.07391719909055791,
+    "rmse_z": 1.01,
+    "n_tail": 22,
+    "n_sensitive": 10,
+    "auroc": 0.65,
+    "auprc": 0.6804,
+    "auprc_baseline": 0.4545
+   },
+   "annotation": {
+    "targets": [
+     "STAT3"
+    ],
+    "family": "STAT",
+    "mechanism": "STAT3 SH2-domain inhibitor",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "JAK_STAT"
+   },
+   "tier": "primary"
+  },
+  "SB-431542": {
+   "oof": {
+    "n": 393,
+    "spearman": 0.1024,
+    "spearman_p": 0.04247382528584211,
+    "rmse_z": 1.3639,
+    "n_tail": 139,
+    "n_sensitive": 60,
+    "auroc": 0.5698,
+    "auprc": 0.4697,
+    "auprc_baseline": 0.4317
+   },
+   "holdout": {
+    "n": 61,
+    "spearman": 0.2493,
+    "spearman_p": 0.052642895371567563,
+    "rmse_z": 1.2641,
+    "n_tail": 17,
+    "n_sensitive": 11,
+    "auroc": 0.803,
+    "auprc": 0.9176,
+    "auprc_baseline": 0.6471
+   },
+   "annotation": {
+    "targets": [
+     "TGFBR1",
+     "ACVR1B",
+     "ACVR1C"
+    ],
+    "family": "TGFb",
+    "mechanism": "ALK4/5/7 (TGFb type-I receptor) inhibitor",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "developmental"
+   },
+   "tier": "primary"
+  },
+  "SGX-523": {
+   "oof": {
+    "n": 388,
+    "spearman": 0.154,
+    "spearman_p": 0.002350840733465547,
+    "rmse_z": 1.2734,
+    "n_tail": 140,
+    "n_sensitive": 61,
+    "auroc": 0.6047,
+    "auprc": 0.5141,
+    "auprc_baseline": 0.4357
+   },
+   "holdout": {
+    "n": 60,
+    "spearman": -0.0652,
+    "spearman_p": 0.6205699967419017,
+    "rmse_z": 1.989,
+    "n_tail": 25,
+    "n_sensitive": 16,
+    "auroc": 0.3264,
+    "auprc": 0.5857,
+    "auprc_baseline": 0.64
+   },
+   "annotation": {
+    "targets": [
+     "MET"
+    ],
+    "family": "MET",
+    "mechanism": "selective MET inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "Capmatinib"
+    ],
+    "exposure": "not_established",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "SNS-032 (BMS-387032)": {
+   "oof": {
+    "n": 390,
+    "spearman": 0.4046,
+    "spearman_p": 8.646967384490114e-17,
+    "rmse_z": 1.0595,
+    "n_tail": 156,
+    "n_sensitive": 77,
+    "auroc": 0.8034,
+    "auprc": 0.7668,
+    "auprc_baseline": 0.4936
+   },
+   "holdout": {
+    "n": 63,
+    "spearman": 0.1478,
+    "spearman_p": 0.24783321693502855,
+    "rmse_z": 0.9909,
+    "n_tail": 26,
+    "n_sensitive": 19,
+    "auroc": 0.797,
+    "auprc": 0.9345,
+    "auprc_baseline": 0.7308
+   },
+   "annotation": {
+    "targets": [
+     "CDK2",
+     "CDK7",
+     "CDK9"
+    ],
+    "family": "CDK",
+    "mechanism": "selective CDK2/7/9 inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "cell_cycle"
+   },
+   "tier": "primary"
+  },
+  "SR9011": {
+   "oof": {
+    "n": 228,
+    "spearman": 0.3009,
+    "spearman_p": 3.7120541027325625e-06,
+    "rmse_z": 1.2149,
+    "n_tail": 92,
+    "n_sensitive": 45,
+    "auroc": 0.7423,
+    "auprc": 0.7455,
+    "auprc_baseline": 0.4891
+   },
+   "holdout": {
+    "n": 35,
+    "spearman": 0.3272,
+    "spearman_p": 0.055054463202887066,
+    "rmse_z": 1.2051,
+    "n_tail": 19,
+    "n_sensitive": 10,
+    "auroc": 0.7333,
+    "auprc": 0.7574,
+    "auprc_baseline": 0.5263
+   },
+   "annotation": {
+    "targets": [
+     "NR1D1",
+     "NR1D2"
+    ],
+    "family": "nuclear receptor",
+    "mechanism": "REV-ERB agonist; circadian/metabolic",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "metabolic"
+   },
+   "tier": "primary"
+  },
+  "STO609": {
+   "oof": {
+    "n": 356,
+    "spearman": 0.1423,
+    "spearman_p": 0.007176167532121605,
+    "rmse_z": 1.1913,
+    "n_tail": 131,
+    "n_sensitive": 59,
+    "auroc": 0.6097,
+    "auprc": 0.5411,
+    "auprc_baseline": 0.4504
+   },
+   "holdout": {
+    "n": 54,
+    "spearman": 0.2965,
+    "spearman_p": 0.029500365586498555,
+    "rmse_z": 1.2651,
+    "n_tail": 20,
+    "n_sensitive": 7,
+    "auroc": 0.7692,
+    "auprc": 0.7167,
+    "auprc_baseline": 0.35
+   },
+   "annotation": {
+    "targets": [
+     "CAMKK2"
+    ],
+    "family": "CAMKK",
+    "mechanism": "selective CAMKK2 inhibitor",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "stress_MAPK"
+   },
+   "tier": "primary"
+  },
+  "SU11274": {
+   "oof": {
+    "n": 343,
+    "spearman": 0.3652,
+    "spearman_p": 2.927398545487377e-12,
+    "rmse_z": 1.03,
+    "n_tail": 134,
+    "n_sensitive": 66,
+    "auroc": 0.7948,
+    "auprc": 0.7915,
+    "auprc_baseline": 0.4925
+   },
+   "holdout": {
+    "n": 54,
+    "spearman": 0.1963,
+    "spearman_p": 0.15475454560217547,
+    "rmse_z": 0.9021,
+    "n_tail": 19,
+    "n_sensitive": 14,
+    "auroc": 0.7,
+    "auprc": 0.8792,
+    "auprc_baseline": 0.7368
+   },
+   "annotation": {
+    "targets": [
+     "MET"
+    ],
+    "family": "MET",
+    "mechanism": "selective MET inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "Capmatinib"
+    ],
+    "exposure": "not_established",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Saracatinib (AZD0530)": {
+   "oof": {
+    "n": 384,
+    "spearman": 0.4233,
+    "spearman_p": 3.991660698637343e-18,
+    "rmse_z": 0.9264,
+    "n_tail": 151,
+    "n_sensitive": 75,
+    "auroc": 0.8368,
+    "auprc": 0.8357,
+    "auprc_baseline": 0.4967
+   },
+   "holdout": {
+    "n": 61,
+    "spearman": 0.3906,
+    "spearman_p": 0.0018576000642102544,
+    "rmse_z": 0.9706,
+    "n_tail": 23,
+    "n_sensitive": 14,
+    "auroc": 0.8651,
+    "auprc": 0.9246,
+    "auprc_baseline": 0.6087
+   },
+   "annotation": {
+    "targets": [
+     "SRC",
+     "ABL1",
+     "LYN"
+    ],
+    "family": "SRC",
+    "mechanism": "dual SRC/ABL inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Selinexor": {
+   "oof": {
+    "n": 205,
+    "spearman": 0.0571,
+    "spearman_p": 0.41581920286431284,
+    "rmse_z": 1.1964,
+    "n_tail": 87,
+    "n_sensitive": 44,
+    "auroc": 0.5354,
+    "auprc": 0.6026,
+    "auprc_baseline": 0.5057
+   },
+   "holdout": {
+    "n": 33,
+    "spearman": 0.1969,
+    "spearman_p": 0.27218318421631377,
+    "rmse_z": 1.1478,
+    "n_tail": 15,
+    "n_sensitive": 11,
+    "auroc": 0.9091,
+    "auprc": 0.9687,
+    "auprc_baseline": 0.7333
+   },
+   "annotation": {
+    "targets": [
+     "XPO1"
+    ],
+    "family": "nuclear export",
+    "mechanism": "selective inhibitor of nuclear export (XPO1)",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "proteostasis"
+   },
+   "tier": "primary"
+  },
+  "Selumetinib (AZD6244)": {
+   "oof": {
+    "n": 389,
+    "spearman": 0.5511,
+    "spearman_p": 2.801496845960036e-32,
+    "rmse_z": 0.7316,
+    "n_tail": 157,
+    "n_sensitive": 77,
+    "auroc": 0.8833,
+    "auprc": 0.8751,
+    "auprc_baseline": 0.4904
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.6196,
+    "spearman_p": 7.899547057944654e-08,
+    "rmse_z": 0.8734,
+    "n_tail": 35,
+    "n_sensitive": 20,
+    "auroc": 0.9533,
+    "auprc": 0.965,
+    "auprc_baseline": 0.5714
+   },
+   "annotation": {
+    "targets": [
+     "MAP2K1",
+     "MAP2K2"
+    ],
+    "family": "MEK",
+    "mechanism": "allosteric MEK1/2 inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [
+     "Trametinib"
+    ],
+    "exposure": "clinically_achievable",
+    "family_group": "MAPK"
+   },
+   "tier": "primary"
+  },
+  "Sorafenib": {
+   "oof": {
+    "n": 419,
+    "spearman": 0.5974,
+    "spearman_p": 6.89158929643344e-42,
+    "rmse_z": 0.8021,
+    "n_tail": 165,
+    "n_sensitive": 81,
+    "auroc": 0.9042,
+    "auprc": 0.9218,
+    "auprc_baseline": 0.4909
+   },
+   "holdout": {
+    "n": 70,
+    "spearman": 0.5817,
+    "spearman_p": 1.2875292228166013e-07,
+    "rmse_z": 0.8861,
+    "n_tail": 28,
+    "n_sensitive": 13,
+    "auroc": 0.8308,
+    "auprc": 0.7856,
+    "auprc_baseline": 0.4643
+   },
+   "annotation": {
+    "targets": [
+     "FLT3",
+     "KIT",
+     "RAF1",
+     "BRAF",
+     "KDR",
+     "PDGFRB"
+    ],
+    "family": "FLT3/RAF",
+    "mechanism": "type-II multi-kinase FLT3/RAF/VEGFR inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "FLT3"
+   },
+   "tier": "primary"
+  },
+  "Sunitinib": {
+   "oof": {
+    "n": 415,
+    "spearman": 0.5523,
+    "spearman_p": 1.661581579699597e-34,
+    "rmse_z": 0.8185,
+    "n_tail": 161,
+    "n_sensitive": 75,
+    "auroc": 0.8744,
+    "auprc": 0.8799,
+    "auprc_baseline": 0.4658
+   },
+   "holdout": {
+    "n": 66,
+    "spearman": 0.4924,
+    "spearman_p": 2.677964427613992e-05,
+    "rmse_z": 0.7637,
+    "n_tail": 30,
+    "n_sensitive": 11,
+    "auroc": 0.8804,
+    "auprc": 0.8278,
+    "auprc_baseline": 0.3667
+   },
+   "annotation": {
+    "targets": [
+     "KIT",
+     "PDGFRA",
+     "PDGFRB",
+     "KDR",
+     "FLT3",
+     "CSF1R",
+     "RET"
+    ],
+    "family": "VEGFR/KIT",
+    "mechanism": "multi-kinase VEGFR/KIT/FLT3 inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "TG100-115": {
+   "oof": {
+    "n": 387,
+    "spearman": 0.2397,
+    "spearman_p": 1.8349450514963076e-06,
+    "rmse_z": 1.1523,
+    "n_tail": 146,
+    "n_sensitive": 68,
+    "auroc": 0.69,
+    "auprc": 0.6959,
+    "auprc_baseline": 0.4658
+   },
+   "holdout": {
+    "n": 59,
+    "spearman": 0.2355,
+    "spearman_p": 0.07255438711268777,
+    "rmse_z": 1.5442,
+    "n_tail": 27,
+    "n_sensitive": 13,
+    "auroc": 0.6978,
+    "auprc": 0.6358,
+    "auprc_baseline": 0.4815
+   },
+   "annotation": {
+    "targets": [
+     "PIK3CG",
+     "PIK3CD"
+    ],
+    "family": "PI3K",
+    "mechanism": "PI3Kgamma/delta-selective inhibitor",
+    "clinical_tier": "research",
+    "analogue": [
+     "Idelalisib"
+    ],
+    "exposure": "not_established",
+    "family_group": "PI3K_AKT_mTOR"
+   },
+   "tier": "primary"
+  },
+  "Tivozanib (AV-951)": {
+   "oof": {
+    "n": 384,
+    "spearman": 0.5314,
+    "spearman_p": 2.258174916823013e-29,
+    "rmse_z": 0.7769,
+    "n_tail": 153,
+    "n_sensitive": 76,
+    "auroc": 0.9202,
+    "auprc": 0.9181,
+    "auprc_baseline": 0.4967
+   },
+   "holdout": {
+    "n": 59,
+    "spearman": 0.5051,
+    "spearman_p": 4.4971745457207715e-05,
+    "rmse_z": 0.7879,
+    "n_tail": 27,
+    "n_sensitive": 12,
+    "auroc": 0.8444,
+    "auprc": 0.798,
+    "auprc_baseline": 0.4444
+   },
+   "annotation": {
+    "targets": [
+     "KDR",
+     "FLT1",
+     "FLT4"
+    ],
+    "family": "VEGFR",
+    "mechanism": "highly selective pan-VEGFR inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Tofacitinib (CP-690550)": {
+   "oof": {
+    "n": 392,
+    "spearman": 0.2057,
+    "spearman_p": 4.0502786385534916e-05,
+    "rmse_z": 1.1675,
+    "n_tail": 153,
+    "n_sensitive": 71,
+    "auroc": 0.6438,
+    "auprc": 0.5938,
+    "auprc_baseline": 0.4641
+   },
+   "holdout": {
+    "n": 61,
+    "spearman": 0.4106,
+    "spearman_p": 0.0010124499370386556,
+    "rmse_z": 1.1377,
+    "n_tail": 22,
+    "n_sensitive": 12,
+    "auroc": 0.775,
+    "auprc": 0.8496,
+    "auprc_baseline": 0.5455
+   },
+   "annotation": {
+    "targets": [
+     "JAK1",
+     "JAK3"
+    ],
+    "family": "JAK",
+    "mechanism": "JAK1/JAK3-selective inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "JAK_STAT"
+   },
+   "tier": "primary"
+  },
+  "Tozasertib (VX-680)": {
+   "oof": {
+    "n": 391,
+    "spearman": 0.3048,
+    "spearman_p": 7.515478903220975e-10,
+    "rmse_z": 1.1117,
+    "n_tail": 151,
+    "n_sensitive": 73,
+    "auroc": 0.7086,
+    "auprc": 0.6815,
+    "auprc_baseline": 0.4834
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.328,
+    "spearman_p": 0.009243236776265169,
+    "rmse_z": 1.1032,
+    "n_tail": 24,
+    "n_sensitive": 12,
+    "auroc": 0.8542,
+    "auprc": 0.8117,
+    "auprc_baseline": 0.5
+   },
+   "annotation": {
+    "targets": [
+     "AURKA",
+     "AURKB",
+     "AURKC",
+     "ABL1",
+     "FLT3"
+    ],
+    "family": "Aurora",
+    "mechanism": "pan-Aurora + ABL/FLT3 inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "cell_cycle"
+   },
+   "tier": "primary"
+  },
+  "Trametinib (GSK1120212)": {
+   "oof": {
+    "n": 414,
+    "spearman": 0.557,
+    "spearman_p": 4.085840966534358e-35,
+    "rmse_z": 0.7764,
+    "n_tail": 158,
+    "n_sensitive": 74,
+    "auroc": 0.8969,
+    "auprc": 0.8989,
+    "auprc_baseline": 0.4684
+   },
+   "holdout": {
+    "n": 65,
+    "spearman": 0.6607,
+    "spearman_p": 2.111532583617972e-09,
+    "rmse_z": 0.7914,
+    "n_tail": 30,
+    "n_sensitive": 16,
+    "auroc": 0.9732,
+    "auprc": 0.9779,
+    "auprc_baseline": 0.5333
+   },
+   "annotation": {
+    "targets": [
+     "MAP2K1",
+     "MAP2K2"
+    ],
+    "family": "MEK",
+    "mechanism": "allosteric MEK1/2 inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "MAPK"
+   },
+   "tier": "primary"
+  },
+  "VX-745": {
+   "oof": {
+    "n": 390,
+    "spearman": 0.2365,
+    "spearman_p": 2.31860582662248e-06,
+    "rmse_z": 1.1272,
+    "n_tail": 157,
+    "n_sensitive": 77,
+    "auroc": 0.6649,
+    "auprc": 0.6095,
+    "auprc_baseline": 0.4904
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.3935,
+    "spearman_p": 0.0015573050135944304,
+    "rmse_z": 1.0667,
+    "n_tail": 26,
+    "n_sensitive": 15,
+    "auroc": 0.8182,
+    "auprc": 0.863,
+    "auprc_baseline": 0.5769
+   },
+   "annotation": {
+    "targets": [
+     "MAPK14"
+    ],
+    "family": "p38",
+    "mechanism": "selective p38a inhibitor (neflamapimod)",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "stress_MAPK"
+   },
+   "tier": "primary"
+  },
+  "Vandetanib (ZD6474)": {
+   "oof": {
+    "n": 411,
+    "spearman": 0.4213,
+    "spearman_p": 4.121588729642235e-19,
+    "rmse_z": 1.1227,
+    "n_tail": 150,
+    "n_sensitive": 66,
+    "auroc": 0.8214,
+    "auprc": 0.759,
+    "auprc_baseline": 0.44
+   },
+   "holdout": {
+    "n": 65,
+    "spearman": 0.4344,
+    "spearman_p": 0.0002992552541619895,
+    "rmse_z": 1.2469,
+    "n_tail": 24,
+    "n_sensitive": 15,
+    "auroc": 0.7481,
+    "auprc": 0.8122,
+    "auprc_baseline": 0.625
+   },
+   "annotation": {
+    "targets": [
+     "KDR",
+     "EGFR",
+     "RET"
+    ],
+    "family": "VEGFR/RET",
+    "mechanism": "VEGFR2/EGFR/RET inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Vargetef": {
+   "oof": {
+    "n": 386,
+    "spearman": 0.4143,
+    "spearman_p": 1.92918635072785e-17,
+    "rmse_z": 0.8781,
+    "n_tail": 152,
+    "n_sensitive": 75,
+    "auroc": 0.7931,
+    "auprc": 0.7541,
+    "auprc_baseline": 0.4934
+   },
+   "holdout": {
+    "n": 60,
+    "spearman": 0.2531,
+    "spearman_p": 0.051066119404673906,
+    "rmse_z": 0.8839,
+    "n_tail": 24,
+    "n_sensitive": 15,
+    "auroc": 0.6963,
+    "auprc": 0.7504,
+    "auprc_baseline": 0.625
+   },
+   "annotation": {
+    "targets": [
+     "FGFR1",
+     "PDGFRA",
+     "PDGFRB",
+     "KDR",
+     "FLT1",
+     "FLT4",
+     "FLT3",
+     "SRC"
+    ],
+    "family": "VEGFR/FGFR",
+    "mechanism": "triple angiokinase inhibitor (nintedanib/Vargatef)",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Vatalanib (PTK787)": {
+   "oof": {
+    "n": 387,
+    "spearman": 0.2747,
+    "spearman_p": 3.983906087700788e-08,
+    "rmse_z": 1.2545,
+    "n_tail": 149,
+    "n_sensitive": 71,
+    "auroc": 0.7205,
+    "auprc": 0.6734,
+    "auprc_baseline": 0.4765
+   },
+   "holdout": {
+    "n": 60,
+    "spearman": 0.2882,
+    "spearman_p": 0.025551057768503405,
+    "rmse_z": 1.4601,
+    "n_tail": 24,
+    "n_sensitive": 12,
+    "auroc": 0.6875,
+    "auprc": 0.7391,
+    "auprc_baseline": 0.5
+   },
+   "annotation": {
+    "targets": [
+     "KDR",
+     "FLT1",
+     "FLT4",
+     "KIT",
+     "PDGFRB"
+    ],
+    "family": "VEGFR",
+    "mechanism": "pan-VEGFR inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "RTK"
+   },
+   "tier": "primary"
+  },
+  "Vemurafenib (PLX-4032)": {
+   "oof": {
+    "n": 305,
+    "spearman": 0.096,
+    "spearman_p": 0.09420947626253078,
+    "rmse_z": 1.6487,
+    "n_tail": 91,
+    "n_sensitive": 28,
+    "auroc": 0.5884,
+    "auprc": 0.3814,
+    "auprc_baseline": 0.3077
+   },
+   "holdout": {
+    "n": 49,
+    "spearman": 0.4049,
+    "spearman_p": 0.003903861246136572,
+    "rmse_z": 1.5389,
+    "n_tail": 13,
+    "n_sensitive": 5,
+    "auroc": 0.875,
+    "auprc": 0.835,
+    "auprc_baseline": 0.3846
+   },
+   "annotation": {
+    "targets": [
+     "BRAF"
+    ],
+    "family": "RAF",
+    "mechanism": "BRAF-V600E-selective inhibitor",
+    "clinical_tier": "approved_other",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "MAPK"
+   },
+   "tier": "primary"
+  },
+  "Venetoclax": {
+   "oof": {
+    "n": 313,
+    "spearman": 0.7418,
+    "spearman_p": 6.628214476744501e-56,
+    "rmse_z": 0.5451,
+    "n_tail": 125,
+    "n_sensitive": 61,
+    "auroc": 0.96,
+    "auprc": 0.9358,
+    "auprc_baseline": 0.488
+   },
+   "holdout": {
+    "n": 50,
+    "spearman": 0.7418,
+    "spearman_p": 7.112167738076212e-10,
+    "rmse_z": 0.5818,
+    "n_tail": 21,
+    "n_sensitive": 9,
+    "auroc": 0.963,
+    "auprc": 0.9599,
+    "auprc_baseline": 0.4286
+   },
+   "annotation": {
+    "targets": [
+     "BCL2"
+    ],
+    "family": "BCL2",
+    "mechanism": "selective BH3 mimetic; BCL2",
+    "clinical_tier": "approved_AML",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "apoptosis"
+   },
+   "tier": "primary"
+  },
+  "Volasertib (BI-6727)": {
+   "oof": {
+    "n": 297,
+    "spearman": 0.1759,
+    "spearman_p": 0.002341127049858615,
+    "rmse_z": 1.143,
+    "n_tail": 118,
+    "n_sensitive": 58,
+    "auroc": 0.6431,
+    "auprc": 0.6445,
+    "auprc_baseline": 0.4915
+   },
+   "holdout": {
+    "n": 48,
+    "spearman": -0.0058,
+    "spearman_p": 0.9690418218607525,
+    "rmse_z": 1.1793,
+    "n_tail": 19,
+    "n_sensitive": 10,
+    "auroc": 0.5,
+    "auprc": 0.6102,
+    "auprc_baseline": 0.5263
+   },
+   "annotation": {
+    "targets": [
+     "PLK1"
+    ],
+    "family": "PLK",
+    "mechanism": "selective PLK1 inhibitor",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "clinically_achievable",
+    "family_group": "cell_cycle"
+   },
+   "tier": "primary"
+  },
+  "XAV-939": {
+   "oof": {
+    "n": 235,
+    "spearman": 0.1851,
+    "spearman_p": 0.004405667948723508,
+    "rmse_z": 1.3665,
+    "n_tail": 85,
+    "n_sensitive": 36,
+    "auroc": 0.585,
+    "auprc": 0.5691,
+    "auprc_baseline": 0.4235
+   },
+   "holdout": {
+    "n": 32,
+    "spearman": 0.3602,
+    "spearman_p": 0.0428673095509377,
+    "rmse_z": 1.9782,
+    "n_tail": 16,
+    "n_sensitive": 9,
+    "auroc": 0.9365,
+    "auprc": 0.9576,
+    "auprc_baseline": 0.5625
+   },
+   "annotation": {
+    "targets": [
+     "TNKS",
+     "TNKS2"
+    ],
+    "family": "WNT",
+    "mechanism": "tankyrase inhibitor; AXIN stabilisation",
+    "clinical_tier": "research",
+    "analogue": [],
+    "exposure": "not_established",
+    "family_group": "developmental"
+   },
+   "tier": "primary"
+  },
+  "YM-155": {
+   "oof": {
+    "n": 390,
+    "spearman": 0.3546,
+    "spearman_p": 5.377812118874522e-13,
+    "rmse_z": 0.9324,
+    "n_tail": 158,
+    "n_sensitive": 79,
+    "auroc": 0.756,
+    "auprc": 0.7516,
+    "auprc_baseline": 0.5
+   },
+   "holdout": {
+    "n": 62,
+    "spearman": 0.5097,
+    "spearman_p": 2.320482500236578e-05,
+    "rmse_z": 0.9058,
+    "n_tail": 29,
+    "n_sensitive": 15,
+    "auroc": 0.8667,
+    "auprc": 0.9014,
+    "auprc_baseline": 0.5172
+   },
+   "annotation": {
+    "targets": [
+     "BIRC5"
+    ],
+    "family": "IAP",
+    "mechanism": "survivin (BIRC5) transcriptional suppressant",
+    "clinical_tier": "trial",
+    "analogue": [],
+    "exposure": "borderline",
+    "family_group": "apoptosis"
+   },
+   "tier": "primary"
+  }
+ },
+ "model": {
+  "n_group_models": 16,
+  "n_drug_models": 118,
+  "kappa": 150.0,
+  "blocks": [
+   "rna"
+  ],
+  "fusion_weights": {
+   "proteostasis": {
+    "rna": 1.0
+   },
+   "PI3K_AKT_mTOR": {
+    "rna": 1.0
+   },
+   "apoptosis": {
+    "rna": 1.0
+   },
+   "metabolic": {
+    "rna": 0.5493561822918902
+   },
+   "cell_cycle": {
+    "rna": 0.26655875615919905
+   },
+   "JAK_STAT": {
+    "rna": 1.0
+   },
+   "RTK": {
+    "rna": 1.0
+   },
+   "other": {
+    "rna": 0.41913670609595816
+   },
+   "epigenetic": {
+    "rna": 1.0
+   },
+   "NF-kB": {
+    "rna": 1.0
+   },
+   "MAPK": {
+    "rna": 1.0
+   },
+   "FLT3": {
+    "rna": 1.0
+   },
+   "chemotherapy": {
+    "rna": 0.6891426623261775
+   },
+   "developmental": {
+    "rna": 0.3631804981919582
+   },
+   "stress_MAPK": {
+    "rna": 0.3277348440192734
+   },
+   "immune_signalling": {
+    "rna": 1.0
+   }
+  }
+ }
+}
