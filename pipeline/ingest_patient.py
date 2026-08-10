@@ -352,6 +352,15 @@ def main_bulk(args, cfg, run_dir, sample_key):
             print("WARN COMPASS-AML drug layer skipped: %s" % _e, file=sys.stderr)
             drug_summary = {"available": False, "reason": "%s: %s" % (type(_e).__name__, _e)}
 
+        _status(run_dir, "running", "survival", "estimating prognosis")
+        try:
+            import survival_layer
+            survival = survival_layer.run_for_sample(ser, cohort="beataml", mut_preds=mut_preds,
+                                                     observed=present)
+        except Exception as _e:
+            print("WARN survival layer skipped: %s" % _e, file=sys.stderr)
+            survival = {"available": False, "reason": "%s: %s" % (type(_e).__name__, _e)}
+
         consensus = {
             "leading_hypothesis": ("predicted drivers: " + ", ".join(top_present[:4])) if top_present
                                   else "no high-confidence drivers predicted",
@@ -371,6 +380,7 @@ def main_bulk(args, cfg, run_dir, sample_key):
             "tests_panel": panels.get("tests"),                    # what to sequence/order to close the loop
             "panels_note": panels.get("note"),
             "drug_response": drug_summary,     # COMPASS-AML summary; full detail in runs/<id>/drug_report.json
+            "survival": survival,              # prognosis from data available at diagnosis
             "consensus": consensus, "deliberation": None,
             "ingest": {"source": args.bulk, "input_kind": "bulk_rna", "name": args.name,
                        "bulk_ref": args.bulk_ref, "bulk_scale_detected": scale, "bulk_column": col,
@@ -472,6 +482,18 @@ def main():
             print("WARN COMPASS-AML drug layer skipped: %s" % _e, file=sys.stderr)
             drug_summary = {"available": False, "reason": "%s: %s" % (type(_e).__name__, _e)}
 
+        # Survival layer. Additive and non-fatal, like the drug layer.
+        _status(run_dir, "running", "survival", "estimating prognosis")
+        survival = None
+        try:
+            import survival_layer
+            survival = survival_layer.run_for_sample(
+                bulk_equiv_from_adata(adata), cohort="sc", mut_preds=mut_preds, observed=present,
+                specimen_class=(meta.get("control_gate") or {}).get("call"))
+        except Exception as _e:
+            print("WARN survival layer skipped: %s" % _e, file=sys.stderr)
+            survival = {"available": False, "reason": "%s: %s" % (type(_e).__name__, _e)}
+
         gate_call = meta.get("control_gate")
         if gate_call and gate_call.get("call") == "control":     # healthy-vs-diseased gate fires before mutation calling
             consensus["subtype_if_diseased"] = consensus.get("leading_hypothesis")
@@ -490,6 +512,7 @@ def main():
             "tests_panel": (panels or {}).get("tests"),            # what to sequence/order to close the loop
             "panels_note": (panels or {}).get("note"),
             "drug_response": drug_summary,     # COMPASS-AML summary; full detail in runs/<id>/drug_report.json
+            "survival": survival,              # prognosis from data available at diagnosis
             "consensus": consensus, "deliberation": None,
             "ingest": {"source": args.sample, "input_kind": how, "name": args.name,
                        "mutations_supplied": present, "unrecognized_mutations": unknown,

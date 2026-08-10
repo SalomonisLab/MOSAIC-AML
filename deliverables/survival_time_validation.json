@@ -1,0 +1,161 @@
+{
+ "n_holdout": 89,
+ "events_holdout": 51,
+ "horizons": [
+  1.0,
+  2.0,
+  5.0
+ ],
+ "calibration": {
+  "1y": {
+   "bins": [
+    {
+     "n": 22,
+     "predicted": 0.115,
+     "observed_km": 0.122
+    },
+    {
+     "n": 22,
+     "predicted": 0.396,
+     "observed_km": 0.322
+    },
+    {
+     "n": 22,
+     "predicted": 0.719,
+     "observed_km": 0.663
+    },
+    {
+     "n": 23,
+     "predicted": 0.912,
+     "observed_km": 0.793
+    }
+   ],
+   "mean_abs_calibration_gap": 0.064,
+   "overall_predicted": 0.54,
+   "overall_observed_km": 0.486
+  },
+  "2y": {
+   "bins": [
+    {
+     "n": 22,
+     "predicted": 0.018,
+     "observed_km": 0.0
+    },
+    {
+     "n": 22,
+     "predicted": 0.173,
+     "observed_km": 0.243
+    },
+    {
+     "n": 22,
+     "predicted": 0.531,
+     "observed_km": 0.496
+    },
+    {
+     "n": 23,
+     "predicted": 0.837,
+     "observed_km": 0.787
+    }
+   ],
+   "mean_abs_calibration_gap": 0.043,
+   "overall_predicted": 0.395,
+   "overall_observed_km": 0.387
+  },
+  "5y": {
+   "bins": [
+    {
+     "n": 22,
+     "predicted": 0.002,
+     "observed_km": 0.0
+    },
+    {
+     "n": 22,
+     "predicted": 0.065,
+     "observed_km": 0.197
+    },
+    {
+     "n": 22,
+     "predicted": 0.367,
+     "observed_km": 0.496
+    },
+    {
+     "n": 23,
+     "predicted": 0.751,
+     "observed_km": 0.787
+    }
+   ],
+   "mean_abs_calibration_gap": 0.075,
+   "overall_predicted": 0.301,
+   "overall_observed_km": 0.372
+  }
+ },
+ "median_survival_by_risk_tertile": {
+  "low": {
+   "n": 30,
+   "events": 8,
+   "predicted_median_years": 6.93,
+   "observed_km_median_years": null,
+   "error_years": null,
+   "observed_survival_time_iqr_years": [
+    0.46,
+    1.06
+   ]
+  },
+  "intermediate": {
+   "n": 29,
+   "events": 16,
+   "predicted_median_years": 1.29,
+   "observed_km_median_years": 1.15,
+   "error_years": 0.14,
+   "observed_survival_time_iqr_years": [
+    0.08,
+    0.97
+   ]
+  },
+  "high": {
+   "n": 30,
+   "events": 27,
+   "predicted_median_years": 0.44,
+   "observed_km_median_years": 0.33,
+   "error_years": 0.11,
+   "observed_survival_time_iqr_years": [
+    0.1,
+    0.66
+   ]
+  }
+ },
+ "individual_spread_within_risk_group": {
+  "low": {
+   "n_deaths": 8,
+   "survival_years_p10_p90": [
+    0.38,
+    1.42
+   ],
+   "median": 0.84
+  },
+  "intermediate": {
+   "n_deaths": 16,
+   "survival_years_p10_p90": [
+    0.04,
+    1.43
+   ],
+   "median": 0.68
+  },
+  "high": {
+   "n_deaths": 27,
+   "survival_years_p10_p90": [
+    0.04,
+    0.86
+   ],
+   "median": 0.31
+  }
+ },
+ "per_patient_point_estimate": {
+  "n_evaluable_deaths": 47,
+  "median_absolute_error_years": 0.39,
+  "mae_years": 0.87,
+  "within_6_months": 0.596,
+  "within_1_year": 0.809,
+  "note": "evaluated only on patients who died inside follow-up; a censored patient has no known survival time to compare against, so including them would flatter the error"
+ }
+}
