@@ -209,6 +209,13 @@ def main():
     }
     # the deployed model carries its own honest performance, so downstream scoring can down-weight a
     # drug it cannot predict instead of trusting every point estimate equally
+    # assay reliability travels WITH the model: a recommendation for an inhibitor whose own
+    # measurement does not reproduce must carry that fact to the point of use, not sit in a side file
+    rel = D.drug_reliability(long)
+    mod.reliability = dict(zip(rel["inhibitor"], rel["reliability"]))
+    mod.reliability_tier = dict(zip(rel["inhibitor"], rel["reliability_tier"]))
+    card["assay_reliability"] = rel.round(4).to_dict("records")
+    card["assay_reliability_summary"] = rel["reliability_tier"].value_counts().to_dict()
     mod.oof_metrics = {d: per[d]["oof"] for d in drugs}
     mod.holdout_metrics = {d: per[d]["holdout"] for d in drugs}
     mod.drug_tier = {d: per[d]["tier"] for d in drugs}

@@ -1,0 +1,265 @@
+{
+ "generated": "2026-08-10 10:37",
+ "n_specimens": 520,
+ "n_drugs": 118,
+ "same_target_pairs": {
+  "n_pairs": 98,
+  "median_reliability_spearman": 0.1886,
+  "implied_ceiling_spearman": 0.4343,
+  "top": [
+   {
+    "a": "Selumetinib (AZD6244)",
+    "b": "Trametinib (GSK1120212)",
+    "jaccard": 1.0,
+    "n": 447,
+    "spearman": 0.6727,
+    "family": "MEK"
+   },
+   {
+    "a": "JQ1",
+    "b": "OTX-015",
+    "jaccard": 1.0,
+    "n": 285,
+    "spearman": 0.6045,
+    "family": "BET"
+   },
+   {
+    "a": "CI-1040 (PD184352)",
+    "b": "Trametinib (GSK1120212)",
+    "jaccard": 1.0,
+    "n": 453,
+    "spearman": 0.5993,
+    "family": "MEK"
+   },
+   {
+    "a": "Cediranib (AZD2171)",
+    "b": "Motesanib (AMG-706)",
+    "jaccard": 0.83,
+    "n": 429,
+    "spearman": 0.5701,
+    "family": "VEGFR"
+   },
+   {
+    "a": "Cabozantinib",
+    "b": "Foretinib (XL880)",
+    "jaccard": 0.5,
+    "n": 426,
+    "spearman": 0.5546,
+    "family": "MET/VEGFR"
+   },
+   {
+    "a": "Crenolanib",
+    "b": "Midostaurin",
+    "jaccard": 0.6,
+    "n": 406,
+    "spearman": 0.5394,
+    "family": "FLT3"
+   },
+   {
+    "a": "CI-1040 (PD184352)",
+    "b": "Selumetinib (AZD6244)",
+    "jaccard": 1.0,
+    "n": 442,
+    "spearman": 0.498,
+    "family": "MEK"
+   },
+   {
+    "a": "INK-128",
+    "b": "Rapamycin",
+    "jaccard": 1.0,
+    "n": 421,
+    "spearman": 0.4736,
+    "family": "mTOR"
+   },
+   {
+    "a": "BEZ235",
+    "b": "Rapamycin",
+    "jaccard": 0.5,
+    "n": 416,
+    "spearman": 0.4679,
+    "family": "PI3K/mTOR"
+   },
+   {
+    "a": "BEZ235",
+    "b": "INK-128",
+    "jaccard": 0.5,
+    "n": 430,
+    "spearman": 0.46,
+    "family": "PI3K/mTOR"
+   }
+  ],
+  "bottom": [
+   {
+    "a": "Imatinib",
+    "b": "Nilotinib",
+    "jaccard": 0.6,
+    "n": 456,
+    "spearman": -0.0489,
+    "family": "ABL/KIT"
+   },
+   {
+    "a": "Bosutinib (SKI-606)",
+    "b": "PD173955",
+    "jaccard": 1.0,
+    "n": 433,
+    "spearman": -0.0538,
+    "family": "ABL/SRC"
+   },
+   {
+    "a": "AT7519",
+    "b": "Roscovitine (CYC-202)",
+    "jaccard": 0.5,
+    "n": 434,
+    "spearman": -0.0639,
+    "family": "CDK"
+   },
+   {
+    "a": "Imatinib",
+    "b": "Midostaurin",
+    "jaccard": 0.5,
+    "n": 445,
+    "spearman": -0.1141,
+    "family": "ABL/KIT"
+   },
+   {
+    "a": "Roscovitine (CYC-202)",
+    "b": "SNS-032 (BMS-387032)",
+    "jaccard": 0.75,
+    "n": 443,
+    "spearman": -0.1599,
+    "family": "CDK"
+   },
+   {
+    "a": "SGX-523",
+    "b": "SU11274",
+    "jaccard": 1.0,
+    "n": 385,
+    "spearman": -0.1608,
+    "family": "MET"
+   }
+  ]
+ },
+ "serial_specimens": {
+  "n_pairs": 36,
+  "median_profile_spearman": 0.236
+ },
+ "split_half_within_family": [
+  {
+   "family_group": "PI3K_AKT_mTOR",
+   "n_drugs": 12,
+   "split_half_r": 0.3811,
+   "spearman_brown_full": 0.5518
+  },
+  {
+   "family_group": "FLT3",
+   "n_drugs": 7,
+   "split_half_r": 0.3359,
+   "spearman_brown_full": 0.5028
+  },
+  {
+   "family_group": "cell_cycle",
+   "n_drugs": 12,
+   "split_half_r": 0.3242,
+   "spearman_brown_full": 0.4896
+  },
+  {
+   "family_group": "RTK",
+   "n_drugs": 43,
+   "split_half_r": 0.3095,
+   "spearman_brown_full": 0.4727
+  },
+  {
+   "family_group": "JAK_STAT",
+   "n_drugs": 6,
+   "split_half_r": 0.1195,
+   "spearman_brown_full": 0.2135
+  }
+ ],
+ "drug_vs_family_mean": {
+  "median": 0.1713,
+  "top": [
+   {
+    "inhibitor": "Nutlin 3a",
+    "family_group": "apoptosis",
+    "r_with_family_mean": 0.6124
+   },
+   {
+    "inhibitor": "ABT-737",
+    "family_group": "apoptosis",
+    "r_with_family_mean": 0.5457
+   },
+   {
+    "inhibitor": "MK-2206",
+    "family_group": "PI3K_AKT_mTOR",
+    "r_with_family_mean": 0.5022
+   },
+   {
+    "inhibitor": "Rapamycin",
+    "family_group": "PI3K_AKT_mTOR",
+    "r_with_family_mean": 0.4939
+   },
+   {
+    "inhibitor": "GDC-0941",
+    "family_group": "PI3K_AKT_mTOR",
+    "r_with_family_mean": 0.4788
+   },
+   {
+    "inhibitor": "INK-128",
+    "family_group": "PI3K_AKT_mTOR",
+    "r_with_family_mean": 0.4512
+   },
+   {
+    "inhibitor": "Selumetinib (AZD6244)",
+    "family_group": "MAPK",
+    "r_with_family_mean": 0.4386
+   },
+   {
+    "inhibitor": "Sunitinib",
+    "family_group": "RTK",
+    "r_with_family_mean": 0.4118
+   }
+  ],
+  "bottom": [
+   {
+    "inhibitor": "S31-201",
+    "family_group": "JAK_STAT",
+    "r_with_family_mean": -0.1076
+   },
+   {
+    "inhibitor": "SGX-523",
+    "family_group": "RTK",
+    "r_with_family_mean": -0.1427
+   },
+   {
+    "inhibitor": "Linifanib (ABT-869)",
+    "family_group": "RTK",
+    "r_with_family_mean": -0.1465
+   },
+   {
+    "inhibitor": "Lenalidomide",
+    "family_group": "epigenetic",
+    "r_with_family_mean": -0.15
+   },
+   {
+    "inhibitor": "Cediranib (AZD2171)",
+    "family_group": "RTK",
+    "r_with_family_mean": -0.1616
+   },
+   {
+    "inhibitor": "Elesclomol",
+    "family_group": "metabolic",
+    "r_with_family_mean": -0.2035
+   },
+   {
+    "inhibitor": "Vemurafenib (PLX-4032)",
+    "family_group": "MAPK",
+    "r_with_family_mean": -0.213
+   },
+   {
+    "inhibitor": "Nilotinib",
+    "family_group": "RTK",
+    "r_with_family_mean": -0.3205
+   }
+  ]
+ }
+}

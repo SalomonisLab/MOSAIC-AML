@@ -1,6 +1,6 @@
 {
  "version": "1.0",
- "trained": "2026-08-04 19:50",
+ "trained": "2026-08-10 10:40",
  "blocks": [
   "rna",
   "state",
@@ -4672,5 +4672,958 @@
     "clin": 0.008294200854397134
    }
   }
+ },
+ "assay_reliability": [
+  {
+   "inhibitor": "Selumetinib (AZD6244)",
+   "reliability": 0.6727,
+   "reliability_source": "same_mechanism:Trametinib (GSK1120212)",
+   "family_mean_r": 0.4386,
+   "ceiling_spearman": 0.8202,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "Trametinib (GSK1120212)",
+   "reliability": 0.6727,
+   "reliability_source": "same_mechanism:Selumetinib (AZD6244)",
+   "family_mean_r": 0.3478,
+   "ceiling_spearman": 0.8202,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "Nutlin 3a",
+   "reliability": 0.6124,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.6124,
+   "ceiling_spearman": 0.7826,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "JQ1",
+   "reliability": 0.6045,
+   "reliability_source": "same_mechanism:OTX-015",
+   "family_mean_r": 0.2923,
+   "ceiling_spearman": 0.7775,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "OTX-015",
+   "reliability": 0.6045,
+   "reliability_source": "same_mechanism:JQ1",
+   "family_mean_r": 0.3554,
+   "ceiling_spearman": 0.7775,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "CI-1040 (PD184352)",
+   "reliability": 0.5993,
+   "reliability_source": "same_mechanism:Trametinib (GSK1120212)",
+   "family_mean_r": 0.3891,
+   "ceiling_spearman": 0.7741,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "Motesanib (AMG-706)",
+   "reliability": 0.5701,
+   "reliability_source": "same_mechanism:Cediranib (AZD2171)",
+   "family_mean_r": -0.0891,
+   "ceiling_spearman": 0.7551,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "Cediranib (AZD2171)",
+   "reliability": 0.5701,
+   "reliability_source": "same_mechanism:Motesanib (AMG-706)",
+   "family_mean_r": -0.1616,
+   "ceiling_spearman": 0.7551,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "Foretinib (XL880)",
+   "reliability": 0.5546,
+   "reliability_source": "same_mechanism:Cabozantinib",
+   "family_mean_r": 0.1797,
+   "ceiling_spearman": 0.7447,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "Cabozantinib",
+   "reliability": 0.5546,
+   "reliability_source": "same_mechanism:Foretinib (XL880)",
+   "family_mean_r": 0.2329,
+   "ceiling_spearman": 0.7447,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "ABT-737",
+   "reliability": 0.5457,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.5457,
+   "ceiling_spearman": 0.7387,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "Crenolanib",
+   "reliability": 0.5394,
+   "reliability_source": "same_mechanism:Midostaurin",
+   "family_mean_r": 0.41,
+   "ceiling_spearman": 0.7344,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "Midostaurin",
+   "reliability": 0.5394,
+   "reliability_source": "same_mechanism:Crenolanib",
+   "family_mean_r": 0.3275,
+   "ceiling_spearman": 0.7344,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "GDC-0941",
+   "reliability": 0.4788,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.4788,
+   "ceiling_spearman": 0.6919,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "INK-128",
+   "reliability": 0.4736,
+   "reliability_source": "same_mechanism:Rapamycin",
+   "family_mean_r": 0.4512,
+   "ceiling_spearman": 0.6882,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "Rapamycin",
+   "reliability": 0.4736,
+   "reliability_source": "same_mechanism:INK-128",
+   "family_mean_r": 0.4939,
+   "ceiling_spearman": 0.6882,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "BEZ235",
+   "reliability": 0.4679,
+   "reliability_source": "same_mechanism:Rapamycin",
+   "family_mean_r": 0.3912,
+   "ceiling_spearman": 0.684,
+   "reliability_tier": "reproducible"
+  },
+  {
+   "inhibitor": "PI-103",
+   "reliability": 0.4223,
+   "reliability_source": "same_mechanism:Rapamycin",
+   "family_mean_r": 0.3259,
+   "ceiling_spearman": 0.6499,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Sorafenib",
+   "reliability": 0.4193,
+   "reliability_source": "same_mechanism:Regorafenib (BAY 73-4506)",
+   "family_mean_r": 0.2859,
+   "ceiling_spearman": 0.6476,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Regorafenib (BAY 73-4506)",
+   "reliability": 0.4193,
+   "reliability_source": "same_mechanism:Sorafenib",
+   "family_mean_r": 0.2314,
+   "ceiling_spearman": 0.6476,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Sunitinib",
+   "reliability": 0.4177,
+   "reliability_source": "same_mechanism:Quizartinib (AC220)",
+   "family_mean_r": 0.4118,
+   "ceiling_spearman": 0.6463,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Quizartinib (AC220)",
+   "reliability": 0.4177,
+   "reliability_source": "same_mechanism:Sunitinib",
+   "family_mean_r": 0.3307,
+   "ceiling_spearman": 0.6463,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Venetoclax",
+   "reliability": 0.409,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.409,
+   "ceiling_spearman": 0.6395,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "SU11274",
+   "reliability": 0.3891,
+   "reliability_source": "same_mechanism:JNJ-38877605",
+   "family_mean_r": -0.0393,
+   "ceiling_spearman": 0.6238,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "JNJ-38877605",
+   "reliability": 0.3891,
+   "reliability_source": "same_mechanism:SU11274",
+   "family_mean_r": -0.0208,
+   "ceiling_spearman": 0.6238,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "SGX-523",
+   "reliability": 0.385,
+   "reliability_source": "same_mechanism:PHA-665752",
+   "family_mean_r": -0.1427,
+   "ceiling_spearman": 0.6205,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "PHA-665752",
+   "reliability": 0.385,
+   "reliability_source": "same_mechanism:SGX-523",
+   "family_mean_r": 0.1589,
+   "ceiling_spearman": 0.6205,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "PP242",
+   "reliability": 0.3793,
+   "reliability_source": "same_mechanism:Rapamycin",
+   "family_mean_r": 0.3401,
+   "ceiling_spearman": 0.6159,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "MLN120B",
+   "reliability": 0.3687,
+   "reliability_source": "same_mechanism:Bay 11-7085",
+   "family_mean_r": 0.209,
+   "ceiling_spearman": 0.6072,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Bay 11-7085",
+   "reliability": 0.3687,
+   "reliability_source": "same_mechanism:MLN120B",
+   "family_mean_r": 0.2888,
+   "ceiling_spearman": 0.6072,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Tivozanib (AV-951)",
+   "reliability": 0.3647,
+   "reliability_source": "same_mechanism:Pazopanib (GW786034)",
+   "family_mean_r": 0.2178,
+   "ceiling_spearman": 0.6039,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Pazopanib (GW786034)",
+   "reliability": 0.3647,
+   "reliability_source": "same_mechanism:Tivozanib (AV-951)",
+   "family_mean_r": 0.2924,
+   "ceiling_spearman": 0.6039,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "MLN8054",
+   "reliability": 0.3575,
+   "reliability_source": "same_mechanism:Alisertib (MLN8237)",
+   "family_mean_r": 0.2847,
+   "ceiling_spearman": 0.5979,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Alisertib (MLN8237)",
+   "reliability": 0.3575,
+   "reliability_source": "same_mechanism:MLN8054",
+   "family_mean_r": 0.322,
+   "ceiling_spearman": 0.5979,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Gilteritinib",
+   "reliability": 0.3572,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.3572,
+   "ceiling_spearman": 0.5977,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "KI20227",
+   "reliability": 0.3553,
+   "reliability_source": "same_mechanism:Cediranib (AZD2171)",
+   "family_mean_r": 0.0751,
+   "ceiling_spearman": 0.5961,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "YM-155",
+   "reliability": 0.3478,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.3478,
+   "ceiling_spearman": 0.5897,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "AGI-6780",
+   "reliability": 0.3426,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.3426,
+   "ceiling_spearman": 0.5853,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Flavopiridol",
+   "reliability": 0.3163,
+   "reliability_source": "same_mechanism:AT7519",
+   "family_mean_r": -0.0287,
+   "ceiling_spearman": 0.5624,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "AT7519",
+   "reliability": 0.3163,
+   "reliability_source": "same_mechanism:Flavopiridol",
+   "family_mean_r": 0.0582,
+   "ceiling_spearman": 0.5624,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Ponatinib (AP24534)",
+   "reliability": 0.3093,
+   "reliability_source": "same_mechanism:Quizartinib (AC220)",
+   "family_mean_r": 0.1985,
+   "ceiling_spearman": 0.5561,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Doramapimod (BIRB 796)",
+   "reliability": 0.3077,
+   "reliability_source": "same_mechanism:VX-745",
+   "family_mean_r": 0.1682,
+   "ceiling_spearman": 0.5547,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "VX-745",
+   "reliability": 0.3077,
+   "reliability_source": "same_mechanism:Doramapimod (BIRB 796)",
+   "family_mean_r": 0.2941,
+   "ceiling_spearman": 0.5547,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "AGI-5198",
+   "reliability": 0.307,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.307,
+   "ceiling_spearman": 0.5541,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Axitinib (AG-013736)",
+   "reliability": 0.3046,
+   "reliability_source": "same_mechanism:KI20227",
+   "family_mean_r": 0.021,
+   "ceiling_spearman": 0.5519,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Linifanib (ABT-869)",
+   "reliability": 0.3021,
+   "reliability_source": "same_mechanism:KI20227",
+   "family_mean_r": -0.1465,
+   "ceiling_spearman": 0.5496,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "KW-2449",
+   "reliability": 0.3006,
+   "reliability_source": "same_mechanism:Tozasertib (VX-680)",
+   "family_mean_r": 0.2193,
+   "ceiling_spearman": 0.5482,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Tozasertib (VX-680)",
+   "reliability": 0.3006,
+   "reliability_source": "same_mechanism:KW-2449",
+   "family_mean_r": 0.0985,
+   "ceiling_spearman": 0.5482,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "JNJ-28312141",
+   "reliability": 0.3002,
+   "reliability_source": "same_mechanism:Linifanib (ABT-869)",
+   "family_mean_r": 0.1987,
+   "ceiling_spearman": 0.5479,
+   "reliability_tier": "moderate"
+  },
+  {
+   "inhibitor": "Lapatinib",
+   "reliability": 0.2988,
+   "reliability_source": "same_mechanism:Canertinib (CI-1033)",
+   "family_mean_r": 0.091,
+   "ceiling_spearman": 0.5466,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Canertinib (CI-1033)",
+   "reliability": 0.2988,
+   "reliability_source": "same_mechanism:Lapatinib",
+   "family_mean_r": 0.1167,
+   "ceiling_spearman": 0.5466,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "GW-2580",
+   "reliability": 0.296,
+   "reliability_source": "same_mechanism:JNJ-28312141",
+   "family_mean_r": 0.1986,
+   "ceiling_spearman": 0.5441,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Erlotinib",
+   "reliability": 0.2854,
+   "reliability_source": "same_mechanism:Gefitinib",
+   "family_mean_r": 0.1456,
+   "ceiling_spearman": 0.5343,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Gefitinib",
+   "reliability": 0.2854,
+   "reliability_source": "same_mechanism:Erlotinib",
+   "family_mean_r": 0.1364,
+   "ceiling_spearman": 0.5343,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "JNJ-7706621",
+   "reliability": 0.2817,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.2817,
+   "ceiling_spearman": 0.5308,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "SB-431542",
+   "reliability": 0.2797,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.2797,
+   "ceiling_spearman": 0.5289,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Palbociclib",
+   "reliability": 0.279,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.279,
+   "ceiling_spearman": 0.5282,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Vatalanib (PTK787)",
+   "reliability": 0.2762,
+   "reliability_source": "same_mechanism:Pazopanib (GW786034)",
+   "family_mean_r": 0.195,
+   "ceiling_spearman": 0.5255,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Pelitinib (EKB-569)",
+   "reliability": 0.2717,
+   "reliability_source": "same_mechanism:Lapatinib",
+   "family_mean_r": 0.1327,
+   "ceiling_spearman": 0.5212,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "MGCD-265",
+   "reliability": 0.2687,
+   "reliability_source": "same_mechanism:Cabozantinib",
+   "family_mean_r": 0.0634,
+   "ceiling_spearman": 0.5184,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "JAK Inhibitor I",
+   "reliability": 0.2487,
+   "reliability_source": "same_mechanism:Ruxolitinib (INCB018424)",
+   "family_mean_r": 0.2753,
+   "ceiling_spearman": 0.4987,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Ruxolitinib (INCB018424)",
+   "reliability": 0.2487,
+   "reliability_source": "same_mechanism:JAK Inhibitor I",
+   "family_mean_r": 0.2221,
+   "ceiling_spearman": 0.4987,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Lenvatinib",
+   "reliability": 0.2415,
+   "reliability_source": "same_mechanism:Axitinib (AG-013736)",
+   "family_mean_r": 0.1536,
+   "ceiling_spearman": 0.4914,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "DBZ",
+   "reliability": 0.2332,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.2332,
+   "ceiling_spearman": 0.4829,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Crizotinib (PF-2341066)",
+   "reliability": 0.2297,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.2297,
+   "ceiling_spearman": 0.4792,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "AZD1480",
+   "reliability": 0.2252,
+   "reliability_source": "same_mechanism:Ruxolitinib (INCB018424)",
+   "family_mean_r": 0.0795,
+   "ceiling_spearman": 0.4746,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Vandetanib (ZD6474)",
+   "reliability": 0.225,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.225,
+   "ceiling_spearman": 0.4743,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "AZD1152-HQPA (AZD2811)",
+   "reliability": 0.2157,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.2157,
+   "ceiling_spearman": 0.4644,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Saracatinib (AZD0530)",
+   "reliability": 0.2029,
+   "reliability_source": "same_mechanism:Bosutinib (SKI-606)",
+   "family_mean_r": 0.1783,
+   "ceiling_spearman": 0.4504,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Bosutinib (SKI-606)",
+   "reliability": 0.2029,
+   "reliability_source": "same_mechanism:Saracatinib (AZD0530)",
+   "family_mean_r": 0.1743,
+   "ceiling_spearman": 0.4504,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Masitinib (AB-1010)",
+   "reliability": 0.2006,
+   "reliability_source": "same_mechanism:Imatinib",
+   "family_mean_r": 0.1501,
+   "ceiling_spearman": 0.4479,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Imatinib",
+   "reliability": 0.2006,
+   "reliability_source": "same_mechanism:Masitinib (AB-1010)",
+   "family_mean_r": 0.238,
+   "ceiling_spearman": 0.4479,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "NVP-TAE684",
+   "reliability": 0.2005,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.2005,
+   "ceiling_spearman": 0.4478,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Dovitinib (CHIR-258)",
+   "reliability": 0.1929,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.1929,
+   "ceiling_spearman": 0.4392,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "PHT-427",
+   "reliability": 0.1881,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.1881,
+   "ceiling_spearman": 0.4337,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Afatinib (BIBW-2992)",
+   "reliability": 0.159,
+   "reliability_source": "same_mechanism:Neratinib (HKI-272)",
+   "family_mean_r": -0.0029,
+   "ceiling_spearman": 0.3988,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Neratinib (HKI-272)",
+   "reliability": 0.159,
+   "reliability_source": "same_mechanism:Afatinib (BIBW-2992)",
+   "family_mean_r": -0.0594,
+   "ceiling_spearman": 0.3988,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "Vargetef",
+   "reliability": 0.1551,
+   "reliability_source": "same_mechanism:Pazopanib (GW786034)",
+   "family_mean_r": 0.2205,
+   "ceiling_spearman": 0.3938,
+   "reliability_tier": "weak"
+  },
+  {
+   "inhibitor": "BMS-345541",
+   "reliability": 0.1498,
+   "reliability_source": "same_mechanism:MLN120B",
+   "family_mean_r": 0.0735,
+   "ceiling_spearman": 0.3871,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "CYT387",
+   "reliability": 0.1379,
+   "reliability_source": "same_mechanism:Ruxolitinib (INCB018424)",
+   "family_mean_r": 0.1337,
+   "ceiling_spearman": 0.3714,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Ibrutinib (PCI-32765)",
+   "reliability": 0.1328,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.1328,
+   "ceiling_spearman": 0.3644,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "GSK-1904529A",
+   "reliability": 0.1327,
+   "reliability_source": "same_mechanism:NVP-ADW742",
+   "family_mean_r": 0.0652,
+   "ceiling_spearman": 0.3642,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "NVP-ADW742",
+   "reliability": 0.1327,
+   "reliability_source": "same_mechanism:GSK-1904529A",
+   "family_mean_r": 0.0606,
+   "ceiling_spearman": 0.3642,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Tofacitinib (CP-690550)",
+   "reliability": 0.1175,
+   "reliability_source": "same_mechanism:JAK Inhibitor I",
+   "family_mean_r": 0.1268,
+   "ceiling_spearman": 0.3428,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "PD173955",
+   "reliability": 0.1175,
+   "reliability_source": "same_mechanism:Saracatinib (AZD0530)",
+   "family_mean_r": 0.0412,
+   "ceiling_spearman": 0.3427,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "STO609",
+   "reliability": 0.1069,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.1069,
+   "ceiling_spearman": 0.3269,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "RAF265 (CHIR-265)",
+   "reliability": 0.0955,
+   "reliability_source": "same_mechanism:Regorafenib (BAY 73-4506)",
+   "family_mean_r": -0.01,
+   "ceiling_spearman": 0.309,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "KU-55933",
+   "reliability": 0.0918,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.0918,
+   "ceiling_spearman": 0.303,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Dasatinib",
+   "reliability": 0.0873,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.0873,
+   "ceiling_spearman": 0.2954,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "GSK-1838705A",
+   "reliability": 0.0852,
+   "reliability_source": "same_mechanism:GSK-1904529A",
+   "family_mean_r": 0.018,
+   "ceiling_spearman": 0.2919,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Volasertib (BI-6727)",
+   "reliability": 0.0849,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.0849,
+   "ceiling_spearman": 0.2915,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "XAV-939",
+   "reliability": 0.0656,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.0656,
+   "ceiling_spearman": 0.2561,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Bortezomib (Velcade)",
+   "reliability": 0.0579,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.0579,
+   "ceiling_spearman": 0.2406,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Panobinostat",
+   "reliability": 0.0524,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.0524,
+   "ceiling_spearman": 0.229,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "17-AAG (Tanespimycin)",
+   "reliability": 0.0343,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.0343,
+   "ceiling_spearman": 0.1853,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "MK-2206",
+   "reliability": 0.0341,
+   "reliability_source": "same_mechanism:GSK690693",
+   "family_mean_r": 0.5022,
+   "ceiling_spearman": 0.1846,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "GSK690693",
+   "reliability": 0.0341,
+   "reliability_source": "same_mechanism:MK-2206",
+   "family_mean_r": -0.0761,
+   "ceiling_spearman": 0.1846,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Selinexor",
+   "reliability": 0.0334,
+   "reliability_source": "family_mean",
+   "family_mean_r": 0.0334,
+   "ceiling_spearman": 0.1826,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Entrectinib",
+   "reliability": -0.0058,
+   "reliability_source": "family_mean",
+   "family_mean_r": -0.0058,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "A-674563",
+   "reliability": -0.0163,
+   "reliability_source": "same_mechanism:H-89",
+   "family_mean_r": -0.0892,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "H-89",
+   "reliability": -0.0163,
+   "reliability_source": "same_mechanism:A-674563",
+   "family_mean_r": 0.1012,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "SR9011",
+   "reliability": -0.021,
+   "reliability_source": "family_mean",
+   "family_mean_r": -0.021,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "PRT062607",
+   "reliability": -0.0219,
+   "reliability_source": "same_mechanism:Entospletinib (GS-9973)",
+   "family_mean_r": 0.0433,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Entospletinib (GS-9973)",
+   "reliability": -0.0219,
+   "reliability_source": "same_mechanism:PRT062607",
+   "family_mean_r": 0.1984,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "TG100-115",
+   "reliability": -0.0241,
+   "reliability_source": "same_mechanism:Idelalisib",
+   "family_mean_r": 0.0234,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Idelalisib",
+   "reliability": -0.0241,
+   "reliability_source": "same_mechanism:TG100-115",
+   "family_mean_r": 0.271,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "NF-kB Activation Inhibitor",
+   "reliability": -0.0291,
+   "reliability_source": "family_mean",
+   "family_mean_r": -0.0291,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "LY-333531",
+   "reliability": -0.0338,
+   "reliability_source": "family_mean",
+   "family_mean_r": -0.0338,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Nilotinib",
+   "reliability": -0.0489,
+   "reliability_source": "same_mechanism:Imatinib",
+   "family_mean_r": -0.3205,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Roscovitine (CYC-202)",
+   "reliability": -0.0639,
+   "reliability_source": "same_mechanism:AT7519",
+   "family_mean_r": 0.2411,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Azacytidine",
+   "reliability": -0.0715,
+   "reliability_source": "family_mean",
+   "family_mean_r": -0.0715,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "S31-201",
+   "reliability": -0.1076,
+   "reliability_source": "family_mean",
+   "family_mean_r": -0.1076,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Lenalidomide",
+   "reliability": -0.15,
+   "reliability_source": "family_mean",
+   "family_mean_r": -0.15,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "SNS-032 (BMS-387032)",
+   "reliability": -0.1599,
+   "reliability_source": "same_mechanism:Roscovitine (CYC-202)",
+   "family_mean_r": 0.1047,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Elesclomol",
+   "reliability": -0.2035,
+   "reliability_source": "family_mean",
+   "family_mean_r": -0.2035,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Vemurafenib (PLX-4032)",
+   "reliability": -0.213,
+   "reliability_source": "family_mean",
+   "family_mean_r": -0.213,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unreliable"
+  },
+  {
+   "inhibitor": "Artemisinin",
+   "reliability": NaN,
+   "reliability_source": "unmeasurable",
+   "family_mean_r": NaN,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unmeasurable"
+  },
+  {
+   "inhibitor": "Cytarabine",
+   "reliability": NaN,
+   "reliability_source": "unmeasurable",
+   "family_mean_r": NaN,
+   "ceiling_spearman": 0.0,
+   "reliability_tier": "unmeasurable"
+  }
+ ],
+ "assay_reliability_summary": {
+  "unreliable": 38,
+  "moderate": 32,
+  "weak": 29,
+  "reproducible": 17,
+  "unmeasurable": 2
  }
 }

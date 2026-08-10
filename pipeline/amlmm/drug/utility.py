@@ -28,14 +28,22 @@ WEIGHTS = {"sensitivity": 0.30, "coverage_blast": 0.15, "coverage_lsc": 0.15,
            "uncertainty": 0.15, "resistance": 0.15, "infeasibility": 0.10, "ood": 0.20}
 
 
-def uncertainty(prob, oof_auroc, n_train, spread=None):
-    """Three independent reasons to be unsure, combined: can this drug be predicted at all, is this
-    particular call decisive, and how much data stands behind it."""
+def uncertainty(prob, oof_auroc, n_train, spread=None, assay_reliability=None):
+    """Four independent reasons to be unsure: can this drug be predicted at all, is this particular
+    call decisive, how much data stands behind it — and does the underlying ASSAY even reproduce.
+
+    The last one was added after measuring it: 19 of 79 inhibitors have a same-mechanism reliability
+    below 0.15, and for those the model already sits at the achievable ceiling. A confident-looking
+    recommendation for an inhibitor whose own measurement does not reproduce is the most misleading
+    output this layer can produce, so low reliability now raises uncertainty directly."""
     u_model = 1.0 - max(0.0, min(1.0, ((oof_auroc or 0.5) - 0.5) * 2.0))
     u_point = 1.0 if prob is None else 1.0 - 2.0 * abs(float(prob) - 0.5)
     u_data = 1.0 / (1.0 + (n_train or 0) / 200.0)
     parts = [u_model, u_point, u_data]
     w = [0.45, 0.35, 0.20]
+    if assay_reliability is not None and assay_reliability == assay_reliability:
+        # reliability 0.45+ -> no penalty; 0.0 -> full penalty
+        parts.append(float(min(1.0, max(0.0, 1.0 - assay_reliability / 0.45)))); w.append(0.40)
     if spread is not None:                      # across-cell-state spread, when Model B ran
         parts.append(min(1.0, float(spread) / 1.5)); w.append(0.25)
     return float(np.average(parts, weights=w[:len(parts)]))
@@ -85,14 +93,15 @@ def ood_penalty(distance, ref_distances):
 
 
 def score(drug, prob_sensitive, oof_auroc, n_train, mech_evidence=None, state_metrics=None,
-          clinical=None, ood_distance=None, ood_reference=None, weights=None):
+          clinical=None, ood_distance=None, ood_reference=None, weights=None,
+          assay_reliability=None):
     w = dict(WEIGHTS); w.update(weights or {})
     sm = state_metrics or {}
     cov_b = sm.get("coverage_blast")
     cov_l = sm.get("coverage_LSC_like")
     mech = (mech_evidence or {}).get("mechanistic_score")
     clin_s = TG.clinical_score(drug)
-    u = uncertainty(prob_sensitive, oof_auroc, n_train, sm.get("dispersion"))
+    u = uncertainty(prob_sensitive, oof_auroc, n_train, sm.get("dispersion"), assay_reliability)
     r, r_detail = resistance_burden(mech_evidence, sm)
     f, f_detail = infeasibility(drug, clinical)
     o = ood_penalty(ood_distance, ood_reference)
@@ -115,7 +124,8 @@ def score(drug, prob_sensitive, oof_auroc, n_train, mech_evidence=None, state_me
             "sensitivity": None if prob_sensitive is None else round(float(prob_sensitive), 4),
             "coverage_blast": cov_b, "coverage_LSC_like": cov_l,
             "mechanistic": mech, "clinical_evidence": round(clin_s, 3),
-            "uncertainty": round(u, 4), "resistance": round(r, 4),
+            "uncertainty": round(u, 4), "assay_reliability": assay_reliability,
+            "resistance": round(r, 4),
             "infeasibility": round(f, 4), "ood": round(o, 4),
         },
         "detail": {"resistance": r_detail, "infeasibility": f_detail,

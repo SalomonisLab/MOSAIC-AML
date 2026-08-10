@@ -1,9 +1,9 @@
 {
- "generated": "2026-08-04 19:53",
+ "generated": "2026-08-10 10:41",
  "model_version": "1.0",
  "n_drugs_modelled": 118,
- "n_drugs_reported": 118,
- "n_abstained": 0,
+ "n_drugs_reported": 117,
+ "n_abstained": 1,
  "patient": {
   "genes_shared_with_model": 14237,
   "ood_distance": 0.8891266738148749,
@@ -18,14 +18,15 @@
    "ranked": [
     {
      "inhibitor": "Quizartinib (AC220)",
-     "utility": 0.8545,
+     "utility": 0.8616,
      "components": {
       "sensitivity": 0.8599,
       "coverage_blast": 0.994,
       "coverage_LSC_like": 1.0,
       "mechanistic": 0.6531,
       "clinical_evidence": 1.0,
-      "uncertainty": 0.2665,
+      "uncertainty": 0.2193,
+      "assay_reliability": 0.4176745386362019,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -53,18 +54,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.4176745386362019,
+     "assay_reliability_tier": "moderate",
      "challenges": []
     },
     {
      "inhibitor": "Midostaurin",
-     "utility": 0.832,
+     "utility": 0.8439,
      "components": {
       "sensitivity": 0.8199,
       "coverage_blast": 0.986,
       "coverage_LSC_like": 1.0,
       "mechanistic": 0.6589,
       "clinical_evidence": 1.0,
-      "uncertainty": 0.3249,
+      "uncertainty": 0.2461,
+      "assay_reliability": 0.5394152118717563,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -92,18 +96,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.5394152118717563,
+     "assay_reliability_tier": "reproducible",
      "challenges": []
     },
     {
      "inhibitor": "Gilteritinib",
-     "utility": 0.4499,
+     "utility": 0.4573,
      "components": {
       "sensitivity": 0.6316,
       "coverage_blast": 0.644,
       "coverage_LSC_like": 0.036,
       "mechanistic": 0.646,
       "clinical_evidence": 1.0,
-      "uncertainty": 0.4103,
+      "uncertainty": 0.3608,
+      "assay_reliability": 0.35722973947664527,
       "resistance": 0.5784,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -131,6 +138,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.35722973947664527,
+     "assay_reliability_tier": "moderate",
      "challenges": [
       {
        "challenge": "normal_haematopoiesis",
@@ -149,6 +158,7 @@
       "mechanistic": 0.2435,
       "clinical_evidence": 1.0,
       "uncertainty": 0.3604,
+      "assay_reliability": NaN,
       "resistance": 0.45,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -176,6 +186,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": NaN,
+     "assay_reliability_tier": "unmeasurable",
      "challenges": [
       {
        "challenge": "assay_batch",
@@ -186,14 +198,15 @@
     },
     {
      "inhibitor": "Azacytidine",
-     "utility": 0.1522,
+     "utility": 0.1338,
      "components": {
       "sensitivity": 0.237,
       "coverage_blast": 0.0,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.2437,
       "clinical_evidence": 1.0,
-      "uncertainty": 0.4938,
+      "uncertainty": 0.6165,
+      "assay_reliability": -0.07147222110039343,
       "resistance": 0.4,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -221,6 +234,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": -0.07147222110039343,
+     "assay_reliability_tier": "unreliable",
      "challenges": [
       {
        "challenge": "weak_model",
@@ -236,14 +251,15 @@
     },
     {
      "inhibitor": "Venetoclax",
-     "utility": 0.1298,
+     "utility": 0.1315,
      "components": {
       "sensitivity": 0.0127,
       "coverage_blast": 0.027,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.2113,
       "clinical_evidence": 1.0,
-      "uncertainty": 0.1387,
+      "uncertainty": 0.1272,
+      "assay_reliability": 0.40896694817303725,
       "resistance": 0.4,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -271,6 +287,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.40896694817303725,
+     "assay_reliability_tier": "moderate",
      "challenges": [
       {
        "challenge": "normal_haematopoiesis",
@@ -283,18 +301,19 @@
   },
   "approved_other": {
    "label": "approved, other indication (off-label in AML)",
-   "n": 36,
+   "n": 35,
    "ranked": [
     {
      "inhibitor": "Pazopanib (GW786034)",
-     "utility": 0.8582,
+     "utility": 0.8589,
      "components": {
       "sensitivity": 0.9436,
       "coverage_blast": 0.987,
       "coverage_LSC_like": 0.959,
       "mechanistic": 0.8257,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.2081,
+      "uncertainty": 0.2036,
+      "assay_reliability": 0.3646896797564805,
       "resistance": 0.0246,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -322,18 +341,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.3646896797564805,
+     "assay_reliability_tier": "moderate",
      "challenges": []
     },
     {
      "inhibitor": "Axitinib (AG-013736)",
-     "utility": 0.855,
+     "utility": 0.8516,
      "components": {
       "sensitivity": 0.9141,
       "coverage_blast": 0.998,
       "coverage_LSC_like": 1.0,
       "mechanistic": 0.8119,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.2315,
+      "uncertainty": 0.2537,
+      "assay_reliability": 0.30455622485199085,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -361,18 +383,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.30455622485199085,
+     "assay_reliability_tier": "moderate",
      "challenges": []
     },
     {
      "inhibitor": "Tivozanib (AV-951)",
-     "utility": 0.8523,
+     "utility": 0.8509,
      "components": {
       "sensitivity": 0.9842,
       "coverage_blast": 0.954,
       "coverage_LSC_like": 0.836,
       "mechanistic": 0.8789,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.15,
+      "uncertainty": 0.1596,
+      "assay_reliability": 0.3646896797564805,
       "resistance": 0.0984,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -400,96 +425,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
-     "challenges": []
-    },
-    {
-     "inhibitor": "Lenvatinib",
-     "utility": 0.8463,
-     "components": {
-      "sensitivity": 0.9126,
-      "coverage_blast": 0.987,
-      "coverage_LSC_like": 0.959,
-      "mechanistic": 0.8487,
-      "clinical_evidence": 0.7,
-      "uncertainty": 0.2447,
-      "resistance": 0.0246,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.041,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": []
-    },
-    {
-     "inhibitor": "Vargetef",
-     "utility": 0.8418,
-     "components": {
-      "sensitivity": 0.8783,
-      "coverage_blast": 0.998,
-      "coverage_LSC_like": 1.0,
-      "mechanistic": 0.8412,
-      "clinical_evidence": 0.7,
-      "uncertainty": 0.2722,
-      "resistance": 0.0,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.0,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
+     "assay_reliability": 0.3646896797564805,
+     "assay_reliability_tier": "moderate",
      "challenges": []
     },
     {
      "inhibitor": "Trametinib (GSK1120212)",
-     "utility": 0.8395,
+     "utility": 0.8472,
      "components": {
       "sensitivity": 0.9456,
       "coverage_blast": 0.987,
       "coverage_LSC_like": 0.994,
       "mechanistic": 0.6582,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.2116,
+      "uncertainty": 0.1603,
+      "assay_reliability": 0.6726873906332629,
       "resistance": 0.0036,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -517,141 +467,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.6726873906332629,
+     "assay_reliability_tier": "reproducible",
      "challenges": []
     },
     {
-     "inhibitor": "Dasatinib",
-     "utility": 0.8298,
+     "inhibitor": "Lenvatinib",
+     "utility": 0.8383,
      "components": {
-      "sensitivity": 0.9735,
-      "coverage_blast": 0.965,
-      "coverage_LSC_like": 0.877,
-      "mechanistic": 0.6972,
-      "clinical_evidence": 0.7,
-      "uncertainty": 0.1568,
-      "resistance": 0.0738,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.123,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": []
-    },
-    {
-     "inhibitor": "Bosutinib (SKI-606)",
-     "utility": 0.8064,
-     "components": {
-      "sensitivity": 0.9354,
-      "coverage_blast": 0.954,
-      "coverage_LSC_like": 0.836,
-      "mechanistic": 0.7811,
-      "clinical_evidence": 0.7,
-      "uncertainty": 0.2386,
-      "resistance": 0.0984,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.164,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": []
-    },
-    {
-     "inhibitor": "Entrectinib",
-     "utility": 0.8016,
-     "components": {
-      "sensitivity": 0.8042,
-      "coverage_blast": 1.0,
-      "coverage_LSC_like": 1.0,
-      "mechanistic": 0.8388,
-      "clinical_evidence": 0.7,
-      "uncertainty": 0.3753,
-      "resistance": 0.0,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.0,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": [
-      {
-       "challenge": "small_training_set",
-       "severity": "medium",
-       "detail": "only 179 BeatAML specimens back this inhibitor"
-      }
-     ]
-    },
-    {
-     "inhibitor": "Gefitinib",
-     "utility": 0.7976,
-     "components": {
-      "sensitivity": 0.8122,
+      "sensitivity": 0.9126,
       "coverage_blast": 0.987,
       "coverage_LSC_like": 0.959,
-      "mechanistic": 0.8362,
+      "mechanistic": 0.8487,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.3319,
+      "uncertainty": 0.2977,
+      "assay_reliability": 0.2414916407812326,
       "resistance": 0.0246,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -679,96 +509,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.2414916407812326,
+     "assay_reliability_tier": "weak",
      "challenges": []
     },
     {
-     "inhibitor": "Regorafenib (BAY 73-4506)",
-     "utility": 0.7931,
+     "inhibitor": "Vargetef",
+     "utility": 0.8279,
      "components": {
-      "sensitivity": 0.8917,
-      "coverage_blast": 0.954,
-      "coverage_LSC_like": 0.836,
-      "mechanistic": 0.8141,
-      "clinical_evidence": 0.7,
-      "uncertainty": 0.2669,
-      "resistance": 0.0984,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.164,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": []
-    },
-    {
-     "inhibitor": "Sunitinib",
-     "utility": 0.7884,
-     "components": {
-      "sensitivity": 0.8834,
-      "coverage_blast": 0.951,
-      "coverage_LSC_like": 0.836,
-      "mechanistic": 0.775,
-      "clinical_evidence": 0.7,
-      "uncertainty": 0.2329,
-      "resistance": 0.0984,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.164,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": []
-    },
-    {
-     "inhibitor": "Panobinostat",
-     "utility": 0.7803,
-     "components": {
-      "sensitivity": 0.9148,
-      "coverage_blast": 1.0,
+      "sensitivity": 0.8783,
+      "coverage_blast": 0.998,
       "coverage_LSC_like": 1.0,
-      "mechanistic": 0.3849,
+      "mechanistic": 0.8412,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.2582,
+      "uncertainty": 0.3651,
+      "assay_reliability": 0.155105001352656,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -796,24 +551,279 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.155105001352656,
+     "assay_reliability_tier": "weak",
+     "challenges": []
+    },
+    {
+     "inhibitor": "Dasatinib",
+     "utility": 0.8062,
+     "components": {
+      "sensitivity": 0.9735,
+      "coverage_blast": 0.965,
+      "coverage_LSC_like": 0.877,
+      "mechanistic": 0.6972,
+      "clinical_evidence": 0.7,
+      "uncertainty": 0.3142,
+      "assay_reliability": 0.08728582484372949,
+      "resistance": 0.0738,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.123,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.08728582484372949,
+     "assay_reliability_tier": "unreliable",
+     "challenges": []
+    },
+    {
+     "inhibitor": "Regorafenib (BAY 73-4506)",
+     "utility": 0.8004,
+     "components": {
+      "sensitivity": 0.8917,
+      "coverage_blast": 0.954,
+      "coverage_LSC_like": 0.836,
+      "mechanistic": 0.8141,
+      "clinical_evidence": 0.7,
+      "uncertainty": 0.2187,
+      "assay_reliability": 0.4193417480904722,
+      "resistance": 0.0984,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.164,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.4193417480904722,
+     "assay_reliability_tier": "moderate",
+     "challenges": []
+    },
+    {
+     "inhibitor": "Gefitinib",
+     "utility": 0.7964,
+     "components": {
+      "sensitivity": 0.8122,
+      "coverage_blast": 0.987,
+      "coverage_LSC_like": 0.959,
+      "mechanistic": 0.8362,
+      "clinical_evidence": 0.7,
+      "uncertainty": 0.3401,
+      "assay_reliability": 0.28544597161440943,
+      "resistance": 0.0246,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.041,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.28544597161440943,
+     "assay_reliability_tier": "weak",
+     "challenges": []
+    },
+    {
+     "inhibitor": "Bosutinib (SKI-606)",
+     "utility": 0.7952,
+     "components": {
+      "sensitivity": 0.9354,
+      "coverage_blast": 0.954,
+      "coverage_LSC_like": 0.836,
+      "mechanistic": 0.7811,
+      "clinical_evidence": 0.7,
+      "uncertainty": 0.3139,
+      "assay_reliability": 0.20285999654422993,
+      "resistance": 0.0984,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.164,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.20285999654422993,
+     "assay_reliability_tier": "weak",
+     "challenges": []
+    },
+    {
+     "inhibitor": "Sunitinib",
+     "utility": 0.7943,
+     "components": {
+      "sensitivity": 0.8834,
+      "coverage_blast": 0.951,
+      "coverage_LSC_like": 0.836,
+      "mechanistic": 0.775,
+      "clinical_evidence": 0.7,
+      "uncertainty": 0.1939,
+      "assay_reliability": 0.41767453863620196,
+      "resistance": 0.0984,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.164,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.41767453863620196,
+     "assay_reliability_tier": "moderate",
+     "challenges": []
+    },
+    {
+     "inhibitor": "Entrectinib",
+     "utility": 0.7789,
+     "components": {
+      "sensitivity": 0.8042,
+      "coverage_blast": 1.0,
+      "coverage_LSC_like": 1.0,
+      "mechanistic": 0.8388,
+      "clinical_evidence": 0.7,
+      "uncertainty": 0.5268,
+      "assay_reliability": -0.0058060983554323745,
+      "resistance": 0.0,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.0,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": -0.0058060983554323745,
+     "assay_reliability_tier": "unreliable",
      "challenges": [
       {
-       "challenge": "modality_conflict",
+       "challenge": "small_training_set",
        "severity": "medium",
-       "detail": "empirical P(sensitive)=0.91 but mechanistic score=0.38; the two lines of evidence disagree"
+       "detail": "only 179 BeatAML specimens back this inhibitor"
       }
      ]
     },
     {
      "inhibitor": "Selumetinib (AZD6244)",
-     "utility": 0.7608,
+     "utility": 0.7699,
      "components": {
       "sensitivity": 0.9022,
       "coverage_blast": 0.935,
       "coverage_LSC_like": 0.8,
       "mechanistic": 0.6582,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.2497,
+      "uncertainty": 0.1891,
+      "assay_reliability": 0.6726873906332629,
       "resistance": 0.12,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -841,18 +851,69 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.6726873906332629,
+     "assay_reliability_tier": "reproducible",
      "challenges": []
     },
     {
+     "inhibitor": "Panobinostat",
+     "utility": 0.7576,
+     "components": {
+      "sensitivity": 0.9148,
+      "coverage_blast": 1.0,
+      "coverage_LSC_like": 1.0,
+      "mechanistic": 0.3849,
+      "clinical_evidence": 0.7,
+      "uncertainty": 0.4097,
+      "assay_reliability": 0.05244972579632369,
+      "resistance": 0.0,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.0,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.05244972579632369,
+     "assay_reliability_tier": "unreliable",
+     "challenges": [
+      {
+       "challenge": "modality_conflict",
+       "severity": "medium",
+       "detail": "empirical P(sensitive)=0.91 but mechanistic score=0.38; the two lines of evidence disagree"
+      }
+     ]
+    },
+    {
      "inhibitor": "Ruxolitinib (INCB018424)",
-     "utility": 0.7589,
+     "utility": 0.7576,
      "components": {
       "sensitivity": 0.7814,
       "coverage_blast": 0.998,
       "coverage_LSC_like": 0.994,
       "mechanistic": 0.6727,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.4118,
+      "uncertainty": 0.4204,
+      "assay_reliability": 0.24873079017047597,
       "resistance": 0.0036,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -880,18 +941,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.24873079017047597,
+     "assay_reliability_tier": "weak",
      "challenges": []
     },
     {
      "inhibitor": "CYT387",
-     "utility": 0.7366,
+     "utility": 0.7274,
      "components": {
       "sensitivity": 0.767,
       "coverage_blast": 0.987,
       "coverage_LSC_like": 0.959,
       "mechanistic": 0.6593,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.4417,
+      "uncertainty": 0.5028,
+      "assay_reliability": 0.137925151052425,
       "resistance": 0.0246,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -919,63 +983,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.137925151052425,
+     "assay_reliability_tier": "unreliable",
      "challenges": []
     },
     {
-     "inhibitor": "Ibrutinib (PCI-32765)",
-     "utility": 0.7339,
-     "components": {
-      "sensitivity": 0.8996,
-      "coverage_blast": 0.954,
-      "coverage_LSC_like": 0.836,
-      "mechanistic": 0.466,
-      "clinical_evidence": 0.7,
-      "uncertainty": 0.2926,
-      "resistance": 0.0984,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.164,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": [
-      {
-       "challenge": "modality_conflict",
-       "severity": "medium",
-       "detail": "empirical P(sensitive)=0.90 but mechanistic score=0.47; the two lines of evidence disagree"
-      }
-     ]
-    },
-    {
      "inhibitor": "Vandetanib (ZD6474)",
-     "utility": 0.7321,
+     "utility": 0.7268,
      "components": {
       "sensitivity": 0.7697,
       "coverage_blast": 0.933,
       "coverage_LSC_like": 0.806,
       "mechanistic": 0.836,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.3519,
+      "uncertainty": 0.3878,
+      "assay_reliability": 0.22497926906554044,
       "resistance": 0.1164,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1003,18 +1025,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.22497926906554044,
+     "assay_reliability_tier": "weak",
      "challenges": []
     },
     {
-     "inhibitor": "Imatinib",
-     "utility": 0.7153,
+     "inhibitor": "Ibrutinib (PCI-32765)",
+     "utility": 0.7189,
      "components": {
-      "sensitivity": 0.7697,
+      "sensitivity": 0.8996,
       "coverage_blast": 0.954,
       "coverage_LSC_like": 0.836,
-      "mechanistic": 0.7424,
+      "mechanistic": 0.466,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.4351,
+      "uncertainty": 0.3926,
+      "assay_reliability": 0.1327871605569889,
       "resistance": 0.0984,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1042,18 +1067,201 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.1327871605569889,
+     "assay_reliability_tier": "unreliable",
+     "challenges": [
+      {
+       "challenge": "modality_conflict",
+       "severity": "medium",
+       "detail": "empirical P(sensitive)=0.90 but mechanistic score=0.47; the two lines of evidence disagree"
+      }
+     ]
+    },
+    {
+     "inhibitor": "Imatinib",
+     "utility": 0.7109,
+     "components": {
+      "sensitivity": 0.7697,
+      "coverage_blast": 0.954,
+      "coverage_LSC_like": 0.836,
+      "mechanistic": 0.7424,
+      "clinical_evidence": 0.7,
+      "uncertainty": 0.464,
+      "assay_reliability": 0.2006110459112364,
+      "resistance": 0.0984,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.164,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.2006110459112364,
+     "assay_reliability_tier": "weak",
      "challenges": []
     },
     {
+     "inhibitor": "Sorafenib",
+     "utility": 0.7068,
+     "components": {
+      "sensitivity": 0.8134,
+      "coverage_blast": 0.733,
+      "coverage_LSC_like": 0.806,
+      "mechanistic": 0.669,
+      "clinical_evidence": 0.7,
+      "uncertainty": 0.21,
+      "assay_reliability": 0.4193417480904722,
+      "resistance": 0.1164,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.194,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.4193417480904722,
+     "assay_reliability_tier": "moderate",
+     "challenges": []
+    },
+    {
+     "inhibitor": "Tofacitinib (CP-690550)",
+     "utility": 0.6876,
+     "components": {
+      "sensitivity": 0.6939,
+      "coverage_blast": 0.989,
+      "coverage_LSC_like": 0.959,
+      "mechanistic": 0.6184,
+      "clinical_evidence": 0.7,
+      "uncertainty": 0.5628,
+      "assay_reliability": 0.11753110903738603,
+      "resistance": 0.0246,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.041,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.11753110903738603,
+     "assay_reliability_tier": "unreliable",
+     "challenges": []
+    },
+    {
+     "inhibitor": "Lapatinib",
+     "utility": 0.6846,
+     "components": {
+      "sensitivity": 0.793,
+      "coverage_blast": 0.953,
+      "coverage_LSC_like": 0.83,
+      "mechanistic": 0.4827,
+      "clinical_evidence": 0.7,
+      "uncertainty": 0.3918,
+      "assay_reliability": 0.29882159051282314,
+      "resistance": 0.102,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.17,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.29882159051282314,
+     "assay_reliability_tier": "weak",
+     "challenges": [
+      {
+       "challenge": "normal_haematopoiesis",
+       "severity": "medium",
+       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.37) than in the blast compartment (0.36): on-target myelo-suppression is plausible"
+      }
+     ]
+    },
+    {
      "inhibitor": "Nilotinib",
-     "utility": 0.7007,
+     "utility": 0.6811,
      "components": {
       "sensitivity": 0.7268,
       "coverage_blast": 0.965,
       "coverage_LSC_like": 0.877,
       "mechanistic": 0.6884,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.4592,
+      "uncertainty": 0.5903,
+      "assay_reliability": -0.04890453298126835,
       "resistance": 0.0738,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1081,141 +1289,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": -0.04890453298126835,
+     "assay_reliability_tier": "unreliable",
      "challenges": []
-    },
-    {
-     "inhibitor": "Sorafenib",
-     "utility": 0.7,
-     "components": {
-      "sensitivity": 0.8134,
-      "coverage_blast": 0.733,
-      "coverage_LSC_like": 0.806,
-      "mechanistic": 0.669,
-      "clinical_evidence": 0.7,
-      "uncertainty": 0.2554,
-      "resistance": 0.1164,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.194,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": []
-    },
-    {
-     "inhibitor": "Tofacitinib (CP-690550)",
-     "utility": 0.696,
-     "components": {
-      "sensitivity": 0.6939,
-      "coverage_blast": 0.989,
-      "coverage_LSC_like": 0.959,
-      "mechanistic": 0.6184,
-      "clinical_evidence": 0.7,
-      "uncertainty": 0.5065,
-      "resistance": 0.0246,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.041,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": []
-    },
-    {
-     "inhibitor": "Lapatinib",
-     "utility": 0.6819,
-     "components": {
-      "sensitivity": 0.793,
-      "coverage_blast": 0.953,
-      "coverage_LSC_like": 0.83,
-      "mechanistic": 0.4827,
-      "clinical_evidence": 0.7,
-      "uncertainty": 0.4097,
-      "resistance": 0.102,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.17,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": [
-      {
-       "challenge": "normal_haematopoiesis",
-       "severity": "medium",
-       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.37) than in the blast compartment (0.36): on-target myelo-suppression is plausible"
-      }
-     ]
     },
     {
      "inhibitor": "Afatinib (BIBW-2992)",
-     "utility": 0.6256,
+     "utility": 0.6196,
      "components": {
       "sensitivity": 0.6579,
       "coverage_blast": 0.949,
       "coverage_LSC_like": 0.83,
       "mechanistic": 0.4827,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.4798,
+      "uncertainty": 0.5202,
+      "assay_reliability": 0.1590197290742066,
       "resistance": 0.102,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1243,18 +1331,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.1590197290742066,
+     "assay_reliability_tier": "weak",
      "challenges": []
     },
     {
      "inhibitor": "Cabozantinib",
-     "utility": 0.5236,
+     "utility": 0.5326,
      "components": {
       "sensitivity": 0.8478,
       "coverage_blast": 0.707,
       "coverage_LSC_like": 0.006,
       "mechanistic": 0.7922,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.2471,
+      "uncertainty": 0.1872,
+      "assay_reliability": 0.5545539882794701,
       "resistance": 0.5964,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1282,6 +1373,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.5545539882794701,
+     "assay_reliability_tier": "reproducible",
      "challenges": [
       {
        "challenge": "normal_haematopoiesis",
@@ -1292,14 +1385,15 @@
     },
     {
      "inhibitor": "Rapamycin",
-     "utility": 0.4949,
+     "utility": 0.5035,
      "components": {
       "sensitivity": 0.8868,
       "coverage_blast": 0.721,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.5284,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.2373,
+      "uncertainty": 0.1798,
+      "assay_reliability": 0.47357906239211345,
       "resistance": 0.6,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1327,18 +1421,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.47357906239211345,
+     "assay_reliability_tier": "reproducible",
      "challenges": []
     },
     {
      "inhibitor": "Crizotinib (PF-2341066)",
-     "utility": 0.49,
+     "utility": 0.4856,
      "components": {
       "sensitivity": 0.7765,
       "coverage_blast": 0.735,
       "coverage_LSC_like": 0.036,
       "mechanistic": 0.7682,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.3682,
+      "uncertainty": 0.3976,
+      "assay_reliability": 0.22968035892054273,
       "resistance": 0.5784,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1366,18 +1463,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.22968035892054273,
+     "assay_reliability_tier": "weak",
      "challenges": []
     },
     {
      "inhibitor": "Palbociclib",
-     "utility": 0.4421,
+     "utility": 0.4464,
      "components": {
       "sensitivity": 0.4117,
       "coverage_blast": 0.331,
       "coverage_LSC_like": 0.877,
       "mechanistic": 0.3679,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.496,
+      "uncertainty": 0.4679,
+      "assay_reliability": 0.27896360640140205,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1405,18 +1505,69 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.27896360640140205,
+     "assay_reliability_tier": "weak",
      "challenges": []
     },
     {
+     "inhibitor": "Erlotinib",
+     "utility": 0.4048,
+     "components": {
+      "sensitivity": 0.4543,
+      "coverage_blast": 0.345,
+      "coverage_LSC_like": 0.03,
+      "mechanistic": 0.8362,
+      "clinical_evidence": 0.7,
+      "uncertainty": 0.4341,
+      "assay_reliability": 0.28544597161440943,
+      "resistance": 0.0,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.0,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.28544597161440943,
+     "assay_reliability_tier": "weak",
+     "challenges": [
+      {
+       "challenge": "normal_haematopoiesis",
+       "severity": "medium",
+       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.18) than in the blast compartment (0.05): on-target myelo-suppression is plausible"
+      }
+     ]
+    },
+    {
      "inhibitor": "Idelalisib",
-     "utility": 0.4084,
+     "utility": 0.3897,
      "components": {
       "sensitivity": 0.6474,
       "coverage_blast": 0.709,
       "coverage_LSC_like": 0.006,
       "mechanistic": 0.7158,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.4873,
+      "uncertainty": 0.6116,
+      "assay_reliability": -0.02408388346311883,
       "resistance": 0.5964,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1444,63 +1595,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": -0.02408388346311883,
+     "assay_reliability_tier": "unreliable",
      "challenges": []
     },
     {
-     "inhibitor": "Erlotinib",
-     "utility": 0.4015,
-     "components": {
-      "sensitivity": 0.4543,
-      "coverage_blast": 0.345,
-      "coverage_LSC_like": 0.03,
-      "mechanistic": 0.8362,
-      "clinical_evidence": 0.7,
-      "uncertainty": 0.4561,
-      "resistance": 0.0,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.0,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": [
-      {
-       "challenge": "normal_haematopoiesis",
-       "severity": "medium",
-       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.18) than in the blast compartment (0.05): on-target myelo-suppression is plausible"
-      }
-     ]
-    },
-    {
      "inhibitor": "Bortezomib (Velcade)",
-     "utility": 0.3077,
+     "utility": 0.2968,
      "components": {
       "sensitivity": 0.4381,
       "coverage_blast": 0.52,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.2636,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.5705,
+      "uncertainty": 0.6434,
+      "assay_reliability": 0.05786653420914577,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1528,63 +1637,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.05786653420914577,
+     "assay_reliability_tier": "unreliable",
      "challenges": []
     },
     {
-     "inhibitor": "Selinexor",
-     "utility": 0.3056,
-     "components": {
-      "sensitivity": 0.5065,
-      "coverage_blast": 0.594,
-      "coverage_LSC_like": 0.164,
-      "mechanistic": 0.4432,
-      "clinical_evidence": 0.7,
-      "uncertainty": 0.699,
-      "resistance": 0.5016,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.836,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": [
-      {
-       "challenge": "weak_model",
-       "severity": "high",
-       "detail": "the model's own held-out AUROC for this inhibitor is 0.55"
-      }
-     ]
-    },
-    {
      "inhibitor": "Neratinib (HKI-272)",
-     "utility": 0.2943,
+     "utility": 0.2898,
      "components": {
       "sensitivity": 0.4231,
       "coverage_blast": 0.207,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.4827,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.5223,
+      "uncertainty": 0.5524,
+      "assay_reliability": 0.1590197290742066,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1612,6 +1679,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.1590197290742066,
+     "assay_reliability_tier": "weak",
      "challenges": [
       {
        "challenge": "normal_haematopoiesis",
@@ -1621,15 +1690,16 @@
      ]
     },
     {
-     "inhibitor": "Vemurafenib (PLX-4032)",
-     "utility": 0.2764,
+     "inhibitor": "Ponatinib (AP24534)",
+     "utility": 0.2711,
      "components": {
-      "sensitivity": 0.333,
-      "coverage_blast": 0.0,
+      "sensitivity": 0.0902,
+      "coverage_blast": 0.276,
       "coverage_LSC_like": 0.0,
-      "mechanistic": 0.8326,
+      "mechanistic": 0.6744,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.6006,
+      "uncertainty": 0.2269,
+      "assay_reliability": 0.3093013166057565,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1657,6 +1727,61 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.3093013166057565,
+     "assay_reliability_tier": "moderate",
+     "challenges": [
+      {
+       "challenge": "modality_conflict",
+       "severity": "medium",
+       "detail": "empirical P(sensitive)=0.09 but mechanistic score=0.67; the two lines of evidence disagree"
+      },
+      {
+       "challenge": "normal_haematopoiesis",
+       "severity": "medium",
+       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (-0.19) than in the blast compartment (-0.21): on-target myelo-suppression is plausible"
+      }
+     ]
+    },
+    {
+     "inhibitor": "Vemurafenib (PLX-4032)",
+     "utility": 0.2618,
+     "components": {
+      "sensitivity": 0.333,
+      "coverage_blast": 0.0,
+      "coverage_LSC_like": 0.0,
+      "mechanistic": 0.8326,
+      "clinical_evidence": 0.7,
+      "uncertainty": 0.6974,
+      "assay_reliability": -0.2130365859753146,
+      "resistance": 0.0,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.0,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": -0.2130365859753146,
+     "assay_reliability_tier": "unreliable",
      "challenges": [
       {
        "challenge": "modality_conflict",
@@ -1676,65 +1801,16 @@
      ]
     },
     {
-     "inhibitor": "Ponatinib (AP24534)",
-     "utility": 0.2752,
-     "components": {
-      "sensitivity": 0.0902,
-      "coverage_blast": 0.276,
-      "coverage_LSC_like": 0.0,
-      "mechanistic": 0.6744,
-      "clinical_evidence": 0.7,
-      "uncertainty": 0.1995,
-      "resistance": 0.0,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.0,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": [
-      {
-       "challenge": "modality_conflict",
-       "severity": "medium",
-       "detail": "empirical P(sensitive)=0.09 but mechanistic score=0.67; the two lines of evidence disagree"
-      },
-      {
-       "challenge": "normal_haematopoiesis",
-       "severity": "medium",
-       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (-0.19) than in the blast compartment (-0.21): on-target myelo-suppression is plausible"
-      }
-     ]
-    },
-    {
      "inhibitor": "Lenalidomide",
-     "utility": 0.1912,
+     "utility": 0.1688,
      "components": {
       "sensitivity": 0.17,
       "coverage_blast": 0.0,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.4523,
       "clinical_evidence": 0.7,
-      "uncertainty": 0.3831,
+      "uncertainty": 0.5327,
+      "assay_reliability": -0.14995043221474214,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1762,6 +1838,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": -0.14995043221474214,
+     "assay_reliability_tier": "unreliable",
      "challenges": []
     }
    ]
@@ -1772,14 +1850,15 @@
    "ranked": [
     {
      "inhibitor": "Saracatinib (AZD0530)",
-     "utility": 0.8259,
+     "utility": 0.814,
      "components": {
       "sensitivity": 0.9422,
       "coverage_blast": 0.998,
       "coverage_LSC_like": 1.0,
       "mechanistic": 0.8225,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.2217,
+      "uncertainty": 0.3011,
+      "assay_reliability": 0.20285999654422995,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1807,96 +1886,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
-     "challenges": []
-    },
-    {
-     "inhibitor": "Entospletinib (GS-9973)",
-     "utility": 0.8038,
-     "components": {
-      "sensitivity": 0.9587,
-      "coverage_blast": 0.998,
-      "coverage_LSC_like": 1.0,
-      "mechanistic": 0.6602,
-      "clinical_evidence": 0.45,
-      "uncertainty": 0.2253,
-      "resistance": 0.0,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.0,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": []
-    },
-    {
-     "inhibitor": "Linifanib (ABT-869)",
-     "utility": 0.7747,
-     "components": {
-      "sensitivity": 0.9225,
-      "coverage_blast": 0.965,
-      "coverage_LSC_like": 0.877,
-      "mechanistic": 0.7527,
-      "clinical_evidence": 0.45,
-      "uncertainty": 0.1946,
-      "resistance": 0.0738,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.123,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
+     "assay_reliability": 0.20285999654422995,
+     "assay_reliability_tier": "weak",
      "challenges": []
     },
     {
      "inhibitor": "CI-1040 (PD184352)",
-     "utility": 0.7653,
+     "utility": 0.7762,
      "components": {
       "sensitivity": 0.8846,
       "coverage_blast": 0.993,
       "coverage_LSC_like": 0.994,
       "mechanistic": 0.6582,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.2996,
+      "uncertainty": 0.2269,
+      "assay_reliability": 0.5992690213423978,
       "resistance": 0.0036,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1924,18 +1928,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.5992690213423978,
+     "assay_reliability_tier": "reproducible",
      "challenges": []
     },
     {
-     "inhibitor": "Crenolanib",
-     "utility": 0.7599,
+     "inhibitor": "Entospletinib (GS-9973)",
+     "utility": 0.7756,
      "components": {
-      "sensitivity": 0.8486,
-      "coverage_blast": 0.994,
+      "sensitivity": 0.9587,
+      "coverage_blast": 0.998,
       "coverage_LSC_like": 1.0,
-      "mechanistic": 0.6499,
+      "mechanistic": 0.6602,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.2575,
+      "uncertainty": 0.4131,
+      "assay_reliability": -0.021919608360286325,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -1963,18 +1970,189 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": -0.021919608360286325,
+     "assay_reliability_tier": "unreliable",
+     "challenges": []
+    },
+    {
+     "inhibitor": "Linifanib (ABT-869)",
+     "utility": 0.7698,
+     "components": {
+      "sensitivity": 0.9225,
+      "coverage_blast": 0.965,
+      "coverage_LSC_like": 0.877,
+      "mechanistic": 0.7527,
+      "clinical_evidence": 0.45,
+      "uncertainty": 0.2271,
+      "assay_reliability": 0.30207302027326965,
+      "resistance": 0.0738,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.123,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.30207302027326965,
+     "assay_reliability_tier": "moderate",
+     "challenges": []
+    },
+    {
+     "inhibitor": "Crenolanib",
+     "utility": 0.7692,
+     "components": {
+      "sensitivity": 0.8486,
+      "coverage_blast": 0.994,
+      "coverage_LSC_like": 1.0,
+      "mechanistic": 0.6499,
+      "clinical_evidence": 0.45,
+      "uncertainty": 0.1951,
+      "assay_reliability": 0.5394152118717563,
+      "resistance": 0.0,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.0,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.5394152118717563,
+     "assay_reliability_tier": "reproducible",
+     "challenges": []
+    },
+    {
+     "inhibitor": "Motesanib (AMG-706)",
+     "utility": 0.739,
+     "components": {
+      "sensitivity": 0.8412,
+      "coverage_blast": 0.954,
+      "coverage_LSC_like": 0.836,
+      "mechanistic": 0.8165,
+      "clinical_evidence": 0.45,
+      "uncertainty": 0.2404,
+      "assay_reliability": 0.5701389889219035,
+      "resistance": 0.0984,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.164,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.5701389889219035,
+     "assay_reliability_tier": "reproducible",
+     "challenges": []
+    },
+    {
+     "inhibitor": "Cediranib (AZD2171)",
+     "utility": 0.7362,
+     "components": {
+      "sensitivity": 0.8202,
+      "coverage_blast": 0.965,
+      "coverage_LSC_like": 0.877,
+      "mechanistic": 0.8119,
+      "clinical_evidence": 0.45,
+      "uncertainty": 0.2898,
+      "assay_reliability": 0.5701389889219034,
+      "resistance": 0.0738,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.123,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.5701389889219034,
+     "assay_reliability_tier": "reproducible",
      "challenges": []
     },
     {
      "inhibitor": "LY-333531",
-     "utility": 0.7474,
+     "utility": 0.7206,
      "components": {
       "sensitivity": 0.8659,
       "coverage_blast": 0.974,
       "coverage_LSC_like": 0.959,
       "mechanistic": 0.6266,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.2608,
+      "uncertainty": 0.44,
+      "assay_reliability": -0.0337693838341041,
       "resistance": 0.0246,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2002,96 +2180,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
-     "challenges": []
-    },
-    {
-     "inhibitor": "Motesanib (AMG-706)",
-     "utility": 0.7275,
-     "components": {
-      "sensitivity": 0.8412,
-      "coverage_blast": 0.954,
-      "coverage_LSC_like": 0.836,
-      "mechanistic": 0.8165,
-      "clinical_evidence": 0.45,
-      "uncertainty": 0.3173,
-      "resistance": 0.0984,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.164,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": []
-    },
-    {
-     "inhibitor": "Cediranib (AZD2171)",
-     "utility": 0.7223,
-     "components": {
-      "sensitivity": 0.8202,
-      "coverage_blast": 0.965,
-      "coverage_LSC_like": 0.877,
-      "mechanistic": 0.8119,
-      "clinical_evidence": 0.45,
-      "uncertainty": 0.3826,
-      "resistance": 0.0738,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.123,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
+     "assay_reliability": -0.0337693838341041,
+     "assay_reliability_tier": "unreliable",
      "challenges": []
     },
     {
      "inhibitor": "GDC-0941",
-     "utility": 0.6994,
+     "utility": 0.7111,
      "components": {
       "sensitivity": 0.8466,
       "coverage_blast": 0.945,
       "coverage_LSC_like": 0.8,
       "mechanistic": 0.7059,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.3219,
+      "uncertainty": 0.2439,
+      "assay_reliability": 0.47878235599560764,
       "resistance": 0.12,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2119,6 +2222,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.47878235599560764,
+     "assay_reliability_tier": "reproducible",
      "challenges": [
       {
        "challenge": "assay_batch",
@@ -2129,14 +2234,15 @@
     },
     {
      "inhibitor": "YM-155",
-     "utility": 0.6744,
+     "utility": 0.6796,
      "components": {
       "sensitivity": 0.8123,
       "coverage_blast": 0.99,
       "coverage_LSC_like": 0.964,
       "mechanistic": 0.3706,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.3708,
+      "uncertainty": 0.3359,
+      "assay_reliability": 0.3478022689472481,
       "resistance": 0.0216,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2164,6 +2270,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.3478022689472481,
+     "assay_reliability_tier": "moderate",
      "challenges": [
       {
        "challenge": "modality_conflict",
@@ -2173,60 +2281,16 @@
      ]
     },
     {
-     "inhibitor": "Masitinib (AB-1010)",
-     "utility": 0.6517,
-     "components": {
-      "sensitivity": 0.709,
-      "coverage_blast": 0.949,
-      "coverage_LSC_like": 0.836,
-      "mechanistic": 0.7767,
-      "clinical_evidence": 0.45,
-      "uncertainty": 0.4787,
-      "resistance": 0.0984,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.164,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": [
-      {
-       "challenge": "normal_haematopoiesis",
-       "severity": "medium",
-       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.24) than in the blast compartment (0.24): on-target myelo-suppression is plausible"
-      }
-     ]
-    },
-    {
      "inhibitor": "OTX-015",
-     "utility": 0.6442,
+     "utility": 0.6581,
      "components": {
       "sensitivity": 0.7696,
       "coverage_blast": 0.954,
       "coverage_LSC_like": 0.871,
       "mechanistic": 0.4639,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.381,
+      "uncertainty": 0.2886,
+      "assay_reliability": 0.6045294629704342,
       "resistance": 0.0774,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2254,18 +2318,69 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.6045294629704342,
+     "assay_reliability_tier": "reproducible",
      "challenges": []
     },
     {
+     "inhibitor": "Masitinib (AB-1010)",
+     "utility": 0.649,
+     "components": {
+      "sensitivity": 0.709,
+      "coverage_blast": 0.949,
+      "coverage_LSC_like": 0.836,
+      "mechanistic": 0.7767,
+      "clinical_evidence": 0.45,
+      "uncertainty": 0.497,
+      "assay_reliability": 0.20061104591123644,
+      "resistance": 0.0984,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.164,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.20061104591123644,
+     "assay_reliability_tier": "weak",
+     "challenges": [
+      {
+       "challenge": "normal_haematopoiesis",
+       "severity": "medium",
+       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.24) than in the blast compartment (0.24): on-target myelo-suppression is plausible"
+      }
+     ]
+    },
+    {
      "inhibitor": "Volasertib (BI-6727)",
-     "utility": 0.6224,
+     "utility": 0.6107,
      "components": {
       "sensitivity": 0.7106,
       "coverage_blast": 0.959,
       "coverage_LSC_like": 1.0,
       "mechanistic": 0.3459,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.4911,
+      "uncertainty": 0.5687,
+      "assay_reliability": 0.0849477197145479,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2293,18 +2408,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.0849477197145479,
+     "assay_reliability_tier": "unreliable",
      "challenges": []
     },
     {
      "inhibitor": "AZD1480",
-     "utility": 0.5999,
+     "utility": 0.6002,
      "components": {
       "sensitivity": 0.6862,
       "coverage_blast": 0.933,
       "coverage_LSC_like": 0.8,
       "mechanistic": 0.6081,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.5068,
+      "uncertainty": 0.505,
+      "assay_reliability": 0.22523899191783742,
       "resistance": 0.12,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2332,18 +2450,69 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.22523899191783742,
+     "assay_reliability_tier": "weak",
      "challenges": []
     },
     {
+     "inhibitor": "Flavopiridol",
+     "utility": 0.5404,
+     "components": {
+      "sensitivity": 0.7466,
+      "coverage_blast": 1.0,
+      "coverage_LSC_like": 1.0,
+      "mechanistic": 0.2123,
+      "clinical_evidence": 0.45,
+      "uncertainty": 0.4144,
+      "assay_reliability": 0.3163246421844013,
+      "resistance": 0.6,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 1.0,
+       "subclone_escape": 0.0,
+       "n_measurable": 1
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.3163246421844013,
+     "assay_reliability_tier": "moderate",
+     "challenges": [
+      {
+       "challenge": "modality_conflict",
+       "severity": "medium",
+       "detail": "empirical P(sensitive)=0.75 but mechanistic score=0.21; the two lines of evidence disagree"
+      }
+     ]
+    },
+    {
      "inhibitor": "Elesclomol",
-     "utility": 0.5563,
+     "utility": 0.5383,
      "components": {
       "sensitivity": 0.5331,
       "coverage_blast": 0.814,
       "coverage_LSC_like": 0.847,
       "mechanistic": 0.6979,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.5053,
+      "uncertainty": 0.6253,
+      "assay_reliability": -0.20346659767181738,
       "resistance": 0.0918,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2371,18 +2540,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": -0.20346659767181738,
+     "assay_reliability_tier": "unreliable",
      "challenges": []
     },
     {
      "inhibitor": "SNS-032 (BMS-387032)",
-     "utility": 0.555,
+     "utility": 0.531,
      "components": {
       "sensitivity": 0.8153,
       "coverage_blast": 0.965,
       "coverage_LSC_like": 0.877,
       "mechanistic": 0.3204,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.3409,
+      "uncertainty": 0.5007,
+      "assay_reliability": -0.159932920364811,
       "resistance": 0.6738,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2410,6 +2582,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": -0.159932920364811,
+     "assay_reliability_tier": "unreliable",
      "challenges": [
       {
        "challenge": "modality_conflict",
@@ -2419,60 +2593,16 @@
      ]
     },
     {
-     "inhibitor": "Flavopiridol",
-     "utility": 0.5348,
-     "components": {
-      "sensitivity": 0.7466,
-      "coverage_blast": 1.0,
-      "coverage_LSC_like": 1.0,
-      "mechanistic": 0.2123,
-      "clinical_evidence": 0.45,
-      "uncertainty": 0.452,
-      "resistance": 0.6,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 1.0,
-       "subclone_escape": 0.0,
-       "n_measurable": 1
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": [
-      {
-       "challenge": "modality_conflict",
-       "severity": "medium",
-       "detail": "empirical P(sensitive)=0.75 but mechanistic score=0.21; the two lines of evidence disagree"
-      }
-     ]
-    },
-    {
      "inhibitor": "Tozasertib (VX-680)",
-     "utility": 0.5212,
+     "utility": 0.5269,
      "components": {
       "sensitivity": 0.6411,
       "coverage_blast": 0.736,
       "coverage_LSC_like": 0.836,
       "mechanistic": 0.3501,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.487,
+      "uncertainty": 0.4494,
+      "assay_reliability": 0.30056354066686425,
       "resistance": 0.0984,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2500,18 +2630,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.30056354066686425,
+     "assay_reliability_tier": "moderate",
      "challenges": []
     },
     {
      "inhibitor": "AT7519",
-     "utility": 0.5183,
+     "utility": 0.5206,
      "components": {
       "sensitivity": 0.809,
       "coverage_blast": 0.953,
       "coverage_LSC_like": 0.83,
       "mechanistic": 0.2154,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.3608,
+      "uncertainty": 0.3453,
+      "assay_reliability": 0.31632464218440126,
       "resistance": 0.702,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2539,6 +2672,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.31632464218440126,
+     "assay_reliability_tier": "moderate",
      "challenges": [
       {
        "challenge": "modality_conflict",
@@ -2549,14 +2684,15 @@
     },
     {
      "inhibitor": "MK-2206",
-     "utility": 0.513,
+     "utility": 0.4946,
      "components": {
       "sensitivity": 0.7486,
       "coverage_blast": 0.947,
       "coverage_LSC_like": 0.8,
       "mechanistic": 0.4086,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.4186,
+      "uncertainty": 0.5412,
+      "assay_reliability": 0.03406564260797134,
       "resistance": 0.72,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2584,18 +2720,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.03406564260797134,
+     "assay_reliability_tier": "unreliable",
      "challenges": []
     },
     {
      "inhibitor": "Canertinib (CI-1033)",
-     "utility": 0.4768,
+     "utility": 0.483,
      "components": {
       "sensitivity": 0.5458,
       "coverage_blast": 0.545,
       "coverage_LSC_like": 0.836,
       "mechanistic": 0.4827,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.5065,
+      "uncertainty": 0.4652,
+      "assay_reliability": 0.29882159051282314,
       "resistance": 0.0984,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2623,6 +2762,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.29882159051282314,
+     "assay_reliability_tier": "weak",
      "challenges": [
       {
        "challenge": "normal_haematopoiesis",
@@ -2633,14 +2774,15 @@
     },
     {
      "inhibitor": "Foretinib (XL880)",
-     "utility": 0.4236,
+     "utility": 0.432,
      "components": {
       "sensitivity": 0.8732,
       "coverage_blast": 0.716,
       "coverage_LSC_like": 0.006,
       "mechanistic": 0.7312,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.2314,
+      "uncertainty": 0.1753,
+      "assay_reliability": 0.5545539882794701,
       "resistance": 1.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2668,18 +2810,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.5545539882794701,
+     "assay_reliability_tier": "reproducible",
      "challenges": []
     },
     {
      "inhibitor": "Alisertib (MLN8237)",
-     "utility": 0.4009,
+     "utility": 0.4129,
      "components": {
       "sensitivity": 0.4526,
       "coverage_blast": 0.445,
       "coverage_LSC_like": 0.8,
       "mechanistic": 0.2865,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.5346,
+      "uncertainty": 0.4549,
+      "assay_reliability": 0.3574836114735236,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2707,18 +2852,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.3574836114735236,
+     "assay_reliability_tier": "moderate",
      "challenges": []
     },
     {
      "inhibitor": "Vatalanib (PTK787)",
-     "utility": 0.4001,
+     "utility": 0.4031,
      "components": {
       "sensitivity": 0.6863,
       "coverage_blast": 0.728,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.8119,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.469,
+      "uncertainty": 0.449,
+      "assay_reliability": 0.27618033540098735,
       "resistance": 0.6,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2746,18 +2894,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.27618033540098735,
+     "assay_reliability_tier": "weak",
      "challenges": []
     },
     {
      "inhibitor": "17-AAG (Tanespimycin)",
-     "utility": 0.3861,
+     "utility": 0.3628,
      "components": {
       "sensitivity": 0.843,
       "coverage_blast": 0.721,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.2545,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.2834,
+      "uncertainty": 0.4386,
+      "assay_reliability": 0.034347080347115644,
       "resistance": 0.6,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2785,6 +2936,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.034347080347115644,
+     "assay_reliability_tier": "unreliable",
      "challenges": [
       {
        "challenge": "modality_conflict",
@@ -2794,15 +2947,100 @@
      ]
     },
     {
+     "inhibitor": "BEZ235",
+     "utility": 0.343,
+     "components": {
+      "sensitivity": 0.5836,
+      "coverage_blast": 0.7,
+      "coverage_LSC_like": 0.0,
+      "mechanistic": 0.6214,
+      "clinical_evidence": 0.45,
+      "uncertainty": 0.3785,
+      "assay_reliability": 0.46792028940000313,
+      "resistance": 0.6,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 1.0,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.46792028940000313,
+     "assay_reliability_tier": "reproducible",
+     "challenges": []
+    },
+    {
+     "inhibitor": "INK-128",
+     "utility": 0.3381,
+     "components": {
+      "sensitivity": 0.7815,
+      "coverage_blast": 0.734,
+      "coverage_LSC_like": 0.006,
+      "mechanistic": 0.4284,
+      "clinical_evidence": 0.45,
+      "uncertainty": 0.2807,
+      "assay_reliability": 0.47357906239211345,
+      "resistance": 1.0,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 1.0,
+       "subclone_escape": 0.994,
+       "n_measurable": 1
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.47357906239211345,
+     "assay_reliability_tier": "reproducible",
+     "challenges": []
+    },
+    {
      "inhibitor": "KW-2449",
-     "utility": 0.3367,
+     "utility": 0.3369,
      "components": {
       "sensitivity": 0.6939,
       "coverage_blast": 0.514,
       "coverage_LSC_like": 0.006,
       "mechanistic": 0.503,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.3378,
+      "uncertainty": 0.3364,
+      "assay_reliability": 0.3005635406668643,
       "resistance": 0.5964,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2830,96 +3068,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
-     "challenges": []
-    },
-    {
-     "inhibitor": "BEZ235",
-     "utility": 0.3248,
-     "components": {
-      "sensitivity": 0.5836,
-      "coverage_blast": 0.7,
-      "coverage_LSC_like": 0.0,
-      "mechanistic": 0.6214,
-      "clinical_evidence": 0.45,
-      "uncertainty": 0.4997,
-      "resistance": 0.6,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 1.0,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": []
-    },
-    {
-     "inhibitor": "INK-128",
-     "utility": 0.3247,
-     "components": {
-      "sensitivity": 0.7815,
-      "coverage_blast": 0.734,
-      "coverage_LSC_like": 0.006,
-      "mechanistic": 0.4284,
-      "clinical_evidence": 0.45,
-      "uncertainty": 0.3705,
-      "resistance": 1.0,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 1.0,
-       "subclone_escape": 0.994,
-       "n_measurable": 1
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
+     "assay_reliability": 0.3005635406668643,
+     "assay_reliability_tier": "moderate",
      "challenges": []
     },
     {
      "inhibitor": "VX-745",
-     "utility": 0.3227,
+     "utility": 0.3324,
      "components": {
       "sensitivity": 0.5815,
       "coverage_blast": 0.7,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.6884,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.5838,
+      "uncertainty": 0.5189,
+      "assay_reliability": 0.3076544011889513,
       "resistance": 0.6,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2947,6 +3110,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.3076544011889513,
+     "assay_reliability_tier": "moderate",
      "challenges": [
       {
        "challenge": "normal_haematopoiesis",
@@ -2957,14 +3122,15 @@
     },
     {
      "inhibitor": "RAF265 (CHIR-265)",
-     "utility": 0.3172,
+     "utility": 0.3057,
      "components": {
       "sensitivity": 0.5324,
       "coverage_blast": 0.484,
       "coverage_LSC_like": 0.03,
       "mechanistic": 0.8236,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.4726,
+      "uncertainty": 0.549,
+      "assay_reliability": 0.09549904255303028,
       "resistance": 0.582,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -2992,6 +3158,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.09549904255303028,
+     "assay_reliability_tier": "unreliable",
      "challenges": [
       {
        "challenge": "normal_haematopoiesis",
@@ -3002,14 +3170,15 @@
     },
     {
      "inhibitor": "Pelitinib (EKB-569)",
-     "utility": 0.2698,
+     "utility": 0.2665,
      "components": {
       "sensitivity": 0.2543,
       "coverage_blast": 0.099,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.8362,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.3054,
+      "uncertainty": 0.3274,
+      "assay_reliability": 0.2716706396106299,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3037,6 +3206,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.2716706396106299,
+     "assay_reliability_tier": "weak",
      "challenges": [
       {
        "challenge": "modality_conflict",
@@ -3047,14 +3218,15 @@
     },
     {
      "inhibitor": "Dovitinib (CHIR-258)",
-     "utility": 0.2216,
+     "utility": 0.2083,
      "components": {
       "sensitivity": 0.1119,
       "coverage_blast": 0.11,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.7295,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.2039,
+      "uncertainty": 0.293,
+      "assay_reliability": 0.19290586691369735,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3082,6 +3254,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.19290586691369735,
+     "assay_reliability_tier": "weak",
      "challenges": [
       {
        "challenge": "modality_conflict",
@@ -3096,15 +3270,16 @@
      ]
     },
     {
-     "inhibitor": "Roscovitine (CYC-202)",
-     "utility": 0.2083,
+     "inhibitor": "MGCD-265",
+     "utility": 0.202,
      "components": {
-      "sensitivity": 0.4747,
-      "coverage_blast": 0.679,
+      "sensitivity": 0.3037,
+      "coverage_blast": 0.374,
       "coverage_LSC_like": 0.0,
-      "mechanistic": 0.2973,
+      "mechanistic": 0.6634,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.6507,
+      "uncertainty": 0.3807,
+      "assay_reliability": 0.26870265798355436,
       "resistance": 0.6,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3132,6 +3307,50 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.26870265798355436,
+     "assay_reliability_tier": "weak",
+     "challenges": []
+    },
+    {
+     "inhibitor": "Roscovitine (CYC-202)",
+     "utility": 0.1956,
+     "components": {
+      "sensitivity": 0.4747,
+      "coverage_blast": 0.679,
+      "coverage_LSC_like": 0.0,
+      "mechanistic": 0.2973,
+      "clinical_evidence": 0.45,
+      "uncertainty": 0.7354,
+      "assay_reliability": -0.06390744391069397,
+      "resistance": 0.6,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 1.0,
+       "subclone_escape": 0.0,
+       "n_measurable": 1
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": -0.06390744391069397,
+     "assay_reliability_tier": "unreliable",
      "challenges": [
       {
        "challenge": "weak_model",
@@ -3141,54 +3360,16 @@
      ]
     },
     {
-     "inhibitor": "MGCD-265",
-     "utility": 0.2031,
-     "components": {
-      "sensitivity": 0.3037,
-      "coverage_blast": 0.374,
-      "coverage_LSC_like": 0.0,
-      "mechanistic": 0.6634,
-      "clinical_evidence": 0.45,
-      "uncertainty": 0.3736,
-      "resistance": 0.6,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 1.0,
-       "subclone_escape": 0.0,
-       "n_measurable": 1
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": []
-    },
-    {
      "inhibitor": "GSK690693",
-     "utility": 0.1955,
+     "utility": 0.1842,
      "components": {
       "sensitivity": 0.5316,
       "coverage_blast": 0.703,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.4086,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.6133,
+      "uncertainty": 0.6887,
+      "assay_reliability": 0.03406564260797134,
       "resistance": 1.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3216,18 +3397,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.03406564260797134,
+     "assay_reliability_tier": "unreliable",
      "challenges": []
     },
     {
      "inhibitor": "AZD1152-HQPA (AZD2811)",
-     "utility": 0.1636,
+     "utility": 0.1581,
      "components": {
       "sensitivity": 0.2356,
       "coverage_blast": 0.101,
       "coverage_LSC_like": 0.006,
       "mechanistic": 0.2852,
       "clinical_evidence": 0.45,
-      "uncertainty": 0.3689,
+      "uncertainty": 0.4057,
+      "assay_reliability": 0.21569845306182203,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3255,6 +3439,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.21569845306182203,
+     "assay_reliability_tier": "weak",
      "challenges": [
       {
        "challenge": "normal_haematopoiesis",
@@ -3271,14 +3457,15 @@
    "ranked": [
     {
      "inhibitor": "GW-2580",
-     "utility": 0.7422,
+     "utility": 0.7386,
      "components": {
       "sensitivity": 0.92,
       "coverage_blast": 0.954,
       "coverage_LSC_like": 0.836,
       "mechanistic": 0.7798,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.2421,
+      "uncertainty": 0.2663,
+      "assay_reliability": 0.2960429409510353,
       "resistance": 0.0984,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3306,6 +3493,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.2960429409510353,
+     "assay_reliability_tier": "weak",
      "challenges": [
       {
        "challenge": "normal_haematopoiesis",
@@ -3316,14 +3505,15 @@
     },
     {
      "inhibitor": "JNJ-28312141",
-     "utility": 0.7347,
+     "utility": 0.7327,
      "components": {
       "sensitivity": 0.8954,
       "coverage_blast": 0.998,
       "coverage_LSC_like": 1.0,
       "mechanistic": 0.7178,
       "clinical_evidence": 0.15,
-      "uncertainty": 0.2756,
+      "uncertainty": 0.2895,
+      "assay_reliability": 0.30016355773706654,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3351,6 +3541,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.30016355773706654,
+     "assay_reliability_tier": "moderate",
      "challenges": [
       {
        "challenge": "no_clinical_route",
@@ -3361,14 +3553,15 @@
     },
     {
      "inhibitor": "Doramapimod (BIRB 796)",
-     "utility": 0.7179,
+     "utility": 0.7169,
      "components": {
       "sensitivity": 0.9068,
       "coverage_blast": 0.985,
       "coverage_LSC_like": 0.953,
       "mechanistic": 0.6903,
       "clinical_evidence": 0.15,
-      "uncertainty": 0.2879,
+      "uncertainty": 0.2948,
+      "assay_reliability": 0.3076544011889514,
       "resistance": 0.0282,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3396,6 +3589,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.3076544011889514,
+     "assay_reliability_tier": "moderate",
      "challenges": [
       {
        "challenge": "no_clinical_route",
@@ -3406,14 +3601,15 @@
     },
     {
      "inhibitor": "NVP-TAE684",
-     "utility": 0.7101,
+     "utility": 0.699,
      "components": {
       "sensitivity": 0.8354,
       "coverage_blast": 0.927,
       "coverage_LSC_like": 0.806,
       "mechanistic": 0.8362,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.2495,
+      "uncertainty": 0.3234,
+      "assay_reliability": 0.20053161051596718,
       "resistance": 0.1164,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3441,6 +3637,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.20053161051596718,
+     "assay_reliability_tier": "weak",
      "challenges": [
       {
        "challenge": "normal_haematopoiesis",
@@ -3451,14 +3649,15 @@
     },
     {
      "inhibitor": "PRT062607",
-     "utility": 0.6931,
+     "utility": 0.6686,
      "components": {
       "sensitivity": 0.8699,
       "coverage_blast": 0.954,
       "coverage_LSC_like": 0.836,
       "mechanistic": 0.6602,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.3251,
+      "uncertainty": 0.4887,
+      "assay_reliability": -0.021919608360286325,
       "resistance": 0.0984,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3486,18 +3685,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": -0.021919608360286325,
+     "assay_reliability_tier": "unreliable",
      "challenges": []
     },
     {
      "inhibitor": "PD173955",
-     "utility": 0.6777,
+     "utility": 0.6635,
      "components": {
       "sensitivity": 0.8068,
       "coverage_blast": 0.945,
       "coverage_LSC_like": 0.8,
       "mechanistic": 0.7811,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.3509,
+      "uncertainty": 0.445,
+      "assay_reliability": 0.11746841686463325,
       "resistance": 0.12,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3525,18 +3727,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.11746841686463325,
+     "assay_reliability_tier": "unreliable",
      "challenges": []
     },
     {
      "inhibitor": "KI20227",
-     "utility": 0.6491,
+     "utility": 0.6537,
      "components": {
       "sensitivity": 0.8227,
       "coverage_blast": 0.941,
       "coverage_LSC_like": 0.806,
       "mechanistic": 0.7589,
       "clinical_evidence": 0.15,
-      "uncertainty": 0.3353,
+      "uncertainty": 0.3051,
+      "assay_reliability": 0.3553034996102853,
       "resistance": 0.1164,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3564,6 +3769,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.3553034996102853,
+     "assay_reliability_tier": "moderate",
      "challenges": [
       {
        "challenge": "no_clinical_route",
@@ -3574,14 +3781,15 @@
     },
     {
      "inhibitor": "SU11274",
-     "utility": 0.638,
+     "utility": 0.6476,
      "components": {
       "sensitivity": 0.6932,
       "coverage_blast": 0.943,
       "coverage_LSC_like": 0.83,
       "mechanistic": 0.7682,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.3973,
+      "uncertainty": 0.3338,
+      "assay_reliability": 0.38910837695457906,
       "resistance": 0.102,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3609,18 +3817,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.38910837695457906,
+     "assay_reliability_tier": "moderate",
      "challenges": []
     },
     {
      "inhibitor": "JNJ-7706621",
-     "utility": 0.5984,
+     "utility": 0.6028,
      "components": {
       "sensitivity": 0.7002,
       "coverage_blast": 0.998,
       "coverage_LSC_like": 1.0,
       "mechanistic": 0.2871,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.4943,
+      "uncertainty": 0.4652,
+      "assay_reliability": 0.2817174735019268,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3648,6 +3859,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.2817174735019268,
+     "assay_reliability_tier": "weak",
      "challenges": [
       {
        "challenge": "modality_conflict",
@@ -3658,14 +3871,15 @@
     },
     {
      "inhibitor": "H-89",
-     "utility": 0.5758,
+     "utility": 0.5583,
      "components": {
       "sensitivity": 0.6821,
       "coverage_blast": 0.946,
       "coverage_LSC_like": 0.83,
       "mechanistic": 0.7233,
       "clinical_evidence": 0.15,
-      "uncertainty": 0.5189,
+      "uncertainty": 0.6356,
+      "assay_reliability": -0.01631917214443964,
       "resistance": 0.102,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3693,119 +3907,27 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": -0.01631917214443964,
+     "assay_reliability_tier": "unreliable",
      "challenges": [
       {
        "challenge": "no_clinical_route",
        "severity": "high",
        "detail": "research-only compound with no clinically available analogue"
-      }
-     ]
-    },
-    {
-     "inhibitor": "S31-201",
-     "utility": 0.5559,
-     "components": {
-      "sensitivity": 0.6258,
-      "coverage_blast": 0.941,
-      "coverage_LSC_like": 0.83,
-      "mechanistic": 0.7554,
-      "clinical_evidence": 0.15,
-      "uncertainty": 0.5564,
-      "resistance": 0.102,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.17,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": [
-      {
-       "challenge": "no_clinical_route",
-       "severity": "high",
-       "detail": "research-only compound with no clinically available analogue"
-      }
-     ]
-    },
-    {
-     "inhibitor": "STO609",
-     "utility": 0.5305,
-     "components": {
-      "sensitivity": 0.5658,
-      "coverage_blast": 0.931,
-      "coverage_LSC_like": 0.806,
-      "mechanistic": 0.8253,
-      "clinical_evidence": 0.15,
-      "uncertainty": 0.6183,
-      "resistance": 0.1164,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.194,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": [
-      {
-       "challenge": "no_clinical_route",
-       "severity": "high",
-       "detail": "research-only compound with no clinically available analogue"
-      },
-      {
-       "challenge": "weak_model",
-       "severity": "high",
-       "detail": "the model's own held-out AUROC for this inhibitor is 0.61"
       }
      ]
     },
     {
      "inhibitor": "JNJ-38877605",
-     "utility": 0.5288,
+     "utility": 0.5436,
      "components": {
       "sensitivity": 0.5439,
       "coverage_blast": 0.718,
       "coverage_LSC_like": 0.83,
       "mechanistic": 0.7682,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.5439,
+      "uncertainty": 0.4449,
+      "assay_reliability": 0.389108376954579,
       "resistance": 0.102,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3833,18 +3955,69 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.389108376954579,
+     "assay_reliability_tier": "moderate",
      "challenges": []
     },
     {
+     "inhibitor": "S31-201",
+     "utility": 0.5398,
+     "components": {
+      "sensitivity": 0.6258,
+      "coverage_blast": 0.941,
+      "coverage_LSC_like": 0.83,
+      "mechanistic": 0.7554,
+      "clinical_evidence": 0.15,
+      "uncertainty": 0.6639,
+      "assay_reliability": -0.10755784710523647,
+      "resistance": 0.102,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.17,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": -0.10755784710523647,
+     "assay_reliability_tier": "unreliable",
+     "challenges": [
+      {
+       "challenge": "no_clinical_route",
+       "severity": "high",
+       "detail": "research-only compound with no clinically available analogue"
+      }
+     ]
+    },
+    {
      "inhibitor": "BMS-345541",
-     "utility": 0.5264,
+     "utility": 0.5257,
      "components": {
       "sensitivity": 0.5556,
       "coverage_blast": 0.948,
       "coverage_LSC_like": 0.836,
       "mechanistic": 0.7839,
       "clinical_evidence": 0.15,
-      "uncertainty": 0.6467,
+      "uncertainty": 0.6517,
+      "assay_reliability": 0.14982122626156447,
       "resistance": 0.0984,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3872,6 +4045,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.14982122626156447,
+     "assay_reliability_tier": "unreliable",
      "challenges": [
       {
        "challenge": "no_clinical_route",
@@ -3891,15 +4066,69 @@
      ]
     },
     {
+     "inhibitor": "STO609",
+     "utility": 0.5252,
+     "components": {
+      "sensitivity": 0.5658,
+      "coverage_blast": 0.931,
+      "coverage_LSC_like": 0.806,
+      "mechanistic": 0.8253,
+      "clinical_evidence": 0.15,
+      "uncertainty": 0.6532,
+      "assay_reliability": 0.1068625686801424,
+      "resistance": 0.1164,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.194,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.1068625686801424,
+     "assay_reliability_tier": "unreliable",
+     "challenges": [
+      {
+       "challenge": "no_clinical_route",
+       "severity": "high",
+       "detail": "research-only compound with no clinically available analogue"
+      },
+      {
+       "challenge": "weak_model",
+       "severity": "high",
+       "detail": "the model's own held-out AUROC for this inhibitor is 0.61"
+      }
+     ]
+    },
+    {
      "inhibitor": "MLN8054",
-     "utility": 0.5087,
+     "utility": 0.5243,
      "components": {
       "sensitivity": 0.5563,
       "coverage_blast": 0.885,
       "coverage_LSC_like": 0.994,
       "mechanistic": 0.2865,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.6366,
+      "uncertainty": 0.5321,
+      "assay_reliability": 0.35748361147352364,
       "resistance": 0.0036,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3927,6 +4156,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.35748361147352364,
+     "assay_reliability_tier": "moderate",
      "challenges": [
       {
        "challenge": "weak_model",
@@ -3937,14 +4168,15 @@
     },
     {
      "inhibitor": "PHA-665752",
-     "utility": 0.4503,
+     "utility": 0.4625,
      "components": {
       "sensitivity": 0.4392,
       "coverage_blast": 0.301,
       "coverage_LSC_like": 0.836,
       "mechanistic": 0.7682,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.4794,
+      "uncertainty": 0.3982,
+      "assay_reliability": 0.3849702086319027,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -3972,6 +4204,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.3849702086319027,
+     "assay_reliability_tier": "moderate",
      "challenges": [
       {
        "challenge": "normal_haematopoiesis",
@@ -3982,14 +4216,15 @@
     },
     {
      "inhibitor": "GSK-1838705A",
-     "utility": 0.4051,
+     "utility": 0.3937,
      "components": {
       "sensitivity": 0.3948,
       "coverage_blast": 0.398,
       "coverage_LSC_like": 0.83,
       "mechanistic": 0.712,
       "clinical_evidence": 0.15,
-      "uncertainty": 0.4992,
+      "uncertainty": 0.5747,
+      "assay_reliability": 0.08518292261884772,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -4017,6 +4252,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.08518292261884772,
+     "assay_reliability_tier": "unreliable",
      "challenges": [
       {
        "challenge": "no_clinical_route",
@@ -4031,65 +4268,16 @@
      ]
     },
     {
-     "inhibitor": "KU-55933",
-     "utility": 0.3562,
-     "components": {
-      "sensitivity": 0.4797,
-      "coverage_blast": 0.461,
-      "coverage_LSC_like": 0.836,
-      "mechanistic": 0.2193,
-      "clinical_evidence": 0.15,
-      "uncertainty": 0.5426,
-      "resistance": 0.0,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.0,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": [
-      {
-       "challenge": "no_clinical_route",
-       "severity": "high",
-       "detail": "research-only compound with no clinically available analogue"
-      },
-      {
-       "challenge": "normal_haematopoiesis",
-       "severity": "medium",
-       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.28) than in the blast compartment (0.20): on-target myelo-suppression is plausible"
-      }
-     ]
-    },
-    {
      "inhibitor": "PI-103",
-     "utility": 0.3556,
+     "utility": 0.3702,
      "components": {
       "sensitivity": 0.7086,
       "coverage_blast": 0.701,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.6214,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.4621,
+      "uncertainty": 0.365,
+      "assay_reliability": 0.4223455588830601,
       "resistance": 0.6,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -4117,57 +4305,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
-     "challenges": []
-    },
-    {
-     "inhibitor": "TG100-115",
-     "utility": 0.3479,
-     "components": {
-      "sensitivity": 0.662,
-      "coverage_blast": 0.726,
-      "coverage_LSC_like": 0.0,
-      "mechanistic": 0.7054,
-      "clinical_evidence": 0.35,
-      "uncertainty": 0.531,
-      "resistance": 0.6,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 1.0,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
+     "assay_reliability": 0.4223455588830601,
+     "assay_reliability_tier": "moderate",
      "challenges": []
     },
     {
      "inhibitor": "SGX-523",
-     "utility": 0.346,
+     "utility": 0.3647,
      "components": {
       "sensitivity": 0.487,
       "coverage_blast": 0.577,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.7682,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.6588,
+      "uncertainty": 0.5341,
+      "assay_reliability": 0.3849702086319027,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -4195,6 +4347,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.3849702086319027,
+     "assay_reliability_tier": "moderate",
      "challenges": [
       {
        "challenge": "weak_model",
@@ -4204,15 +4358,111 @@
      ]
     },
     {
+     "inhibitor": "KU-55933",
+     "utility": 0.347,
+     "components": {
+      "sensitivity": 0.4797,
+      "coverage_blast": 0.461,
+      "coverage_LSC_like": 0.836,
+      "mechanistic": 0.2193,
+      "clinical_evidence": 0.15,
+      "uncertainty": 0.604,
+      "assay_reliability": 0.09182012171237668,
+      "resistance": 0.0,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.0,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.09182012171237668,
+     "assay_reliability_tier": "unreliable",
+     "challenges": [
+      {
+       "challenge": "no_clinical_route",
+       "severity": "high",
+       "detail": "research-only compound with no clinically available analogue"
+      },
+      {
+       "challenge": "normal_haematopoiesis",
+       "severity": "medium",
+       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.28) than in the blast compartment (0.20): on-target myelo-suppression is plausible"
+      }
+     ]
+    },
+    {
+     "inhibitor": "TG100-115",
+     "utility": 0.3309,
+     "components": {
+      "sensitivity": 0.662,
+      "coverage_blast": 0.726,
+      "coverage_LSC_like": 0.0,
+      "mechanistic": 0.7054,
+      "clinical_evidence": 0.35,
+      "uncertainty": 0.6447,
+      "assay_reliability": -0.024083883463118825,
+      "resistance": 0.6,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 1.0,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": -0.024083883463118825,
+     "assay_reliability_tier": "unreliable",
+     "challenges": []
+    },
+    {
      "inhibitor": "PP242",
-     "utility": 0.3196,
+     "utility": 0.3265,
      "components": {
       "sensitivity": 0.8117,
       "coverage_blast": 0.727,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.4284,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.3455,
+      "uncertainty": 0.2998,
+      "assay_reliability": 0.3793059195314635,
       "resistance": 1.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -4240,18 +4490,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.3793059195314635,
+     "assay_reliability_tier": "moderate",
      "challenges": []
     },
     {
      "inhibitor": "JAK Inhibitor I",
-     "utility": 0.3129,
+     "utility": 0.3158,
      "components": {
       "sensitivity": 0.6165,
       "coverage_blast": 0.663,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.6462,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.5276,
+      "uncertainty": 0.5081,
+      "assay_reliability": 0.248730790170476,
       "resistance": 0.6,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -4279,18 +4532,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.248730790170476,
+     "assay_reliability_tier": "weak",
      "challenges": []
     },
     {
      "inhibitor": "AGI-5198",
-     "utility": 0.2447,
+     "utility": 0.2551,
      "components": {
       "sensitivity": 0.4156,
       "coverage_blast": 0.471,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.3594,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.6036,
+      "uncertainty": 0.5343,
+      "assay_reliability": 0.3070101272701991,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -4318,6 +4574,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.3070101272701991,
+     "assay_reliability_tier": "moderate",
      "challenges": [
       {
        "challenge": "weak_model",
@@ -4327,65 +4585,16 @@
      ]
     },
     {
-     "inhibitor": "NVP-ADW742",
-     "utility": 0.2289,
+     "inhibitor": "Nutlin 3a",
+     "utility": 0.2394,
      "components": {
-      "sensitivity": 0.6001,
-      "coverage_blast": 0.512,
-      "coverage_LSC_like": 0.0,
-      "mechanistic": 0.5137,
-      "clinical_evidence": 0.15,
-      "uncertainty": 0.5136,
-      "resistance": 0.6,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 1.0,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": [
-      {
-       "challenge": "no_clinical_route",
-       "severity": "high",
-       "detail": "research-only compound with no clinically available analogue"
-      },
-      {
-       "challenge": "normal_haematopoiesis",
-       "severity": "medium",
-       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.24) than in the blast compartment (0.16): on-target myelo-suppression is plausible"
-      }
-     ]
-    },
-    {
-     "inhibitor": "PHT-427",
-     "utility": 0.2279,
-     "components": {
-      "sensitivity": 0.3995,
-      "coverage_blast": 0.493,
-      "coverage_LSC_like": 0.0,
-      "mechanistic": 0.5594,
-      "clinical_evidence": 0.15,
-      "uncertainty": 0.7043,
+      "sensitivity": 0.3648,
+      "coverage_blast": 0.188,
+      "coverage_LSC_like": 0.006,
+      "mechanistic": 0.4733,
+      "clinical_evidence": 0.35,
+      "uncertainty": 0.3452,
+      "assay_reliability": 0.61238499201141,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -4413,6 +4622,56 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.61238499201141,
+     "assay_reliability_tier": "reproducible",
+     "challenges": [
+      {
+       "challenge": "assay_batch",
+       "severity": "high",
+       "detail": "this inhibitor's AUC distribution shifted between BeatAML acquisition waves; only leave-wave-out validation is meaningful for it"
+      }
+     ]
+    },
+    {
+     "inhibitor": "PHT-427",
+     "utility": 0.2324,
+     "components": {
+      "sensitivity": 0.3995,
+      "coverage_blast": 0.493,
+      "coverage_LSC_like": 0.0,
+      "mechanistic": 0.5594,
+      "clinical_evidence": 0.15,
+      "uncertainty": 0.6747,
+      "assay_reliability": 0.1881095215313779,
+      "resistance": 0.0,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.0,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.1881095215313779,
+     "assay_reliability_tier": "weak",
      "challenges": [
       {
        "challenge": "no_clinical_route",
@@ -4427,68 +4686,24 @@
      ]
     },
     {
-     "inhibitor": "Nutlin 3a",
-     "utility": 0.2228,
+     "inhibitor": "NVP-ADW742",
+     "utility": 0.222,
      "components": {
-      "sensitivity": 0.3648,
-      "coverage_blast": 0.188,
-      "coverage_LSC_like": 0.006,
-      "mechanistic": 0.4733,
-      "clinical_evidence": 0.35,
-      "uncertainty": 0.4557,
-      "resistance": 0.0,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.0,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": [
-      {
-       "challenge": "assay_batch",
-       "severity": "high",
-       "detail": "this inhibitor's AUC distribution shifted between BeatAML acquisition waves; only leave-wave-out validation is meaningful for it"
-      }
-     ]
-    },
-    {
-     "inhibitor": "XAV-939",
-     "utility": 0.1931,
-     "components": {
-      "sensitivity": 0.4643,
-      "coverage_blast": 0.094,
+      "sensitivity": 0.6001,
+      "coverage_blast": 0.512,
       "coverage_LSC_like": 0.0,
-      "mechanistic": 0.5835,
+      "mechanistic": 0.5137,
       "clinical_evidence": 0.15,
-      "uncertainty": 0.6636,
-      "resistance": 0.0,
+      "uncertainty": 0.56,
+      "assay_reliability": 0.13267673034794225,
+      "resistance": 0.6,
       "infeasibility": 0.0,
       "ood": 0.0
      },
      "detail": {
       "resistance": {
        "flagged_fraction": 0.0,
-       "subclone_escape": 0.0,
+       "subclone_escape": 1.0,
        "n_measurable": 0
       },
       "infeasibility": {
@@ -4508,112 +4723,9 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.13267673034794225,
+     "assay_reliability_tier": "unreliable",
      "challenges": [
-      {
-       "challenge": "no_clinical_route",
-       "severity": "high",
-       "detail": "research-only compound with no clinically available analogue"
-      },
-      {
-       "challenge": "weak_model",
-       "severity": "high",
-       "detail": "the model's own held-out AUROC for this inhibitor is 0.57"
-      },
-      {
-       "challenge": "normal_haematopoiesis",
-       "severity": "medium",
-       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.55) than in the blast compartment (0.47): on-target myelo-suppression is plausible"
-      }
-     ]
-    },
-    {
-     "inhibitor": "A-674563",
-     "utility": 0.1756,
-     "components": {
-      "sensitivity": 0.1761,
-      "coverage_blast": 0.071,
-      "coverage_LSC_like": 0.0,
-      "mechanistic": 0.5917,
-      "clinical_evidence": 0.35,
-      "uncertainty": 0.346,
-      "resistance": 0.0,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.0,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": [
-      {
-       "challenge": "modality_conflict",
-       "severity": "medium",
-       "detail": "empirical P(sensitive)=0.18 but mechanistic score=0.59; the two lines of evidence disagree"
-      }
-     ]
-    },
-    {
-     "inhibitor": "NF-kB Activation Inhibitor",
-     "utility": 0.1752,
-     "components": {
-      "sensitivity": 0.1484,
-      "coverage_blast": 0.023,
-      "coverage_LSC_like": 0.036,
-      "mechanistic": 0.78,
-      "clinical_evidence": 0.15,
-      "uncertainty": 0.2607,
-      "resistance": 0.0,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.0,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
-     "challenges": [
-      {
-       "challenge": "modality_conflict",
-       "severity": "medium",
-       "detail": "empirical P(sensitive)=0.15 but mechanistic score=0.78; the two lines of evidence disagree"
-      },
       {
        "challenge": "no_clinical_route",
        "severity": "high",
@@ -4622,20 +4734,21 @@
       {
        "challenge": "normal_haematopoiesis",
        "severity": "medium",
-       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.21) than in the blast compartment (-0.25): on-target myelo-suppression is plausible"
+       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.24) than in the blast compartment (0.16): on-target myelo-suppression is plausible"
       }
      ]
     },
     {
      "inhibitor": "MLN120B",
-     "utility": 0.1719,
+     "utility": 0.1868,
      "components": {
       "sensitivity": 0.3697,
       "coverage_blast": 0.0,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.6734,
       "clinical_evidence": 0.15,
-      "uncertainty": 0.5904,
+      "uncertainty": 0.491,
+      "assay_reliability": 0.36874822030657567,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -4663,6 +4776,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.36874822030657567,
+     "assay_reliability_tier": "moderate",
      "challenges": [
       {
        "challenge": "no_clinical_route",
@@ -4682,15 +4797,16 @@
      ]
     },
     {
-     "inhibitor": "Bay 11-7085",
-     "utility": 0.1634,
+     "inhibitor": "XAV-939",
+     "utility": 0.1862,
      "components": {
-      "sensitivity": 0.2075,
-      "coverage_blast": 0.014,
+      "sensitivity": 0.4643,
+      "coverage_blast": 0.094,
       "coverage_LSC_like": 0.0,
-      "mechanistic": 0.778,
+      "mechanistic": 0.5835,
       "clinical_evidence": 0.15,
-      "uncertainty": 0.4185,
+      "uncertainty": 0.7098,
+      "assay_reliability": 0.06557314151155336,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -4718,56 +4834,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
-     "challenges": [
-      {
-       "challenge": "modality_conflict",
-       "severity": "medium",
-       "detail": "empirical P(sensitive)=0.21 but mechanistic score=0.78; the two lines of evidence disagree"
-      },
-      {
-       "challenge": "no_clinical_route",
-       "severity": "high",
-       "detail": "research-only compound with no clinically available analogue"
-      }
-     ]
-    },
-    {
-     "inhibitor": "SB-431542",
-     "utility": 0.1552,
-     "components": {
-      "sensitivity": 0.3491,
-      "coverage_blast": 0.0,
-      "coverage_LSC_like": 0.0,
-      "mechanistic": 0.6096,
-      "clinical_evidence": 0.15,
-      "uncertainty": 0.5853,
-      "resistance": 0.0,
-      "infeasibility": 0.0,
-      "ood": 0.0
-     },
-     "detail": {
-      "resistance": {
-       "flagged_fraction": 0.0,
-       "subclone_escape": 0.0,
-       "n_measurable": 0
-      },
-      "infeasibility": {
-       "assessed": false,
-       "reason": "no clinical covariates supplied"
-      },
-      "evaluable_positive_weight": 0.9
-     },
-     "weights": {
-      "sensitivity": 0.3,
-      "coverage_blast": 0.15,
-      "coverage_lsc": 0.15,
-      "mechanistic": 0.15,
-      "clinical": 0.15,
-      "uncertainty": 0.15,
-      "resistance": 0.15,
-      "infeasibility": 0.1,
-      "ood": 0.2
-     },
+     "assay_reliability": 0.06557314151155336,
+     "assay_reliability_tier": "unreliable",
      "challenges": [
       {
        "challenge": "no_clinical_route",
@@ -4782,20 +4850,74 @@
       {
        "challenge": "normal_haematopoiesis",
        "severity": "medium",
-       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.03) than in the blast compartment (-0.14): on-target myelo-suppression is plausible"
+       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.55) than in the blast compartment (0.47): on-target myelo-suppression is plausible"
+      }
+     ]
+    },
+    {
+     "inhibitor": "Bay 11-7085",
+     "utility": 0.172,
+     "components": {
+      "sensitivity": 0.2075,
+      "coverage_blast": 0.014,
+      "coverage_LSC_like": 0.0,
+      "mechanistic": 0.778,
+      "clinical_evidence": 0.15,
+      "uncertainty": 0.3608,
+      "assay_reliability": 0.3687482203065756,
+      "resistance": 0.0,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.0,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.3687482203065756,
+     "assay_reliability_tier": "moderate",
+     "challenges": [
+      {
+       "challenge": "modality_conflict",
+       "severity": "medium",
+       "detail": "empirical P(sensitive)=0.21 but mechanistic score=0.78; the two lines of evidence disagree"
+      },
+      {
+       "challenge": "no_clinical_route",
+       "severity": "high",
+       "detail": "research-only compound with no clinically available analogue"
       }
      ]
     },
     {
      "inhibitor": "JQ1",
-     "utility": 0.1509,
+     "utility": 0.1649,
      "components": {
       "sensitivity": 0.2148,
       "coverage_blast": 0.007,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.4639,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.3834,
+      "uncertainty": 0.2905,
+      "assay_reliability": 0.6045294629704342,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -4823,18 +4945,21 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.6045294629704342,
+     "assay_reliability_tier": "reproducible",
      "challenges": []
     },
     {
-     "inhibitor": "SR9011",
-     "utility": 0.1507,
+     "inhibitor": "SB-431542",
+     "utility": 0.1627,
      "components": {
-      "sensitivity": 0.299,
-      "coverage_blast": 0.042,
+      "sensitivity": 0.3491,
+      "coverage_blast": 0.0,
       "coverage_LSC_like": 0.0,
-      "mechanistic": 0.5584,
+      "mechanistic": 0.6096,
       "clinical_evidence": 0.15,
-      "uncertainty": 0.4938,
+      "uncertainty": 0.5352,
+      "assay_reliability": 0.27971678397672745,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -4862,24 +4987,37 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.27971678397672745,
+     "assay_reliability_tier": "weak",
      "challenges": [
       {
        "challenge": "no_clinical_route",
        "severity": "high",
        "detail": "research-only compound with no clinically available analogue"
+      },
+      {
+       "challenge": "weak_model",
+       "severity": "high",
+       "detail": "the model's own held-out AUROC for this inhibitor is 0.57"
+      },
+      {
+       "challenge": "normal_haematopoiesis",
+       "severity": "medium",
+       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.03) than in the blast compartment (-0.14): on-target myelo-suppression is plausible"
       }
      ]
     },
     {
-     "inhibitor": "GSK-1904529A",
-     "utility": 0.1436,
+     "inhibitor": "A-674563",
+     "utility": 0.1518,
      "components": {
-      "sensitivity": 0.1865,
-      "coverage_blast": 0.0,
+      "sensitivity": 0.1761,
+      "coverage_blast": 0.071,
       "coverage_LSC_like": 0.0,
-      "mechanistic": 0.712,
-      "clinical_evidence": 0.15,
-      "uncertainty": 0.4146,
+      "mechanistic": 0.5917,
+      "clinical_evidence": 0.35,
+      "uncertainty": 0.5045,
+      "assay_reliability": -0.016319172144439637,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -4907,11 +5045,61 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": -0.016319172144439637,
+     "assay_reliability_tier": "unreliable",
      "challenges": [
       {
        "challenge": "modality_conflict",
        "severity": "medium",
-       "detail": "empirical P(sensitive)=0.19 but mechanistic score=0.71; the two lines of evidence disagree"
+       "detail": "empirical P(sensitive)=0.18 but mechanistic score=0.59; the two lines of evidence disagree"
+      }
+     ]
+    },
+    {
+     "inhibitor": "NF-kB Activation Inhibitor",
+     "utility": 0.1483,
+     "components": {
+      "sensitivity": 0.1484,
+      "coverage_blast": 0.023,
+      "coverage_LSC_like": 0.036,
+      "mechanistic": 0.78,
+      "clinical_evidence": 0.15,
+      "uncertainty": 0.4399,
+      "assay_reliability": -0.029130051101923692,
+      "resistance": 0.0,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.0,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": -0.029130051101923692,
+     "assay_reliability_tier": "unreliable",
+     "challenges": [
+      {
+       "challenge": "modality_conflict",
+       "severity": "medium",
+       "detail": "empirical P(sensitive)=0.15 but mechanistic score=0.78; the two lines of evidence disagree"
       },
       {
        "challenge": "no_clinical_route",
@@ -4921,20 +5109,21 @@
       {
        "challenge": "normal_haematopoiesis",
        "severity": "medium",
-       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.22) than in the blast compartment (-0.29): on-target myelo-suppression is plausible"
+       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.21) than in the blast compartment (-0.25): on-target myelo-suppression is plausible"
       }
      ]
     },
     {
      "inhibitor": "DBZ",
-     "utility": 0.1429,
+     "utility": 0.1427,
      "components": {
       "sensitivity": 0.2586,
       "coverage_blast": 0.0,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.6178,
       "clinical_evidence": 0.15,
-      "uncertainty": 0.475,
+      "uncertainty": 0.4767,
+      "assay_reliability": 0.23317264846524657,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -4962,6 +5151,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.23317264846524657,
+     "assay_reliability_tier": "weak",
      "challenges": [
       {
        "challenge": "no_clinical_route",
@@ -4985,6 +5176,7 @@
       "mechanistic": null,
       "clinical_evidence": 0.35,
       "uncertainty": 0.5587,
+      "assay_reliability": NaN,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -5012,6 +5204,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": NaN,
+     "assay_reliability_tier": "unmeasurable",
      "challenges": [
       {
        "challenge": "small_training_set",
@@ -5021,15 +5215,16 @@
      ]
     },
     {
-     "inhibitor": "AGI-6780",
-     "utility": 0.1009,
+     "inhibitor": "GSK-1904529A",
+     "utility": 0.1331,
      "components": {
-      "sensitivity": 0.1214,
+      "sensitivity": 0.1865,
       "coverage_blast": 0.0,
       "coverage_LSC_like": 0.0,
-      "mechanistic": 0.3207,
-      "clinical_evidence": 0.35,
-      "uncertainty": 0.3423,
+      "mechanistic": 0.712,
+      "clinical_evidence": 0.15,
+      "uncertainty": 0.4851,
+      "assay_reliability": 0.13267673034794225,
       "resistance": 0.0,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -5057,18 +5252,127 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.13267673034794225,
+     "assay_reliability_tier": "unreliable",
+     "challenges": [
+      {
+       "challenge": "modality_conflict",
+       "severity": "medium",
+       "detail": "empirical P(sensitive)=0.19 but mechanistic score=0.71; the two lines of evidence disagree"
+      },
+      {
+       "challenge": "no_clinical_route",
+       "severity": "high",
+       "detail": "research-only compound with no clinically available analogue"
+      },
+      {
+       "challenge": "normal_haematopoiesis",
+       "severity": "medium",
+       "detail": "predicted sensitivity is no lower in the presumed-normal compartment (0.22) than in the blast compartment (-0.29): on-target myelo-suppression is plausible"
+      }
+     ]
+    },
+    {
+     "inhibitor": "SR9011",
+     "utility": 0.1322,
+     "components": {
+      "sensitivity": 0.299,
+      "coverage_blast": 0.042,
+      "coverage_LSC_like": 0.0,
+      "mechanistic": 0.5584,
+      "clinical_evidence": 0.15,
+      "uncertainty": 0.6165,
+      "assay_reliability": -0.021047729218935444,
+      "resistance": 0.0,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.0,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": -0.021047729218935444,
+     "assay_reliability_tier": "unreliable",
+     "challenges": [
+      {
+       "challenge": "no_clinical_route",
+       "severity": "high",
+       "detail": "research-only compound with no clinically available analogue"
+      }
+     ]
+    },
+    {
+     "inhibitor": "AGI-6780",
+     "utility": 0.1047,
+     "components": {
+      "sensitivity": 0.1214,
+      "coverage_blast": 0.0,
+      "coverage_LSC_like": 0.0,
+      "mechanistic": 0.3207,
+      "clinical_evidence": 0.35,
+      "uncertainty": 0.3172,
+      "assay_reliability": 0.34262214572274785,
+      "resistance": 0.0,
+      "infeasibility": 0.0,
+      "ood": 0.0
+     },
+     "detail": {
+      "resistance": {
+       "flagged_fraction": 0.0,
+       "subclone_escape": 0.0,
+       "n_measurable": 0
+      },
+      "infeasibility": {
+       "assessed": false,
+       "reason": "no clinical covariates supplied"
+      },
+      "evaluable_positive_weight": 0.9
+     },
+     "weights": {
+      "sensitivity": 0.3,
+      "coverage_blast": 0.15,
+      "coverage_lsc": 0.15,
+      "mechanistic": 0.15,
+      "clinical": 0.15,
+      "uncertainty": 0.15,
+      "resistance": 0.15,
+      "infeasibility": 0.1,
+      "ood": 0.2
+     },
+     "assay_reliability": 0.34262214572274785,
+     "assay_reliability_tier": "moderate",
      "challenges": []
     },
     {
      "inhibitor": "ABT-737",
-     "utility": 0.0296,
+     "utility": 0.0428,
      "components": {
       "sensitivity": 0.1573,
       "coverage_blast": 0.046,
       "coverage_LSC_like": 0.0,
       "mechanistic": 0.3352,
       "clinical_evidence": 0.35,
-      "uncertainty": 0.365,
+      "uncertainty": 0.2765,
+      "assay_reliability": 0.5457208668693057,
       "resistance": 0.6,
       "infeasibility": 0.0,
       "ood": 0.0
@@ -5096,6 +5400,8 @@
       "infeasibility": 0.1,
       "ood": 0.2
      },
+     "assay_reliability": 0.5457208668693057,
+     "assay_reliability_tier": "reproducible",
      "challenges": [
       {
        "challenge": "normal_haematopoiesis",
@@ -5107,7 +5413,12 @@
    ]
   }
  },
- "abstained": [],
+ "abstained": [
+  {
+   "inhibitor": "Selinexor",
+   "reason": "uncertainty 0.75 above the abstention threshold"
+  }
+ ],
  "agents": [
   {
    "name": "drug_response",
@@ -9576,14 +9887,15 @@
       "recommendations": [
        {
         "inhibitor": "Quizartinib (AC220)",
-        "utility": 0.8545,
+        "utility": 0.8616,
         "components": {
          "sensitivity": 0.8599,
          "coverage_blast": 0.994,
          "coverage_LSC_like": 1.0,
          "mechanistic": 0.6531,
          "clinical_evidence": 1.0,
-         "uncertainty": 0.2665,
+         "uncertainty": 0.2193,
+         "assay_reliability": 0.4176745386362019,
          "resistance": 0.0,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -9612,14 +9924,15 @@
        },
        {
         "inhibitor": "Midostaurin",
-        "utility": 0.832,
+        "utility": 0.8439,
         "components": {
          "sensitivity": 0.8199,
          "coverage_blast": 0.986,
          "coverage_LSC_like": 1.0,
          "mechanistic": 0.6589,
          "clinical_evidence": 1.0,
-         "uncertainty": 0.3249,
+         "uncertainty": 0.2461,
+         "assay_reliability": 0.5394152118717563,
          "resistance": 0.0,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -9648,14 +9961,15 @@
        },
        {
         "inhibitor": "Gilteritinib",
-        "utility": 0.4499,
+        "utility": 0.4573,
         "components": {
          "sensitivity": 0.6316,
          "coverage_blast": 0.644,
          "coverage_LSC_like": 0.036,
          "mechanistic": 0.646,
          "clinical_evidence": 1.0,
-         "uncertainty": 0.4103,
+         "uncertainty": 0.3608,
+         "assay_reliability": 0.35722973947664527,
          "resistance": 0.5784,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -9698,6 +10012,7 @@
          "mechanistic": 0.2435,
          "clinical_evidence": 1.0,
          "uncertainty": 0.3604,
+         "assay_reliability": NaN,
          "resistance": 0.45,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -9732,14 +10047,15 @@
        },
        {
         "inhibitor": "Azacytidine",
-        "utility": 0.1522,
+        "utility": 0.1338,
         "components": {
          "sensitivity": 0.237,
          "coverage_blast": 0.0,
          "coverage_LSC_like": 0.0,
          "mechanistic": 0.2437,
          "clinical_evidence": 1.0,
-         "uncertainty": 0.4938,
+         "uncertainty": 0.6165,
+         "assay_reliability": -0.07147222110039343,
          "resistance": 0.4,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -9779,14 +10095,15 @@
        },
        {
         "inhibitor": "Venetoclax",
-        "utility": 0.1298,
+        "utility": 0.1315,
         "components": {
          "sensitivity": 0.0127,
          "coverage_blast": 0.027,
          "coverage_LSC_like": 0.0,
          "mechanistic": 0.2113,
          "clinical_evidence": 1.0,
-         "uncertainty": 0.1387,
+         "uncertainty": 0.1272,
+         "assay_reliability": 0.40896694817303725,
          "resistance": 0.4,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -9823,18 +10140,19 @@
      },
      "approved_other": {
       "label": "approved, other indication (off-label in AML)",
-      "n_considered": 36,
+      "n_considered": 35,
       "recommendations": [
        {
         "inhibitor": "Pazopanib (GW786034)",
-        "utility": 0.8582,
+        "utility": 0.8589,
         "components": {
          "sensitivity": 0.9436,
          "coverage_blast": 0.987,
          "coverage_LSC_like": 0.959,
          "mechanistic": 0.8257,
          "clinical_evidence": 0.7,
-         "uncertainty": 0.2081,
+         "uncertainty": 0.2036,
+         "assay_reliability": 0.3646896797564805,
          "resistance": 0.0246,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -9863,14 +10181,15 @@
        },
        {
         "inhibitor": "Axitinib (AG-013736)",
-        "utility": 0.855,
+        "utility": 0.8516,
         "components": {
          "sensitivity": 0.9141,
          "coverage_blast": 0.998,
          "coverage_LSC_like": 1.0,
          "mechanistic": 0.8119,
          "clinical_evidence": 0.7,
-         "uncertainty": 0.2315,
+         "uncertainty": 0.2537,
+         "assay_reliability": 0.30455622485199085,
          "resistance": 0.0,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -9899,14 +10218,15 @@
        },
        {
         "inhibitor": "Tivozanib (AV-951)",
-        "utility": 0.8523,
+        "utility": 0.8509,
         "components": {
          "sensitivity": 0.9842,
          "coverage_blast": 0.954,
          "coverage_LSC_like": 0.836,
          "mechanistic": 0.8789,
          "clinical_evidence": 0.7,
-         "uncertainty": 0.15,
+         "uncertainty": 0.1596,
+         "assay_reliability": 0.3646896797564805,
          "resistance": 0.0984,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -9934,15 +10254,53 @@
         "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
        },
        {
+        "inhibitor": "Trametinib (GSK1120212)",
+        "utility": 0.8472,
+        "components": {
+         "sensitivity": 0.9456,
+         "coverage_blast": 0.987,
+         "coverage_LSC_like": 0.994,
+         "mechanistic": 0.6582,
+         "clinical_evidence": 0.7,
+         "uncertainty": 0.1603,
+         "assay_reliability": 0.6726873906332629,
+         "resistance": 0.0036,
+         "infeasibility": 0.0,
+         "ood": 0.0
+        },
+        "predicted_percentile": 0.9431524547803618,
+        "calibrated_probability": 0.9456286671121122,
+        "model_reliability_auroc": 0.903,
+        "beataml_support": {
+         "n_train": 414,
+         "neighbour_measured_auc_median": 94.04,
+         "cohort_measured_auc_median": 120.33
+        },
+        "coverage": {
+         "blast": 0.987,
+         "LSC_like": 0.994,
+         "escape_state": "LMPP-1-cycling"
+        },
+        "mechanism": {
+         "score": 0.6582,
+         "target_expression_pct": 0.5813953488372093,
+         "genetic_activation": []
+        },
+        "clinical_status": "approved, other indication (off-label in AML)",
+        "challenges": [],
+        "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
+       },
+       {
         "inhibitor": "Lenvatinib",
-        "utility": 0.8463,
+        "utility": 0.8383,
         "components": {
          "sensitivity": 0.9126,
          "coverage_blast": 0.987,
          "coverage_LSC_like": 0.959,
          "mechanistic": 0.8487,
          "clinical_evidence": 0.7,
-         "uncertainty": 0.2447,
+         "uncertainty": 0.2977,
+         "assay_reliability": 0.2414916407812326,
          "resistance": 0.0246,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -9971,14 +10329,15 @@
        },
        {
         "inhibitor": "Vargetef",
-        "utility": 0.8418,
+        "utility": 0.8279,
         "components": {
          "sensitivity": 0.8783,
          "coverage_blast": 0.998,
          "coverage_LSC_like": 1.0,
          "mechanistic": 0.8412,
          "clinical_evidence": 0.7,
-         "uncertainty": 0.2722,
+         "uncertainty": 0.3651,
+         "assay_reliability": 0.155105001352656,
          "resistance": 0.0,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10006,51 +10365,16 @@
         "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
        },
        {
-        "inhibitor": "Trametinib (GSK1120212)",
-        "utility": 0.8395,
-        "components": {
-         "sensitivity": 0.9456,
-         "coverage_blast": 0.987,
-         "coverage_LSC_like": 0.994,
-         "mechanistic": 0.6582,
-         "clinical_evidence": 0.7,
-         "uncertainty": 0.2116,
-         "resistance": 0.0036,
-         "infeasibility": 0.0,
-         "ood": 0.0
-        },
-        "predicted_percentile": 0.9431524547803618,
-        "calibrated_probability": 0.9456286671121122,
-        "model_reliability_auroc": 0.903,
-        "beataml_support": {
-         "n_train": 414,
-         "neighbour_measured_auc_median": 94.04,
-         "cohort_measured_auc_median": 120.33
-        },
-        "coverage": {
-         "blast": 0.987,
-         "LSC_like": 0.994,
-         "escape_state": "LMPP-1-cycling"
-        },
-        "mechanism": {
-         "score": 0.6582,
-         "target_expression_pct": 0.5813953488372093,
-         "genetic_activation": []
-        },
-        "clinical_status": "approved, other indication (off-label in AML)",
-        "challenges": [],
-        "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
-       },
-       {
         "inhibitor": "Dasatinib",
-        "utility": 0.8298,
+        "utility": 0.8062,
         "components": {
          "sensitivity": 0.9735,
          "coverage_blast": 0.965,
          "coverage_LSC_like": 0.877,
          "mechanistic": 0.6972,
          "clinical_evidence": 0.7,
-         "uncertainty": 0.1568,
+         "uncertainty": 0.3142,
+         "assay_reliability": 0.08728582484372949,
          "resistance": 0.0738,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10078,26 +10402,27 @@
         "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
        },
        {
-        "inhibitor": "Bosutinib (SKI-606)",
-        "utility": 0.8064,
+        "inhibitor": "Regorafenib (BAY 73-4506)",
+        "utility": 0.8004,
         "components": {
-         "sensitivity": 0.9354,
+         "sensitivity": 0.8917,
          "coverage_blast": 0.954,
          "coverage_LSC_like": 0.836,
-         "mechanistic": 0.7811,
+         "mechanistic": 0.8141,
          "clinical_evidence": 0.7,
-         "uncertainty": 0.2386,
+         "uncertainty": 0.2187,
+         "assay_reliability": 0.4193417480904722,
          "resistance": 0.0984,
          "infeasibility": 0.0,
          "ood": 0.0
         },
-        "predicted_percentile": 0.9922480620155039,
-        "calibrated_probability": 0.9354337742864334,
-        "model_reliability_auroc": 0.8622,
+        "predicted_percentile": 0.9069767441860465,
+        "calibrated_probability": 0.8917336503521223,
+        "model_reliability_auroc": 0.8342,
         "beataml_support": {
-         "n_train": 392,
-         "neighbour_measured_auc_median": 186.94,
-         "cohort_measured_auc_median": 210.17
+         "n_train": 385,
+         "neighbour_measured_auc_median": 169.35,
+         "cohort_measured_auc_median": 183.76
         },
         "coverage": {
          "blast": 0.954,
@@ -10105,8 +10430,8 @@
          "escape_state": "LMPP-1-cycling"
         },
         "mechanism": {
-         "score": 0.7811,
-         "target_expression_pct": 0.7260981912144703,
+         "score": 0.8141,
+         "target_expression_pct": 0.7919896640826875,
          "genetic_activation": []
         },
         "clinical_status": "approved, other indication (off-label in AML)",
@@ -10114,57 +10439,16 @@
         "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
        },
        {
-        "inhibitor": "Entrectinib",
-        "utility": 0.8016,
-        "components": {
-         "sensitivity": 0.8042,
-         "coverage_blast": 1.0,
-         "coverage_LSC_like": 1.0,
-         "mechanistic": 0.8388,
-         "clinical_evidence": 0.7,
-         "uncertainty": 0.3753,
-         "resistance": 0.0,
-         "infeasibility": 0.0,
-         "ood": 0.0
-        },
-        "predicted_percentile": 0.834625322997416,
-        "calibrated_probability": 0.8042191038145444,
-        "model_reliability_auroc": 0.7706,
-        "beataml_support": {
-         "n_train": 179,
-         "neighbour_measured_auc_median": 197.25,
-         "cohort_measured_auc_median": 181.47
-        },
-        "coverage": {
-         "blast": 1.0,
-         "LSC_like": 1.0,
-         "escape_state": "Myeloid intermediate 3"
-        },
-        "mechanism": {
-         "score": 0.8388,
-         "target_expression_pct": 0.8415159345391903,
-         "genetic_activation": []
-        },
-        "clinical_status": "approved, other indication (off-label in AML)",
-        "challenges": [
-         {
-          "challenge": "small_training_set",
-          "severity": "medium",
-          "detail": "only 179 BeatAML specimens back this inhibitor"
-         }
-        ],
-        "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
-       },
-       {
         "inhibitor": "Gefitinib",
-        "utility": 0.7976,
+        "utility": 0.7964,
         "components": {
          "sensitivity": 0.8122,
          "coverage_blast": 0.987,
          "coverage_LSC_like": 0.959,
          "mechanistic": 0.8362,
          "clinical_evidence": 0.7,
-         "uncertainty": 0.3319,
+         "uncertainty": 0.3401,
+         "assay_reliability": 0.28544597161440943,
          "resistance": 0.0246,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10190,6 +10474,43 @@
         "clinical_status": "approved, other indication (off-label in AML)",
         "challenges": [],
         "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
+       },
+       {
+        "inhibitor": "Bosutinib (SKI-606)",
+        "utility": 0.7952,
+        "components": {
+         "sensitivity": 0.9354,
+         "coverage_blast": 0.954,
+         "coverage_LSC_like": 0.836,
+         "mechanistic": 0.7811,
+         "clinical_evidence": 0.7,
+         "uncertainty": 0.3139,
+         "assay_reliability": 0.20285999654422993,
+         "resistance": 0.0984,
+         "infeasibility": 0.0,
+         "ood": 0.0
+        },
+        "predicted_percentile": 0.9922480620155039,
+        "calibrated_probability": 0.9354337742864334,
+        "model_reliability_auroc": 0.8622,
+        "beataml_support": {
+         "n_train": 392,
+         "neighbour_measured_auc_median": 186.94,
+         "cohort_measured_auc_median": 210.17
+        },
+        "coverage": {
+         "blast": 0.954,
+         "LSC_like": 0.836,
+         "escape_state": "LMPP-1-cycling"
+        },
+        "mechanism": {
+         "score": 0.7811,
+         "target_expression_pct": 0.7260981912144703,
+         "genetic_activation": []
+        },
+        "clinical_status": "approved, other indication (off-label in AML)",
+        "challenges": [],
+        "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
        }
       ]
      },
@@ -10199,14 +10520,15 @@
       "recommendations": [
        {
         "inhibitor": "Saracatinib (AZD0530)",
-        "utility": 0.8259,
+        "utility": 0.814,
         "components": {
          "sensitivity": 0.9422,
          "coverage_blast": 0.998,
          "coverage_LSC_like": 1.0,
          "mechanistic": 0.8225,
          "clinical_evidence": 0.45,
-         "uncertainty": 0.2217,
+         "uncertainty": 0.3011,
+         "assay_reliability": 0.20285999654422995,
          "resistance": 0.0,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10234,15 +10556,53 @@
         "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
        },
        {
+        "inhibitor": "CI-1040 (PD184352)",
+        "utility": 0.7762,
+        "components": {
+         "sensitivity": 0.8846,
+         "coverage_blast": 0.993,
+         "coverage_LSC_like": 0.994,
+         "mechanistic": 0.6582,
+         "clinical_evidence": 0.45,
+         "uncertainty": 0.2269,
+         "assay_reliability": 0.5992690213423978,
+         "resistance": 0.0036,
+         "infeasibility": 0.0,
+         "ood": 0.0
+        },
+        "predicted_percentile": 0.958656330749354,
+        "calibrated_probability": 0.8846221943022174,
+        "model_reliability_auroc": 0.8189,
+        "beataml_support": {
+         "n_train": 393,
+         "neighbour_measured_auc_median": 176.58,
+         "cohort_measured_auc_median": 190.89
+        },
+        "coverage": {
+         "blast": 0.993,
+         "LSC_like": 0.994,
+         "escape_state": "LMPP-1-cycling"
+        },
+        "mechanism": {
+         "score": 0.6582,
+         "target_expression_pct": 0.5813953488372093,
+         "genetic_activation": []
+        },
+        "clinical_status": "clinical-trial agent",
+        "challenges": [],
+        "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
+       },
+       {
         "inhibitor": "Entospletinib (GS-9973)",
-        "utility": 0.8038,
+        "utility": 0.7756,
         "components": {
          "sensitivity": 0.9587,
          "coverage_blast": 0.998,
          "coverage_LSC_like": 1.0,
          "mechanistic": 0.6602,
          "clinical_evidence": 0.45,
-         "uncertainty": 0.2253,
+         "uncertainty": 0.4131,
+         "assay_reliability": -0.021919608360286325,
          "resistance": 0.0,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10271,14 +10631,15 @@
        },
        {
         "inhibitor": "Linifanib (ABT-869)",
-        "utility": 0.7747,
+        "utility": 0.7698,
         "components": {
          "sensitivity": 0.9225,
          "coverage_blast": 0.965,
          "coverage_LSC_like": 0.877,
          "mechanistic": 0.7527,
          "clinical_evidence": 0.45,
-         "uncertainty": 0.1946,
+         "uncertainty": 0.2271,
+         "assay_reliability": 0.30207302027326965,
          "resistance": 0.0738,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10306,51 +10667,16 @@
         "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
        },
        {
-        "inhibitor": "CI-1040 (PD184352)",
-        "utility": 0.7653,
-        "components": {
-         "sensitivity": 0.8846,
-         "coverage_blast": 0.993,
-         "coverage_LSC_like": 0.994,
-         "mechanistic": 0.6582,
-         "clinical_evidence": 0.45,
-         "uncertainty": 0.2996,
-         "resistance": 0.0036,
-         "infeasibility": 0.0,
-         "ood": 0.0
-        },
-        "predicted_percentile": 0.958656330749354,
-        "calibrated_probability": 0.8846221943022174,
-        "model_reliability_auroc": 0.8189,
-        "beataml_support": {
-         "n_train": 393,
-         "neighbour_measured_auc_median": 176.58,
-         "cohort_measured_auc_median": 190.89
-        },
-        "coverage": {
-         "blast": 0.993,
-         "LSC_like": 0.994,
-         "escape_state": "LMPP-1-cycling"
-        },
-        "mechanism": {
-         "score": 0.6582,
-         "target_expression_pct": 0.5813953488372093,
-         "genetic_activation": []
-        },
-        "clinical_status": "clinical-trial agent",
-        "challenges": [],
-        "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
-       },
-       {
         "inhibitor": "Crenolanib",
-        "utility": 0.7599,
+        "utility": 0.7692,
         "components": {
          "sensitivity": 0.8486,
          "coverage_blast": 0.994,
          "coverage_LSC_like": 1.0,
          "mechanistic": 0.6499,
          "clinical_evidence": 0.45,
-         "uncertainty": 0.2575,
+         "uncertainty": 0.1951,
+         "assay_reliability": 0.5394152118717563,
          "resistance": 0.0,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10378,51 +10704,16 @@
         "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
        },
        {
-        "inhibitor": "LY-333531",
-        "utility": 0.7474,
-        "components": {
-         "sensitivity": 0.8659,
-         "coverage_blast": 0.974,
-         "coverage_LSC_like": 0.959,
-         "mechanistic": 0.6266,
-         "clinical_evidence": 0.45,
-         "uncertainty": 0.2608,
-         "resistance": 0.0246,
-         "infeasibility": 0.0,
-         "ood": 0.0
-        },
-        "predicted_percentile": 0.8630490956072352,
-        "calibrated_probability": 0.8659271523255939,
-        "model_reliability_auroc": 0.8713,
-        "beataml_support": {
-         "n_train": 355,
-         "neighbour_measured_auc_median": 216.31,
-         "cohort_measured_auc_median": 213.43
-        },
-        "coverage": {
-         "blast": 0.974,
-         "LSC_like": 0.959,
-         "escape_state": "LMPP-1-cycling"
-        },
-        "mechanism": {
-         "score": 0.6266,
-         "target_expression_pct": 0.7803617571059431,
-         "genetic_activation": []
-        },
-        "clinical_status": "clinical-trial agent",
-        "challenges": [],
-        "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
-       },
-       {
         "inhibitor": "Motesanib (AMG-706)",
-        "utility": 0.7275,
+        "utility": 0.739,
         "components": {
          "sensitivity": 0.8412,
          "coverage_blast": 0.954,
          "coverage_LSC_like": 0.836,
          "mechanistic": 0.8165,
          "clinical_evidence": 0.45,
-         "uncertainty": 0.3173,
+         "uncertainty": 0.2404,
+         "assay_reliability": 0.5701389889219035,
          "resistance": 0.0984,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10451,14 +10742,15 @@
        },
        {
         "inhibitor": "Cediranib (AZD2171)",
-        "utility": 0.7223,
+        "utility": 0.7362,
         "components": {
          "sensitivity": 0.8202,
          "coverage_blast": 0.965,
          "coverage_LSC_like": 0.877,
          "mechanistic": 0.8119,
          "clinical_evidence": 0.45,
-         "uncertainty": 0.3826,
+         "uncertainty": 0.2898,
+         "assay_reliability": 0.5701389889219034,
          "resistance": 0.0738,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10486,15 +10778,53 @@
         "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
        },
        {
+        "inhibitor": "LY-333531",
+        "utility": 0.7206,
+        "components": {
+         "sensitivity": 0.8659,
+         "coverage_blast": 0.974,
+         "coverage_LSC_like": 0.959,
+         "mechanistic": 0.6266,
+         "clinical_evidence": 0.45,
+         "uncertainty": 0.44,
+         "assay_reliability": -0.0337693838341041,
+         "resistance": 0.0246,
+         "infeasibility": 0.0,
+         "ood": 0.0
+        },
+        "predicted_percentile": 0.8630490956072352,
+        "calibrated_probability": 0.8659271523255939,
+        "model_reliability_auroc": 0.8713,
+        "beataml_support": {
+         "n_train": 355,
+         "neighbour_measured_auc_median": 216.31,
+         "cohort_measured_auc_median": 213.43
+        },
+        "coverage": {
+         "blast": 0.974,
+         "LSC_like": 0.959,
+         "escape_state": "LMPP-1-cycling"
+        },
+        "mechanism": {
+         "score": 0.6266,
+         "target_expression_pct": 0.7803617571059431,
+         "genetic_activation": []
+        },
+        "clinical_status": "clinical-trial agent",
+        "challenges": [],
+        "interpretation": "candidate for trial matching or laboratory validation, not direct treatment selection"
+       },
+       {
         "inhibitor": "GDC-0941",
-        "utility": 0.6994,
+        "utility": 0.7111,
         "components": {
          "sensitivity": 0.8466,
          "coverage_blast": 0.945,
          "coverage_LSC_like": 0.8,
          "mechanistic": 0.7059,
          "clinical_evidence": 0.45,
-         "uncertainty": 0.3219,
+         "uncertainty": 0.2439,
+         "assay_reliability": 0.47878235599560764,
          "resistance": 0.12,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10529,14 +10859,15 @@
        },
        {
         "inhibitor": "YM-155",
-        "utility": 0.6744,
+        "utility": 0.6796,
         "components": {
          "sensitivity": 0.8123,
          "coverage_blast": 0.99,
          "coverage_LSC_like": 0.964,
          "mechanistic": 0.3706,
          "clinical_evidence": 0.45,
-         "uncertainty": 0.3708,
+         "uncertainty": 0.3359,
+         "assay_reliability": 0.3478022689472481,
          "resistance": 0.0216,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10577,14 +10908,15 @@
       "recommendations": [
        {
         "inhibitor": "GW-2580",
-        "utility": 0.7422,
+        "utility": 0.7386,
         "components": {
          "sensitivity": 0.92,
          "coverage_blast": 0.954,
          "coverage_LSC_like": 0.836,
          "mechanistic": 0.7798,
          "clinical_evidence": 0.35,
-         "uncertainty": 0.2421,
+         "uncertainty": 0.2663,
+         "assay_reliability": 0.2960429409510353,
          "resistance": 0.0984,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10619,14 +10951,15 @@
        },
        {
         "inhibitor": "JNJ-28312141",
-        "utility": 0.7347,
+        "utility": 0.7327,
         "components": {
          "sensitivity": 0.8954,
          "coverage_blast": 0.998,
          "coverage_LSC_like": 1.0,
          "mechanistic": 0.7178,
          "clinical_evidence": 0.15,
-         "uncertainty": 0.2756,
+         "uncertainty": 0.2895,
+         "assay_reliability": 0.30016355773706654,
          "resistance": 0.0,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10661,14 +10994,15 @@
        },
        {
         "inhibitor": "Doramapimod (BIRB 796)",
-        "utility": 0.7179,
+        "utility": 0.7169,
         "components": {
          "sensitivity": 0.9068,
          "coverage_blast": 0.985,
          "coverage_LSC_like": 0.953,
          "mechanistic": 0.6903,
          "clinical_evidence": 0.15,
-         "uncertainty": 0.2879,
+         "uncertainty": 0.2948,
+         "assay_reliability": 0.3076544011889514,
          "resistance": 0.0282,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10703,14 +11037,15 @@
        },
        {
         "inhibitor": "NVP-TAE684",
-        "utility": 0.7101,
+        "utility": 0.699,
         "components": {
          "sensitivity": 0.8354,
          "coverage_blast": 0.927,
          "coverage_LSC_like": 0.806,
          "mechanistic": 0.8362,
          "clinical_evidence": 0.35,
-         "uncertainty": 0.2495,
+         "uncertainty": 0.3234,
+         "assay_reliability": 0.20053161051596718,
          "resistance": 0.1164,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10745,14 +11080,15 @@
        },
        {
         "inhibitor": "PRT062607",
-        "utility": 0.6931,
+        "utility": 0.6686,
         "components": {
          "sensitivity": 0.8699,
          "coverage_blast": 0.954,
          "coverage_LSC_like": 0.836,
          "mechanistic": 0.6602,
          "clinical_evidence": 0.35,
-         "uncertainty": 0.3251,
+         "uncertainty": 0.4887,
+         "assay_reliability": -0.021919608360286325,
          "resistance": 0.0984,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10781,14 +11117,15 @@
        },
        {
         "inhibitor": "PD173955",
-        "utility": 0.6777,
+        "utility": 0.6635,
         "components": {
          "sensitivity": 0.8068,
          "coverage_blast": 0.945,
          "coverage_LSC_like": 0.8,
          "mechanistic": 0.7811,
          "clinical_evidence": 0.35,
-         "uncertainty": 0.3509,
+         "uncertainty": 0.445,
+         "assay_reliability": 0.11746841686463325,
          "resistance": 0.12,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10817,14 +11154,15 @@
        },
        {
         "inhibitor": "KI20227",
-        "utility": 0.6491,
+        "utility": 0.6537,
         "components": {
          "sensitivity": 0.8227,
          "coverage_blast": 0.941,
          "coverage_LSC_like": 0.806,
          "mechanistic": 0.7589,
          "clinical_evidence": 0.15,
-         "uncertainty": 0.3353,
+         "uncertainty": 0.3051,
+         "assay_reliability": 0.3553034996102853,
          "resistance": 0.1164,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10859,14 +11197,15 @@
        },
        {
         "inhibitor": "SU11274",
-        "utility": 0.638,
+        "utility": 0.6476,
         "components": {
          "sensitivity": 0.6932,
          "coverage_blast": 0.943,
          "coverage_LSC_like": 0.83,
          "mechanistic": 0.7682,
          "clinical_evidence": 0.35,
-         "uncertainty": 0.3973,
+         "uncertainty": 0.3338,
+         "assay_reliability": 0.38910837695457906,
          "resistance": 0.102,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10895,14 +11234,15 @@
        },
        {
         "inhibitor": "JNJ-7706621",
-        "utility": 0.5984,
+        "utility": 0.6028,
         "components": {
          "sensitivity": 0.7002,
          "coverage_blast": 0.998,
          "coverage_LSC_like": 1.0,
          "mechanistic": 0.2871,
          "clinical_evidence": 0.35,
-         "uncertainty": 0.4943,
+         "uncertainty": 0.4652,
+         "assay_reliability": 0.2817174735019268,
          "resistance": 0.0,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10937,14 +11277,15 @@
        },
        {
         "inhibitor": "H-89",
-        "utility": 0.5758,
+        "utility": 0.5583,
         "components": {
          "sensitivity": 0.6821,
          "coverage_blast": 0.946,
          "coverage_LSC_like": 0.83,
          "mechanistic": 0.7233,
          "clinical_evidence": 0.15,
-         "uncertainty": 0.5189,
+         "uncertainty": 0.6356,
+         "assay_reliability": -0.01631917214443964,
          "resistance": 0.102,
          "infeasibility": 0.0,
          "ood": 0.0
@@ -10980,7 +11321,12 @@
       ]
      }
     },
-    "abstained": [],
+    "abstained": [
+     {
+      "inhibitor": "Selinexor",
+      "reason": "uncertainty 0.75 above the abstention threshold"
+     }
+    ],
     "patient": {
      "genes_shared_with_model": 14237,
      "ood_percentile": 0.326,
@@ -20162,101 +20508,6 @@
     "mechanistic_score": 0.8225
    },
    "challenges": []
-  },
-  "Selinexor": {
-   "response": {
-    "inhibitor": "Selinexor",
-    "sens": -0.16936395560453424,
-    "prob_sensitive": 0.5065127608419424,
-    "percentile": 0.4935400516795866,
-    "n_train": 205,
-    "model_oof_auroc": 0.5502,
-    "model_oof_spearman": 0.0667,
-    "uncertainty": 0.849,
-    "neighbour_measured_auc_median": 100.36,
-    "neighbour_n": 7,
-    "cohort_measured_auc_median": 97.43,
-    "neighbour_percentile_in_cohort": 0.546
-   },
-   "state": {
-    "sens_bulk": -0.1694,
-    "prob_sensitive_bulk": 0.5065127608419424,
-    "percentile_bulk": 0.4935400516795866,
-    "state_probabilities": {
-     "B Memory-1": 0.531,
-     "BMCP-1": 0.546,
-     "CD4 TCM": 0.477,
-     "CD8 TEM": 0.57,
-     "Classical-Mono": 0.521,
-     "Intermediate Mono-1": 0.53,
-     "Intermediate Mono-2": 0.541,
-     "Intermediate Mono-3": 0.503,
-     "LMPP-1-cycling": 0.54,
-     "LMPP-2": 0.479,
-     "MAIT": 0.478,
-     "MDP-1": 0.517,
-     "MDP-2": 0.53,
-     "MEP-2": 0.547,
-     "MPP-MEP": 0.537,
-     "Mono-1": 0.455,
-     "Mono-2": 0.469,
-     "MultiLin-GMP-1": 0.482,
-     "MultiLin-GMP-2": 0.478,
-     "Myeloid intermediate 1": 0.485,
-     "Myeloid intermediate 2": 0.481,
-     "Myeloid intermediate 3": 0.444,
-     "Non-Classical Mono-2": 0.549,
-     "T CD4 Activated": 0.517,
-     "T CD4 Naive-1": 0.5,
-     "T CD8 Naive": 0.438,
-     "cDC1": 0.517,
-     "cDC2-1": 0.529,
-     "cDC2-2": 0.572,
-     "cMOP": 0.443,
-     "pre-DC-2": 0.506,
-     "preNeu": 0.44
-    },
-    "sens_weighted": -0.1684,
-    "bulk_vs_sc": -0.0009,
-    "coverage_blast": 0.594,
-    "coverage_LSC_like": 0.164,
-    "worst_state": "Myeloid intermediate 3",
-    "worst_state_sens": -0.4502,
-    "dispersion": 0.1486,
-    "n_states_scored": 32
-   },
-   "mechanism": {
-    "inhibitor": "Selinexor",
-    "family_group": "proteostasis",
-    "targets": [
-     "XPO1"
-    ],
-    "target_expression_pct": 0.48578811369509045,
-    "pathway_readout_pct": 0.40051679586563305,
-    "bcl2_dependency": 0.2189,
-    "genetic_activation": [],
-    "resistance": [
-     {
-      "mechanism": "XPO1 C528S",
-      "measurable": false
-     },
-     {
-      "mechanism": "TP53 loss",
-      "measurable": false,
-      "proxy": "mut:TP53",
-      "flagged": false
-     }
-    ],
-    "resistance_flags": 0,
-    "mechanistic_score": 0.4432
-   },
-   "challenges": [
-    {
-     "challenge": "weak_model",
-     "severity": "high",
-     "detail": "the model's own held-out AUROC for this inhibitor is 0.55"
-    }
-   ]
   },
   "Selumetinib (AZD6244)": {
    "response": {

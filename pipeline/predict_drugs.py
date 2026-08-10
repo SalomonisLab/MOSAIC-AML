@@ -125,7 +125,10 @@ def run(state_counts=None, n_cells=None, bulk=None, mutations=None, clinical=Non
         sm_ = (state_result or {}).get("per_drug", {}).get(dr)
         s = U.score(dr, p.get("prob_sensitive"), (oofm.get(dr) or {}).get("auroc"), p.get("n_train"),
                     mech_evidence=mech.get(dr), state_metrics=sm_, clinical=clinical,
-                    ood_distance=ood_dist, ood_reference=ood_ref)
+                    ood_distance=ood_dist, ood_reference=ood_ref,
+                    assay_reliability=(getattr(mod, "reliability", {}) or {}).get(dr))
+        s["assay_reliability"] = (getattr(mod, "reliability", {}) or {}).get(dr)
+        s["assay_reliability_tier"] = (getattr(mod, "reliability_tier", {}) or {}).get(dr)
         ch = AG.skeptic_agent(mod, dr, p, mech.get(dr), sm_, state_result, ood_q,
                               tiers.get(dr), axis_q, curves=None)
         s["challenges"] = ch

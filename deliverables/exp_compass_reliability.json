@@ -1,0 +1,636 @@
+{
+ "per_drug": [
+  {
+   "drug": "A-674563",
+   "reliability": -0.016319172144439637,
+   "n": 456,
+   "spearman": 0.20450710464123364,
+   "auroc": 0.6780482041587902,
+   "tier": "research"
+  },
+  {
+   "drug": "AT7519",
+   "reliability": 0.31632464218440126,
+   "n": 441,
+   "spearman": 0.2618927382803731,
+   "auroc": 0.7015528342381012,
+   "tier": "trial"
+  },
+  {
+   "drug": "AZD1480",
+   "reliability": 0.22523899191783742,
+   "n": 451,
+   "spearman": 0.05047380944586628,
+   "auroc": 0.5452240067624684,
+   "tier": "trial"
+  },
+  {
+   "drug": "Afatinib (BIBW-2992)",
+   "reliability": 0.1590197290742066,
+   "n": 453,
+   "spearman": 0.04868986427855723,
+   "auroc": 0.5732399468663205,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Alisertib (MLN8237)",
+   "reliability": 0.3574836114735236,
+   "n": 454,
+   "spearman": 0.08584778393507662,
+   "auroc": 0.5849535080304311,
+   "tier": "trial"
+  },
+  {
+   "drug": "Axitinib (AG-013736)",
+   "reliability": 0.30455622485199085,
+   "n": 471,
+   "spearman": 0.26936741541358367,
+   "auroc": 0.6890858725761773,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "BEZ235",
+   "reliability": 0.46792028940000313,
+   "n": 444,
+   "spearman": 0.22234701285098218,
+   "auroc": 0.644236838782982,
+   "tier": "trial"
+  },
+  {
+   "drug": "BMS-345541",
+   "reliability": 0.14982122626156447,
+   "n": 454,
+   "spearman": -0.05083401005447857,
+   "auroc": 0.46190073662601133,
+   "tier": "research"
+  },
+  {
+   "drug": "Bay 11-7085",
+   "reliability": 0.3687482203065756,
+   "n": 339,
+   "spearman": 0.16610031141324935,
+   "auroc": 0.6245674740484429,
+   "tier": "research"
+  },
+  {
+   "drug": "Bosutinib (SKI-606)",
+   "reliability": 0.20285999654422993,
+   "n": 451,
+   "spearman": 0.20911549262792972,
+   "auroc": 0.6717787706798696,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "CI-1040 (PD184352)",
+   "reliability": 0.5992690213423978,
+   "n": 456,
+   "spearman": 0.3382417504257747,
+   "auroc": 0.7631143667296786,
+   "tier": "trial"
+  },
+  {
+   "drug": "CYT387",
+   "reliability": 0.137925151052425,
+   "n": 450,
+   "spearman": 0.12406456315860935,
+   "auroc": 0.578395061728395,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Cabozantinib",
+   "reliability": 0.5545539882794701,
+   "n": 445,
+   "spearman": 0.4066221040575107,
+   "auroc": 0.8294407271809116,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Canertinib (CI-1033)",
+   "reliability": 0.29882159051282314,
+   "n": 450,
+   "spearman": 0.1990743723532586,
+   "auroc": 0.6646913580246914,
+   "tier": "trial"
+  },
+  {
+   "drug": "Cediranib (AZD2171)",
+   "reliability": 0.5701389889219034,
+   "n": 448,
+   "spearman": 0.19430597190738308,
+   "auroc": 0.6409876543209876,
+   "tier": "trial"
+  },
+  {
+   "drug": "Crenolanib",
+   "reliability": 0.5394152118717563,
+   "n": 441,
+   "spearman": 0.4210759975695175,
+   "auroc": 0.8189622522408786,
+   "tier": "trial"
+  },
+  {
+   "drug": "Doramapimod (BIRB 796)",
+   "reliability": 0.3076544011889514,
+   "n": 449,
+   "spearman": 0.24717865097041042,
+   "auroc": 0.7051851851851852,
+   "tier": "research"
+  },
+  {
+   "drug": "Entospletinib (GS-9973)",
+   "reliability": -0.021919608360286325,
+   "n": 309,
+   "spearman": 0.09323804914158812,
+   "auroc": 0.5447450572320499,
+   "tier": "trial"
+  },
+  {
+   "drug": "Erlotinib",
+   "reliability": 0.28544597161440943,
+   "n": 480,
+   "spearman": 0.3241314611861234,
+   "auroc": 0.7459852430555556,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Flavopiridol",
+   "reliability": 0.3163246421844013,
+   "n": 446,
+   "spearman": 0.1944314948956835,
+   "auroc": 0.6348148148148148,
+   "tier": "trial"
+  },
+  {
+   "drug": "Foretinib (XL880)",
+   "reliability": 0.5545539882794701,
+   "n": 448,
+   "spearman": 0.3813242943897272,
+   "auroc": 0.8038271604938272,
+   "tier": "trial"
+  },
+  {
+   "drug": "GSK-1838705A",
+   "reliability": 0.08518292261884772,
+   "n": 448,
+   "spearman": 0.311749290529503,
+   "auroc": 0.725925925925926,
+   "tier": "research"
+  },
+  {
+   "drug": "GSK-1904529A",
+   "reliability": 0.13267673034794225,
+   "n": 447,
+   "spearman": 0.15339410397740216,
+   "auroc": 0.6167901234567901,
+   "tier": "research"
+  },
+  {
+   "drug": "GSK690693",
+   "reliability": 0.03406564260797134,
+   "n": 442,
+   "spearman": 0.08016262949886144,
+   "auroc": 0.5638176997853807,
+   "tier": "trial"
+  },
+  {
+   "drug": "GW-2580",
+   "reliability": 0.2960429409510353,
+   "n": 435,
+   "spearman": 0.2476742394234831,
+   "auroc": 0.7065662571013344,
+   "tier": "research"
+  },
+  {
+   "drug": "Gefitinib",
+   "reliability": 0.28544597161440943,
+   "n": 461,
+   "spearman": 0.2368478853953332,
+   "auroc": 0.6804254827147647,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "H-89",
+   "reliability": -0.01631917214443964,
+   "n": 408,
+   "spearman": 0.12050210084758611,
+   "auroc": 0.566775728732897,
+   "tier": "research"
+  },
+  {
+   "drug": "INK-128",
+   "reliability": 0.47357906239211345,
+   "n": 452,
+   "spearman": 0.23464849237618882,
+   "auroc": 0.6825262649438474,
+   "tier": "trial"
+  },
+  {
+   "drug": "Idelalisib",
+   "reliability": -0.02408388346311883,
+   "n": 439,
+   "spearman": 0.27024212514858326,
+   "auroc": 0.6934400826446281,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Imatinib",
+   "reliability": 0.2006110459112364,
+   "n": 499,
+   "spearman": 0.07319078474800046,
+   "auroc": 0.5167999999999999,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "JAK Inhibitor I",
+   "reliability": 0.248730790170476,
+   "n": 443,
+   "spearman": 0.10548344234111637,
+   "auroc": 0.5756848882716828,
+   "tier": "research"
+  },
+  {
+   "drug": "JNJ-28312141",
+   "reliability": 0.30016355773706654,
+   "n": 312,
+   "spearman": 0.2623357657893795,
+   "auroc": 0.6943814562862182,
+   "tier": "research"
+  },
+  {
+   "drug": "JNJ-38877605",
+   "reliability": 0.389108376954579,
+   "n": 449,
+   "spearman": 0.017788538610554502,
+   "auroc": 0.5146913580246913,
+   "tier": "research"
+  },
+  {
+   "drug": "JQ1",
+   "reliability": 0.6045294629704342,
+   "n": 344,
+   "spearman": 0.23490022905016403,
+   "auroc": 0.7032136105860114,
+   "tier": "research"
+  },
+  {
+   "drug": "KI20227",
+   "reliability": 0.3553034996102853,
+   "n": 400,
+   "spearman": 0.20482346990771094,
+   "auroc": 0.62859375,
+   "tier": "research"
+  },
+  {
+   "drug": "KW-2449",
+   "reliability": 0.3005635406668643,
+   "n": 444,
+   "spearman": 0.4357902094733481,
+   "auroc": 0.8737533139755082,
+   "tier": "trial"
+  },
+  {
+   "drug": "Lapatinib",
+   "reliability": 0.29882159051282314,
+   "n": 459,
+   "spearman": 0.1779715081288624,
+   "auroc": 0.649102079395085,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Lenvatinib",
+   "reliability": 0.2414916407812326,
+   "n": 339,
+   "spearman": 0.28372136397473696,
+   "auroc": 0.7359429065743944,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Linifanib (ABT-869)",
+   "reliability": 0.30207302027326965,
+   "n": 448,
+   "spearman": 0.30894428080088243,
+   "auroc": 0.7579012345679013,
+   "tier": "trial"
+  },
+  {
+   "drug": "MGCD-265",
+   "reliability": 0.26870265798355436,
+   "n": 443,
+   "spearman": 0.26548403347535793,
+   "auroc": 0.7256659512687791,
+   "tier": "trial"
+  },
+  {
+   "drug": "MK-2206",
+   "reliability": 0.03406564260797134,
+   "n": 443,
+   "spearman": 0.2492944616168624,
+   "auroc": 0.6765559904052519,
+   "tier": "trial"
+  },
+  {
+   "drug": "MLN120B",
+   "reliability": 0.36874822030657567,
+   "n": 447,
+   "spearman": -0.0022073542557035156,
+   "auroc": 0.4922222222222222,
+   "tier": "research"
+  },
+  {
+   "drug": "MLN8054",
+   "reliability": 0.35748361147352364,
+   "n": 447,
+   "spearman": 0.13451181590702913,
+   "auroc": 0.605925925925926,
+   "tier": "research"
+  },
+  {
+   "drug": "Masitinib (AB-1010)",
+   "reliability": 0.20061104591123644,
+   "n": 443,
+   "spearman": 0.06052722896435552,
+   "auroc": 0.5501830576947355,
+   "tier": "trial"
+  },
+  {
+   "drug": "Midostaurin",
+   "reliability": 0.5394152118717563,
+   "n": 457,
+   "spearman": 0.255792608831168,
+   "auroc": 0.7185727788279772,
+   "tier": "approved_AML"
+  },
+  {
+   "drug": "Motesanib (AMG-706)",
+   "reliability": 0.5701389889219035,
+   "n": 445,
+   "spearman": 0.23578219180182172,
+   "auroc": 0.7124100492362075,
+   "tier": "trial"
+  },
+  {
+   "drug": "NVP-ADW742",
+   "reliability": 0.13267673034794225,
+   "n": 439,
+   "spearman": 0.1637804701617227,
+   "auroc": 0.622029958677686,
+   "tier": "research"
+  },
+  {
+   "drug": "Neratinib (HKI-272)",
+   "reliability": 0.1590197290742066,
+   "n": 448,
+   "spearman": 0.11989065397947579,
+   "auroc": 0.6120987654320988,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Nilotinib",
+   "reliability": -0.04890453298126835,
+   "n": 467,
+   "spearman": 0.21186468136878764,
+   "auroc": 0.6787007695789951,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "OTX-015",
+   "reliability": 0.6045294629704342,
+   "n": 289,
+   "spearman": 0.2524007989799366,
+   "auroc": 0.7000594530321046,
+   "tier": "trial"
+  },
+  {
+   "drug": "PD173955",
+   "reliability": 0.11746841686463325,
+   "n": 448,
+   "spearman": 0.1517610445392999,
+   "auroc": 0.611358024691358,
+   "tier": "research"
+  },
+  {
+   "drug": "PHA-665752",
+   "reliability": 0.3849702086319027,
+   "n": 447,
+   "spearman": 0.217404816005916,
+   "auroc": 0.6825925925925926,
+   "tier": "research"
+  },
+  {
+   "drug": "PI-103",
+   "reliability": 0.4223455588830601,
+   "n": 447,
+   "spearman": 0.2021882685965195,
+   "auroc": 0.7128395061728395,
+   "tier": "research"
+  },
+  {
+   "drug": "PP242",
+   "reliability": 0.3793059195314635,
+   "n": 453,
+   "spearman": 0.1785623139748661,
+   "auroc": 0.6390532544378698,
+   "tier": "research"
+  },
+  {
+   "drug": "PRT062607",
+   "reliability": -0.021919608360286325,
+   "n": 442,
+   "spearman": 0.1617639645461924,
+   "auroc": 0.6249210958212347,
+   "tier": "research"
+  },
+  {
+   "drug": "Pazopanib (GW786034)",
+   "reliability": 0.3646896797564805,
+   "n": 462,
+   "spearman": 0.3011451277871072,
+   "auroc": 0.7280610475199445,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Pelitinib (EKB-569)",
+   "reliability": 0.2716706396106299,
+   "n": 447,
+   "spearman": 0.4203256739394752,
+   "auroc": 0.8323456790123456,
+   "tier": "trial"
+  },
+  {
+   "drug": "Ponatinib (AP24534)",
+   "reliability": 0.3093013166057565,
+   "n": 296,
+   "spearman": 0.350601237525785,
+   "auroc": 0.758888888888889,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Quizartinib (AC220)",
+   "reliability": 0.4176745386362019,
+   "n": 456,
+   "spearman": 0.3778292059901541,
+   "auroc": 0.773156899810964,
+   "tier": "approved_AML"
+  },
+  {
+   "drug": "RAF265 (CHIR-265)",
+   "reliability": 0.09549904255303028,
+   "n": 445,
+   "spearman": 0.3080861523377503,
+   "auroc": 0.720994823885873,
+   "tier": "trial"
+  },
+  {
+   "drug": "Rapamycin",
+   "reliability": 0.47357906239211345,
+   "n": 461,
+   "spearman": 0.5298471677149936,
+   "auroc": 0.8616024973985432,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Regorafenib (BAY 73-4506)",
+   "reliability": 0.4193417480904722,
+   "n": 445,
+   "spearman": 0.3559584578502428,
+   "auroc": 0.7596263098093675,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Roscovitine (CYC-202)",
+   "reliability": -0.06390744391069397,
+   "n": 456,
+   "spearman": 0.02594586193894924,
+   "auroc": 0.5248109640831758,
+   "tier": "trial"
+  },
+  {
+   "drug": "Ruxolitinib (INCB018424)",
+   "reliability": 0.24873079017047597,
+   "n": 444,
+   "spearman": 0.1621211695374071,
+   "auroc": 0.5999242519883853,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "SGX-523",
+   "reliability": 0.3849702086319027,
+   "n": 448,
+   "spearman": -0.012320047372786917,
+   "auroc": 0.47567901234567905,
+   "tier": "research"
+  },
+  {
+   "drug": "SNS-032 (BMS-387032)",
+   "reliability": -0.159932920364811,
+   "n": 453,
+   "spearman": 0.31211865537948125,
+   "auroc": 0.7154932979108802,
+   "tier": "trial"
+  },
+  {
+   "drug": "SU11274",
+   "reliability": 0.38910837695457906,
+   "n": 397,
+   "spearman": 0.1692605459171286,
+   "auroc": 0.6246875,
+   "tier": "research"
+  },
+  {
+   "drug": "Saracatinib (AZD0530)",
+   "reliability": 0.20285999654422995,
+   "n": 445,
+   "spearman": 0.21753673090822953,
+   "auroc": 0.6807221310440601,
+   "tier": "trial"
+  },
+  {
+   "drug": "Selumetinib (AZD6244)",
+   "reliability": 0.6726873906332629,
+   "n": 451,
+   "spearman": 0.43208052901124333,
+   "auroc": 0.8117377128366139,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Sorafenib",
+   "reliability": 0.4193417480904722,
+   "n": 489,
+   "spearman": 0.5267456782978351,
+   "auroc": 0.888692211578509,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Sunitinib",
+   "reliability": 0.41767453863620196,
+   "n": 481,
+   "spearman": 0.4991348620928632,
+   "auroc": 0.8500371984270378,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "TG100-115",
+   "reliability": -0.024083883463118825,
+   "n": 446,
+   "spearman": 0.07989561751130682,
+   "auroc": 0.5708641975308641,
+   "tier": "research"
+  },
+  {
+   "drug": "Tivozanib (AV-951)",
+   "reliability": 0.3646896797564805,
+   "n": 443,
+   "spearman": 0.3466804797552444,
+   "auroc": 0.7588688296932206,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Tofacitinib (CP-690550)",
+   "reliability": 0.11753110903738603,
+   "n": 453,
+   "spearman": 0.14579282632565865,
+   "auroc": 0.5999275449824899,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Tozasertib (VX-680)",
+   "reliability": 0.30056354066686425,
+   "n": 453,
+   "spearman": 0.1905202036351185,
+   "auroc": 0.6577708006279435,
+   "tier": "trial"
+  },
+  {
+   "drug": "Trametinib (GSK1120212)",
+   "reliability": 0.6726873906332629,
+   "n": 479,
+   "spearman": 0.4989902936674619,
+   "auroc": 0.8667534722222223,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "VX-745",
+   "reliability": 0.3076544011889513,
+   "n": 452,
+   "spearman": 0.08632421958133439,
+   "auroc": 0.5769834561043352,
+   "tier": "trial"
+  },
+  {
+   "drug": "Vargetef",
+   "reliability": 0.155105001352656,
+   "n": 446,
+   "spearman": 0.249662950080294,
+   "auroc": 0.6977777777777778,
+   "tier": "approved_other"
+  },
+  {
+   "drug": "Vatalanib (PTK787)",
+   "reliability": 0.27618033540098735,
+   "n": 447,
+   "spearman": 0.11438591786369948,
+   "auroc": 0.577037037037037,
+   "tier": "trial"
+  }
+ ]
+}
