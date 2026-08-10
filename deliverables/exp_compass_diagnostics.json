@@ -1,0 +1,245 @@
+{
+ "generated": "2026-08-10 10:19",
+ "A2_patient_vs_drug_effect": {
+  "variance_decomposition": {
+   "total": 4090.9810884998456,
+   "patient_effect": 0.1542,
+   "drug_effect": 0.4591,
+   "interaction": 0.4683
+  },
+  "n_drugs_scored": 118,
+  "mean_spearman_current_target": 0.3652,
+  "mean_spearman_interaction_only": 0.2231,
+  "mean_auroc_interaction_only": 0.6722,
+  "model_vs_patient_main_effect_spearman": 0.5405,
+  "interpretation": "61% of the current per-drug Spearman survives removing the patient main effect",
+  "table": [
+   {
+    "inhibitor": "Venetoclax",
+    "n": 363,
+    "spearman_current_target": 0.7656,
+    "spearman_interaction_only": 0.7264,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.9741
+   },
+   {
+    "inhibitor": "Rapamycin",
+    "n": 461,
+    "spearman_current_target": 0.6,
+    "spearman_interaction_only": 0.5747,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.9021
+   },
+   {
+    "inhibitor": "Trametinib (GSK1120212)",
+    "n": 479,
+    "spearman_current_target": 0.5892,
+    "spearman_interaction_only": 0.5626,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.878
+   },
+   {
+    "inhibitor": "Sorafenib",
+    "n": 489,
+    "spearman_current_target": 0.6048,
+    "spearman_interaction_only": 0.5514,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.8959
+   },
+   {
+    "inhibitor": "Dasatinib",
+    "n": 485,
+    "spearman_current_target": 0.5926,
+    "spearman_interaction_only": 0.5386,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.9018
+   },
+   {
+    "inhibitor": "Sunitinib",
+    "n": 481,
+    "spearman_current_target": 0.5805,
+    "spearman_interaction_only": 0.5273,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.8686
+   },
+   {
+    "inhibitor": "Selumetinib (AZD6244)",
+    "n": 451,
+    "spearman_current_target": 0.5784,
+    "spearman_interaction_only": 0.5195,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.8556
+   },
+   {
+    "inhibitor": "17-AAG (Tanespimycin)",
+    "n": 444,
+    "spearman_current_target": 0.5806,
+    "spearman_interaction_only": 0.5124,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.894
+   },
+   {
+    "inhibitor": "Foretinib (XL880)",
+    "n": 448,
+    "spearman_current_target": 0.5591,
+    "spearman_interaction_only": 0.4856,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.8547
+   },
+   {
+    "inhibitor": "Panobinostat",
+    "n": 283,
+    "spearman_current_target": 0.5004,
+    "spearman_interaction_only": 0.4853,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.8677
+   },
+   {
+    "inhibitor": "KW-2449",
+    "n": 444,
+    "spearman_current_target": 0.5807,
+    "spearman_interaction_only": 0.4839,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.8897
+   },
+   {
+    "inhibitor": "Cabozantinib",
+    "n": 445,
+    "spearman_current_target": 0.5403,
+    "spearman_interaction_only": 0.4773,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.8618
+   },
+   {
+    "inhibitor": "Dovitinib (CHIR-258)",
+    "n": 450,
+    "spearman_current_target": 0.555,
+    "spearman_interaction_only": 0.4752,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.8438
+   },
+   {
+    "inhibitor": "Tivozanib (AV-951)",
+    "n": 443,
+    "spearman_current_target": 0.5499,
+    "spearman_interaction_only": 0.4677,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.8693
+   },
+   {
+    "inhibitor": "Crenolanib",
+    "n": 441,
+    "spearman_current_target": 0.5553,
+    "spearman_interaction_only": 0.4488,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.8318
+   },
+   {
+    "inhibitor": "Pelitinib (EKB-569)",
+    "n": 447,
+    "spearman_current_target": 0.5457,
+    "spearman_interaction_only": 0.4352,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.8594
+   },
+   {
+    "inhibitor": "Elesclomol",
+    "n": 426,
+    "spearman_current_target": 0.47,
+    "spearman_interaction_only": 0.435,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.8058
+   },
+   {
+    "inhibitor": "Ponatinib (AP24534)",
+    "n": 296,
+    "spearman_current_target": 0.5426,
+    "spearman_interaction_only": 0.4198,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.8142
+   },
+   {
+    "inhibitor": "Quizartinib (AC220)",
+    "n": 456,
+    "spearman_current_target": 0.5197,
+    "spearman_interaction_only": 0.4155,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.8142
+   },
+   {
+    "inhibitor": "Linifanib (ABT-869)",
+    "n": 448,
+    "spearman_current_target": 0.5318,
+    "spearman_interaction_only": 0.4111,
+    "auroc_current_target": null,
+    "auroc_interaction_only": 0.8205
+   }
+  ]
+ },
+ "A1_clinical_outcome_validation": {
+  "Cytarabine (cytarabine)": {
+   "drug_model": "Cytarabine",
+   "regimen_token": "cytarabine",
+   "n_received_and_scored": 149,
+   "response": {
+    "n": 131,
+    "n_CR": 93,
+    "auroc_predicted_sensitivity_vs_CR": 0.4355,
+    "spearman": -0.1014,
+    "p_value": 0.249
+   },
+   "survival": {
+    "n": 149,
+    "deaths": 74,
+    "c_index_predicted_sensitivity": 0.4882,
+    "n_adjusted": 146,
+    "c_age_eln": 0.739,
+    "c_age_eln_plus_predicted": 0.7426,
+    "beta_predicted_sensitivity": 0.0898,
+    "note": "negative beta = predicted-sensitive patients died LESS often (expected direction)"
+   }
+  },
+  "Azacytidine (azacitidine)": {
+   "drug_model": "Azacytidine",
+   "regimen_token": "azacitidine",
+   "n_received_and_scored": 50,
+   "response": {
+    "n": 40,
+    "n_CR": 20,
+    "auroc_predicted_sensitivity_vs_CR": 0.55,
+    "spearman": 0.0866,
+    "p_value": 0.5951
+   },
+   "survival": {
+    "n": 50,
+    "deaths": 37,
+    "c_index_predicted_sensitivity": 0.5592,
+    "n_adjusted": 50,
+    "c_age_eln": 0.6687,
+    "c_age_eln_plus_predicted": 0.6935,
+    "beta_predicted_sensitivity": -0.1799,
+    "note": "negative beta = predicted-sensitive patients died LESS often (expected direction)"
+   }
+  },
+  "Azacytidine (decitabine)": {
+   "drug_model": "Azacytidine",
+   "regimen_token": "decitabine",
+   "n_received_and_scored": 25
+  },
+  "Sorafenib (sorafenib)": {
+   "drug_model": "Sorafenib",
+   "regimen_token": "sorafenib",
+   "n_received_and_scored": 24
+  },
+  "Midostaurin (midostaurin)": {
+   "drug_model": "Midostaurin",
+   "regimen_token": "midostaurin",
+   "n_received_and_scored": 22
+  },
+  "Venetoclax (venetoclax)": {
+   "drug_model": "Venetoclax",
+   "regimen_token": "venetoclax",
+   "n_received_and_scored": 16
+  }
+ }
+}

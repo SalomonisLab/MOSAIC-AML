@@ -43,7 +43,11 @@ class SurvivalModel:
     def fit(self, blocks, time, event, groups):
         """blocks: {name: X}. Inner grouped CV -> OOF block risks -> stacking Cox, with the floor guard."""
         from sklearn.model_selection import GroupKFold
-        self.blocks = [b for b in ALL_BLOCKS if b in blocks]
+        # Order the known blocks first, then ANY extra block the caller supplied. The previous version
+        # filtered to a hard-coded list, which silently discarded every experimental block (LSC17, VAF,
+        # karyotype, treatment) and made half a sweep return byte-identical numbers.
+        self.blocks = ([b for b in ALL_BLOCKS if b in blocks]
+                       + [b for b in blocks if b not in ALL_BLOCKS])
         t, e, g = np.asarray(time, float), np.asarray(event, int), np.asarray(groups)
         n = len(t)
 

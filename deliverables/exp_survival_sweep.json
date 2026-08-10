@@ -1,0 +1,182 @@
+{
+ "generated": "2026-08-10 10:22",
+ "n": 355,
+ "events": 194,
+ "lsc17_genes_found": 13,
+ "arms": {
+  "age_eln": {
+   "c_index": 0.6919,
+   "n_scored": 355,
+   "delta_vs_age_eln": null
+  },
+  "full": {
+   "c_index": 0.7255,
+   "n_scored": 355,
+   "delta_vs_age_eln": {
+    "delta_c": 0.0336,
+    "ci95": [
+     0.006,
+     0.0596
+    ],
+    "p_gt0": 0.01,
+    "B": 400
+   }
+  },
+  "lsc17": {
+   "c_index": 0.5845,
+   "n_scored": 355,
+   "delta_vs_age_eln": {
+    "delta_c": -0.1073,
+    "ci95": [
+     -0.1455,
+     -0.0674
+    ],
+    "p_gt0": 1.0,
+    "B": 400
+   }
+  },
+  "full_lsc17": {
+   "c_index": 0.7227,
+   "n_scored": 355,
+   "delta_vs_age_eln": {
+    "delta_c": 0.0308,
+    "ci95": [
+     0.0063,
+     0.056
+    ],
+    "p_gt0": 0.01,
+    "B": 400
+   }
+  },
+  "full_variant": {
+   "c_index": 0.7172,
+   "n_scored": 355,
+   "delta_vs_age_eln": {
+    "delta_c": 0.0253,
+    "ci95": [
+     0.0011,
+     0.0521
+    ],
+    "p_gt0": 0.0225,
+    "B": 400
+   }
+  },
+  "full_treat": {
+   "c_index": 0.7552,
+   "n_scored": 355,
+   "delta_vs_age_eln": {
+    "delta_c": 0.0633,
+    "ci95": [
+     0.0344,
+     0.0947
+    ],
+    "p_gt0": 0.0,
+    "B": 400
+   }
+  },
+  "full_all": {
+   "c_index": 0.7498,
+   "n_scored": 355,
+   "delta_vs_age_eln": {
+    "delta_c": 0.0579,
+    "ci95": [
+     0.0279,
+     0.089
+    ],
+    "p_gt0": 0.0,
+    "B": 400
+   }
+  },
+  "full_spline": {
+   "c_index": 0.7326,
+   "n_scored": 355,
+   "delta_vs_age_eln": {
+    "delta_c": 0.0408,
+    "ci95": [
+     0.0154,
+     0.0654
+    ],
+    "p_gt0": 0.0,
+    "B": 400
+   }
+  },
+  "rna_screened": {
+   "c_index": 0.6871,
+   "n_scored": 355,
+   "delta_vs_age_eln": {
+    "delta_c": -0.0048,
+    "ci95": [
+     -0.0464,
+     0.0405
+    ],
+    "p_gt0": 0.56,
+    "B": 400
+   }
+  },
+  "gbm": {
+   "c_index": 0.5908,
+   "n_scored": 355,
+   "delta_vs_age_eln": {
+    "delta_c": -0.1011,
+    "ci95": [
+     -0.1576,
+     -0.0416
+    ],
+    "p_gt0": 0.9975,
+    "B": 400
+   }
+  }
+ },
+ "L2_treatment_stratified": {
+  "intensive induction": {
+   "n": 284,
+   "events": 139,
+   "c_full": 0.7235,
+   "c_age_eln": 0.6906
+  },
+  "non-intensive": {
+   "n": 71,
+   "events": 55,
+   "c_full": 0.5544,
+   "c_age_eln": 0.4808
+  }
+ },
+ "C8_proportional_hazards": {
+  "n_covariates": 1,
+  "min_p": 0.56592,
+  "frac_p_lt_0.05": 0.0
+ },
+ "C2_rmst": {
+  "low": {
+   "n": 118,
+   "rmst_2y": 1.73,
+   "rmst_5y": 3.717
+  },
+  "intermediate": {
+   "n": 118,
+   "rmst_2y": 1.256,
+   "rmst_5y": 2.376
+  },
+  "high": {
+   "n": 119,
+   "rmst_2y": 0.608,
+   "rmst_5y": 0.763
+  }
+ },
+ "C3_aft_lognormal": {
+  "c_index": 0.7255,
+  "sigma": 2.027
+ },
+ "C1_conformal": {
+  "80%": {
+   "target_coverage": 0.8,
+   "empirical_coverage_on_deaths": 0.799,
+   "median_interval_width_years": 22.61
+  },
+  "90%": {
+   "target_coverage": 0.9,
+   "empirical_coverage_on_deaths": 0.897,
+   "median_interval_width_years": 52.78
+  }
+ }
+}

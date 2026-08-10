@@ -189,7 +189,7 @@ be comparable *across* inhibitors.
 
 | | result |
 |---|---|
-| per-inhibitor mean AUROC (donor-grouped CV, 118 drugs) | **0.774** |
+| per-inhibitor mean AUROC (donor-grouped CV, 118 drugs) | **0.774** — but see below: **0.672** after removing the patient main effect |
 | per-inhibitor mean Spearman | 0.365 (median 0.362); 100% reach *p* < 0.05 |
 | per-inhibitor mean AUPRC | 0.748 (prevalence baseline 0.475) |
 | approved-agent subset (n = 42) | mean AUROC **0.809** |
@@ -203,6 +203,18 @@ be comparable *across* inhibitors.
 | leave-centre-out (4 centres) | AUROC 0.731 – 0.890 |
 | differentiation-state strata | AUROC 0.721 – 0.762 in every stratum |
 | permutation null (specimen↔expression re-pointing, 100 shuffles) | observed 0.367 vs null 0.001 ± 0.019 — **19 null SDs**, *p* = 0.0099 |
+
+> ### ⚠ Two results from `EXPERIMENT_RESULTS.md` that qualify the numbers above
+> **The headline AUROC is partly a patient main effect.** The response matrix is 15.4% patient / 45.9% drug /
+> 46.8% interaction, and the model's mean per-specimen prediction correlates 0.54 with the patient effect.
+> Re-scored against the interaction alone, mean AUROC is **0.672** and mean Spearman **0.223** (61% of the
+> signal survives). The per-patient ranking result is unaffected, since ranking within a patient removes the
+> patient effect by construction.
+>
+> **The ex-vivo → clinical link was tested and was null.** For the 131 patients with a complete-response label
+> who actually received cytarabine, predicted ex-vivo sensitivity gave AUROC **0.435** (p = 0.25); azacitidine
+> (n = 40) gave 0.550. Adding the prediction to age + ELN moved overall-survival C-index 0.739 → 0.743. The
+> standing caveat is therefore a **tested** limitation, not merely cautious wording.
 
 **Best-predicted inhibitors** include Venetoclax (AUROC 0.977, AUPRC 0.970 vs 0.482 baseline),
 Dasatinib 0.936, Tivozanib 0.927, Rapamycin 0.926, Trametinib 0.916, Ponatinib 0.916.

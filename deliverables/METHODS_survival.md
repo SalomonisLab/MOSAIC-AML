@@ -13,6 +13,7 @@ exactly how far it goes and where it stops.
 | Can it give a calibrated probability of surviving to a horizon? | **Yes.** Predicted vs observed 0.54/0.49 at 1 y, 0.40/0.39 at 2 y, 0.30/0.37 at 5 y; mean absolute gap across predicted quartiles 0.043–0.075. Two-year AUC **0.852**. |
 | Can it say how long a *group* of similar patients will live? | **Yes.** Median survival per predicted risk tertile is accurate to ~6 weeks (1.29 y predicted vs 1.15 observed for intermediate risk; 0.44 vs 0.33 for high). |
 | Can it say how long **one person** will live? | **Not reliably.** Median absolute error 0.39 y, MAE 0.87 y; 60% within six months, 81% within a year — but actual survival inside a single predicted-risk band spans ~1–1.4 years between the 10th and 90th percentile. |
+| Does adding **treatment** help? | **Yes, most of all.** Baseline induction type takes C-index 0.726 → **0.750** (+0.059 over age+ELN vs +0.034 without it). Survives the reverse-causation check. |
 | Does the molecular data beat age + ELN 2017? | **Not on its own.** Expression alone adds **−0.002** C-index over age+ELN. Only the *combination* adds: **+0.034, 95% CI [+0.006, +0.059], P(no gain) = 0.008.** |
 
 **So the deployed output is a survival curve, horizon probabilities and a risk group — never a single
