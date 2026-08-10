@@ -1,0 +1,171 @@
+{
+ "generated": "2026-08-10 13:01",
+ "cohort": "TCGA-LAML (UCSC Xena, HiSeqV2)",
+ "n": 149,
+ "deaths": 92,
+ "censored": 57,
+ "median_followup_y": 1.002,
+ "max_followup_y": 7.833,
+ "gene_overlap": {
+  "matched": 12733,
+  "of": 14237,
+  "fraction": 0.8944
+ },
+ "frozen": [
+  "cox coefficients",
+  "PCA rotation",
+  "variable-gene selection",
+  "NNLS fusion"
+ ],
+ "refit_on_tcga": [
+  "per-gene z-reference (median/MAD)"
+ ],
+ "arms": {
+  "deployed": {
+   "blocks": [
+    "rna",
+    "state",
+    "mut",
+    "clin",
+    "age_spline",
+    "txbase"
+   ],
+   "n_scored": 149,
+   "c_index": 0.7055,
+   "c_index_ci95": [
+    0.6536,
+    0.7578
+   ],
+   "auc_1y": 0.7407,
+   "auc_1y_n": 132,
+   "auc_2y": 0.8057,
+   "auc_2y_n": 119,
+   "auc_5y": 0.8649,
+   "auc_5y_n": 99
+  },
+  "full": {
+   "blocks": [
+    "rna",
+    "state",
+    "mut",
+    "clin"
+   ],
+   "n_scored": 149,
+   "c_index": 0.689,
+   "c_index_ci95": [
+    0.6365,
+    0.7412
+   ],
+   "auc_1y": 0.7195,
+   "auc_1y_n": 132,
+   "auc_2y": 0.7871,
+   "auc_2y_n": 119,
+   "auc_5y": 0.8587,
+   "auc_5y_n": 99
+  },
+  "molecular": {
+   "blocks": [
+    "rna",
+    "state",
+    "mut"
+   ],
+   "n_scored": 149,
+   "c_index": 0.6695,
+   "c_index_ci95": [
+    0.6072,
+    0.7276
+   ],
+   "auc_1y": 0.7162,
+   "auc_1y_n": 132,
+   "auc_2y": 0.7559,
+   "auc_2y_n": 119,
+   "auc_5y": 0.7267,
+   "auc_5y_n": 99
+  },
+  "clin": {
+   "blocks": [
+    "clin"
+   ],
+   "n_scored": 149,
+   "c_index": 0.6637,
+   "c_index_ci95": [
+    0.6081,
+    0.7227
+   ],
+   "auc_1y": 0.6811,
+   "auc_1y_n": 132,
+   "auc_2y": 0.735,
+   "auc_2y_n": 119,
+   "auc_5y": 0.889,
+   "auc_5y_n": 99
+  },
+  "age_eln": {
+   "blocks": [
+    "age_eln"
+   ],
+   "n_scored": 149,
+   "c_index": 0.6701,
+   "c_index_ci95": [
+    0.6125,
+    0.7287
+   ],
+   "auc_1y": 0.6956,
+   "auc_1y_n": 132,
+   "auc_2y": 0.7523,
+   "auc_2y_n": 119,
+   "auc_5y": 0.8859,
+   "auc_5y_n": 99
+  }
+ },
+ "gain_over_age_eln": {
+  "molecular": {
+   "delta_c": -0.0025,
+   "ci95": [
+    -0.0701,
+    0.0631
+   ],
+   "p_one_sided": 0.5225
+  },
+  "full": {
+   "delta_c": 0.0183,
+   "ci95": [
+    -0.0231,
+    0.0576
+   ],
+   "p_one_sided": 0.182
+  },
+  "deployed": {
+   "delta_c": 0.0345,
+   "ci95": [
+    -0.0013,
+    0.0724
+   ],
+   "p_one_sided": 0.0305
+  }
+ },
+ "tertiles": {
+  "arm": "deployed",
+  "low": {
+   "n": 50,
+   "deaths": 17,
+   "surv_2y": 0.7174,
+   "median_y": null
+  },
+  "intermediate": {
+   "n": 49,
+   "deaths": 31,
+   "surv_2y": 0.4106,
+   "median_y": 1.418
+  },
+  "high": {
+   "n": 50,
+   "deaths": 44,
+   "surv_2y": 0.137,
+   "median_y": 0.75
+  },
+  "logrank_low_vs_high": {
+   "chi2": 38.018,
+   "p": 7.010553676189088e-10
+  }
+ }
+}

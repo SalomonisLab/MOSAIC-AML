@@ -194,11 +194,20 @@ LSC infrastructure. Use it as (a) a benchmark the model must beat and (b) a feat
 *Why:* 60 RNA PCs on 194 events is badly over-parameterised; a compact, externally-validated signature
 is exactly the right prior. **Cost: 0.5 day. Expected: +0.01–0.03, plus a much stronger paper.**
 
-### B2. External validation on TCGA-LAML
+### B2. External validation on TCGA-LAML — ✅ DONE
 ~200 patients, public, with expression and survival — a genuinely independent cohort. Current validation
 is a sealed hold-out *within* BeatAML, which does not test cohort transfer at all. Also pool the two for
 training to increase the event count.
 **Cost: 2 days. Expected: the credibility gain is larger than the accuracy gain.**
+
+**Result** ([`VALIDATION_TCGA_LAML.md`](VALIDATION_TCGA_LAML.md)): 149 patients, 92 deaths, model
+transferred frozen. C-index **0.706** (95 % CI 0.655 – 0.758) against 0.787 in the sealed hold-out;
++0.035 over age + cytogenetics (P = 0.029); tertiles 71.7 % vs 13.7 % at two years, log-rank
+p = 5.4 × 10⁻¹⁰. The prediction above was right — the credibility gain exceeded the accuracy gain,
+since there was no accuracy gain: this is a cost, honestly paid, in exchange for knowing the model is
+not a BeatAML artefact. Pooling the two cohorts for training was **not** done; with 89 % gene overlap
+and different platforms it would need a batch-correction step whose failure mode is inventing signal,
+and the transfer test is the more informative use of TCGA.
 
 ### B3. Variant-level detail the model currently throws away
 Three specific, well-evidenced prognostic features that exist in the data and are not used:
@@ -289,7 +298,7 @@ Complementary to C1.
 | 7 | **A5** imputed modalities for drug response | well-motivated, untested, potentially the second-biggest COMPASS gain | 1.5 d |
 | 8 | **A4** raw concentration data → clinically-anchored AUC | better target raises every downstream ceiling | 1.5 d |
 | 9 | **A3** multi-task matrix factorisation | likely the largest pure-modelling gain for COMPASS | 3 d |
-| 10 | **B2** TCGA-LAML external validation | the only true test of generalisation | 2 d |
+| 10 | ✅ **B2** TCGA-LAML external validation | the only true test of generalisation — **done, C-index 0.706** | 2 d |
 
 Roughly three weeks of work. Items 1–5 are about half of it and carry most of the credibility gain;
 items 7–9 carry most of the raw accuracy gain.

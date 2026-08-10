@@ -124,7 +124,34 @@ the clinical baseline.
   (vital status non-null for 0 samples), so the layer is BeatAML-bulk-trained and reaches single-cell
   patients only through the bulk-equivalent bridge — a transfer that is not itself validated against
   observed survival in single-cell-profiled patients.
-- **No external cohort.** Validation is a sealed hold-out within BeatAML, not an independent cohort.
+- ~~**No external cohort.**~~ **Resolved — see §7.** The model has now been transferred, frozen, to
+  TCGA-LAML. It holds up (C-index 0.706), with the caveats recorded there.
+
+---
+
+## 7. External validation — TCGA-LAML
+
+Full report: [`VALIDATION_TCGA_LAML.md`](VALIDATION_TCGA_LAML.md) · reproduce with
+`python pipeline/validate_tcga_laml.py`
+
+The Cox coefficients, PCA rotation, variable-gene selection and NNLS fusion weights were loaded
+unchanged and applied to **149 TCGA-LAML patients (92 deaths)** profiled on a different platform
+(Illumina HiSeq RSEM), at different institutions, in an earlier treatment era. Only the per-gene
+z-reference was cohort-matched, as it is for single-cell input.
+
+| | BeatAML CV | BeatAML sealed hold-out | **TCGA-LAML (frozen transfer)** |
+|---|---|---|---|
+| C-index, deployed arm | 0.751 | 0.787 | **0.706** (95 % CI 0.655 – 0.758) |
+| AUC at 2 y | — | 0.872 | 0.806 |
+| gain over age + ELN/cytogenetics | +0.025 | — | +0.035 (P = 0.029) |
+
+Risk tertiles separate **71.7 % vs 13.7 %** two-year survival (log-rank p = 5.4 × 10⁻¹⁰), curves
+ordered and non-crossing.
+
+Two findings that cut against the model are on the record there rather than omitted: the **molecular
+blocks alone do not beat age + cytogenetics** in TCGA (ΔC = −0.003), and the treatment covariate that
+produces the largest gain in BeatAML **cannot be validated** in a cohort where everyone received the
+same induction.
 
 ---
 

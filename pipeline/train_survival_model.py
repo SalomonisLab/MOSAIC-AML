@@ -74,6 +74,10 @@ def build_blocks(cl, X_lin, mut_all, rows, train_rows, genes, n_pc, var_genes, t
     eln = AE[:, 1:]
     # age spline (piecewise-cubic at the training quartiles) and DIAGNOSIS-TIME treatment only
     kn = np.quantile(age[train_idx] if train_idx is not None else age, [0.25, 0.5, 0.75])
+    # the knots are part of the fitted model, not a constant: coefficients fitted against knots at the
+    # training quartiles are wrong if inference rebuilds the basis somewhere else. Recorded here and
+    # carried in the bundle so survival_layer.py uses the real ones instead of a hardcoded guess.
+    build_blocks.age_knots = [float(q) for q in kn]
     AGS = np.hstack([age] + [np.clip(age - q, 0, None) ** 3 for q in kn])
     ty = cl["typeInductionTx"].astype(str)
     TXB = np.vstack([ty.str.contains("Standard Chemo").astype(float).values,
@@ -182,7 +186,8 @@ def main():
     gk = GroupKFold(n_splits=a.folds)
     for k, (i_in, i_out) in enumerate(gk.split(np.zeros(tr.sum()), groups=g[tr])):
         gl_in, gl_out = idx_tr[i_in], idx_tr[i_out]
-        _, B = build_blocks(cl, X_lin, mut_all, rows, sorted(rows[gl_in]), genes, a.n_pc, a.var_genes)
+        _, B = build_blocks(cl, X_lin, mut_all, rows, sorted(rows[gl_in]), genes, a.n_pc, a.var_genes,
+                            train_idx=gl_in)
         Btr = {kk: v[gl_in] for kk, v in B.items()}
         Bte = {kk: v[gl_out] for kk, v in B.items()}
         for arm in ARMS:
@@ -220,7 +225,8 @@ def main():
               % (arm, v["delta_c"], v["ci95"][0], v["ci95"][1], v["p_gt0"]))
 
     # ---------------- deployed model + sealed hold-out ----------------
-    fs, B = build_blocks(cl, X_lin, mut_all, rows, sorted(rows[tr]), genes, a.n_pc, a.var_genes)
+    fs, B = build_blocks(cl, X_lin, mut_all, rows, sorted(rows[tr]), genes, a.n_pc, a.var_genes,
+                         train_idx=idx_tr)
     Btr = {k: v[tr] for k, v in B.items()}
     Bho = {k: v[is_hold] for k, v in B.items()}
     fitted = {}
@@ -271,6 +277,8 @@ def main():
               # the exact mutation columns the model was fitted on, so inference can place the mutation
               # caller's predictions in the right slots instead of guessing at the layout
               "mut_columns": getattr(build_blocks, "mut_columns", []),
+              # age-spline knots from the TRAINING quartiles, so inference rebuilds the same basis
+              "age_knots": getattr(build_blocks, "age_knots", None),
               # symbol -> ENSG, so a sample keyed by gene symbol (the atlas) can be aligned at inference
               "sym2ens": __import__("train_drug_model").sym2ens_map(genes)}
     for arm in ("deployed", "full", "molecular", "clin", "age_eln"):
