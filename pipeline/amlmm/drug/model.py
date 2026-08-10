@@ -165,7 +165,8 @@ class DrugResponseModel:
         from sklearn.model_selection import GroupKFold
         from scipy.optimize import nnls
         self.slices = dict(slices)
-        self.blocks = [b for b in ["rna", "state", "mut", "clin"] if b in slices]
+        self.blocks = ([b for b in ["rna", "state", "mut", "clin"] if b in slices]
+                       + [b for b in slices if b not in ("rna", "state", "mut", "clin")])
         self.drug_group = {d: TG.get(d)["family_group"] for d in drugs}
         groups = {}
         for d in drugs:

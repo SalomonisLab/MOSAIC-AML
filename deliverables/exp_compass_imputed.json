@@ -1,0 +1,27 @@
+{
+ "deployed": {
+  "n_drugs": 118,
+  "spearman": 0.2233,
+  "auroc": 0.6721
+ },
+ "+ADT": {
+  "n_drugs": 118,
+  "spearman": 0.2176,
+  "auroc": 0.6681
+ },
+ "+GRN": {
+  "n_drugs": 118,
+  "spearman": 0.2108,
+  "auroc": 0.6622
+ },
+ "+Lipid": {
+  "n_drugs": 118,
+  "spearman": 0.2185,
+  "auroc": 0.669
+ },
+ "+all imputed": {
+  "n_drugs": 118,
+  "spearman": 0.2053,
+  "auroc": 0.6583
+ }
+}
