@@ -38,13 +38,18 @@ OUTP = os.path.join(HERE, "survival_model.pkl")
 CARD = os.path.join(ROOT, "deliverables", "survival_model_card.json")
 
 HORIZONS = [1.0, 2.0, 5.0]                       # years
-ARMS = ["age", "eln", "age_eln", "clin", "rna", "state", "mut", "molecular", "full"]
+# Deployed after the sweep measured them: baseline induction type takes C-index 0.726 -> 0.750 (the
+# single biggest gain anywhere in the platform) and an age spline adds a further ~0.007. Only
+# DIAGNOSIS-TIME treatment information is used -- n_regimens correlates 0.571 with follow-up time
+# because a patient must survive to accumulate regimens, and including it would read the outcome.
+ARMS = ["age", "eln", "age_eln", "clin", "rna", "state", "mut", "molecular", "full", "deployed"]
 ARM_BLOCKS = {"age": ["age"], "eln": ["eln"], "age_eln": ["age_eln"], "clin": ["clin"],
               "rna": ["rna"], "state": ["state"], "mut": ["mut"],
-              "molecular": ["rna", "state", "mut"], "full": ["rna", "state", "mut", "clin"]}
+              "molecular": ["rna", "state", "mut"], "full": ["rna", "state", "mut", "clin"],
+              "deployed": ["rna", "state", "mut", "clin", "age_spline", "txbase"]}
 
 
-def build_blocks(cl, X_lin, mut_all, rows, train_rows, genes, n_pc, var_genes):
+def build_blocks(cl, X_lin, mut_all, rows, train_rows, genes, n_pc, var_genes, train_idx=None):
     """All feature blocks for this cohort, with the expression space fit on `train_rows` only."""
     fs = FeatureSpace(genes, n_pc=n_pc, var_genes=var_genes)
     fs.add_reference("beataml", X_lin[train_rows])
@@ -67,7 +72,15 @@ def build_blocks(cl, X_lin, mut_all, rows, train_rows, genes, n_pc, var_genes):
     AE, _ = SD.age_eln_block(cl)
     age = AE[:, [0]]
     eln = AE[:, 1:]
-    return fs, {"rna": P, "state": S, "mut": M, "clin": C, "age": age, "eln": eln, "age_eln": AE}
+    # age spline (piecewise-cubic at the training quartiles) and DIAGNOSIS-TIME treatment only
+    kn = np.quantile(age[train_idx] if train_idx is not None else age, [0.25, 0.5, 0.75])
+    AGS = np.hstack([age] + [np.clip(age - q, 0, None) ** 3 for q in kn])
+    ty = cl["typeInductionTx"].astype(str)
+    TXB = np.vstack([ty.str.contains("Standard Chemo").astype(float).values,
+                     ty.str.contains("Palliative").astype(float).values,
+                     ty.eq("nan").astype(float).values]).T
+    return fs, {"rna": P, "state": S, "mut": M, "clin": C, "age": age, "eln": eln, "age_eln": AE,
+                "age_spline": AGS, "txbase": TXB}
 
 
 def fit_arm(arm, blocks_tr, blocks_te, t, e, g):
@@ -228,7 +241,7 @@ def main():
             print("  %-11s %8.3f %8s %8s" % (arm, h["c_index"], h["auc_2y"], h.get("brier_2y")))
 
     # ---------------- risk-group separation ----------------
-    best = "full" if "full" in fitted else "molecular"
+    best = "deployed" if "deployed" in fitted else ("full" if "full" in fitted else "molecular")
     r_ho = fitted[best].risk({b: Bho[b] for b in ARM_BLOCKS[best]}) if isinstance(fitted[best], SurvivalModel) \
         else fitted[best].risk(Bho[ARM_BLOCKS[best][0]])
     cut = np.quantile(oof[best], [1 / 3, 2 / 3])
@@ -260,7 +273,7 @@ def main():
               "mut_columns": getattr(build_blocks, "mut_columns", []),
               # symbol -> ENSG, so a sample keyed by gene symbol (the atlas) can be aligned at inference
               "sym2ens": __import__("train_drug_model").sym2ens_map(genes)}
-    for arm in ("full", "molecular", "clin", "age_eln"):
+    for arm in ("deployed", "full", "molecular", "clin", "age_eln"):
         m = fitted.get(arm)
         if m is None:
             continue

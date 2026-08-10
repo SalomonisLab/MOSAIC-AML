@@ -112,13 +112,36 @@ def _blocks_for(bundle, z_row, mutations=None, clinical=None):
                             "priorMDS": clinical.get("prior_mds")}])
         out["clin"], _ = SD.clinical_block(cl)
         out["age_eln"], _ = SD.age_eln_block(cl)
+        age = out["age_eln"][:, [0]]
+        kn = bundle.get("age_knots") or [45.0, 60.0, 71.0]
+        out["age_spline"] = np.hstack([age] + [np.clip(age - q, 0, None) ** 3 for q in kn])
+        ty = str(clinical.get("induction") or "")
+        out["txbase"] = np.array([[float("chemo" in ty.lower()),
+                                   float("palliat" in ty.lower()),
+                                   float(not ty)]])
     return out
+
+
+def _rmst(surv_t, surv_S, horizon):
+    """Restricted mean survival time: the area under the survival curve up to `horizon`.
+
+    Preferred over the median because it is DEFINED even when the curve never reaches 0.5 — the
+    low-risk group's median was previously reported as 6.9 years, extrapolated past the end of
+    follow-up. RMST says "on average, this many of the next N years survived", which is both
+    well-defined and easier to act on.
+    """
+    import numpy as _np
+    g = _np.concatenate([[0.0], surv_t[surv_t <= horizon], [horizon]])
+    s = _np.concatenate([[1.0], surv_S[surv_t <= horizon],
+                         [_np.interp(horizon, surv_t, surv_S, left=1.0,
+                                     right=surv_S[-1] if len(surv_S) else 1.0)]])
+    return float(_np.sum(_np.diff(g) * s[:-1]))
 
 
 def _pick_arm(bundle, blocks, clinical):
     """The best arm whose inputs are actually present."""
     have_clin = bool(clinical) and clinical.get("age") is not None
-    for arm in (("full", "molecular") if have_clin else ("molecular",)):
+    for arm in (("deployed", "full", "molecular") if have_clin else ("molecular",)):
         if arm in bundle["models"] and all(b in blocks for b in bundle["arm_blocks"][arm]):
             return arm
     return next(iter(bundle["models"]))
@@ -175,6 +198,12 @@ def run_for_expression(z_row, mutations=None, clinical=None, cohort="beataml",
     med = (m.median_survival(sub) if hasattr(m, "stack_blocks")
            else m._final.median_survival(np.array([[risk]])))[0]
 
+    # RMST at each horizon, from this patient's own predicted curve
+    grid = np.linspace(0.05, max(H), 200)
+    Sg = (m.survival(sub, grid) if hasattr(m, "stack_blocks")
+          else m._final.survival(np.array([[risk]]), grid))[0]
+    rmst_out = {"%gy" % h: round(_rmst(grid, Sg, h), 2) for h in H}
+
     tert = "intermediate"
     if ref is not None and len(ref):
         lo, hi = np.quantile(ref, [1 / 3, 2 / 3])
@@ -201,6 +230,10 @@ def run_for_expression(z_row, mutations=None, clinical=None, cohort="beataml",
         "risk_percentile": None if pct is None else round(pct, 3),
         "risk_group": tert,
         "survival_probability": {"%gy" % h: round(float(s), 3) for h, s in zip(H, S)},
+        "rmst_years": rmst_out,
+        "rmst_note": ("restricted mean survival — the average number of the next N years survived by "
+                      "comparable patients. Defined even when the median is never reached, which is "
+                      "why it is reported ahead of the median."),
         "median_survival_years": None if not np.isfinite(med) else round(float(med), 2),
         "median_survival_note": ("not reached inside the training follow-up — more than half of "
                                  "comparable patients were still alive" if not np.isfinite(med) else

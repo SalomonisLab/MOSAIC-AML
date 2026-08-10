@@ -60,3 +60,49 @@ Best achievable on the honest interaction target: **0.685** (rank-40 matrix fact
 **directly measured assay ceiling of ~0.727**. That is roughly 94% of the recoverable signal. The
 remaining headroom is smaller than the spread between drugs, which is why the reliability tier now
 shipped with every recommendation matters more than any further modelling.
+
+---
+
+# Item 1 — rebuilding the label from raw wells: a NEGATIVE, and a correction
+
+I claimed last turn that replicate-averaging would raise the ceiling from 0.727 to 0.832 and called it
+"the only remaining work that moves the real number". **That was wrong.** Measured:
+
+| target | same-mechanism reliability | implied ceiling |
+|---|---|---|
+| released probit AUC (current) | **0.192** | **0.439** |
+| replicate-averaged AUC | 0.168 | 0.410 |
+| dose-anchored AUC (≤ 1 µM) | 0.102 | 0.320 |
+
+Both rebuilt labels are **worse**. Two reasons, both of which I should have checked first:
+
+1. **The replicates are not there.** Only **15.4%** of (specimen × inhibitor × concentration) cells have
+   more than one well. Spearman–Brown assumed averaging two measurements everywhere; averaging one
+   measurement with itself gains nothing, so the predicted lift was diluted to zero. On the subset that
+   genuinely has replicates the gain is real but tiny and underpowered (0.188 → 0.196, 7 pairs).
+2. **The released AUC is already denoised.** It comes from a fitted probit curve, which smooths across
+   the whole dose series. Replacing it with a raw trapezoid discards that smoothing, and the loss
+   exceeds anything replicate averaging recovers.
+
+**Dose-anchoring was worse still** (0.102). Restricting to ≤ 1 µM removes the part of the curve where
+these compounds actually discriminate — which is a genuinely uncomfortable finding in its own right,
+and consistent with the pharmacology agent's standing flag that sensitivity often only appears in the
+top concentration decade. As a *modelling target* it is clearly worse; as a statement about clinical
+relevance it deserves attention.
+
+**Conclusion:** the released probit AUC is the best available label. The ceiling stays at ~0.727, and
+COMPASS at 0.685 remains ~94% of it. Raising the ceiling needs more replicate wells, not better
+arithmetic on the ones that exist.
+
+# Item 2 — the measured wins are now deployed
+
+| change | before | after |
+|---|---|---|
+| survival, sealed hold-out C-index | 0.752 | **0.787** |
+| survival, CV C-index | 0.726 | **0.751** |
+| survival, 2-year AUC (hold-out) | 0.852 | **0.872** |
+| survival, Brier at 2 y | 0.162 | **0.150** |
+
+Deployed: **baseline induction type** (diagnosis-time only — `n_regimens` correlates 0.571 with
+follow-up and would read the outcome), **age as a spline**, and **RMST** reported ahead of the median so
+the low-risk group no longer gets a 6.9-year figure extrapolated past follow-up.
