@@ -105,9 +105,17 @@ the clinical baseline.
 
 ## 6. Limitations
 
-- **Prognosis, not prophecy, and treatment-blind.** These are estimates from data available at
-  diagnosis. The model does not know what therapy the patient received, so it cannot separate "this
-  disease is aggressive" from "this patient was treated in a particular way".
+- **Prognosis, not prophecy — and no longer fully treatment-blind, but not causal either.** Baseline
+  induction type is now a covariate (C-index 0.726 → 0.750), which removes treatment as a *confounder*.
+  It does **not** license counterfactuals: 529 of 535 patients received the same standard induction, and
+  induction intensity partly encodes clinician judgement about fitness rather than a randomised choice.
+  The model cannot say what would have happened under a different therapy.
+- **It is close to useless in non-intensively-treated patients.** Stratified: C-index 0.724 in the 284
+  who received intensive induction, but **0.554** in the 71 who did not (where age+ELN is itself below
+  chance at 0.481). Small n, but the model should not be trusted in that group.
+- **An individual lifespan interval is decades wide.** Conformal prediction achieves exact coverage, and
+  the honest 80% interval spans **22.6 years** (90%: 52.8 y). This is irreducible uncertainty in the
+  baseline data, not a tuning failure.
 - **Individual timing is weak** (§1). A single number of months for one person is not supportable from
   this data, which is why the deployed output does not produce one as its headline.
 - **The low-risk median is extrapolated.** More than half the low-risk group is still alive, so the
