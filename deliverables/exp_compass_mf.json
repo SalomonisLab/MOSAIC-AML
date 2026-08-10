@@ -1,0 +1,27 @@
+{
+ "generated": "2026-08-10 11:06",
+ "rank": 40,
+ "arms": {
+  "deployed (per-family)": {
+   "n_drugs": 118,
+   "spearman_current": 0.3674,
+   "auroc_current": 0.7728,
+   "spearman_interaction": 0.2246,
+   "auroc_interaction": 0.6736
+  },
+  "matrix factorisation": {
+   "n_drugs": 118,
+   "spearman_current": 0.356,
+   "auroc_current": 0.7642,
+   "spearman_interaction": 0.2389,
+   "auroc_interaction": 0.6848
+  },
+  "blend 50/50": {
+   "n_drugs": 118,
+   "spearman_current": 0.3759,
+   "auroc_current": 0.7777,
+   "spearman_interaction": 0.2394,
+   "auroc_interaction": 0.6851
+  }
+ }
+}
