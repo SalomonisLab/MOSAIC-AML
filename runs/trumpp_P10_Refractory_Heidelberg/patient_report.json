@@ -1396,110 +1396,16 @@
  ],
  "panels_note": "RESEARCH DECISION SUPPORT \u2014 not medical advice. Drivers marked PREDICTED were inferred from expression and have NOT been sequenced; confirm them before any targeted decision. Close the loop: re-run with --mutations <confirmed drivers> to engage the deterministic genetic anchor.",
  "validation_gene": {
-  "n_labeled": 43,
-  "n_correct": 36,
+  "n_labeled": 8,
+  "n_correct": 6,
+  "n_pos_labeled": 3,
+  "n_pos_correct": 3,
+  "n_neg_labeled": 5,
+  "n_neg_correct": 3,
+  "negatives_confirmed": true,
+  "negative_scope": "cytogenetics_only",
   "units": {
-   "ASXL1": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "BCOR": {
-    "truth": "absent",
-    "call": "present",
-    "correct": false
-   },
-   "BCORL1": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "CBL": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "CEBPA": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "CREBBP": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "CSF3R": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "DNMT3A": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "ETV6": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "EZH2": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "FLT3": {
-    "truth": "absent",
-    "call": "present",
-    "correct": false
-   },
-   "GATA2": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "IDH1": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "IDH2": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "IKZF1": {
-    "truth": "absent",
-    "call": "present",
-    "correct": false
-   },
-   "JAK2": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "KIT": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
    "KMT2A": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "KRAS": {
-    "truth": "absent",
-    "call": "present",
-    "correct": false
-   },
-   "NF1": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "NPM1": {
     "truth": "absent",
     "call": "absent",
     "correct": true
@@ -1509,84 +1415,9 @@
     "call": "present",
     "correct": true
    },
-   "PHF6": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "PTPN11": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "RAD21": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "RUNX1": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "SETBP1": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "SF3B1": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "SMC1A": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "SMC3": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "SRSF2": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "STAG2": {
-    "truth": "absent",
-    "call": "present",
-    "correct": false
-   },
-   "SUZ12": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "TET2": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
    "TP53": {
     "truth": "present",
     "call": "present",
-    "correct": true
-   },
-   "U2AF1": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "WT1": {
-    "truth": "absent",
-    "call": "absent",
-    "correct": true
-   },
-   "ZRSR2": {
-    "truth": "absent",
-    "call": "absent",
     "correct": true
    },
    "complex": {

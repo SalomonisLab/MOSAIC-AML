@@ -1,0 +1,137 @@
+<!doctype html><html><head><meta charset="utf-8"><title>MOSAIC-AML · Survival Layer Validation</title>
+<style>
+  :root{--bg:#ffffff;--panel:#f7f7f4;--ink:#1a1a19;--muted:#6b6b63;--line:#e4e3dc;--accent:#8a6a18;--good:#1a6e1a;--bad:#8a2020}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,'Segoe UI',sans-serif}
+  .top{display:flex;align-items:center;gap:16px;padding:13px 24px;background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+  .top h1{font-size:17px;margin:0;font-weight:700;letter-spacing:.02em}
+  .top a{color:var(--accent);text-decoration:none;font-size:13px;font-weight:600}
+  .wrap{max-width:1080px;margin:0 auto;padding:22px 24px 80px}
+  .lead{font-size:15px;color:var(--muted);margin:6px 0 26px}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font-size:12.5px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;background:var(--panel)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  section{margin:0 0 42px;scroll-margin-top:64px}
+  h2{font-size:19px;margin:0 0 4px;font-weight:700}
+  .q{font-size:13px;color:var(--accent);font-weight:600;margin:0 0 10px;text-transform:uppercase;letter-spacing:.04em}
+  .card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+  .card img{width:100%;display:block;background:#fff}
+  .cap{font-size:13.5px;color:var(--muted);padding:12px 16px;border-top:1px solid var(--line)}
+  .cap b{color:var(--ink)}
+  .kpis{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0 0}
+  .kpi{flex:1 1 150px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--panel)}
+  .kpi .n{font-size:22px;font-weight:800;color:var(--accent)}
+  .kpi .l{font-size:12px;color:var(--muted);margin-top:2px}
+  table{border-collapse:collapse;width:100%;font-size:13px;margin-top:8px}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--panel);font-weight:600}
+  tr.hi td{background:#fbf7ea;font-weight:600}
+  .dl{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .dl a{font-size:12.5px;padding:5px 11px;border:1px solid var(--line);border-radius:8px;color:var(--accent);text-decoration:none}
+  .note{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:8px}
+  .scroll{overflow-x:auto}
+  .neg{border-left:3px solid var(--bad);background:var(--panel);padding:12px 16px;border-radius:0 8px 8px 0;margin-top:12px;font-size:13.5px}
+  .neg b{color:var(--bad)}
+  .pending{padding:30px 16px;text-align:center;color:var(--muted);font-style:italic;background:var(--panel)}
+</style></head><body>
+<div class="top"><h1>MOSAIC-AML · Survival Layer Validation</h1><a href="/">← decision board</a><a href="/validation.html">CIPHER-AML validation</a><a href="/rx_validation.html">COMPASS-AML validation</a></div>
+<div class="wrap">
+  <p class="lead">Whether a patient survives, for roughly how long, and how much of that the model actually knows. Every number here is measured, including the ones that do not favour the model — the survival layer's most important results are the limits it establishes, not the discrimination it achieves.</p>
+  <div class="toc">
+    <a href="#external">External validation</a><a href="#arms">What each block is worth</a>
+    <a href="#groups">Risk groups</a><a href="#timing">Group vs individual</a><a href="#limits">Where it fails</a>
+  </div>
+
+  <div class="kpis" id="kpis"></div>
+
+  <section id="external"><div class="q">Objection: "you only ever tested this on BeatAML"</div><h2>Transferred frozen to an independent cohort</h2>
+    <div class="card"><img src="/val/figures/Sv4_tcga_external_validation.png" alt="TCGA-LAML Kaplan-Meier by predicted risk tertile">
+    <div class="cap"><b>Patient-grouped CV and a sealed hold-out protect against learning a <i>patient</i>; neither protects against learning a <i>cohort</i>.</b> The Cox coefficients, PCA rotation, variable-gene selection and NNLS fusion weights were loaded unchanged and applied to TCGA-LAML — a different platform (Illumina HiSeq RSEM), different institutions, an earlier treatment era. Only the per-gene z-reference was cohort-matched, because RSEM log2 and BeatAML units are not the same scale and transferring without that step measures the platform rather than the patient.</div></div>
+    <div class="scroll"><table id="extTbl"></table></div>
+    <p class="note" id="extNote"></p>
+    <div class="dl"><a href="/val/VALIDATION_TCGA_LAML.md">full report (MD)</a><a href="/val/validation_tcga_laml.json">numbers (JSON)</a></div>
+  </section>
+
+  <section id="arms"><div class="q">Is the molecular data earning its place?</div><h2>Every block, against the baseline a clinician already has</h2>
+    <p class="lead" style="margin:0 0 8px">Age and ELN 2017 are free and available on day one, so the number that matters is not the C-index — it is the <b>gain over age + ELN</b>. Sealed hold-out of 89 patients, 51 deaths.</p>
+    <div class="scroll"><table id="armTbl"></table></div>
+    <div class="neg" id="armNeg"></div>
+  </section>
+
+  <section id="groups"><div class="q">Does the risk score separate real patients?</div><h2>Risk groups and calibration</h2>
+    <div class="card"><img src="/val/figures/Sv2_risk_groups_and_calibration.png" alt="risk groups and calibration">
+    <div class="cap"><b>Tertiles separate cleanly and the predicted curves track the observed ones.</b> The same separation reproduces in TCGA (above) with the coefficients frozen, which is the part that matters — a risk stratification that only works in its training cohort is not a risk stratification.</div></div>
+    <div class="dl"><a href="/val/figures/Sv2_risk_groups_and_calibration.pdf">PDF</a><a href="/val/figures/Sv1_survival_discrimination.pdf">discrimination (PDF)</a></div>
+  </section>
+
+  <section id="timing"><div class="q">Can it tell one person how long they have?</div><h2>Group timing works; individual timing does not</h2>
+    <div class="card"><img src="/val/figures/Sv3_group_versus_individual_timing.png" alt="group versus individual timing">
+    <div class="cap"><b>Group median survival is accurate to about six weeks. A single patient's is not predictable.</b> Conformal prediction intervals achieve exact coverage, and the honest 80% interval spans <b>22.6 years</b> — irreducible uncertainty in the underlying data, not a tuning failure. This is why the deployed output leads with restricted mean survival, horizon probabilities and a risk group, and never with a single number of months.</div></div>
+    <div class="dl"><a href="/val/figures/Sv3_group_versus_individual_timing.pdf">PDF</a><a href="/val/METHODS_survival.md">methods (MD)</a></div>
+  </section>
+
+  <section id="limits"><div class="q">Where should this not be trusted</div><h2>Stated limits, measured rather than assumed</h2>
+    <div class="scroll"><table>
+      <tr><th>Limit</th><th>Evidence</th></tr>
+      <tr><td><b>Near-useless without intensive induction</b></td><td>C-index 0.724 in the 284 intensively treated patients, <b>0.554</b> in the 71 who were not — where age + ELN is itself below chance (0.481).</td></tr>
+      <tr><td><b>Not causal about treatment</b></td><td>Baseline induction type is a covariate, which removes treatment as a confounder. It does not license counterfactuals: 529 of 535 received the same standard induction, and induction intensity partly encodes clinician judgement about fitness.</td></tr>
+      <tr><td><b>Treatment gain is externally unvalidated</b></td><td>TCGA-LAML is treatment-homogeneous, so the +0.035 C-index that induction type contributes in BeatAML cannot be checked there at all.</td></tr>
+      <tr><td><b>Single-cell survival is a bridge, not a fit</b></td><td>The atlas has vital status for 0 samples. Single-cell patients are reached only through the bulk-equivalent bridge, which is not itself validated against observed survival.</td></tr>
+      <tr><td><b>Refuses thin input</b></td><td>Below 80% gene coverage the risk <i>group</i> starts to flip (percentile drift 0.06 → 0.23 at 75%), so the layer refuses rather than returning a confident number.</td></tr>
+      <tr><td><b>Assumes AML</b></td><td>A healthy pooled-CD34 control once scored at the 97th percentile. Bulk input, which has no healthy-vs-diseased gate, now says so explicitly on the report.</td></tr>
+    </table></div>
+  </section>
+</div>
+<script>
+const f=(x,d)=>x===null||x===undefined?'—':(+x).toFixed(d===undefined?3:d);
+const ARM_LABEL={age:'age alone',eln:'ELN 2017 alone',age_eln:'age + ELN 2017 — the bar',clin:'full clinical block',
+  rna:'bulk RNA',state:'cell state',mut:'mutations',molecular:'molecular fused (RNA + state + mutations)',
+  full:'molecular + clinical',deployed:'deployed (+ age spline, baseline induction)'};
+
+fetch('/val/validation_tcga_laml.json').then(r=>r.ok?r.json():null).then(v=>{
+  if(!v){document.getElementById('extTbl').outerHTML='<div class="pending">external validation not yet run</div>';return;}
+  const order=['deployed','full','molecular','age_eln','clin'];
+  let h='<tr><th>arm</th><th>C-index</th><th>95% CI</th><th>AUC 1 y</th><th>AUC 2 y</th><th>gain over age + cytogenetics</th></tr>';
+  order.forEach(a=>{const r=v.arms&&v.arms[a]; if(!r||r.c_index==null)return;
+    const g=(v.gain_over_age_eln||{})[a];
+    h+=`<tr class="${a==='deployed'?'hi':''}"><td>${ARM_LABEL[a]||a}</td><td>${f(r.c_index)}</td>`
+     + `<td>${r.c_index_ci95?f(r.c_index_ci95[0])+' – '+f(r.c_index_ci95[1]):'—'}</td>`
+     + `<td>${f(r.auc_1y)}</td><td>${f(r.auc_2y)}</td>`
+     + `<td>${g?(g.delta_c>=0?'+':'')+f(g.delta_c)+'  (P = '+f(g.p_one_sided)+')':'baseline'}</td></tr>`;});
+  document.getElementById('extTbl').innerHTML=h;
+  const t=v.tertiles||{};
+  document.getElementById('extNote').innerHTML=
+    `${v.n} patients, ${v.deaths} deaths, median follow-up ${f(v.median_followup_y,2)} y, `
+   +`${(100*(v.gene_overlap||{}).fraction).toFixed(1)}% gene overlap. `
+   +(t.low?`Risk tertiles separate ${(100*t.low.surv_2y).toFixed(1)}% vs ${(100*t.high.surv_2y).toFixed(1)}% two-year survival `
+   +`(log-rank p = ${(t.logrank_low_vs_high||{}).p!=null?(t.logrank_low_vs_high.p).toExponential(1):'—'}).`:'');
+  const k=document.getElementById('kpis');
+  const dep=(v.arms||{}).deployed||{};
+  k.innerHTML=[[f(dep.c_index),'C-index, TCGA-LAML (frozen)'],
+               ['0.787','C-index, sealed hold-out (BeatAML)'],
+               [v.n,'external patients scored'],
+               [v.deaths,'deaths observed externally'],
+               [t.high?(100*t.low.surv_2y).toFixed(0)+'% / '+(100*t.high.surv_2y).toFixed(0)+'%':'—','2-y survival, low vs high risk']]
+    .map(([n,l])=>`<div class="kpi"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
+});
+
+fetch('/val/survival_model_card.json').then(r=>r.ok?r.json():null).then(c=>{
+  if(!c)return;
+  const ho=c.holdout||{}, inc=c.incremental||{};
+  const order=['age','eln','age_eln','clin','rna','state','mut','molecular','full','deployed'];
+  let h='<tr><th>arm</th><th>C-index</th><th>AUC 2 y</th><th>Brier 2 y</th><th>gain over age + ELN (CV)</th><th>P(no gain)</th></tr>';
+  order.forEach(a=>{const r=ho[a]; if(!r||r.c_index==null)return; const g=inc[a];
+    h+=`<tr class="${a==='deployed'?'hi':(a==='age_eln'?'':'')}"><td>${ARM_LABEL[a]||a}</td><td>${f(r.c_index)}</td>`
+     + `<td>${f(r.auc_2y)}</td><td>${f(r.brier_2y)}</td>`
+     + `<td>${g?(g.delta_c>=0?'+':'')+f(g.delta_c)+(g.ci95?'  ['+(g.ci95[0]>=0?'+':'')+f(g.ci95[0])+', '+(g.ci95[1]>=0?'+':'')+f(g.ci95[1])+']':''):(a==='age_eln'?'baseline':'—')}</td>`
+     + `<td>${g?f(g.p_gt0):'—'}</td></tr>`;});
+  document.getElementById('armTbl').innerHTML=h;
+  const m=inc.molecular, fu=inc.full;
+  document.getElementById('armNeg').innerHTML=
+    `<b>The honest negative.</b> Molecular data does <b>not</b> beat age + ELN on its own — the fused `
+   +`molecular arm scores ${m?(m.delta_c>=0?'+':'')+f(m.delta_c):'—'} against the clinical baseline, and cell state and mutations alone are `
+   +`<i>worse</i> than it. Only the combination adds anything`+(fu?` (${(fu.delta_c>=0?'+':'')+f(fu.delta_c)}, P(no gain) = ${f(fu.p_gt0)})`:'')
+   +`. The same pattern reproduced independently in TCGA-LAML, where the molecular blocks alone came in at −0.003.`;
+});
+</script>
+</body></html>

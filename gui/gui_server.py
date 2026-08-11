@@ -151,10 +151,18 @@ def scan_runs() -> "list[dict]":
         # GENE-LEVEL validation (gene_validation.py): a gene's variant categories are aggregated to one
         # gene-level call (present iff any variant is called present) vs the gene's known status. This
         # scores ~40 genes+cyto units, not just the ~17 categories whose exact variant is known.
+        # The combined ratio is dominated by confirmed-absent genes the model calls absent by default
+        # (one Leucegene sample scored 26/27 while missing its only real driver), so the positives are
+        # forwarded separately and the roster leads with drivers recovered.
         n_correct = n_labeled = None
+        n_pos_labeled = n_pos_correct = n_neg_labeled = n_neg_correct = None
+        neg_scope = None
         vg = rep.get("validation_gene") if isinstance(rep, dict) else None
         if isinstance(vg, dict) and vg.get("n_labeled"):
             n_labeled = vg["n_labeled"]; n_correct = vg["n_correct"]
+            n_pos_labeled = vg.get("n_pos_labeled"); n_pos_correct = vg.get("n_pos_correct")
+            n_neg_labeled = vg.get("n_neg_labeled"); n_neg_correct = vg.get("n_neg_correct")
+            neg_scope = vg.get("negative_scope")
         elif isinstance(preds, list):           # fallback: variant-level, for reports without a gene pass
             labeled = [p for p in preds if p.get("true_label")]
             n_labeled = len(labeled) or None
@@ -171,6 +179,9 @@ def scan_runs() -> "list[dict]":
             "validation": rep.get("validation") if isinstance(rep, dict) else None,
             "n_drivers": (len(preds) if isinstance(preds, list) else None),
             "n_labeled": n_labeled, "n_correct": n_correct,
+            "n_pos_labeled": n_pos_labeled, "n_pos_correct": n_pos_correct,
+            "n_neg_labeled": n_neg_labeled, "n_neg_correct": n_neg_correct,
+            "negative_scope": neg_scope,
             "leading_hypothesis": con.get("leading_hypothesis"),
             "overall_confidence": con.get("overall_confidence"),
             "leading_confirmed_by_genetics": con.get("leading_confirmed_by_genetics"),
@@ -345,7 +356,7 @@ class Handler(BaseHTTPRequestHandler):
         if path in ("/evidence.html", "/evidence.json", "/evidence_samples.json",
                     "/mutation_frequency.json", "/reliability.json", "/validation.html", "/validation_stats.json",
                     "/calibration.html", "/cellstate_localization.json", "/vaf_by_mutation.json",
-                    "/therapy.html", "/rx_validation.html",
+                    "/therapy.html", "/rx_validation.html", "/survival_validation.html",
                     "/cebpa_evidence.html", "/cebpa_violin_data.json", "/bulk_bakeoff_results.json"):
             fp = HERE / path.lstrip("/")
             if not fp.is_file():

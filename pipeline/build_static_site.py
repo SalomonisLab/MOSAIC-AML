@@ -31,6 +31,7 @@ DELIV = os.path.join(ROOT, "deliverables")
 
 PAGES = {"mosaic_board.html": "index.html", "validation.html": "validation.html",
          "rx_validation.html": "rx_validation.html", "therapy.html": "therapy.html",
+         "survival_validation.html": "survival_validation.html",
          "calibration.html": "calibration.html", "evidence.html": "evidence.html",
          "cebpa_evidence.html": "cebpa_evidence.html"}
 # JSON assets the pages fetch by name from the gui/ directory
@@ -40,7 +41,8 @@ GUI_JSON = ["evidence.json", "evidence_samples.json", "mutation_frequency.json",
 # deliverables served under /val/ that are fetched as JSON (as opposed to linked for download)
 VAL_JSON = ["drug_model_validation.json", "drug_model_card.json", "state_response_validation.json",
             "feature_attribution.json", "calibration_dca.json", "production_fused_model.json",
-            "modality_breakdown_current.json", "pooled_heldout_eval.json"]
+            "modality_breakdown_current.json", "pooled_heldout_eval.json",
+            "validation_tcga_laml.json", "survival_model_card.json"]
 ASSET_EXT = (".png", ".pdf", ".tsv", ".md", ".xlsx")
 
 
@@ -164,6 +166,9 @@ What's in it
                       ranked per clinical tier; click a row for the underlying evidence
   rx_validation.html  how the drug layer was validated, with every figure
   validation.html     how the mutation caller was validated
+  survival_validation.html
+                      how the survival layer was validated, including the frozen
+                      transfer to TCGA-LAML and the limits it establishes
   calibration.html    calibration and decision-curve detail
   evidence.html       per-mutation evidence view (classifiers, markers, where the signal lives)
   val/                the figures, PDFs and tables the pages link to

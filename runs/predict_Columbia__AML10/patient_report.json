@@ -2120,5 +2120,137 @@
    ]
   },
   "caveat": "predicted EX-VIVO sensitivity from the BeatAML2 functional screen; a prioritisation for trial matching or laboratory validation, not a treatment recommendation"
+ },
+ "validation_gene": {
+  "n_labeled": 24,
+  "n_correct": 22,
+  "n_pos_labeled": 3,
+  "n_pos_correct": 3,
+  "n_neg_labeled": 21,
+  "n_neg_correct": 19,
+  "negatives_confirmed": true,
+  "negative_scope": "all",
+  "units": {
+   "ASXL1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "CEBPA": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "DNMT3A": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "FLT3": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "GATA2": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "IDH1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "IDH2": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "KIT": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "KMT2A": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "KRAS": {
+    "truth": "absent",
+    "call": "present",
+    "correct": false
+   },
+   "NPM1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "NRAS": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "PTPN11": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "RUNX1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "SF3B1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "SRSF2": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "TET2": {
+    "truth": "present",
+    "call": "present",
+    "correct": true
+   },
+   "TP53": {
+    "truth": "present",
+    "call": "present",
+    "correct": true
+   },
+   "WT1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "complex": {
+    "truth": "present",
+    "call": "present",
+    "correct": true
+   },
+   "del5": {
+    "truth": "absent",
+    "call": "present",
+    "correct": false
+   },
+   "del7": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "inv16": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "trisomy8": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   }
+  }
  }
 }

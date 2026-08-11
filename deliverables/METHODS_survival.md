@@ -143,9 +143,14 @@ z-reference was cohort-matched, as it is for single-cell input.
 |---|---|---|---|
 | C-index, deployed arm | 0.751 | 0.787 | **0.706** (95 % CI 0.655 – 0.758) |
 | AUC at 2 y | — | 0.872 | 0.806 |
-| gain over age + ELN/cytogenetics | +0.025 | — | +0.035 (P = 0.029) |
+| gain over age + ELN/cytogenetics | **+0.059** [+0.030, +0.089], P = 0.001 | — | +0.035, P = 0.030 |
 
-Risk tertiles separate **71.7 % vs 13.7 %** two-year survival (log-rank p = 5.4 × 10⁻¹⁰), curves
+(The deployed arm's gain over age + ELN was previously absent from the model card — the bootstrap ran
+over six arms and `deployed` was not one of them, so every report that selected it showed a blank where
+its added value goes. It is now computed: **+0.059, 95 % CI [+0.030, +0.089], P(no gain) = 0.001**,
+against an age + ELN out-of-fold C-index of 0.692.)
+
+Risk tertiles separate **71.7 % vs 13.7 %** two-year survival (log-rank p = 7.0 × 10⁻¹⁰), curves
 ordered and non-crossing.
 
 Two findings that cut against the model are on the record there rather than omitted: the **molecular

@@ -16,7 +16,7 @@ Kept behind a try/except at the call site like the drug layer: a missing model m
 section, never the mutation panel.
 """
 from __future__ import annotations
-import os, sys, pickle
+import os, sys, json, pickle
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -120,6 +120,37 @@ def _blocks_for(bundle, z_row, mutations=None, clinical=None):
                                    float("palliat" in ty.lower()),
                                    float(not ty)]])
     return out
+
+
+_TCGA = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                     "deliverables", "validation_tcga_laml.json")
+
+
+def _external_validation(arm):
+    """What the SAME arm scored on a cohort the model was never fitted on.
+
+    A hold-out C-index says the model did not memorise these patients. It does not say the model did not
+    memorise this *cohort*, and a report that quotes only the internal number invites exactly that
+    over-reading. Carrying the TCGA-LAML transfer next to it makes the generalisation gap visible on the
+    patient's own report instead of living in a methods file nobody opens. Absent file -> absent key,
+    never a fabricated number.
+    """
+    try:
+        with open(_TCGA, encoding="utf-8") as f:
+            v = json.load(f)
+        a = (v.get("arms") or {}).get(arm)
+        if not a or a.get("c_index") is None:
+            return None
+        g = (v.get("gain_over_age_eln") or {}).get(arm) or {}
+        return {"cohort": v.get("cohort"), "n": v.get("n"), "deaths": v.get("deaths"),
+                "c_index": a.get("c_index"), "c_index_ci95": a.get("c_index_ci95"),
+                "auc_2y": a.get("auc_2y"),
+                "gain_over_age_cytogenetics": g.get("delta_c"),
+                "note": ("coefficients frozen; only the per-gene z-reference was cohort-matched. The "
+                         "drop from the internal hold-out is the cost of transferring across platforms "
+                         "and treatment eras, and is the more realistic expectation for a new cohort.")}
+    except Exception:
+        return None
 
 
 def _rmst(surv_t, surv_S, horizon):
@@ -243,7 +274,8 @@ def run_for_expression(z_row, mutations=None, clinical=None, cohort="beataml",
                            "auc_2y_holdout": ho.get("auc_2y"),
                            "c_index_gain_over_age_eln": (card["incremental"].get(arm) or {}).get("delta_c"),
                            "n_train": card["cohort"]["final_patients"],
-                           "events_train": card["cohort"]["events"]},
+                           "events_train": card["cohort"]["events"],
+                           "external_validation": _external_validation(arm)},
         "caveat": ("Trained on BeatAML2 (bulk RNA, initial-diagnosis specimens). This is a prognostic "
                    "estimate from data available at diagnosis, not a statement about what will happen "
                    "to this patient, and it does not account for the treatment they go on to receive."),

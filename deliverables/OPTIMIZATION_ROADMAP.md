@@ -202,8 +202,8 @@ training to increase the event count.
 
 **Result** ([`VALIDATION_TCGA_LAML.md`](VALIDATION_TCGA_LAML.md)): 149 patients, 92 deaths, model
 transferred frozen. C-index **0.706** (95 % CI 0.655 – 0.758) against 0.787 in the sealed hold-out;
-+0.035 over age + cytogenetics (P = 0.029); tertiles 71.7 % vs 13.7 % at two years, log-rank
-p = 5.4 × 10⁻¹⁰. The prediction above was right — the credibility gain exceeded the accuracy gain,
++0.035 over age + cytogenetics (P = 0.030); tertiles 71.7 % vs 13.7 % at two years, log-rank
+p = 7.0 × 10⁻¹⁰. The prediction above was right — the credibility gain exceeded the accuracy gain,
 since there was no accuracy gain: this is a cost, honestly paid, in exchange for knowing the model is
 not a BeatAML artefact. Pooling the two cohorts for training was **not** done; with 89 % gene overlap
 and different platforms it would need a batch-correction step whose failure mode is inventing signal,

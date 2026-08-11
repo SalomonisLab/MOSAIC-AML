@@ -856,5 +856,16 @@
   "mutations_supplied": [],
   "unrecognized_mutations": [],
   "note": "BULK RNA input \u2014 variant-level mutation panel only. Cell-state composition, subtype prediction, cytogenetics, and the healthy-vs-diseased control gate require single-cell input and are not produced for a bulk sample."
+ },
+ "validation_gene": {
+  "n_labeled": 0,
+  "n_correct": 0,
+  "n_pos_labeled": 0,
+  "n_pos_correct": 0,
+  "n_neg_labeled": 0,
+  "n_neg_correct": 0,
+  "negatives_confirmed": true,
+  "negative_scope": "all",
+  "units": {}
  }
 }

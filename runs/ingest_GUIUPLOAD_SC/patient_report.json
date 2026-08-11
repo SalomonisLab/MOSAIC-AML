@@ -1,1036 +1,1047 @@
 {
-  "mode": "patient_panel",
-  "sample_key": "upload-test::GUIUPLOAD_SC",
-  "annotation": null,
-  "dataset": "upload-test",
-  "provenance": {
-    "layout": "local",
-    "ingested": true,
-    "source": "C:\\Users\\krog5w\\.gemini\\antigravity\\scratch\\AML-multimodal\\inbox\\UPLOAD_TEST_CCHMC_1009_AfInv16_29M.h5ad",
-    "python": "3.14.5",
-    "deferred_witnesses": [
-      "surfaceome/ADT",
-      "metabolic",
-      "lipid",
-      "GRN-regulon",
-      "LSC",
-      "cell-state/UDON",
-      "cell-communication"
-    ],
-    "scikit-learn": "1.9.0",
-    "numpy": "2.4.6",
-    "anndata": "0.12.16",
-    "scanpy": "1.12.1"
+ "mode": "patient_panel",
+ "sample_key": "upload-test::GUIUPLOAD_SC",
+ "annotation": null,
+ "dataset": "upload-test",
+ "provenance": {
+  "layout": "local",
+  "ingested": true,
+  "source": "C:\\Users\\krog5w\\.gemini\\antigravity\\scratch\\AML-multimodal\\inbox\\UPLOAD_TEST_CCHMC_1009_AfInv16_29M.h5ad",
+  "python": "3.14.5",
+  "deferred_witnesses": [
+   "surfaceome/ADT",
+   "metabolic",
+   "lipid",
+   "GRN-regulon",
+   "LSC",
+   "cell-state/UDON",
+   "cell-communication"
+  ],
+  "scikit-learn": "1.9.0",
+  "numpy": "2.4.6",
+  "anndata": "0.12.16",
+  "scanpy": "1.12.1"
+ },
+ "specimen_class": "diseased",
+ "control_gate": {
+  "call": "diseased",
+  "p_diseased": 0.9773,
+  "threshold": 0.0204,
+  "cv_auc": 0.9657794676806084,
+  "modality": "Composition"
+ },
+ "panel": [
+  {
+   "witness": "composition",
+   "grounding": "honest_cv",
+   "independence": "independent",
+   "evidence": {
+    "witness": "composition",
+    "kind": "measured",
+    "status": "ok",
+    "held_out": false,
+    "patient_prediction": "Inv16",
+    "patient_probability": 0.705,
+    "true_label": null,
+    "cohort_balanced_accuracy": 0.6312,
+    "cohort_permutation_p": 0.024390243902439025,
+    "patient_top_cellstates": {
+     "MultiLin-GMP-1": 0.208,
+     "Intermediate Mono-3": 0.192,
+     "Intermediate Mono-1": 0.161,
+     "Mono-2": 0.065,
+     "Mono-1": 0.062,
+     "cDC2-2": 0.06
+    },
+    "mean_cosine": 0.484,
+    "n_cells": 3002,
+    "n_shared_markers": 2700,
+    "n_states_present": 34,
+    "trained_classes": [
+     "FLT3",
+     "Inv16",
+     "NPM1",
+     "TET2",
+     "TP53"
+    ]
+   },
+   "opinion": {
+    "confidence": 0.5,
+    "reliability_weight": 0.85,
+    "summary": "predicts Inv16 (prob 0.705); cohort balanced-acc 0.6312",
+    "caveats": "external sample: cohort-trained classifier, NOT held-out for this sample; out-of-cohort domain shift possible"
+   }
   },
-  "specimen_class": "diseased",
-  "control_gate": {
+  {
+   "witness": "genetic",
+   "grounding": "deterministic_fact",
+   "independence": "independent",
+   "evidence": {
+    "witness": "genetic",
+    "kind": "independent",
+    "status": "ok",
+    "present": [],
+    "targetable": {},
+    "eln": null
+   },
+   "opinion": {
+    "confidence": 0.2,
+    "reliability_weight": 0.1,
+    "summary": "present: []; targetable: []",
+    "caveats": "no mutations supplied \u2014 arbiter runs anchor-free"
+   }
+  }
+ ],
+ "mutation_predictions": [
+  {
+   "probability": 0.982,
+   "call": "present",
+   "threshold": 0.974,
+   "cv_auroc": 0.744,
+   "n_pos_train": 22,
+   "confidence": "ok",
+   "mutation": "NRAS_G13",
+   "heldout_auc": 0.744,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.959,
+   "call": "present",
+   "threshold": 0.927,
+   "cv_auroc": 0.876,
+   "n_pos_train": 43,
+   "confidence": "ok",
+   "mutation": "TP53_hotspot_DBD",
+   "heldout_auc": 0.876,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.959,
+   "call": "present",
+   "threshold": 0.938,
+   "cv_auroc": 0.673,
+   "n_pos_train": 16,
+   "confidence": "ok",
+   "mutation": "NF1",
+   "heldout_auc": 0.673,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.92,
+   "call": "absent",
+   "threshold": 0.985,
+   "cv_auroc": 0.859,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "U2AF1_Q157/R156",
+   "heldout_auc": 0.859,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.91,
+   "call": "absent",
+   "threshold": 0.995,
+   "cv_auroc": 0.955,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "KRAS_G13",
+   "heldout_auc": 0.955,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.86,
+   "call": "absent",
+   "threshold": 0.862,
+   "cv_auroc": 0.678,
+   "n_pos_train": 34,
+   "confidence": "ok",
+   "mutation": "NRAS_G12",
+   "heldout_auc": 0.678,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.855,
+   "call": "absent",
+   "threshold": 0.982,
+   "cv_auroc": 0.872,
+   "n_pos_train": 22,
+   "confidence": "ok",
+   "mutation": "TP53_LOF/splice/frameshift",
+   "heldout_auc": 0.872,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.85,
+   "call": "absent",
+   "threshold": 0.979,
+   "cv_auroc": 0.778,
+   "n_pos_train": 6,
+   "confidence": "ok",
+   "mutation": "ETV6",
+   "heldout_auc": 0.778,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.814,
+   "call": "absent",
+   "threshold": 0.995,
+   "cv_auroc": 0.811,
+   "n_pos_train": 18,
+   "confidence": "ok",
+   "mutation": "JAK2_V617F",
+   "heldout_auc": 0.811,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.749,
+   "call": "absent",
+   "threshold": 0.995,
+   "cv_auroc": 0.67,
+   "n_pos_train": 9,
+   "confidence": "ok",
+   "mutation": "CSF3R",
+   "heldout_auc": 0.67,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.716,
+   "call": "absent",
+   "threshold": 0.964,
+   "cv_auroc": 0.937,
+   "n_pos_train": 16,
+   "confidence": "ok",
+   "mutation": "CEBPA_biallelic_or_double",
+   "heldout_auc": 0.937,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.708,
+   "call": "absent",
+   "threshold": 0.917,
+   "cv_auroc": 0.704,
+   "n_pos_train": 20,
+   "confidence": "ok",
+   "mutation": "PTPN11_other",
+   "heldout_auc": 0.704,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.7,
+   "call": "absent",
+   "threshold": 0.865,
+   "cv_auroc": 0.838,
+   "n_pos_train": 62,
+   "confidence": "ok",
+   "mutation": "IDH2_R140",
+   "heldout_auc": 0.838,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.682,
+   "call": "absent",
+   "threshold": 0.912,
+   "cv_auroc": 0.871,
+   "n_pos_train": 63,
+   "confidence": "ok",
+   "mutation": "ASXL1",
+   "heldout_auc": 0.871,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.661,
+   "call": "absent",
+   "threshold": 0.922,
+   "cv_auroc": 0.716,
+   "n_pos_train": 42,
+   "confidence": "ok",
+   "mutation": "FLT3_TKD_D835/I836",
+   "heldout_auc": 0.716,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.636,
+   "call": "absent",
+   "threshold": 0.878,
+   "cv_auroc": 0.831,
+   "n_pos_train": 39,
+   "confidence": "ok",
+   "mutation": "NRAS_Q61",
+   "heldout_auc": 0.831,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.605,
+   "call": "absent",
+   "threshold": 0.779,
+   "cv_auroc": 0.703,
+   "n_pos_train": 15,
+   "confidence": "ok",
+   "mutation": "KRAS_G12",
+   "heldout_auc": 0.703,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.605,
+   "call": "absent",
+   "threshold": 0.963,
+   "cv_auroc": 0.968,
+   "n_pos_train": 32,
+   "confidence": "ok",
+   "mutation": "CEBPA_Nterminal_frameshift/nonsense",
+   "heldout_auc": 0.968,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.584,
+   "call": "absent",
+   "threshold": 0.938,
+   "cv_auroc": 0.857,
+   "n_pos_train": 47,
+   "confidence": "ok",
+   "mutation": "WT1_LOF",
+   "heldout_auc": 0.857,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.584,
+   "call": "absent",
+   "threshold": 0.941,
+   "cv_auroc": 0.898,
+   "n_pos_train": 21,
+   "confidence": "ok",
+   "mutation": "PHF6",
+   "heldout_auc": 0.898,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.532,
+   "call": "absent",
+   "threshold": 0.889,
+   "cv_auroc": 0.815,
+   "n_pos_train": 82,
+   "confidence": "ok",
+   "mutation": "TET2",
+   "heldout_auc": 0.815,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.517,
+   "call": "absent",
+   "threshold": 0.98,
+   "cv_auroc": 0.909,
+   "n_pos_train": 13,
+   "confidence": "ok",
+   "mutation": "BCORL1",
+   "heldout_auc": 0.909,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.514,
+   "call": "absent",
+   "threshold": 0.99,
+   "cv_auroc": 0.983,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "SF3B1_K700",
+   "heldout_auc": 0.983,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.514,
+   "call": "absent",
+   "threshold": 0.948,
+   "cv_auroc": 0.963,
+   "n_pos_train": 43,
+   "confidence": "ok",
+   "mutation": "KMT2A_fusion",
+   "heldout_auc": 0.963,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.452,
+   "call": "absent",
+   "threshold": 0.993,
+   "cv_auroc": 0.578,
+   "n_pos_train": 13,
+   "confidence": "abstain: weak (CV AUROC 0.58)",
+   "mutation": "CBL",
+   "heldout_auc": 0.578,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.444,
+   "call": "absent",
+   "threshold": 0.943,
+   "cv_auroc": 0.915,
+   "n_pos_train": 34,
+   "confidence": "ok",
+   "mutation": "BCOR",
+   "heldout_auc": 0.915,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.421,
+   "call": "absent",
+   "threshold": 0.976,
+   "cv_auroc": 0.731,
+   "n_pos_train": 27,
+   "confidence": "ok",
+   "mutation": "FLT3_other_TKD_or_JM",
+   "heldout_auc": 0.731,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.416,
+   "call": "absent",
+   "threshold": 0.964,
+   "cv_auroc": 0.997,
+   "n_pos_train": 18,
+   "confidence": "ok",
+   "mutation": "SF3B1_K666",
+   "heldout_auc": 0.997,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.406,
+   "call": "absent",
+   "threshold": 0.969,
+   "cv_auroc": 0.652,
+   "n_pos_train": 15,
+   "confidence": "ok",
+   "mutation": "RAD21",
+   "heldout_auc": 0.652,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.385,
+   "call": "absent",
+   "threshold": 0.99,
+   "cv_auroc": 0.682,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "SMC1A",
+   "heldout_auc": 0.682,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.336,
+   "call": "absent",
+   "threshold": 0.966,
+   "cv_auroc": 1.0,
+   "n_pos_train": 23,
+   "confidence": "ok",
+   "mutation": "U2AF1_S34",
+   "heldout_auc": 1.0,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.336,
+   "call": "absent",
+   "threshold": 0.995,
+   "cv_auroc": 0.688,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "SMC3",
+   "heldout_auc": 0.688,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.326,
+   "call": "present",
+   "threshold": 0.32,
+   "cv_auroc": 0.605,
+   "n_pos_train": 64,
+   "confidence": "abstain: weak (CV AUROC 0.60)",
+   "mutation": "DNMT3A_nonR882",
+   "heldout_auc": 0.605,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.315,
+   "call": "absent",
+   "threshold": 0.948,
+   "cv_auroc": 0.936,
+   "n_pos_train": 14,
+   "confidence": "ok",
+   "mutation": "CEBPA_bZIP",
+   "heldout_auc": 0.936,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.279,
+   "call": "absent",
+   "threshold": 0.993,
+   "cv_auroc": 0.784,
+   "n_pos_train": 7,
+   "confidence": "ok",
+   "mutation": "SETBP1",
+   "heldout_auc": 0.784,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.233,
+   "call": "absent",
+   "threshold": 0.995,
+   "cv_auroc": 0.881,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "ZRSR2",
+   "heldout_auc": 0.881,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.204,
+   "call": "absent",
+   "threshold": 0.987,
+   "cv_auroc": 0.961,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "IDH2_R172",
+   "heldout_auc": 0.961,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.191,
+   "call": "absent",
+   "threshold": 0.989,
+   "cv_auroc": 0.828,
+   "n_pos_train": 13,
+   "confidence": "ok",
+   "mutation": "KIT_D816",
+   "heldout_auc": 0.828,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.189,
+   "call": "absent",
+   "threshold": 0.792,
+   "cv_auroc": 0.899,
+   "n_pos_train": 158,
+   "confidence": "ok",
+   "mutation": "FLT3_ITD",
+   "heldout_auc": 0.899,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.183,
+   "call": "absent",
+   "threshold": 0.837,
+   "cv_auroc": 0.911,
+   "n_pos_train": 49,
+   "confidence": "ok",
+   "mutation": "IDH1_R132",
+   "heldout_auc": 0.911,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.178,
+   "call": "absent",
+   "threshold": 0.992,
+   "cv_auroc": 0.665,
+   "n_pos_train": 10,
+   "confidence": "ok",
+   "mutation": "CREBBP",
+   "heldout_auc": 0.665,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.132,
+   "call": "absent",
+   "threshold": 0.989,
+   "cv_auroc": 0.66,
+   "n_pos_train": 7,
+   "confidence": "ok",
+   "mutation": "SUZ12",
+   "heldout_auc": 0.66,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.121,
+   "call": "absent",
+   "threshold": 0.946,
+   "cv_auroc": 0.892,
+   "n_pos_train": 43,
+   "confidence": "ok",
+   "mutation": "STAG2",
+   "heldout_auc": 0.892,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.114,
+   "call": "absent",
+   "threshold": 0.966,
+   "cv_auroc": 0.83,
+   "n_pos_train": 29,
+   "confidence": "ok",
+   "mutation": "GATA2",
+   "heldout_auc": 0.83,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.106,
+   "call": "absent",
+   "threshold": 0.751,
+   "cv_auroc": 0.981,
+   "n_pos_train": 140,
+   "confidence": "ok",
+   "mutation": "NPM1_exon12_frameshift",
+   "heldout_auc": 0.981,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.08,
+   "call": "absent",
+   "threshold": 0.992,
+   "cv_auroc": 0.779,
+   "n_pos_train": 19,
+   "confidence": "ok",
+   "mutation": "EZH2",
+   "heldout_auc": 0.779,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.08,
+   "call": "absent",
+   "threshold": 0.976,
+   "cv_auroc": 0.889,
+   "n_pos_train": 9,
+   "confidence": "ok",
+   "mutation": "IKZF1",
+   "heldout_auc": 0.889,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.052,
+   "call": "absent",
+   "threshold": 0.846,
+   "cv_auroc": 0.946,
+   "n_pos_train": 75,
+   "confidence": "ok",
+   "mutation": "RUNX1_LOF",
+   "heldout_auc": 0.946,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.044,
+   "call": "absent",
+   "threshold": 0.888,
+   "cv_auroc": 0.996,
+   "n_pos_train": 72,
+   "confidence": "ok",
+   "mutation": "SRSF2",
+   "heldout_auc": 0.996,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  },
+  {
+   "probability": 0.039,
+   "call": "absent",
+   "threshold": 0.824,
+   "cv_auroc": 0.88,
+   "n_pos_train": 76,
+   "confidence": "ok",
+   "mutation": "DNMT3A_R882",
+   "heldout_auc": 0.88,
+   "source": "bulk_rna (BeatAML-trained, variant-level)",
+   "supplied_truth": null
+  }
+ ],
+ "mutation_caller": {
+  "mode": "bulk_variant_primary",
+  "caller": "BulkMutationPredictor",
+  "input": "sc",
+  "predictor": {
+   "version": "1.0",
+   "n_categories": 50,
+   "mean_cv_auroc": 0.829,
+   "refs": [
+    "beataml",
+    "sc",
+    "leucegene"
+   ],
+   "genes": 14237,
+   "trained_on": "BeatAML2 (n=707, WES)",
+   "base_model": "logL2",
+   "varcap": 2500,
+   "min_pos": 6
+  },
+  "n_confident_present": 3,
+  "note": "PRIMARY mutation caller \u2014 ~50 variant-level categories predicted from the sample's single-cell bulk-equivalent (BeatAML-trained, validated cross-cohort). Predicted, not sequenced: high-confidence 'present' calls are leads to confirm by sequencing. Weak categories (CV AUROC < 0.65) are marked abstain."
+ },
+ "treatment_panel": [
+  {
+   "driver": "NRAS_G13",
+   "match": "gene",
+   "status": "PREDICTED \u2014 confirm before acting",
+   "predicted": true,
+   "confidence": 0.982,
+   "reliability_auc": 0.744,
+   "drugs": [
+    {
+     "drug": "trametinib",
+     "class": "MEK inhibitor",
+     "tier": "investigational \u00b7 RAS-pathway",
+     "note": ""
+    },
+    {
+     "drug": "SHP2 inhibitor",
+     "class": "SHP2",
+     "tier": "investigational",
+     "note": ""
+    }
+   ],
+   "rationale": "RAS-pathway activation is linked to venetoclax resistance and relapse",
+   "explanation": "This driver was PREDICTED from expression (model score 0.98, reliability AUROC 0.74) and has NOT been sequenced \u2014 trametinib, SHP2 inhibitor is implicated only if the call is confirmed. RAS-pathway activation is linked to venetoclax resistance and relapse Co-occurring calls on this sample: TP53_hotspot_DBD, NF1.",
+   "explained_by": "rules"
+  },
+  {
+   "driver": "TP53_hotspot_DBD",
+   "match": "variant",
+   "status": "PREDICTED \u2014 confirm before acting",
+   "predicted": true,
+   "confidence": 0.959,
+   "reliability_auc": 0.876,
+   "drugs": [
+    {
+     "drug": "HMA + venetoclax",
+     "class": "hypomethylating + BCL2",
+     "tier": "standard of care \u00b7 poor response",
+     "note": ""
+    },
+    {
+     "drug": "clinical trial",
+     "class": "\u2014",
+     "tier": "preferred",
+     "note": "no approved TP53-directed agent"
+    }
+   ],
+   "rationale": "adverse risk; allelic state (mono vs bi) drives prognosis",
+   "explanation": "This driver was PREDICTED from expression (model score 0.96, reliability AUROC 0.88) and has NOT been sequenced \u2014 HMA + venetoclax, clinical trial is implicated only if the call is confirmed. adverse risk; allelic state (mono vs bi) drives prognosis Co-occurring calls on this sample: NRAS_G13, NF1.",
+   "explained_by": "rules"
+  },
+  {
+   "driver": "NF1",
+   "match": "gene",
+   "status": "PREDICTED \u2014 confirm before acting",
+   "predicted": true,
+   "confidence": 0.959,
+   "reliability_auc": 0.673,
+   "drugs": [
+    {
+     "drug": "trametinib",
+     "class": "MEK inhibitor",
+     "tier": "investigational \u00b7 RAS-pathway",
+     "note": ""
+    },
+    {
+     "drug": "SHP2 inhibitor",
+     "class": "SHP2",
+     "tier": "investigational",
+     "note": ""
+    }
+   ],
+   "rationale": "RAS-pathway activation is linked to venetoclax resistance and relapse",
+   "explanation": "This driver was PREDICTED from expression (model score 0.96, reliability AUROC 0.67) and has NOT been sequenced \u2014 trametinib, SHP2 inhibitor is implicated only if the call is confirmed. RAS-pathway activation is linked to venetoclax resistance and relapse Co-occurring calls on this sample: NRAS_G13, TP53_hotspot_DBD.",
+   "explained_by": "rules"
+  }
+ ],
+ "tests_panel": [
+  {
+   "test": "RAS-pathway NGS (NRAS/KRAS/PTPN11/NF1/CBL)",
+   "why": "RAS-pathway activation is linked to venetoclax resistance and relapse",
+   "driver": "NRAS_G13",
+   "priority": "confirm",
+   "reason": "confirm the predicted driver before any targeted decision"
+  },
+  {
+   "test": "TP53 NGS + karyotype/FISH (allelic state)",
+   "why": "adverse risk; allelic state (mono vs bi) drives prognosis",
+   "driver": "TP53_hotspot_DBD",
+   "priority": "confirm",
+   "reason": "confirm the predicted driver before any targeted decision"
+  },
+  {
+   "test": "Karyotype + FISH",
+   "why": "cytogenetic risk (inv16, t(8;21), -5/-7, complex) \u2014 bulk RNA does not call these",
+   "priority": "baseline",
+   "driver": null,
+   "reason": "standard workup"
+  },
+  {
+   "test": "Targeted myeloid NGS panel",
+   "why": "the ground truth this panel's predictions must be confirmed against",
+   "priority": "baseline",
+   "driver": null,
+   "reason": "standard workup"
+  },
+  {
+   "test": "Flow cytometry immunophenotype",
+   "why": "blast %, lineage, and an MRD baseline",
+   "priority": "baseline",
+   "driver": null,
+   "reason": "standard workup"
+  }
+ ],
+ "panels_note": "RESEARCH DECISION SUPPORT \u2014 not medical advice. Drivers marked PREDICTED were inferred from expression and have NOT been sequenced; confirm them before any targeted decision. Close the loop: re-run with --mutations <confirmed drivers> to engage the deterministic genetic anchor.",
+ "drug_response": {
+  "available": true,
+  "n_drugs_modelled": 118,
+  "n_drugs_reported": 118,
+  "n_abstained": 0,
+  "patient": {
+   "genes_shared_with_model": 13432,
+   "ood_distance": 0.927306225786647,
+   "ood_percentile": 0.4134366925064599,
+   "differentiation_axis_percentile": 0.24,
+   "single_cell_states": 16
+  },
+  "top_by_tier": {
+   "approved_AML": [
+    {
+     "inhibitor": "Quizartinib (AC220)",
+     "utility": 0.7573,
+     "prob_sensitive": 0.843,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Midostaurin",
+     "utility": 0.7005,
+     "prob_sensitive": 0.8146,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Gilteritinib",
+     "utility": 0.3467,
+     "prob_sensitive": 0.5571,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Cytarabine",
+     "utility": 0.1886,
+     "prob_sensitive": 0.2296,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Azacytidine",
+     "utility": 0.1861,
+     "prob_sensitive": 0.2418,
+     "n_challenges": 1
+    }
+   ],
+   "approved_other": [
+    {
+     "inhibitor": "Trametinib (GSK1120212)",
+     "utility": 0.868,
+     "prob_sensitive": 0.9499,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Tivozanib (AV-951)",
+     "utility": 0.8592,
+     "prob_sensitive": 0.9842,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Axitinib (AG-013736)",
+     "utility": 0.8569,
+     "prob_sensitive": 0.9141,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Regorafenib (BAY 73-4506)",
+     "utility": 0.8466,
+     "prob_sensitive": 0.9044,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Dasatinib",
+     "utility": 0.8411,
+     "prob_sensitive": 0.9745,
+     "n_challenges": 0
+    }
+   ],
+   "trial": [
+    {
+     "inhibitor": "Saracatinib (AZD0530)",
+     "utility": 0.8325,
+     "prob_sensitive": 0.943,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Entospletinib (GS-9973)",
+     "utility": 0.8007,
+     "prob_sensitive": 0.9606,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "CI-1040 (PD184352)",
+     "utility": 0.7932,
+     "prob_sensitive": 0.8882,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "LY-333531",
+     "utility": 0.752,
+     "prob_sensitive": 0.8609,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "Motesanib (AMG-706)",
+     "utility": 0.7418,
+     "prob_sensitive": 0.8472,
+     "n_challenges": 0
+    }
+   ],
+   "research": [
+    {
+     "inhibitor": "GW-2580",
+     "utility": 0.7642,
+     "prob_sensitive": 0.9234,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "JNJ-28312141",
+     "utility": 0.7504,
+     "prob_sensitive": 0.8989,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "Doramapimod (BIRB 796)",
+     "utility": 0.7268,
+     "prob_sensitive": 0.909,
+     "n_challenges": 1
+    },
+    {
+     "inhibitor": "PD173955",
+     "utility": 0.7086,
+     "prob_sensitive": 0.8153,
+     "n_challenges": 0
+    },
+    {
+     "inhibitor": "PRT062607",
+     "utility": 0.7004,
+     "prob_sensitive": 0.8711,
+     "n_challenges": 0
+    }
+   ]
+  },
+  "caveat": "predicted EX-VIVO sensitivity from the BeatAML2 functional screen; a prioritisation for trial matching or laboratory validation, not a treatment recommendation"
+ },
+ "consensus": {
+  "subtype_call": "Inv16 (witness consensus)",
+  "leading_hypothesis": "Inv16",
+  "leading_confirmed_by_genetics": false,
+  "concordance": 1.0,
+  "per_witness_consistency": {
+   "composition": "agree"
+  },
+  "conflicts": "",
+  "ranked_therapy_hypotheses": [],
+  "surface_therapy_hypotheses": [],
+  "recommended_validations": [
+   {
+    "claim": "mutation",
+    "validation": "targeted DNA/RNA sequencing (NGS panel)",
+    "source": "standard"
+   },
+   {
+    "claim": "subtype",
+    "validation": "flow cytometry immunophenotyping",
+    "source": "standard"
+   }
+  ],
+  "descriptive_findings": [],
+  "overall_confidence": "medium",
+  "rationale": "Leading hypothesis: Inv16 (witness consensus). Concordance 1.00. Therapies follow observed drivers; a predicted subtype must be confirmed by sequencing before subtype-directed therapy.",
+  "knowledge_version": "kb-2026.07"
+ },
+ "deliberation": null,
+ "ingest": {
+  "source": "C:\\Users\\krog5w\\.gemini\\antigravity\\scratch\\AML-multimodal\\inbox\\UPLOAD_TEST_CCHMC_1009_AfInv16_29M.h5ad",
+  "input_kind": "h5ad",
+  "name": "GUIUPLOAD_SC",
+  "mutations_supplied": [],
+  "unrecognized_mutations": [],
+  "composition_quality": {
+   "mean_cosine": 0.4840870201587677,
+   "n_cells": 3002,
+   "n_states_present": 34,
+   "n_shared_markers": 2700,
+   "control_gate": {
     "call": "diseased",
     "p_diseased": 0.9773,
     "threshold": 0.0204,
     "cv_auc": 0.9657794676806084,
     "modality": "Composition"
+   }
   },
-  "panel": [
-    {
-      "witness": "composition",
-      "grounding": "honest_cv",
-      "independence": "independent",
-      "evidence": {
-        "witness": "composition",
-        "kind": "measured",
-        "status": "ok",
-        "held_out": false,
-        "patient_prediction": "Inv16",
-        "patient_probability": 0.705,
-        "true_label": null,
-        "cohort_balanced_accuracy": 0.6312,
-        "cohort_permutation_p": 0.024390243902439025,
-        "patient_top_cellstates": {
-          "MultiLin-GMP-1": 0.208,
-          "Intermediate Mono-3": 0.192,
-          "Intermediate Mono-1": 0.161,
-          "Mono-2": 0.065,
-          "Mono-1": 0.062,
-          "cDC2-2": 0.06
-        },
-        "mean_cosine": 0.484,
-        "n_cells": 3002,
-        "n_shared_markers": 2700,
-        "n_states_present": 34,
-        "trained_classes": [
-          "FLT3",
-          "Inv16",
-          "NPM1",
-          "TET2",
-          "TP53"
-        ]
-      },
-      "opinion": {
-        "confidence": 0.5,
-        "reliability_weight": 0.85,
-        "summary": "predicts Inv16 (prob 0.705); cohort balanced-acc 0.6312",
-        "caveats": "external sample: cohort-trained classifier, NOT held-out for this sample; out-of-cohort domain shift possible"
-      }
-    },
-    {
-      "witness": "genetic",
-      "grounding": "deterministic_fact",
-      "independence": "independent",
-      "evidence": {
-        "witness": "genetic",
-        "kind": "independent",
-        "status": "ok",
-        "present": [],
-        "targetable": {},
-        "eln": null
-      },
-      "opinion": {
-        "confidence": 0.2,
-        "reliability_weight": 0.1,
-        "summary": "present: []; targetable: []",
-        "caveats": "no mutations supplied \u2014 arbiter runs anchor-free"
-      }
-    }
-  ],
-  "mutation_predictions": [
-    {
-      "probability": 0.982,
-      "call": "present",
-      "threshold": 0.974,
-      "cv_auroc": 0.744,
-      "n_pos_train": 22,
-      "confidence": "ok",
-      "mutation": "NRAS_G13",
-      "heldout_auc": 0.744,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.959,
-      "call": "present",
-      "threshold": 0.927,
-      "cv_auroc": 0.876,
-      "n_pos_train": 43,
-      "confidence": "ok",
-      "mutation": "TP53_hotspot_DBD",
-      "heldout_auc": 0.876,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.959,
-      "call": "present",
-      "threshold": 0.938,
-      "cv_auroc": 0.673,
-      "n_pos_train": 16,
-      "confidence": "ok",
-      "mutation": "NF1",
-      "heldout_auc": 0.673,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.92,
-      "call": "absent",
-      "threshold": 0.985,
-      "cv_auroc": 0.859,
-      "n_pos_train": 10,
-      "confidence": "ok",
-      "mutation": "U2AF1_Q157/R156",
-      "heldout_auc": 0.859,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.91,
-      "call": "absent",
-      "threshold": 0.995,
-      "cv_auroc": 0.955,
-      "n_pos_train": 10,
-      "confidence": "ok",
-      "mutation": "KRAS_G13",
-      "heldout_auc": 0.955,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.86,
-      "call": "absent",
-      "threshold": 0.862,
-      "cv_auroc": 0.678,
-      "n_pos_train": 34,
-      "confidence": "ok",
-      "mutation": "NRAS_G12",
-      "heldout_auc": 0.678,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.855,
-      "call": "absent",
-      "threshold": 0.982,
-      "cv_auroc": 0.872,
-      "n_pos_train": 22,
-      "confidence": "ok",
-      "mutation": "TP53_LOF/splice/frameshift",
-      "heldout_auc": 0.872,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.85,
-      "call": "absent",
-      "threshold": 0.979,
-      "cv_auroc": 0.778,
-      "n_pos_train": 6,
-      "confidence": "ok",
-      "mutation": "ETV6",
-      "heldout_auc": 0.778,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.814,
-      "call": "absent",
-      "threshold": 0.995,
-      "cv_auroc": 0.811,
-      "n_pos_train": 18,
-      "confidence": "ok",
-      "mutation": "JAK2_V617F",
-      "heldout_auc": 0.811,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.749,
-      "call": "absent",
-      "threshold": 0.995,
-      "cv_auroc": 0.67,
-      "n_pos_train": 9,
-      "confidence": "ok",
-      "mutation": "CSF3R",
-      "heldout_auc": 0.67,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.716,
-      "call": "absent",
-      "threshold": 0.964,
-      "cv_auroc": 0.937,
-      "n_pos_train": 16,
-      "confidence": "ok",
-      "mutation": "CEBPA_biallelic_or_double",
-      "heldout_auc": 0.937,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.708,
-      "call": "absent",
-      "threshold": 0.917,
-      "cv_auroc": 0.704,
-      "n_pos_train": 20,
-      "confidence": "ok",
-      "mutation": "PTPN11_other",
-      "heldout_auc": 0.704,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.7,
-      "call": "absent",
-      "threshold": 0.865,
-      "cv_auroc": 0.838,
-      "n_pos_train": 62,
-      "confidence": "ok",
-      "mutation": "IDH2_R140",
-      "heldout_auc": 0.838,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.682,
-      "call": "absent",
-      "threshold": 0.912,
-      "cv_auroc": 0.871,
-      "n_pos_train": 63,
-      "confidence": "ok",
-      "mutation": "ASXL1",
-      "heldout_auc": 0.871,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.661,
-      "call": "absent",
-      "threshold": 0.922,
-      "cv_auroc": 0.716,
-      "n_pos_train": 42,
-      "confidence": "ok",
-      "mutation": "FLT3_TKD_D835/I836",
-      "heldout_auc": 0.716,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.636,
-      "call": "absent",
-      "threshold": 0.878,
-      "cv_auroc": 0.831,
-      "n_pos_train": 39,
-      "confidence": "ok",
-      "mutation": "NRAS_Q61",
-      "heldout_auc": 0.831,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.605,
-      "call": "absent",
-      "threshold": 0.779,
-      "cv_auroc": 0.703,
-      "n_pos_train": 15,
-      "confidence": "ok",
-      "mutation": "KRAS_G12",
-      "heldout_auc": 0.703,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.605,
-      "call": "absent",
-      "threshold": 0.963,
-      "cv_auroc": 0.968,
-      "n_pos_train": 32,
-      "confidence": "ok",
-      "mutation": "CEBPA_Nterminal_frameshift/nonsense",
-      "heldout_auc": 0.968,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.584,
-      "call": "absent",
-      "threshold": 0.938,
-      "cv_auroc": 0.857,
-      "n_pos_train": 47,
-      "confidence": "ok",
-      "mutation": "WT1_LOF",
-      "heldout_auc": 0.857,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.584,
-      "call": "absent",
-      "threshold": 0.941,
-      "cv_auroc": 0.898,
-      "n_pos_train": 21,
-      "confidence": "ok",
-      "mutation": "PHF6",
-      "heldout_auc": 0.898,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.532,
-      "call": "absent",
-      "threshold": 0.889,
-      "cv_auroc": 0.815,
-      "n_pos_train": 82,
-      "confidence": "ok",
-      "mutation": "TET2",
-      "heldout_auc": 0.815,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.517,
-      "call": "absent",
-      "threshold": 0.98,
-      "cv_auroc": 0.909,
-      "n_pos_train": 13,
-      "confidence": "ok",
-      "mutation": "BCORL1",
-      "heldout_auc": 0.909,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.514,
-      "call": "absent",
-      "threshold": 0.99,
-      "cv_auroc": 0.983,
-      "n_pos_train": 10,
-      "confidence": "ok",
-      "mutation": "SF3B1_K700",
-      "heldout_auc": 0.983,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.514,
-      "call": "absent",
-      "threshold": 0.948,
-      "cv_auroc": 0.963,
-      "n_pos_train": 43,
-      "confidence": "ok",
-      "mutation": "KMT2A_fusion",
-      "heldout_auc": 0.963,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.452,
-      "call": "absent",
-      "threshold": 0.993,
-      "cv_auroc": 0.578,
-      "n_pos_train": 13,
-      "confidence": "abstain: weak (CV AUROC 0.58)",
-      "mutation": "CBL",
-      "heldout_auc": 0.578,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.444,
-      "call": "absent",
-      "threshold": 0.943,
-      "cv_auroc": 0.915,
-      "n_pos_train": 34,
-      "confidence": "ok",
-      "mutation": "BCOR",
-      "heldout_auc": 0.915,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.421,
-      "call": "absent",
-      "threshold": 0.976,
-      "cv_auroc": 0.731,
-      "n_pos_train": 27,
-      "confidence": "ok",
-      "mutation": "FLT3_other_TKD_or_JM",
-      "heldout_auc": 0.731,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.416,
-      "call": "absent",
-      "threshold": 0.964,
-      "cv_auroc": 0.997,
-      "n_pos_train": 18,
-      "confidence": "ok",
-      "mutation": "SF3B1_K666",
-      "heldout_auc": 0.997,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.406,
-      "call": "absent",
-      "threshold": 0.969,
-      "cv_auroc": 0.652,
-      "n_pos_train": 15,
-      "confidence": "ok",
-      "mutation": "RAD21",
-      "heldout_auc": 0.652,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.385,
-      "call": "absent",
-      "threshold": 0.99,
-      "cv_auroc": 0.682,
-      "n_pos_train": 10,
-      "confidence": "ok",
-      "mutation": "SMC1A",
-      "heldout_auc": 0.682,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.336,
-      "call": "absent",
-      "threshold": 0.966,
-      "cv_auroc": 1.0,
-      "n_pos_train": 23,
-      "confidence": "ok",
-      "mutation": "U2AF1_S34",
-      "heldout_auc": 1.0,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.336,
-      "call": "absent",
-      "threshold": 0.995,
-      "cv_auroc": 0.688,
-      "n_pos_train": 10,
-      "confidence": "ok",
-      "mutation": "SMC3",
-      "heldout_auc": 0.688,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.326,
-      "call": "present",
-      "threshold": 0.32,
-      "cv_auroc": 0.605,
-      "n_pos_train": 64,
-      "confidence": "abstain: weak (CV AUROC 0.60)",
-      "mutation": "DNMT3A_nonR882",
-      "heldout_auc": 0.605,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.315,
-      "call": "absent",
-      "threshold": 0.948,
-      "cv_auroc": 0.936,
-      "n_pos_train": 14,
-      "confidence": "ok",
-      "mutation": "CEBPA_bZIP",
-      "heldout_auc": 0.936,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.279,
-      "call": "absent",
-      "threshold": 0.993,
-      "cv_auroc": 0.784,
-      "n_pos_train": 7,
-      "confidence": "ok",
-      "mutation": "SETBP1",
-      "heldout_auc": 0.784,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.233,
-      "call": "absent",
-      "threshold": 0.995,
-      "cv_auroc": 0.881,
-      "n_pos_train": 10,
-      "confidence": "ok",
-      "mutation": "ZRSR2",
-      "heldout_auc": 0.881,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.204,
-      "call": "absent",
-      "threshold": 0.987,
-      "cv_auroc": 0.961,
-      "n_pos_train": 10,
-      "confidence": "ok",
-      "mutation": "IDH2_R172",
-      "heldout_auc": 0.961,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.191,
-      "call": "absent",
-      "threshold": 0.989,
-      "cv_auroc": 0.828,
-      "n_pos_train": 13,
-      "confidence": "ok",
-      "mutation": "KIT_D816",
-      "heldout_auc": 0.828,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.189,
-      "call": "absent",
-      "threshold": 0.792,
-      "cv_auroc": 0.899,
-      "n_pos_train": 158,
-      "confidence": "ok",
-      "mutation": "FLT3_ITD",
-      "heldout_auc": 0.899,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.183,
-      "call": "absent",
-      "threshold": 0.837,
-      "cv_auroc": 0.911,
-      "n_pos_train": 49,
-      "confidence": "ok",
-      "mutation": "IDH1_R132",
-      "heldout_auc": 0.911,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.178,
-      "call": "absent",
-      "threshold": 0.992,
-      "cv_auroc": 0.665,
-      "n_pos_train": 10,
-      "confidence": "ok",
-      "mutation": "CREBBP",
-      "heldout_auc": 0.665,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.132,
-      "call": "absent",
-      "threshold": 0.989,
-      "cv_auroc": 0.66,
-      "n_pos_train": 7,
-      "confidence": "ok",
-      "mutation": "SUZ12",
-      "heldout_auc": 0.66,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.121,
-      "call": "absent",
-      "threshold": 0.946,
-      "cv_auroc": 0.892,
-      "n_pos_train": 43,
-      "confidence": "ok",
-      "mutation": "STAG2",
-      "heldout_auc": 0.892,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.114,
-      "call": "absent",
-      "threshold": 0.966,
-      "cv_auroc": 0.83,
-      "n_pos_train": 29,
-      "confidence": "ok",
-      "mutation": "GATA2",
-      "heldout_auc": 0.83,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.106,
-      "call": "absent",
-      "threshold": 0.751,
-      "cv_auroc": 0.981,
-      "n_pos_train": 140,
-      "confidence": "ok",
-      "mutation": "NPM1_exon12_frameshift",
-      "heldout_auc": 0.981,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.08,
-      "call": "absent",
-      "threshold": 0.992,
-      "cv_auroc": 0.779,
-      "n_pos_train": 19,
-      "confidence": "ok",
-      "mutation": "EZH2",
-      "heldout_auc": 0.779,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.08,
-      "call": "absent",
-      "threshold": 0.976,
-      "cv_auroc": 0.889,
-      "n_pos_train": 9,
-      "confidence": "ok",
-      "mutation": "IKZF1",
-      "heldout_auc": 0.889,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.052,
-      "call": "absent",
-      "threshold": 0.846,
-      "cv_auroc": 0.946,
-      "n_pos_train": 75,
-      "confidence": "ok",
-      "mutation": "RUNX1_LOF",
-      "heldout_auc": 0.946,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.044,
-      "call": "absent",
-      "threshold": 0.888,
-      "cv_auroc": 0.996,
-      "n_pos_train": 72,
-      "confidence": "ok",
-      "mutation": "SRSF2",
-      "heldout_auc": 0.996,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    },
-    {
-      "probability": 0.039,
-      "call": "absent",
-      "threshold": 0.824,
-      "cv_auroc": 0.88,
-      "n_pos_train": 76,
-      "confidence": "ok",
-      "mutation": "DNMT3A_R882",
-      "heldout_auc": 0.88,
-      "source": "bulk_rna (BeatAML-trained, variant-level)",
-      "supplied_truth": null
-    }
-  ],
-  "mutation_caller": {
-    "mode": "bulk_variant_primary",
-    "caller": "BulkMutationPredictor",
-    "input": "sc",
-    "predictor": {
-      "version": "1.0",
-      "n_categories": 50,
-      "mean_cv_auroc": 0.829,
-      "refs": [
-        "beataml",
-        "sc",
-        "leucegene"
-      ],
-      "genes": 14237,
-      "trained_on": "BeatAML2 (n=707, WES)",
-      "base_model": "logL2",
-      "varcap": 2500,
-      "min_pos": 6
-    },
-    "n_confident_present": 3,
-    "note": "PRIMARY mutation caller \u2014 ~50 variant-level categories predicted from the sample's single-cell bulk-equivalent (BeatAML-trained, validated cross-cohort). Predicted, not sequenced: high-confidence 'present' calls are leads to confirm by sequencing. Weak categories (CV AUROC < 0.65) are marked abstain."
-  },
-  "treatment_panel": [
-    {
-      "driver": "NRAS_G13",
-      "match": "gene",
-      "status": "PREDICTED \u2014 confirm before acting",
-      "predicted": true,
-      "confidence": 0.982,
-      "reliability_auc": 0.744,
-      "drugs": [
-        {
-          "drug": "trametinib",
-          "class": "MEK inhibitor",
-          "tier": "investigational \u00b7 RAS-pathway",
-          "note": ""
-        },
-        {
-          "drug": "SHP2 inhibitor",
-          "class": "SHP2",
-          "tier": "investigational",
-          "note": ""
-        }
-      ],
-      "rationale": "RAS-pathway activation is linked to venetoclax resistance and relapse",
-      "explanation": "This driver was PREDICTED from expression (model score 0.98, reliability AUROC 0.74) and has NOT been sequenced \u2014 trametinib, SHP2 inhibitor is implicated only if the call is confirmed. RAS-pathway activation is linked to venetoclax resistance and relapse Co-occurring calls on this sample: TP53_hotspot_DBD, NF1.",
-      "explained_by": "rules"
-    },
-    {
-      "driver": "TP53_hotspot_DBD",
-      "match": "variant",
-      "status": "PREDICTED \u2014 confirm before acting",
-      "predicted": true,
-      "confidence": 0.959,
-      "reliability_auc": 0.876,
-      "drugs": [
-        {
-          "drug": "HMA + venetoclax",
-          "class": "hypomethylating + BCL2",
-          "tier": "standard of care \u00b7 poor response",
-          "note": ""
-        },
-        {
-          "drug": "clinical trial",
-          "class": "\u2014",
-          "tier": "preferred",
-          "note": "no approved TP53-directed agent"
-        }
-      ],
-      "rationale": "adverse risk; allelic state (mono vs bi) drives prognosis",
-      "explanation": "This driver was PREDICTED from expression (model score 0.96, reliability AUROC 0.88) and has NOT been sequenced \u2014 HMA + venetoclax, clinical trial is implicated only if the call is confirmed. adverse risk; allelic state (mono vs bi) drives prognosis Co-occurring calls on this sample: NRAS_G13, NF1.",
-      "explained_by": "rules"
-    },
-    {
-      "driver": "NF1",
-      "match": "gene",
-      "status": "PREDICTED \u2014 confirm before acting",
-      "predicted": true,
-      "confidence": 0.959,
-      "reliability_auc": 0.673,
-      "drugs": [
-        {
-          "drug": "trametinib",
-          "class": "MEK inhibitor",
-          "tier": "investigational \u00b7 RAS-pathway",
-          "note": ""
-        },
-        {
-          "drug": "SHP2 inhibitor",
-          "class": "SHP2",
-          "tier": "investigational",
-          "note": ""
-        }
-      ],
-      "rationale": "RAS-pathway activation is linked to venetoclax resistance and relapse",
-      "explanation": "This driver was PREDICTED from expression (model score 0.96, reliability AUROC 0.67) and has NOT been sequenced \u2014 trametinib, SHP2 inhibitor is implicated only if the call is confirmed. RAS-pathway activation is linked to venetoclax resistance and relapse Co-occurring calls on this sample: NRAS_G13, TP53_hotspot_DBD.",
-      "explained_by": "rules"
-    }
-  ],
-  "tests_panel": [
-    {
-      "test": "RAS-pathway NGS (NRAS/KRAS/PTPN11/NF1/CBL)",
-      "why": "RAS-pathway activation is linked to venetoclax resistance and relapse",
-      "driver": "NRAS_G13",
-      "priority": "confirm",
-      "reason": "confirm the predicted driver before any targeted decision"
-    },
-    {
-      "test": "TP53 NGS + karyotype/FISH (allelic state)",
-      "why": "adverse risk; allelic state (mono vs bi) drives prognosis",
-      "driver": "TP53_hotspot_DBD",
-      "priority": "confirm",
-      "reason": "confirm the predicted driver before any targeted decision"
-    },
-    {
-      "test": "Karyotype + FISH",
-      "why": "cytogenetic risk (inv16, t(8;21), -5/-7, complex) \u2014 bulk RNA does not call these",
-      "priority": "baseline",
-      "driver": null,
-      "reason": "standard workup"
-    },
-    {
-      "test": "Targeted myeloid NGS panel",
-      "why": "the ground truth this panel's predictions must be confirmed against",
-      "priority": "baseline",
-      "driver": null,
-      "reason": "standard workup"
-    },
-    {
-      "test": "Flow cytometry immunophenotype",
-      "why": "blast %, lineage, and an MRD baseline",
-      "priority": "baseline",
-      "driver": null,
-      "reason": "standard workup"
-    }
-  ],
-  "panels_note": "RESEARCH DECISION SUPPORT \u2014 not medical advice. Drivers marked PREDICTED were inferred from expression and have NOT been sequenced; confirm them before any targeted decision. Close the loop: re-run with --mutations <confirmed drivers> to engage the deterministic genetic anchor.",
-  "drug_response": {
-    "available": true,
-    "n_drugs_modelled": 118,
-    "n_drugs_reported": 118,
-    "n_abstained": 0,
-    "patient": {
-      "genes_shared_with_model": 13432,
-      "ood_distance": 0.927306225786647,
-      "ood_percentile": 0.4134366925064599,
-      "differentiation_axis_percentile": 0.24,
-      "single_cell_states": 16
-    },
-    "top_by_tier": {
-      "approved_AML": [
-        {
-          "inhibitor": "Quizartinib (AC220)",
-          "utility": 0.7573,
-          "prob_sensitive": 0.843,
-          "n_challenges": 0
-        },
-        {
-          "inhibitor": "Midostaurin",
-          "utility": 0.7005,
-          "prob_sensitive": 0.8146,
-          "n_challenges": 0
-        },
-        {
-          "inhibitor": "Gilteritinib",
-          "utility": 0.3467,
-          "prob_sensitive": 0.5571,
-          "n_challenges": 0
-        },
-        {
-          "inhibitor": "Cytarabine",
-          "utility": 0.1886,
-          "prob_sensitive": 0.2296,
-          "n_challenges": 1
-        },
-        {
-          "inhibitor": "Azacytidine",
-          "utility": 0.1861,
-          "prob_sensitive": 0.2418,
-          "n_challenges": 1
-        }
-      ],
-      "approved_other": [
-        {
-          "inhibitor": "Trametinib (GSK1120212)",
-          "utility": 0.868,
-          "prob_sensitive": 0.9499,
-          "n_challenges": 0
-        },
-        {
-          "inhibitor": "Tivozanib (AV-951)",
-          "utility": 0.8592,
-          "prob_sensitive": 0.9842,
-          "n_challenges": 0
-        },
-        {
-          "inhibitor": "Axitinib (AG-013736)",
-          "utility": 0.8569,
-          "prob_sensitive": 0.9141,
-          "n_challenges": 0
-        },
-        {
-          "inhibitor": "Regorafenib (BAY 73-4506)",
-          "utility": 0.8466,
-          "prob_sensitive": 0.9044,
-          "n_challenges": 0
-        },
-        {
-          "inhibitor": "Dasatinib",
-          "utility": 0.8411,
-          "prob_sensitive": 0.9745,
-          "n_challenges": 0
-        }
-      ],
-      "trial": [
-        {
-          "inhibitor": "Saracatinib (AZD0530)",
-          "utility": 0.8325,
-          "prob_sensitive": 0.943,
-          "n_challenges": 0
-        },
-        {
-          "inhibitor": "Entospletinib (GS-9973)",
-          "utility": 0.8007,
-          "prob_sensitive": 0.9606,
-          "n_challenges": 0
-        },
-        {
-          "inhibitor": "CI-1040 (PD184352)",
-          "utility": 0.7932,
-          "prob_sensitive": 0.8882,
-          "n_challenges": 0
-        },
-        {
-          "inhibitor": "LY-333531",
-          "utility": 0.752,
-          "prob_sensitive": 0.8609,
-          "n_challenges": 0
-        },
-        {
-          "inhibitor": "Motesanib (AMG-706)",
-          "utility": 0.7418,
-          "prob_sensitive": 0.8472,
-          "n_challenges": 0
-        }
-      ],
-      "research": [
-        {
-          "inhibitor": "GW-2580",
-          "utility": 0.7642,
-          "prob_sensitive": 0.9234,
-          "n_challenges": 0
-        },
-        {
-          "inhibitor": "JNJ-28312141",
-          "utility": 0.7504,
-          "prob_sensitive": 0.8989,
-          "n_challenges": 1
-        },
-        {
-          "inhibitor": "Doramapimod (BIRB 796)",
-          "utility": 0.7268,
-          "prob_sensitive": 0.909,
-          "n_challenges": 1
-        },
-        {
-          "inhibitor": "PD173955",
-          "utility": 0.7086,
-          "prob_sensitive": 0.8153,
-          "n_challenges": 0
-        },
-        {
-          "inhibitor": "PRT062607",
-          "utility": 0.7004,
-          "prob_sensitive": 0.8711,
-          "n_challenges": 0
-        }
-      ]
-    },
-    "caveat": "predicted EX-VIVO sensitivity from the BeatAML2 functional screen; a prioritisation for trial matching or laboratory validation, not a treatment recommendation"
-  },
-  "consensus": {
-    "subtype_call": "Inv16 (witness consensus)",
-    "leading_hypothesis": "Inv16",
-    "leading_confirmed_by_genetics": false,
-    "concordance": 1.0,
-    "per_witness_consistency": {
-      "composition": "agree"
-    },
-    "conflicts": "",
-    "ranked_therapy_hypotheses": [],
-    "surface_therapy_hypotheses": [],
-    "recommended_validations": [
-      {
-        "claim": "mutation",
-        "validation": "targeted DNA/RNA sequencing (NGS panel)",
-        "source": "standard"
-      },
-      {
-        "claim": "subtype",
-        "validation": "flow cytometry immunophenotyping",
-        "source": "standard"
-      }
-    ],
-    "descriptive_findings": [],
-    "overall_confidence": "medium",
-    "rationale": "Leading hypothesis: Inv16 (witness consensus). Concordance 1.00. Therapies follow observed drivers; a predicted subtype must be confirmed by sequencing before subtype-directed therapy.",
-    "knowledge_version": "kb-2026.07"
-  },
-  "deliberation": null,
-  "ingest": {
-    "source": "C:\\Users\\krog5w\\.gemini\\antigravity\\scratch\\AML-multimodal\\inbox\\UPLOAD_TEST_CCHMC_1009_AfInv16_29M.h5ad",
-    "input_kind": "h5ad",
-    "name": "GUIUPLOAD_SC",
-    "mutations_supplied": [],
-    "unrecognized_mutations": [],
-    "composition_quality": {
-      "mean_cosine": 0.4840870201587677,
-      "n_cells": 3002,
-      "n_states_present": 34,
-      "n_shared_markers": 2700,
-      "control_gate": {
-        "call": "diseased",
-        "p_diseased": 0.9773,
-        "threshold": 0.0204,
-        "cv_auc": 0.9657794676806084,
-        "modality": "Composition"
-      }
-    },
-    "deferred_witnesses": [
-      "surfaceome/ADT",
-      "metabolic",
-      "lipid",
-      "GRN-regulon",
-      "LSC",
-      "cell-state/UDON",
-      "cell-communication"
-    ]
-  }
+  "deferred_witnesses": [
+   "surfaceome/ADT",
+   "metabolic",
+   "lipid",
+   "GRN-regulon",
+   "LSC",
+   "cell-state/UDON",
+   "cell-communication"
+  ]
+ },
+ "validation_gene": {
+  "n_labeled": 0,
+  "n_correct": 0,
+  "n_pos_labeled": 0,
+  "n_pos_correct": 0,
+  "n_neg_labeled": 0,
+  "n_neg_correct": 0,
+  "negatives_confirmed": true,
+  "negative_scope": "all",
+  "units": {}
+ }
 }

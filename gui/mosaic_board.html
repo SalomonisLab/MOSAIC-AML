@@ -61,6 +61,10 @@
   .pill.control{color:var(--control);border-color:var(--control-line);background:var(--control-bg)}
   .pill.diseased{color:var(--present);border-color:var(--present-line);background:var(--present-bg)}
   .pill.accent{color:var(--accent);border-color:var(--accent-dim);background:var(--accent-bg)}
+  /* drivers-recovered pill: all found / some found / none found */
+  .pill.good{color:var(--absent);border-color:var(--absent-line);background:var(--absent-bg)}
+  .pill.warn{color:var(--accent);border-color:var(--accent-dim);background:var(--accent-bg)}
+  .pill.bad{color:var(--present);border-color:var(--present-line);background:var(--present-bg)}
 
   .dropzone{margin:9px 13px;border:1.5px dashed var(--line3);border-radius:11px;padding:20px;text-align:center;color:var(--faint);font-size:12px}
   .dropzone.hot{border-color:var(--accent);background:var(--accent-bg);color:var(--accent)}
@@ -215,6 +219,7 @@
   <button class="btn primary" id="addBtn" style="display:none">+ Add patient</button>
   <a class="btn" href="/validation.html" style="text-decoration:none">Mutations (CIPHER-AML) ↗</a>
   <a class="btn" href="/therapy.html" style="text-decoration:none">Drugs (COMPASS-AML) ↗</a>
+  <a class="btn" href="/survival_validation.html" style="text-decoration:none">Survival ↗</a>
   <button class="btn" id="legendBtn">How to read</button>
   <button class="btn" id="openBtn">Open report…</button>
 </div>
@@ -314,7 +319,23 @@ function rosterItem(r){
   const spec=r.specimen_class, lead=spec||r.leading_hypothesis||"—";
   const cls=spec==="control"?"control":spec==="diseased"?"diseased":(r.overall_confidence||"low");
   const tag=spec?`<span class="pill ${spec}">${esc(spec)}</span>`:`<span class="pill lead">${esc(lead)}</span>`;
-  const acc=r.n_labeled?`<span class="pill accent" title="gene-level validation: for each gene with a known status, the model's variant calls are aggregated to one gene-level call (present if any variant is called present) and compared — ${r.n_correct} of ${r.n_labeled} genes correct">${r.n_correct}/${r.n_labeled} ✓</span>`:"";
+  // Lead with confirmed DRIVERS RECOVERED, not the combined ratio. The combined ratio is dominated by
+  // confirmed-absent genes that the model calls absent by default — one Leucegene sample scored 26/27
+  // while missing its only real driver (IDH2), a score an all-absent predictor also achieves. Where a
+  // cohort has no confirmed negatives at all (Trumpp: Table S4 lists drivers only), there is nothing
+  // but positives to report and the combined ratio is omitted entirely.
+  const acc=(()=>{
+    if(!r.n_labeled) return "";
+    const np=r.n_pos_labeled, nc=r.n_pos_correct;
+    if(np==null) return `<span class="pill accent" title="gene-level validation: ${r.n_correct} of ${r.n_labeled} genes correct">${r.n_correct}/${r.n_labeled} ✓</span>`;
+    const miss=np-nc, tone=np===0?"":(miss===0?"good":(nc===0?"bad":"warn"));
+    const tail=r.negatives_confirmed===false
+      ? `This cohort reports drivers only, so genes not listed are UNKNOWN rather than wild-type and are excluded — specificity is not measurable here.`
+      : `Also ${r.n_neg_correct}/${r.n_neg_labeled} confirmed-absent genes correctly called absent (combined ${r.n_correct}/${r.n_labeled}), but that ratio is dominated by absents: an all-absent predictor would score nearly the same.`;
+    return np===0
+      ? `<span class="pill" title="no confirmed driver in this sample to recover. ${tail}">no confirmed driver</span>`
+      : `<span class="pill ${tone}" title="confirmed drivers recovered: the model found ${nc} of the ${np} gene-level drivers this sample is known to carry. ${tail}">${nc}/${np} drivers ✓</span>`;
+  })();
   return `<button class="ritem" data-run="${esc(r.run)}"><div class="rk">${esc(r.sample_key||r.run)}</div>
     <div class="rmeta"><span class="dot ${cls}"></span>${tag}${acc}
     ${r.dataset?`<span class="pill">${esc(r.dataset)}</span>`:""}</div></button>`;

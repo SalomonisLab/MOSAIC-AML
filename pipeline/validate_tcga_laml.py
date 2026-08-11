@@ -42,7 +42,7 @@ ROOT = os.path.dirname(HERE)
 TCGA = os.path.join(ROOT, "data", "external", "tcga_laml")
 BUNDLE = os.path.join(HERE, "survival_model.pkl")
 OUT = os.path.join(ROOT, "deliverables", "validation_tcga_laml.json")
-FIG = os.path.join(ROOT, "deliverables", "fig_Sv4_tcga_km.png")
+FIG = os.path.join(ROOT, "deliverables", "figures", "Sv4_tcga_external_validation.png")
 
 HORIZONS = [1.0, 2.0, 5.0]
 RISK_MAP = {"Favorable": "Favorable", "Intermediate/Normal": "Intermediate", "Poor": "Adverse"}

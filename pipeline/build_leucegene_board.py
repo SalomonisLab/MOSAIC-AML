@@ -84,8 +84,17 @@ def main():
             "panel": [], "mutation_predictions": preds, "mutation_caller": caller,
             "treatment_panel": panels["treatments"], "tests_panel": panels["tests"],
             "panels_note": panels["note"],
-            "validation_gene": {"n_labeled": len(units),
-                                "n_correct": sum(1 for v in units.values() if v["correct"]), "units": units},
+            # dbGAP labels only where non-null, so negatives here ARE confirmed. The positives are still
+            # recorded separately: the combined ratio is dominated by absents (one sample scored 26/27
+            # while missing its only real driver), so the interface leads with drivers recovered.
+            "validation_gene": {
+                "n_labeled": len(units),
+                "n_correct": sum(1 for v in units.values() if v["correct"]),
+                "n_pos_labeled": sum(1 for v in units.values() if v["truth"] == "present"),
+                "n_pos_correct": sum(1 for v in units.values() if v["truth"] == "present" and v["correct"]),
+                "n_neg_labeled": sum(1 for v in units.values() if v["truth"] == "absent"),
+                "n_neg_correct": sum(1 for v in units.values() if v["truth"] == "absent" and v["correct"]),
+                "negatives_confirmed": True, "units": units},
             "consensus": {"leading_hypothesis": "external validation (Leucegene bulk RNA)",
                           "overall_confidence": "mutation panel only"},
             "ingest": {"input_kind": "bulk_rna", "source": "Leucegene bundle", "name": s,

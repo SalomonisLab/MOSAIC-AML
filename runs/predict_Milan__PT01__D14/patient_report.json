@@ -361,5 +361,107 @@
  ],
  "panels_note": "RESEARCH DECISION SUPPORT \u2014 not medical advice. Drivers marked PREDICTED were inferred from expression and have NOT been sequenced; confirm them before any targeted decision. Close the loop: re-run with --mutations <confirmed drivers> to engage the deterministic genetic anchor.",
  "modalities_available": [],
- "note": "held-out sample has no scRNA/atlas modality data \u2014 cannot be scored"
+ "note": "held-out sample has no scRNA/atlas modality data \u2014 cannot be scored",
+ "validation_gene": {
+  "n_labeled": 18,
+  "n_correct": 16,
+  "n_pos_labeled": 2,
+  "n_pos_correct": 0,
+  "n_neg_labeled": 16,
+  "n_neg_correct": 16,
+  "negatives_confirmed": true,
+  "negative_scope": "all",
+  "units": {
+   "ASXL1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "CEBPA": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "DNMT3A": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "FLT3": {
+    "truth": "present",
+    "call": "absent",
+    "correct": false
+   },
+   "GATA2": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "IDH1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "IDH2": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "KIT": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "KRAS": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "NPM1": {
+    "truth": "present",
+    "call": "absent",
+    "correct": false
+   },
+   "NRAS": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "PTPN11": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "RUNX1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "SF3B1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "SRSF2": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "TET2": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "TP53": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   },
+   "WT1": {
+    "truth": "absent",
+    "call": "absent",
+    "correct": true
+   }
+  }
+ }
 }

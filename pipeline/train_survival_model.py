@@ -217,7 +217,9 @@ def main():
 
     # ---------------- incremental value over age + ELN ----------------
     base = oof["age_eln"]
-    for arm in ("clin", "rna", "state", "mut", "molecular", "full"):
+    # `deployed` belongs here: it is the arm inference actually selects when a patient has clinical
+    # covariates, and without it every such report showed a blank where its gain over age + ELN goes.
+    for arm in ("clin", "rna", "state", "mut", "molecular", "full", "deployed"):
         res["incremental"][arm] = boot_delta_c(t_tr, e_tr, oof[arm], base, B=a.boot, seed=a.seed)
     print("\n== incremental C-index over age + ELN 2017 (bootstrap over patients) ==")
     for arm, v in res["incremental"].items():

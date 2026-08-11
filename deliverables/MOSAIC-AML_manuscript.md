@@ -1,6 +1,6 @@
-# MOSAIC-AML: cell-state-resolved multimodal inference of driver lesions and therapeutic context in acute myeloid leukaemia
+# MOSAIC-AML: cell-state-resolved multimodal inference of driver lesions, therapeutic vulnerability and survival in acute myeloid leukaemia
 
-**Running title:** Multimodal single-cell inference of AML drivers
+**Running title:** Multimodal single-cell inference of AML drivers, drug response and prognosis
 
 **Authors:** ⟨TO COMPLETE⟩
 **Affiliations:** ⟨TO COMPLETE — Division of Biomedical Informatics, Cincinnati Children's Hospital
@@ -36,6 +36,23 @@ imputation adds no information within a cohort beyond a matched nonlinear contro
 feature space through which 707 bulk specimens augment single-cell training (0.889 → 0.908, P = 0.016).
 Sensitivity (0.505) remains the limiting factor, making the platform a rule-in instrument for directing
 confirmatory sequencing rather than a replacement for it.
+
+On the same feature space we built two further inference layers and report both with their negative
+results foregrounded. **CIPHER-AML** designates the driver-lesion caller above. **COMPASS-AML** predicts
+*ex-vivo* inhibitor sensitivity from 520 BeatAML2 specimens across 118 agents; its apparent per-drug
+AUROC of 0.774 falls to **0.672** once a two-way decomposition removes a patient main effect that
+accounts for 15.4% of matrix variance, and 0.672 is ~92% of a **directly measured assay reliability
+ceiling of 0.727**, so the binding constraint is the reproducibility of the screen rather than the
+model. Predicted *ex-vivo* sensitivity to cytarabine did **not** separate complete response from
+refractory disease in the 131 patients who received it (AUROC 0.435, P = 0.25), which bounds how the
+layer may be described. A survival layer reaches a C-index of **0.787** on a sealed hold-out of 89
+patients (**+0.059** over age plus ELN 2017, 95% CI +0.030 to +0.089) and, transferred with all
+coefficients frozen to **149 TCGA-LAML patients** profiled on a different platform, retains a C-index of
+**0.706** and separates predicted risk tertiles at 71.7% versus 13.7% two-year survival
+(P = 7.0 × 10⁻¹⁰). Molecular data alone does not beat age plus ELN in either cohort; only the
+combination does. Individual lifespan remains unpredictable — conformal intervals achieve exact coverage
+at a width of 22.6 years — so prognostic output is reported as risk group, horizon probabilities and
+restricted mean survival, never as a single expected survival time.
 
 ---
 

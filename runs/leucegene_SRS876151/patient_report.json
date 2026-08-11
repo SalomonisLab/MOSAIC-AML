@@ -871,7 +871,13 @@
     "call": "absent",
     "correct": true
    }
-  }
+  },
+  "n_pos_labeled": 2,
+  "n_pos_correct": 2,
+  "n_neg_labeled": 7,
+  "n_neg_correct": 7,
+  "negatives_confirmed": true,
+  "negative_scope": "all"
  },
  "consensus": {
   "leading_hypothesis": "external validation (Leucegene bulk RNA)",

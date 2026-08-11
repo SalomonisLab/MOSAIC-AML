@@ -40,7 +40,7 @@ layer already uses for single-cell input — a normalisation, not a predictor.
 
 | arm | ΔC | 95 % CI | P(ΔC ≤ 0) |
 |---|---|---|---|
-| deployed | **+0.035** | −0.001 – +0.073 | **0.029** |
+| deployed | **+0.035** | −0.001 – +0.072 | **0.030** |
 | full | +0.018 | −0.023 – +0.058 | 0.182 |
 | molecular | −0.003 | −0.070 – +0.063 | 0.522 |
 
@@ -49,11 +49,11 @@ layer already uses for single-cell input — a normalisation, not a predictor.
 | group | n | deaths | 2-y survival | median survival |
 |---|---|---|---|---|
 | low | 50 | 17 | **71.7 %** | not reached |
-| intermediate | 49 | 31 | 40.9 % | 1.42 y |
+| intermediate | 49 | 31 | 41.1 % | 1.42 y |
 | high | 50 | 44 | **13.7 %** | 0.75 y |
 
-Log-rank low vs high: χ² = 38.5, **p = 5.4 × 10⁻¹⁰**. Curves are ordered and do not cross
-(`fig_Sv4_tcga_km.png`).
+Log-rank low vs high: χ² = 38.0, **p = 7.0 × 10⁻¹⁰**. Curves are ordered and do not cross
+(`figures/Sv4_tcga_external_validation.png`).
 
 ## Reading it honestly
 
@@ -68,7 +68,7 @@ negative and it is not hidden: the added value in TCGA comes from combining mole
 information, not from expression on its own. The same pattern holds in BeatAML, where `molecular` runs
 ~0.04 below `full`.
 
-**The one significant gain is the deployed arm** (+0.035, P = 0.029) — nominally, one-sided, on 149
+**The one significant gain is the deployed arm** (+0.035, P = 0.030) — nominally, one-sided, on 149
 patients with 92 events. It is a genuine result, and it is also a single comparison at the edge of
 significance in a modest cohort. It should be read as *consistent with* the BeatAML finding, not as
 independent confirmation of the effect size.
