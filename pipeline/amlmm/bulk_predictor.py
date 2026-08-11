@@ -103,6 +103,84 @@ class BulkMutationPredictor:
                 out[cat] = r
         return dict(sorted(out.items(), key=lambda kv: -(kv[1]["probability"] or 0)))
 
+    # A per-sample "too many present calls" detector was built here and REMOVED after measurement: on
+    # GSE281087 each specimen makes 4-7 present calls against 3.7 expected for a reference sample, so it
+    # fired on 0 of the 15 out-of-distribution specimens while flagging 13 of 20 in-distribution ones.
+    # It also refuted the framing that motivated it. GSE281087 does not make too MANY positive calls --
+    # it makes about the right number and gets them wrong. The single-patient upload path therefore has
+    # no working out-of-distribution guard for the mutation caller, and that gap is real and open.
+
+    MIN_COHORT = 8
+
+    def predict_cohort(self, samples, ref="sc", cohort=None):
+        """Score a whole cohort, percentiling against ITS OWN scores when no reference matches it.
+
+        `predict_one` already percentiles against a cohort reference rather than the raw score scale --
+        that fix exists because sc scores occupy a compressed band of the BeatAML scale. But it can only
+        use a reference that was actually built: `beataml`, `sc`, `leucegene`. A new cohort that matches
+        none of them falls back to the nearest one and inherits its offset.
+
+        GSE281087 is what that costs. Those specimens are CD34-sorted and have no matched reference, and
+        54 of their 65 positive calls are wrong. Measured on that cohort, with the trained thresholds
+        left exactly as they are: false positives 54 -> 39, precision 0.182 -> 0.235, sensitivity
+        unchanged at 0.400.
+
+        Be clear about how much of the problem this is. The cohort is NOT over-calling: each specimen
+        makes 4-7 present calls against 3.7 expected for a reference sample. It makes roughly the right
+        number of calls and gets them wrong, because per-category discrimination there is ~0.688 AUROC
+        against ~0.908 internally. Re-referencing recovers the offset component and nothing else -- it
+        is a real 28% cut in false positives, not a repair of the cohort.
+
+        This is deliberately NOT applied when a matched reference exists. Re-percentiling Leucegene,
+        which has its own reference, takes F1 from 0.558 to 0.457: forcing every category to call the
+        same fraction of samples overrides a calibration that was already right.
+        """
+        keys = list(samples)
+        matched = cohort in (self.score_refs or {})
+        if matched or len(keys) < self.MIN_COHORT:
+            why = ("cohort reference '%s' exists" % cohort if matched
+                   else "only %d samples (need %d)" % (len(keys), self.MIN_COHORT))
+            out = {k: self.predict(samples[k], ref) for k in keys}
+            for v in out.values():
+                for r in v.values():
+                    r["calibration"] = {"scope": "reference", "reference": ref, "reason": why}
+            return out
+
+        if not hasattr(self, "_gidx"):
+            self._gidx = set(self.genes)
+        r0 = ref if ref in self.refs else next(iter(self.refs))
+        dec = {}                                            # category -> raw decision value per sample
+        for k in keys:
+            z = self._z(self._clog(self._align(samples[k])), r0)
+            for cat in self.categories:
+                m = self.models[cat]
+                dec.setdefault(cat, []).append(
+                    float(m["est"].decision_function(z[m["sel"]].reshape(1, -1))[0]))
+
+        out = {k: {} for k in keys}
+        for cat, vals in dec.items():
+            m = self.models[cat]
+            base = np.sort(np.asarray(vals, float))         # the cohort IS the reference
+            q = _pct(base, np.asarray(vals, float))
+            for k, d, qq in zip(keys, vals, q):
+                if qq != qq:
+                    continue
+                prob = qq if m["sign"] > 0 else 1.0 - qq
+                thr, ca = m["threshold"], m["cv_auroc"]
+                out[k][cat] = {
+                    "probability": round(float(prob), 3),
+                    "call": "present" if prob >= thr else "absent",
+                    "threshold": round(float(thr), 3), "cv_auroc": ca, "n_pos_train": m["n_pos"],
+                    "confidence": ("ok" if (ca is not None and ca >= 0.65)
+                                   else ("abstain: weak (CV AUROC %.2f)" % ca if ca is not None
+                                         else "abstain: unknown")),
+                    "calibration": {"scope": "cohort", "reference": "self (%d samples)" % len(keys),
+                                    "reason": "no score reference matches cohort %r" % (cohort,),
+                                    "caveat": "ranks within this cohort, so it assumes the cohort's "
+                                              "positive rate resembles the training cohort's"}}
+        return {k: dict(sorted(v.items(), key=lambda kv: -(kv[1]["probability"] or 0)))
+                for k, v in out.items()}
+
     # ---------- persistence ----------
     def save(self, path):
         with open(path, "wb") as f:
