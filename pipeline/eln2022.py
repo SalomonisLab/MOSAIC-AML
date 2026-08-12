@@ -205,6 +205,11 @@ def main():
 
     cl = pd.read_excel(os.path.join(BA, "beataml_wv1to4_clinical.xlsx"))
     cl["_spec"] = cl["dbgap_rnaseq_sample"].astype(str)
+    # The clinical file has 942 rows but only 699 distinct RNA-seq specimens (repeats and a shared
+    # 'nan' key). Reporting over the raw rows double-counts patients and shifted the first version of
+    # this analysis: agreement with ELN2017 came out 0.776 when the deduplicated value is 0.822.
+    n_rows = len(cl)
+    cl = cl[cl["_spec"].str.lower().ne("nan")].drop_duplicates("_spec").reset_index(drop=True)
     cl["_dna"] = cl["dbgap_dnaseq_sample"].astype(str) if "dbgap_dnaseq_sample" in cl.columns else cl["_spec"]
     cl["_karyo"] = cl["karyotype"].map(karyo_flags)
 
@@ -227,13 +232,19 @@ def main():
     dst = a.out or os.path.join(ROOT, "labels", "eln2022_beataml_vaf%02d.tsv" % round(100 * a.vaf))
     out.to_csv(dst, sep="\t", index=False)
 
-    print("ELN 2022 inferred at VAF >= %.0f%%  (mutation data for %d/%d specimens)"
-          % (100 * a.vaf, hit, len(cl)))
-    print("\n  distribution:", out["ELN2022"].value_counts().to_dict())
-    print("  ELN2017     :", out["ELN2017"].value_counts(dropna=False).to_dict())
-    both = out[out["ELN2017"].isin(["Favorable", "Intermediate", "Adverse"])]
+    print("ELN 2022 inferred at VAF >= %.0f%%" % (100 * a.vaf))
+    print("  clinical rows %d -> %d distinct specimens; mutation data for %d of them"
+          % (n_rows, len(cl), hit))
+    # A specimen with no variant call cannot be assessed for the nine MDS-related genes or for TP53,
+    # so it can only ever be under-called adverse. Those are reported separately rather than pooled.
+    g = out[out["has_mutation_data"]]
+    print("\n  distribution (mutation data available, n=%d): %s"
+          % (len(g), g["ELN2022"].value_counts().to_dict()))
+    print("  distribution (no mutation data,    n=%d): %s  <- MR/TP53 not assessable"
+          % (len(out) - len(g), out[~out["has_mutation_data"]]["ELN2022"].value_counts().to_dict()))
+    both = g[g["ELN2017"].isin(["Favorable", "Intermediate", "Adverse"])]
     x = pd.crosstab(both["ELN2017"], both["ELN2022"])
-    print("\n  2017 (rows) x 2022 (cols):")
+    print("\n  2017 (rows) x 2022 (cols), specimens with mutation data:")
     print(x.to_string())
     agree = float(np.mean(both["ELN2017"].values == both["ELN2022"].values))
     print("\n  agreement with the shipped ELN2017 label: %.3f (n=%d)" % (agree, len(both)))

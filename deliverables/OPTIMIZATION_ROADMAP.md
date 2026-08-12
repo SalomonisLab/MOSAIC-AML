@@ -119,8 +119,8 @@ one the deployed system uses anyway. Either way we would then know.
 **Cost: half a day. Data: in hand. Run this before optimising anything else.**
 
 ### A3. Multi-task matrix factorisation across drugs
-Current design is per-family ridge + per-drug residual. The response matrix is 520 × 118 and **~87%
-observed** — close to ideal for collaborative filtering with side information (patient features + drug
+Current design is per-family ridge + per-drug residual. The response matrix is 520 × 118 and **79.9%
+observed** (measured, `exp_compass_deep.json`; an earlier draft said ~87%) — close to ideal for collaborative filtering with side information (patient features + drug
 target descriptors). Low-rank sharing across drugs is the standard winning approach on GDSC/CTRP-style
 data and should particularly help the low-n inhibitors that the per-drug residual currently barely
 trains on.

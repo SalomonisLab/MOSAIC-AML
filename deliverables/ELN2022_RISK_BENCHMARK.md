@@ -31,16 +31,23 @@ favorable-risk subtype; KMT2A-PTD excluded from KMT2A-rearranged; hyperdiploidy 
 karyotype). Karyotypes are parsed from the free-text ISCN strings; fusions from `consensusAMLFusions`;
 CEBPA bZIP from variant-level protein positions in `mutations.txt`.
 
-**Agreement with the shipped ELN 2017 label: 0.776 (n = 548).** Every disagreement runs in the direction
-the guideline change predicts:
+**Agreement with the shipped ELN 2017 label: 0.821 (n = 408)** at the 10% threshold, 0.789 at 40%.
+Every disagreement runs in the direction the guideline change predicts:
 
 | 2017 → 2022 | n | driven by |
 |---|---|---|
-| Adverse → Intermediate | 48 | FLT3-ITD allelic ratio dropped |
-| Favorable → Intermediate | 37 | NPM1mut **with** FLT3-ITD no longer favorable |
+| Favorable → Intermediate | 25 | NPM1mut **with** FLT3-ITD no longer favorable |
 | Intermediate → Adverse | 25 | the seven newly-added MDS-related genes |
-| Favorable → Adverse | 11 | NPM1mut with adverse cytogenetics |
-| → Favorable | 2 | monoallelic bZIP CEBPA newly favorable |
+| Adverse → Intermediate | 12 | FLT3-ITD allelic ratio dropped |
+| Favorable → Adverse | 10 | NPM1mut with adverse cytogenetics |
+| Intermediate → Favorable | 1 | monoallelic bZIP CEBPA newly favorable |
+
+**Counting note.** The clinical file has 942 rows but only **698 distinct RNA-seq specimens**; the first
+version of this analysis reported over the raw rows and therefore double-counted patients, giving an
+agreement of 0.776 and inflated cross-tabulation counts. All figures here are per distinct specimen.
+Of the 698, **637 have variant-level data**. The remaining 61 cannot be assessed for the nine
+MDS-related genes or for TP53 and can therefore only ever be *under*-called adverse, so they are
+reported separately and excluded from the comparison above rather than pooled into it.
 
 ---
 
@@ -51,10 +58,10 @@ clonal/biallelic event.
 
 | | TP53-positive specimens | ELN 2022 distribution |
 |---|---|---|
-| VAF ≥ 10% | 80 | 193 Fav / 371 Int / 378 Adv |
-| VAF ≥ 40% | 70 | 188 Fav / 401 Int / 353 Adv |
+| VAF ≥ 10% | 80 | 147 Fav / 185 Int / 305 Adv |
+| VAF ≥ 40% | 70 | 142 Fav / 215 Int / 280 Adv |
 
-**30 of 638 specimens with mutation data (4.7%) change category**, all toward Intermediate — 25
+**30 of 637 specimens with mutation data (4.7%) change category**, all toward Intermediate — 25
 Adverse → Intermediate (TP53 and MR-gene calls falling below 40%) and 5 Favorable → Intermediate
 (CEBPA bZIP calls falling below 40%).
 

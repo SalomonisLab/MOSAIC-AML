@@ -40,19 +40,25 @@ confirmatory sequencing rather than a replacement for it.
 On the same feature space we built two further inference layers and report both with their negative
 results foregrounded. **CIPHER-AML** designates the driver-lesion caller above. **COMPASS-AML** predicts
 *ex-vivo* inhibitor sensitivity from 520 BeatAML2 specimens across 118 agents; its apparent per-drug
-AUROC of 0.774 falls to **0.672** once a two-way decomposition removes a patient main effect that
-accounts for 15.4% of matrix variance, and 0.672 is ~92% of a **directly measured assay reliability
-ceiling of 0.727**, so the binding constraint is the reproducibility of the screen rather than the
-model. Predicted *ex-vivo* sensitivity to cytarabine did **not** separate complete response from
-refractory disease in the 131 patients who received it (AUROC 0.435, P = 0.25), which bounds how the
-layer may be described. A survival layer reaches a C-index of **0.787** on a sealed hold-out of 89
-patients (**+0.059** over age plus ELN 2017, 95% CI +0.030 to +0.089) and, transferred with all
-coefficients frozen to **149 TCGA-LAML patients** profiled on a different platform, retains a C-index of
-**0.706** and separates predicted risk tertiles at 71.7% versus 13.7% two-year survival
-(P = 7.0 × 10⁻¹⁰). Molecular data alone does not beat age plus ELN in either cohort; only the
-combination does. Individual lifespan remains unpredictable — conformal intervals achieve exact coverage
-at a width of 22.6 years — so prognostic output is reported as risk group, horizon probabilities and
-restricted mean survival, never as a single expected survival time.
+AUROC of 0.774 falls to **0.671** once a two-way decomposition removes a patient main effect accounting
+for 15.4% of matrix variance, and 0.671 is ~92% of a **directly measured assay reliability ceiling of
+0.727**. Per-drug predictability tracks assay reproducibility (Spearman 0.288, P = 0.0017) but not
+training-set size (0.112, P = 0.23), so the binding constraint is the screen rather than the model.
+Predicted sensitivity to cytarabine did **not** separate complete response from refractory disease in
+the 131 patients who received it (AUROC 0.435, P = 0.25), which bounds how the layer may be described.
+A survival layer reaches a C-index of **0.787** on a sealed hold-out of 89 patients (**+0.059** over age
+plus ELN, 95% CI +0.030 to +0.088) and, transferred with all coefficients frozen to **149 TCGA-LAML
+patients**, retains **0.706**, separating risk tertiles at 71.7% versus 13.7% two-year survival
+(P = 7.0 x 10^-10); molecular data alone does not beat the clinical baseline in either cohort (-0.003 in
+both, derived independently). Because BeatAML2 distributes only an ELN 2017 label, we implemented ELN
+2022 directly from karyotype, fusion and variant data: raising the variant-allele-fraction threshold
+from 10% to 40% reclassifies 4.7% of specimens but does not change discrimination (0.612 versus 0.610).
+ELN 2022 achieves C-index 0.642 in intensively-treated patients and **0.462 -- at or below chance --
+outside intensive induction**, independently reproducing the reported failure of ELN classifiers under
+venetoclax-azacitidine; treatment-stratified fitting recovers 0.681 there. Individual lifespan remains
+unpredictable, with conformal intervals of exact coverage spanning 22.6 years, so prognostic output is
+reported as risk group, horizon probabilities and restricted mean survival, never a single expected
+survival time.
 
 ---
 
@@ -61,16 +67,24 @@ restricted mean survival, never as a single expected survival time.
 ### The ELN 2022 framework and its genotype dependence
 
 The ELN 2022 recommendations represent the current international standard for AML risk assignment.[1]
-Relative to ELN 2017 they materially expand the role of molecular genetics: *FLT3*-ITD is now adverse-
-neutral irrespective of allelic ratio and *NPM1* co-mutation status; in-frame *CEBPA* bZIP mutations are
-favourable whether mono- or bi-allelic; and mutations in a defined set of myelodysplasia-related genes
-(*ASXL1*, *BCOR*, *EZH2*, *SF3B1*, *SRSF2*, *STAG2*, *U2AF1*, *ZRSR2*) confer adverse risk regardless of
-karyotype. In our own re-derivation of ELN 2022 across a 942-patient bulk cohort, 440 patients could be
-assigned with high confidence from available genotype and karyotype; among the 417 with an unambiguous
-ELN 2017 call, 87.3% retained their category and 53 were reclassified in directions fully explained by
-documented guideline changes (predominantly intermediate → adverse via myelodysplasia-related lesions).
-A further 23 patients whose ELN 2017 status had been ambiguous were resolved. The remaining 502 patients
-could not be assigned — not because the algorithm failed, but because the requisite genotype was absent.
+Relative to ELN 2017 they materially expand the role of molecular genetics: the *FLT3*-ITD **allelic
+ratio** is no longer used, so *FLT3*-ITD no longer confers adverse risk on its own, though *NPM1*
+co-mutation still separates favourable (*NPM1*-mutated without ITD) from intermediate (*NPM1*-mutated
+with ITD); in-frame *CEBPA* bZIP mutations are favourable whether mono- or bi-allelic; mutations in a
+defined set of nine myelodysplasia-related genes (*ASXL1*, *BCOR*, *EZH2*, *RUNX1*, *SF3B1*, *SRSF2*,
+*STAG2*, *U2AF1*, *ZRSR2*) confer adverse risk regardless of karyotype; and *TP53* mutation is adverse
+**at a variant allele fraction of at least 10%**, irrespective of allelic status.
+
+We re-derived ELN 2022 directly from karyotype, fusion and variant-level data for a bulk cohort of 942
+clinical records comprising **698 distinct specimens**. Of these, **637 carried variant-level data** and
+could be fully assessed; the remaining 61 lack the mutation calls required for the myelodysplasia-related
+genes and *TP53*, can therefore only be *under*-assigned to the adverse category, and are excluded from
+comparison rather than pooled. Among the 408 fully assessable specimens carrying an unambiguous ELN 2017
+call, **82.1% retained their category**, with every reclassification in a direction explained by a
+documented guideline change: 25 favourable → intermediate (*NPM1* with ITD), 25 intermediate → adverse
+(the newly added myelodysplasia-related genes), 12 adverse → intermediate (allelic ratio dropped), and
+10 favourable → adverse (*NPM1* with adverse cytogenetics). The patients who could not be assigned failed
+for want of genotype, not because the algorithm failed.
 
 That last observation frames the problem this work addresses. **ELN 2022 is only as good as the mutation
 call set it is given.** Its accuracy degrades silently when a gene is not on the sequencing panel, when a
@@ -386,6 +400,86 @@ This attribution layer is the component with no counterpart in genotype-only fra
 binary lesion call into a statement about *where in haematopoiesis* the lesion is manifest, which is the
 axis most relevant to differentiation-directed and stem-cell-directed therapeutic strategies.
 
+### Therapeutic vulnerability is predictable to the limit of the assay, and no further
+
+On the same feature space we trained **COMPASS-AML**, which predicts *ex-vivo* inhibitor sensitivity
+from 520 BeatAML2 specimens across 118 agents (79.9% of the specimen × inhibitor matrix observed),
+under the same donor-grouped discipline. Its apparent per-inhibitor AUROC is 0.774. A two-way
+decomposition of the response matrix shows that a **patient main effect** — some specimens' cells simply
+die readily in culture — accounts for 15.4% of variance, with 46.8% in the patient × drug interaction.
+Re-scored against the interaction term alone, which is the only quantity that constitutes a
+*drug-specific* recommendation, performance is **0.671** (**Fig. 6**). We report that figure, not 0.774.
+
+The binding constraint is the assay rather than the model. Estimating reproducibility from technical
+replicates gives a median per-drug reliability of 0.529, implying a ceiling of √0.529 = **0.727** on any
+predictor of this label; replicates of the same well differ by a median 13.7 percentage points of
+viability. COMPASS therefore attains ~92% of the recoverable signal. Two further observations support
+this reading: per-drug predictability tracks the assay's own reproducibility (Spearman 0.288,
+*P* = 0.0017 across 116 inhibitors, with a monotone gradient across reliability tiers from 0.315 for
+reproducible agents to 0.184 for unreliable ones), whereas it does **not** track the number of training
+specimens per drug (Spearman 0.112, *P* = 0.23) — the weak inhibitors are hard, not under-trained. A
+multi-task matrix factorisation across inhibitors adds +0.011 (0.671 → 0.682 at rank 40), the largest
+modelling gain we found and a small one against a ceiling of 0.727.
+
+**The ex-vivo-to-clinical link is null and we report it as such.** Predicted cytarabine sensitivity did
+not separate complete response from refractory disease in the 131 patients who received it (AUROC 0.435,
+*P* = 0.25). COMPASS predicts a laboratory assay close to that assay's own reproducibility limit; it is
+not evidence that ex-vivo prioritisation tracks clinical benefit, and it should not be described as
+treatment guidance.
+
+### Survival prediction transfers to an independent cohort, but only in combination with clinical data
+
+A survival layer was fitted on 444 initial-diagnosis BeatAML2 patients (245 deaths), with a sealed
+hold-out of 89 patients (51 deaths) drawn once. Because age and ELN risk are available on day one and
+free, the quantity of interest is the **gain over that baseline**, not the C-index.
+
+The deployed model reaches **C-index 0.787** on the sealed hold-out (0.751 cross-validated), two-year
+AUC 0.872, versus 0.725 for age + ELN 2017 — an increment of **+0.059 (95% CI +0.030 to +0.088,
+*P* = 0.001)**. The molecular blocks *alone* do not beat the clinical baseline (−0.003, *P* = 0.54);
+cell state and mutations in isolation are worse than it. Only the combination adds (**Fig. 7**).
+
+Transferring the model **frozen** — Cox coefficients, PCA rotation, variable-gene selection and fusion
+weights unchanged, with only the per-gene z-reference cohort-matched — to **149 TCGA-LAML patients**
+(92 deaths) profiled on a different platform retains **C-index 0.706 (95% CI 0.654–0.758)**, with
+predicted risk tertiles separating 71.7% versus 13.7% two-year survival (log-rank *P* = 7.0 × 10⁻¹⁰;
+**Fig. 8**).
+Notably, the molecular-alone result reproduced exactly: **−0.003 in both cohorts, derived
+independently**.
+
+Group-level timing is accurate — median survival per predicted risk tertile is within 6–7 weeks of
+observed — but **individual** lifespan is not predictable: conformal intervals achieve exact empirical
+coverage at a width of 22.6 years. Prognostic output is therefore reported as a risk group, horizon
+probabilities and restricted mean survival, never as a single expected survival time.
+
+### Risk stratification beyond ELN 2022, and where the guideline itself fails
+
+Because BeatAML2 distributes only an ELN 2017 label, we implemented the ELN 2022 classification
+(Döhner *et al.*, Table 6) directly from karyotype, fusion, and variant-level data, including the bZIP
+CEBPA criterion, the nine myelodysplasia-related genes, and TP53 at a variant allele fraction ≥ 10%.
+Inferred and shipped labels agree at 0.821 (n = 408 fully assessable specimens), with every discrepancy
+in the direction the guideline revision predicts.
+
+**The VAF threshold is a real reclassification and a prognostic non-event.** Moving the calling
+threshold from 10% to 40% reclassifies 30 of 638 specimens (4.7%), all toward the intermediate category,
+yet discrimination is unchanged: C-index 0.610 (ELN 2017), 0.612 (ELN 2022 at 10%), 0.610 (ELN 2022 at
+40%). We therefore fix the threshold at the guideline's 10% and report the 4.7% as an uncertainty band
+rather than treating it as a modelling choice.
+
+**ELN does not stratify patients outside intensive induction.** Within intensively-treated patients
+(n = 357) ELN 2022 achieves C-index 0.642; in the non-intensive or unknown-induction stratum (n = 87) it
+achieves **0.462**, at or below chance, as does ELN 2017 (0.496). This independently reproduces
+Pollyea *et al.*, who reported that ELN classifiers do not meaningfully stratify patients receiving
+venetoclax-azacitidine. The four-gene rule they proposed instead (TP53, FLT3-ITD, NRAS, KRAS) achieves
+0.612 in that stratum and 0.574 in intensively-treated patients — working precisely within its stated
+scope and not outside it. Fitting our own model *within* strata gives 0.681 in the non-intensive group
+and 0.729 in the intensive group, and adding the four-gene rule improves the former to 0.701 while
+adding nothing to the latter (+0.003). Treatment-stratified fitting is worth more than any relabeling.
+
+One published refinement did **not** reproduce: separating ELN 2022 adverse-risk patients by
+myelodysplasia-related gene status gave median survival 9.5 versus 7.8 months (log-rank *P* = 0.38),
+directionally consistent with but far weaker than the 14.7 versus 8.3 months reported by Röllig *et al.*
+On this cohort the adverse category is not usefully heterogeneous along that axis.
+
 ### Current limitations, stated explicitly
 
 We enumerate the limitations of the present version so that the claims above are bounded correctly.
@@ -420,6 +514,35 @@ mismatches.
 
 **All validation is retrospective.** No prospective confirmation has been performed; this is the
 principal aim of the proposed work.
+
+**The specimen gate has low control specificity.** The healthy-versus-diseased composition gate operates
+at 0.99 disease sensitivity, and the measured cost is a **control specificity of 0.50** on 24 training
+controls: it calls half of genuinely healthy specimens positive. A `control` call is therefore strong
+evidence of health, while a positive call is reported as `not_excluded` and is close to uninformative on
+its own. This is not harmless — a mis-gated specimen proceeds through the pipeline and receives a
+prognostic estimate — and two normal sorted progenitor populations in an external cohort were called
+positive.
+
+**Decision thresholds, not ranking, limit the driver caller.** Mean AUROC of 0.908 coexists with a
+pooled precision of 0.336 across 60 external specimens. Fitting per-category thresholds on half a
+cohort and transferring them to the other half raises F1 on every cohort tested (for example 0.250 to
+0.407 on the most external one, precision 0.182 to 0.458), whereas label-free recalibration rules —
+within-cohort percentile matching and prevalence matching — are *worse* than the shipped thresholds on
+three of four cohorts. Threshold placement is worth a great deal but appears to require labelled
+specimens from the target cohort.
+
+**Calls rest on a reference cohort that may not describe the specimen.** Because scores are percentiled
+against a cohort-matched reference, a specimen unlike any available reference inherits that reference's
+offset. In one external cohort of CD34-sorted specimens, 54 of 65 positive calls were wrong. The
+z-scoring itself supplies a diagnostic — a specimen the reference describes has mean |z| ≈ 0.8 by
+construction, and these specimens gave 21.2 — and predictions are now flagged on that basis, but the
+underlying discrimination in such cohorts (within-cohort AUROC 0.688) remains well below internal
+performance.
+
+**COMPASS predicts an assay, not a patient**, and the survival layer is **not causal about treatment**:
+induction type is a covariate that removes treatment as a confounder, but 529 of 535 patients received
+the same standard induction and induction intensity partly encodes clinician judgement about fitness.
+No counterfactual claim about alternative therapy is supported.
 
 ### An interpretable, ELN 2022-aligned decision interface
 
@@ -611,7 +734,11 @@ every reported figure, per-driver statistic and negative result.
 
 The reference atlas, external bulk cohorts and external single-cell validation cohorts are derived from
 published and controlled-access resources; accession identifiers and the derived label matrices required
-to reproduce every reported analysis accompany the code release.
+to reproduce every reported analysis accompany the code release. BeatAML2 clinical, mutation and
+*ex-vivo* inhibitor data are available from the BeatAML consortium; TCGA-LAML expression, clinical and
+curated survival data were obtained from the UCSC Xena hub (`TCGA.LAML.sampleMap/HiSeqV2`) and are
+fetched automatically by the validation script. The inferred ELN 2022 labels at both variant allele
+fraction thresholds are released alongside the code.
 
 ---
 
@@ -622,7 +749,12 @@ to reproduce every reported analysis accompany the code release.
 - **Fig. 3** (a) Modality ablation ladder isolating the imputation-independent component; (b) imputation versus matched random nonlinear control; (c) effect of bulk augmentation.
 - **Fig. 4** Two models × four cohorts: assay-matched performance and the bulk → single-cell transfer gap.
 - **Fig. 5** (a) Calibration before and after nested isotonic regression; (b) decision-curve net benefit; (c) sensitivity stratified by variant allele frequency.
+- **Fig. 6** COMPASS-AML: (a) per-inhibitor performance on the raw versus interaction-only target; (b) per-drug predictability against measured assay reliability, with the √reliability ceiling; (c) matrix-factorisation rank sweep and blend weight.
+- **Fig. 7** Survival layer: (a) discrimination by arm against the age + ELN baseline; (b) risk groups and calibration; (c) group versus individual timing.
+- **Fig. 8** TCGA-LAML external validation: Kaplan–Meier by predicted risk tertile with all coefficients frozen.
 - **Table 1** Pooled held-out performance across three single-cell cohorts (60 specimens, 2,046 scored calls).
+- **Table 2** ELN 2022 inferred in BeatAML2: cross-tabulation against the shipped ELN 2017 label, category distribution at 10% and 40% VAF, and C-index by treatment stratum for ELN 2017, ELN 2022 and the four-gene rule.
+- **Supplementary** Per-inhibitor table (n, cross-validated AUROC, Spearman, assay reliability, reliability tier, fraction of ceiling attained).
 
 ## References
 

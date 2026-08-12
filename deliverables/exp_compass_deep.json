@@ -1,0 +1,1273 @@
+{
+ "generated": "2026-08-12 14:03",
+ "folds": 5,
+ "ranks": [
+  5,
+  12,
+  25,
+  40,
+  60
+ ],
+ "matrix": {
+  "specimens": 520,
+  "inhibitors": 118,
+  "observed_fraction": 0.7985
+ },
+ "C1_rank_sweep": {
+  "deployed": {
+   "interaction_auroc": 0.6707,
+   "interaction_spearman": 0.2206,
+   "current_auroc": 0.7695
+  },
+  "mf_rank_5": {
+   "interaction_auroc": 0.624,
+   "interaction_spearman": 0.1607
+  },
+  "blend50_rank_5": {
+   "interaction_auroc": 0.6633,
+   "interaction_spearman": 0.2109,
+   "current_auroc": 0.7722
+  },
+  "mf_rank_12": {
+   "interaction_auroc": 0.6628,
+   "interaction_spearman": 0.2109
+  },
+  "blend50_rank_12": {
+   "interaction_auroc": 0.6754,
+   "interaction_spearman": 0.2274,
+   "current_auroc": 0.7728
+  },
+  "mf_rank_25": {
+   "interaction_auroc": 0.6753,
+   "interaction_spearman": 0.2284
+  },
+  "blend50_rank_25": {
+   "interaction_auroc": 0.6807,
+   "interaction_spearman": 0.2338,
+   "current_auroc": 0.7723
+  },
+  "mf_rank_40": {
+   "interaction_auroc": 0.6803,
+   "interaction_spearman": 0.2321
+  },
+  "blend50_rank_40": {
+   "interaction_auroc": 0.682,
+   "interaction_spearman": 0.2344,
+   "current_auroc": 0.7718
+  },
+  "mf_rank_60": {
+   "interaction_auroc": 0.6815,
+   "interaction_spearman": 0.2336
+  },
+  "blend50_rank_60": {
+   "interaction_auroc": 0.6815,
+   "interaction_spearman": 0.2341,
+   "current_auroc": 0.7705
+  }
+ },
+ "C4_blend_weight": {
+  "rank": 40,
+  "sweep": {
+   "w=0.00": 0.6707,
+   "w=0.25": 0.6775,
+   "w=0.40": 0.6808,
+   "w=0.50": 0.682,
+   "w=0.60": 0.6829,
+   "w=0.75": 0.683,
+   "w=1.00": 0.6803
+  },
+  "note": "w=0 is the deployed model, w=1 is pure matrix factorisation"
+ },
+ "C2_reliability_vs_predictability": {
+  "n_drugs": 116,
+  "spearman": 0.2877,
+  "p": 0.001741417517123385,
+  "interpretation": "positive = drugs whose assay reproduces better are also the drugs the model predicts better, which is what the ceiling argument predicts"
+ },
+ "C2_by_tier": {
+  "moderate": {
+   "n": 32,
+   "mean_spearman": 0.2314
+  },
+  "reproducible": {
+   "n": 17,
+   "mean_spearman": 0.3154
+  },
+  "unreliable": {
+   "n": 38,
+   "mean_spearman": 0.1838
+  },
+  "weak": {
+   "n": 29,
+   "mean_spearman": 0.1998
+  }
+ },
+ "C3_per_drug": [
+  {
+   "inhibitor": "Venetoclax",
+   "n": 363,
+   "auroc": 0.9364,
+   "spearman": 0.5945,
+   "reliability": 0.4089669481730372,
+   "ceiling": 0.6395052370176786,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.93
+  },
+  {
+   "inhibitor": "Sorafenib",
+   "n": 489,
+   "auroc": 0.8784,
+   "spearman": 0.5093,
+   "reliability": 0.4193417480904722,
+   "ceiling": 0.6475660183259095,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.786
+  },
+  {
+   "inhibitor": "Sunitinib",
+   "n": 481,
+   "auroc": 0.8691,
+   "spearman": 0.5013,
+   "reliability": 0.4176745386362019,
+   "ceiling": 0.646277447104726,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.776
+  },
+  {
+   "inhibitor": "Trametinib (GSK1120212)",
+   "n": 479,
+   "auroc": 0.8694,
+   "spearman": 0.4948,
+   "reliability": 0.6726873906332629,
+   "ceiling": 0.8201752194703659,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.603
+  },
+  {
+   "inhibitor": "Rapamycin",
+   "n": 461,
+   "auroc": 0.8347,
+   "spearman": 0.474,
+   "reliability": 0.4735790623921134,
+   "ceiling": 0.6881708090235399,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.689
+  },
+  {
+   "inhibitor": "17-AAG (Tanespimycin)",
+   "n": 444,
+   "auroc": 0.8639,
+   "spearman": 0.4677,
+   "reliability": 0.0343470803471156,
+   "ceiling": 0.1853296531781021,
+   "tier": "unreliable",
+   "frac_of_ceiling": 2.524
+  },
+  {
+   "inhibitor": "Dovitinib (CHIR-258)",
+   "n": 450,
+   "auroc": 0.8395,
+   "spearman": 0.4403,
+   "reliability": 0.1929058669136973,
+   "ceiling": 0.4392105041021871,
+   "tier": "weak",
+   "frac_of_ceiling": 1.003
+  },
+  {
+   "inhibitor": "Elesclomol",
+   "n": 426,
+   "auroc": 0.8184,
+   "spearman": 0.4403,
+   "reliability": -0.2034665976718173,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "KW-2449",
+   "n": 444,
+   "auroc": 0.8755,
+   "spearman": 0.4303,
+   "reliability": 0.3005635406668643,
+   "ceiling": 0.5482367560341648,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.785
+  },
+  {
+   "inhibitor": "Pelitinib (EKB-569)",
+   "n": 447,
+   "auroc": 0.8199,
+   "spearman": 0.4148,
+   "reliability": 0.2716706396106299,
+   "ceiling": 0.5212203369119723,
+   "tier": "weak",
+   "frac_of_ceiling": 0.796
+  },
+  {
+   "inhibitor": "Crenolanib",
+   "n": 441,
+   "auroc": 0.7908,
+   "spearman": 0.4127,
+   "reliability": 0.5394152118717563,
+   "ceiling": 0.7344489171288608,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.562
+  },
+  {
+   "inhibitor": "Panobinostat",
+   "n": 283,
+   "auroc": 0.8095,
+   "spearman": 0.4105,
+   "reliability": 0.0524497257963236,
+   "ceiling": 0.2290190511645782,
+   "tier": "unreliable",
+   "frac_of_ceiling": 1.793
+  },
+  {
+   "inhibitor": "Selumetinib (AZD6244)",
+   "n": 451,
+   "auroc": 0.8097,
+   "spearman": 0.4093,
+   "reliability": 0.6726873906332629,
+   "ceiling": 0.8201752194703659,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.499
+  },
+  {
+   "inhibitor": "Cabozantinib",
+   "n": 445,
+   "auroc": 0.8046,
+   "spearman": 0.4034,
+   "reliability": 0.5545539882794701,
+   "ceiling": 0.7446838176565073,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.542
+  },
+  {
+   "inhibitor": "Quizartinib (AC220)",
+   "n": 456,
+   "auroc": 0.8002,
+   "spearman": 0.3954,
+   "reliability": 0.4176745386362019,
+   "ceiling": 0.646277447104726,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.612
+  },
+  {
+   "inhibitor": "Foretinib (XL880)",
+   "n": 448,
+   "auroc": 0.7949,
+   "spearman": 0.3824,
+   "reliability": 0.5545539882794701,
+   "ceiling": 0.7446838176565073,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.514
+  },
+  {
+   "inhibitor": "Dasatinib",
+   "n": 485,
+   "auroc": 0.777,
+   "spearman": 0.3745,
+   "reliability": 0.0872858248437294,
+   "ceiling": 0.295441745262462,
+   "tier": "unreliable",
+   "frac_of_ceiling": 1.268
+  },
+  {
+   "inhibitor": "Ponatinib (AP24534)",
+   "n": 296,
+   "auroc": 0.7686,
+   "spearman": 0.3716,
+   "reliability": 0.3093013166057565,
+   "ceiling": 0.5561486461421591,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.668
+  },
+  {
+   "inhibitor": "Tivozanib (AV-951)",
+   "n": 443,
+   "auroc": 0.7619,
+   "spearman": 0.367,
+   "reliability": 0.3646896797564805,
+   "ceiling": 0.603895421208408,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.608
+  },
+  {
+   "inhibitor": "NVP-TAE684",
+   "n": 446,
+   "auroc": 0.8016,
+   "spearman": 0.3541,
+   "reliability": 0.2005316105159671,
+   "ceiling": 0.4478075596905072,
+   "tier": "weak",
+   "frac_of_ceiling": 0.791
+  },
+  {
+   "inhibitor": "NF-kB Activation Inhibitor",
+   "n": 436,
+   "auroc": 0.7678,
+   "spearman": 0.3504,
+   "reliability": -0.0291300511019236,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "AZD1152-HQPA (AZD2811)",
+   "n": 450,
+   "auroc": 0.7806,
+   "spearman": 0.3382,
+   "reliability": 0.215698453061822,
+   "ceiling": 0.4644334753889108,
+   "tier": "weak",
+   "frac_of_ceiling": 0.728
+  },
+  {
+   "inhibitor": "Regorafenib (BAY 73-4506)",
+   "n": 445,
+   "auroc": 0.7622,
+   "spearman": 0.3376,
+   "reliability": 0.4193417480904722,
+   "ceiling": 0.6475660183259095,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.521
+  },
+  {
+   "inhibitor": "LY-333531",
+   "n": 410,
+   "auroc": 0.771,
+   "spearman": 0.3296,
+   "reliability": -0.0337693838341041,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "CI-1040 (PD184352)",
+   "n": 456,
+   "auroc": 0.7518,
+   "spearman": 0.3287,
+   "reliability": 0.5992690213423978,
+   "ceiling": 0.7741246807474864,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.425
+  },
+  {
+   "inhibitor": "RAF265 (CHIR-265)",
+   "n": 445,
+   "auroc": 0.726,
+   "spearman": 0.3238,
+   "reliability": 0.0954990425530302,
+   "ceiling": 0.3090291936905481,
+   "tier": "unreliable",
+   "frac_of_ceiling": 1.048
+  },
+  {
+   "inhibitor": "ABT-737",
+   "n": 233,
+   "auroc": 0.7605,
+   "spearman": 0.3179,
+   "reliability": 0.5457208668693057,
+   "ceiling": 0.7387292243233008,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.43
+  },
+  {
+   "inhibitor": "GSK-1838705A",
+   "n": 448,
+   "auroc": 0.7269,
+   "spearman": 0.3154,
+   "reliability": 0.0851829226188477,
+   "ceiling": 0.2918611358486219,
+   "tier": "unreliable",
+   "frac_of_ceiling": 1.081
+  },
+  {
+   "inhibitor": "SNS-032 (BMS-387032)",
+   "n": 453,
+   "auroc": 0.7188,
+   "spearman": 0.3154,
+   "reliability": -0.159932920364811,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "Palbociclib",
+   "n": 292,
+   "auroc": 0.7438,
+   "spearman": 0.3145,
+   "reliability": 0.278963606401402,
+   "ceiling": 0.5281700544345562,
+   "tier": "weak",
+   "frac_of_ceiling": 0.595
+  },
+  {
+   "inhibitor": "Pazopanib (GW786034)",
+   "n": 462,
+   "auroc": 0.7485,
+   "spearman": 0.3073,
+   "reliability": 0.3646896797564805,
+   "ceiling": 0.603895421208408,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.509
+  },
+  {
+   "inhibitor": "Erlotinib",
+   "n": 480,
+   "auroc": 0.73,
+   "spearman": 0.3067,
+   "reliability": 0.2854459716144094,
+   "ceiling": 0.5342714400137906,
+   "tier": "weak",
+   "frac_of_ceiling": 0.574
+  },
+  {
+   "inhibitor": "Vandetanib (ZD6474)",
+   "n": 476,
+   "auroc": 0.7541,
+   "spearman": 0.3023,
+   "reliability": 0.2249792690655404,
+   "ceiling": 0.4743197961982405,
+   "tier": "weak",
+   "frac_of_ceiling": 0.637
+  },
+  {
+   "inhibitor": "GDC-0941",
+   "n": 419,
+   "auroc": 0.7326,
+   "spearman": 0.2864,
+   "reliability": 0.4787823559956076,
+   "ceiling": 0.6919410061526977,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.414
+  },
+  {
+   "inhibitor": "OTX-015",
+   "n": 289,
+   "auroc": 0.7319,
+   "spearman": 0.2852,
+   "reliability": 0.6045294629704342,
+   "ceiling": 0.777514927811958,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.367
+  },
+  {
+   "inhibitor": "Vargetef",
+   "n": 446,
+   "auroc": 0.7204,
+   "spearman": 0.2806,
+   "reliability": 0.155105001352656,
+   "ceiling": 0.3938337229753897,
+   "tier": "weak",
+   "frac_of_ceiling": 0.713
+  },
+  {
+   "inhibitor": "Idelalisib",
+   "n": 439,
+   "auroc": 0.6909,
+   "spearman": 0.2739,
+   "reliability": -0.0240838834631188,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "Lenvatinib",
+   "n": 339,
+   "auroc": 0.7264,
+   "spearman": 0.27,
+   "reliability": 0.2414916407812326,
+   "ceiling": 0.4914179898835945,
+   "tier": "weak",
+   "frac_of_ceiling": 0.549
+  },
+  {
+   "inhibitor": "MGCD-265",
+   "n": 443,
+   "auroc": 0.7175,
+   "spearman": 0.267,
+   "reliability": 0.2687026579835543,
+   "ceiling": 0.5183653711269247,
+   "tier": "weak",
+   "frac_of_ceiling": 0.515
+  },
+  {
+   "inhibitor": "Linifanib (ABT-869)",
+   "n": 448,
+   "auroc": 0.7344,
+   "spearman": 0.2657,
+   "reliability": 0.3020730202732696,
+   "ceiling": 0.5496116995418399,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.483
+  },
+  {
+   "inhibitor": "JQ1",
+   "n": 344,
+   "auroc": 0.7074,
+   "spearman": 0.2622,
+   "reliability": 0.6045294629704342,
+   "ceiling": 0.777514927811958,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.337
+  },
+  {
+   "inhibitor": "Axitinib (AG-013736)",
+   "n": 471,
+   "auroc": 0.6714,
+   "spearman": 0.2597,
+   "reliability": 0.3045562248519908,
+   "ceiling": 0.5518661294661875,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.471
+  },
+  {
+   "inhibitor": "Canertinib (CI-1033)",
+   "n": 450,
+   "auroc": 0.6984,
+   "spearman": 0.2492,
+   "reliability": 0.2988215905128231,
+   "ceiling": 0.5466457632807769,
+   "tier": "weak",
+   "frac_of_ceiling": 0.456
+  },
+  {
+   "inhibitor": "Midostaurin",
+   "n": 457,
+   "auroc": 0.7195,
+   "spearman": 0.2468,
+   "reliability": 0.5394152118717563,
+   "ceiling": 0.7344489171288608,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.336
+  },
+  {
+   "inhibitor": "MK-2206",
+   "n": 443,
+   "auroc": 0.6872,
+   "spearman": 0.2456,
+   "reliability": 0.0340656426079713,
+   "ceiling": 0.1845688018273168,
+   "tier": "unreliable",
+   "frac_of_ceiling": 1.331
+  },
+  {
+   "inhibitor": "AT7519",
+   "n": 441,
+   "auroc": 0.7095,
+   "spearman": 0.2431,
+   "reliability": 0.3163246421844012,
+   "ceiling": 0.5624274550414491,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.432
+  },
+  {
+   "inhibitor": "Gefitinib",
+   "n": 461,
+   "auroc": 0.6851,
+   "spearman": 0.2421,
+   "reliability": 0.2854459716144094,
+   "ceiling": 0.5342714400137906,
+   "tier": "weak",
+   "frac_of_ceiling": 0.453
+  },
+  {
+   "inhibitor": "JNJ-28312141",
+   "n": 312,
+   "auroc": 0.6989,
+   "spearman": 0.2419,
+   "reliability": 0.3001635577370665,
+   "ceiling": 0.5478718442638447,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.441
+  },
+  {
+   "inhibitor": "GW-2580",
+   "n": 435,
+   "auroc": 0.6813,
+   "spearman": 0.2364,
+   "reliability": 0.2960429409510353,
+   "ceiling": 0.5440982824371303,
+   "tier": "weak",
+   "frac_of_ceiling": 0.434
+  },
+  {
+   "inhibitor": "Doramapimod (BIRB 796)",
+   "n": 449,
+   "auroc": 0.681,
+   "spearman": 0.2328,
+   "reliability": 0.3076544011889514,
+   "ceiling": 0.5546660267124275,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.42
+  },
+  {
+   "inhibitor": "Crizotinib (PF-2341066)",
+   "n": 465,
+   "auroc": 0.6854,
+   "spearman": 0.2317,
+   "reliability": 0.2296803589205427,
+   "ceiling": 0.4792497876061529,
+   "tier": "weak",
+   "frac_of_ceiling": 0.484
+  },
+  {
+   "inhibitor": "Bosutinib (SKI-606)",
+   "n": 451,
+   "auroc": 0.686,
+   "spearman": 0.2303,
+   "reliability": 0.2028599965442299,
+   "ceiling": 0.4503998185437355,
+   "tier": "weak",
+   "frac_of_ceiling": 0.511
+  },
+  {
+   "inhibitor": "Nutlin 3a",
+   "n": 319,
+   "auroc": 0.6934,
+   "spearman": 0.2281,
+   "reliability": 0.61238499201141,
+   "ceiling": 0.7825503127667958,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.292
+  },
+  {
+   "inhibitor": "Motesanib (AMG-706)",
+   "n": 445,
+   "auroc": 0.685,
+   "spearman": 0.2268,
+   "reliability": 0.5701389889219035,
+   "ceiling": 0.755075485578696,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.3
+  },
+  {
+   "inhibitor": "PHA-665752",
+   "n": 447,
+   "auroc": 0.6925,
+   "spearman": 0.2266,
+   "reliability": 0.3849702086319027,
+   "ceiling": 0.6204596752665742,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.365
+  },
+  {
+   "inhibitor": "A-674563",
+   "n": 456,
+   "auroc": 0.6951,
+   "spearman": 0.224,
+   "reliability": -0.0163191721444396,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "Saracatinib (AZD0530)",
+   "n": 445,
+   "auroc": 0.6964,
+   "spearman": 0.2207,
+   "reliability": 0.2028599965442299,
+   "ceiling": 0.4503998185437356,
+   "tier": "weak",
+   "frac_of_ceiling": 0.49
+  },
+  {
+   "inhibitor": "Tozasertib (VX-680)",
+   "n": 453,
+   "auroc": 0.6903,
+   "spearman": 0.2155,
+   "reliability": 0.3005635406668642,
+   "ceiling": 0.5482367560341648,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.393
+  },
+  {
+   "inhibitor": "Ibrutinib (PCI-32765)",
+   "n": 433,
+   "auroc": 0.6985,
+   "spearman": 0.2147,
+   "reliability": 0.1327871605569889,
+   "ceiling": 0.3643997263404418,
+   "tier": "unreliable",
+   "frac_of_ceiling": 0.589
+  },
+  {
+   "inhibitor": "INK-128",
+   "n": 452,
+   "auroc": 0.6723,
+   "spearman": 0.2129,
+   "reliability": 0.4735790623921134,
+   "ceiling": 0.6881708090235399,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.309
+  },
+  {
+   "inhibitor": "Lenalidomide",
+   "n": 262,
+   "auroc": 0.6234,
+   "spearman": 0.2054,
+   "reliability": -0.1499504322147421,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "BEZ235",
+   "n": 444,
+   "auroc": 0.6263,
+   "spearman": 0.2043,
+   "reliability": 0.4679202894000031,
+   "ceiling": 0.6840469935611172,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.299
+  },
+  {
+   "inhibitor": "NVP-ADW742",
+   "n": 439,
+   "auroc": 0.6777,
+   "spearman": 0.1972,
+   "reliability": 0.1326767303479422,
+   "ceiling": 0.3642481713721323,
+   "tier": "unreliable",
+   "frac_of_ceiling": 0.541
+  },
+  {
+   "inhibitor": "PI-103",
+   "n": 447,
+   "auroc": 0.7244,
+   "spearman": 0.197,
+   "reliability": 0.4223455588830601,
+   "ceiling": 0.6498811882821813,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.303
+  },
+  {
+   "inhibitor": "SU11274",
+   "n": 397,
+   "auroc": 0.6366,
+   "spearman": 0.1898,
+   "reliability": 0.389108376954579,
+   "ceiling": 0.6237855215974311,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.304
+  },
+  {
+   "inhibitor": "PP242",
+   "n": 453,
+   "auroc": 0.6418,
+   "spearman": 0.1878,
+   "reliability": 0.3793059195314635,
+   "ceiling": 0.6158781693902321,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.305
+  },
+  {
+   "inhibitor": "Cediranib (AZD2171)",
+   "n": 448,
+   "auroc": 0.6173,
+   "spearman": 0.1852,
+   "reliability": 0.5701389889219034,
+   "ceiling": 0.7550754855786959,
+   "tier": "reproducible",
+   "frac_of_ceiling": 0.245
+  },
+  {
+   "inhibitor": "YM-155",
+   "n": 452,
+   "auroc": 0.5968,
+   "spearman": 0.1821,
+   "reliability": 0.3478022689472481,
+   "ceiling": 0.5897476315740896,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.309
+  },
+  {
+   "inhibitor": "Bortezomib (Velcade)",
+   "n": 458,
+   "auroc": 0.6424,
+   "spearman": 0.182,
+   "reliability": 0.0578665342091457,
+   "ceiling": 0.2405546387188278,
+   "tier": "unreliable",
+   "frac_of_ceiling": 0.757
+  },
+  {
+   "inhibitor": "Entrectinib",
+   "n": 212,
+   "auroc": 0.5765,
+   "spearman": 0.1745,
+   "reliability": -0.0058060983554323,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "Tofacitinib (CP-690550)",
+   "n": 453,
+   "auroc": 0.6276,
+   "spearman": 0.1734,
+   "reliability": 0.117531109037386,
+   "ceiling": 0.3428281042116968,
+   "tier": "unreliable",
+   "frac_of_ceiling": 0.506
+  },
+  {
+   "inhibitor": "Bay 11-7085",
+   "n": 339,
+   "auroc": 0.6406,
+   "spearman": 0.1722,
+   "reliability": 0.3687482203065756,
+   "ceiling": 0.6072464246964123,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.284
+  },
+  {
+   "inhibitor": "SR9011",
+   "n": 263,
+   "auroc": 0.6191,
+   "spearman": 0.1718,
+   "reliability": -0.0210477292189354,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "Gilteritinib",
+   "n": 275,
+   "auroc": 0.6688,
+   "spearman": 0.1684,
+   "reliability": 0.3572297394766452,
+   "ceiling": 0.5976869912225339,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.282
+  },
+  {
+   "inhibitor": "Nilotinib",
+   "n": 467,
+   "auroc": 0.6632,
+   "spearman": 0.1678,
+   "reliability": -0.0489045329812683,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "Flavopiridol",
+   "n": 446,
+   "auroc": 0.6137,
+   "spearman": 0.1654,
+   "reliability": 0.3163246421844013,
+   "ceiling": 0.5624274550414492,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.294
+  },
+  {
+   "inhibitor": "Lapatinib",
+   "n": 459,
+   "auroc": 0.6397,
+   "spearman": 0.1624,
+   "reliability": 0.2988215905128231,
+   "ceiling": 0.5466457632807769,
+   "tier": "weak",
+   "frac_of_ceiling": 0.297
+  },
+  {
+   "inhibitor": "KU-55933",
+   "n": 448,
+   "auroc": 0.6236,
+   "spearman": 0.1601,
+   "reliability": 0.0918201217123766,
+   "ceiling": 0.3030183521049124,
+   "tier": "unreliable",
+   "frac_of_ceiling": 0.528
+  },
+  {
+   "inhibitor": "KI20227",
+   "n": 400,
+   "auroc": 0.6105,
+   "spearman": 0.1599,
+   "reliability": 0.3553034996102853,
+   "ceiling": 0.5960734011934145,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.268
+  },
+  {
+   "inhibitor": "GSK-1904529A",
+   "n": 447,
+   "auroc": 0.6146,
+   "spearman": 0.1516,
+   "reliability": 0.1326767303479422,
+   "ceiling": 0.3642481713721323,
+   "tier": "unreliable",
+   "frac_of_ceiling": 0.416
+  },
+  {
+   "inhibitor": "PRT062607",
+   "n": 442,
+   "auroc": 0.619,
+   "spearman": 0.1482,
+   "reliability": -0.0219196083602863,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "Entospletinib (GS-9973)",
+   "n": 309,
+   "auroc": 0.557,
+   "spearman": 0.1408,
+   "reliability": -0.0219196083602863,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "AGI-6780",
+   "n": 294,
+   "auroc": 0.6021,
+   "spearman": 0.1337,
+   "reliability": 0.3426221457227478,
+   "ceiling": 0.585339342367099,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.228
+  },
+  {
+   "inhibitor": "CYT387",
+   "n": 450,
+   "auroc": 0.5735,
+   "spearman": 0.1309,
+   "reliability": 0.137925151052425,
+   "ceiling": 0.3713827554591422,
+   "tier": "unreliable",
+   "frac_of_ceiling": 0.353
+  },
+  {
+   "inhibitor": "MLN8054",
+   "n": 447,
+   "auroc": 0.6305,
+   "spearman": 0.1296,
+   "reliability": 0.3574836114735236,
+   "ceiling": 0.597899332223681,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.217
+  },
+  {
+   "inhibitor": "Vemurafenib (PLX-4032)",
+   "n": 354,
+   "auroc": 0.607,
+   "spearman": 0.1246,
+   "reliability": -0.2130365859753146,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "XAV-939",
+   "n": 267,
+   "auroc": 0.607,
+   "spearman": 0.1241,
+   "reliability": 0.0655731415115533,
+   "ceiling": 0.2560725317396486,
+   "tier": "unreliable",
+   "frac_of_ceiling": 0.485
+  },
+  {
+   "inhibitor": "Ruxolitinib (INCB018424)",
+   "n": 444,
+   "auroc": 0.5742,
+   "spearman": 0.1231,
+   "reliability": 0.2487307901704759,
+   "ceiling": 0.4987291751747394,
+   "tier": "weak",
+   "frac_of_ceiling": 0.247
+  },
+  {
+   "inhibitor": "JAK Inhibitor I",
+   "n": 443,
+   "auroc": 0.6083,
+   "spearman": 0.1139,
+   "reliability": 0.248730790170476,
+   "ceiling": 0.4987291751747395,
+   "tier": "weak",
+   "frac_of_ceiling": 0.228
+  },
+  {
+   "inhibitor": "PD173955",
+   "n": 448,
+   "auroc": 0.5731,
+   "spearman": 0.1135,
+   "reliability": 0.1174684168646332,
+   "ceiling": 0.3427366581861841,
+   "tier": "unreliable",
+   "frac_of_ceiling": 0.331
+  },
+  {
+   "inhibitor": "Vatalanib (PTK787)",
+   "n": 447,
+   "auroc": 0.5847,
+   "spearman": 0.1113,
+   "reliability": 0.2761803354009873,
+   "ceiling": 0.5255286247208494,
+   "tier": "weak",
+   "frac_of_ceiling": 0.212
+  },
+  {
+   "inhibitor": "Afatinib (BIBW-2992)",
+   "n": 453,
+   "auroc": 0.6109,
+   "spearman": 0.096,
+   "reliability": 0.1590197290742066,
+   "ceiling": 0.3987727787527712,
+   "tier": "weak",
+   "frac_of_ceiling": 0.241
+  },
+  {
+   "inhibitor": "H-89",
+   "n": 408,
+   "auroc": 0.554,
+   "spearman": 0.0957,
+   "reliability": -0.0163191721444396,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "VX-745",
+   "n": 452,
+   "auroc": 0.5601,
+   "spearman": 0.094,
+   "reliability": 0.3076544011889513,
+   "ceiling": 0.5546660267124275,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.169
+  },
+  {
+   "inhibitor": "PHT-427",
+   "n": 443,
+   "auroc": 0.5564,
+   "spearman": 0.0917,
+   "reliability": 0.1881095215313779,
+   "ceiling": 0.4337159456734071,
+   "tier": "weak",
+   "frac_of_ceiling": 0.211
+  },
+  {
+   "inhibitor": "TG100-115",
+   "n": 446,
+   "auroc": 0.5674,
+   "spearman": 0.0892,
+   "reliability": -0.0240838834631188,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "Neratinib (HKI-272)",
+   "n": 448,
+   "auroc": 0.6001,
+   "spearman": 0.0852,
+   "reliability": 0.1590197290742066,
+   "ceiling": 0.3987727787527712,
+   "tier": "weak",
+   "frac_of_ceiling": 0.214
+  },
+  {
+   "inhibitor": "DBZ",
+   "n": 362,
+   "auroc": 0.6345,
+   "spearman": 0.0849,
+   "reliability": 0.2331726484652465,
+   "ceiling": 0.4828795382548804,
+   "tier": "weak",
+   "frac_of_ceiling": 0.176
+  },
+  {
+   "inhibitor": "Imatinib",
+   "n": 499,
+   "auroc": 0.5175,
+   "spearman": 0.0847,
+   "reliability": 0.2006110459112364,
+   "ceiling": 0.4478962445826448,
+   "tier": "weak",
+   "frac_of_ceiling": 0.189
+  },
+  {
+   "inhibitor": "S31-201",
+   "n": 398,
+   "auroc": 0.5828,
+   "spearman": 0.0806,
+   "reliability": -0.1075578471052364,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "Roscovitine (CYC-202)",
+   "n": 456,
+   "auroc": 0.5749,
+   "spearman": 0.0797,
+   "reliability": -0.0639074439106939,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "Alisertib (MLN8237)",
+   "n": 454,
+   "auroc": 0.5734,
+   "spearman": 0.0783,
+   "reliability": 0.3574836114735236,
+   "ceiling": 0.597899332223681,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.131
+  },
+  {
+   "inhibitor": "JNJ-38877605",
+   "n": 449,
+   "auroc": 0.5711,
+   "spearman": 0.0696,
+   "reliability": 0.389108376954579,
+   "ceiling": 0.623785521597431,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.112
+  },
+  {
+   "inhibitor": "Masitinib (AB-1010)",
+   "n": 443,
+   "auroc": 0.5518,
+   "spearman": 0.0633,
+   "reliability": 0.2006110459112364,
+   "ceiling": 0.4478962445826449,
+   "tier": "weak",
+   "frac_of_ceiling": 0.141
+  },
+  {
+   "inhibitor": "SB-431542",
+   "n": 454,
+   "auroc": 0.5655,
+   "spearman": 0.0461,
+   "reliability": 0.2797167839767274,
+   "ceiling": 0.5288825805192751,
+   "tier": "weak",
+   "frac_of_ceiling": 0.087
+  },
+  {
+   "inhibitor": "AGI-5198",
+   "n": 296,
+   "auroc": 0.5142,
+   "spearman": 0.0443,
+   "reliability": 0.3070101272701991,
+   "ceiling": 0.5540849458974672,
+   "tier": "moderate",
+   "frac_of_ceiling": 0.08
+  },
+  {
+   "inhibitor": "AZD1480",
+   "n": 451,
+   "auroc": 0.5368,
+   "spearman": 0.0406,
+   "reliability": 0.2252389919178374,
+   "ceiling": 0.4745935017652869,
+   "tier": "weak",
+   "frac_of_ceiling": 0.086
+  },
+  {
+   "inhibitor": "GSK690693",
+   "n": 442,
+   "auroc": 0.554,
+   "spearman": 0.0383,
+   "reliability": 0.0340656426079713,
+   "ceiling": 0.1845688018273168,
+   "tier": "unreliable",
+   "frac_of_ceiling": 0.208
+  },
+  {
+   "inhibitor": "Selinexor",
+   "n": 238,
+   "auroc": 0.5434,
+   "spearman": 0.0286,
+   "reliability": 0.03336020813245,
+   "ceiling": 0.1826477706747335,
+   "tier": "unreliable",
+   "frac_of_ceiling": 0.156
+  },
+  {
+   "inhibitor": "Azacytidine",
+   "n": 363,
+   "auroc": 0.4759,
+   "spearman": 0.0223,
+   "reliability": -0.0714722211003934,
+   "ceiling": 0.0,
+   "tier": "unreliable",
+   "frac_of_ceiling": null
+  },
+  {
+   "inhibitor": "Volasertib (BI-6727)",
+   "n": 345,
+   "auroc": 0.4715,
+   "spearman": -0.0057,
+   "reliability": 0.0849477197145479,
+   "ceiling": 0.2914579210015536,
+   "tier": "unreliable",
+   "frac_of_ceiling": -0.019
+  },
+  {
+   "inhibitor": "JNJ-7706621",
+   "n": 450,
+   "auroc": 0.5222,
+   "spearman": -0.0067,
+   "reliability": 0.2817174735019268,
+   "ceiling": 0.5307706411454262,
+   "tier": "weak",
+   "frac_of_ceiling": -0.013
+  },
+  {
+   "inhibitor": "MLN120B",
+   "n": 447,
+   "auroc": 0.4769,
+   "spearman": -0.0208,
+   "reliability": 0.3687482203065756,
+   "ceiling": 0.6072464246964124,
+   "tier": "moderate",
+   "frac_of_ceiling": -0.034
+  },
+  {
+   "inhibitor": "STO609",
+   "n": 410,
+   "auroc": 0.4701,
+   "spearman": -0.021,
+   "reliability": 0.1068625686801424,
+   "ceiling": 0.3268984072768517,
+   "tier": "unreliable",
+   "frac_of_ceiling": -0.064
+  },
+  {
+   "inhibitor": "SGX-523",
+   "n": 448,
+   "auroc": 0.4332,
+   "spearman": -0.0462,
+   "reliability": 0.3849702086319027,
+   "ceiling": 0.6204596752665742,
+   "tier": "moderate",
+   "frac_of_ceiling": -0.074
+  },
+  {
+   "inhibitor": "BMS-345541",
+   "n": 454,
+   "auroc": 0.407,
+   "spearman": -0.0739,
+   "reliability": 0.1498212262615644,
+   "ceiling": 0.3870674699087543,
+   "tier": "unreliable",
+   "frac_of_ceiling": -0.191
+  }
+ ],
+ "C5_n_vs_auroc": {
+  "n_drugs": 118,
+  "spearman": 0.1116,
+  "p": 0.22897036528656453,
+  "interpretation": "near zero = the weak drugs are hard, not merely under-trained; positive = more data would help"
+ }
+}

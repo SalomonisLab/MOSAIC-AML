@@ -1,45 +1,13 @@
 specimen	ELN2022	ELN2017	has_mutation_data	reasons
-nan	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA3073R	Favorable	NonInitial	False	mutated NPM1 without FLT3-ITD
 BA2452R	Adverse	NonInitial	True	mutated NPM1 with adverse-risk cytogenetics (-17/abn(17p)) -> adverse
-nan	Intermediate	FavorableOrIntermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2922R	Adverse	NonInitial	False	adverse cytogenetics: t(6;9)/DEK::NUP214; complex karyotype
-nan	Intermediate	NonInitial	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Intermediate	NonInitial	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Intermediate	FavorableOrIntermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	Adverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Intermediate	NonInitial	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Intermediate	NonInitial	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Intermediate	IntermediateOrAdverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2707R	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Adverse	NonInitial	True	adverse cytogenetics: t(6;9)/DEK::NUP214; complex karyotype
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2409R	Intermediate	Intermediate	False	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2480R	Intermediate	NonInitial	False	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2496R	Intermediate	MissingMutations	False	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA3037R	Intermediate	FavorableOrIntermediate	False	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	Adverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Intermediate	NonInitial	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Intermediate	NonInitial	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2236R	Adverse	NonInitial	True	mutated NPM1 with adverse-risk cytogenetics (complex karyotype) -> adverse
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2172R	Intermediate	NonInitial	False	no favorable or adverse defining lesion
 BA3042R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2865R	Favorable	Favorable	False	mutated NPM1 without FLT3-ITD
@@ -49,23 +17,14 @@ BA2751R	Intermediate	Adverse	False	wild-type NPM1 with FLT3-ITD, no adverse lesi
 BA2055R	Favorable	Favorable	False	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA3395R	Adverse	NonInitial	False	adverse cytogenetics: -5/del(5q); -17/abn(17p); complex karyotype; monosomal karyotype
 BA2286R	Intermediate	Intermediate	False	no favorable or adverse defining lesion
-nan	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
 BA2488R	Intermediate	Favorable	True	no favorable or adverse defining lesion
 BA3379R	Intermediate	Intermediate	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2887R	Intermediate	Intermediate	False	no favorable or adverse defining lesion
 BA2712R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1
 BA2858R	Adverse	NonInitial	True	MDS-related gene mutation: SRSF2,ZRSR2
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Adverse	Adverse	True	adverse cytogenetics: complex karyotype; monosomal karyotype
-nan	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
-nan	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2068R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2104R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD | MDS-related mutations (SRSF2) NOT counted adverse alongside a favorable subtype
 BA3124R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA2921R	Adverse	NonInitial	True	adverse cytogenetics: -7; complex karyotype
 BA2449R	Favorable	Favorable	False	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2360R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
@@ -76,30 +35,20 @@ BA3006R	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio
 BA2245R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2667R	Adverse	Adverse	True	MDS-related gene mutation: RUNX1,SRSF2
 BA2239R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
-nan	Intermediate	FavorableOrIntermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2782R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2649R	Adverse	Favorable	True	adverse cytogenetics: complex karyotype
-nan	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype
-nan	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2592R	Adverse	NonInitial	True	MDS-related gene mutation: BCOR,SF3B1
 BA2861R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
-nan	Adverse	NonInitial	True	adverse cytogenetics: KMT2A-rearranged; complex karyotype; monosomal karyotype
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA2134R	Intermediate	Adverse	False	no favorable or adverse defining lesion
-nan	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2909R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2429R	Adverse	NonInitial	True	MDS-related gene mutation: EZH2
 BA2653R	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA2947R	Favorable	Favorable	False	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2032R	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2162R	Adverse	Adverse	True	adverse cytogenetics: -7; -17/abn(17p); complex karyotype; monosomal karyotype
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2564R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA3043R	Intermediate	FavorableOrIntermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2597R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,BCOR
-nan	Intermediate	FavorableOrIntermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	MissingKaryo	True	no favorable or adverse defining lesion
 BA3243R	Intermediate	Favorable	False	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2106R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
 BA2939R	Favorable	NonInitial	False	mutated NPM1 without FLT3-ITD
@@ -107,84 +56,63 @@ BA2427R	Favorable	NonInitial	True	core-binding-factor AML (KIT/FLT3 co-mutation 
 BA2841R	Favorable	NonInitial	True	in-frame bZIP CEBPA mutation (monoallelic or biallelic, per ELN 2022)
 BA2446R	Intermediate	Intermediate	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
 BA2025R	Intermediate	NonInitial	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
-nan	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype
 BA2645R	Adverse	NonInitial	True	MDS-related gene mutation: SRSF2
 BA2525R	Adverse	Adverse	True	mutated NPM1 with adverse-risk cytogenetics (-5/del(5q); -17/abn(17p); complex karyotype; monosomal karyotype) -> adverse
-nan	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2876R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2357R	Adverse	Adverse	True	adverse cytogenetics: -7; -17/abn(17p); complex karyotype; monosomal karyotype
-nan	Adverse	NonInitial	True	adverse cytogenetics: -7; -17/abn(17p); complex karyotype; monosomal karyotype
 BA2546R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA2742R	Adverse	Adverse	True	MDS-related gene mutation: RUNX1
 BA2316R	Adverse	Adverse	True	MDS-related gene mutation: RUNX1
-nan	Intermediate	FavorableOrIntermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2421R	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA2087R	Intermediate	Intermediate	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
 BA2910R	Adverse	NonInitial	True	MDS-related gene mutation: SF3B1
 BA2148R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2329R	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype
 BA2677R	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype
 BA3178R	Intermediate	Intermediate	False	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
-nan	Intermediate	NonInitial	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2072R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA3029R	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2735R	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2733R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
-nan	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2995R	Adverse	Adverse	True	MDS-related gene mutation: BCOR,RUNX1,SRSF2
 BA2069R	Intermediate	Intermediate	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
 BA2100R	Adverse	NonInitial	True	MDS-related gene mutation: RUNX1,SF3B1
 BA2953R	Adverse	NonInitial	True	MDS-related gene mutation: RUNX1,SF3B1
 BA2681R	Adverse	Adverse	True	adverse cytogenetics: -17/abn(17p); complex karyotype
 BA2248R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Intermediate	Favorable	True	no favorable or adverse defining lesion
 BA2832R	Intermediate	Adverse	False	no favorable or adverse defining lesion
 BA2308R	Adverse	NonInitial	True	adverse cytogenetics: inv(3)/MECOM; -7; monosomal karyotype
 BA2413R	Adverse	NonInitial	False	adverse cytogenetics: inv(3)/MECOM; -7; monosomal karyotype
 BA2701R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2634R	Adverse	NonInitial	True	adverse cytogenetics: -7; complex karyotype
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA2937R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
 BA2600R	Adverse	Adverse	True	adverse cytogenetics: complex karyotype
 BA2019R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
 BA2412R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
 BA2334R	Adverse	NonInitial	True	adverse cytogenetics: t(6;9)/DEK::NUP214; complex karyotype
 BA2050R	Adverse	NonInitial	False	adverse cytogenetics: t(6;9)/DEK::NUP214; complex karyotype
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA3230R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,SF3B1
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA2481R	Adverse	NonAML	True	MDS-related gene mutation: EZH2,U2AF1
 BA2731R	Adverse	Adverse	True	MDS-related gene mutation: EZH2
 BA2418R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
-nan	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2294R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
-nan	Adverse	NonInitial	True	adverse cytogenetics: inv(3)/MECOM; -7; complex karyotype; monosomal karyotype
 BA2816R	Adverse	Adverse	True	adverse cytogenetics: -7
-nan	Intermediate	Intermediate	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
 BA2814R	Intermediate	Intermediate	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
 BA2631R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2023R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1
 BA2375R	Adverse	Adverse	True	adverse cytogenetics: -7; monosomal karyotype
 BA2485R	Intermediate	FavorableOrIntermediate	False	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	FavorableOrIntermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2455R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2636R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,U2AF1
 BA2325R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2169R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Adverse	NonInitial	True	adverse cytogenetics: inv(3)/MECOM; -5/del(5q); -7; complex karyotype
 BA2156R	Favorable	Favorable	True	in-frame bZIP CEBPA mutation (monoallelic or biallelic, per ELN 2022)
 BA2511R	Adverse	Adverse	True	adverse cytogenetics: inv(3)/MECOM
 BA2168R	Intermediate	NonInitial	False	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Adverse	Adverse	True	adverse cytogenetics: inv(3)/MECOM; -7; monosomal karyotype
 BA2505R	Adverse	Adverse	False	adverse cytogenetics: inv(3)/MECOM; -7; monosomal karyotype
 BA2860R	Adverse	NonAML	True	adverse cytogenetics: -5/del(5q); complex karyotype; monosomal karyotype
 BA2871R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA2655R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Intermediate	NonAML	True	no favorable or adverse defining lesion
-nan	Adverse	NonAML	True	adverse cytogenetics: -7; -17/abn(17p); complex karyotype; monosomal karyotype
 BA2227R	Adverse	Intermediate	True	MDS-related gene mutation: STAG2
 BA2812R	Adverse	MissingKaryo	True	MDS-related gene mutation: STAG2
 BA2125R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
@@ -193,87 +121,52 @@ BA2808R	Adverse	Adverse	True	adverse cytogenetics: -5/del(5q); -17/abn(17p); com
 BA2282R	Intermediate	NonInitial	False	no favorable or adverse defining lesion
 BA2482R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2822R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
-nan	Adverse	NonInitial	True	mutated NPM1 with adverse-risk cytogenetics (complex karyotype) -> adverse
 BA2594R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA2747R	Adverse	Intermediate	True	MDS-related gene mutation: BCOR,U2AF1
-nan	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2561R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
-nan	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2094R	Intermediate	NonInitial	False	no favorable or adverse defining lesion
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA2567R	Intermediate	MissingKaryo	True	no favorable or adverse defining lesion
 BA2906R	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA2956R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
-nan	Intermediate	NonAML	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2474R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2065R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
 BA2737R	Favorable	Adverse	False	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2463R	Favorable	NonInitial	False	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
-nan	Intermediate	NonAML	True	no favorable or adverse defining lesion
 BA2006R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA2110R	Intermediate	FavorableOrIntermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Adverse	Adverse	True	adverse cytogenetics: complex karyotype
-nan	Intermediate	NonAML	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Intermediate	Favorable	True	no favorable or adverse defining lesion
 BA2915R	Intermediate	Favorable	True	no favorable or adverse defining lesion
 BA2992R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2220R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA2720R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
 BA2063R	Intermediate	MissingKaryo	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Adverse	Adverse	True	adverse cytogenetics: -5/del(5q); -17/abn(17p); complex karyotype; monosomal karyotype
-nan	Adverse	Adverse	True	adverse cytogenetics: inv(3)/MECOM
 BA2772R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
-nan	Adverse	Adverse	True	adverse cytogenetics: -17/abn(17p)
 BA2935R	Adverse	Adverse	True	MDS-related gene mutation: U2AF1
 BA2260R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2787R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2676R	Adverse	NonAML	True	MDS-related gene mutation: SRSF2
 BA2948R	Adverse	Adverse	False	adverse cytogenetics: -5/del(5q); -7; -17/abn(17p); complex karyotype; monosomal karyotype
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Adverse	Adverse	True	adverse cytogenetics: complex karyotype; monosomal karyotype
 BA3296R	Intermediate	Intermediate	False	no favorable or adverse defining lesion
 BA2524R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2811R	Adverse	Favorable	True	adverse cytogenetics: complex karyotype
 BA2540R	Intermediate	Intermediate	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA2928R	Intermediate	Intermediate	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
 BA2302R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
-nan	Intermediate	Intermediate	True	no favorable or adverse defining lesion
-nan	Adverse	NonInitial	True	adverse cytogenetics: -5/del(5q)
 BA2792R	Intermediate	NonAML	True	no favorable or adverse defining lesion
 BA2651R	Intermediate	Intermediate	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
 BA2595R	Adverse	NonInitial	True	adverse cytogenetics: -7; complex karyotype
 BA2619R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA3013R	Intermediate	Adverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Intermediate	Adverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Intermediate	IntermediateOrAdverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2405R	Adverse	Adverse	True	MDS-related gene mutation: RUNX1
 BA2856R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
-nan	Intermediate	Adverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
-nan	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA2377R	Intermediate	Intermediate	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
 BA2499R	Adverse	Adverse	True	MDS-related gene mutation: EZH2,RUNX1,STAG2,ZRSR2
-nan	Intermediate	Intermediate	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Adverse	NonInitial	True	adverse cytogenetics: -5/del(5q)
 BA2350R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA3023R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2095R	Intermediate	Favorable	False	no favorable or adverse defining lesion
-nan	Adverse	NonInitial	True	adverse cytogenetics: -17/abn(17p)
 BA2275R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA2901R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2221R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2387R	Adverse	Intermediate	True	MDS-related gene mutation: BCOR
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2657R	Adverse	NonInitial	True	MDS-related gene mutation: EZH2,RUNX1
 BA2962R	Intermediate	IntermediateOrAdverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2195R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
@@ -281,7 +174,6 @@ BA2688R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2420R	Adverse	Adverse	True	MDS-related gene mutation: RUNX1,U2AF1
 BA2727R	Adverse	NonInitial	True	adverse cytogenetics: inv(3)/MECOM
 BA2756R	Intermediate	NonInitial	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
 BA2122R	Adverse	NonInitial	True	MDS-related gene mutation: ASXL1,BCOR,RUNX1
 BA2053R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2080R	Adverse	NonInitial	True	MDS-related gene mutation: STAG2
@@ -290,7 +182,6 @@ BA2081R	Adverse	Adverse	True	adverse cytogenetics: complex karyotype
 BA2354R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category) | MDS-related mutations (EZH2) NOT counted adverse alongside a favorable subtype
 BA3273R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2893R	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA2044R	Adverse	Adverse	True	MDS-related gene mutation: RUNX1,U2AF1
 BA2309R	Intermediate	NonAML	True	no favorable or adverse defining lesion
 BA2489R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,SRSF2,STAG2
@@ -298,33 +189,24 @@ BA2908R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2054R	Adverse	Favorable	True	mutated NPM1 with adverse-risk cytogenetics (-17/abn(17p)) -> adverse
 BA2872R	Adverse	Adverse	True	adverse cytogenetics: -17/abn(17p)
 BA2526R	Adverse	NonInitial	False	adverse cytogenetics: complex karyotype
-nan	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype
-nan	Adverse	Adverse	True	adverse cytogenetics: t(6;9)/DEK::NUP214
 BA3145R	Adverse	NonInitial	True	adverse cytogenetics: t(6;9)/DEK::NUP214; complex karyotype
 BA2041R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2096R	Intermediate	NonInitial	False	no favorable or adverse defining lesion
 BA2464R	Intermediate	Favorable	True	no favorable or adverse defining lesion
 BA2902R	Adverse	Intermediate	True	MDS-related gene mutation: ZRSR2
-nan	Adverse	Adverse	True	adverse cytogenetics: -5/del(5q); -7; complex karyotype; monosomal karyotype
 BA2541R	Adverse	Adverse	True	adverse cytogenetics: KMT2A-rearranged
 BA2143R	Adverse	NonAML	True	adverse cytogenetics: -5/del(5q); -7; complex karyotype; monosomal karyotype
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2769R	Adverse	NonInitial	True	MDS-related gene mutation: RUNX1,SF3B1,SRSF2
 BA2843R	Adverse	Adverse	True	MDS-related gene mutation: BCOR,SRSF2,ZRSR2
-nan	Intermediate	Favorable	True	no favorable or adverse defining lesion
 BA2497R	Adverse	Adverse	True	adverse cytogenetics: KMT2A-rearranged
 BA2718R	Intermediate	Favorable	True	no favorable or adverse defining lesion
 BA2575R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA3008R	Adverse	NonInitial	True	MDS-related gene mutation: SF3B1
 BA3049R	Intermediate	NonInitial	False	no favorable or adverse defining lesion
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA2593R	Intermediate	Adverse	False	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2791R	Intermediate	Favorable	True	no favorable or adverse defining lesion
 BA2620R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1
 BA2629R	Adverse	Adverse	True	MDS-related gene mutation: BCOR,RUNX1,ZRSR2
-nan	Intermediate	Intermediate	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2870R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD | MDS-related mutations (STAG2) NOT counted adverse alongside a favorable subtype
 BA2423R	Adverse	NonInitial	True	MDS-related gene mutation: BCOR,SRSF2
 BA2682R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
@@ -332,7 +214,6 @@ BA2276R	Adverse	Intermediate	True	MDS-related gene mutation: SRSF2,STAG2
 BA2348R	Adverse	NonInitial	True	MDS-related gene mutation: SF3B1
 BA2709R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2789R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2694R	Adverse	NonInitial	True	MDS-related gene mutation: ASXL1,RUNX1,SRSF2
 BA2722R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
 BA3051R	Adverse	NonInitial	True	adverse cytogenetics: -17/abn(17p); complex karyotype; monosomal karyotype
@@ -340,27 +221,17 @@ BA2538R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,RUNX1,SRSF2
 BA2583R	Adverse	Adverse	True	adverse cytogenetics: -7; complex karyotype
 BA2292R	Adverse	NonInitial	True	MDS-related gene mutation: EZH2,SF3B1
 BA2806R	Intermediate	Adverse	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2153R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2674R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2809R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA3025R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2523R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA3027R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2441R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA2514R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA2695R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
 BA2520R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,RUNX1,SRSF2
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Adverse	Adverse	True	adverse cytogenetics: -7
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2479R	Favorable	Favorable	False	mutated NPM1 without FLT3-ITD
-nan	Adverse	NonInitial	True	adverse cytogenetics: -5/del(5q); -7; -17/abn(17p); complex karyotype; monosomal karyotype
 BA2281R	Adverse	Favorable	False	adverse cytogenetics: complex karyotype
 BA2932R	Intermediate	IntermediateOrAdverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2123R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
@@ -369,7 +240,6 @@ BA2660R	Adverse	Adverse	True	MDS-related gene mutation: RUNX1
 BA2836R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD | MDS-related mutations (SRSF2) NOT counted adverse alongside a favorable subtype
 BA2714R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA3317R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD | MDS-related mutations (SF3B1) NOT counted adverse alongside a favorable subtype
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA2440R	Adverse	Adverse	True	adverse cytogenetics: -7; -17/abn(17p); complex karyotype; monosomal karyotype
 BA2036R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2828R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
@@ -382,41 +252,28 @@ BA2051R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation d
 BA2532R	Intermediate	Favorable	True	no favorable or adverse defining lesion
 BA2986R	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype
 BA2494R	Adverse	Adverse	True	MDS-related gene mutation: EZH2,RUNX1
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Adverse	Adverse	True	adverse cytogenetics: -5/del(5q); complex karyotype; monosomal karyotype
 BA2515R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2748R	Intermediate	Favorable	True	no favorable or adverse defining lesion
 BA2577R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2622R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,EZH2,RUNX1,SF3B1
 BA2758R	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype
 BA2930R	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype
-nan	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype
 BA2970R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA3059R	Adverse	NonAML	False	adverse cytogenetics: monosomal karyotype
-nan	Adverse	NonAML	True	adverse cytogenetics: monosomal karyotype
-nan	Adverse	NonInitial	True	adverse cytogenetics: -17/abn(17p)
 BA2839R	Adverse	Adverse	True	MDS-related gene mutation: BCOR,RUNX1,U2AF1
-nan	Adverse	Adverse	True	adverse cytogenetics: KMT2A-rearranged
-nan	Adverse	NonInitial	True	adverse cytogenetics: KMT2A-rearranged; complex karyotype
 BA2868R	Favorable	Favorable	True	in-frame bZIP CEBPA mutation (monoallelic or biallelic, per ELN 2022)
 BA3011R	Intermediate	Favorable	False	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2052R	Adverse	Intermediate	True	MDS-related gene mutation: BCOR,SRSF2
 BA2510R	Adverse	Adverse	True	adverse cytogenetics: complex karyotype
 BA2691R	Adverse	MissingKaryo	True	MDS-related gene mutation: U2AF1
-nan	Adverse	Adverse	True	adverse cytogenetics: -7; complex karyotype
 BA2374R	Intermediate	Favorable	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2804R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2670R	Adverse	NonInitial	True	MDS-related gene mutation: SF3B1
 BA2675R	Intermediate	IntermediateOrAdverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2031R	Adverse	Adverse	True	adverse cytogenetics: KMT2A-rearranged
-nan	Adverse	NonInitial	True	adverse cytogenetics: KMT2A-rearranged
 BA2589R	Adverse	NonInitial	True	MDS-related gene mutation: BCOR,SRSF2
-nan	Intermediate	Adverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2198R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,RUNX1,U2AF1
 BA2066R	Adverse	Adverse	True	adverse cytogenetics: KMT2A-rearranged; complex karyotype; monosomal karyotype
-nan	Adverse	NonAML	True	adverse cytogenetics: -7; -17/abn(17p); complex karyotype; monosomal karyotype
 BA2344R	Adverse	Intermediate	True	adverse cytogenetics: -7
 BA2534R	Adverse	NonInitial	True	adverse cytogenetics: -7; complex karyotype
 BA2459R	Intermediate	Intermediate	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
@@ -431,21 +288,16 @@ BA2976R	Adverse	Intermediate	True	MDS-related gene mutation: U2AF1
 BA2386R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2879R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA3400R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
-nan	Adverse	Adverse	True	adverse cytogenetics: -7
 BA2035R	Adverse	Adverse	True	MDS-related gene mutation: SRSF2
 BA2760R	Adverse	Adverse	True	MDS-related gene mutation: BCOR,RUNX1
 BA2201R	Intermediate	FavorableOrIntermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Adverse	Adverse	True	adverse cytogenetics: complex karyotype; monosomal karyotype
 BA2355R	Adverse	Adverse	False	adverse cytogenetics: complex karyotype; monosomal karyotype
 BA2113R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA2155R	Favorable	NonInitial	True	in-frame bZIP CEBPA mutation (monoallelic or biallelic, per ELN 2022)
 BA2955R	Adverse	Adverse	True	MDS-related gene mutation: RUNX1
 BA2502R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2322R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2020R	Intermediate	FavorableOrIntermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
-nan	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2226R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2376R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2889R	Adverse	Favorable	True	adverse cytogenetics: complex karyotype
@@ -465,7 +317,6 @@ BA2978R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation d
 BA2829R	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2579R	Intermediate	NonInitial	False	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2249R	Adverse	NonInitial	True	mutated NPM1 with adverse-risk cytogenetics (complex karyotype) -> adverse
-nan	Adverse	NonInitial	True	mutated NPM1 with adverse-risk cytogenetics (complex karyotype) -> adverse
 BA2851R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2587R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2461R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
@@ -478,20 +329,15 @@ BA3010R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,BCOR,RUNX1,SRSF2,S
 BA2662R	Intermediate	FavorableOrIntermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2280R	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2277R	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2658R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2512R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2394R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2950R	Adverse	NonInitial	True	MDS-related gene mutation: RUNX1,SF3B1
 BA2981R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
 BA2934R	Intermediate	NonInitial	False	no favorable or adverse defining lesion
-nan	Intermediate	Intermediate	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
 BA2539R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2339R	Intermediate	NonInitial	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
 BA2786R	Intermediate	NonInitial	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
-nan	Adverse	Adverse	True	adverse cytogenetics: complex karyotype
 BA2256R	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype; monosomal karyotype
 BA2483R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA3002R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
@@ -505,29 +351,16 @@ BA2885R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD | MDS-related mut
 BA2639R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2775R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2402R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
-nan	Intermediate	IntermediateOrAdverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2097R	Adverse	Adverse	True	MDS-related gene mutation: SF3B1
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Favorable	NonAML	True	mutated NPM1 without FLT3-ITD
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2399R	Intermediate	Adverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2850R	Adverse	NonInitial	True	MDS-related gene mutation: RUNX1
 BA2993R	Intermediate	NonInitial	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA3322R	Adverse	NonInitial	True	MDS-related gene mutation: STAG2
 BA2174R	Adverse	Adverse	True	adverse cytogenetics: complex karyotype
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2004R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA3001R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
-nan	Adverse	NonAML	True	adverse cytogenetics: -5/del(5q); -7; complex karyotype; monosomal karyotype
 BA2911R	Intermediate	Favorable	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2311R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
-nan	Intermediate	Favorable	True	no favorable or adverse defining lesion
 BA3040R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA2724R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2837R	Adverse	NonInitial	True	adverse cytogenetics: -7; complex karyotype; monosomal karyotype
@@ -542,21 +375,16 @@ BA2621R	Adverse	Adverse	True	adverse cytogenetics: -7; monosomal karyotype
 BA2852R	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype
 BA2133R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD | MDS-related mutations (SRSF2) NOT counted adverse alongside a favorable subtype
 BA2473R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD | MDS-related mutations (SRSF2) NOT counted adverse alongside a favorable subtype
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2866R	Adverse	Adverse	True	MDS-related gene mutation: RUNX1
 BA2212R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,STAG2
 BA2477R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2244R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD | MDS-related mutations (ASXL1) NOT counted adverse alongside a favorable subtype
 BA3089R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
-nan	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2685R	Adverse	Adverse	True	adverse cytogenetics: complex karyotype
-nan	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype
 BA2273R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2659R	Adverse	NonInitial	True	MDS-related gene mutation: BCOR,SRSF2
 BA2124R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD | MDS-related mutations (ZRSR2) NOT counted adverse alongside a favorable subtype
 BA2369R	Adverse	NonInitial	True	MDS-related gene mutation: SRSF2
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA2400R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2762R	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2312R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
@@ -567,7 +395,6 @@ BA2746R	Intermediate	Favorable	True	mutated NPM1 with FLT3-ITD (allelic ratio no
 BA3075R	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2798R	Adverse	Adverse	True	adverse cytogenetics: -7
 BA2883R	Adverse	NonInitial	True	adverse cytogenetics: -7
-nan	Adverse	NonInitial	True	adverse cytogenetics: -7
 BA2288R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2801R	Adverse	NonAML	True	MDS-related gene mutation: ASXL1,RUNX1,ZRSR2
 BA3407R	Adverse	NonInitial	True	adverse cytogenetics: KMT2A-rearranged
@@ -576,18 +403,13 @@ BA2588R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2296R	Favorable	Favorable	True	in-frame bZIP CEBPA mutation (monoallelic or biallelic, per ELN 2022)
 BA2300R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA2903R	Adverse	NonInitial	True	MDS-related gene mutation: ASXL1
-nan	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2545R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2840R	Adverse	Adverse	True	adverse cytogenetics: complex karyotype
-nan	Adverse	Adverse	True	adverse cytogenetics: -5/del(5q); complex karyotype; monosomal karyotype
 BA2528R	Adverse	Intermediate	True	MDS-related gene mutation: SF3B1,STAG2
 BA2646R	Adverse	Favorable	True	adverse cytogenetics: complex karyotype
 BA3067R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA3068R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
 BA2240R	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2926R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2272R	Intermediate	Adverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2306R	Favorable	Favorable	False	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
@@ -599,7 +421,6 @@ BA3071R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
 BA3072R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
 BA2765R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2904R	Favorable	NonInitial	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
-nan	Intermediate	NonAML	True	no favorable or adverse defining lesion
 BA2726R	Adverse	Adverse	True	mutated NPM1 with adverse-risk cytogenetics (-17/abn(17p); complex karyotype) -> adverse
 BA3076R	Adverse	NonInitial	True	mutated NPM1 with adverse-risk cytogenetics (-17/abn(17p); complex karyotype) -> adverse
 BA3077R	Adverse	NonInitial	True	mutated NPM1 with adverse-risk cytogenetics (-17/abn(17p); complex karyotype) -> adverse
@@ -608,39 +429,28 @@ BA2022R	Intermediate	Favorable	False	wild-type NPM1 with FLT3-ITD, no adverse le
 BA2228R	Favorable	NonInitial	False	mutated NPM1 without FLT3-ITD
 BA2037R	Adverse	Adverse	True	adverse cytogenetics: inv(3)/MECOM; -7; complex karyotype
 BA2184R	Intermediate	Favorable	True	no favorable or adverse defining lesion
-nan	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA3009R	Adverse	Adverse	True	adverse cytogenetics: complex karyotype; monosomal karyotype
 BA2891R	Adverse	NonAML	False	adverse cytogenetics: complex karyotype; monosomal karyotype
 BA2442R	Intermediate	Intermediate	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2882R	Intermediate	Intermediate	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
 BA2656R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
-nan	Intermediate	NonAML	True	no favorable or adverse defining lesion
-nan	Intermediate	NonAML	True	no favorable or adverse defining lesion
 BA2385R	Adverse	NonAML	True	adverse cytogenetics: complex karyotype
 BA2705R	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2347R	Adverse	Intermediate	True	MDS-related gene mutation: SRSF2
 BA2379R	Adverse	NonInitial	True	MDS-related gene mutation: SRSF2
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Adverse	Adverse	True	adverse cytogenetics: -5/del(5q); -17/abn(17p); complex karyotype; monosomal karyotype
-nan	Intermediate	NonInitial	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype
 BA2663R	Adverse	NonAML	True	MDS-related gene mutation: EZH2,RUNX1
-nan	Intermediate	MissingKaryo	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2570R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2764R	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2209R	Adverse	NonInitial	True	MDS-related gene mutation: SRSF2
 BA2989R	Adverse	NonInitial	True	MDS-related gene mutation: BCOR,RUNX1
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2261R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
 BA2721R	Adverse	Adverse	True	MDS-related gene mutation: SF3B1
-nan	Intermediate	NonInitial	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2728R	Adverse	Adverse	True	adverse cytogenetics: inv(3)/MECOM
 BA2715R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
 BA2116R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
 BA2469R	Adverse	NonInitial	True	MDS-related gene mutation: BCOR
 BA2269R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
 BA2098R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2951R	Adverse	Adverse	True	adverse cytogenetics: inv(3)/MECOM; -7; complex karyotype; monosomal karyotype
 BA2778R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD | MDS-related mutations (STAG2) NOT counted adverse alongside a favorable subtype
 BA2163R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
@@ -652,43 +462,28 @@ BA2723R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2492R	Adverse	NonInitial	True	adverse cytogenetics: -5/del(5q); complex karyotype; monosomal karyotype
 BA2088R	Adverse	NonInitial	True	adverse cytogenetics: -7; complex karyotype
 BA3202R	Adverse	NonInitial	False	adverse cytogenetics: -7; complex karyotype
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA3139R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
 BA3285R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
-nan	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
 BA2584R	Intermediate	Adverse	False	no favorable or adverse defining lesion
-nan	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype; monosomal karyotype
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Adverse	Adverse	True	adverse cytogenetics: -5/del(5q); -7; -17/abn(17p); complex karyotype; monosomal karyotype
 BA3079R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
-nan	Intermediate	MissingKaryo	True	no favorable or adverse defining lesion
 BA2417R	Intermediate	NonInitial	False	no favorable or adverse defining lesion
 BA2361R	Adverse	Adverse	True	adverse cytogenetics: -5/del(5q); complex karyotype; monosomal karyotype
 BA2450R	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2994R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
 BA2824R	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2079R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA3099R	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	MissingKaryo	True	no favorable or adverse defining lesion
 BA2552R	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2472R	Adverse	Adverse	True	MDS-related gene mutation: RUNX1,SRSF2,STAG2
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
-nan	Intermediate	NonAML	True	no favorable or adverse defining lesion
 BA2047R	Intermediate	Favorable	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA2101R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2082R	Adverse	Intermediate	True	MDS-related gene mutation: ZRSR2
-nan	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2456R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA2175R	Adverse	Adverse	False	adverse cytogenetics: -5/del(5q); -17/abn(17p); complex karyotype; monosomal karyotype
 BA2507R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2563R	Intermediate	Favorable	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA3164R	Adverse	NonInitial	True	mutated NPM1 with adverse-risk cytogenetics (complex karyotype; monosomal karyotype) -> adverse
 BA3235R	Adverse	NonInitial	True	mutated NPM1 with adverse-risk cytogenetics (complex karyotype) -> adverse
-nan	Intermediate	Favorable	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA2984R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD | MDS-related mutations (EZH2) NOT counted adverse alongside a favorable subtype
 BA2414R	Adverse	Adverse	True	adverse cytogenetics: -5/del(5q); -7; complex karyotype; monosomal karyotype
 BA2697R	Adverse	Adverse	True	adverse cytogenetics: -7
@@ -700,12 +495,8 @@ BA2454R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,BCOR,RUNX1,U2AF1
 BA2776R	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA2218R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
 BA2135R	Adverse	Adverse	True	adverse cytogenetics: -17/abn(17p); complex karyotype; monosomal karyotype
-nan	Adverse	NonInitial	True	adverse cytogenetics: -17/abn(17p); complex karyotype; monosomal karyotype
-nan	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA2914R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
-nan	Favorable	NonInitial	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2500R	Intermediate	Favorable	True	no favorable or adverse defining lesion
-nan	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
 BA2406R	Adverse	NonInitial	True	TP53 mutated at VAF >= 10%
 BA2830R	Favorable	NonInitial	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA2353R	Favorable	NonInitial	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
@@ -723,12 +514,10 @@ BA2971R	Adverse	Adverse	True	MDS-related gene mutation: RUNX1,SRSF2
 BA3410R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA3118R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA3206R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
-nan	Adverse	NonInitial	True	adverse cytogenetics: -5/del(5q); -7; complex karyotype; monosomal karyotype
 BA3217R	Adverse	Adverse	True	MDS-related gene mutation: STAG2
 BA3405R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,RUNX1,SRSF2
 BA3306R	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA3371R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA3413R	Adverse	Adverse	True	adverse cytogenetics: complex karyotype
 BA3411R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,STAG2
 BA3133R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
@@ -740,31 +529,23 @@ BA3103R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation d
 BA3271R	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA3152R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA3095R	Intermediate	Adverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Adverse	Adverse	True	adverse cytogenetics: -5/del(5q); -7; -17/abn(17p); complex karyotype; monosomal karyotype
 BA3251R	Intermediate	Adverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
-nan	Intermediate	NonAML	True	no favorable or adverse defining lesion
-nan	Intermediate	NonAML	True	no favorable or adverse defining lesion
 BA3362R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA3135R	Adverse	Favorable	True	MDS-related gene mutation: SRSF2
 BA3408R	Adverse	Adverse	True	adverse cytogenetics: complex karyotype
-nan	Adverse	Adverse	True	adverse cytogenetics: complex karyotype
 BA3187R	Favorable	NonInitial	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA3098R	Favorable	Favorable	False	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA3435R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,RUNX1,U2AF1
 BA3261R	Adverse	Favorable	True	MDS-related gene mutation: ASXL1
 BA3203R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
-nan	Intermediate	NonInitial	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
 BA3174R	Adverse	NonInitial	True	adverse cytogenetics: -5/del(5q); complex karyotype
 BA3299R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA3347R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA3126R	Adverse	Adverse	True	MDS-related gene mutation: STAG2
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA3380R	Intermediate	NonInitial	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA3114R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD
 BA3109R	Favorable	NonInitial	True	mutated NPM1 without FLT3-ITD | MDS-related mutations (RUNX1) NOT counted adverse alongside a favorable subtype
 BA3452R	Adverse	NonInitial	True	MDS-related gene mutation: RUNX1
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA3418R	Adverse	Adverse	True	adverse cytogenetics: inv(3)/MECOM; -5/del(5q); -17/abn(17p); complex karyotype; monosomal karyotype
 BA3245R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA3085R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
@@ -782,20 +563,14 @@ BA3222R	Adverse	NonInitial	True	adverse cytogenetics: -17/abn(17p); complex kary
 BA3450R	Adverse	Adverse	False	adverse cytogenetics: -5/del(5q); -17/abn(17p); complex karyotype; monosomal karyotype
 BA3167R	Intermediate	Intermediate	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
 BA3269R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA3110R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
 BA3156R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
-nan	Adverse	Adverse	True	mutated NPM1 with adverse-risk cytogenetics (-5/del(5q); complex karyotype; monosomal karyotype) -> adverse
 BA3226R	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA3421R	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA3232R	Adverse	Favorable	True	MDS-related gene mutation: BCOR
-nan	Intermediate	NonInitial	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
 BA3289R	Intermediate	Adverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA3430R	Intermediate	Intermediate	True	t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations
 BA3399R	Adverse	NonAML	True	MDS-related gene mutation: ASXL1
-nan	Adverse	Adverse	True	adverse cytogenetics: -5/del(5q); complex karyotype
-nan	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
-nan	Intermediate	Adverse	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA3384R	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA3427R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA3449R	Adverse	Adverse	True	adverse cytogenetics: inv(3)/MECOM; complex karyotype
@@ -804,8 +579,6 @@ BA3158R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation d
 BA3436R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD | MDS-related mutations (EZH2) NOT counted adverse alongside a favorable subtype
 BA3154R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA3162R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
-nan	Adverse	NonInitial	True	mutated NPM1 with adverse-risk cytogenetics (inv(3)/MECOM; -7; monosomal karyotype) -> adverse
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA3352R	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA3084R	Adverse	Adverse	True	adverse cytogenetics: KMT2A-rearranged
 BA3149R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,RUNX1,U2AF1
@@ -819,13 +592,10 @@ BA3181R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,SRSF2,STAG2
 BA3341R	Adverse	Intermediate	True	adverse cytogenetics: -7
 BA3191R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA3197R	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA3448R	Adverse	Adverse	True	adverse cytogenetics: KMT2A-rearranged
 BA3453R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD | MDS-related mutations (STAG2) NOT counted adverse alongside a favorable subtype
 BA3406R	Adverse	Intermediate	True	MDS-related gene mutation: BCOR
 BA3308R	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype
-nan	Adverse	Adverse	True	adverse cytogenetics: complex karyotype
-nan	Adverse	Adverse	True	adverse cytogenetics: -7; complex karyotype
 BA3186R	Favorable	NonInitial	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category) | MDS-related mutations (SF3B1) NOT counted adverse alongside a favorable subtype
 BA3334R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,SRSF2,STAG2
 BA3447R	Adverse	Intermediate	True	MDS-related gene mutation: BCOR,STAG2,U2AF1
@@ -837,7 +607,6 @@ BA3318R	Adverse	Adverse	True	adverse cytogenetics: complex karyotype
 BA3216R	Intermediate	Intermediate	True	wild-type NPM1 with FLT3-ITD, no adverse lesion
 BA3332R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA3214R	Adverse	NonInitial	True	MDS-related gene mutation: SF3B1
-nan	Adverse	Adverse	True	adverse cytogenetics: -5/del(5q); -7; complex karyotype; monosomal karyotype
 BA3141R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA3373R	Adverse	Adverse	True	adverse cytogenetics: inv(3)/MECOM; -5/del(5q); -7; complex karyotype; monosomal karyotype
 BA3319R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
@@ -864,11 +633,9 @@ BA3175R	Adverse	NonInitial	True	adverse cytogenetics: complex karyotype; monosom
 BA3422R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA3228R	Adverse	NonInitial	True	MDS-related gene mutation: BCOR,RUNX1,SF3B1
 BA3213R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
-nan	Intermediate	Adverse	True	no favorable or adverse defining lesion
 BA3415R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA3270R	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA3324R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
 BA3194R	Adverse	NonInitial	True	MDS-related gene mutation: STAG2
 BA3335R	Intermediate	FavorableOrIntermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA3199R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,RUNX1,SRSF2
@@ -879,7 +646,6 @@ BA3394R	Adverse	NonInitial	True	MDS-related gene mutation: BCOR
 BA3412R	Adverse	Intermediate	True	adverse cytogenetics: t(8;16)/KAT6A::CREBBP
 BA3293R	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA3250R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
-nan	Adverse	Adverse	True	adverse cytogenetics: inv(3)/MECOM
 BA3177R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA3315R	Adverse	Adverse	True	TP53 mutated at VAF >= 10%
 BA3182R	Favorable	Favorable	False	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
@@ -924,20 +690,10 @@ BA3211R	Adverse	Adverse	True	MDS-related gene mutation: RUNX1,U2AF1
 BA3237R	Adverse	NonInitial	True	MDS-related gene mutation: ASXL1,SRSF2
 BA3130R	Adverse	Intermediate	True	MDS-related gene mutation: ZRSR2
 BA3376R	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Intermediate	Favorable	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA3137R	Favorable	Favorable	True	core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)
 BA3300R	Intermediate	Intermediate	False	no favorable or adverse defining lesion
 BA3375R	Intermediate	Intermediate	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA3249R	Intermediate	NonInitial	True	no favorable or adverse defining lesion
 BA3385R	Intermediate	Favorable	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
 BA3416R	Intermediate	Intermediate	True	no favorable or adverse defining lesion
-nan	Adverse	NonInitial	True	adverse cytogenetics: -7; -17/abn(17p); complex karyotype; monosomal karyotype
 BA3123R	Adverse	Adverse	True	MDS-related gene mutation: ASXL1,SRSF2
-nan	Intermediate	Favorable	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Intermediate	NonInitial	True	mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD
-nan	Intermediate	MissingKaryo	True	no favorable or adverse defining lesion
-nan	Intermediate	NonInitial	True	no favorable or adverse defining lesion
-nan	Favorable	Favorable	True	mutated NPM1 without FLT3-ITD

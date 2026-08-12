@@ -80,7 +80,10 @@ not license counterfactual statements about what would happen under a different 
 | stratum | n | deaths | C (full) | C (age+ELN) |
 |---|---|---|---|---|
 | intensive induction | 284 | 139 | 0.724 | 0.691 |
-| non-intensive | 71 | 55 | **0.554** | 0.481 |
+| non-intensive | 71 | 55 | **0.554** ¹ | 0.481 |
+
+¹ **Superseded — this was a pooled-fitting artefact.** The 0.554 came from a model trained on the whole cohort and evaluated inside this subgroup. Fitting *within* the stratum gives **0.681**, and adding the published TP53/FLT3-ITD/NRAS/KRAS rule gives **0.701** (`ELN2022_RISK_BENCHMARK.md` §4.2). What survives is the finding about the *guideline*: ELN 2017 scores 0.496 and ELN 2022 0.462 in this stratum — at or below chance.
+
 
 The model works in fit patients receiving standard therapy and **is close to useless in the
 non-intensive group**, where age+ELN is actually *below* chance. Small n, but it should be stated.

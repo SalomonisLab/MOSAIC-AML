@@ -119,13 +119,31 @@ into a treatment decision.
 
 ## 3. The remaining agents
 
-**Specimen / control gate (Layer A).** A RandomForest on 89-dimensional cell-state composition
-classifies healthy versus diseased before any mutation calling. Two figures are quoted in different
-places and both are real: **AUROC 0.965** on the full validated composition task, and **≈ 0.91
-within-dataset**, the stricter estimate that controls for batch and is the one we use when arguing the
-signal is biology rather than cohort. The operating point is deliberately conservative — disease
-sensitivity ≥ 0.95 — so a "control" call is high-confidence while a false "diseased" call is harmless,
-that specimen simply returning an empty mutation panel.
+**Specimen / control gate (Layer A).** An L2-penalised **logistic regression** (class-balanced, C = 0.1)
+on 89-dimensional cell-state composition, applied before any mutation calling. Two figures are quoted in
+different places and both are real: **AUROC 0.965** on the full validated composition task, and
+**≈ 0.91 within-dataset**, the stricter estimate that controls for batch and is the one we use when
+arguing the signal is biology rather than cohort.
+
+The operating point is deliberately conservative — the threshold is set for **disease sensitivity 0.99**
+— and the price of that is stated plainly here because it was previously understated: **control
+specificity is 0.50**, measured out-of-fold on the 24 controls in a 287-sample training set. The gate
+calls half of genuinely healthy specimens positive.
+
+Two consequences follow, and earlier versions of this document got the second one wrong:
+
+- A **`control`** call is strong evidence of health and is protected by the 0.99 sensitivity target.
+- A positive call is therefore reported as **`not_excluded`**, not `diseased`, and it is **not
+  harmless**. A mis-gated control does not merely return a thin mutation panel — it proceeds through the
+  whole pipeline, and the survival layer will issue a prognosis for it. A healthy pooled-CD34 control
+  once scored at the 97th risk percentile with 0.4% one-year survival. Two normal sorted populations in
+  GSE281087 (CD34-1, GMP-1) were called positive; that is the operating point behaving as designed, not
+  a malfunction, which is exactly why the label had to change.
+
+Alternative operating points are now stored with the model: Youden (threshold 0.842) gives disease
+sensitivity 0.829 at control specificity **1.00**, and a balanced 0.5 cut gives 0.932 / 0.75. On 24
+controls those specificity estimates are themselves imprecise, but they show the 0.99-sensitivity choice
+is spending a great deal for its last few points of recall.
 
 **Cell-state assignment (Layer A).** cellHarmony projection onto the `Hs-MarrowAtlas-L3M` reference
 (CP10k + log1p, cosine matching) yields a per-cell state label and cosine score, aggregated to
