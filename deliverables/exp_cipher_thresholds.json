@@ -1,0 +1,265 @@
+{
+ "generated": "2026-08-12 12:35",
+ "cohorts": {
+  "sealed single-cell": {
+   "n_categories": 28,
+   "n_calls": 728,
+   "rules": {
+    "deployed": {
+     "tp": 52,
+     "fp": 43,
+     "fn": 51,
+     "tn": 582,
+     "sensitivity": 0.5049,
+     "specificity": 0.9312,
+     "precision": 0.5474,
+     "f1": 0.5253
+    },
+    "cohort_percentile": {
+     "tp": 43,
+     "fp": 43,
+     "fn": 60,
+     "tn": 582,
+     "sensitivity": 0.4175,
+     "specificity": 0.9312,
+     "precision": 0.5,
+     "f1": 0.455
+    },
+    "prevalence": {
+     "tp": 48,
+     "fp": 41,
+     "fn": 55,
+     "tn": 584,
+     "sensitivity": 0.466,
+     "specificity": 0.9344,
+     "precision": 0.5393,
+     "f1": 0.5
+    },
+    "oracle": {
+     "tp": 71,
+     "fp": 14,
+     "fn": 32,
+     "tn": 611,
+     "sensitivity": 0.6893,
+     "specificity": 0.9776,
+     "precision": 0.8353,
+     "f1": 0.7553
+    },
+    "oracle_split_half": {
+     "tp": 56,
+     "fp": 38,
+     "fn": 47,
+     "tn": 587,
+     "sensitivity": 0.5437,
+     "specificity": 0.9392,
+     "precision": 0.5957,
+     "f1": 0.5685
+    }
+   }
+  },
+  "Trumpp/Waclawiczek": {
+   "n_categories": 17,
+   "n_calls": 272,
+   "rules": {
+    "deployed": {
+     "tp": 19,
+     "fp": 46,
+     "fn": 7,
+     "tn": 200,
+     "sensitivity": 0.7308,
+     "specificity": 0.813,
+     "precision": 0.2923,
+     "f1": 0.4176
+    },
+    "cohort_percentile": {
+     "tp": 16,
+     "fp": 35,
+     "fn": 10,
+     "tn": 211,
+     "sensitivity": 0.6154,
+     "specificity": 0.8577,
+     "precision": 0.3137,
+     "f1": 0.4156
+    },
+    "prevalence": {
+     "tp": 15,
+     "fp": 38,
+     "fn": 11,
+     "tn": 208,
+     "sensitivity": 0.5769,
+     "specificity": 0.8455,
+     "precision": 0.283,
+     "f1": 0.3797
+    },
+    "oracle": {
+     "tp": 17,
+     "fp": 4,
+     "fn": 9,
+     "tn": 242,
+     "sensitivity": 0.6538,
+     "specificity": 0.9837,
+     "precision": 0.8095,
+     "f1": 0.7234
+    },
+    "oracle_split_half": {
+     "tp": 13,
+     "fp": 11,
+     "fn": 13,
+     "tn": 235,
+     "sensitivity": 0.5,
+     "specificity": 0.9553,
+     "precision": 0.5417,
+     "f1": 0.52
+    }
+   }
+  },
+  "GSE281087": {
+   "n_categories": 26,
+   "n_calls": 390,
+   "rules": {
+    "deployed": {
+     "tp": 12,
+     "fp": 54,
+     "fn": 18,
+     "tn": 306,
+     "sensitivity": 0.4,
+     "specificity": 0.85,
+     "precision": 0.1818,
+     "f1": 0.25
+    },
+    "cohort_percentile": {
+     "tp": 12,
+     "fp": 39,
+     "fn": 18,
+     "tn": 321,
+     "sensitivity": 0.4,
+     "specificity": 0.8917,
+     "precision": 0.2353,
+     "f1": 0.2963
+    },
+    "prevalence": {
+     "tp": 11,
+     "fp": 28,
+     "fn": 19,
+     "tn": 332,
+     "sensitivity": 0.3667,
+     "specificity": 0.9222,
+     "precision": 0.2821,
+     "f1": 0.3188
+    },
+    "oracle": {
+     "tp": 17,
+     "fp": 2,
+     "fn": 13,
+     "tn": 358,
+     "sensitivity": 0.5667,
+     "specificity": 0.9944,
+     "precision": 0.8947,
+     "f1": 0.6939
+    },
+    "oracle_split_half": {
+     "tp": 11,
+     "fp": 13,
+     "fn": 19,
+     "tn": 347,
+     "sensitivity": 0.3667,
+     "specificity": 0.9639,
+     "precision": 0.4583,
+     "f1": 0.4074
+    }
+   }
+  },
+  "Leucegene": {
+   "n_categories": 29,
+   "n_calls": 5014,
+   "rules": {
+    "deployed": {
+     "tp": 208,
+     "fp": 174,
+     "fn": 156,
+     "tn": 4476,
+     "sensitivity": 0.5714,
+     "specificity": 0.9626,
+     "precision": 0.5445,
+     "f1": 0.5576
+    },
+    "cohort_percentile": {
+     "tp": 168,
+     "fp": 204,
+     "fn": 196,
+     "tn": 4446,
+     "sensitivity": 0.4615,
+     "specificity": 0.9561,
+     "precision": 0.4516,
+     "f1": 0.4565
+    },
+    "prevalence": {
+     "tp": 143,
+     "fp": 155,
+     "fn": 221,
+     "tn": 4495,
+     "sensitivity": 0.3929,
+     "specificity": 0.9667,
+     "precision": 0.4799,
+     "f1": 0.432
+    },
+    "oracle": {
+     "tp": 236,
+     "fp": 108,
+     "fn": 128,
+     "tn": 4542,
+     "sensitivity": 0.6484,
+     "specificity": 0.9768,
+     "precision": 0.686,
+     "f1": 0.6667
+    },
+    "oracle_split_half": {
+     "tp": 194,
+     "fp": 104,
+     "fn": 170,
+     "tn": 4546,
+     "sensitivity": 0.533,
+     "specificity": 0.9776,
+     "precision": 0.651,
+     "f1": 0.5861
+    }
+   }
+  }
+ },
+ "note": "ORACLE uses the test labels to place each category's threshold. It is the ceiling on what threshold placement can buy, not a deployable rule.",
+ "headroom": {
+  "sealed single-cell": {
+   "deployed_f1": 0.5253,
+   "oracle_in_sample_f1": 0.7553,
+   "oracle_split_half_f1": 0.5685,
+   "best_label_free_rule_f1": 0.5,
+   "transferable_headroom": 0.0432,
+   "label_free_rules_capture": -0.0253
+  },
+  "Trumpp/Waclawiczek": {
+   "deployed_f1": 0.4176,
+   "oracle_in_sample_f1": 0.7234,
+   "oracle_split_half_f1": 0.52,
+   "best_label_free_rule_f1": 0.4156,
+   "transferable_headroom": 0.1024,
+   "label_free_rules_capture": -0.002
+  },
+  "GSE281087": {
+   "deployed_f1": 0.25,
+   "oracle_in_sample_f1": 0.6939,
+   "oracle_split_half_f1": 0.4074,
+   "best_label_free_rule_f1": 0.3188,
+   "transferable_headroom": 0.1574,
+   "label_free_rules_capture": 0.0688
+  },
+  "Leucegene": {
+   "deployed_f1": 0.5576,
+   "oracle_in_sample_f1": 0.6667,
+   "oracle_split_half_f1": 0.5861,
+   "best_label_free_rule_f1": 0.4565,
+   "transferable_headroom": 0.0285,
+   "label_free_rules_capture": -0.1011
+  }
+ },
+ "headroom_conclusion": "Threshold placement is worth a lot -- but only WITH labels from the target cohort. Fitting per-category thresholds on half a cohort and transferring them to the other half gains F1 on every cohort, most where the caller is worst. The label-free rules (cohort percentile, prevalence matching) do NOT capture it and are worse than the shipped thresholds on three of four cohorts. The in-sample oracle is inflated -- up to 29 free parameters on as few as 390 calls -- and split-half is the number to quote."
+}

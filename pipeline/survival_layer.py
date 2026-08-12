@@ -279,11 +279,18 @@ def run_for_expression(z_row, mutations=None, clinical=None, cohort="beataml",
         "caveat": ("Trained on BeatAML2 (bulk RNA, initial-diagnosis specimens). This is a prognostic "
                    "estimate from data available at diagnosis, not a statement about what will happen "
                    "to this patient, and it does not account for the treatment they go on to receive."),
-        "assumes_aml": (None if specimen_class else
-                        "no healthy-vs-diseased gate ran for this input (that needs single cells), so "
-                        "this number ASSUMES the sample is from an AML patient. Scored against a "
-                        "healthy donor it will still return a risk percentile, and that percentile "
-                        "will be meaningless."),
+        # A gate result only silences this warning if it actually SAYS something. `not_excluded` does
+        # not: the gate calls ~50% of genuinely healthy specimens positive, so treating its positive
+        # call as confirmation that this is a patient would launder a coin flip into a premise.
+        "assumes_aml": (None if str(specimen_class).lower() == "control" else
+                        (("the control gate did not exclude disease, but at its operating point it "
+                          "calls about half of healthy specimens positive, so it has NOT established "
+                          "that this is an AML patient — this number still assumes it.")
+                         if specimen_class else
+                         ("no healthy-vs-diseased gate ran for this input (that needs single cells), so "
+                          "this number ASSUMES the sample is from an AML patient. Scored against a "
+                          "healthy donor it will still return a risk percentile, and that percentile "
+                          "will be meaningless."))),
     }
 
 

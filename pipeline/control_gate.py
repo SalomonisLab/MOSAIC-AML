@@ -15,7 +15,7 @@ the mutation panel. So a 'control' call is high-confidence healthy.
   use:    from control_gate import load_gate, score_gate
 -> pipeline/control_gate.pkl
 """
-import os, sys, pickle, argparse
+import os, sys, json, pickle, argparse
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np, pandas as pd
 
@@ -75,9 +75,23 @@ def train(ctx):
     keep = X.std(0) > 0                                               # final model on the FULL cohort
     sc = StandardScaler().fit(X[:, keep])
     model = LogisticRegression(C=0.1, class_weight="balanced", max_iter=3000).fit(sc.transform(X[:, keep]), yy)
+    # Keep the out-of-fold scores. Without them any question about the operating point ("what would a
+    # balanced threshold give?") needed a full retrain with atlas access, so the 0.50 control
+    # specificity went unexamined for months while the gate's positive call was labelled 'diseased'.
+    j = (np.array([((p >= t) & (yt == 1)).sum() / max(1, (yt == 1).sum())
+                   + ((p < t) & (yt == 0)).sum() / max(1, (yt == 0).sum()) - 1 for t in np.unique(p)]))
+    t_youden = float(np.unique(p)[int(np.argmax(j))]) if len(j) else float(thr)
+    alt = {}
+    for nm, t in (("youden", t_youden), ("balanced_0.5", 0.5)):
+        alt[nm] = {"threshold": round(float(t), 4),
+                   "sens_disease": round(float(((p >= t) & (yt == 1)).sum() / max(1, (yt == 1).sum())), 4),
+                   "spec_control": round(float(((p < t) & (yt == 0)).sum() / max(1, (yt == 0).sum())), 4)}
     gate = {"modality": MODALITY, "cols": cols, "keep": keep, "scaler": sc, "model": model,
             "threshold": float(thr), "cv_auc": float(auc), "cv_sens_disease": float(sens),
-            "cv_spec_control": float(spec), "n": len(ids), "n_control": int((yy == 0).sum())}
+            "cv_spec_control": float(spec), "n": len(ids), "n_control": int((yy == 0).sum()),
+            "oof_scores": p.tolist(), "oof_labels": yt.tolist(),
+            "alternative_operating_points": alt}
+    print("  alternative operating points: %s" % json.dumps(alt))
     pickle.dump(gate, open(GATE_PATH, "wb"))
     print("CONTROL GATE trained: cv_auc=%.3f thr=%.3f sens(disease)=%.3f spec(control)=%.3f n=%d nControl=%d"
           % (auc, thr, sens, spec, len(ids), int((yy == 0).sum())))
@@ -95,7 +109,19 @@ def load_gate(path=GATE_PATH):
 
 
 def score_gate(gate, comp_series):
-    """comp_series: cell-state -> fraction for ONE sample. Returns {call, p_diseased, threshold, cv_auc}."""
+    """comp_series: cell-state -> fraction for ONE sample.
+
+    The positive call is `not_excluded`, NOT `diseased`, and the difference is the whole point. The
+    threshold is chosen to keep disease sensitivity at 0.99, and the price of that is a measured
+    **control specificity of 0.50** on 24 training controls: the gate calls half of genuinely healthy
+    specimens positive. Two normal sorted populations in GSE281087 (CD34-1, GMP-1) were called
+    'diseased' by the old label, which is not a malfunction -- it is what a 0.50-specificity gate does,
+    and reporting it as 'diseased' overstated it every time.
+
+    So: a **control** call is strong evidence of health and is worth acting on (that direction is
+    99%-sensitivity-protected). A **not_excluded** call is close to no evidence at all, and every field
+    below exists so a reader cannot mistake it for a positive finding.
+    """
     cols = gate["cols"]
     vec = np.array([float(comp_series.get(c.split("::", 1)[-1], comp_series.get(c, 0.0))) for c in cols], float)
     s = vec.sum()
@@ -103,9 +129,21 @@ def score_gate(gate, comp_series):
         vec = vec / s
     Xk = vec[gate["keep"]].reshape(1, -1)
     p = float(gate["model"].predict_proba(gate["scaler"].transform(Xk))[:, 1][0])
-    return {"call": "diseased" if p >= gate["threshold"] else "control",
+    pos = p >= gate["threshold"]
+    spec = gate.get("cv_spec_control")
+    return {"call": "not_excluded" if pos else "control",
             "p_diseased": round(p, 4), "threshold": round(gate["threshold"], 4),
-            "cv_auc": gate["cv_auc"], "modality": gate["modality"]}
+            "cv_auc": gate["cv_auc"], "modality": gate["modality"],
+            "control_specificity": spec, "n_control_train": gate.get("n_control"),
+            "interpretation": (
+                ("disease NOT excluded. This is not a positive finding: at the deployed operating "
+                 "point the gate calls %.0f%% of genuinely healthy specimens positive, so this call "
+                 "carries little information on its own." % (100 * (1 - (spec if spec is not None else 0.5))))
+                if pos else
+                ("called healthy. The threshold is set for %.0f%% disease sensitivity, so a control "
+                 "call is high-confidence." % (100 * (gate.get("cv_sens_disease") or 0.99)))),
+            "trained_on": ("%s samples, of which %s controls -- the control side is the thin one"
+                           % (gate.get("n"), gate.get("n_control")))}
 
 
 if __name__ == "__main__":

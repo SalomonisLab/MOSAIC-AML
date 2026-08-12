@@ -1,0 +1,49 @@
+{
+ "generated": "2026-08-12 12:22",
+ "cohort": {
+  "clinical_rows_with_expression": 671,
+  "dropped_unknown_vital_status": 22,
+  "after_outcome_filter": 649,
+  "initial_diagnosis_only": true,
+  "final_patients": 444,
+  "events": 245,
+  "censored": 199,
+  "median_followup_years_censored": 2.26
+ },
+ "seeds": 40,
+ "folds": 3,
+ "experiments": {
+  "A8": {
+   "name": "horizons",
+   "result": {
+    "age_eln": {
+     "c_index": 0.7025,
+     "auc_0.5y": 0.7543,
+     "n_0.5y": 401,
+     "auc_1y": 0.7944,
+     "n_1y": 380,
+     "auc_2y": 0.8237,
+     "n_2y": 351,
+     "auc_3y": 0.8362,
+     "n_3y": 324,
+     "auc_5y": 0.8501,
+     "n_5y": 292
+    },
+    "deployed": {
+     "c_index": 0.7668,
+     "auc_0.5y": 0.8298,
+     "n_0.5y": 401,
+     "auc_1y": 0.8511,
+     "n_1y": 380,
+     "auc_2y": 0.8634,
+     "n_2y": 351,
+     "auc_3y": 0.8787,
+     "n_3y": 324,
+     "auc_5y": 0.8875,
+     "n_5y": 292
+    }
+   },
+   "seconds": 14.5
+  }
+ }
+}
