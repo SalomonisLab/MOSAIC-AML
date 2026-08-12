@@ -1,0 +1,128 @@
+Table 6. 2022 ELN risk classiﬁcation by genetics at
+initial diagnosis*
+Risk category†
+Genetic abnormality
+Favorable
+
+t(8;21)(q22;q22.1)/RUNX1::RUNX1T1†,‡
+
+inv(16)(p13.1q22) or t(16;16)(p13.1;q22)/
+CBFB::MYH11†,‡
+
+Mutated NPM1†,§ without FLT3-ITD
+
+bZIP in-frame mutated CEBPAk
+Intermediate
+
+Mutated NPM1†,§ with FLT3-ITD
+
+Wild-type NPM1 with FLT3-ITD (without
+adverse-risk genetic lesions)
+
+t(9;11)(p21.3;q23.3)/MLLT3::KMT2A†,¶
+
+Cytogenetic and/or molecular
+abnormalities not classiﬁed as
+favorable or adverse
+Adverse
+
+t(6;9)(p23.3;q34.1)/DEK::NUP214
+
+t(v;11q23.3)/KMT2A-rearranged#
+
+t(9;22)(q34.1;q11.2)/BCR::ABL1
+
+t(8;16)(p11.2;p13.3)/KAT6A::CREBBP
+
+inv(3)(q21.3q26.2) or t(3;3)(q21.3;q26.2)/
+GATA2, MECOM(EVI1)
+
+t(3q26.2;v)/MECOM(EVI1)-rearranged
+
+25 or del(5q); 27; 217/abn(17p)
+
+Complex karyotype,** monosomal
+karyotype††
+
+Mutated ASXL1, BCOR, EZH2, RUNX1,
+SF3B1, SRSF2, STAG2, U2AF1, and/or
+ZRSR2‡‡
+
+Mutated TP53a
+*Frequencies, response rates and outcome measures should be reported by risk
+category, and, if sufﬁcient numbers are available, by speciﬁc genetic lesions indicated.
+†Mainly based on results observed in intensively treated patients. Initial risk assignment
+may change during the treatment course based on the results from analyses of
+measurable residual disease.
+‡Concurrent KIT and/or FLT3 gene mutation does not alter risk categorization.
+§AML with NPM1 mutation and adverse-risk cytogenetic abnormalities are categorized
+as adverse-risk.
+kOnly in-frame mutations affecting the basic leucine zipper (bZIP) region of CEBPA,
+irrespective whether they occur as monoallelic or biallelic mutations, have been
+associated with favorable outcome.
+¶The presence of t(9;11)(p21.3;q23.3) takes precedence over rare, concurrent adverse-
+risk gene mutations.
+#Excluding KMT2A partial tandem duplication (PTD).
+**Complex karyotype: $3 unrelated chromosome abnormalities in the absence of
+other class-deﬁning recurring genetic abnormalities; excludes hyperdiploid karyotypes
+with three or more trisomies (or polysomies) without structural abnormalities.
+††Monosomal karyotype: presence of two or more distinct monosomies (excluding loss
+of X or Y), or one single autosomal monosomy in combination with at least one
+structural chromosome abnormality (excluding core-binding factor AML).
+‡‡For the time being, these markers should not be used as an adverse prognostic
+marker if they co-occur with favorable-risk AML subtypes.
+aTP53 mutation at a variant allele fraction of at least 10%, irrespective of the TP53
+allelic status (mono- or biallelic mutation); TP53 mutations are signiﬁcantly associated
+with AML with complex and monosomal karyotype.
+2022 ELN AML RECOMMENDATIONS
+blood® 22 SEPTEMBER 2022 | VOLUME 140, NUMBER 12
+1359
+Downloaded from http://ashpublications.org/blood/article-pdf/140/12/1345/1921355/bloodbld2022016867.pdf by guest on 08 July 2026
+
+Gemtuzumab-ozogamicin (GO) is a humanized anti-CD33 IgG4
+antibody chemically linked to a calicheamicin-based cytotoxic
+warhead. Following a history of initial FDA approval followed by
+retraction based on questionable clinical beneﬁt, a subsequent
+randomized study demonstrated an EFS advantage among
+patients 50 to 70 years with de novo AML, with beneﬁt limited
+to favorable or intermediate cytogenetic risk disease.112,113
+Although 4 other open-label randomized studies individually
+failed to demonstrate improved survival for GO added to front
+line therapy in AML, a meta-analysis of all 5 studies indicated a
+beneﬁt, particularly in patients with CBF-AML.114 In another ran-
+domized study, a reduction of the relapse probability and
+greater mutant NPM1 molecular clearance was shown in
+patients with NPM1-mutated AML, but with no EFS differ-
+ence.70,115 GO dosed at 3 mg/m2 (capped at 5 mg) D1, 4, and
+7 of induction and day 1 of consolidation has been approved
+for patients with previously untreated CD33 antigen positive
+AML in combination with daunorubicin and cytarabine, but a sin-
+gle dose of GO delivered on day 1 of induction may also be
+efﬁcacious.114,116,117
+CPX-351 is a dual-drug liposomal formulation that encapsu-
+lates cytarabine/daunorubicin in a 5:1 ﬁxed molar ratio.118
+In an open label phase 3 randomized study in newly diag-
+nosed patients aged 60 to 75 years with disease subtypes
+including therapy-related AML, a history of MDS or CMML,
+or de novo AML with myelodysplasia-related cytogenetic
+abnormalities CPX-351 improved the clinical response rate
+and
+OS
+compared
+with
+induction
+with
+cytarabine-
+daunorubicin, followed by “5 1 2” consolidation.119 Five-
+year OS in the CPX-351 arm was improved from 10% to
+18% compared with patients receiving “7 1 3.”120 CPX-351
+delayed the median time to neutrophil and platelet recovery
+by approximately 7 days and increased the risk of bleeding.
+Early 30-day mortality, however, was not increased by
+CPX-351 (5.9%) compared with “7 1 3” (10.6%), and less
+mucositis was noted. Randomized data are lacking for
+patients under 60 years and for AML following prior MPN.
+Consolidation therapy After attainment of CR (or CRh/CRi),
+patients are consolidated ideally with regimens that include
+intermediate-dose cytarabine.121 Consecutive administration on
+days 

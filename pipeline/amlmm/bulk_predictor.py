@@ -101,7 +101,54 @@ class BulkMutationPredictor:
             r = self.predict_one(cat, z, ref)         # percentile against the SAME cohort we z-scored to
             if r is not None:
                 out[cat] = r
+        w = self.reference_fit(z, ref)
+        if w:
+            for r in out.values():
+                r["reference_mismatch"] = w
         return dict(sorted(out.items(), key=lambda kv: -(kv[1]["probability"] or 0)))
+
+    # E|N(0,1)| -- what mean|z| must be for a specimen the reference actually describes
+    EXPECTED_ABS_Z = 0.7979
+    MISMATCH_AT = 2.0
+
+    def reference_fit(self, z, ref):
+        """Does the reference we just z-scored against actually describe this specimen? Works at n=1.
+
+        The z-scoring itself supplies the null. If the reference describes the specimen, its z over the
+        model's genes is standard normal and mean|z| must land near E|N(0,1)| = 0.798 -- by
+        construction, with no cohort, no comparison set and no threshold to tune from data.
+
+        Measured:
+
+            BeatAML specimen vs `beataml`   0.739   (n=707, p95 = 0.99)   in-distribution
+            atlas single-cell vs `sc`       0.770                          in-distribution
+            GSE281087 vs `sc`              21.25    (n=15)                 27x off -- FLAGGED
+            atlas single-cell vs `beataml`  5.35                           wrong reference -- FLAGGED
+
+        This is the guard the single-patient path was missing. `predict_cohort` needs >=8 samples, and
+        two cheaper detectors failed before this one: a present-call count (fired on 0/15
+        out-of-distribution and 13/20 in-distribution) and the cellHarmony mapping cosine, which runs
+        backwards because clean sorted populations map crisply while messy AML maps poorly.
+
+        It does not correct the calls -- it says they rest on a reference that does not fit, which on
+        GSE281087 is the difference between 54 wrong positive calls and 54 wrong positive calls that
+        announce themselves.
+        """
+        v = np.asarray(z, float).ravel()
+        v = v[np.isfinite(v)]
+        if v.size < 100:
+            return None
+        mz = float(np.mean(np.abs(v)))
+        if mz <= self.MISMATCH_AT:
+            return None
+        return {"flag": "reference does not describe this specimen",
+                "mean_abs_z": round(mz, 3), "expected": self.EXPECTED_ABS_Z, "reference": ref,
+                "ratio": round(mz / self.EXPECTED_ABS_Z, 1),
+                "detail": ("z-scored against the %r reference this specimen has mean|z| = %.2f, where a "
+                           "specimen the reference describes gives ~0.8. The calls below are ranked "
+                           "against a cohort this sample does not belong to; treat their ORDER as "
+                           "informative and their present/absent thresholds as unreliable."
+                           % (ref, mz))}
 
     # A per-sample "too many present calls" detector was built here and REMOVED after measurement: on
     # GSE281087 each specimen makes 4-7 present calls against 3.7 expected for a reference sample, so it

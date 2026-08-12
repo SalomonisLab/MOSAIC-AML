@@ -1,210 +1,244 @@
 #!/usr/bin/env python3
-"""Assign ELN 2022 risk to BeatAML2 specimens — ONLY where it is determinable with high confidence.
+"""ELN 2022 risk classification, inferred for BeatAML2.
 
-Scope decision (deliberate): a cohort-wide ELN 2022 re-derivation is NOT possible here. ELN risk is a
-diagnosis-time label, and the adverse tier turns on ISCN karyotype parsing (complex / monosomal /
--5,del(5q) / -7 / -17,abn(17p)) that BeatAML only provides as free-text strings — 500/842 are non-trivial,
-multi-clone, sometimes sex-discordant. BeatAML's own expert curators left 27 eligible cases ambiguous.
-So this ASSIGNS where the answer is forced by data we hold cleanly, and ABSTAINS everywhere else.
+BeatAML ships an `ELN2017` column and nothing later, so every benchmark in this platform has been
+scored against the 2017 standard while claiming relevance to current practice. The two differ in ways
+that matter for exactly the patients we get wrong:
 
-The key insight that makes a useful subset possible: adverse MOLECULAR markers are decisive regardless of
-karyotype. If TP53 (VAF>=10%) or an MDS-related gene is mutated and no favorable-defining lesion and no
-t(9;11) is present, unparsed cytogenetics can only reinforce Adverse — never rescue it. Likewise the
-curated `consensusAMLFusions` column gives the class-defining rearrangements without ISCN parsing.
+  FLT3-ITD allelic ratio   USED in 2017 (AR >= 0.5 changed the category), DROPPED in 2022. Any
+                           FLT3-ITD with mutated NPM1 is intermediate, ratio irrelevant.
+  CEBPA                    2017 required BIALLELIC. 2022 requires an in-frame mutation in the bZIP
+                           region, monoallelic or biallelic -- a different set of patients.
+  MDS-related genes        NEW in 2022: ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1, ZRSR2
+                           are adverse (2017 had only ASXL1 and RUNX1).
+  TP53                     NEW in 2022, and explicitly AT A VARIANT ALLELE FRACTION >= 10%,
+                           irrespective of allelic status.
+  t(9;11)                  intermediate, and takes precedence over concurrent adverse gene mutations.
 
-Rules + footnotes taken verbatim from Dohner/Lowenberg, Blood 2022 (in the supplied zip):
-  * Favorable   : t(8;21)/RUNX1::RUNX1T1; inv(16)|t(16;16)/CBFB::MYH11; NPM1mut w/o FLT3-ITD;
-                  bZIP in-frame CEBPA
-  * Intermediate: NPM1mut with FLT3-ITD; NPM1wt with FLT3-ITD (no adverse lesions);
-                  t(9;11)/MLLT3::KMT2A; anything not favorable or adverse
-  * Adverse     : t(6;9)/DEK::NUP214; t(v;11q23.3)/KMT2A-r (excl. PTD); t(9;22)/BCR::ABL1;
-                  t(8;16)/KAT6A::CREBBP; inv(3)|t(3;3)/GATA2,MECOM; t(3q26.2;v)/MECOM-r;
-                  -5|del(5q); -7; -17|abn(17p); complex; monosomal;
-                  mutated ASXL1/BCOR/EZH2/RUNX1/SF3B1/SRSF2/STAG2/U2AF1/ZRSR2; TP53 VAF>=10%
-  footnotes honoured:
-    (S) NPM1 + adverse-risk cytogenetics -> Adverse  => a favourable NPM1 call needs a NORMAL karyotype
-    (||) only IN-FRAME bZIP CEBPA counts, mono- or biallelic
-    (P) t(9;11) takes precedence over rare concurrent adverse-risk GENE mutations
-    (++) MDS-related gene mutations are NOT adverse when they co-occur with a favorable-risk subtype
-    (‡) concurrent KIT/FLT3 does not alter CBF risk
-    (a) TP53 at VAF >= 10%, irrespective of allelic status
+Source: Dohner H, Wei AH, Appelbaum FR, et al. Diagnosis and management of AML in adults: 2022 ELN
+recommendations. Blood 140(12):1345-1377, Table 6.
 
-  python eln2022.py            # writes labels/eln2022_beataml.tsv + prints the audit
+THE VAF THRESHOLD IS A REAL DEGREE OF FREEDOM. The guideline names 10% for TP53 and is silent for
+every other gene. 40% is the conventional proxy for a clonal/biallelic event. In BeatAML, TP53 is
+mutated in 80 specimens at >= 10% and 70 at >= 40%, so the choice moves one in eight TP53 patients --
+which is why `--vaf` is a parameter here and every downstream benchmark is run at both.
+
+  python eln2022.py [--vaf 0.10] [--out ...]  ->  labels/eln2022_beataml_vaf10.tsv
 """
-import os, re, sys, warnings
+import os, sys, re, json, argparse, warnings
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 warnings.filterwarnings("ignore")
-import pandas as pd
+import numpy as np, pandas as pd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 BA = os.path.join(ROOT, "data", "external", "beataml")
-OUT = os.path.join(ROOT, "labels", "eln2022_beataml.tsv")
 
-MDS_GENES = ["ASXL1", "BCOR", "EZH2", "RUNX1", "SF3B1", "SRSF2", "STAG2", "U2AF1", "ZRSR2"]
-FAV_FUS = {"CBFB-MYH11", "RUNX1-RUNX1T1"}
-ADV_FUS = {"GATA2-MECOM", "DEK-NUP214", "BCR-ABL1", "KMT2A_re"}      # KMT2A_re: t(v;11q23.3); PTD is not a fusion
-T911 = {"MLLT3-KMT2A"}
-APL = {"PML-RARA"}
-NORMAL_KARYO = re.compile(r"^46,X[XY]\[\d+\]$")                       # a single normal clone, unambiguous
-CEBPA_BZIP = (278, 358)                                              # basic leucine zipper region
+MR_GENES = ["ASXL1", "BCOR", "EZH2", "RUNX1", "SF3B1", "SRSF2", "STAG2", "U2AF1", "ZRSR2"]
+# CEBPA is 358 aa; the basic leucine zipper spans roughly 278-358 (basic region ~278-296, zipper to 358)
+CEBPA_BZIP = (278, 358)
+INFRAME = {"inframe_insertion", "inframe_deletion", "missense_variant"}
 
 
-def _pos(h):
-    m = re.match(r"^p\.[A-Za-z*](\d+)", str(h))
-    return int(m.group(1)) if m else None
+# ---------------------------------------------------------------- karyotype parsing
+def _clones(k):
+    """Split a karyotype string into clone strings, dropping the cell counts in [ ]."""
+    k = re.sub(r"\[[^\]]*\]", "", str(k))
+    return [c.strip() for c in re.split(r"/", k) if c.strip()]
 
 
-def load():
-    cl = pd.read_excel(os.path.join(BA, "clinical.xlsx"), "summary")
-    mut = pd.read_csv(os.path.join(BA, "mutations.txt"), sep="\t",
-                      usecols=["dbgap_sample_id", "symbol", "hgvsp_short", "variant_classification", "t_vaf"])
-    mut["dbgap_sample_id"] = mut["dbgap_sample_id"].astype(str)
-    return cl, mut
+def karyo_flags(k):
+    """Structured cytogenetic flags from a free-text ISCN karyotype."""
+    f = dict.fromkeys(("normal", "t_8_21", "inv16", "t_9_11", "t_6_9", "t_9_22", "t_8_16",
+                       "inv3", "mecom", "kmt2a_r", "minus5_del5q", "minus7", "abn17p",
+                       "complex", "monosomal", "unknown"), False)
+    if not isinstance(k, str) or not k.strip() or k.strip().lower() in ("na", "nan", "unknown"):
+        f["unknown"] = True
+        return f
+    s = k.replace(" ", "")
+    f["normal"] = bool(re.search(r"^4[56],X[XY]$", _clones(s)[0] if _clones(s) else ""))
+    f["t_8_21"] = bool(re.search(r"t\(8;21\)", s))
+    f["inv16"] = bool(re.search(r"inv\(16\)|t\(16;16\)", s))
+    f["t_9_11"] = bool(re.search(r"t\(9;11\)", s))
+    f["t_6_9"] = bool(re.search(r"t\(6;9\)", s))
+    f["t_9_22"] = bool(re.search(r"t\(9;22\)", s))
+    f["t_8_16"] = bool(re.search(r"t\(8;16\)", s))
+    f["inv3"] = bool(re.search(r"inv\(3\)|t\(3;3\)", s))
+    f["mecom"] = bool(re.search(r"3q26", s))
+    # KMT2A-rearranged = any 11q23 translocation. t(9;11) is handled separately (intermediate).
+    f["kmt2a_r"] = bool(re.search(r"t\([^)]*;11\)\([^)]*q23", s) or re.search(r"11q23", s))
+    f["minus5_del5q"] = bool(re.search(r"-5\b|del\(5\)\(q|del\(5q", s))
+    f["minus7"] = bool(re.search(r"-7\b(?!p)|del\(7\)\(q|monosomy7", s))
+    f["abn17p"] = bool(re.search(r"-17\b|del\(17\)\(p|i\(17\)\(q|add\(17\)\(p|17p", s))
+
+    # complex: >=3 unrelated abnormalities in the largest clone, excluding pure hyperdiploidy
+    best = 0
+    for c in _clones(s):
+        body = re.sub(r"^\d+,X[XY]?,?", "", c)
+        parts = [p for p in re.split(r",(?![^()]*\))", body) if p]
+        n = len(parts)
+        structural = any(re.search(r"t\(|inv\(|del\(|add\(|der\(|i\(|dup\(|ins\(", p) for p in parts)
+        trisomies = sum(1 for p in parts if re.match(r"^\+\d+$", p))
+        if trisomies >= 3 and not structural:
+            continue                                  # hyperdiploid without structural change: excluded
+        best = max(best, n)
+    f["complex"] = best >= 3
+
+    # monosomal: >=2 autosomal monosomies, or 1 autosomal monosomy + >=1 structural abnormality
+    for c in _clones(s):
+        mono = re.findall(r"-(\d+)\b", c)
+        mono = [x for x in mono if x not in ("X", "Y")]
+        structural = bool(re.search(r"t\(|inv\(|del\(|add\(|der\(|i\(|dup\(|ins\(", c))
+        if len(mono) >= 2 or (len(mono) == 1 and structural):
+            f["monosomal"] = True
+    return f
 
 
-def build(cl, mut):
-    wes = set(mut["dbgap_sample_id"].unique())
-    by_s = {s: g for s, g in mut.groupby("dbgap_sample_id")}
+# ---------------------------------------------------------------- per-patient classification
+def classify(row, muts, vaf):
+    """ELN 2022 category for one specimen. Returns (risk, reasons)."""
+    why = []
+    k = row["_karyo"]
+    fus = str(row.get("consensusAMLFusions") or "")
+    npm1 = str(row.get("NPM1", "")).lower().startswith("pos")
+    itd = str(row.get("FLT3-ITD", "")).lower().startswith("pos")
 
-    rows = []
-    for _, r in cl.iterrows():
-        dna = str(r.get("dbgap_dnaseq_sample"))
-        sid = str(r.get("dbgap_subject_id"))
-        rna = str(r.get("dbgap_rnaseq_sample"))
-        stage = str(r.get("diseaseStageAtSpecimenCollection"))
-        fus = str(r.get("consensusAMLFusions"))
-        ky = str(r.get("karyotype")).strip()
-        rec = {"dbgap_dnaseq_sample": dna, "dbgap_rnaseq_sample": rna, "dbgap_subject_id": sid,
-               "ELN2017": str(r.get("ELN2017")), "fusion": fus, "karyotype_normal": bool(NORMAL_KARYO.match(ky)),
-               "ELN2022": None, "basis": None, "abstain_reason": None}
+    def fus_has(*pats):
+        return any(re.search(p, fus, re.I) for p in pats)
 
-        # ---- eligibility ----------------------------------------------------------------
-        if str(r.get("ELN2017")) == "NonAML":
-            rec["abstain_reason"] = "not AML"; rows.append(rec); continue
-        if "Initial Diagnosis" not in stage:
-            rec["abstain_reason"] = "not an initial-diagnosis specimen (ELN is a diagnosis-time label)"
-            rows.append(rec); continue
-        if dna not in wes:
-            rec["abstain_reason"] = "no WES"; rows.append(rec); continue
-        if fus in APL:
-            rec["abstain_reason"] = "APL (PML-RARA) - separate entity, not ELN-risk classified"
-            rows.append(rec); continue
+    # --- class-defining favorable cytogenetics (KIT/FLT3 co-mutation does not alter these) ---
+    cbf = k["t_8_21"] or k["inv16"] or fus_has(r"RUNX1[-:]+RUNX1T1", r"CBFB[-:]+MYH11")
+    # --- adverse cytogenetics -------------------------------------------------------------
+    adv_cyto = []
+    if k["t_6_9"] or fus_has(r"DEK[-:]+NUP214"): adv_cyto.append("t(6;9)/DEK::NUP214")
+    if k["t_9_22"] or fus_has(r"BCR[-:]+ABL1"): adv_cyto.append("t(9;22)/BCR::ABL1")
+    if k["t_8_16"] or fus_has(r"KAT6A[-:]+CREBBP"): adv_cyto.append("t(8;16)/KAT6A::CREBBP")
+    if k["inv3"] or k["mecom"] or fus_has(r"MECOM", r"EVI1"): adv_cyto.append("inv(3)/MECOM")
+    if k["kmt2a_r"] and not k["t_9_11"]: adv_cyto.append("KMT2A-rearranged")
+    if k["minus5_del5q"]: adv_cyto.append("-5/del(5q)")
+    if k["minus7"]: adv_cyto.append("-7")
+    if k["abn17p"]: adv_cyto.append("-17/abn(17p)")
+    if k["complex"]: adv_cyto.append("complex karyotype")
+    if k["monosomal"]: adv_cyto.append("monosomal karyotype")
 
-        g = by_s.get(dna)
-        sym = set(g["symbol"].astype(str)) if g is not None else set()
+    # --- molecular ------------------------------------------------------------------------
+    g = muts.get(row["_spec"], {})
+    tp53 = any(v >= vaf for v in g.get("TP53", []))
+    mr_hit = sorted([x for x in MR_GENES if any(v >= vaf for v in g.get(x, []))])
+    cebpa_bzip = g.get("_cebpa_bzip", False)
 
-        # ---- molecular facts ------------------------------------------------------------
-        npm1 = str(r.get("NPM1")).lower() == "positive"
-        itd = str(r.get("FLT3-ITD")).lower() == "positive"
-        tp53 = False
-        if g is not None:
-            t = g[g["symbol"] == "TP53"]
-            tp53 = bool((t["t_vaf"] >= 0.10).any())                   # footnote a: VAF >= 10%
-        cebpa_bzip = False
-        if g is not None:
-            c = g[g["symbol"] == "CEBPA"].copy()
-            if len(c):
-                c["p"] = c["hgvsp_short"].map(_pos)
-                inframe = c["variant_classification"].isin(
-                    ["missense_variant", "inframe_insertion", "inframe_deletion"])
-                cebpa_bzip = bool((inframe & c["p"].between(*CEBPA_BZIP)).any())   # footnote ||
-        mds = sorted(sym & set(MDS_GENES))
-        cbf = fus in FAV_FUS
-        t911 = fus in T911
-        adv_fus = fus in ADV_FUS
-        fav_lesion = cbf or (npm1 and not itd) or cebpa_bzip
+    # ---------------- rule order (Table 6 footnotes) --------------------------------------
+    # t(9;11) takes precedence over rare concurrent adverse-risk gene mutations
+    if k["t_9_11"] or fus_has(r"MLLT3[-:]+KMT2A"):
+        why.append("t(9;11)/MLLT3::KMT2A takes precedence over concurrent adverse mutations")
+        return "Intermediate", why
 
-        def done(risk, basis):
-            rec["ELN2022"] = risk; rec["basis"] = basis; rows.append(rec)
+    if cbf:
+        why.append("core-binding-factor AML (KIT/FLT3 co-mutation does not alter the category)")
+        if mr_hit:
+            why.append("MDS-related mutations (%s) NOT counted adverse alongside a favorable subtype"
+                       % ",".join(mr_hit))
+        return "Favorable", why
 
-        def skip(why):
-            rec["abstain_reason"] = why; rows.append(rec)
+    if npm1 and adv_cyto:
+        why.append("mutated NPM1 with adverse-risk cytogenetics (%s) -> adverse" % "; ".join(adv_cyto))
+        return "Adverse", why
+    if npm1 and not itd:
+        why.append("mutated NPM1 without FLT3-ITD")
+        if mr_hit:
+            why.append("MDS-related mutations (%s) NOT counted adverse alongside a favorable subtype"
+                       % ",".join(mr_hit))
+        return "Favorable", why
+    if cebpa_bzip and not adv_cyto:
+        why.append("in-frame bZIP CEBPA mutation (monoallelic or biallelic, per ELN 2022)")
+        return "Favorable", why
 
-        # ---- classification (precedence follows the guideline) ---------------------------
-        # 1. adverse class-defining fusion: decisive, karyotype cannot rescue it
-        if adv_fus:
-            if fav_lesion:
-                skip("conflict: adverse fusion %s + favorable lesion - guideline does not resolve" % fus)
-            else:
-                done("Adverse", "adverse class-defining fusion %s" % fus)
-            continue
-        # 2. t(9;11): Intermediate, takes precedence over adverse GENE mutations (footnote P)
-        if t911:
-            if tp53:
-                skip("t(9;11) + TP53 - footnote P covers gene mutations; TP53 precedence unclear")
-            else:
-                done("Intermediate", "t(9;11)/MLLT3::KMT2A (footnote P: precedence over adverse gene muts)")
-            continue
-        # 3. TP53 VAF>=10% -> Adverse (unparsed cytogenetics can only reinforce)
-        if tp53:
-            if fav_lesion:
-                skip("TP53 VAF>=10%% + favorable lesion - guideline does not resolve precedence")
-            else:
-                done("Adverse", "TP53 mutated at VAF>=10%")
-            continue
-        # 4. CBF -> Favorable (footnote ‡ KIT/FLT3 irrelevant; ++ MDS genes do not override)
-        if cbf:
-            done("Favorable", "CBF fusion %s%s" % (fus, " (MDS genes present but footnote ++ applies)" if mds else ""))
-            continue
-        # 5. NPM1 w/o ITD, or bZIP CEBPA -> Favorable, but footnote S needs NO adverse cytogenetics,
-        #    so require a definitively NORMAL karyotype
-        if fav_lesion:
-            if rec["karyotype_normal"]:
-                why = "NPM1mut without FLT3-ITD" if (npm1 and not itd) else "bZIP in-frame CEBPA"
-                done("Favorable", "%s + normal karyotype%s" % (why, " (footnote ++ over %s)" % ",".join(mds) if mds else ""))
-            else:
-                skip("favorable molecular lesion but karyotype not definitively normal - "
-                     "footnote S (NPM1 + adverse cytogenetics = Adverse) cannot be excluded")
-            continue
-        # 6. adverse MDS-related gene mutation -> Adverse (no favorable lesion, no t(9;11) reached here)
-        if mds:
-            done("Adverse", "MDS-related gene mutation: %s" % ",".join(mds))
-            continue
-        # 7. nothing favorable or adverse molecularly -> Intermediate ONLY if karyotype is normal
-        if rec["karyotype_normal"]:
-            b = "normal karyotype, no favorable/adverse marker"
-            if npm1 and itd:
-                b = "NPM1mut with FLT3-ITD + normal karyotype"
-            elif itd:
-                b = "FLT3-ITD, NPM1 wild-type + normal karyotype, no adverse lesion"
-            done("Intermediate", b)
-        else:
-            skip("no decisive molecular marker and karyotype not definitively normal - "
-                 "complex/monosomal/-5/-7/-17 cannot be excluded without ISCN parsing")
-    return pd.DataFrame(rows)
+    if tp53:
+        why.append("TP53 mutated at VAF >= %.0f%%" % (100 * vaf))
+        return "Adverse", why
+    if adv_cyto:
+        why.append("adverse cytogenetics: " + "; ".join(adv_cyto))
+        return "Adverse", why
+    if mr_hit:
+        why.append("MDS-related gene mutation: " + ",".join(mr_hit))
+        return "Adverse", why
+
+    if npm1 and itd:
+        why.append("mutated NPM1 with FLT3-ITD (allelic ratio not used in ELN 2022)")
+        return "Intermediate", why
+    if itd:
+        why.append("wild-type NPM1 with FLT3-ITD, no adverse lesion")
+        return "Intermediate", why
+    why.append("no favorable or adverse defining lesion")
+    return "Intermediate", why
+
+
+def load_mutations(vaf_floor=0.0):
+    m = pd.read_csv(os.path.join(BA, "mutations.txt"), sep="\t", low_memory=False)
+    m["t_vaf"] = pd.to_numeric(m["t_vaf"], errors="coerce")
+    m = m[m["t_vaf"].notna()]
+    out = {}
+    for spec, sub in m.groupby("dbgap_sample_id"):
+        d = {}
+        for sym, s2 in sub.groupby("symbol"):
+            d[str(sym)] = list(s2["t_vaf"].values)
+        # CEBPA bZIP, in-frame only, position inside the bZIP window
+        ce = sub[sub["symbol"] == "CEBPA"]
+        bz = False
+        for _, r in ce.iterrows():
+            if str(r["variant_classification"]) not in INFRAME:
+                continue
+            pp = str(r.get("protein_position") or "")
+            nums = [int(x) for x in re.findall(r"\d+", pp.split("/")[0])]
+            if nums and CEBPA_BZIP[0] <= max(nums) <= CEBPA_BZIP[1] and r["t_vaf"] >= vaf_floor:
+                bz = True
+        d["_cebpa_bzip"] = bz
+        out[str(spec)] = d
+    return out
 
 
 def main():
-    cl, mut = load()
-    df = build(cl, mut)
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    df.to_csv(OUT, sep="\t", index=False)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--vaf", type=float, default=0.10)
+    ap.add_argument("--out", default=None)
+    a = ap.parse_args()
 
-    n = len(df)
-    ok = df[df["ELN2022"].notna()]
-    print("BeatAML2 specimens: %d" % n)
-    print("ELN 2022 ASSIGNED (high confidence): %d  (%d unique patients)"
-          % (len(ok), ok["dbgap_subject_id"].nunique()))
-    print("ABSTAINED: %d" % (n - len(ok)))
-    print()
-    print("=== assigned risk distribution ===")
-    print(ok["ELN2022"].value_counts().to_string())
-    print()
-    print("=== what forced each call ===")
-    kind = ok["basis"].str.replace(r"[:(].*", "", regex=True).str.strip()
-    print(kind.value_counts().to_string())
-    print()
-    print("=== why the rest abstained ===")
-    ab = df[df["ELN2022"].isna()]["abstain_reason"].str.replace(r" -.*", "", regex=True)
-    print(ab.value_counts().to_string())
-    print()
-    print("=== concordance with BeatAML's own ELN2017 (expect real 2017->2022 shifts) ===")
-    m = ok[ok["ELN2017"].isin(["Favorable", "Intermediate", "Adverse"])]
-    print(pd.crosstab(m["ELN2017"], m["ELN2022"]).to_string())
-    agree = (m["ELN2017"] == m["ELN2022"]).mean() if len(m) else float("nan")
-    print("\nagreement with ELN2017: %.1f%% of %d comparable" % (100 * agree, len(m)))
-    print("\nwrote %s" % OUT)
+    cl = pd.read_excel(os.path.join(BA, "beataml_wv1to4_clinical.xlsx"))
+    cl["_spec"] = cl["dbgap_rnaseq_sample"].astype(str)
+    cl["_dna"] = cl["dbgap_dnaseq_sample"].astype(str) if "dbgap_dnaseq_sample" in cl.columns else cl["_spec"]
+    cl["_karyo"] = cl["karyotype"].map(karyo_flags)
+
+    muts = load_mutations(a.vaf)
+    # mutations are keyed by the DNA sample id; map through whichever id matches
+    keyed = {}
+    for _, r in cl.iterrows():
+        for k in (r["_dna"], r["_spec"]):
+            if k in muts:
+                keyed[r["_spec"]] = muts[k]; break
+    hit = len(keyed)
+
+    rows = []
+    for _, r in cl.iterrows():
+        rr = dict(r); rr["_spec"] = r["_spec"]
+        risk, why = classify(rr, keyed, a.vaf)
+        rows.append({"specimen": r["_spec"], "ELN2022": risk, "ELN2017": r.get("ELN2017"),
+                     "has_mutation_data": r["_spec"] in keyed, "reasons": " | ".join(why)})
+    out = pd.DataFrame(rows)
+    dst = a.out or os.path.join(ROOT, "labels", "eln2022_beataml_vaf%02d.tsv" % round(100 * a.vaf))
+    out.to_csv(dst, sep="\t", index=False)
+
+    print("ELN 2022 inferred at VAF >= %.0f%%  (mutation data for %d/%d specimens)"
+          % (100 * a.vaf, hit, len(cl)))
+    print("\n  distribution:", out["ELN2022"].value_counts().to_dict())
+    print("  ELN2017     :", out["ELN2017"].value_counts(dropna=False).to_dict())
+    both = out[out["ELN2017"].isin(["Favorable", "Intermediate", "Adverse"])]
+    x = pd.crosstab(both["ELN2017"], both["ELN2022"])
+    print("\n  2017 (rows) x 2022 (cols):")
+    print(x.to_string())
+    agree = float(np.mean(both["ELN2017"].values == both["ELN2022"].values))
+    print("\n  agreement with the shipped ELN2017 label: %.3f (n=%d)" % (agree, len(both)))
+    print("  wrote %s" % dst)
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()

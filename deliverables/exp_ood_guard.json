@@ -1,0 +1,406 @@
+{
+ "generated": "2026-08-12 13:24",
+ "n_selected_genes": 3833,
+ "failed_candidates": {
+  "present_call_count": "fired on 0/15 OOD and 13/20 in-distribution; removed",
+  "cellharmony_cosine": "runs backwards -- sorted normals have the HIGHEST cosines"
+ },
+ "groups": {
+  "beataml_specimens__ref_beataml": {
+   "n": 707,
+   "mean_abs_z": {
+    "median": 0.7385,
+    "p95": 0.9882
+   },
+   "frac_z_gt3": {
+    "median": 0.0078,
+    "p95": 0.0322
+   },
+   "mean_z": {
+    "median": -0.0037,
+    "p95": 0.1739
+   },
+   "sd_z": {
+    "median": 0.9573,
+    "p95": 1.3187
+   }
+  },
+  "beataml_specimens__ref_sc": {
+   "n": 707,
+   "mean_abs_z": {
+    "median": 51.6957,
+    "p95": 84.9693
+   },
+   "frac_z_gt3": {
+    "median": 0.9079,
+    "p95": 0.9215
+   },
+   "mean_z": {
+    "median": 51.6879,
+    "p95": 84.9616
+   },
+   "sd_z": {
+    "median": 274.272,
+    "p95": 1771.9474
+   }
+  },
+  "gse281087__ref_sc": {
+   "n": 15,
+   "mean_abs_z": {
+    "median": 21.2487,
+    "min": 18.3352,
+    "max": 23.7216
+   },
+   "frac_z_gt3": {
+    "median": 0.6397,
+    "min": 0.6235,
+    "max": 0.6439
+   },
+   "mean_z": {
+    "median": 20.8344,
+    "min": 17.9204,
+    "max": 23.3074
+   },
+   "sd_z": {
+    "median": 26.696,
+    "min": 22.6562,
+    "max": 32.6399
+   },
+   "per_sample": [
+    {
+     "mean_abs_z": 23.721629003387733,
+     "frac_z_gt3": 0.6425776154448213,
+     "mean_z": 23.30737692556847,
+     "sd_z": 31.709365271284515,
+     "sample": "GSM8610696_SU270_single_counts.h5",
+     "ref": "sc",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 23.680460527211803,
+     "frac_z_gt3": 0.6430993999478215,
+     "mean_z": 23.266646637156455,
+     "sd_z": 32.63990676556834,
+     "sample": "GSM8610687_SU048_single_counts.h5",
+     "ref": "sc",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 22.149224316278435,
+     "frac_z_gt3": 0.6436211844508218,
+     "mean_z": 21.73535787365483,
+     "sd_z": 27.732844182804865,
+     "sample": "GSM8610688_SU050_single_counts.h5",
+     "ref": "sc",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 22.132674528076137,
+     "frac_z_gt3": 0.6355335246543178,
+     "mean_z": 21.718410019257714,
+     "sd_z": 28.281461018211346,
+     "sample": "GSM8610692_SU209_single_counts.h5",
+     "ref": "sc",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 21.83236851585839,
+     "frac_z_gt3": 0.6363162014088182,
+     "mean_z": 21.417389373192808,
+     "sd_z": 27.460774931970064,
+     "sample": "GSM8610698_SU462_single_counts.h5",
+     "ref": "sc",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 21.75305339139904,
+     "frac_z_gt3": 0.6438820767023219,
+     "mean_z": 21.338771836569553,
+     "sd_z": 29.388106291342083,
+     "sample": "GSM8610689_SU070_single_counts.h5",
+     "ref": "sc",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 21.712983966268855,
+     "frac_z_gt3": 0.6412731541873207,
+     "mean_z": 21.29855342169691,
+     "sd_z": 28.15011860551877,
+     "sample": "GSM8610704_CD34-2_single_counts.h5",
+     "ref": "sc",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 21.248671234378588,
+     "frac_z_gt3": 0.6410122619358205,
+     "mean_z": 20.83436424448046,
+     "sd_z": 26.69600588030933,
+     "sample": "GSM8610703_CD34-1_single_counts.h5",
+     "ref": "sc",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 21.09904806291058,
+     "frac_z_gt3": 0.6397078006783199,
+     "mean_z": 20.684473597929998,
+     "sd_z": 26.59749965622505,
+     "sample": "GSM8610705_GMP-1_single_counts.h5",
+     "ref": "sc",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 20.650077572275293,
+     "frac_z_gt3": 0.6389251239238195,
+     "mean_z": 20.23539527203856,
+     "sd_z": 26.67400463748584,
+     "sample": "GSM8610697_SU344_single_counts.h5",
+     "ref": "sc",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 20.26507021311258,
+     "frac_z_gt3": 0.6397078006783199,
+     "mean_z": 19.85125632305723,
+     "sd_z": 24.992043356643084,
+     "sample": "GSM8610685_JH5236_single_counts.h5",
+     "ref": "sc",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 20.21354986875121,
+     "frac_z_gt3": 0.6235324810853118,
+     "mean_z": 19.792495084373,
+     "sd_z": 26.014129056786466,
+     "sample": "GSM8610693_SU214_single_counts.h5",
+     "ref": "sc",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 19.248040518994948,
+     "frac_z_gt3": 0.6394469084268197,
+     "mean_z": 18.83391695491289,
+     "sd_z": 24.647212514502872,
+     "sample": "GSM8610680_JH4189_single_counts.h5",
+     "ref": "sc",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 18.621802624096382,
+     "frac_z_gt3": 0.6331854943908166,
+     "mean_z": 18.205349848732304,
+     "sd_z": 23.100320187769995,
+     "sample": "GSM8610700_SU504_single_counts.h5",
+     "ref": "sc",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 18.335154385145895,
+     "frac_z_gt3": 0.636055309157318,
+     "mean_z": 17.92036262912647,
+     "sd_z": 22.656188971224648,
+     "sample": "GSM8610691_SU204_single_counts.h5",
+     "ref": "sc",
+     "genes_hit": 10272
+    }
+   ]
+  },
+  "gse281087__ref_beataml": {
+   "n": 15,
+   "mean_abs_z": {
+    "median": 1.454,
+    "min": 1.3118,
+    "max": 1.6493
+   },
+   "frac_z_gt3": {
+    "median": 0.1004,
+    "min": 0.0684,
+    "max": 0.1417
+   },
+   "mean_z": {
+    "median": -0.8605,
+    "min": -1.2825,
+    "max": -0.5149
+   },
+   "sd_z": {
+    "median": 2.0571,
+    "min": 1.9248,
+    "max": 2.0992
+   },
+   "per_sample": [
+    {
+     "mean_abs_z": 1.6493197465058482,
+     "frac_z_gt3": 0.14166449256457084,
+     "mean_z": -1.2824589745474717,
+     "sd_z": 2.0713882865344835,
+     "sample": "GSM8610700_SU504_single_counts.h5",
+     "ref": "beataml",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 1.636780174234724,
+     "frac_z_gt3": 0.1406209235585703,
+     "mean_z": -1.221109706037661,
+     "sd_z": 2.099248300072545,
+     "sample": "GSM8610691_SU204_single_counts.h5",
+     "ref": "beataml",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 1.5558088684825315,
+     "frac_z_gt3": 0.12131489694756066,
+     "mean_z": -0.9949972557136273,
+     "sd_z": 2.0954791617209656,
+     "sample": "GSM8610693_SU214_single_counts.h5",
+     "ref": "beataml",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 1.545849307952336,
+     "frac_z_gt3": 0.11922775893555962,
+     "mean_z": -1.0581707351558918,
+     "sd_z": 2.041585515238134,
+     "sample": "GSM8610680_JH4189_single_counts.h5",
+     "ref": "beataml",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 1.4807123414100547,
+     "frac_z_gt3": 0.10044351682755022,
+     "mean_z": -0.8841296181543016,
+     "sd_z": 2.042359613204717,
+     "sample": "GSM8610697_SU344_single_counts.h5",
+     "ref": "beataml",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 1.4805417773675131,
+     "frac_z_gt3": 0.10722671536655361,
+     "mean_z": -0.8637520362701724,
+     "sd_z": 2.0738536113168102,
+     "sample": "GSM8610704_CD34-2_single_counts.h5",
+     "ref": "beataml",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 1.4713714153738124,
+     "frac_z_gt3": 0.10305243934255152,
+     "mean_z": -0.886024974955112,
+     "sd_z": 2.057132489092269,
+     "sample": "GSM8610705_GMP-1_single_counts.h5",
+     "ref": "beataml",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 1.454023690735343,
+     "frac_z_gt3": 0.10070440907905036,
+     "mean_z": -0.86017970232454,
+     "sd_z": 2.064361605813453,
+     "sample": "GSM8610703_CD34-1_single_counts.h5",
+     "ref": "beataml",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 1.4173720283397175,
+     "frac_z_gt3": 0.08583355074354292,
+     "mean_z": -0.5732841512374454,
+     "sd_z": 2.082972164745302,
+     "sample": "GSM8610687_SU048_single_counts.h5",
+     "ref": "beataml",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 1.400025397616174,
+     "frac_z_gt3": 0.07774589094703888,
+     "mean_z": -0.514934539362703,
+     "sd_z": 2.0819403228647473,
+     "sample": "GSM8610696_SU270_single_counts.h5",
+     "ref": "beataml",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 1.39610937918114,
+     "frac_z_gt3": 0.08035481346204018,
+     "mean_z": -0.6416722143291795,
+     "sd_z": 2.0373803038998317,
+     "sample": "GSM8610692_SU209_single_counts.h5",
+     "ref": "beataml",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 1.3904489294757176,
+     "frac_z_gt3": 0.07983302895903992,
+     "mean_z": -0.7299226431396392,
+     "sd_z": 2.0046351881137805,
+     "sample": "GSM8610698_SU462_single_counts.h5",
+     "ref": "beataml",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 1.3729248118216444,
+     "frac_z_gt3": 0.07878945995303939,
+     "mean_z": -0.860518791070826,
+     "sd_z": 1.924755288299855,
+     "sample": "GSM8610685_JH5236_single_counts.h5",
+     "ref": "beataml",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 1.3675546626722934,
+     "frac_z_gt3": 0.07878945995303939,
+     "mean_z": -0.7063664943418048,
+     "sd_z": 1.995288702285832,
+     "sample": "GSM8610689_SU070_single_counts.h5",
+     "ref": "beataml",
+     "genes_hit": 10272
+    },
+    {
+     "mean_abs_z": 1.3118099869166093,
+     "frac_z_gt3": 0.06835376989303418,
+     "mean_z": -0.6047524589937509,
+     "sd_z": 1.962560219072147,
+     "sample": "GSM8610688_SU050_single_counts.h5",
+     "ref": "beataml",
+     "genes_hit": 10272
+    }
+   ]
+  }
+ },
+ "verdict": {
+  "mean_abs_z @ ref=sc": {
+   "threshold_p95_of_in_distribution": 84.9693,
+   "fraction_of_gse281087_flagged": 0.0,
+   "false_alarm_rate_by_construction": 0.05,
+   "usable": false
+  },
+  "frac_z_gt3 @ ref=sc": {
+   "threshold_p95_of_in_distribution": 0.9215,
+   "fraction_of_gse281087_flagged": 0.0,
+   "false_alarm_rate_by_construction": 0.05,
+   "usable": false
+  },
+  "sd_z @ ref=sc": {
+   "threshold_p95_of_in_distribution": 1771.9474,
+   "fraction_of_gse281087_flagged": 0.0,
+   "false_alarm_rate_by_construction": 0.05,
+   "usable": false
+  },
+  "mean_abs_z @ ref=beataml": {
+   "threshold_p95_of_in_distribution": 0.9882,
+   "fraction_of_gse281087_flagged": 1.0,
+   "false_alarm_rate_by_construction": 0.05,
+   "usable": true
+  },
+  "frac_z_gt3 @ ref=beataml": {
+   "threshold_p95_of_in_distribution": 0.0322,
+   "fraction_of_gse281087_flagged": 1.0,
+   "false_alarm_rate_by_construction": 0.05,
+   "usable": true
+  },
+  "sd_z @ ref=beataml": {
+   "threshold_p95_of_in_distribution": 1.3187,
+   "fraction_of_gse281087_flagged": 1.0,
+   "false_alarm_rate_by_construction": 0.05,
+   "usable": true
+  }
+ }
+}

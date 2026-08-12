@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-12 12:22",
+ "generated": "2026-08-12 13:24",
  "cohort": {
   "clinical_rows_with_expression": 671,
   "dropped_unknown_vital_status": 22,
@@ -10,40 +10,172 @@
   "censored": 199,
   "median_followup_years_censored": 2.26
  },
- "seeds": 40,
- "folds": 3,
+ "seeds": 60,
+ "folds": 5,
  "experiments": {
+  "A1": {
+   "name": "hold-out lottery",
+   "result": {
+    "deployed_minus_age_eln": {
+     "mean": NaN,
+     "sd": NaN,
+     "frac_splits_positive": NaN
+    }
+   },
+   "seconds": 0.1
+  },
+  "A3": {
+   "name": "treatment strata",
+   "result": {
+    "intensive": {
+     "n": 357,
+     "events": 177,
+     "age_eln": null,
+     "molecular": null,
+     "deployed": null
+    },
+    "non_intensive": {
+     "n": 5,
+     "events": 2,
+     "note": "too few to fit a stratum-specific model"
+    }
+   },
+   "seconds": 0.0
+  },
+  "A4": {
+   "name": "unused clinical features",
+   "result": {
+    "features_used": [
+     "allelic_ratio",
+     "wbc",
+     "blasts_bm",
+     "blasts_pb",
+     "platelets",
+     "hgb",
+     "karyo_complexity"
+    ],
+    "n_features": 7,
+    "deployed": null,
+    "deployed_plus_extra": null,
+    "delta": null
+   },
+   "seconds": 0.0
+  },
+  "A5": {
+   "name": "LSC17",
+   "result": {
+    "genes_found": 13,
+    "of": 17,
+    "lsc17_alone": null,
+    "age_eln": null,
+    "rna": null,
+    "deployed": null,
+    "deployed_plus_lsc17": null
+   },
+   "seconds": 0.0
+  },
+  "A6": {
+   "name": "subgroups",
+   "result": {
+    "overall": {
+     "n": 444,
+     "events": 245,
+     "deployed": null
+    },
+    "age <60": {
+     "n": 0,
+     "events": 0,
+     "note": "too small"
+    },
+    "age 60-74": {
+     "n": 0,
+     "events": 0,
+     "note": "too small"
+    },
+    "age >=75": {
+     "n": 0,
+     "events": 0,
+     "note": "too small"
+    },
+    "ELN Favorable": {
+     "n": 0,
+     "events": 0,
+     "note": "too small"
+    },
+    "ELN Intermediate": {
+     "n": 0,
+     "events": 0,
+     "note": "too small"
+    },
+    "ELN Adverse": {
+     "n": 0,
+     "events": 0,
+     "note": "too small"
+    },
+    "male": {
+     "n": 0,
+     "events": 0,
+     "note": "too small"
+    },
+    "female": {
+     "n": 0,
+     "events": 0,
+     "note": "too small"
+    },
+    "de novo": {
+     "n": 0,
+     "events": 0,
+     "note": "too small"
+    },
+    "transformed": {
+     "n": 0,
+     "events": 0,
+     "note": "too small"
+    },
+    "prior MDS": {
+     "n": 0,
+     "events": 0,
+     "note": "too small"
+    }
+   },
+   "seconds": 0.0
+  },
+  "A7": {
+   "name": "learning curve",
+   "result": {},
+   "seconds": 0.1
+  },
   "A8": {
    "name": "horizons",
    "result": {
     "age_eln": {
-     "c_index": 0.7025,
-     "auc_0.5y": 0.7543,
-     "n_0.5y": 401,
-     "auc_1y": 0.7944,
-     "n_1y": 380,
-     "auc_2y": 0.8237,
-     "n_2y": 351,
-     "auc_3y": 0.8362,
-     "n_3y": 324,
-     "auc_5y": 0.8501,
-     "n_5y": 292
+     "c_index": null,
+     "auc_0.5y": null,
+     "n_0.5y": 0,
+     "auc_1y": null,
+     "n_1y": 0,
+     "auc_2y": null,
+     "n_2y": 0,
+     "auc_3y": null,
+     "n_3y": 0,
+     "auc_5y": null,
+     "n_5y": 0
     },
     "deployed": {
-     "c_index": 0.7668,
-     "auc_0.5y": 0.8298,
-     "n_0.5y": 401,
-     "auc_1y": 0.8511,
-     "n_1y": 380,
-     "auc_2y": 0.8634,
-     "n_2y": 351,
-     "auc_3y": 0.8787,
-     "n_3y": 324,
-     "auc_5y": 0.8875,
-     "n_5y": 292
+     "c_index": null,
+     "auc_0.5y": null,
+     "n_0.5y": 0,
+     "auc_1y": null,
+     "n_1y": 0,
+     "auc_2y": null,
+     "n_2y": 0,
+     "auc_3y": null,
+     "n_3y": 0,
+     "auc_5y": null,
+     "n_5y": 0
     }
    },
-   "seconds": 14.5
+   "seconds": 0.0
   }
  }
 }

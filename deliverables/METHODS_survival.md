@@ -110,9 +110,13 @@ the clinical baseline.
   It does **not** license counterfactuals: 529 of 535 patients received the same standard induction, and
   induction intensity partly encodes clinician judgement about fitness rather than a randomised choice.
   The model cannot say what would have happened under a different therapy.
-- **It is close to useless in non-intensively-treated patients.** Stratified: C-index 0.724 in the 284
-  who received intensive induction, but **0.554** in the 71 who did not (where age+ELN is itself below
-  chance at 0.481). Small n, but the model should not be trusted in that group.
+- ~~**It is close to useless in non-intensively-treated patients.**~~ **Partly corrected — it was a
+  pooled-fitting artefact.** The 0.554 figure came from a model trained on the whole cohort and then
+  evaluated inside that subgroup. Fitting **within** the stratum gives **0.681**, and adding the
+  published TP53/FLT3-ITD/NRAS/KRAS rule gives **0.701** ([`ELN2022_RISK_BENCHMARK.md`](ELN2022_RISK_BENCHMARK.md) §4.2).
+  What survives is the statement about the *guideline*, not our model: ELN 2017 scores 0.496 and
+  ELN 2022 **0.462** in that stratum — at or below chance — independently reproducing Pollyea/Döhner
+  (Blood 2024). Treatment-stratified fitting is now the recommended configuration there.
 - **An individual lifespan interval is decades wide.** Conformal prediction achieves exact coverage, and
   the honest 80% interval spans **22.6 years** (90%: 52.8 y). This is irreducible uncertainty in the
   baseline data, not a tuning failure.

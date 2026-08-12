@@ -1,0 +1,161 @@
+{
+ "generated": "2026-08-12 13:54",
+ "cohort": {
+  "n": 444,
+  "deaths": 245
+ },
+ "sources": {
+  "ELN2022": "Dohner et al., Blood 140(12):1345-1377 (2022), Table 6",
+  "Q2": "Rollig/Bill, Leukemia 2025 - MDS-related mutations in European AML",
+  "Q3": "Pollyea/Dohner, Blood 144(21):2211 (2024) - ELN 2022 does not stratify ven/aza"
+ },
+ "Q1_the_bar": {
+  "ELN2017 (shipped)": {
+   "c_index": 0.6098,
+   "groups": {
+    "FavorableOrIntermediate": {
+     "n": 8,
+     "deaths": 4,
+     "median_months": 28.3
+    },
+    "Favorable": {
+     "n": 157,
+     "deaths": 52,
+     "median_months": null
+    },
+    "Adverse": {
+     "n": 174,
+     "deaths": 119,
+     "median_months": 8.4
+    },
+    "Intermediate": {
+     "n": 97,
+     "deaths": 64,
+     "median_months": 10.3
+    }
+   }
+  },
+  "ELN2022 @ VAF>=10%": {
+   "c_index": 0.6121,
+   "n_labelled": 444,
+   "groups": {
+    "Intermediate": {
+     "n": 135,
+     "deaths": 72,
+     "median_months": 23.2
+    },
+    "Favorable": {
+     "n": 120,
+     "deaths": 40,
+     "median_months": null
+    },
+    "Adverse": {
+     "n": 189,
+     "deaths": 133,
+     "median_months": 8.6
+    }
+   }
+  },
+  "ELN2022 @ VAF>=40%": {
+   "c_index": 0.61,
+   "n_labelled": 444,
+   "groups": {
+    "Intermediate": {
+     "n": 153,
+     "deaths": 81,
+     "median_months": 20.8
+    },
+    "Favorable": {
+     "n": 117,
+     "deaths": 40,
+     "median_months": null
+    },
+    "Adverse": {
+     "n": 174,
+     "deaths": 124,
+     "median_months": 8.4
+    }
+   }
+  }
+ },
+ "Q2_adverse_heterogeneity": {
+  "groups": {
+   "not_adverse": {
+    "n": 255,
+    "deaths": 112,
+    "median_months": 48.4
+   },
+   "adverse_other": {
+    "n": 63,
+    "deaths": 47,
+    "median_months": 7.8
+   },
+   "adverse_MR_gene": {
+    "n": 126,
+    "deaths": 86,
+    "median_months": 9.5
+   }
+  },
+  "logrank_chi2": 0.769,
+  "logrank_p": 0.3804617734003952,
+  "published": "Rollig/Bill: MR-gene adverse 14.7 vs non-MR adverse 8.3 months (p<0.001)"
+ },
+ "Q3_treatment_strata": {
+  "intensive": {
+   "n": 357,
+   "deaths": 177,
+   "ELN2017_c_index": 0.631,
+   "ELN2022_c_index": 0.6416,
+   "pollyea_4gene_c_index": 0.5739,
+   "pollyea_groups": {
+    "intermediate(ITD/RAS)": {
+     "n": 151,
+     "deaths": 71,
+     "median_months": 23.2
+    },
+    "lower_risk(no TP53/ITD/RAS)": {
+     "n": 181,
+     "deaths": 82,
+     "median_months": 40.6
+    },
+    "higher_risk(TP53)": {
+     "n": 25,
+     "deaths": 24,
+     "median_months": 7.0
+    }
+   }
+  },
+  "non_intensive_or_unknown": {
+   "n": 87,
+   "deaths": 68,
+   "ELN2017_c_index": 0.4956,
+   "ELN2022_c_index": 0.4623,
+   "pollyea_4gene_c_index": 0.6119,
+   "pollyea_groups": {
+    "intermediate(ITD/RAS)": {
+     "n": 26,
+     "deaths": 23,
+     "median_months": 0.9
+    },
+    "lower_risk(no TP53/ITD/RAS)": {
+     "n": 51,
+     "deaths": 36,
+     "median_months": 5.9
+    },
+    "higher_risk(TP53)": {
+     "n": 10,
+     "deaths": 9,
+     "median_months": 0.5
+    }
+   }
+  }
+ },
+ "Q3_note": "BeatAML records induction type, not venetoclax-azacitidine specifically, so the non-intensive stratum here is a proxy for the population Pollyea studied, not a replication of it.",
+ "Q4_mosaic_vs_eln2022": {
+  "n_scored": 444,
+  "ELN2022_c_index": 0.6121,
+  "MOSAIC_deployed_c_index": 0.7714,
+  "combined_c_index": 0.7714,
+  "note": "combined is fitted in-sample on two covariates and is indicative only; the honest comparison is the two standalone columns"
+ }
+}
