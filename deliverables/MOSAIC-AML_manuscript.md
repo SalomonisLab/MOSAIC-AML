@@ -46,8 +46,9 @@ for 15.4% of matrix variance, and 0.671 is ~92% of a **directly measured assay r
 training-set size (0.112, P = 0.23), so the binding constraint is the screen rather than the model.
 Predicted sensitivity to cytarabine did **not** separate complete response from refractory disease in
 the 131 patients who received it (AUROC 0.435, P = 0.25), which bounds how the layer may be described.
-A survival layer reaches a C-index of **0.787** on a sealed hold-out of 89 patients (**+0.059** over age
-plus ELN, 95% CI +0.030 to +0.088) and, transferred with all coefficients frozen to **149 TCGA-LAML
+A survival layer reaches a C-index of **0.756 +/- 0.029** across 60 re-draws of the sealed hold-out
+(the single sealed split gave 0.787), with a gain over age plus ELN of **+0.062 that is positive on
+100% of draws** and, transferred with all coefficients frozen to **149 TCGA-LAML
 patients**, retains **0.706**, separating risk tertiles at 71.7% versus 13.7% two-year survival
 (P = 7.0 x 10^-10); molecular data alone does not beat the clinical baseline in either cohort (-0.003 in
 both, derived independently). Because BeatAML2 distributes only an ELN 2017 label, we implemented ELN
@@ -435,7 +436,10 @@ free, the quantity of interest is the **gain over that baseline**, not the C-ind
 
 The deployed model reaches **C-index 0.787** on the sealed hold-out (0.751 cross-validated), two-year
 AUC 0.872, versus 0.725 for age + ELN 2017 — an increment of **+0.059 (95% CI +0.030 to +0.088,
-*P* = 0.001)**. The molecular blocks *alone* do not beat the clinical baseline (−0.003, *P* = 0.54);
+*P* = 0.001)**. Because a single sealed split is itself a draw, we repeated the entire protocol over
+**60 independent hold-outs**: the deployed arm averages **0.756 (SD 0.029)** and the sealed split's
+0.787 sits at its 86th percentile, so 0.756 is the honest expectation. The increment is the more
+robust quantity — **+0.062 on average and positive on 100% of the 60 draws**. The molecular blocks *alone* do not beat the clinical baseline (−0.003, *P* = 0.54);
 cell state and mutations in isolation are worse than it. Only the combination adds (**Fig. 7**).
 
 Transferring the model **frozen** — Cox coefficients, PCA rotation, variable-gene selection and fusion

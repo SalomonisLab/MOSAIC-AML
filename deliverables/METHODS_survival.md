@@ -9,7 +9,7 @@ exactly how far it goes and where it stops.
 
 | question | answer |
 |---|---|
-| Can it rank who dies sooner? | **Yes.** C-index **0.752** on a sealed hold-out of patients (0.726 cross-validated). |
+| Can it rank who dies sooner? | **Yes.** C-index **0.756 ± 0.029** across 60 re-draws of the sealed hold-out (the single sealed split gave 0.787, at its 86th percentile; 0.751 cross-validated). |
 | Can it give a calibrated probability of surviving to a horizon? | **Yes.** Predicted vs observed 0.54/0.49 at 1 y, 0.40/0.39 at 2 y, 0.30/0.37 at 5 y; mean absolute gap across predicted quartiles 0.043–0.075. Two-year AUC **0.852**. |
 | Can it say how long a *group* of similar patients will live? | **Yes.** Median survival per predicted risk tertile is accurate to ~6 weeks (1.29 y predicted vs 1.15 observed for intermediate risk; 0.44 vs 0.33 for high). |
 | Can it say how long **one person** will live? | **Not reliably.** Median absolute error 0.39 y, MAE 0.87 y; 60% within six months, 81% within a year — but actual survival inside a single predicted-risk band spans ~1–1.4 years between the 10th and 90th percentile. |
@@ -75,6 +75,8 @@ inside every fold; patients never span folds.
 | **full (molecular + clinical)** | **0.726** | **0.752** | **+0.034 [+0.006, +0.059]** |
 
 Risk tertiles separate on the hold-out with log-rank **p = 2.8 × 10⁻⁹**.
+
+**On the stability of the hold-out figure.** Re-drawing the sealed hold-out 60 times gives **0.756 ± 0.029** (5th–95th percentile 0.707–0.799); the single sealed split's 0.787 sits at the 86th percentile, so 0.756 is the honest expectation. The **gain** is the firmer claim: **+0.062 over age + ELN, positive on 100% of 60 draws**. Deployed models are now also fitted *within* treatment stratum (intensive 0.729, non-intensive 0.681) and the layer selects one when induction type is supplied.
 
 The honest reading: **age carries most of the signal, ELN adds a little, and molecular data adds a
 real but modest amount only in combination.** Cell state and mutations *on their own* are worse than

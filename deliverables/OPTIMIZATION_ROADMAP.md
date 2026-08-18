@@ -10,7 +10,7 @@ Current state, for reference:
 | | metric |
 |---|---|
 | COMPASS-AML | per-inhibitor AUROC 0.774 · per-patient top-1 retrieval 34% vs 10% chance |
-| survival discrimination | C-index 0.752 sealed hold-out · +0.034 over age+ELN |
+| survival discrimination | C-index **0.756 ± 0.029** over 60 hold-out draws (single split 0.787) · **+0.062** over age+ELN, positive on 60/60 |
 | lifespan (group) | median survival per risk tertile accurate to ~6 weeks |
 | lifespan (individual) | MAE 0.87 y; ~1–1.4 y spread inside one risk band |
 

@@ -121,7 +121,8 @@ FIGS = {
  7: ("Sv1_survival_discrimination.png",
      "**Figure 7 | Survival discrimination by feature block against the clinical baseline.** Age and "
      "ELN risk are available at diagnosis and free, so the quantity of interest is the increment over "
-     "them. The deployed model reaches C-index 0.787 on the sealed hold-out against 0.725 for age + "
+     "them. The deployed model reaches C-index 0.756 +/- 0.029 across 60 re-draws of the sealed hold-out "
+     "(the single sealed split gave 0.787) against 0.694 for age + "
      "ELN (+0.059, 95% CI +0.030 to +0.088). The molecular blocks alone do not beat the clinical "
      "baseline (-0.003); only the combination adds."),
  8: ("Sv4_tcga_external_validation.png",

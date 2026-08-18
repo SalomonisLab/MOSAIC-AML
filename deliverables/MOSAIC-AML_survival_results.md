@@ -9,7 +9,7 @@ commands in §9.
 
 | question | answer |
 |---|---|
-| Can it rank who dies sooner? | **Yes.** C-index **0.787** on a sealed hold-out; **0.706** on TCGA-LAML with every coefficient frozen. |
+| Can it rank who dies sooner? | **Yes.** C-index **0.756 ± 0.029** across 60 hold-out re-draws (the single sealed split gave 0.787); **0.706** on TCGA-LAML with every coefficient frozen. |
 | Does it beat age + ELN 2017? | **Yes, but only in combination.** +0.059 [+0.030, +0.088], P = 0.001. |
 | Does molecular data beat age + ELN on its own? | **No.** −0.003 in BeatAML *and* −0.003 in TCGA, independently. |
 | Calibrated probability of surviving to a horizon? | **Yes.** Mean absolute calibration gap 0.043–0.075. |
@@ -19,6 +19,8 @@ commands in §9.
 
 **Deployed output is a risk group, horizon probabilities and restricted mean survival — never a single
 predicted number of months for one patient.**
+
+> **Stability of the headline.** Re-drawing the sealed hold-out 60 times gives **0.756 ± 0.029** (5th–95th percentile 0.707–0.799); the single sealed split's 0.787 sits at the 86th percentile, so 0.756 is the honest expectation. The **gain** is the firmer claim: **+0.062 over age + ELN, positive on 100% of 60 draws**.
 
 ---
 

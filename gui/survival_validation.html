@@ -73,7 +73,7 @@
   <section id="limits"><div class="q">Where should this not be trusted</div><h2>Stated limits, measured rather than assumed</h2>
     <div class="scroll"><table>
       <tr><th>Limit</th><th>Evidence</th></tr>
-      <tr><td><b>Near-useless without intensive induction</b></td><td>C-index 0.724 in the 284 intensively treated patients, <b>0.554</b> in the 71 who were not — where age + ELN is itself below chance (0.481).</td></tr>
+      <tr><td><b>Needs treatment-stratified fitting outside intensive induction</b></td><td>The old figure here (0.554) was a <i>pooled-fitting artefact</i>. Fitted <b>within</b> the stratum the model scores <b>0.681</b> (0.701 with the published TP53/FLT3-ITD/NRAS/KRAS rule), against 0.729 in intensively-treated patients. What survives is the finding about the <i>guideline</i>: ELN 2017 scores 0.496 and ELN 2022 <b>0.462</b> there — at or below chance. The deployed layer now selects a stratum model when induction type is supplied.</td></tr>
       <tr><td><b>Not causal about treatment</b></td><td>Baseline induction type is a covariate, which removes treatment as a confounder. It does not license counterfactuals: 529 of 535 received the same standard induction, and induction intensity partly encodes clinician judgement about fitness.</td></tr>
       <tr><td><b>Treatment gain is externally unvalidated</b></td><td>TCGA-LAML is treatment-homogeneous, so the +0.035 C-index that induction type contributes in BeatAML cannot be checked there at all.</td></tr>
       <tr><td><b>Single-cell survival is a bridge, not a fit</b></td><td>The atlas has vital status for 0 samples. Single-cell patients are reached only through the bulk-equivalent bridge, which is not itself validated against observed survival.</td></tr>
@@ -108,7 +108,7 @@ fetch('/val/validation_tcga_laml.json').then(r=>r.ok?r.json():null).then(v=>{
   const k=document.getElementById('kpis');
   const dep=(v.arms||{}).deployed||{};
   k.innerHTML=[[f(dep.c_index),'C-index, TCGA-LAML (frozen)'],
-               ['0.787','C-index, sealed hold-out (BeatAML)'],
+               ['0.756','C-index, BeatAML (60 hold-out draws, ±0.029)'],
                [v.n,'external patients scored'],
                [v.deaths,'deaths observed externally'],
                [t.high?(100*t.low.surv_2y).toFixed(0)+'% / '+(100*t.high.surv_2y).toFixed(0)+'%':'—','2-y survival, low vs high risk']]
