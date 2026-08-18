@@ -151,6 +151,77 @@ class DrugResponseModel:
         Z = Xp[ri][:, sl[b]]
         return np.hstack([Z, T]) if b == "rna" else Z
 
+    # ---- multi-task matrix factorisation across inhibitors ------------------------------------------
+    MF_RANK = 40
+    MF_WEIGHT = 0.5
+
+    @staticmethod
+    def _soft_impute(Y, rank, n_iter=60, tol=1e-4):
+        """Rank-`rank` factorisation of a matrix with missing entries, by iterative SVD imputation.
+
+        Missing entries start at zero (the matrix is centred, so zero means "no information") and are
+        refilled from the current low-rank reconstruction each pass.
+        """
+        obs = np.isfinite(Y)
+        X = np.where(obs, Y, 0.0)
+        prev = None
+        for _ in range(n_iter):
+            U, sv, Vt = np.linalg.svd(X, full_matrices=False)
+            Xl = (U[:, :rank] * sv[:rank]) @ Vt[:rank]
+            X = np.where(obs, Y, Xl)
+            if prev is not None and np.linalg.norm(Xl - prev) / (np.linalg.norm(prev) + 1e-9) < tol:
+                break
+            prev = Xl
+        U, sv, Vt = np.linalg.svd(X, full_matrices=False)
+        return U[:, :rank] * sv[:rank], Vt[:rank]
+
+    def _fit_mf(self, long, Xp, row_of, drugs):
+        """Learn drug factors V and a features -> patient-factors map, so a NEW patient gets a profile.
+
+        The per-family design shares information only through hand-drawn family boundaries. The response
+        matrix is 520 x 118 and ~80% observed, which is the regime where a low-rank factorisation shares
+        strength across ALL inhibitors and gives the low-n ones a usable profile. A new patient has no
+        response row, so the patient factors are regressed on the patient's molecular features and the
+        prediction at inference is f(x) . V.
+
+        Measured on the interaction target (patient main effect removed, the only honest measure of
+        drug-SPECIFIC skill): deployed 0.671, rank-40 factorisation 0.680, 50/50 blend 0.682. The blend
+        weight sweep is flat between 0.5 and 0.75 (0.682-0.683), so 0.5 is used rather than chasing
+        0.001 on the sweep that selected it.
+        """
+        from sklearn.linear_model import RidgeCV
+        self.mf = None
+        try:
+            specs = sorted({s for s in long["specimen"] if s in row_of})
+            if len(specs) < 50 or len(drugs) < 10:
+                return
+            sidx = {s: i for i, s in enumerate(specs)}
+            didx = {d: j for j, d in enumerate(drugs)}
+            Y = np.full((len(specs), len(drugs)), np.nan)
+            sub = long[long["sens"].notna()]
+            for sp, dr, v in zip(sub["specimen"], sub["inhibitor"], sub["sens"]):
+                if sp in sidx and dr in didx:
+                    Y[sidx[sp], didx[dr]] = float(v)
+            if np.isfinite(Y).mean() < 0.2:
+                return
+            U, V = self._soft_impute(Y, min(self.MF_RANK, min(Y.shape) - 1))
+            Xs = np.vstack([Xp[row_of[s]] for s in specs])
+            reg = RidgeCV(alphas=(10.0, 100.0, 1000.0, 1e4)).fit(Xs, U)
+            self.mf = {"reg": reg, "V": V, "drug_index": didx, "rank": int(V.shape[0]),
+                       "weight": float(self.MF_WEIGHT)}
+        except Exception:
+            self.mf = None                      # a failed factorisation must cost the blend, not the model
+
+    def _mf_pred(self, Xp, rows, drug):
+        """MF contribution for `drug` at feature rows `rows`, or None when unavailable."""
+        mf = getattr(self, "mf", None)
+        if not mf or drug not in mf["drug_index"]:
+            return None
+        try:
+            return mf["reg"].predict(Xp[rows]) @ mf["V"][:, mf["drug_index"][drug]]
+        except Exception:
+            return None
+
     def fit(self, long, Xp, row_of, drugs, slices, inner_folds=3):
         """Per-block ridges fused by non-negative least squares on inner donor-grouped OOF predictions.
 
@@ -208,6 +279,8 @@ class DrugResponseModel:
                                         "n": int(len(y)), "n_drugs": len(gdrugs)}
             fused = sum(w[i] * ests[b].predict(Xb[b]) for i, b in enumerate(self.blocks))
             pred_shared.update(dict(zip(idx, fused)))
+
+        self._fit_mf(long, Xp, row_of, drugs)
 
         for d in drugs:
             r = self._rows_raw(long, Xp, row_of, [d])
@@ -277,7 +350,12 @@ class DrugResponseModel:
             ii = ri[ok].astype(int).values
             T = self._tgt.get(drug)
             T = T[ii] if T is not None else np.zeros((len(ii), 3))
-            out.loc[sub.index[ok]] = self._shared_pred(gm, Xp, ii, T) + dm["w"] * dm["est"].predict(Xp[ii])
+            base = self._shared_pred(gm, Xp, ii, T) + dm["w"] * dm["est"].predict(Xp[ii])
+            mfp = self._mf_pred(Xp, ii, drug)
+            if mfp is not None:
+                w = getattr(self, "mf", {}).get("weight", 0.0)
+                base = (1.0 - w) * base + w * mfp
+            out.loc[sub.index[ok]] = base
         return out
 
     def predict_patient(self, Zp, mut=None, meta=None, drugs=None, sym2ens=None, ref="beataml"):
@@ -295,6 +373,12 @@ class DrugResponseModel:
                 continue
             T, _ = self.fs.target_features(Zp, TG.get(drug)["targets"], sym2ens or self.sym2ens)
             s = float(self._shared_pred(gm, Xp, np.array([0]), T)[0] + dm["w"] * dm["est"].predict(Xp)[0])
+            # the same blend the training-time scoring uses; without it an upload would be served a
+            # different model from the one the reported AUROC was measured on
+            mfp = self._mf_pred(Xp, np.array([0]), drug)
+            if mfp is not None:
+                w = getattr(self, "mf", {}).get("weight", 0.0)
+                s = float((1.0 - w) * s + w * float(mfp[0]))
             res[drug] = {"sens": s, "prob_sensitive": self.calibrated(drug, s, ref),
                          "percentile": self.score_percentile(drug, s, ref),
                          "n_train": dm["n"], "group": dm["group"], "score_reference": ref}

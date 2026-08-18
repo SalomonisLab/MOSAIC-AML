@@ -1,0 +1,63 @@
+{
+ "generated": "2026-08-18 16:27",
+ "n": 444,
+ "deaths": 245,
+ "signalling_definition": "FLT3-ITD or NRAS or KRAS mutated",
+ "n_signalling": 185,
+ "source": "Loewenberg/Doehner, Blood 2024 (ELN in less-intensive therapies)",
+ "E2_per_genotype": {
+  "NPM1": {
+   "n_without": 58,
+   "median_without_months": 28.6,
+   "n_with": 67,
+   "median_with_months": 14.4,
+   "logrank_chi2": 0.448,
+   "logrank_p": 0.5034819102673826,
+   "published_without": 39.0,
+   "published_with": 9.9,
+   "same_direction": true
+  },
+  "IDH2": {
+   "n_without": 32,
+   "median_without_months": 40.6,
+   "n_with": 17,
+   "median_with_months": 10.7,
+   "logrank_chi2": 1.13,
+   "logrank_p": 0.2877921911177238,
+   "published_without": 36.9,
+   "published_with": 12.2,
+   "same_direction": true
+  },
+  "RUNX1": {
+   "n_without": 31,
+   "median_without_months": 8.0,
+   "n_with": 14,
+   "median_with_months": 2.6,
+   "logrank_chi2": 0.012,
+   "logrank_p": 0.9120327516368882,
+   "published_without": 32.5,
+   "published_with": 9.3,
+   "same_direction": true
+  },
+  "MR_genes": {
+   "n_without": 95,
+   "median_without_months": 10.2,
+   "n_with": 52,
+   "median_with_months": 10.4,
+   "logrank_chi2": 0.121,
+   "logrank_p": 0.7280229868100656,
+   "published_without": 22.9,
+   "published_with": 12.9,
+   "same_direction": false
+  }
+ },
+ "E1_interaction_vs_flat": {
+  "n_scored": 444,
+  "flat_4gene_c_index": 0.5605,
+  "genotype_x_signalling_c_index": 0.6061
+ },
+ "E3_DDX41": {
+  "n_mutated": 1,
+  "note": "too few DDX41-mutated specimens to assess; the published favourable effect is reported under HMA therapy"
+ }
+}

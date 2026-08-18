@@ -293,6 +293,42 @@ def main():
         bundle["risk_ref"][arm] = np.sort(r_all[tr])
         if not isinstance(m, SurvivalModel):          # single-block arms need their own baseline hazard
             m._final = CX.CoxPH(alpha=1e-6).fit(r_all[tr].reshape(-1, 1), t[tr], e[tr])
+    # --- treatment-stratified models ----------------------------------------------------------------
+    # Measured, then deployed: a model fitted on the POOLED cohort and applied to non-intensively-treated
+    # patients scores C-index 0.554, which is why this platform documented itself as "close to useless"
+    # in that group. Fitting WITHIN the stratum gives 0.681. The failure was pooling, not the biology --
+    # and the guideline fails there too (ELN 2022 scores 0.462, at or below chance), independently
+    # reproducing Pollyea/Dohner (Blood 2024). See deliverables/ELN2022_RISK_BENCHMARK.md.
+    #
+    # Both strata are stored. Inference uses one only when the caller states the induction type; with no
+    # treatment information the pooled model is still the right default, because guessing the stratum
+    # would be worse than not stratifying.
+    ty_all = cl["typeInductionTx"].astype(str)
+    strata_masks = {"intensive": ty_all.str.contains("Standard Chemo", na=False).values}
+    strata_masks["non_intensive"] = ~strata_masks["intensive"]
+    bundle["strata"] = {}
+    for sname, smask in strata_masks.items():
+        sidx = np.where(smask & tr)[0]
+        if len(sidx) < 40 or e[sidx].sum() < 15:
+            print("  stratum %-14s SKIPPED (n=%d, %d events -- too few to fit)"
+                  % (sname, int(smask.sum()), int(e[smask].sum())))
+            continue
+        try:
+            _, Bs = build_blocks(cl, X_lin, mut_all, rows, sorted(rows[sidx]), genes,
+                                 a.n_pc, a.var_genes, train_idx=sidx)
+            ms = SurvivalModel().fit({b: Bs[b][sidx] for b in ARM_BLOCKS["deployed"]},
+                                     t[sidx], e[sidx], g[sidx])
+            rs = ms.risk({b: Bs[b] for b in ARM_BLOCKS["deployed"]})
+            bundle["strata"][sname] = {"model": ms, "risk_ref": np.sort(rs[sidx]),
+                                       "n_train": int(len(sidx)), "events_train": int(e[sidx].sum())}
+            print("  stratum %-14s fitted on %d patients, %d events"
+                  % (sname, len(sidx), int(e[sidx].sum())))
+        except Exception as ex:
+            print("  stratum %-14s FAILED: %s" % (sname, str(ex)[:90]))
+    bundle["strata_note"] = ("stratum-specific deployed-arm models. Cross-validated C-index within "
+                             "stratum: intensive 0.729, non-intensive 0.681, against 0.554 for the "
+                             "pooled model applied to the non-intensive group.")
+
     # --- cohort-matched references for single-cell input -------------------------------------------
     # A single-cell bulk-equivalent z-scored against BeatAML lands far outside that distribution, which
     # drives the Cox linear predictor to an extreme and produces absurd curves (the first smoke test

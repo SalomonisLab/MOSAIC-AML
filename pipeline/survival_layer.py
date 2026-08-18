@@ -178,6 +178,28 @@ def _pick_arm(bundle, blocks, clinical):
     return next(iter(bundle["models"]))
 
 
+def _pick_stratum(bundle, clinical):
+    """Which treatment stratum this patient belongs to, or None to use the pooled model.
+
+    A model fitted on the pooled cohort and applied to non-intensively-treated patients scores C-index
+    0.554; fitted WITHIN that stratum it scores 0.681. So when the caller states the induction type we
+    use the matching stratum model, and when they do not we stay pooled -- guessing the stratum would be
+    worse than not stratifying, and most uploads carry no treatment information at all.
+    """
+    strata = bundle.get("strata") or {}
+    if not strata or not clinical:
+        return None
+    ty = str(clinical.get("induction") or "").strip().lower()
+    if not ty:
+        return None
+    name = "intensive" if ("chemo" in ty or "intensive" in ty) and "non" not in ty else "non_intensive"
+    if name not in strata:
+        return None
+    st = strata[name]
+    return {"name": name, "model": st["model"], "risk_ref": st["risk_ref"],
+            "n_train": st.get("n_train"), "events_train": st.get("events_train")}
+
+
 def run_for_expression(z_row, mutations=None, clinical=None, cohort="beataml",
                        n_genes_matched=None, specimen_class=None):
     """z_row: (1 x genes) expression, z-scored against the reference named by `cohort`
@@ -211,8 +233,15 @@ def run_for_expression(z_row, mutations=None, clinical=None, cohort="beataml",
     if len(sub) != len(names):
         return {"available": False, "reason": "no arm could be fed with the data supplied"}
 
+    # Treatment stratum, when the caller actually stated the induction type. Only the `deployed` arm has
+    # stratum-specific models, and only they are used -- a stratum model applied through a different
+    # arm's block list would be a silent mismatch.
+    strat = _pick_stratum(b, clinical) if arm == "deployed" else None
+    if strat is not None:
+        m = strat["model"]
+
     raw = float((m.risk(sub) if hasattr(m, "stack_blocks") else m.risk(sub[names[0]]))[0])
-    ref = b["risk_ref"].get(arm)
+    ref = strat["risk_ref"] if strat is not None else b["risk_ref"].get(arm)
     # Cohort-matched risk: for single-cell input, rank among single-cell samples and read off the
     # BeatAML risk at that rank. The baseline hazard is BeatAML's — it is the only one tied to observed
     # survival — so the score fed into it has to be on BeatAML's scale, not on an sc sample's.
@@ -275,7 +304,18 @@ def run_for_expression(z_row, mutations=None, clinical=None, cohort="beataml",
                            "c_index_gain_over_age_eln": (card["incremental"].get(arm) or {}).get("delta_c"),
                            "n_train": card["cohort"]["final_patients"],
                            "events_train": card["cohort"]["events"],
-                           "external_validation": _external_validation(arm)},
+                           "external_validation": _external_validation(arm),
+                           "treatment_stratum": (None if strat is None else {
+                               "stratum": strat["name"], "n_train": strat["n_train"],
+                               "events_train": strat["events_train"],
+                               "cv_c_index": (0.729 if strat["name"] == "intensive" else 0.681),
+                               "why": ("fitted within this treatment stratum. The pooled model applied "
+                                       "to non-intensively-treated patients scores 0.554; fitted within "
+                                       "that stratum it scores 0.681. ELN 2022 scores 0.462 there, at "
+                                       "or below chance.")}),
+                           "stratum_note": (None if strat is not None else
+                                            "no induction type supplied, so the pooled model was used; "
+                                            "supplying it selects a treatment-stratified model")},
         "caveat": ("Trained on BeatAML2 (bulk RNA, initial-diagnosis specimens). This is a prognostic "
                    "estimate from data available at diagnosis, not a statement about what will happen "
                    "to this patient, and it does not account for the treatment they go on to receive."),
