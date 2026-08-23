@@ -61,6 +61,7 @@
   .pill.control{color:var(--control);border-color:var(--control-line);background:var(--control-bg)}
   .pill.diseased{color:var(--present);border-color:var(--present-line);background:var(--present-bg)}
   .pill.accent{color:var(--accent);border-color:var(--accent-dim);background:var(--accent-bg)}
+  .gatenote{font-size:11.5px;line-height:1.5;color:var(--muted);margin-top:7px;max-width:52ch}
   /* drivers-recovered pill: all found / some found / none found */
   .pill.good{color:var(--absent);border-color:var(--absent-line);background:var(--absent-bg)}
   .pill.warn{color:var(--accent);border-color:var(--accent-dim);background:var(--accent-bg)}
@@ -317,8 +318,14 @@ function renderRoster(dir){
 const GROUP_ORDER=["Held-out validation (sealed test)","Trumpp/Waclawiczek cohort","Uploaded patients","Other"];
 function rosterItem(r){
   const spec=r.specimen_class, lead=spec||r.leading_hypothesis||"—";
-  const cls=spec==="control"?"control":spec==="diseased"?"diseased":(r.overall_confidence||"low");
-  const tag=spec?`<span class="pill ${spec}">${esc(spec)}</span>`:`<span class="pill lead">${esc(lead)}</span>`;
+  // "diseased" is the legacy value in reports generated before the gate was relabelled; both it and the
+  // current "not_excluded" mean the same thing and neither is a positive finding, so both render as
+  // "not excluded". Only a `control` call carries weight (0.99 sensitivity protects that direction).
+  const isCtl=spec==="control", isPos=spec==="diseased"||spec==="not_excluded";
+  const cls=isCtl?"control":isPos?"diseased":(r.overall_confidence||"low");
+  const label=isCtl?"control":isPos?"not excluded":esc(lead);
+  const tip=isPos?" title=\"the gate did not rule out disease; at its operating point it calls about half of genuinely healthy specimens positive, so this is not evidence of disease\"":"";
+  const tag=spec?`<span class="pill ${cls}"${tip}>${label}</span>`:`<span class="pill lead">${esc(lead)}</span>`;
   // Lead with confirmed DRIVERS RECOVERED, not the combined ratio. The combined ratio is dominated by
   // confirmed-absent genes that the model calls absent by default — one Leucegene sample scored 26/27
   // while missing its only real driver (IDH2), a score an all-absent predictor also achieves. Where a
@@ -383,18 +390,26 @@ function renderSpecimen(rep){
   const pd=g&&g.p_diseased!=null?+g.p_diseased:null;
   const isControl=spec==="control";
   if(!spec) return `<div class="banner info"><span class="ic">○</span><div>No control gate on this report — proceeding directly to mutation predictions.</div></div>`;
+  // A positive gate call is NOT a diagnosis. The gate runs at 0.99 disease sensitivity and the measured
+  // price is a control specificity of 0.50 on 24 training controls: it calls half of genuinely healthy
+  // specimens positive. Two normal sorted populations in GSE281087 were called positive, and this card
+  // used to render that as "DISEASED" in 40-point type. The control call is the informative one.
+  const sp=g&&g.control_specificity!=null?+g.control_specificity:null;
+  const fpr=sp==null?null:Math.round(100*(1-sp));
   return `<div class="card"><div class="specimen">
     <div class="lead">
-      <div class="lbl">Control gate · healthy vs diseased</div>
-      <div class="verdict ${isControl?"control":"diseased"}">${isControl?"CONTROL · no mutation":"DISEASED"}</div>
+      <div class="lbl">Control gate · healthy vs not-excluded</div>
+      <div class="verdict ${isControl?"control":"diseased"}">${isControl?"CONTROL · no mutation":"DISEASE NOT EXCLUDED"}</div>
       <div class="gateline ${isControl?"control":"diseased"}">${isControl?"⬡ gated as healthy — mutation calling not indicated"
-        :"⬢ diseased specimen — mutation predictions below"}</div>
+        :"⬢ not a positive finding — the gate does not establish disease, it only fails to rule it out"}</div>
+      ${isControl?"":`<div class="gatenote">At the deployed operating point the gate calls ${fpr==null?"about half":fpr+"%"} of genuinely healthy specimens positive${sp==null?"":` (control specificity ${num(sp,2)}${g.n_control_train?" on "+g.n_control_train+" training controls":""})`}. Read the mutation panel below on its own evidence.</div>`}
     </div>
     <div class="gauge-wrap">
       <div class="kv"><span>P(diseased)</span><b>${pd==null?"–":pct(pd)}</b></div>
       <div class="bar"><span class="${isControl?"control":"present"}" style="width:${pd==null?0:(pd*100).toFixed(1)}%"></span></div>
       <div class="kv"><span>gate AUC</span><b>${g&&g.cv_auc?num(g.cv_auc,3):"–"}</b></div>
       <div class="kv faint"><span>threshold</span><b>${g&&g.threshold!=null?num(g.threshold,3):"–"}</b></div>
+      ${sp==null?"":`<div class="kv faint"><span>control specificity</span><b>${num(sp,2)}</b></div>`}
     </div></div></div>`;
 }
 
