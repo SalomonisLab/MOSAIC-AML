@@ -27,6 +27,8 @@
   .picker button.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
   .mk button{border-radius:7px;padding:3px 11px}
   .mk button:disabled{opacity:.42;cursor:default;background:#fff}
+  .modwhy{font-size:13px;line-height:1.65;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px;max-width:78ch}
+  .modwhy b{color:var(--ink)}
   .mk button:disabled:hover{border-color:var(--line)}
   #bar{height:240px} #violin{height:430px} #loc{height:390px}
   .note{font-size:12.5px;color:var(--muted);margin-top:9px;padding:0 2px}
@@ -131,14 +133,39 @@ function buildMods(){const mm=document.getElementById('mods');mm.innerHTML='';
     b.onclick=()=>{[...mm.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');showMk(m);};
     mm.appendChild(b);if(i===0)setTimeout(()=>b.click(),0);});
 }
+// Why most molecules used to render as a row of dead buttons: this panel plots MEASURED RNA per cell
+// state, and it can only draw a molecule that exists as a gene symbol in the RNA matrix. The four
+// modalities where nothing was ever clickable are exactly the four imputed-from-RNA blocks, and their
+// features are not RNA species at all -- ADT markers are antibody names (GPR56 is the gene ADGRG1,
+// CD73 is NT5E, GARP is LRRC32), Lipid markers are lipid species ("TG O-54:1"), and Metabolite markers
+// are unannotated features literally named "Unknown0 932". GRN markers are transcription-factor
+// regulons, so the occasional one does match a gene symbol. Showing twelve disabled buttons implied the
+// data was missing; it is not missing, it is a different kind of measurement.
+const MOD_WHY={
+  ADT:'ADT features are <b>antibody names</b>, not gene symbols — GPR56 is the gene <i>ADGRG1</i>, CD73 is <i>NT5E</i>, GARP is <i>LRRC32</i> — so they have no row in the RNA matrix this panel plots. The ADT block is also imputed from RNA, so its "protein" is an RNA-conditioned estimate rather than a measurement.',
+  Lipid:'Lipid features are <b>lipid species</b> (for example "TG O-54:1"), not genes. There is nothing to plot on an RNA expression axis. The block is imputed from RNA.',
+  Metabolite:'Metabolite features here are largely <b>unannotated</b> — names such as "Unknown0 932" are peak identifiers, not compounds, and certainly not genes. The block is imputed from RNA.',
+  GRN:'GRN features are <b>transcription-factor regulons</b>. The regulon is named after its TF, so a few coincide with a gene symbol and can be plotted, but the regulon <i>activity</i> the classifier used is not the same quantity as the expression of that TF. The block is imputed from RNA.'};
+
 function showMk(m){const mk=document.getElementById('mk');mk.innerHTML='';
-  CUR.markers[m].forEach(g=>{const c=document.createElement('button');c.textContent=g;
-    const has=!!CUR.violins[g];if(!has){c.disabled=true;c.title='no per-cell-state expression for this molecule';}
+  const avail=CUR.markers[m].filter(g=>CUR.violins[g]);
+  const missing=CUR.markers[m].filter(g=>!CUR.violins[g]);
+  avail.forEach(g=>{const c=document.createElement('button');c.textContent=g;
     c.onclick=()=>{[...mk.children].forEach(x=>x.classList.remove('on'));c.classList.add('on');drawViolin(g,m);};
     mk.appendChild(c);});
-  const first=CUR.markers[m].find(g=>CUR.violins[g]);
-  if(first)setTimeout(()=>{[...mk.children].find(b=>b.textContent===first).click();},0);
-  else{Plotly.purge('violin');document.getElementById('vnote').textContent='No RNA-level per-cell-state expression loaded for '+m+' markers in this slice.';}
+  const note=document.getElementById('vnote');
+  if(avail.length){
+    setTimeout(()=>{[...mk.children].find(b=>b.textContent===avail[0]).click();},0);
+    if(missing.length)note.innerHTML='Showing the '+avail.length+' of '+CUR.markers[m].length+
+      ' top '+m+' markers that have per-cell-state <b>measured RNA</b> in this export. '+
+      (MOD_WHY[m]?MOD_WHY[m]:'The remainder are ranked markers whose per-cell-state expression was not exported.');
+  }else{
+    Plotly.purge('violin');
+    mk.innerHTML='<div class="modwhy">'+(MOD_WHY[m]||'No per-cell-state expression is available for '+m+' markers.')+
+      '<br><br><b>Top '+m+' markers the classifier actually used:</b> '+CUR.markers[m].join(' · ')+'</div>';
+    note.innerHTML='This panel plots measured RNA per cell state, so it cannot render '+m+
+      ' features. Their contribution to the call is the per-modality AUROC and fusion weight in panel 1 above.';
+  }
 }
 function drawViolin(g,m){const gd=CUR.violins[g],states=Object.keys(gd);
   const traces=[['mutant',ACC],['control',NEUTRAL]].map(([grp,col])=>{const xs=[],ys=[];
