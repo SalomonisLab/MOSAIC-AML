@@ -85,10 +85,28 @@ class BulkMutationPredictor:
         if q != q:
             return None
         prob = q if m["sign"] > 0 else 1.0 - q
-        thr = m["threshold"]; ca = m["cv_auroc"]
+        # A cohort-calibrated threshold, where one has been fitted, overrides the shipped one. Measured:
+        # fitting per-category thresholds on a labelled subset and transferring them to held-out
+        # specimens of the SAME cohort raises F1 everywhere tested, most where the caller is worst
+        # (GSE281087 0.250 -> 0.407, precision 0.182 -> 0.458). Label-FREE recalibration was tried and
+        # REJECTED -- within-cohort percentile and prevalence matching are both worse than the shipped
+        # thresholds on three of four cohorts -- so this activates only when someone has supplied ground
+        # truth for the target cohort through calibrate_to_cohort.py.
+        ct = getattr(self, "cohort_thresholds", None) or {}
+        thr = float(ct["thresholds"][cat]) if cat in (ct.get("thresholds") or {}) else m["threshold"]
+        ca = m["cv_auroc"]
         conf = "ok" if (ca is not None and ca >= 0.65) else ("abstain: weak (CV AUROC %.2f)" % ca if ca is not None else "abstain: unknown")
-        return {"probability": round(float(prob), 3), "call": "present" if prob >= thr else "absent",
-                "threshold": round(float(thr), 3), "cv_auroc": ca, "n_pos_train": m["n_pos"], "confidence": conf}
+        out = {"probability": round(float(prob), 3), "call": "present" if prob >= thr else "absent",
+               "threshold": round(float(thr), 3), "cv_auroc": ca, "n_pos_train": m["n_pos"],
+               "confidence": conf}
+        # Stamp provenance only where the cohort threshold ACTUALLY differs. calibrate_to_cohort.py
+        # writes every category into its file, carrying the shipped value for the ones it refused to
+        # recalibrate, so marking all of them would advertise a calibration that did not happen.
+        if abs(float(thr) - float(m["threshold"])) > 1e-9:
+            out["threshold_source"] = {"cohort": ct.get("cohort"),
+                                       "fitted_on_specimens": ct.get("n_specimens"),
+                                       "shipped_threshold": round(float(m["threshold"]), 3)}
+        return out
 
     def predict(self, sample, ref="sc"):
         if not hasattr(self, "_gidx"):
@@ -156,6 +174,23 @@ class BulkMutationPredictor:
     # It also refuted the framing that motivated it. GSE281087 does not make too MANY positive calls --
     # it makes about the right number and gets them wrong. The single-patient upload path therefore has
     # no working out-of-distribution guard for the mutation caller, and that gap is real and open.
+
+    def use_cohort_thresholds(self, path_or_dict):
+        """Attach thresholds fitted for a specific cohort by calibrate_to_cohort.py.
+
+        Categories absent from the file keep their shipped threshold -- the calibration tool refuses to
+        fit a category with fewer than three labelled positives, because a cut fitted on one or two is
+        noise dressed as calibration.
+        """
+        import json as _json
+        d = path_or_dict
+        if isinstance(d, str):
+            with open(d, encoding="utf-8") as f:
+                d = _json.load(f)
+        if not isinstance(d, dict) or "thresholds" not in d:
+            raise ValueError("expected a calibrate_to_cohort.py output containing a 'thresholds' key")
+        self.cohort_thresholds = d
+        return len(d["thresholds"])
 
     MIN_COHORT = 8
 

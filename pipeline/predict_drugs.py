@@ -32,6 +32,87 @@ STATE_COL = "Hs-BM-titrated-reference-centroid"
 
 
 # ------------------------------------------------------------------ input ----
+
+ABSTENTION_CURVE = None
+
+
+def _abstention_curve():
+    """The measured coverage->error curve, so a report can state what its own abstention buys."""
+    global ABSTENTION_CURVE
+    if ABSTENTION_CURVE is None:
+        try:
+            v = json.load(open(os.path.join(ROOT, "deliverables", "drug_model_validation.json"),
+                               encoding="utf-8"))
+            ABSTENTION_CURVE = v.get("abstention") or []
+        except Exception:
+            ABSTENTION_CURVE = []
+    return ABSTENTION_CURVE
+
+
+def _expected_error_at(coverage):
+    """Nearest measured point on the published curve, so the number quoted is measured not modelled."""
+    c = _abstention_curve()
+    if not c:
+        return None
+    best = min(c, key=lambda r: abs(r.get("coverage", 1.0) - coverage))
+    return {"measured_at_coverage": best.get("coverage"), "error_rate": best.get("error_rate"),
+            "auroc": best.get("auroc"), "n_calls_measured": best.get("n")}
+
+
+def _apply_coverage(scored, coverage):
+    """Keep the most confident `coverage` fraction; decline the rest with the reason stated."""
+    if not scored or coverage is None or coverage >= 1.0:
+        return scored, []
+    rows = [(d, v.get("_confidence")) for d, v in scored.items()]
+    rank = sorted([r for r in rows if r[1] is not None], key=lambda r: -r[1])
+    keep_n = max(1, int(round(coverage * len(rank))))
+    keep = {d for d, _ in rank[:keep_n]}
+    exp = _expected_error_at(coverage)
+    out, declined = {}, []
+    for d, v in scored.items():
+        if v.get("_confidence") is None or d in keep:
+            v.pop("_confidence", None)
+            out[d] = v
+        else:
+            declined.append({"inhibitor": d, "reason": (
+                "declined to reach %.0f%% coverage: this call sits in the least-confident %.0f%% of the "
+                "panel, where the measured error rate is materially higher"
+                % (100 * coverage, 100 * (1 - coverage))),
+                "confidence": round(float(v["_confidence"]), 4)})
+    return out, declined
+
+
+def _tier_accuracy(mod, drugs):
+    """Held-out accuracy for the tier the report actually recommends from.
+
+    The all-118 average understates the deployed use case: the product ranks within clinical tier and
+    a clinician acts on the approved ones. Computed from the model's own metrics rather than hardcoded,
+    so it stays correct across retraining.
+    """
+    oofm = getattr(mod, "oof_metrics", {}) or {}
+    buckets = {}
+    for d in drugs:
+        a = (oofm.get(d) or {}).get("auroc")
+        if a is None:
+            continue
+        # the CLINICAL tier the report ranks within, not mod.drug_tier which records the data wave
+        try:
+            ct = TG.get(d)["clinical_tier"]
+        except Exception:
+            ct = "unknown"
+        buckets.setdefault(str(ct), []).append(float(a))
+    out = {k: {"n_drugs": len(v), "mean_auroc": round(float(np.mean(v)), 4)}
+           for k, v in sorted(buckets.items())}
+    act = [a for k, v in buckets.items() if k in ("approved_AML", "approved_other") for a in v]
+    allv = [a for v in buckets.values() for a in v]
+    if act:
+        out["_actionable"] = {"n_drugs": len(act), "mean_auroc": round(float(np.mean(act)), 4),
+                              "definition": "clinical tier approved_AML or approved_other"}
+    if allv:
+        out["_all_modelled"] = {"n_drugs": len(allv), "mean_auroc": round(float(np.mean(allv)), 4)}
+    return out
+
+
 def atlas_sample(name):
     """Pull one atlas sample's (cell-state x gene) raw counts straight from the pseudobulk h5ad,
     reading only that sample's rows rather than materialising the 1 GB matrix."""
@@ -52,8 +133,13 @@ def atlas_sample(name):
 
 
 # ------------------------------------------------------------------- run ----
+# Coverage the report is scored at. 0.50 is the measured knee: error 0.283 -> 0.167, AUROC
+# 0.794 -> 0.880 on 18,919 held-out calls. Set to 1.0 to score every modelled agent.
+DEFAULT_COVERAGE = 0.50
+
+
 def run(state_counts=None, n_cells=None, bulk=None, mutations=None, clinical=None,
-        model_path=MODEL, top=10, prob_cut=0.5):
+        model_path=MODEL, top=10, prob_cut=0.5, coverage=DEFAULT_COVERAGE):
     with open(model_path, "rb") as f:
         mod = pickle.load(f)
     fs = mod.fs
@@ -136,9 +222,22 @@ def run(state_counts=None, n_cells=None, bulk=None, mutations=None, clinical=Non
             abstained.append({"inhibitor": dr, "reason": "uncertainty %.2f above the abstention "
                                                          "threshold" % s["components"]["uncertainty"]})
             continue
+        # confidence exactly as the published abstention curve defines it: |P(sensitive) - 0.5|
+        pr = p.get("prob_sensitive")
+        s["_confidence"] = None if pr is None else abs(float(pr) - 0.5)
         scored[dr] = s
         per_ev[dr] = {"response": resp_by_drug.get(dr), "state": sm_, "mechanism": mech.get(dr),
                       "challenges": ch}
+
+    # ---- coverage-targeted abstention -------------------------------------------------------------
+    # Measured on 18,919 held-out calls: withholding the least-confident half takes the error rate from
+    # 0.283 to 0.167 and AUROC from 0.794 to 0.880. Before this, the uncertainty>=0.75 rule fired on a
+    # median of ZERO drugs, so every report ranked all 118 agents including the ones the model cannot
+    # separate. Declining to score a drug is more useful than scoring it badly.
+    scored, low_conf = _apply_coverage(scored, coverage)
+    for d in low_conf:
+        per_ev.pop(d["inhibitor"], None)
+    abstained.extend(low_conf)
 
     ranked = U.rank_by_tier(scored)
     agents = [resp_agent,
@@ -156,6 +255,16 @@ def run(state_counts=None, n_cells=None, bulk=None, mutations=None, clinical=Non
             "model_version": M.DrugResponseModel.VERSION,
             "n_drugs_modelled": len(drugs), "n_drugs_reported": len(scored),
             "n_abstained": len(abstained),
+            # What this report's own abstention buys, from the measured curve rather than an estimate.
+            "coverage": {"target": coverage, "n_scored": len(scored), "n_declined": len(abstained),
+                         "expected": _expected_error_at(coverage),
+                         "note": ("the least-confident agents are declined rather than ranked badly; "
+                                  "confidence is |P(sensitive) - 0.5|, the same measure the published "
+                                  "abstention curve uses")},
+            # Accuracy for the tier this report recommends FROM, not the all-118 average. The product
+            # ranks within clinical tier, and the approved agents are both the ones a clinician can act
+            # on and the ones the model predicts best.
+            "accuracy_by_tier": _tier_accuracy(mod, drugs),
             "patient": {"genes_shared_with_model": int(n_shared),
                         "ood_distance": ood_dist, "ood_percentile": ood_q,
                         "differentiation_axis_percentile": round(axis_q, 3),
