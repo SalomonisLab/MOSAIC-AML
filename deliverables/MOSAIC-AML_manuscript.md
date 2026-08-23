@@ -40,12 +40,15 @@ confirmatory sequencing rather than a replacement for it.
 On the same feature space we built two further inference layers and report both with their negative
 results foregrounded. **CIPHER-AML** designates the driver-lesion caller above. **COMPASS-AML** predicts
 *ex-vivo* inhibitor sensitivity from 520 BeatAML2 specimens across 118 agents; its apparent per-drug
-AUROC of 0.774 falls to **0.671** once a two-way decomposition removes a patient main effect accounting
+AUROC of 0.775 falls to **0.671** once a two-way decomposition removes a patient main effect accounting
 for 15.4% of matrix variance, and 0.671 is ~92% of a **directly measured assay reliability ceiling of
 0.727**. Per-drug predictability tracks assay reproducibility (Spearman 0.288, P = 0.0017) but not
 training-set size (0.112, P = 0.23), so the binding constraint is the screen rather than the model.
 Predicted sensitivity to cytarabine did **not** separate complete response from refractory disease in
 the 131 patients who received it (AUROC 0.435, P = 0.25), which bounds how the layer may be described.
+The released configuration reports within clinical tier, where held-out accuracy is 0.806 across the
+42 actionable agents against 0.722 for research-only compounds, and declines the least-confident half of
+the panel, which takes the pooled call-level error rate from 0.283 to 0.167.
 A survival layer reaches a C-index of **0.756 +/- 0.029** across 60 re-draws of the sealed hold-out
 (the single sealed split gave 0.787), with a gain over age plus ELN of **+0.062 that is positive on
 100% of draws** and, transferred with all coefficients frozen to **149 TCGA-LAML
@@ -422,11 +425,32 @@ specimens per drug (Spearman 0.112, *P* = 0.23) — the weak inhibitors are hard
 multi-task matrix factorisation across inhibitors adds +0.011 (0.671 → 0.682 at rank 40), the largest
 modelling gain we found and a small one against a ceiling of 0.727.
 
+**What is deployed is narrower and more accurate than the panel-wide average.** Two properties of the
+released configuration are worth separating from the figures above, because both change what a report
+claims rather than what the model computes.
+
+First, accuracy is strongly tier-dependent, and the system ranks within clinical tier rather than across
+the panel. Held-out mean AUROC is **0.818** for agents approved in AML and **0.804** for agents approved
+in other indications — **0.806 across the 42-agent actionable subset** — against 0.798 for trial
+compounds and **0.722** for research-only tool compounds. The all-118 average of 0.775 therefore
+understates the tier a clinician can act on and overstates the tier they cannot. Reports now carry the
+tier breakdown rather than the pooled mean.
+
+Second, the released configuration **declines to score the least-confident half of the panel**. Ranking
+confidence by |*P*(sensitive) − 0.5| and withholding the bottom 50% takes the pooled call-level error
+rate from 0.283 to **0.167** and the pooled call-level AUROC from 0.794 to **0.879**, measured on 18,919
+held-out calls. (These are pooled per-call quantities and are not comparable with the per-drug means
+above; they are reported because they describe what a patient report actually contains.) A report that
+prioritises 59 agents and declines the remainder is both more accurate and more honest than one that
+ranks all 118, and calibration supports the abstention: expected calibration error is 0.0117 with a
+Brier score of 0.185 against a 0.250 baseline.
+
 **The ex-vivo-to-clinical link is null and we report it as such.** Predicted cytarabine sensitivity did
 not separate complete response from refractory disease in the 131 patients who received it (AUROC 0.435,
 *P* = 0.25). COMPASS predicts a laboratory assay close to that assay's own reproducibility limit; it is
 not evidence that ex-vivo prioritisation tracks clinical benefit, and it should not be described as
-treatment guidance.
+treatment guidance. Neither tier reporting nor abstention alters this: they make the panel's internal
+accuracy legible, and neither creates clinical evidence that does not exist.
 
 ### Survival prediction transfers to an independent cohort, but only in combination with clinical data
 
@@ -532,8 +556,13 @@ pooled precision of 0.336 across 60 external specimens. Fitting per-category thr
 cohort and transferring them to the other half raises F1 on every cohort tested (for example 0.250 to
 0.407 on the most external one, precision 0.182 to 0.458), whereas label-free recalibration rules —
 within-cohort percentile matching and prevalence matching — are *worse* than the shipped thresholds on
-three of four cohorts. Threshold placement is worth a great deal but appears to require labelled
-specimens from the target cohort.
+three of four cohorts. Threshold placement is worth a great deal but requires labelled specimens from
+the target cohort. The platform therefore ships a calibration path rather than a claim: given a labelled
+subset from a new cohort, per-category thresholds are refitted for the categories with at least three
+labelled positives and left at their shipped values otherwise, and any call made on a refitted threshold
+records that provenance. On the CD34-sorted cohort this refits 2 of 26 categories from 15 specimens.
+This is a deployment protocol — it asks a receiving site for ground truth — and it is the largest
+measured, unexploited gain in the platform.
 
 **Calls rest on a reference cohort that may not describe the specimen.** Because scores are percentiled
 against a cohort-matched reference, a specimen unlike any available reference inherits that reference's
@@ -558,6 +587,15 @@ lesion → agent mapping. Predicted lesions are explicitly labelled as requiring
 and are never presented as established genotype. A companion validation interface exposes every
 performance claim, including the negative results above, so that a reviewer or clinician can inspect the
 evidence for any individual call rather than accepting an aggregate metric.
+
+Three properties of the interface follow from the limitations above rather than from preference. The
+therapeutic panel **abstains** rather than ranking everything, declining the least-confident half of the
+agents and stating the measured error rate at the coverage it achieved. Accuracy is reported **per
+clinical tier**, because the tier a clinician can act on is both the one the system recommends from and
+the one it predicts best, and a single panel-wide average conceals a spread from 0.818 to 0.722. And any
+call made on a **cohort-recalibrated threshold** records that provenance, so a reader can tell a shipped
+decision rule from one refitted on local ground truth. Each of these makes the report narrower; each was
+adopted because the corresponding measurement showed the wider version was not supportable.
 
 ---
 

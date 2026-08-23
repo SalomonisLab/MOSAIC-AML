@@ -219,7 +219,7 @@ weaker. This is why the fusion is floored to the best single block.
 |---|---|---|
 | 100% | 0.283 | 0.794 |
 | 75% | 0.228 | 0.835 |
-| 50% | 0.167 | 0.880 |
+| 50% | 0.167 | 0.879 |
 | 25% | 0.097 | 0.927 |
 
 **Clinically actionable subset** (42 approved agents): mean Spearman **0.418**, mean AUROC **0.809** —
@@ -292,8 +292,8 @@ request, not an analysis. *Expected: raises the ceiling itself. Cost: assay time
 recommends from the approved tier anyway, so the all-118 average understates the deployed use case.
 *Expected: no model change, a fairer headline. Cost: hours.*
 
-**D. Use abstention as a product feature.** At 50% coverage the error rate halves (0.283 → 0.167) and
-AUROC rises to 0.880. A report that ranks 10 drugs and declines to score the other 108 is both more
+**D. Use abstention as a product feature.** At 50% coverage the error rate halves (0.283 -> 0.167) and
+AUROC rises to 0.879. A report that ranks 10 drugs and declines to score the other 108 is both more
 accurate and more honest than one that scores all 118. *Expected: large practical gain. Cost: 1 day.*
 
 **E. The clinical question is the real gap, and it needs data we do not have.** The cytarabine null
