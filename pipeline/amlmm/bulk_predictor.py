@@ -123,6 +123,12 @@ class BulkMutationPredictor:
         if w:
             for r in out.values():
                 r["reference_mismatch"] = w
+        ad = getattr(self, "cohort_adapter", None)
+        if ad is not None:
+            out = ad.apply(self, sample, out)
+            for r in out.values():               # routed rows answer to the adapter's own reference check
+                if (r.get("cohort_adapter") or {}).get("applied") and "shipped" in r:
+                    r.pop("reference_mismatch", None)
         return dict(sorted(out.items(), key=lambda kv: -(kv[1]["probability"] or 0)))
 
     # E|N(0,1)| -- what mean|z| must be for a specimen the reference actually describes
@@ -191,6 +197,17 @@ class BulkMutationPredictor:
             raise ValueError("expected a calibrate_to_cohort.py output containing a 'thresholds' key")
         self.cohort_thresholds = d
         return len(d["thresholds"])
+
+    def use_cohort_adapter(self, path_or_adapter):
+        """Attach a cohort adapter fitted by train_cohort_adapter.py.
+
+        Each category then uses whichever model was better on that cohort: the routed ones are called by
+        the cohort-fitted model, every other category stays exactly as shipped. The adapter refuses (and
+        leaves every call as shipped) on a sample that does not look like its cohort."""
+        from .cohort_adapter import CohortAdapter
+        ad = path_or_adapter if isinstance(path_or_adapter, CohortAdapter) else CohortAdapter.load(path_or_adapter)
+        self.cohort_adapter = ad
+        return ad.summary()
 
     MIN_COHORT = 8
 

@@ -240,7 +240,7 @@ def parse_bulk_expression(path, scale="auto", column=None):
     return ser, col, scale
 
 
-def bulk_mutation_result(expr_linear, present_truth, ref="sc"):
+def bulk_mutation_result(expr_linear, present_truth, ref="sc", adapter=None):
     """PRIMARY mutation caller: predict ~50 variant-level categories from a LINEAR gene-expression Series
     (a single-cell bulk-equivalent with ref='sc', or an uploaded bulk sample with ref='beataml').
     Returns (predictions_list, caller_meta, AgentResult) or (None, None, None) if the model isn't available.
@@ -249,13 +249,14 @@ def bulk_mutation_result(expr_linear, present_truth, ref="sc"):
     if not os.path.exists(BULK_PKL):
         return None, None, None
     BP = BulkMutationPredictor.load(BULK_PKL)
+    adapter_summary = BP.use_cohort_adapter(adapter) if adapter else None   # opt-in, cohort-specific
     calls = BP.predict(expr_linear, ref=ref)                 # {category: {probability, call, threshold, cv_auroc, confidence}}
     truth = {str(t).upper() for t in present_truth}
     preds = []
     for cat, v in calls.items():
         pr = dict(v); pr["mutation"] = cat
         pr["heldout_auc"] = v.get("cv_auroc")               # GUI keys reliability/abstain off heldout_auc
-        pr["source"] = "bulk_rna (BeatAML-trained, variant-level)"
+        pr.setdefault("source", "bulk_rna (BeatAML-trained, variant-level)")
         gene = cat.split("_")[0].upper()                    # coarse gene for a cross-check vs supplied truth
         pr["supplied_truth"] = ("present" if (gene in truth or cat.upper() in truth) else None)
         preds.append(pr)
@@ -267,6 +268,8 @@ def bulk_mutation_result(expr_linear, present_truth, ref="sc"):
                            "(BeatAML-trained, validated cross-cohort). Predicted, not sequenced: high-confidence "
                            "'present' calls are leads to confirm by sequencing. Weak categories (CV AUROC < 0.65) "
                            "are marked abstain." % _inp}
+    if adapter_summary is not None:
+        caller_meta["cohort_adapter"] = adapter_summary
     top = [p["mutation"] for p in preds if p["call"] == "present" and p["confidence"] == "ok"][:8]
     ev = {"witness": "bulk_mutation", "kind": "predictive", "status": "ok",
           "n_confident_present": n_called, "top_predicted_present": top,
@@ -334,7 +337,8 @@ def main_bulk(args, cfg, run_dir, sample_key):
         gen_res = genetic_result(present, unknown, args.eln)
 
         _status(run_dir, "running", "mutation_calling", "predicting drivers from bulk RNA (primary)")
-        mut_preds, mut_caller, _ = bulk_mutation_result(ser, present, ref=args.bulk_ref)
+        mut_preds, mut_caller, _ = bulk_mutation_result(ser, present, ref=args.bulk_ref,
+                                                        adapter=args.cohort_adapter)
         if mut_preds is None:
             raise RuntimeError("bulk mutation predictor not found (pipeline/bulk_mutation_predictor.pkl)")
         top_present = [p["mutation"] for p in mut_preds
@@ -421,6 +425,9 @@ def main():
     ap.add_argument("--out-root", default=None, help="override the runs/ root dir")
     ap.add_argument("--permutations", type=int, default=40)
     ap.add_argument("--no-llm", action="store_true", help="skip LLM narration (deterministic only)")
+    ap.add_argument("--cohort-adapter", default=None,
+                    help="cohort adapter JSON from train_cohort_adapter.py: routes the mutation categories that "
+                         "cohort's model calls better, keeps the shipped call for all others (opt-in)")
     args = ap.parse_args()
     if bool(args.sample) == bool(args.bulk):
         ap.error("provide exactly one of --sample (single-cell) or --bulk (bulk RNA)")
@@ -453,7 +460,8 @@ def main():
         _status(run_dir, "running", "mutation_calling", "predicting drivers from bulk-equivalent (primary)")
         mut_preds, mut_caller, panels = None, None, None
         try:
-            mut_preds, mut_caller, _ = bulk_mutation_result(bulk_equiv_from_adata(adata), present, ref="sc")
+            mut_preds, mut_caller, _ = bulk_mutation_result(bulk_equiv_from_adata(adata), present, ref="sc",
+                                                            adapter=args.cohort_adapter)
             panels = therapy.build_panels(mut_preds, present, client=client,
                                           context={"input": "single-cell", "dataset": args.dataset})
         except Exception as _e:
