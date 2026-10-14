@@ -95,6 +95,45 @@ for _c in ("SF3B1_K700", "SF3B1_K666", "U2AF1_S34", "U2AF1_Q157/R156", "SRSF2", 
         "why": "spliceosome-mutant AML is the repositioning target — pair with a splicing readout",
     }
 
+# cytogenetic categories. The shipped bulk caller has none of these; a cohort adapter
+# (amlmm/cohort_adapter.py) can add them. Wording follows knowledge/biomarker_drug.tsv.
+BY_CATEGORY.update({
+    "t15_17": {
+        "drugs": [_D("ATRA + arsenic trioxide", "differentiation therapy", "guideline · APL")],
+        "test": "PML::RARA FISH / RT-PCR — same day",
+        "why": "APL is a coagulopathy emergency; guideline practice starts ATRA on clinical suspicion while "
+               "confirmation is pending",
+    },
+    "inv16": {
+        "drugs": [_D("intensive chemotherapy", "7+3 + HiDAC consolidation", "guideline · favorable CBF-AML",
+                     "add a KIT inhibitor only if KIT-mutant")],
+        "test": "CBFB::MYH11 FISH / RT-PCR", "why": "favorable-risk CBF-AML; the fusion transcript is the MRD marker",
+    },
+    "t8_21": {
+        "drugs": [_D("intensive chemotherapy", "7+3 + HiDAC consolidation", "guideline · favorable CBF-AML",
+                     "add a KIT inhibitor only if KIT-mutant")],
+        "test": "RUNX1::RUNX1T1 FISH / RT-PCR", "why": "favorable-risk CBF-AML; the fusion transcript is the MRD marker",
+    },
+    "del7": {
+        "drugs": [_D("HMA + venetoclax", "hypomethylating + BCL2", "heuristic · adverse risk"),
+                  _D("allogeneic transplant / clinical trial", "—", "consider")],
+        "test": "karyotype + chromosome 7 FISH", "why": "monosomy 7 / del(7q) is ELN adverse-risk",
+    },
+    "complex": {
+        "drugs": [_D("HMA + venetoclax", "hypomethylating + BCL2", "heuristic · adverse risk"),
+                  _D("allogeneic transplant / clinical trial", "—", "consider")],
+        "test": "karyotype + FISH panel (and TP53 NGS)", "why": "complex karyotype is ELN adverse-risk, often TP53-mutant",
+    },
+    "trisomy8": {
+        "drugs": [_D("standard of care", "—", "prognostic")],
+        "test": "karyotype + chromosome 8 FISH", "why": "common secondary lesion; no targeted agent",
+    },
+    "inv3": {
+        "drugs": [_D("clinical trial", "—", "preferred", "no effective targeted agent")],
+        "test": "karyotype + MECOM FISH", "why": "inv(3)/t(3;3) MECOM rearrangement is ELN adverse-risk",
+    },
+})
+
 # ---- gene-level fallback (variant doesn't change the answer) --------------------------------------
 _RAS = {
     "drugs": [_D("trametinib", "MEK inhibitor", "investigational · RAS-pathway"),
