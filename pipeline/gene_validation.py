@@ -42,6 +42,7 @@ MATRIX = os.path.join(HERE, "mutation_matrix_explicit_v2.tsv")
 
 # cytogenetic categories -> a canonical validation unit (folds the aliases together)
 CYTO = {"complex": "complex", "del5": "del5", "del7": "del7", "trisomy8": "trisomy8",
+        "t15_17": "t15_17", "t8_21": "t8_21", "inv3": "inv3",
         "inv16": "inv16", "inv(16)_cbfb-myh11": "inv16",
         "kmt2a": "KMT2A", "kmt2a-rearrangement": "KMT2A", "kmt2a_fusion": "KMT2A", "kmt2a_ptd": "KMT2A"}
 
