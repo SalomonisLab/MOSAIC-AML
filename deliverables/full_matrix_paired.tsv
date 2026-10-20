@@ -1,0 +1,34 @@
+comparison	scope	category	closeness	a_model	a_category	a_sensitivity	a_specificity	a_auroc	a_n_pos	b_model	b_category	b_sensitivity	b_specificity	b_auroc	b_n_pos
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	OVERALL	(mean of 23)		bulk-RNA arm		0.517	0.845	0.709		multimodal		0.505	0.961	0.879	
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	inv16	same	bulk-RNA arm	inv16	0.818	0.957	0.967	11	multimodal	inv16	1.000	0.988	0.997	11
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	NPM1	same	bulk-RNA arm	NPM1	0.611	0.915	0.810	54	multimodal	NPM1	0.648	0.980	0.894	54
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	FLT3-ITD	same	bulk-RNA arm	FLT3-ITD	0.636	0.891	0.852	22	multimodal	FLT3-ITD	0.667	0.946	0.870	21
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	FLT3-TKD	same	bulk-RNA arm	FLT3-TKD	0.500	0.816	0.595	8	multimodal	FLT3-TKD	0.143	1.000	0.914	7
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	TP53	same	bulk-RNA arm	TP53	0.667	0.934	0.812	12	multimodal	TP53	0.917	0.948	0.958	12
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	del7	same	bulk-RNA arm	del7	0.222	0.977	0.773	18	multimodal	del7	0.667	0.988	0.970	18
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	del5	same	bulk-RNA arm	del5	0.733	0.902	0.887	15	multimodal	del5	0.600	0.977	0.922	15
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	trisomy8	same	bulk-RNA arm	trisomy8	0.722	0.513	0.549	18	multimodal	trisomy8	0.500	0.914	0.769	18
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	complex	same	bulk-RNA arm	complex	0.500	0.920	0.833	24	multimodal	complex	0.708	0.880	0.866	24
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	kmt2a	same	bulk-RNA arm	kmt2a	0.583	0.951	0.911	12	multimodal	kmt2a	0.500	0.986	0.954	12
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	TET2	same	bulk-RNA arm	TET2	0.550	0.686	0.624	20	multimodal	TET2	0.550	0.988	0.947	20
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	DNMT3A	same	bulk-RNA arm	DNMT3A	0.826	0.355	0.535	23	multimodal	DNMT3A	0.522	0.928	0.832	23
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	ASXL1	same	bulk-RNA arm	ASXL1	0.417	0.880	0.585	12	multimodal	ASXL1	0.417	0.965	0.859	12
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	NRAS	same	bulk-RNA arm	NRAS	0.464	0.913	0.775	28	multimodal	NRAS	0.643	0.912	0.848	28
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	KRAS	same	bulk-RNA arm	KRAS	0.308	0.911	0.601	13	multimodal	KRAS	0.385	0.930	0.792	13
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	RUNX1	same	bulk-RNA arm	RUNX1	0.308	0.940	0.624	13	multimodal	RUNX1	0.462	0.904	0.833	13
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	IDH1	same	bulk-RNA arm	IDH1	0.667	0.670	0.623	12	multimodal	IDH1	0.250	0.991	0.888	12
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	IDH2	same	bulk-RNA arm	IDH2	0.500	0.778	0.655	14	multimodal	IDH2	0.143	0.997	0.730	14
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	WT1	same	bulk-RNA arm	WT1	0.222	0.972	0.582	9	multimodal	WT1	0.222	0.989	0.809	9
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	CEBPA	same	bulk-RNA arm	CEBPA	0.222	0.989	0.772	9	multimodal	CEBPA	0.333	0.991	0.902	9
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	KIT	same	bulk-RNA arm	KIT	0.583	0.693	0.626	12	multimodal	KIT	0.500	0.968	0.919	12
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	GATA2	same	bulk-RNA arm	GATA2	0.375	0.966	0.581	8	multimodal	GATA2	0.625	0.948	0.918	8
+all sc (CV): bulk-RNA arm vs multimodal, same donors and folds	per-mut	PTPN11	same	bulk-RNA arm	PTPN11	0.444	0.909	0.742	9	multimodal	PTPN11	0.222	0.994	0.835	9
+held-out sc: model 1 vs model 2, categories both report	OVERALL	(mean of 3)		bulk model 1		0.605	0.929	0.858		multimodal model 2		0.546	0.924	0.785	
+held-out sc: model 1 vs model 2, categories both report	per-mut	FLT3-ITD	same	bulk model 1	FLT3_ITD	0.571	0.895	0.865	7	multimodal model 2	FLT3-ITD	0.571	0.947	0.940	7
+held-out sc: model 1 vs model 2, categories both report	per-mut	TET2	same	bulk model 1	TET2	0.444	0.941	0.784	9	multimodal model 2	TET2	0.667	0.824	0.758	9
+held-out sc: model 1 vs model 2, categories both report	per-mut	SRSF2	same	bulk model 1	SRSF2	0.800	0.952	0.924	5	multimodal model 2	SRSF2	0.400	1.000	0.657	5
+all sc: model 1 vs model 2, categories both report	OVERALL	(mean of 4)		bulk model 1		0.461	0.907	0.736		multimodal model 2		0.565	0.962	0.899	
+all sc: model 1 vs model 2, categories both report	per-mut	FLT3-ITD	same	bulk model 1	FLT3_ITD	0.586	0.821	0.747	29	multimodal model 2	FLT3-ITD	0.667	0.946	0.870	21
+all sc: model 1 vs model 2, categories both report	per-mut	TET2	same	bulk model 1	TET2	0.345	0.905	0.733	29	multimodal model 2	TET2	0.550	0.988	0.947	20
+all sc: model 1 vs model 2, categories both report	per-mut	ASXL1	same	bulk model 1	ASXL1	0.538	0.928	0.716	13	multimodal model 2	ASXL1	0.417	0.965	0.859	12
+all sc: model 1 vs model 2, categories both report	per-mut	GATA2	same	bulk model 1	GATA2	0.375	0.974	0.749	8	multimodal model 2	GATA2	0.625	0.948	0.918	8

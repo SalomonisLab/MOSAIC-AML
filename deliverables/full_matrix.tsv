@@ -1,65 +1,144 @@
-cell	scope	mutation	sensitivity	specificity	n_pos
-Bulk稡eatAML(CV)	OVERALL	(mean)	0.532	0.956	
-Bulk稡eatAML(CV)	per-mut	NPM1	0.957	0.958	140
-Bulk稡eatAML(CV)	per-mut	FLT3	0.709	0.945	158
-Bulk稡eatAML(CV)	per-mut	TP53	0.500	0.998	22
-Bulk稡eatAML(CV)	per-mut	KMT2A	0.837	1.000	43
-Bulk稡eatAML(CV)	per-mut	TET2	0.512	0.949	82
-Bulk稡eatAML(CV)	per-mut	DNMT3A	0.875	0.341	64
-Bulk稡eatAML(CV)	per-mut	ASXL1	0.556	0.964	63
-Bulk稡eatAML(CV)	per-mut	NRAS	0.487	0.901	39
-Bulk稡eatAML(CV)	per-mut	KRAS	0.300	0.998	10
-Bulk稡eatAML(CV)	per-mut	RUNX1	0.867	0.943	75
-Bulk稡eatAML(CV)	per-mut	IDH1	0.816	0.892	49
-Bulk稡eatAML(CV)	per-mut	IDH2	0.600	0.995	10
-Bulk稡eatAML(CV)	per-mut	WT1	0.532	0.975	47
-Bulk稡eatAML(CV)	per-mut	CEBPA	0.750	0.982	16
-Bulk稡eatAML(CV)	per-mut	KIT	0.538	0.998	13
-Bulk稡eatAML(CV)	per-mut	GATA2	0.448	0.985	29
-Bulk稡eatAML(CV)	per-mut	PTPN11	0.350	0.924	20
-Bulk稬eucegene	OVERALL	(mean)	0.546	0.956	
-Bulk稬eucegene	per-mut	NPM1	0.869	0.987	99
-Bulk稬eucegene	per-mut	FLT3	0.250	0.947	4
-Bulk稬eucegene	per-mut	TET2	0.235	0.937	98
-Bulk稬eucegene	per-mut	ASXL1	0.250	0.960	8
-Bulk稬eucegene	per-mut	IDH1	0.500	0.859	26
-Bulk稬eucegene	per-mut	IDH2	0.667	0.914	30
-Bulk稬eucegene	per-mut	WT1	0.300	0.944	10
-Bulk稬eucegene	per-mut	CEBPA	0.727	0.983	11
-Bulk稬eucegene	per-mut	GATA2	0.333	0.987	3
-Bulk穐eld-out sc	OVERALL	(mean)	0.605	0.929	
-Bulk穐eld-out sc	per-mut	FLT3	0.571	0.895	7
-Bulk穐eld-out sc	per-mut	TET2	0.444	0.941	9
-Bulk穉ll sc	OVERALL	(mean)	0.303	0.946	
-Bulk穉ll sc	per-mut	FLT3	0.586	0.821	29
-Bulk穉ll sc	per-mut	TET2	0.345	0.905	29
-Bulk穉ll sc	per-mut	ASXL1	0.538	0.928	13
-Bulk穉ll sc	per-mut	GATA2	0.375	0.974	8
-MM穐eld-out sc	OVERALL	(mean)	0.549	0.921	
-MM穐eld-out sc	per-mut	inv16	0.500	1.000	8
-MM穐eld-out sc	per-mut	NPM1	0.667	0.929	12
-MM穐eld-out sc	per-mut	FLT3	0.545	0.927	11
-MM穐eld-out sc	per-mut	TET2	0.444	0.941	9
-MM穐eld-out sc	per-mut	ASXL1	0.000	0.840	1
-MM穐eld-out sc	per-mut	RUNX1	1.000	0.905	5
-MM穐eld-out sc	per-mut	IDH1	0.333	0.870	3
-MM穐eld-out sc	per-mut	WT1	0.000	0.960	1
-MM穉ll sc(CV)	OVERALL	(mean)	0.498	0.962	
-MM穉ll sc(CV)	per-mut	inv16	1.000	0.988	11
-MM穉ll sc(CV)	per-mut	NPM1	0.648	0.980	54
-MM穉ll sc(CV)	per-mut	FLT3	0.143	1.000	7
-MM穉ll sc(CV)	per-mut	TP53	0.917	0.948	12
-MM穉ll sc(CV)	per-mut	KMT2A	0.500	0.986	12
-MM穉ll sc(CV)	per-mut	TET2	0.550	0.988	20
-MM穉ll sc(CV)	per-mut	DNMT3A	0.522	0.928	23
-MM穉ll sc(CV)	per-mut	ASXL1	0.417	0.965	12
-MM穉ll sc(CV)	per-mut	NRAS	0.643	0.912	28
-MM穉ll sc(CV)	per-mut	KRAS	0.385	0.930	13
-MM穉ll sc(CV)	per-mut	RUNX1	0.462	0.904	13
-MM穉ll sc(CV)	per-mut	IDH1	0.250	0.991	12
-MM穉ll sc(CV)	per-mut	IDH2	0.143	0.997	14
-MM穉ll sc(CV)	per-mut	WT1	0.222	0.989	9
-MM穉ll sc(CV)	per-mut	CEBPA	0.333	0.991	9
-MM穉ll sc(CV)	per-mut	KIT	0.500	0.968	12
-MM穉ll sc(CV)	per-mut	GATA2	0.625	0.948	8
-MM穉ll sc(CV)	per-mut	PTPN11	0.222	0.994	9
+cell	scope	mutation	sensitivity	specificity	n_pos	n_neg	tp	fn	fp	tn	sens_lo	sens_hi	spec_lo	spec_hi	gene	matches	in_mean	note	auroc
+Bulk路BeatAML(CV)	OVERALL	(mean of 50)	0.532	0.956															0.830
+Bulk路BeatAML(CV)	per-mut	NPM1_exon12_frameshift	0.957	0.958	140	475	134	6	20	455	0.910	0.980	0.936	0.973	NPM1	NPM1 (near)	yes		0.981
+Bulk路BeatAML(CV)	per-mut	FLT3_ITD	0.709	0.945	158	511	112	46	28	483	0.634	0.774	0.922	0.962	FLT3	FLT3-ITD (same)	yes		0.899
+Bulk路BeatAML(CV)	per-mut	FLT3_TKD_D835/I836	0.310	0.937	42	573	13	29	36	537	0.191	0.460	0.914	0.954	FLT3	FLT3-TKD (near)	yes		0.716
+Bulk路BeatAML(CV)	per-mut	FLT3_other_TKD_or_JM	0.222	0.983	27	588	6	21	10	578	0.106	0.408	0.969	0.991	FLT3		yes		0.731
+Bulk路BeatAML(CV)	per-mut	TP53_LOF/splice/frameshift	0.500	0.998	22	593	11	11	1	592	0.307	0.693	0.991	1.000	TP53		yes		0.872
+Bulk路BeatAML(CV)	per-mut	TP53_hotspot_DBD	0.558	0.962	43	572	24	19	22	550	0.411	0.696	0.942	0.974	TP53		yes		0.876
+Bulk路BeatAML(CV)	per-mut	KMT2A_fusion	0.837	1.000	43	628	36	7	0	628	0.700	0.919	0.994	1.000	KMT2A	kmt2a (same)	yes		0.963
+Bulk路BeatAML(CV)	per-mut	TET2	0.512	0.949	82	533	42	40	27	506	0.406	0.617	0.927	0.965	TET2	TET2 (same)	yes		0.816
+Bulk路BeatAML(CV)	per-mut	DNMT3A_R882	0.724	0.900	76	539	55	21	54	485	0.614	0.812	0.872	0.922	DNMT3A		yes		0.880
+Bulk路BeatAML(CV)	per-mut	DNMT3A_nonR882	0.875	0.341	64	551	56	8	363	188	0.772	0.935	0.303	0.382	DNMT3A		yes		0.605
+Bulk路BeatAML(CV)	per-mut	ASXL1	0.556	0.964	63	552	35	28	20	532	0.433	0.672	0.945	0.976	ASXL1	ASXL1 (same)	yes		0.871
+Bulk路BeatAML(CV)	per-mut	NRAS_G12	0.441	0.878	34	581	15	19	71	510	0.289	0.605	0.849	0.902	NRAS		yes		0.678
+Bulk路BeatAML(CV)	per-mut	NRAS_G13	0.182	0.978	22	593	4	18	13	580	0.073	0.385	0.963	0.987	NRAS		yes		0.744
+Bulk路BeatAML(CV)	per-mut	NRAS_Q61	0.487	0.901	39	576	19	20	57	519	0.339	0.638	0.874	0.923	NRAS		yes		0.831
+Bulk路BeatAML(CV)	per-mut	KRAS_G12	0.533	0.785	15	600	8	7	129	471	0.301	0.752	0.750	0.816	KRAS		yes		0.703
+Bulk路BeatAML(CV)	per-mut	KRAS_G13	0.300	0.998	10	605	3	7	1	604	0.108	0.603	0.991	1.000	KRAS		yes		0.955
+Bulk路BeatAML(CV)	per-mut	RUNX1_LOF	0.867	0.943	75	540	65	10	31	509	0.772	0.926	0.920	0.959	RUNX1	RUNX1 (same)	yes		0.946
+Bulk路BeatAML(CV)	per-mut	IDH1_R132	0.816	0.892	49	566	40	9	61	505	0.686	0.900	0.864	0.915	IDH1	IDH1 (near)	yes		0.911
+Bulk路BeatAML(CV)	per-mut	IDH2_R140	0.613	0.917	62	553	38	24	46	507	0.488	0.724	0.891	0.937	IDH2		yes		0.838
+Bulk路BeatAML(CV)	per-mut	IDH2_R172	0.600	0.995	10	605	6	4	3	602	0.313	0.832	0.986	0.998	IDH2		yes		0.961
+Bulk路BeatAML(CV)	per-mut	WT1_LOF	0.532	0.975	47	568	25	22	14	554	0.392	0.667	0.959	0.985	WT1	WT1 (same)	yes		0.857
+Bulk路BeatAML(CV)	per-mut	CEBPA_Nterminal_frameshift/nonsense	0.594	0.991	32	583	19	13	5	578	0.423	0.745	0.980	0.996	CEBPA		yes		0.968
+Bulk路BeatAML(CV)	per-mut	CEBPA_bZIP	0.714	0.962	14	601	10	4	23	578	0.454	0.883	0.943	0.974	CEBPA		yes		0.936
+Bulk路BeatAML(CV)	per-mut	CEBPA_biallelic_or_double	0.750	0.982	16	599	12	4	11	588	0.505	0.898	0.967	0.990	CEBPA		yes		0.937
+Bulk路BeatAML(CV)	per-mut	KIT_D816	0.538	0.998	13	602	7	6	1	601	0.291	0.768	0.991	1.000	KIT		yes		0.828
+Bulk路BeatAML(CV)	per-mut	GATA2	0.448	0.985	29	586	13	16	9	577	0.284	0.625	0.971	0.992	GATA2	GATA2 (same)	yes		0.830
+Bulk路BeatAML(CV)	per-mut	PTPN11_other	0.350	0.924	20	595	7	13	45	550	0.181	0.567	0.900	0.943	PTPN11		yes		0.704
+Bulk路BeatAML(CV)	per-mut	BCOR	0.765	0.983	34	581	26	8	10	571	0.600	0.876	0.969	0.991	BCOR		yes		0.915
+Bulk路BeatAML(CV)	per-mut	BCORL1	0.538	0.990	13	602	7	6	6	596	0.291	0.768	0.978	0.995	BCORL1		yes		0.909
+Bulk路BeatAML(CV)	per-mut	CBL	0.385	1.000	13	602	5	8	0	602	0.177	0.645	0.994	1.000	CBL		yes		0.578
+Bulk路BeatAML(CV)	per-mut	CREBBP	0.500	0.998	10	605	5	5	1	604	0.237	0.763	0.991	1.000	CREBBP		yes		0.665
+Bulk路BeatAML(CV)	per-mut	CSF3R	0.333	0.998	9	606	3	6	1	605	0.121	0.646	0.991	1.000	CSF3R		yes		0.670
+Bulk路BeatAML(CV)	per-mut	ETV6	0.167	0.979	6	609	1	5	13	596	0.030	0.564	0.964	0.987	ETV6		yes		0.778
+Bulk路BeatAML(CV)	per-mut	EZH2	0.211	0.997	19	596	4	15	2	594	0.085	0.433	0.988	0.999	EZH2		yes		0.779
+Bulk路BeatAML(CV)	per-mut	IKZF1	0.667	0.983	9	606	6	3	10	596	0.354	0.879	0.970	0.991	IKZF1		yes		0.889
+Bulk路BeatAML(CV)	per-mut	JAK2_V617F	0.222	1.000	18	597	4	14	0	597	0.090	0.452	0.994	1.000	JAK2		yes		0.811
+Bulk路BeatAML(CV)	per-mut	NF1	0.438	0.947	16	599	7	9	32	567	0.231	0.668	0.926	0.962	NF1		yes		0.673
+Bulk路BeatAML(CV)	per-mut	PHF6	0.619	0.960	21	594	13	8	24	570	0.409	0.792	0.941	0.973	PHF6		yes		0.898
+Bulk路BeatAML(CV)	per-mut	RAD21	0.133	0.970	15	600	2	13	18	582	0.037	0.379	0.953	0.981	RAD21		yes		0.652
+Bulk路BeatAML(CV)	per-mut	SETBP1	0.429	0.997	7	608	3	4	2	606	0.158	0.750	0.988	0.999	SETBP1		yes		0.784
+Bulk路BeatAML(CV)	per-mut	SF3B1_K666	0.944	0.990	18	597	17	1	6	591	0.742	0.990	0.978	0.995	SF3B1		yes		0.997
+Bulk路BeatAML(CV)	per-mut	SF3B1_K700	0.700	1.000	10	605	7	3	0	605	0.397	0.892	0.994	1.000	SF3B1		yes		0.983
+Bulk路BeatAML(CV)	per-mut	SMC1A	0.200	0.992	10	605	2	8	5	600	0.057	0.510	0.981	0.996	SMC1A		yes		0.682
+Bulk路BeatAML(CV)	per-mut	SMC3	0.100	0.995	10	605	1	9	3	602	0.018	0.404	0.986	0.998	SMC3		yes		0.688
+Bulk路BeatAML(CV)	per-mut	SRSF2	0.931	0.994	72	543	67	5	3	540	0.848	0.970	0.984	0.998	SRSF2	SRSF2 (same)	yes		0.996
+Bulk路BeatAML(CV)	per-mut	STAG2	0.674	0.991	43	572	29	14	5	567	0.525	0.795	0.980	0.996	STAG2		yes		0.892
+Bulk路BeatAML(CV)	per-mut	SUZ12	0.286	0.990	7	608	2	5	6	602	0.082	0.641	0.979	0.995	SUZ12		yes		0.660
+Bulk路BeatAML(CV)	per-mut	U2AF1_Q157/R156	0.600	0.993	10	605	6	4	4	601	0.313	0.832	0.983	0.997	U2AF1		yes		0.859
+Bulk路BeatAML(CV)	per-mut	U2AF1_S34	0.957	1.000	23	592	22	1	0	592	0.790	0.992	0.994	1.000	U2AF1		yes		1.000
+Bulk路BeatAML(CV)	per-mut	ZRSR2	0.300	0.998	10	605	3	7	1	604	0.108	0.603	0.991	1.000	ZRSR2		yes		0.881
+Bulk路Leucegene	OVERALL	(mean of 18)	0.546	0.956															0.855
+Bulk路Leucegene	per-mut	NPM1_exon12_frameshift	0.869	0.987	99	79	86	13	1	78	0.788	0.922	0.932	0.998	NPM1	NPM1 (near)	yes		0.994
+Bulk路Leucegene	per-mut	FLT3_ITD	0.250	0.947	4	75	1	3	4	71	0.046	0.699	0.871	0.979	FLT3	FLT3-ITD (same)	yes		0.715
+Bulk路Leucegene	per-mut	FLT3_TKD_D835/I836	0.000	0.800	5	55	0	5	11	44	0.000	0.434	0.676	0.884	FLT3	FLT3-TKD (near)	yes		0.464
+Bulk路Leucegene	per-mut	FLT3_other_TKD_or_JM	0.667	0.975	3	79	2	1	2	77	0.208	0.939	0.912	0.993	FLT3		yes		0.759
+Bulk路Leucegene	per-mut	TET2	0.235	0.937	98	269	23	75	17	252	0.162	0.328	0.901	0.960	TET2	TET2 (same)	yes		0.589
+Bulk路Leucegene	per-mut	ASXL1	0.250	0.959	8	74	2	6	3	71	0.071	0.591	0.887	0.986	ASXL1	ASXL1 (same)	yes		0.862
+Bulk路Leucegene	per-mut	IDH1_R132	0.500	0.859	26	341	13	13	48	293	0.321	0.679	0.818	0.892	IDH1	IDH1 (near)	yes		0.862
+Bulk路Leucegene	per-mut	IDH2_R140	0.667	0.914	30	337	20	10	29	308	0.488	0.808	0.879	0.939	IDH2		yes		0.874
+Bulk路Leucegene	per-mut	WT1_LOF	0.300	0.944	10	357	3	7	20	337	0.108	0.603	0.915	0.963	WT1	WT1 (same)	yes		0.792
+Bulk路Leucegene	per-mut	CEBPA_biallelic_or_double	0.727	0.983	11	356	8	3	6	350	0.434	0.903	0.964	0.992	CEBPA		yes		0.952
+Bulk路Leucegene	per-mut	GATA2	0.333	0.987	3	79	1	2	1	78	0.061	0.792	0.932	0.998	GATA2	GATA2 (same)	yes		0.791
+Bulk路Leucegene	per-mut	IKZF1	1.000	0.987	3	79	3	0	1	78	0.439	1.000	0.932	0.998	IKZF1		yes		0.996
+Bulk路Leucegene	per-mut	SMC1A	0.000	1.000	5	77	0	5	0	77	0.000	0.434	0.952	1.000	SMC1A		yes		0.804
+Bulk路Leucegene	per-mut	SRSF2	1.000	0.956	26	341	26	0	15	326	0.871	1.000	0.929	0.973	SRSF2	SRSF2 (same)	yes		0.990
+Bulk路Leucegene	per-mut	STAG2	1.000	0.987	3	79	3	0	1	78	0.439	1.000	0.932	0.998	STAG2		yes		1.000
+Bulk路Leucegene	per-mut	U2AF1_Q157/R156	0.429	0.994	7	360	3	4	2	358	0.158	0.750	0.980	0.998	U2AF1		yes		0.944
+Bulk路Leucegene	per-mut	U2AF1_S34	1.000	0.989	9	358	9	0	4	354	0.701	1.000	0.972	0.996	U2AF1		yes		1.000
+Bulk路Leucegene	per-mut	ZRSR2	0.600	1.000	5	362	3	2	0	362	0.231	0.882	0.989	1.000	ZRSR2		yes		0.997
+Bulk路held-out sc	OVERALL	(mean of 3)	0.605	0.929															0.858
+Bulk路held-out sc	per-mut	FLT3_ITD	0.571	0.895	7	19	4	3	2	17	0.250	0.842	0.686	0.971	FLT3	FLT3-ITD (same)	yes		0.865
+Bulk路held-out sc	per-mut	TET2	0.444	0.941	9	17	4	5	1	16	0.189	0.733	0.730	0.990	TET2	TET2 (same)	yes		0.784
+Bulk路held-out sc	per-mut	SRSF2	0.800	0.952	5	21	4	1	1	20	0.376	0.964	0.773	0.992	SRSF2	SRSF2 (same)	yes		0.924
+Bulk路all sc	OVERALL	(mean of 14)	0.303	0.946															0.695
+Bulk路all sc	per-mut	FLT3_ITD	0.586	0.821	29	358	17	12	64	294	0.407	0.745	0.778	0.857	FLT3	FLT3-ITD (same)	yes		0.747
+Bulk路all sc	per-mut	TET2	0.345	0.905	29	358	10	19	34	324	0.199	0.527	0.870	0.931	TET2	TET2 (same)	yes		0.733
+Bulk路all sc	per-mut	ASXL1	0.538	0.928	13	374	7	6	27	347	0.291	0.768	0.897	0.950	ASXL1	ASXL1 (same)	yes		0.716
+Bulk路all sc	per-mut	GATA2	0.375	0.974	8	379	3	5	10	369	0.137	0.694	0.952	0.986	GATA2	GATA2 (same)	yes		0.749
+Bulk路all sc	per-mut	BCOR	0.000	0.943	3	384	0	3	22	362	0.000	0.561	0.915	0.962	BCOR		yes		0.454
+Bulk路all sc	per-mut	CBL	0.000	0.992	5	382	0	5	3	379	0.000	0.434	0.977	0.997	CBL		yes		0.597
+Bulk路all sc	per-mut	CSF3R	0.000	0.992	3	384	0	3	3	381	0.000	0.561	0.977	0.997	CSF3R		yes		0.687
+Bulk路all sc	per-mut	EZH2	0.000	0.992	5	382	0	5	3	379	0.000	0.434	0.977	0.997	EZH2		yes		0.569
+Bulk路all sc	per-mut	NF1	0.143	0.939	7	380	1	6	23	357	0.026	0.513	0.911	0.959	NF1		yes		0.666
+Bulk路all sc	per-mut	PHF6	0.250	0.940	4	383	1	3	23	360	0.046	0.699	0.912	0.960	PHF6		yes		0.754
+Bulk路all sc	per-mut	RAD21	0.250	0.969	4	383	1	3	12	371	0.046	0.699	0.946	0.982	RAD21		yes		0.805
+Bulk路all sc	per-mut	SMC1A	0.333	0.992	6	381	2	4	3	378	0.097	0.700	0.977	0.997	SMC1A		yes		0.648
+Bulk路all sc	per-mut	SRSF2	0.750	0.909	12	375	9	3	34	341	0.468	0.911	0.876	0.934	SRSF2	SRSF2 (same)	yes		0.839
+Bulk路all sc	per-mut	STAG2	0.667	0.948	3	384	2	1	20	364	0.208	0.939	0.921	0.966	STAG2		yes		0.764
+MM路held-out sc	OVERALL	(mean of 21)	0.450	0.925															0.813
+MM路held-out sc	per-mut	inv16	0.500	1.000	4	22	2	2	0	22	0.150	0.850	0.851	1.000	inv16		yes		0.955
+MM路held-out sc	per-mut	NPM1	0.750	1.000	12	14	9	3	0	14	0.468	0.911	0.785	1.000	NPM1	NPM1_exon12_frameshift (near)	yes		0.976
+MM路held-out sc	per-mut	FLT3	0.556	0.941	9	17	5	4	1	16	0.267	0.811	0.730	0.990	FLT3		no	umbrella of FLT3-ITD and FLT3-TKD	0.810
+MM路held-out sc	per-mut	FLT3-ITD	0.571	0.947	7	19	4	3	1	18	0.250	0.842	0.754	0.991	FLT3	FLT3_ITD (same)	yes		0.940
+MM路held-out sc	per-mut	FLT3-TKD	0.000	1.000	4	22	0	4	0	22	0.000	0.490	0.851	1.000	FLT3	FLT3_TKD_D835/I836 (near)	yes		0.909
+MM路held-out sc	per-mut	TP53	0.750	1.000	4	22	3	1	0	22	0.301	0.954	0.851	1.000	TP53		yes		0.761
+MM路held-out sc	per-mut	del7	1.000	0.960	1	25	1	0	1	24	0.207	1.000	0.805	0.993	del7		yes		1.000
+MM路held-out sc	per-mut	del5		0.846	0	26	0	0	4	22			0.665	0.938	del5		no	no positives among labeled patients	
+MM路held-out sc	per-mut	trisomy8	0.800	0.810	5	21	4	1	4	17	0.376	0.964	0.600	0.923	trisomy8		yes		0.933
+MM路held-out sc	per-mut	complex	0.750	0.909	4	22	3	1	2	20	0.301	0.954	0.722	0.975	complex		yes		0.966
+MM路held-out sc	per-mut	KMT2A-rearrangement		0.923	0	26	0	0	2	24			0.759	0.979	KMT2A		no	no positives among labeled patients	
+MM路held-out sc	per-mut	kmt2a		1.000	0	26	0	0	0	26			0.871	1.000	KMT2A	KMT2A_fusion (same)	no	no positives among labeled patients	
+MM路held-out sc	per-mut	TET2	0.667	0.824	9	17	6	3	3	14	0.354	0.879	0.590	0.938	TET2	TET2 (same)	yes		0.758
+MM路held-out sc	per-mut	DNMT3A	0.500	0.944	8	18	4	4	1	17	0.215	0.785	0.742	0.990	DNMT3A		yes		0.708
+MM路held-out sc	per-mut	ASXL1	1.000	0.880	1	25	1	0	3	22	0.207	1.000	0.700	0.958	ASXL1	ASXL1 (same)	yes		1.000
+MM路held-out sc	per-mut	NRAS	0.600	0.762	5	21	3	2	5	16	0.231	0.882	0.549	0.894	NRAS		yes		0.714
+MM路held-out sc	per-mut	KRAS	0.000	0.720	1	25	0	1	7	18	0.000	0.793	0.524	0.857	KRAS		yes		0.720
+MM路held-out sc	per-mut	RUNX1	0.000	1.000	5	21	0	5	0	21	0.000	0.434	0.845	1.000	RUNX1	RUNX1_LOF (same)	yes		1.000
+MM路held-out sc	per-mut	IDH1	0.667	0.957	3	23	2	1	1	22	0.208	0.939	0.790	0.992	IDH1	IDH1_R132 (near)	yes		0.783
+MM路held-out sc	per-mut	IDH2	0.000	1.000	6	20	0	6	0	20	0.000	0.390	0.839	1.000	IDH2		yes		0.717
+MM路held-out sc	per-mut	WT1	0.000	1.000	1	25	0	1	0	25	0.000	0.793	0.867	1.000	WT1	WT1_LOF (same)	yes		0.560
+MM路held-out sc	per-mut	CEBPA		0.962	0	26	0	0	1	25			0.811	0.993	CEBPA		no	no positives among labeled patients	
+MM路held-out sc	per-mut	KIT	0.500	0.750	2	24	1	1	6	18	0.095	0.905	0.551	0.880	KIT		yes		0.792
+MM路held-out sc	per-mut	GATA2		1.000	0	26	0	0	0	26			0.871	1.000	GATA2	GATA2 (same)	no	no positives among labeled patients	
+MM路held-out sc	per-mut	PTPN11	0.000	0.960	1	25	0	1	1	24	0.000	0.793	0.805	0.993	PTPN11		yes		0.440
+MM路held-out sc	per-mut	SF3B1	0.000	1.000	2	24	0	2	0	24	0.000	0.658	0.862	1.000	SF3B1		yes		0.792
+MM路held-out sc	per-mut	SRSF2	0.400	1.000	5	21	2	3	0	21	0.118	0.769	0.845	1.000	SRSF2	SRSF2 (same)	yes		0.657
+MM路all sc(CV)	OVERALL	(mean of 23)	0.505	0.961															0.879
+MM路all sc(CV)	per-mut	inv16	1.000	0.988	11	346	11	0	4	342	0.741	1.000	0.971	0.995	inv16		yes		0.997
+MM路all sc(CV)	per-mut	NPM1	0.648	0.980	54	303	35	19	6	297	0.515	0.762	0.957	0.991	NPM1	NPM1_exon12_frameshift (near)	yes		0.894
+MM路all sc(CV)	per-mut	FLT3	0.531	0.923	32	325	17	15	25	300	0.364	0.691	0.889	0.947	FLT3		no	umbrella of FLT3-ITD and FLT3-TKD	0.836
+MM路all sc(CV)	per-mut	FLT3-ITD	0.667	0.946	21	336	14	7	18	318	0.454	0.828	0.917	0.966	FLT3	FLT3_ITD (same)	yes		0.870
+MM路all sc(CV)	per-mut	FLT3-TKD	0.143	1.000	7	350	1	6	0	350	0.026	0.513	0.989	1.000	FLT3	FLT3_TKD_D835/I836 (near)	yes		0.914
+MM路all sc(CV)	per-mut	TP53	0.917	0.948	12	345	11	1	18	327	0.646	0.985	0.919	0.967	TP53		yes		0.958
+MM路all sc(CV)	per-mut	del7	0.667	0.988	18	339	12	6	4	335	0.437	0.837	0.970	0.995	del7		yes		0.970
+MM路all sc(CV)	per-mut	del5	0.600	0.977	15	342	9	6	8	334	0.357	0.802	0.955	0.988	del5		yes		0.922
+MM路all sc(CV)	per-mut	trisomy8	0.500	0.914	18	339	9	9	29	310	0.290	0.710	0.880	0.940	trisomy8		yes		0.769
+MM路all sc(CV)	per-mut	complex	0.708	0.880	24	333	17	7	40	293	0.508	0.851	0.841	0.911	complex		yes		0.866
+MM路all sc(CV)	per-mut	KMT2A-rearrangement	0.500	0.986	12	345	6	6	5	340	0.254	0.746	0.967	0.994	KMT2A		no	second head; the mean uses kmt2a	0.954
+MM路all sc(CV)	per-mut	kmt2a	0.500	0.986	12	345	6	6	5	340	0.254	0.746	0.967	0.994	KMT2A	KMT2A_fusion (same)	yes		0.954
+MM路all sc(CV)	per-mut	TET2	0.550	0.988	20	337	11	9	4	333	0.342	0.742	0.970	0.995	TET2	TET2 (same)	yes		0.947
+MM路all sc(CV)	per-mut	DNMT3A	0.522	0.928	23	334	12	11	24	310	0.330	0.708	0.895	0.951	DNMT3A		yes		0.832
+MM路all sc(CV)	per-mut	ASXL1	0.417	0.965	12	345	5	7	12	333	0.193	0.680	0.940	0.980	ASXL1	ASXL1 (same)	yes		0.859
+MM路all sc(CV)	per-mut	NRAS	0.643	0.912	28	329	18	10	29	300	0.458	0.793	0.876	0.938	NRAS		yes		0.848
+MM路all sc(CV)	per-mut	KRAS	0.385	0.930	13	344	5	8	24	320	0.177	0.645	0.898	0.953	KRAS		yes		0.792
+MM路all sc(CV)	per-mut	RUNX1	0.462	0.904	13	344	6	7	33	311	0.232	0.709	0.868	0.931	RUNX1	RUNX1_LOF (same)	yes		0.833
+MM路all sc(CV)	per-mut	IDH1	0.250	0.991	12	345	3	9	3	342	0.089	0.532	0.975	0.997	IDH1	IDH1_R132 (near)	yes		0.888
+MM路all sc(CV)	per-mut	IDH2	0.143	0.997	14	343	2	12	1	342	0.040	0.399	0.984	0.999	IDH2		yes		0.730
+MM路all sc(CV)	per-mut	WT1	0.222	0.989	9	348	2	7	4	344	0.063	0.547	0.971	0.996	WT1	WT1_LOF (same)	yes		0.809
+MM路all sc(CV)	per-mut	CEBPA	0.333	0.991	9	348	3	6	3	345	0.121	0.646	0.975	0.997	CEBPA		yes		0.902
+MM路all sc(CV)	per-mut	KIT	0.500	0.968	12	345	6	6	11	334	0.254	0.746	0.944	0.982	KIT		yes		0.919
+MM路all sc(CV)	per-mut	GATA2	0.625	0.948	8	349	5	3	18	331	0.306	0.863	0.920	0.967	GATA2	GATA2 (same)	yes		0.918
+MM路all sc(CV)	per-mut	PTPN11	0.222	0.994	9	348	2	7	2	346	0.063	0.547	0.979	0.998	PTPN11		yes		0.835

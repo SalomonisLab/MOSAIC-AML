@@ -9,7 +9,7 @@ Evaluated on four cohorts the boss asked for:
   all scRNA (n=387)  single-cell, bulk-equivalent input (entirely external to a bulk caller)
 
 Reports per category: n, n_pos, prevalence, sensitivity(=recall), specificity, precision, F1, AUROC,
-and the raw TP/FP/FN/TN. Plus a cohort OVERALL (pooled + mean). Writes deliverables/bulk_matrix.json + .tsv.
+and the raw TP/FP/FN/TN. Plus a cohort OVERALL (pooled + mean). Writes deliverables/bulk_matrix.json, bulk_matrix.tsv and bulk_matrix_overall.tsv.
 
   bsub -q test -W 60 -M 24000 -R "rusage[mem=24000]" -o bm.log \
     /usr/local/anaconda3-2020/bin/python bench_matrix.py
@@ -25,6 +25,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(ROOT, "pipeline"))
 from amlmm.bulk_predictor import BulkMutationPredictor, _pct
+import bulk_matrix_tables
 
 OUTD = os.path.join(ROOT, "deliverables"); os.makedirs(OUTD, exist_ok=True)
 BP = BulkMutationPredictor.load(os.path.join(HERE, "bulk_mutation_predictor.pkl"))
@@ -138,23 +139,9 @@ COH = {"BeatAML_CV": beataml_cv(),
 out = {"model": "bulk_mutation_predictor.pkl (BeatAML2-trained, bulk RNA only, no imputation)",
        "mean_beataml_cv_auroc_stored": BP.summary().get("mean_cv_auroc"),
        "cohorts": {k: {"per_category": v, "overall": summarize(v)} for k, v in COH.items()}}
-json.dump(out, open(os.path.join(OUTD, "bulk_matrix.json"), "w"), indent=1)
+json.dump(out, open(os.path.join(OUTD, "bulk_matrix.json"), "w", encoding="utf-8"), indent=1)
 
-# TSV: one row per (cohort, category)
-with open(os.path.join(OUTD, "bulk_matrix.tsv"), "w") as fh:
-    fh.write("cohort\tcategory\tn\tn_pos\tprevalence\tsensitivity\tspecificity\tprecision\tf1\tauroc\tTP\tFP\tFN\tTN\n")
-    for coh, res in COH.items():
-        for c, m in sorted(res.items()):
-            fh.write("\t".join(str(x) for x in [coh, c, m["n"], m["n_pos"], m["prevalence"], m["sensitivity"],
-                     m["specificity"], m["precision"], m["f1"], m["auroc"], m["tp"], m["fp"], m["fn"], m["tn"]]) + "\n")
-    fh.write("\nCOHORT OVERALL (mean over categories | pooled over all calls)\n")
-    fh.write("cohort\tn_cat\tmean_sens\tmean_spec\tmean_f1\tmean_auroc\tpooled_sens\tpooled_spec\n")
-    for coh, res in COH.items():
-        s = summarize(res)
-        if s:
-            fh.write("%s\t%d\t%.3f\t%.3f\t%.3f\t%.3f\t%.3f\t%.3f\n" % (coh, s["n_categories"],
-                     s["mean_sensitivity"], s["mean_specificity"], s["mean_f1"], s["mean_auroc"],
-                     s["pooled_sensitivity"], s["pooled_specificity"]))
+bulk_matrix_tables.write(out, OUTD)
 
 print("=== BULK RNA-only model (BeatAML-trained) — overall by cohort ===")
 for coh, res in COH.items():
@@ -162,5 +149,5 @@ for coh, res in COH.items():
     print("  %-16s  cats=%2d  mean sens=%.3f spec=%.3f F1=%.3f AUROC=%.3f | pooled sens=%.3f spec=%.3f"
           % (coh, s["n_categories"], s["mean_sensitivity"], s["mean_specificity"], s["mean_f1"],
              s["mean_auroc"], s["pooled_sensitivity"], s["pooled_specificity"]))
-print("wrote deliverables/bulk_matrix.json + .tsv")
+print("wrote deliverables/bulk_matrix.json, bulk_matrix.tsv, bulk_matrix_overall.tsv")
 print("BULK MATRIX OK")
