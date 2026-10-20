@@ -29,17 +29,18 @@ SECOND_HEADS = {"KMT2A-rearrangement": "kmt2a"}
 # Bulk (BeatAML-trained) category -> (multimodal category, closeness).
 # "same": one lesion by definition or by the bulk labeling code.
 # "near": the bulk subtype is nearly all of the gene-level lesion in AML.
-# Not matched, because the multimodal category clearly holds more: KIT vs
-# KIT_D816 (about 41% of KIT mutations in CBF-AML fall outside D816) and
-# PTPN11 vs PTPN11_other (the bulk category excludes the hotspots).
+# Not matched, because the multimodal category holds more: KIT vs KIT_D816
+# (25 of 61 KIT-mutated CBF-AML cases outside D816; Ann Hematol 2017,
+# doi:10.1007/s00277-017-3074-y) and PTPN11 vs PTPN11_other (the bulk
+# category excludes the E76, D61 and A72 hotspots).
 MATCH = {
     "FLT3_ITD": ("FLT3-ITD", "same"),
     "KMT2A_fusion": ("kmt2a", "same"),
     "RUNX1_LOF": ("RUNX1", "same"),      # bulk_external.py takes every RUNX1 variant
     "WT1_LOF": ("WT1", "same"),          # likewise every WT1 variant
-    "NPM1_exon12_frameshift": ("NPM1", "near"),   # about 1.3% of NPM1-mutant AML is outside exon 12
-    "IDH1_R132": ("IDH1", "near"),       # about 4% of IDH1 mutations are not R132
-    "FLT3_TKD_D835/I836": ("FLT3-TKD", "near"),   # D835/I836 is the clinical TKD assay
+    "NPM1_exon12_frameshift": ("NPM1", "near"),   # 5 of 387 NPM1c+ AML outside exon 12 (PMID 34343258)
+    "IDH1_R132": ("IDH1", "near"),       # 47 of 49 IDH1 mutations were R132 (PMID 20368543)
+    "FLT3_TKD_D835/I836": ("FLT3-TKD", "near"),   # the clinical TKD assay covers D835/I836 (PMID 11290608)
 }
 
 
