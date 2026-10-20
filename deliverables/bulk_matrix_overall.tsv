@@ -1,0 +1,5 @@
+cohort	n_categories	mean_sensitivity	mean_specificity	mean_f1	mean_auroc	pooled_sensitivity	pooled_specificity	pooled_TP	pooled_FP	pooled_FN	pooled_TN
+BeatAML_CV	50	0.532	0.956	0.505	0.830	0.641	0.957	1057	1253	593	27957
+Leucegene	18	0.546	0.956	0.497	0.855	0.580	0.956	206	165	149	3592
+heldout_scRNA	3	0.605	0.929	0.662	0.858	0.571	0.930	12	4	9	53
+all_scRNA	14	0.303	0.946	0.162	0.695	0.405	0.947	53	281	78	5006
