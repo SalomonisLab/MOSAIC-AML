@@ -1,0 +1,2303 @@
+{
+ "seed": 20261020,
+ "bootstrap_resamples": 2000,
+ "cohorts": {
+  "sealed held-out scRNA": {
+   "model": "multimodal",
+   "n_patients": 29,
+   "variants": {
+    "as shipped": {
+     "tp": 52,
+     "fp": 43,
+     "fn": 51,
+     "tn": 582,
+     "sensitivity": 0.5048543689320388,
+     "specificity": 0.9312,
+     "precision": 0.5473684210526316,
+     "f1": 0.5252525252525253,
+     "macro_sensitivity_per_category": 0.45697032436162865,
+     "n_categories_with_positives": 23,
+     "mean_sensitivity_per_patient": 0.5228021978021978,
+     "n_patients_with_positives": 26,
+     "sensitivity_ci95": [
+      0.41175284629981024,
+      0.6100131578947368
+     ],
+     "specificity_ci95": [
+      0.9080839292502139,
+      0.9521568480861243
+     ],
+     "precision_ci95": [
+      0.4680802264298263,
+      0.6212223587223586
+     ],
+     "f1_ci95": [
+      0.453605250539439,
+      0.5913176574977816
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3598205811001864,
+      0.5755298441811595
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4063423645320197,
+      0.652945238095238
+     ]
+    },
+    "recorded labels only": {
+     "tp": 52,
+     "fp": 43,
+     "fn": 51,
+     "tn": 582,
+     "sensitivity": 0.5048543689320388,
+     "specificity": 0.9312,
+     "precision": 0.5473684210526316,
+     "f1": 0.5252525252525253,
+     "macro_sensitivity_per_category": 0.45697032436162865,
+     "n_categories_with_positives": 23,
+     "mean_sensitivity_per_patient": 0.5228021978021978,
+     "n_patients_with_positives": 26,
+     "sensitivity_ci95": [
+      0.41175284629981024,
+      0.6100131578947368
+     ],
+     "specificity_ci95": [
+      0.9080839292502139,
+      0.9521568480861243
+     ],
+     "precision_ci95": [
+      0.4680802264298263,
+      0.6212223587223586
+     ],
+     "f1_ci95": [
+      0.453605250539439,
+      0.5913176574977816
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3598205811001864,
+      0.5755298441811595
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4063423645320197,
+      0.652945238095238
+     ]
+    },
+    "recorded + inferred negatives": {
+     "tp": 52,
+     "fp": 43,
+     "fn": 51,
+     "tn": 582,
+     "sensitivity": 0.5048543689320388,
+     "specificity": 0.9312,
+     "precision": 0.5473684210526316,
+     "f1": 0.5252525252525253,
+     "macro_sensitivity_per_category": 0.45697032436162865,
+     "n_categories_with_positives": 23,
+     "mean_sensitivity_per_patient": 0.5228021978021978,
+     "n_patients_with_positives": 26,
+     "sensitivity_ci95": [
+      0.41175284629981024,
+      0.6100131578947368
+     ],
+     "specificity_ci95": [
+      0.9080839292502139,
+      0.9521568480861243
+     ],
+     "precision_ci95": [
+      0.4680802264298263,
+      0.6212223587223586
+     ],
+     "f1_ci95": [
+      0.453605250539439,
+      0.5913176574977816
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3598205811001864,
+      0.5755298441811595
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4063423645320197,
+      0.652945238095238
+     ]
+    },
+    "resolution-matched": {
+     "tp": 52,
+     "fp": 43,
+     "fn": 51,
+     "tn": 582,
+     "sensitivity": 0.5048543689320388,
+     "specificity": 0.9312,
+     "precision": 0.5473684210526316,
+     "f1": 0.5252525252525253,
+     "macro_sensitivity_per_category": 0.45697032436162865,
+     "n_categories_with_positives": 23,
+     "mean_sensitivity_per_patient": 0.5228021978021978,
+     "n_patients_with_positives": 26,
+     "sensitivity_ci95": [
+      0.41175284629981024,
+      0.6100131578947368
+     ],
+     "specificity_ci95": [
+      0.9080839292502139,
+      0.9521568480861243
+     ],
+     "precision_ci95": [
+      0.4680802264298263,
+      0.6212223587223586
+     ],
+     "f1_ci95": [
+      0.453605250539439,
+      0.5913176574977816
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3598205811001864,
+      0.5755298441811595
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4063423645320197,
+      0.652945238095238
+     ]
+    },
+    "as shipped, one call per lesion, no controls": {
+     "tp": 50,
+     "fp": 43,
+     "fn": 49,
+     "tn": 534,
+     "sensitivity": 0.5050505050505051,
+     "specificity": 0.925476603119584,
+     "precision": 0.5376344086021505,
+     "f1": 0.5208333333333334,
+     "macro_sensitivity_per_category": 0.45501443001443,
+     "n_categories_with_positives": 22,
+     "mean_sensitivity_per_patient": 0.5292124542124542,
+     "n_patients_with_positives": 26,
+     "sensitivity_ci95": [
+      0.41343749999999996,
+      0.6071541591320071
+     ],
+     "specificity_ci95": [
+      0.9003970372804315,
+      0.9483753563822187
+     ],
+     "precision_ci95": [
+      0.4583235981308411,
+      0.6097621951219512
+     ],
+     "f1_ci95": [
+      0.45054399243140963,
+      0.5821625958281333
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3607054197617923,
+      0.5726273148148144
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4129556405895692,
+      0.6540376984126984
+     ]
+    },
+    "recorded only, one call per lesion, no controls": {
+     "tp": 50,
+     "fp": 43,
+     "fn": 49,
+     "tn": 534,
+     "sensitivity": 0.5050505050505051,
+     "specificity": 0.925476603119584,
+     "precision": 0.5376344086021505,
+     "f1": 0.5208333333333334,
+     "macro_sensitivity_per_category": 0.45501443001443,
+     "n_categories_with_positives": 22,
+     "mean_sensitivity_per_patient": 0.5292124542124542,
+     "n_patients_with_positives": 26,
+     "sensitivity_ci95": [
+      0.41343749999999996,
+      0.6071541591320071
+     ],
+     "specificity_ci95": [
+      0.9003970372804315,
+      0.9483753563822187
+     ],
+     "precision_ci95": [
+      0.4583235981308411,
+      0.6097621951219512
+     ],
+     "f1_ci95": [
+      0.45054399243140963,
+      0.5821625958281333
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3607054197617923,
+      0.5726273148148144
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4129556405895692,
+      0.6540376984126984
+     ]
+    },
+    "resolution-matched, one call per lesion, no controls": {
+     "tp": 50,
+     "fp": 43,
+     "fn": 49,
+     "tn": 534,
+     "sensitivity": 0.5050505050505051,
+     "specificity": 0.925476603119584,
+     "precision": 0.5376344086021505,
+     "f1": 0.5208333333333334,
+     "macro_sensitivity_per_category": 0.45501443001443,
+     "n_categories_with_positives": 22,
+     "mean_sensitivity_per_patient": 0.5292124542124542,
+     "n_patients_with_positives": 26,
+     "sensitivity_ci95": [
+      0.41343749999999996,
+      0.6071541591320071
+     ],
+     "specificity_ci95": [
+      0.9003970372804315,
+      0.9483753563822187
+     ],
+     "precision_ci95": [
+      0.4583235981308411,
+      0.6097621951219512
+     ],
+     "f1_ci95": [
+      0.45054399243140963,
+      0.5821625958281333
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3607054197617923,
+      0.5726273148148144
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4129556405895692,
+      0.6540376984126984
+     ]
+    }
+   },
+   "paired_differences": {
+    "recorded labels only - as shipped": {
+     "sensitivity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "specificity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "recorded + inferred negatives - as shipped": {
+     "sensitivity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "specificity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "resolution-matched - as shipped": {
+     "sensitivity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "specificity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "as shipped, one call per lesion, no controls - as shipped": {
+     "sensitivity": {
+      "difference": 0.00019613611846625023,
+      "ci95": [
+       -0.018239960990384017,
+       0.018955249425198203
+      ]
+     },
+     "specificity": {
+      "difference": -0.00572339688041601,
+      "ci95": [
+       -0.007861319306114264,
+       -0.0038649579171202157
+      ]
+     }
+    },
+    "recorded only, one call per lesion, no controls - as shipped": {
+     "sensitivity": {
+      "difference": 0.00019613611846625023,
+      "ci95": [
+       -0.018239960990384017,
+       0.018955249425198203
+      ]
+     },
+     "specificity": {
+      "difference": -0.00572339688041601,
+      "ci95": [
+       -0.007861319306114264,
+       -0.0038649579171202157
+      ]
+     }
+    },
+    "resolution-matched, one call per lesion, no controls - as shipped": {
+     "sensitivity": {
+      "difference": 0.00019613611846625023,
+      "ci95": [
+       -0.018239960990384017,
+       0.018955249425198203
+      ]
+     },
+     "specificity": {
+      "difference": -0.00572339688041601,
+      "ci95": [
+       -0.007861319306114264,
+       -0.0038649579171202157
+      ]
+     }
+    }
+   },
+   "rule_check": {
+    "TP": 0,
+    "FP": 0,
+    "FN": 0,
+    "TN": 0,
+    "disagreements": {},
+    "share_of_rule_positives_wrong": null,
+    "share_of_rule_negatives_wrong": null
+   }
+  },
+  "Trumpp/Waclawiczek": {
+   "model": "bulk caller",
+   "n_patients": 16,
+   "variants": {
+    "as shipped": {
+     "tp": 32,
+     "fp": 91,
+     "fn": 28,
+     "tn": 777,
+     "sensitivity": 0.5333333333333333,
+     "specificity": 0.8951612903225806,
+     "precision": 0.2601626016260163,
+     "f1": 0.34972677595628415,
+     "macro_sensitivity_per_category": 0.5387566137566138,
+     "n_categories_with_positives": 18,
+     "mean_sensitivity_per_patient": 0.575,
+     "n_patients_with_positives": 16,
+     "sensitivity_ci95": [
+      0.3870967741935484,
+      0.6500765306122445
+     ],
+     "specificity_ci95": [
+      0.8591024898325924,
+      0.9290718269724225
+     ],
+     "precision_ci95": [
+      0.17807928952867424,
+      0.36190886699507385
+     ],
+     "f1_ci95": [
+      0.2564102564102564,
+      0.44086021505376344
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.4156862745098039,
+      0.6600579975579975
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4270833333333333,
+      0.71875
+     ]
+    },
+    "recorded labels only": {
+     "tp": 19,
+     "fp": 46,
+     "fn": 7,
+     "tn": 200,
+     "sensitivity": 0.7307692307692307,
+     "specificity": 0.8130081300813008,
+     "precision": 0.2923076923076923,
+     "f1": 0.4175824175824176,
+     "macro_sensitivity_per_category": 0.804421768707483,
+     "n_categories_with_positives": 7,
+     "mean_sensitivity_per_patient": 0.75,
+     "n_patients_with_positives": 16,
+     "sensitivity_ci95": [
+      0.6,
+      0.8573051948051938
+     ],
+     "specificity_ci95": [
+      0.7654078665442301,
+      0.864013545816733
+     ],
+     "precision_ci95": [
+      0.2328767123287671,
+      0.35418346774193543
+     ],
+     "f1_ci95": [
+      0.3466666666666667,
+      0.48193308950086056
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.6749821428571428,
+      0.8869260204081632
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.5625,
+      0.90625
+     ]
+    },
+    "recorded + inferred negatives": {
+     "tp": 19,
+     "fp": 91,
+     "fn": 7,
+     "tn": 777,
+     "sensitivity": 0.7307692307692307,
+     "specificity": 0.8951612903225806,
+     "precision": 0.17272727272727273,
+     "f1": 0.27941176470588236,
+     "macro_sensitivity_per_category": 0.804421768707483,
+     "n_categories_with_positives": 7,
+     "mean_sensitivity_per_patient": 0.75,
+     "n_patients_with_positives": 16,
+     "sensitivity_ci95": [
+      0.6,
+      0.8573051948051938
+     ],
+     "specificity_ci95": [
+      0.8591024898325924,
+      0.9290718269724225
+     ],
+     "precision_ci95": [
+      0.1209636826152847,
+      0.24243159752868487
+     ],
+     "f1_ci95": [
+      0.2054776008885598,
+      0.367095065874451
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.6749821428571428,
+      0.8869260204081632
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.5625,
+      0.90625
+     ]
+    },
+    "resolution-matched": {
+     "tp": 27,
+     "fp": 91,
+     "fn": 19,
+     "tn": 777,
+     "sensitivity": 0.5869565217391305,
+     "specificity": 0.8951612903225806,
+     "precision": 0.2288135593220339,
+     "f1": 0.32926829268292684,
+     "macro_sensitivity_per_category": 0.6357142857142857,
+     "n_categories_with_positives": 13,
+     "mean_sensitivity_per_patient": 0.621875,
+     "n_patients_with_positives": 16,
+     "sensitivity_ci95": [
+      0.425531914893617,
+      0.7333673469387753
+     ],
+     "specificity_ci95": [
+      0.8591024898325924,
+      0.9290718269724225
+     ],
+     "precision_ci95": [
+      0.1608327803583278,
+      0.3146067415730337
+     ],
+     "f1_ci95": [
+      0.24417895632444694,
+      0.41600268456375833
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.49404491341991347,
+      0.7532118055555556
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.45625,
+      0.7760937499999997
+     ]
+    },
+    "as shipped, one call per lesion, no controls": {
+     "tp": 30,
+     "fp": 86,
+     "fn": 28,
+     "tn": 736,
+     "sensitivity": 0.5172413793103449,
+     "specificity": 0.8953771289537713,
+     "precision": 0.25862068965517243,
+     "f1": 0.3448275862068966,
+     "macro_sensitivity_per_category": 0.510978835978836,
+     "n_categories_with_positives": 18,
+     "mean_sensitivity_per_patient": 0.559375,
+     "n_patients_with_positives": 16,
+     "sensitivity_ci95": [
+      0.36363636363636365,
+      0.6379549808429118
+     ],
+     "specificity_ci95": [
+      0.8557804047859173,
+      0.9308641975308642
+     ],
+     "precision_ci95": [
+      0.1679350888877504,
+      0.37038077403245934
+     ],
+     "f1_ci95": [
+      0.24388595912986155,
+      0.44809214245336343
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.380725589514652,
+      0.6351070827320826
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.39684895833333333,
+      0.7114583333333333
+     ]
+    },
+    "recorded only, one call per lesion, no controls": {
+     "tp": 19,
+     "fp": 42,
+     "fn": 7,
+     "tn": 172,
+     "sensitivity": 0.7307692307692307,
+     "specificity": 0.8037383177570093,
+     "precision": 0.3114754098360656,
+     "f1": 0.4367816091954023,
+     "macro_sensitivity_per_category": 0.804421768707483,
+     "n_categories_with_positives": 7,
+     "mean_sensitivity_per_patient": 0.75,
+     "n_patients_with_positives": 16,
+     "sensitivity_ci95": [
+      0.6,
+      0.8573051948051938
+     ],
+     "specificity_ci95": [
+      0.7548076923076923,
+      0.8564814814814815
+     ],
+     "precision_ci95": [
+      0.24489795918367346,
+      0.38598245614035076
+     ],
+     "f1_ci95": [
+      0.35714285714285715,
+      0.5102040816326531
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.6749821428571428,
+      0.8869260204081632
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.5625,
+      0.90625
+     ]
+    },
+    "resolution-matched, one call per lesion, no controls": {
+     "tp": 25,
+     "fp": 86,
+     "fn": 19,
+     "tn": 736,
+     "sensitivity": 0.5681818181818182,
+     "specificity": 0.8953771289537713,
+     "precision": 0.22522522522522523,
+     "f1": 0.3225806451612903,
+     "macro_sensitivity_per_category": 0.5972527472527472,
+     "n_categories_with_positives": 13,
+     "mean_sensitivity_per_patient": 0.6010416666666667,
+     "n_patients_with_positives": 16,
+     "sensitivity_ci95": [
+      0.3958333333333333,
+      0.7209302325581395
+     ],
+     "specificity_ci95": [
+      0.8557804047859173,
+      0.9308641975308642
+     ],
+     "precision_ci95": [
+      0.14934028737220226,
+      0.32432432432432434
+     ],
+     "f1_ci95": [
+      0.22949338336954375,
+      0.422543259557344
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.45454545454545453,
+      0.7294512987012987
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4166666666666667,
+      0.7677083333333333
+     ]
+    }
+   },
+   "paired_differences": {
+    "recorded labels only - as shipped": {
+     "sensitivity": {
+      "difference": 0.1974358974358974,
+      "ci95": [
+       0.11409615384615378,
+       0.2947368421052632
+      ]
+     },
+     "specificity": {
+      "difference": -0.08215316024127983,
+      "ci95": [
+       -0.11563621269883917,
+       -0.05352029720452326
+      ]
+     }
+    },
+    "recorded + inferred negatives - as shipped": {
+     "sensitivity": {
+      "difference": 0.1974358974358974,
+      "ci95": [
+       0.11409615384615378,
+       0.2947368421052632
+      ]
+     },
+     "specificity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "resolution-matched - as shipped": {
+     "sensitivity": {
+      "difference": 0.05362318840579716,
+      "ci95": [
+       0.013289102701543723,
+       0.1097560975609756
+      ]
+     },
+     "specificity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "as shipped, one call per lesion, no controls - as shipped": {
+     "sensitivity": {
+      "difference": -0.016091954022988464,
+      "ci95": [
+       -0.04634280491107701,
+       0.0
+      ]
+     },
+     "specificity": {
+      "difference": 0.00021583863119067903,
+      "ci95": [
+       -0.005455613072705043,
+       0.0065091706602839515
+      ]
+     }
+    },
+    "recorded only, one call per lesion, no controls - as shipped": {
+     "sensitivity": {
+      "difference": 0.1974358974358974,
+      "ci95": [
+       0.11409615384615378,
+       0.2947368421052632
+      ]
+     },
+     "specificity": {
+      "difference": -0.0914229725655713,
+      "ci95": [
+       -0.12028919488311682,
+       -0.06514900479765166
+      ]
+     }
+    },
+    "resolution-matched, one call per lesion, no controls - as shipped": {
+     "sensitivity": {
+      "difference": 0.034848484848484906,
+      "ci95": [
+       -0.012912978714217902,
+       0.09576341024872627
+      ]
+     },
+     "specificity": {
+      "difference": 0.00021583863119067903,
+      "ci95": [
+       -0.005455613072705043,
+       0.0065091706602839515
+      ]
+     }
+    }
+   },
+   "rule_check": {
+    "TP": 26,
+    "FP": 14,
+    "FN": 0,
+    "TN": 232,
+    "disagreements": {
+     "FLT3_ITD": {
+      "FP": 6,
+      "FN": 0
+     },
+     "FLT3_TKD_D835/I836": {
+      "FP": 6,
+      "FN": 0
+     },
+     "KMT2A-rearrangement": {
+      "FP": 2,
+      "FN": 0
+     }
+    },
+    "share_of_rule_positives_wrong": 0.35,
+    "share_of_rule_negatives_wrong": 0.0
+   }
+  },
+  "GSE281087 (panel-honest)": {
+   "model": "bulk caller",
+   "n_patients": 15,
+   "variants": {
+    "as shipped": {
+     "tp": 11,
+     "fp": 54,
+     "fn": 19,
+     "tn": 306,
+     "sensitivity": 0.36666666666666664,
+     "specificity": 0.85,
+     "precision": 0.16923076923076924,
+     "f1": 0.23157894736842105,
+     "macro_sensitivity_per_category": 0.3235294117647059,
+     "n_categories_with_positives": 17,
+     "mean_sensitivity_per_patient": 0.3819444444444444,
+     "n_patients_with_positives": 12,
+     "sensitivity_ci95": [
+      0.23333333333333334,
+      0.5
+     ],
+     "specificity_ci95": [
+      0.8347333148135287,
+      0.8635097493036211
+     ],
+     "precision_ci95": [
+      0.09832099418297198,
+      0.23529411764705882
+     ],
+     "f1_ci95": [
+      0.13953488372093023,
+      0.3090909090909091
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.23076923076923078,
+      0.4444444444444444
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.22022456709956706,
+      0.553030303030303
+     ]
+    },
+    "recorded labels only": {
+     "tp": 11,
+     "fp": 54,
+     "fn": 19,
+     "tn": 306,
+     "sensitivity": 0.36666666666666664,
+     "specificity": 0.85,
+     "precision": 0.16923076923076924,
+     "f1": 0.23157894736842105,
+     "macro_sensitivity_per_category": 0.3235294117647059,
+     "n_categories_with_positives": 17,
+     "mean_sensitivity_per_patient": 0.3819444444444444,
+     "n_patients_with_positives": 12,
+     "sensitivity_ci95": [
+      0.23333333333333334,
+      0.5
+     ],
+     "specificity_ci95": [
+      0.8347333148135287,
+      0.8635097493036211
+     ],
+     "precision_ci95": [
+      0.09832099418297198,
+      0.23529411764705882
+     ],
+     "f1_ci95": [
+      0.13953488372093023,
+      0.3090909090909091
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.23076923076923078,
+      0.4444444444444444
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.22022456709956706,
+      0.553030303030303
+     ]
+    },
+    "recorded + inferred negatives": {
+     "tp": 11,
+     "fp": 54,
+     "fn": 19,
+     "tn": 306,
+     "sensitivity": 0.36666666666666664,
+     "specificity": 0.85,
+     "precision": 0.16923076923076924,
+     "f1": 0.23157894736842105,
+     "macro_sensitivity_per_category": 0.3235294117647059,
+     "n_categories_with_positives": 17,
+     "mean_sensitivity_per_patient": 0.3819444444444444,
+     "n_patients_with_positives": 12,
+     "sensitivity_ci95": [
+      0.23333333333333334,
+      0.5
+     ],
+     "specificity_ci95": [
+      0.8347333148135287,
+      0.8635097493036211
+     ],
+     "precision_ci95": [
+      0.09832099418297198,
+      0.23529411764705882
+     ],
+     "f1_ci95": [
+      0.13953488372093023,
+      0.3090909090909091
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.23076923076923078,
+      0.4444444444444444
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.22022456709956706,
+      0.553030303030303
+     ]
+    },
+    "resolution-matched": {
+     "tp": 11,
+     "fp": 54,
+     "fn": 19,
+     "tn": 306,
+     "sensitivity": 0.36666666666666664,
+     "specificity": 0.85,
+     "precision": 0.16923076923076924,
+     "f1": 0.23157894736842105,
+     "macro_sensitivity_per_category": 0.3235294117647059,
+     "n_categories_with_positives": 17,
+     "mean_sensitivity_per_patient": 0.3819444444444444,
+     "n_patients_with_positives": 12,
+     "sensitivity_ci95": [
+      0.23333333333333334,
+      0.5
+     ],
+     "specificity_ci95": [
+      0.8347333148135287,
+      0.8635097493036211
+     ],
+     "precision_ci95": [
+      0.09832099418297198,
+      0.23529411764705882
+     ],
+     "f1_ci95": [
+      0.13953488372093023,
+      0.3090909090909091
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.23076923076923078,
+      0.4444444444444444
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.22022456709956706,
+      0.553030303030303
+     ]
+    },
+    "as shipped, one call per lesion, no controls": {
+     "tp": 11,
+     "fp": 51,
+     "fn": 19,
+     "tn": 283,
+     "sensitivity": 0.36666666666666664,
+     "specificity": 0.8473053892215568,
+     "precision": 0.1774193548387097,
+     "f1": 0.2391304347826087,
+     "macro_sensitivity_per_category": 0.3235294117647059,
+     "n_categories_with_positives": 17,
+     "mean_sensitivity_per_patient": 0.3819444444444444,
+     "n_patients_with_positives": 12,
+     "sensitivity_ci95": [
+      0.23333333333333334,
+      0.5
+     ],
+     "specificity_ci95": [
+      0.8320589999793129,
+      0.8605341246290801
+     ],
+     "precision_ci95": [
+      0.10344827586206896,
+      0.2459016393442623
+     ],
+     "f1_ci95": [
+      0.14634146341463414,
+      0.3181818181818182
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.23076923076923078,
+      0.4444444444444444
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.22022456709956706,
+      0.553030303030303
+     ]
+    },
+    "recorded only, one call per lesion, no controls": {
+     "tp": 11,
+     "fp": 51,
+     "fn": 19,
+     "tn": 283,
+     "sensitivity": 0.36666666666666664,
+     "specificity": 0.8473053892215568,
+     "precision": 0.1774193548387097,
+     "f1": 0.2391304347826087,
+     "macro_sensitivity_per_category": 0.3235294117647059,
+     "n_categories_with_positives": 17,
+     "mean_sensitivity_per_patient": 0.3819444444444444,
+     "n_patients_with_positives": 12,
+     "sensitivity_ci95": [
+      0.23333333333333334,
+      0.5
+     ],
+     "specificity_ci95": [
+      0.8320589999793129,
+      0.8605341246290801
+     ],
+     "precision_ci95": [
+      0.10344827586206896,
+      0.2459016393442623
+     ],
+     "f1_ci95": [
+      0.14634146341463414,
+      0.3181818181818182
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.23076923076923078,
+      0.4444444444444444
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.22022456709956706,
+      0.553030303030303
+     ]
+    },
+    "resolution-matched, one call per lesion, no controls": {
+     "tp": 11,
+     "fp": 51,
+     "fn": 19,
+     "tn": 283,
+     "sensitivity": 0.36666666666666664,
+     "specificity": 0.8473053892215568,
+     "precision": 0.1774193548387097,
+     "f1": 0.2391304347826087,
+     "macro_sensitivity_per_category": 0.3235294117647059,
+     "n_categories_with_positives": 17,
+     "mean_sensitivity_per_patient": 0.3819444444444444,
+     "n_patients_with_positives": 12,
+     "sensitivity_ci95": [
+      0.23333333333333334,
+      0.5
+     ],
+     "specificity_ci95": [
+      0.8320589999793129,
+      0.8605341246290801
+     ],
+     "precision_ci95": [
+      0.10344827586206896,
+      0.2459016393442623
+     ],
+     "f1_ci95": [
+      0.14634146341463414,
+      0.3181818181818182
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.23076923076923078,
+      0.4444444444444444
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.22022456709956706,
+      0.553030303030303
+     ]
+    }
+   },
+   "paired_differences": {
+    "recorded labels only - as shipped": {
+     "sensitivity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "specificity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "recorded + inferred negatives - as shipped": {
+     "sensitivity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "specificity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "resolution-matched - as shipped": {
+     "sensitivity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "specificity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "as shipped, one call per lesion, no controls - as shipped": {
+     "sensitivity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "specificity": {
+      "difference": -0.0026946107784431295,
+      "ci95": [
+       -0.0098950524737631,
+       0.0
+      ]
+     }
+    },
+    "recorded only, one call per lesion, no controls - as shipped": {
+     "sensitivity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "specificity": {
+      "difference": -0.0026946107784431295,
+      "ci95": [
+       -0.0098950524737631,
+       0.0
+      ]
+     }
+    },
+    "resolution-matched, one call per lesion, no controls - as shipped": {
+     "sensitivity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "specificity": {
+      "difference": -0.0026946107784431295,
+      "ci95": [
+       -0.0098950524737631,
+       0.0
+      ]
+     }
+    }
+   },
+   "rule_check": {
+    "TP": 0,
+    "FP": 0,
+    "FN": 0,
+    "TN": 0,
+    "disagreements": {},
+    "share_of_rule_positives_wrong": null,
+    "share_of_rule_negatives_wrong": null
+   }
+  }
+ },
+ "models": {
+  "multimodal": {
+   "cohorts": [
+    "sealed held-out scRNA"
+   ],
+   "n_patients": 29,
+   "variants": {
+    "as shipped": {
+     "tp": 52,
+     "fp": 43,
+     "fn": 51,
+     "tn": 582,
+     "sensitivity": 0.5048543689320388,
+     "specificity": 0.9312,
+     "precision": 0.5473684210526316,
+     "f1": 0.5252525252525253,
+     "macro_sensitivity_per_category": 0.45697032436162865,
+     "n_categories_with_positives": 23,
+     "mean_sensitivity_per_patient": 0.5228021978021978,
+     "n_patients_with_positives": 26,
+     "sensitivity_ci95": [
+      0.41175284629981024,
+      0.6100131578947368
+     ],
+     "specificity_ci95": [
+      0.9080839292502139,
+      0.9521568480861243
+     ],
+     "precision_ci95": [
+      0.4680802264298263,
+      0.6212223587223586
+     ],
+     "f1_ci95": [
+      0.453605250539439,
+      0.5913176574977816
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3598205811001864,
+      0.5755298441811595
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4063423645320197,
+      0.652945238095238
+     ]
+    },
+    "recorded labels only": {
+     "tp": 52,
+     "fp": 43,
+     "fn": 51,
+     "tn": 582,
+     "sensitivity": 0.5048543689320388,
+     "specificity": 0.9312,
+     "precision": 0.5473684210526316,
+     "f1": 0.5252525252525253,
+     "macro_sensitivity_per_category": 0.45697032436162865,
+     "n_categories_with_positives": 23,
+     "mean_sensitivity_per_patient": 0.5228021978021978,
+     "n_patients_with_positives": 26,
+     "sensitivity_ci95": [
+      0.41175284629981024,
+      0.6100131578947368
+     ],
+     "specificity_ci95": [
+      0.9080839292502139,
+      0.9521568480861243
+     ],
+     "precision_ci95": [
+      0.4680802264298263,
+      0.6212223587223586
+     ],
+     "f1_ci95": [
+      0.453605250539439,
+      0.5913176574977816
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3598205811001864,
+      0.5755298441811595
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4063423645320197,
+      0.652945238095238
+     ]
+    },
+    "recorded + inferred negatives": {
+     "tp": 52,
+     "fp": 43,
+     "fn": 51,
+     "tn": 582,
+     "sensitivity": 0.5048543689320388,
+     "specificity": 0.9312,
+     "precision": 0.5473684210526316,
+     "f1": 0.5252525252525253,
+     "macro_sensitivity_per_category": 0.45697032436162865,
+     "n_categories_with_positives": 23,
+     "mean_sensitivity_per_patient": 0.5228021978021978,
+     "n_patients_with_positives": 26,
+     "sensitivity_ci95": [
+      0.41175284629981024,
+      0.6100131578947368
+     ],
+     "specificity_ci95": [
+      0.9080839292502139,
+      0.9521568480861243
+     ],
+     "precision_ci95": [
+      0.4680802264298263,
+      0.6212223587223586
+     ],
+     "f1_ci95": [
+      0.453605250539439,
+      0.5913176574977816
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3598205811001864,
+      0.5755298441811595
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4063423645320197,
+      0.652945238095238
+     ]
+    },
+    "resolution-matched": {
+     "tp": 52,
+     "fp": 43,
+     "fn": 51,
+     "tn": 582,
+     "sensitivity": 0.5048543689320388,
+     "specificity": 0.9312,
+     "precision": 0.5473684210526316,
+     "f1": 0.5252525252525253,
+     "macro_sensitivity_per_category": 0.45697032436162865,
+     "n_categories_with_positives": 23,
+     "mean_sensitivity_per_patient": 0.5228021978021978,
+     "n_patients_with_positives": 26,
+     "sensitivity_ci95": [
+      0.41175284629981024,
+      0.6100131578947368
+     ],
+     "specificity_ci95": [
+      0.9080839292502139,
+      0.9521568480861243
+     ],
+     "precision_ci95": [
+      0.4680802264298263,
+      0.6212223587223586
+     ],
+     "f1_ci95": [
+      0.453605250539439,
+      0.5913176574977816
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3598205811001864,
+      0.5755298441811595
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4063423645320197,
+      0.652945238095238
+     ]
+    },
+    "as shipped, one call per lesion, no controls": {
+     "tp": 50,
+     "fp": 43,
+     "fn": 49,
+     "tn": 534,
+     "sensitivity": 0.5050505050505051,
+     "specificity": 0.925476603119584,
+     "precision": 0.5376344086021505,
+     "f1": 0.5208333333333334,
+     "macro_sensitivity_per_category": 0.45501443001443,
+     "n_categories_with_positives": 22,
+     "mean_sensitivity_per_patient": 0.5292124542124542,
+     "n_patients_with_positives": 26,
+     "sensitivity_ci95": [
+      0.41343749999999996,
+      0.6071541591320071
+     ],
+     "specificity_ci95": [
+      0.9003970372804315,
+      0.9483753563822187
+     ],
+     "precision_ci95": [
+      0.4583235981308411,
+      0.6097621951219512
+     ],
+     "f1_ci95": [
+      0.45054399243140963,
+      0.5821625958281333
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3607054197617923,
+      0.5726273148148144
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4129556405895692,
+      0.6540376984126984
+     ]
+    },
+    "recorded only, one call per lesion, no controls": {
+     "tp": 50,
+     "fp": 43,
+     "fn": 49,
+     "tn": 534,
+     "sensitivity": 0.5050505050505051,
+     "specificity": 0.925476603119584,
+     "precision": 0.5376344086021505,
+     "f1": 0.5208333333333334,
+     "macro_sensitivity_per_category": 0.45501443001443,
+     "n_categories_with_positives": 22,
+     "mean_sensitivity_per_patient": 0.5292124542124542,
+     "n_patients_with_positives": 26,
+     "sensitivity_ci95": [
+      0.41343749999999996,
+      0.6071541591320071
+     ],
+     "specificity_ci95": [
+      0.9003970372804315,
+      0.9483753563822187
+     ],
+     "precision_ci95": [
+      0.4583235981308411,
+      0.6097621951219512
+     ],
+     "f1_ci95": [
+      0.45054399243140963,
+      0.5821625958281333
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3607054197617923,
+      0.5726273148148144
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4129556405895692,
+      0.6540376984126984
+     ]
+    },
+    "resolution-matched, one call per lesion, no controls": {
+     "tp": 50,
+     "fp": 43,
+     "fn": 49,
+     "tn": 534,
+     "sensitivity": 0.5050505050505051,
+     "specificity": 0.925476603119584,
+     "precision": 0.5376344086021505,
+     "f1": 0.5208333333333334,
+     "macro_sensitivity_per_category": 0.45501443001443,
+     "n_categories_with_positives": 22,
+     "mean_sensitivity_per_patient": 0.5292124542124542,
+     "n_patients_with_positives": 26,
+     "sensitivity_ci95": [
+      0.41343749999999996,
+      0.6071541591320071
+     ],
+     "specificity_ci95": [
+      0.9003970372804315,
+      0.9483753563822187
+     ],
+     "precision_ci95": [
+      0.4583235981308411,
+      0.6097621951219512
+     ],
+     "f1_ci95": [
+      0.45054399243140963,
+      0.5821625958281333
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3607054197617923,
+      0.5726273148148144
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.4129556405895692,
+      0.6540376984126984
+     ]
+    }
+   },
+   "paired_differences": {
+    "recorded labels only - as shipped": {
+     "sensitivity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "specificity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "recorded + inferred negatives - as shipped": {
+     "sensitivity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "specificity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "resolution-matched - as shipped": {
+     "sensitivity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "specificity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "as shipped, one call per lesion, no controls - as shipped": {
+     "sensitivity": {
+      "difference": 0.00019613611846625023,
+      "ci95": [
+       -0.018239960990384017,
+       0.018955249425198203
+      ]
+     },
+     "specificity": {
+      "difference": -0.00572339688041601,
+      "ci95": [
+       -0.007861319306114264,
+       -0.0038649579171202157
+      ]
+     }
+    },
+    "recorded only, one call per lesion, no controls - as shipped": {
+     "sensitivity": {
+      "difference": 0.00019613611846625023,
+      "ci95": [
+       -0.018239960990384017,
+       0.018955249425198203
+      ]
+     },
+     "specificity": {
+      "difference": -0.00572339688041601,
+      "ci95": [
+       -0.007861319306114264,
+       -0.0038649579171202157
+      ]
+     }
+    },
+    "resolution-matched, one call per lesion, no controls - as shipped": {
+     "sensitivity": {
+      "difference": 0.00019613611846625023,
+      "ci95": [
+       -0.018239960990384017,
+       0.018955249425198203
+      ]
+     },
+     "specificity": {
+      "difference": -0.00572339688041601,
+      "ci95": [
+       -0.007861319306114264,
+       -0.0038649579171202157
+      ]
+     }
+    }
+   },
+   "rule_check": {
+    "TP": 0,
+    "FP": 0,
+    "FN": 0,
+    "TN": 0,
+    "disagreements": {},
+    "share_of_rule_positives_wrong": null,
+    "share_of_rule_negatives_wrong": null
+   }
+  },
+  "bulk caller": {
+   "cohorts": [
+    "GSE281087 (panel-honest)",
+    "Trumpp/Waclawiczek"
+   ],
+   "n_patients": 31,
+   "variants": {
+    "as shipped": {
+     "tp": 43,
+     "fp": 145,
+     "fn": 47,
+     "tn": 1083,
+     "sensitivity": 0.4777777777777778,
+     "specificity": 0.8819218241042345,
+     "precision": 0.22872340425531915,
+     "f1": 0.30935251798561153,
+     "macro_sensitivity_per_category": 0.4487786023500309,
+     "n_categories_with_positives": 28,
+     "mean_sensitivity_per_patient": 0.49226190476190473,
+     "n_patients_with_positives": 28,
+     "sensitivity_ci95": [
+      0.37643382352941174,
+      0.5679082491582491
+     ],
+     "specificity_ci95": [
+      0.854316248987565,
+      0.906553693195365
+     ],
+     "precision_ci95": [
+      0.16504733009708739,
+      0.29411764705882354
+     ],
+     "f1_ci95": [
+      0.23744210111362962,
+      0.3766417544719431
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3708408100737646,
+      0.5548512767425811
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.3794791666666667,
+      0.6
+     ]
+    },
+    "recorded labels only": {
+     "tp": 30,
+     "fp": 100,
+     "fn": 26,
+     "tn": 506,
+     "sensitivity": 0.5357142857142857,
+     "specificity": 0.834983498349835,
+     "precision": 0.23076923076923078,
+     "f1": 0.3225806451612903,
+     "macro_sensitivity_per_category": 0.4634508348794063,
+     "n_categories_with_positives": 21,
+     "mean_sensitivity_per_patient": 0.5922619047619048,
+     "n_patients_with_positives": 28,
+     "sensitivity_ci95": [
+      0.423728813559322,
+      0.6538461538461539
+     ],
+     "specificity_ci95": [
+      0.8109907467067583,
+      0.8559474150688718
+     ],
+     "precision_ci95": [
+      0.17909841038708893,
+      0.2822626816055159
+     ],
+     "f1_ci95": [
+      0.2573017739880427,
+      0.38710521871305514
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3871996789759948,
+      0.6238993055555554
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.45689080459770115,
+      0.7222446236559138
+     ]
+    },
+    "recorded + inferred negatives": {
+     "tp": 30,
+     "fp": 145,
+     "fn": 26,
+     "tn": 1083,
+     "sensitivity": 0.5357142857142857,
+     "specificity": 0.8819218241042345,
+     "precision": 0.17142857142857143,
+     "f1": 0.2597402597402597,
+     "macro_sensitivity_per_category": 0.4634508348794063,
+     "n_categories_with_positives": 21,
+     "mean_sensitivity_per_patient": 0.5922619047619048,
+     "n_patients_with_positives": 28,
+     "sensitivity_ci95": [
+      0.423728813559322,
+      0.6538461538461539
+     ],
+     "specificity_ci95": [
+      0.854316248987565,
+      0.906553693195365
+     ],
+     "precision_ci95": [
+      0.12562814070351758,
+      0.22223809523809515
+     ],
+     "f1_ci95": [
+      0.1999800796812749,
+      0.32
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3871996789759948,
+      0.6238993055555554
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.45689080459770115,
+      0.7222446236559138
+     ]
+    },
+    "resolution-matched": {
+     "tp": 38,
+     "fp": 145,
+     "fn": 38,
+     "tn": 1083,
+     "sensitivity": 0.5,
+     "specificity": 0.8819218241042345,
+     "precision": 0.20765027322404372,
+     "f1": 0.29343629343629346,
+     "macro_sensitivity_per_category": 0.4579926246592913,
+     "n_categories_with_positives": 27,
+     "mean_sensitivity_per_patient": 0.5190476190476191,
+     "n_patients_with_positives": 28,
+     "sensitivity_ci95": [
+      0.38961038961038963,
+      0.6034719590754072
+     ],
+     "specificity_ci95": [
+      0.854316248987565,
+      0.906553693195365
+     ],
+     "precision_ci95": [
+      0.15555016181229775,
+      0.26257609941269155
+     ],
+     "f1_ci95": [
+      0.22775126073097096,
+      0.35627751196172247
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3795260642135643,
+      0.5780471380471379
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.3999404761904762,
+      0.6345801404853127
+     ]
+    },
+    "as shipped, one call per lesion, no controls": {
+     "tp": 41,
+     "fp": 137,
+     "fn": 47,
+     "tn": 1019,
+     "sensitivity": 0.4659090909090909,
+     "specificity": 0.8814878892733564,
+     "precision": 0.2303370786516854,
+     "f1": 0.3082706766917293,
+     "macro_sensitivity_per_category": 0.430921459492888,
+     "n_categories_with_positives": 28,
+     "mean_sensitivity_per_patient": 0.48333333333333334,
+     "n_patients_with_positives": 28,
+     "sensitivity_ci95": [
+      0.3535204991087344,
+      0.5616476835462522
+     ],
+     "specificity_ci95": [
+      0.8515607837214412,
+      0.9080763011480592
+     ],
+     "precision_ci95": [
+      0.16183992654142582,
+      0.3005215212164313
+     ],
+     "f1_ci95": [
+      0.232723044397463,
+      0.37993010752688167
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3469368429189858,
+      0.5341987179487179
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.3654226403823178,
+      0.5932407407407406
+     ]
+    },
+    "recorded only, one call per lesion, no controls": {
+     "tp": 30,
+     "fp": 93,
+     "fn": 26,
+     "tn": 455,
+     "sensitivity": 0.5357142857142857,
+     "specificity": 0.8302919708029197,
+     "precision": 0.24390243902439024,
+     "f1": 0.33519553072625696,
+     "macro_sensitivity_per_category": 0.4634508348794063,
+     "n_categories_with_positives": 21,
+     "mean_sensitivity_per_patient": 0.5922619047619048,
+     "n_patients_with_positives": 28,
+     "sensitivity_ci95": [
+      0.423728813559322,
+      0.6538461538461539
+     ],
+     "specificity_ci95": [
+      0.8053404457524755,
+      0.8510675108591622
+     ],
+     "precision_ci95": [
+      0.1889763779527559,
+      0.3016233766233764
+     ],
+     "f1_ci95": [
+      0.26666666666666666,
+      0.40476190476190477
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3871996789759948,
+      0.6238993055555554
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.45689080459770115,
+      0.7222446236559138
+     ]
+    },
+    "resolution-matched, one call per lesion, no controls": {
+     "tp": 36,
+     "fp": 137,
+     "fn": 38,
+     "tn": 1019,
+     "sensitivity": 0.4864864864864865,
+     "specificity": 0.8814878892733564,
+     "precision": 0.20809248554913296,
+     "f1": 0.291497975708502,
+     "macro_sensitivity_per_category": 0.4394741061407728,
+     "n_categories_with_positives": 27,
+     "mean_sensitivity_per_patient": 0.5071428571428571,
+     "n_patients_with_positives": 28,
+     "sensitivity_ci95": [
+      0.3717948717948718,
+      0.5952764976958523
+     ],
+     "specificity_ci95": [
+      0.8515607837214412,
+      0.9080763011480592
+     ],
+     "precision_ci95": [
+      0.1502159866414985,
+      0.26901147098515515
+     ],
+     "f1_ci95": [
+      0.2222222222222222,
+      0.35920408163265294
+     ],
+     "macro_sensitivity_per_category_ci95": [
+      0.3576636716224951,
+      0.5578259637188208
+     ],
+     "mean_sensitivity_per_patient_ci95": [
+      0.38398333333333334,
+      0.6279910714285714
+     ]
+    }
+   },
+   "paired_differences": {
+    "recorded labels only - as shipped": {
+     "sensitivity": {
+      "difference": 0.0579365079365079,
+      "ci95": [
+       -0.007490364308717336,
+       0.13951433387234854
+      ]
+     },
+     "specificity": {
+      "difference": -0.04693832575439949,
+      "ci95": [
+       -0.06683422897111452,
+       -0.026791009162267794
+      ]
+     }
+    },
+    "recorded + inferred negatives - as shipped": {
+     "sensitivity": {
+      "difference": 0.0579365079365079,
+      "ci95": [
+       -0.007490364308717336,
+       0.13951433387234854
+      ]
+     },
+     "specificity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "resolution-matched - as shipped": {
+     "sensitivity": {
+      "difference": 0.0222222222222222,
+      "ci95": [
+       -0.003517412491828585,
+       0.053028022523987174
+      ]
+     },
+     "specificity": {
+      "difference": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "as shipped, one call per lesion, no controls - as shipped": {
+     "sensitivity": {
+      "difference": -0.011868686868686917,
+      "ci95": [
+       -0.03196216951945354,
+       0.0
+      ]
+     },
+     "specificity": {
+      "difference": -0.00043393483087805773,
+      "ci95": [
+       -0.004479417183590145,
+       0.004356477314941951
+      ]
+     }
+    },
+    "recorded only, one call per lesion, no controls - as shipped": {
+     "sensitivity": {
+      "difference": 0.0579365079365079,
+      "ci95": [
+       -0.007490364308717336,
+       0.13951433387234854
+      ]
+     },
+     "specificity": {
+      "difference": -0.051629853301314754,
+      "ci95": [
+       -0.07082602738324602,
+       -0.031849177395258194
+      ]
+     }
+    },
+    "resolution-matched, one call per lesion, no controls - as shipped": {
+     "sensitivity": {
+      "difference": 0.008708708708708712,
+      "ci95": [
+       -0.020540725657163972,
+       0.04256104538486319
+      ]
+     },
+     "specificity": {
+      "difference": -0.00043393483087805773,
+      "ci95": [
+       -0.004479417183590145,
+       0.004356477314941951
+      ]
+     }
+    }
+   },
+   "rule_check": {
+    "TP": 26,
+    "FP": 14,
+    "FN": 0,
+    "TN": 232,
+    "disagreements": {
+     "FLT3_ITD": {
+      "FP": 6,
+      "FN": 0
+     },
+     "FLT3_TKD_D835/I836": {
+      "FP": 6,
+      "FN": 0
+     },
+     "KMT2A-rearrangement": {
+      "FP": 2,
+      "FN": 0
+     }
+    },
+    "share_of_rule_positives_wrong": 0.35,
+    "share_of_rule_negatives_wrong": 0.0
+   }
+  }
+ },
+ "all pooled, both models": {
+  "n_patients": 60,
+  "variants": {
+   "as shipped": {
+    "tp": 95,
+    "fp": 188,
+    "fn": 98,
+    "tn": 1665,
+    "sensitivity": 0.49222797927461137,
+    "specificity": 0.8985429033998921,
+    "precision": 0.33568904593639576,
+    "f1": 0.39915966386554624,
+    "macro_sensitivity_per_category": 0.4168411806855743,
+    "n_categories_with_positives": 46,
+    "mean_sensitivity_per_patient": 0.5069664902998237,
+    "n_patients_with_positives": 54,
+    "sensitivity_ci95": [
+     0.41899441340782123,
+     0.5635406510670566
+    ],
+    "specificity_ci95": [
+     0.8795321325702316,
+     0.916572518346852
+    ],
+    "precision_ci95": [
+     0.2717313664596273,
+     0.4000206611570247
+    ],
+    "f1_ci95": [
+     0.34167063975561085,
+     0.44989640546943627
+    ],
+    "macro_sensitivity_per_category_ci95": [
+     0.3562060066877396,
+     0.5016640693614377
+    ],
+    "mean_sensitivity_per_patient_ci95": [
+     0.4251038348444009,
+     0.5899065055315055
+    ]
+   },
+   "recorded labels only": {
+    "tp": 82,
+    "fp": 143,
+    "fn": 77,
+    "tn": 1088,
+    "sensitivity": 0.5157232704402516,
+    "specificity": 0.8838342810722989,
+    "precision": 0.36444444444444446,
+    "f1": 0.4270833333333333,
+    "macro_sensitivity_per_category": 0.4190092558513611,
+    "n_categories_with_positives": 39,
+    "mean_sensitivity_per_patient": 0.5588183421516755,
+    "n_patients_with_positives": 54,
+    "sensitivity_ci95": [
+     0.44216141001855286,
+     0.5958904109589042
+    ],
+    "specificity_ci95": [
+     0.8644312619539505,
+     0.9028030778995767
+    ],
+    "precision_ci95": [
+     0.30576761451183637,
+     0.42187858371559633
+    ],
+    "f1_ci95": [
+     0.3705683210784314,
+     0.4793814432989691
+    ],
+    "macro_sensitivity_per_category_ci95": [
+     0.3598658199965018,
+     0.5167217121958501
+    ],
+    "mean_sensitivity_per_patient_ci95": [
+     0.4627534632034632,
+     0.6509927901978402
+    ]
+   },
+   "recorded + inferred negatives": {
+    "tp": 82,
+    "fp": 188,
+    "fn": 77,
+    "tn": 1665,
+    "sensitivity": 0.5157232704402516,
+    "specificity": 0.8985429033998921,
+    "precision": 0.3037037037037037,
+    "f1": 0.3822843822843823,
+    "macro_sensitivity_per_category": 0.4190092558513611,
+    "n_categories_with_positives": 39,
+    "mean_sensitivity_per_patient": 0.5588183421516755,
+    "n_patients_with_positives": 54,
+    "sensitivity_ci95": [
+     0.44216141001855286,
+     0.5958904109589042
+    ],
+    "specificity_ci95": [
+     0.8795321325702316,
+     0.916572518346852
+    ],
+    "precision_ci95": [
+     0.24241899968543568,
+     0.3687957795605162
+    ],
+    "f1_ci95": [
+     0.3213375215320701,
+     0.43653058630427694
+    ],
+    "macro_sensitivity_per_category_ci95": [
+     0.3598658199965018,
+     0.5167217121958501
+    ],
+    "mean_sensitivity_per_patient_ci95": [
+     0.4627534632034632,
+     0.6509927901978402
+    ]
+   },
+   "resolution-matched": {
+    "tp": 90,
+    "fp": 188,
+    "fn": 89,
+    "tn": 1665,
+    "sensitivity": 0.5027932960893855,
+    "specificity": 0.8985429033998921,
+    "precision": 0.3237410071942446,
+    "f1": 0.3938730853391685,
+    "macro_sensitivity_per_category": 0.42165987358969814,
+    "n_categories_with_positives": 45,
+    "mean_sensitivity_per_patient": 0.5208553791887125,
+    "n_patients_with_positives": 54,
+    "sensitivity_ci95": [
+     0.43092523952723966,
+     0.5771527883880825
+    ],
+    "specificity_ci95": [
+     0.8795321325702316,
+     0.916572518346852
+    ],
+    "precision_ci95": [
+     0.2618163514338011,
+     0.38627486956937945
+    ],
+    "f1_ci95": [
+     0.33566274994846423,
+     0.4449154830325438
+    ],
+    "macro_sensitivity_per_category_ci95": [
+     0.3592206354843074,
+     0.5113693919885871
+    ],
+    "mean_sensitivity_per_patient_ci95": [
+     0.43493157135262395,
+     0.6062820058578987
+    ]
+   },
+   "as shipped, one call per lesion, no controls": {
+    "tp": 91,
+    "fp": 180,
+    "fn": 96,
+    "tn": 1553,
+    "sensitivity": 0.48663101604278075,
+    "specificity": 0.896133871898442,
+    "precision": 0.33579335793357934,
+    "f1": 0.39737991266375544,
+    "macro_sensitivity_per_category": 0.40388209581192036,
+    "n_categories_with_positives": 45,
+    "mean_sensitivity_per_patient": 0.5054232804232804,
+    "n_patients_with_positives": 54,
+    "sensitivity_ci95": [
+     0.4144986130737426,
+     0.558014261852756
+    ],
+    "specificity_ci95": [
+     0.8753332193582325,
+     0.9154580846422253
+    ],
+    "precision_ci95": [
+     0.2717369907565902,
+     0.40322746581707153
+    ],
+    "f1_ci95": [
+     0.33789361323607897,
+     0.4513309295031862
+    ],
+    "macro_sensitivity_per_category_ci95": [
+     0.34141921989482965,
+     0.48903826662755234
+    ],
+    "mean_sensitivity_per_patient_ci95": [
+     0.42021262353998207,
+     0.5892862978524743
+    ]
+   },
+   "recorded only, one call per lesion, no controls": {
+    "tp": 80,
+    "fp": 136,
+    "fn": 75,
+    "tn": 989,
+    "sensitivity": 0.5161290322580645,
+    "specificity": 0.8791111111111111,
+    "precision": 0.37037037037037035,
+    "f1": 0.431266846361186,
+    "macro_sensitivity_per_category": 0.4168779204790285,
+    "n_categories_with_positives": 38,
+    "mean_sensitivity_per_patient": 0.5619047619047619,
+    "n_patients_with_positives": 54,
+    "sensitivity_ci95": [
+     0.44170932938438756,
+     0.5973233787379373
+    ],
+    "specificity_ci95": [
+     0.858970588235294,
+     0.8982916385100191
+    ],
+    "precision_ci95": [
+     0.3103372985996085,
+     0.42794849677430946
+    ],
+    "f1_ci95": [
+     0.3756958709533591,
+     0.4816753926701571
+    ],
+    "macro_sensitivity_per_category_ci95": [
+     0.35865729463828544,
+     0.5143580437837016
+    ],
+    "mean_sensitivity_per_patient_ci95": [
+     0.4676333194096352,
+     0.6536972459885345
+    ]
+   },
+   "resolution-matched, one call per lesion, no controls": {
+    "tp": 86,
+    "fp": 180,
+    "fn": 87,
+    "tn": 1553,
+    "sensitivity": 0.49710982658959535,
+    "specificity": 0.896133871898442,
+    "precision": 0.3233082706766917,
+    "f1": 0.3917995444191344,
+    "macro_sensitivity_per_category": 0.40851577980764586,
+    "n_categories_with_positives": 44,
+    "mean_sensitivity_per_patient": 0.5177689594356261,
+    "n_patients_with_positives": 54,
+    "sensitivity_ci95": [
+     0.4235239985564778,
+     0.5690766783860706
+    ],
+    "specificity_ci95": [
+     0.8753332193582325,
+     0.9154580846422253
+    ],
+    "precision_ci95": [
+     0.2612879152623977,
+     0.389160799454917
+    ],
+    "f1_ci95": [
+     0.3333333333333333,
+     0.4454348046163191
+    ],
+    "macro_sensitivity_per_category_ci95": [
+     0.3458775269795007,
+     0.4972914684029554
+    ],
+    "mean_sensitivity_per_patient_ci95": [
+     0.42950446740541076,
+     0.6038017697500456
+    ]
+   }
+  },
+  "paired_differences": {
+   "recorded labels only - as shipped": {
+    "sensitivity": {
+     "difference": 0.023495291165640197,
+     "ci95": [
+      -0.005719785619719875,
+      0.05947965967996394
+     ]
+    },
+    "specificity": {
+     "difference": -0.01470862232759318,
+     "ci95": [
+      -0.02782752322922219,
+      -0.0009426538619820049
+     ]
+    }
+   },
+   "recorded + inferred negatives - as shipped": {
+    "sensitivity": {
+     "difference": 0.023495291165640197,
+     "ci95": [
+      -0.005719785619719875,
+      0.05947965967996394
+     ]
+    },
+    "specificity": {
+     "difference": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "resolution-matched - as shipped": {
+    "sensitivity": {
+     "difference": 0.010565316814774128,
+     "ci95": [
+      -0.0011924361859489072,
+      0.02528430455830911
+     ]
+    },
+    "specificity": {
+     "difference": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "as shipped, one call per lesion, no controls - as shipped": {
+    "sensitivity": {
+     "difference": -0.005596963231830621,
+     "ci95": [
+      -0.019517272242383494,
+      0.006307777598861833
+     ]
+    },
+    "specificity": {
+     "difference": -0.0024090315014501096,
+     "ci95": [
+      -0.0052835644764226974,
+      0.000890944532404447
+     ]
+    }
+   },
+   "recorded only, one call per lesion, no controls - as shipped": {
+    "sensitivity": {
+     "difference": 0.02390105298345313,
+     "ci95": [
+      -0.007070263093863471,
+      0.06114514041993176
+     ]
+    },
+    "specificity": {
+     "difference": -0.019431792288781002,
+     "ci95": [
+      -0.032423215011100626,
+      -0.006281038361031432
+     ]
+    }
+   },
+   "resolution-matched, one call per lesion, no controls - as shipped": {
+    "sensitivity": {
+     "difference": 0.004881847314983978,
+     "ci95": [
+      -0.01126752711191088,
+      0.022302985623174704
+     ]
+    },
+    "specificity": {
+     "difference": -0.0024090315014501096,
+     "ci95": [
+      -0.0052835644764226974,
+      0.000890944532404447
+     ]
+    }
+   }
+  }
+ }
+}
