@@ -44,8 +44,8 @@
 
   <section id="matrix"><div class="q">Which model for which data</div><h2>Two models × four cohorts</h2>
     <div class="card"><img src="/val/MOSAIC-AML_model_x_cohort_matrix.png" alt="model x cohort matrix">
-    <div class="cap"><b>Match the model to the assay.</b> The bulk RNA-only model (BeatAML-trained) is strong on bulk (AUROC 0.83–0.86) but collapses on single-cell (0.70); the multimodal model is single-cell-native (0.88) and cannot run on bulk cohorts (no single-cell modalities). They are complementary, not competing.</div></div>
-    <div class="dl"><a href="/val/MOSAIC-AML_model_x_cohort_matrix.pdf">PDF</a><a href="/val/full_matrix.tsv">numbers (TSV)</a><a href="/val/bulk_matrix.tsv">bulk per-category (TSV)</a></div>
+    <div class="cap"><b>Match the model to the assay.</b> The bulk RNA-only model (BeatAML-trained) is strongest on bulk cohorts (mean AUROC 0.83–0.86). On single-cell data, over the same 23 categories, donors and folds, the multimodal model reaches a mean AUROC of 0.88 against 0.71 for a bulk-RNA arm trained the same way, and 0.90 against 0.74 for the bulk model over the 4 categories both report (panel B). On the 29 held-out patients the comparison is thinner and goes the other way: over the 3 categories both report, the bulk model's mean AUROC is 0.86 against 0.79. The multimodal model cannot run on bulk cohorts (no single-cell modalities).</div></div>
+    <div class="dl"><a href="/val/MOSAIC-AML_model_x_cohort_matrix.pdf">PDF</a><a href="/val/full_matrix.tsv">numbers (TSV)</a><a href="/val/full_matrix_paired.tsv">like-for-like (TSV)</a><a href="/val/bulk_matrix.tsv">bulk per-category (TSV)</a><a href="/val/bulk_matrix_overall.tsv">bulk per-cohort (TSV)</a></div>
   </section>
 
   <section id="ladder"><div class="q">Objection: "the multimodal gain is just RNA re-imputed"</div><h2>Most of the gain is independent of RNA-imputation</h2>
