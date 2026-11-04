@@ -69,15 +69,34 @@ ELN_ORDER = {"Favorable": 0, "FavorableOrIntermediate": 0.5, "Intermediate": 1,
              "IntermediateOrAdverse": 1.5, "Adverse": 2}
 
 
-def clinical_block(cl):
+def clinical_medians(cl):
+    """Training-cohort medians of the numeric clinical columns. Stored with the model so that
+    inference on ONE patient fills a missing value the way training did; the median of a single
+    missing value is itself missing, and that NaN used to make the whole risk score NaN."""
+    out = {}
+    for c in ("ageAtDiagnosis", "%.Blasts.in.BM", "%.Blasts.in.PB", "wbcCount"):
+        v = pd.to_numeric(cl.get(c), errors="coerce")
+        out[c] = float(v.median()) if v.notna().any() else None
+    return out
+
+
+def _fill(v, col, fill):
+    med = v.median()
+    if fill is not None and fill.get(col) is not None and (pd.isna(med) or len(v) == 1):
+        med = fill[col]
+    return v.fillna(med)
+
+
+def clinical_block(cl, fill=None):
     """The baseline every molecular model has to beat: age and ELN 2017, plus routine labs.
 
     ELN enters both as an ordinal severity and as indicator columns, because the ordinal encoding
     assumes equal spacing between risk tiers and the indicators do not; the ridge decides.
+    fill: training medians (`clinical_medians`) used for a missing value when scoring one patient.
     """
     cols, names = [], []
     age = pd.to_numeric(cl["ageAtDiagnosis"], errors="coerce")
-    cols.append(age.fillna(age.median()).values); names.append("age")
+    cols.append(_fill(age, "ageAtDiagnosis", fill).values); names.append("age")
     cols.append(age.isna().astype(float).values); names.append("age__missing")
     eln = cl["ELN2017"].map(ELN_ORDER)
     cols.append(eln.fillna(1.0).values); names.append("eln_ordinal")
@@ -87,7 +106,7 @@ def clinical_block(cl):
     for c, nm in ((("%.Blasts.in.BM"), "blasts_bm"), (("%.Blasts.in.PB"), "blasts_pb"),
                   ("wbcCount", "wbc")):
         v = pd.to_numeric(cl.get(c), errors="coerce")
-        cols.append(v.fillna(v.median()).values); names.append(nm)
+        cols.append(_fill(v, c, fill).values); names.append(nm)
         cols.append(v.isna().astype(float).values); names.append(nm + "__missing")
     for c, nm in (("isRelapse", "is_relapse"), ("isDenovo", "is_denovo"),
                   ("isTransformed", "is_transformed"), ("priorMDS", "prior_mds")):
@@ -99,11 +118,11 @@ def clinical_block(cl):
     return X, names
 
 
-def age_eln_block(cl):
+def age_eln_block(cl, fill=None):
     """The narrow clinical baseline used for the head-to-head: age + ELN only."""
     age = pd.to_numeric(cl["ageAtDiagnosis"], errors="coerce")
     eln = cl["ELN2017"].map(ELN_ORDER)
-    X = np.vstack([age.fillna(age.median()).values, eln.fillna(1.0).values,
+    X = np.vstack([_fill(age, "ageAtDiagnosis", fill).values, eln.fillna(1.0).values,
                    cl["ELN2017"].eq("Adverse").astype(float).values,
                    cl["ELN2017"].eq("Favorable").astype(float).values]).T
     return X.astype(float), ["age", "eln_ordinal", "eln_Adverse", "eln_Favorable"]

@@ -32,6 +32,17 @@ VERSION = "1.0"          # format written by fit() below; v2 files are written b
 LN2 = np.log(2.0)
 
 
+def _finite(o):
+    """NaN/inf -> None, recursively: reports are read by browsers, whose JSON parser rejects NaN."""
+    if isinstance(o, float) and not np.isfinite(o):
+        return None
+    if isinstance(o, dict):
+        return {k: _finite(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [_finite(v) for v in o]
+    return o
+
+
 def _pct(sorted_ref, v):
     ref = np.asarray(sorted_ref, float)
     if ref.size == 0:
@@ -104,14 +115,17 @@ class CohortAdapter:
 
     def summary(self):
         routed = [u for u in self.units if u["routed"]]
-        return {"cohort": self.cohort, "version": self.d.get("version"),
+        return _finite({"cohort": self.cohort, "version": self.d.get("version"),
                 "routed": [{"unit": u["name"], "arm": u.get("arm", "custom"), "mode": u["mode"],
                             "cohort_cv_auroc": u["cv_auroc"], "shipped_auroc": u.get("shipped_auroc")}
                            for u in routed],
                 "kept_on_shipped": [{"unit": u["name"], "why": u["reason"]} for u in self.units if not u["routed"]],
                 "evaluation": self.d.get("evaluation"),
+                "response_models": [{"name": m["name"], "endpoint": m["endpoint"],
+                                     "held_out_auroc": (m.get("held_out") or {}).get("auroc")}
+                                    for m in self.d.get("response_models") or []],
                 "note": ("categories listed under `routed` are called by a model fitted on cohort %s; every "
-                         "other category is the shipped BeatAML-trained call, unchanged" % self.cohort)}
+                         "other category is the shipped BeatAML-trained call, unchanged" % self.cohort)})
 
     # ------------------------------------------------------------ features ----
     @staticmethod
@@ -179,11 +193,8 @@ class CohortAdapter:
         return np.nan_to_num((x - np.asarray(b["mu"], float)) / np.asarray(b["sd"], float))
 
     # --------------------------------------------------------------- apply ----
-    def apply(self, bp, sample, calls):
-        """calls: the shipped {category: call-dict}. Returns a new dict with routed units replaced and
-        added units appended. Never mutates the input."""
-        out = {k: dict(v) for k, v in calls.items()}
-        self._dec_cache = {}
+    def _guard(self, bp, sample):
+        """(refusal reason or None, provenance, gene lookup) for one sample."""
         get = self._linear(bp, sample)
         x = self._log_vector(get, self.genes)
         cov = float(np.isfinite(x).mean())
@@ -201,11 +212,19 @@ class CohortAdapter:
         elif mz > lim["max_mean_abs_z"]:
             refuse = ("mean|z| %.2f against cohort %s (limit %.2f): this sample does not look like the cohort "
                       "the adapter was fitted on" % (mz, self.cohort, lim["max_mean_abs_z"]))
+        prov = {"applied": True, "cohort": self.cohort, "mean_abs_z": round(mz, 3), "profile_corr": round(pc, 3)}
+        return refuse, prov, get
+
+    def apply(self, bp, sample, calls):
+        """calls: the shipped {category: call-dict}. Returns a new dict with routed units replaced and
+        added units appended. Never mutates the input."""
+        out = {k: dict(v) for k, v in calls.items()}
+        self._dec_cache = {}
+        refuse, prov, get = self._guard(bp, sample)
         if refuse:
             for r in out.values():
                 r.setdefault("cohort_adapter", {"applied": False, "cohort": self.cohort, "reason": refuse})
             return out
-        prov = {"applied": True, "cohort": self.cohort, "mean_abs_z": round(mz, 3), "profile_corr": round(pc, 3)}
         if self.v2:
             if self.cref is not None:            # layer 1: every shipped category, re-referenced to the cohort
                 dec = self._decisions(bp, sample, "cohort")
@@ -238,6 +257,67 @@ class CohortAdapter:
                 feats = dz if u["arm"] == "reweight" else xz
                 self._write(out, u, float(np.dot(feats, u["coef"]) + u["intercept"]), u["arm"], prov)
         return out
+
+    def response(self, bp, sample):
+        """Predicted response to treatment, one entry per model in the file's `response_models` (v2 only).
+
+        Each model is linear over the adapter's blocks, Platt-calibrated on out-of-fold scores, so
+        `probability` is a calibrated chance of the endpoint (e.g. complete remission after intensive
+        induction). Returns [] when the file has none, and an entry with available=False when the
+        platform guard refuses the sample."""
+        models = self.d.get("response_models") or []
+        if not models:
+            return []
+        self._dec_cache = {}
+        refuse, prov, get = self._guard(bp, sample)
+        out, zb = [], {}
+        for m in models:
+            rec = {"name": m["name"], "endpoint": m["endpoint"], "applies_to": m.get("applies_to"),
+                   "held_out": m.get("held_out"), "cohort": self.cohort}
+            if refuse:
+                rec.update({"available": False, "reason": refuse})
+                out.append(rec)
+                continue
+            s = float(m["intercept"])
+            for name, coef in m["coef"].items():
+                if name not in zb:
+                    zb[name] = self._block_z(name, bp, sample, get)
+                s += float(np.dot(zb[name], coef))
+            a, c = m["platt"]
+            rec.update({"available": True, "probability": round(float(1.0 / (1.0 + np.exp(-(a * s + c)))), 3),
+                        "score_percentile": round(_pct(m["oof_ref"], s), 3), "base_rate": m.get("base_rate"),
+                        "provenance": prov})
+            out.append(rec)
+        return _finite(out)
+
+    def survival(self, bp, sample, age=None):
+        """Overall survival calibrated to this cohort, from the file's `survival_models` (v2 only).
+
+        The expression + age model is used when age is given, otherwise the expression-only model. Each
+        carries the cohort's own Breslow baseline, so S(t) = S0(t) ** exp(risk) is on this cohort's scale.
+        Returns None when the file has no survival models."""
+        sm = self.d.get("survival_models")
+        if not sm:
+            return None
+        models = sm["models"]
+        m = next((x for x in models if x["needs"] == ["age"]), None) if age is not None else None
+        m = m or next(x for x in models if not x["needs"])
+        rec = {"cohort": sm["cohort"], "endpoint": sm["endpoint"], "model": m["name"], "held_out": sm.get("held_out"),
+               "held_out_c_index": m.get("held_out_c_index")}
+        self._dec_cache = {}
+        refuse, prov, get = self._guard(bp, sample)
+        if refuse:
+            return _finite(dict(rec, available=False, reason=refuse))
+        lp = float(m["intercept"]) + (float(m["age_coef"]) * float(age) if m["needs"] else 0.0)
+        for name, coef in m["coef"].items():
+            lp += float(np.dot(self._block_z(name, bp, sample, get), coef))
+        S = np.asarray(m["baseline_survival"], float) ** np.exp(lp)
+        q = _pct(m["risk_ref"], lp)
+        rec.update({"available": True, "survival_probability": {"%gy" % h: round(float(s), 3)
+                                                                for h, s in zip(m["horizons_years"], S)},
+                    "risk_percentile": round(q, 3), "risk_group": "low" if q < 1 / 3 else ("high" if q >= 2 / 3 else "intermediate"),
+                    "provenance": prov})
+        return _finite(rec)
 
     def score_units(self, bp, sample):
         """v2 only: {unit name: raw score} for every fitted unit, routed or not (for evaluation)."""

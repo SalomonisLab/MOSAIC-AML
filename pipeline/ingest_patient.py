@@ -270,6 +270,12 @@ def bulk_mutation_result(expr_linear, present_truth, ref="sc", adapter=None):
                            "are marked abstain." % _inp}
     if adapter_summary is not None:
         caller_meta["cohort_adapter"] = adapter_summary
+        resp = BP.cohort_adapter.response(BP, expr_linear)  # predicted response to treatment, if the adapter has models
+        if resp:
+            caller_meta["treatment_response"] = resp
+        surv = BP.cohort_adapter.survival(BP, expr_linear)  # overall survival calibrated to the adapter's cohort
+        if surv:
+            caller_meta["cohort_survival"] = surv
     top = [p["mutation"] for p in preds if p["call"] == "present" and p["confidence"] == "ok"][:8]
     ev = {"witness": "bulk_mutation", "kind": "predictive", "status": "ok",
           "n_confident_present": n_called, "top_predicted_present": top,
@@ -384,6 +390,8 @@ def main_bulk(args, cfg, run_dir, sample_key):
             "tests_panel": panels.get("tests"),                    # what to sequence/order to close the loop
             "panels_note": panels.get("note"),
             "drug_response": drug_summary,     # COMPASS-AML summary; full detail in runs/<id>/drug_report.json
+            "treatment_response": (mut_caller or {}).get("treatment_response"),   # cohort adapter's response models
+            "cohort_survival": (mut_caller or {}).get("cohort_survival"),         # survival calibrated to that cohort
             "survival": survival,              # prognosis from data available at diagnosis
             "consensus": consensus, "deliberation": None,
             "ingest": {"source": args.bulk, "input_kind": "bulk_rna", "name": args.name,
@@ -520,6 +528,8 @@ def main():
             "tests_panel": (panels or {}).get("tests"),            # what to sequence/order to close the loop
             "panels_note": (panels or {}).get("note"),
             "drug_response": drug_summary,     # COMPASS-AML summary; full detail in runs/<id>/drug_report.json
+            "treatment_response": (mut_caller or {}).get("treatment_response"),   # cohort adapter's response models
+            "cohort_survival": (mut_caller or {}).get("cohort_survival"),         # survival calibrated to that cohort
             "survival": survival,              # prognosis from data available at diagnosis
             "consensus": consensus, "deliberation": None,
             "ingest": {"source": args.sample, "input_kind": how, "name": args.name,

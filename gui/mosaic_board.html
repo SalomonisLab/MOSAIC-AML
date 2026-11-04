@@ -372,6 +372,8 @@ function renderReport(rep){
     parts.push(renderSpecimen(rep));
     parts.push(renderMutations(rep));
     parts.push(renderTreatments(rep));      // driver -> therapy hypotheses
+    parts.push(renderResponse(rep));        // -> predicted response to induction (cohort adapter)
+    parts.push(renderCohortSurvival(rep));  // -> overall survival calibrated to the adapter's cohort
     parts.push(renderTests(rep));           // -> what to sequence to close the loop
     parts.push(renderDrugRx(rep, rep._run)); // -> COMPASS-AML predicted ex-vivo sensitivity
     parts.push(renderPredMeta(rep));
@@ -546,6 +548,55 @@ function renderTreatments(rep){
   }).join("");
   return `<div class="card"><h2>Therapy hypotheses · ${tp.length} driver${tp.length===1?"":"s"}${nPred?` · ${nPred} predicted (unconfirmed)`:""} · research decision support</h2>
     ${rows}${rep.panels_note?`<div class="foot">${esc(rep.panels_note)}</div>`:""}</div>`;
+}
+
+/* ---------- predicted response to treatment (cohort adapter response models) ---------- */
+function renderResponse(rep){
+  const rs = rep.treatment_response || [];
+  if(!rs.length) return "";
+  if(rep.specimen_class==="control")
+    return `<div class="card"><h2>Predicted response to treatment</h2>
+      <div class="foot">not applicable — the control gate called this specimen healthy</div></div>`;
+  const rows = rs.map(r=>{
+    const h = r.held_out || {};
+    if(!r.available)
+      return `<div class="trow"><div class="tdrv">${esc(r.name)}</div><div><span class="pill">not available</span>
+        <div class="why">${esc(r.reason||"")}</div></div></div>`;
+    const base = r.base_rate!=null ? ` · cohort base rate ${pct(r.base_rate)}` : "";
+    const apl = (rep.mutation_predictions||[]).some(p=>p.mutation==="t15_17" && p.call==="present");
+    if(apl)
+      return `<div class="trow"><div class="tdrv">${esc(r.name)}</div><div><span class="pill accent">not applicable</span>
+        <div class="why">t(15;17) APL is called on this sample. APL is treated with ATRA + arsenic, not intensive
+        induction, and this model was not trained on APL regimens.</div></div></div>`;
+    return `<div class="trow">
+      <div class="tdrv">${esc(r.name)}<span class="sub">held-out AUROC ${h.auroc!=null?(+h.auroc).toFixed(2):"–"}</span></div>
+      <div><span class="drug"><b>${pct(r.probability)}</b><span>predicted chance of ${esc(r.endpoint)}${base}</span></span>
+        <div class="why">Trained on ${esc(r.cohort)} and BeatAML2 expression; calibrated on patients it was not trained on.
+          For comparison on the same held-out patients: ELN 2022 from true genetics ${h.auroc_eln2022_true_genetics!=null?(+h.auroc_eln2022_true_genetics).toFixed(2):"–"},
+          COMPASS predicted cytarabine sensitivity ${h.auroc_compass_cytarabine!=null?(+h.auroc_compass_cytarabine).toFixed(2):"–"}.
+          ${r.applies_to?esc("Applies to: "+r.applies_to)+".":""}</div></div></div>`;
+  }).join("");
+  return `<div class="card"><h2>Predicted response to treatment · research decision support</h2>${rows}
+    <div class="foot">A prediction from expression at diagnosis, not a guarantee: it does not see performance status,
+    comorbidities or the exact regimen. Use it alongside ELN risk, not instead of it.</div></div>`;
+}
+
+/* ---------- overall survival calibrated to the adapter's cohort ---------- */
+function renderCohortSurvival(rep){
+  const s = rep.cohort_survival;
+  if(!s) return "";
+  if(rep.specimen_class==="control")
+    return `<div class="card"><h2>Prognosis</h2><div class="foot">not applicable — the control gate called this specimen healthy</div></div>`;
+  if(!s.available)
+    return `<div class="card"><h2>Prognosis · calibrated to cohort ${esc(s.cohort)}</h2><div class="foot">not available — ${esc(s.reason||"")}</div></div>`;
+  const h = s.held_out || {}, sp = s.survival_probability || {};
+  const cells = Object.entries(sp).map(([k,v])=>`<span class="drug"><b>${pct(v)}</b><span>alive at ${esc(k.replace("y"," y"))}</span></span>`).join("");
+  return `<div class="card"><h2>Prognosis · overall survival calibrated to cohort ${esc(s.cohort)} · ${esc(s.risk_group)} risk</h2>
+    <div class="trow"><div class="tdrv">${esc(s.model)}<span class="sub">held-out C-index ${s.held_out_c_index!=null?(+s.held_out_c_index).toFixed(2):"–"}</span></div>
+      <div>${cells}<div class="why">Risk percentile ${pct(s.risk_percentile)} within the cohort. Trained on ${esc(s.cohort)} and BeatAML2;
+      ${esc(h.calibration||"")}. For comparison, MOSAIC's general survival layer scored C-index
+      ${h.c_index_mosaic_layer_upload!=null?(+h.c_index_mosaic_layer_upload).toFixed(2):"–"} from an upload and
+      ${h.c_index_mosaic_layer_age_eln_labs!=null?(+h.c_index_mosaic_layer_age_eln_labs).toFixed(2):"–"} with age, ELN and labs on the same patients.</div></div></div></div>`;
 }
 
 /* ---------- COMPASS-AML: predicted ex-vivo drug sensitivity (separate layer) ---------- */
