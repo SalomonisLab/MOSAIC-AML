@@ -3,7 +3,7 @@
 
 Tests whether the engine's deterministic cohort outputs (the genetic-anchored driver + its
 ELN-expected risk, the LSC stemness call) ASSOCIATE with the sparse clinical labels actually
-present (ELN_risk, clinical_response, overall_survival). Honest, underpowered-aware.
+present (ELN_risk, clinical_response). Honest, underpowered-aware.
 
   python validate.py
 Outputs validation_report.json + VALIDATION.md under runs/<run_id>/.

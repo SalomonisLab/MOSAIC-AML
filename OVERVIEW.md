@@ -68,7 +68,7 @@ recommend action only where multiple independent modalities converge on a target
   19, inv16 19, del5 15, FLT3 14, TP53 10, KMT2A 9; targetable FLT3/IDH1/IDH2/NPM1/KIT.
 - **Clinical metadata** is **sparse** and now an `.xlsx` (`Metadata/AML_metadata_CLEAN.xlsx`,
   402×22; upstream swapped it from `.tsv` on 2026-06-15 — the loader handles both):
-  vital_status 0, overall_survival ~20, WHO ~40, FAB ~48, ELN ~70, age ~96, sex ~171,
+  WHO ~40, FAB ~48, ELN ~70, age ~96, sex ~171,
   karyotype ~158, Donor_ID full.
 
 **The central caveat (drives every design decision):** ADT/GRN/metabolite/lipid are all

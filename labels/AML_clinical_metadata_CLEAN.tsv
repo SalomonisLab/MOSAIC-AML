@@ -1,406 +1,406 @@
-Dataset	Sample	Donor_ID	disease_category	is_pediatric	timepoint	timepoint_detail	therapy	drug_treatment	age	sex	race	vital_status	overall_survival	FAB	blast_pct	WHO_classification	ELN_risk	clinical_response	karyotype	notes	source
-Colorado	AML-01	AML-01	AML	FALSE	Diagnosis	De Novo 															MetaData-Colorado.xlsx
-Colorado	AML-02	AML-02	AML	FALSE	Relapse	Relapse (7+3, BMT)	True	Relapse (7+3, BMT)	56.0	M									46,XY[20] normal 		MetaData-Colorado.xlsx
-Colorado	AML-03	AML-03	AML	FALSE	Relapse	Relapse (7+3, MEC, Aza, HDM2 inhibitor (MK8242)	True	Relapse (7+3, MEC, Aza, HDM2 inhibitor (MK8242)	47.0	M									46,XY,del(7)(q21)[8]/46,sl,del(5)(q31q35),add(12)(p13)[7]/46,sl,add(12)(p13),del(17)(q21)[3]/46,XY,del(9)(q22q32)[2]		MetaData-Colorado.xlsx
-Colorado	AML-04	AML-04	AML	FALSE	Relapse	Relapse (prior MDS, Aza))	True	Relapse (prior MDS, Aza))	79.0	M									46,XY,t(6;9) (p21;q34)		MetaData-Colorado.xlsx
-Colorado	AML-05	AML-05	AML	FALSE	Relapse	Relapse (7+3)	True	Relapse (7+3)	36.0												MetaData-Colorado.xlsx
-Colorado	AML-06	AML-06	AML	FALSE	Diagnosis	Prior NHL, de novo AML			73.0	M									46,XY[20] normal 		MetaData-Colorado.xlsx
-Colorado	AML-07	AML-07	AML	FALSE	Diagnosis	De Novo			80.0	F									47,XX,+8[15]/47,XX,+11[1]/44-45,XX,add(5)(p12),dic(5;12)(q10;q10),t(11;14)(q13;q32),dic(17;18)(q10;q10), add(20)(q11.2)[cp8]/44,XX,dic(5;12)(q10;q10),der(8)(11qter- > 11q13::14q32- > 14q10::8p11.2- > 8qter),der(11)t(11;14)(q13;q32),dic(17;18)(q10;q10)[2]/46,XX[5]		MetaData-Colorado.xlsx
-Colorado	AML-08	AML-08	AML	FALSE	Diagnosis	De Novo 			52.0	M									45,XY,-7[3]/46,sl,+r(7)(p11q21)[11]/46,sdl1,der(5)t(1;5)(q31;p14)[5]/46,XY[1]		MetaData-Colorado.xlsx
-Colorado	AML-09	AML-09	AML	FALSE	Diagnosis	De Novo 			49.0	F									46, XX normal		MetaData-Colorado.xlsx
-Colorado	AML-10	AML-10	AML	FALSE	Relapse	Relapse (7+3)	True	Relapse (7+3)	49.0	F									46, XX normal 		MetaData-Colorado.xlsx
-Colorado	AML-11	AML-11	AML	FALSE						F									46,XX,inv(3)(q21q26)[10]		MetaData-Colorado.xlsx
-Colorado	AML-12	AML-12	AML	FALSE															trisomy 8, trisomy 12		MetaData-Colorado.xlsx
-Colorado	AML-13	AML-13	AML	FALSE	Diagnosis	De Novo 			77.0	F									46,XX[20] normal		MetaData-Colorado.xlsx
-Colorado	AML-14	AML-14	AML	FALSE	Diagnosis	De Novo 			21.0	M									inv(16) (p13.1q22)		MetaData-Colorado.xlsx
-Colorado	AML-15	AML-15	AML	FALSE		Refractory (ven/aza)		Refractory (ven/aza)	74.0	M									46,XY[8]		MetaData-Colorado.xlsx
-Colorado	AML-16	AML-16	AML	FALSE	Diagnosis	De Novo 			50.0	M									45,X,-Y; t(9;11)(p22;q23)		MetaData-Colorado.xlsx
-Colorado	AML-17	AML-17	AML	FALSE	Diagnosis	De Novo			63.0	M									46,XY[19] normal 		MetaData-Colorado.xlsx
-Colorado	AML-18	AML-18	AML	FALSE	Diagnosis	De Novo 			74.0	F									46,XX[20] normal		MetaData-Colorado.xlsx
-Colorado	AML-19	AML-19	AML	FALSE	Relapse	Relapse (7+3 and SCT)	True	Relapse (7+3 and SCT)	65.0	F									46,XX,add(14)(q22)[4], 46,XX[16]		MetaData-Colorado.xlsx
-Colorado	AML-20	AML-20	AML	FALSE	Diagnosis	De Novo 			60.0	F									46,XX,t(9;11)(p21;q23)[13]/47,sl,+21[4]/47,sl,+8[3]		MetaData-Colorado.xlsx
-Colorado	AML-21	AML-21	AML	FALSE	Diagnosis	De Novo			50.0	M									46,XY,add(1)(p11),del(5)(q15q33),del(7)(q22q36),der(11)t(1;11)(p31;p12-14)[20] 		MetaData-Colorado.xlsx
-Colorado	AML-22	AML-22	AML	FALSE	Diagnosis	De Novo			73.0	F									45,XX,add(3)(q27),-7,add(8)(q24),t(9;22)(q34;q11.2)[4]/54,sl,+3,-add(3)(q27),+7,+8,+10,+12,+13,+15,+20,+der(22)t(9;22)(q34;q11.2)[16]		MetaData-Colorado.xlsx
-Colorado	AML-23	AML-23	AML	FALSE	Diagnosis	De Novo				F									46,XX,t(6;11)(q27;q23)[18]/92,slx2[2]		MetaData-Colorado.xlsx
-Colorado	AML-24	AML-24	AML	FALSE		CMML progressed to AML			69.0	M									46,XX[16] normal		MetaData-Colorado.xlsx
-Colorado	Pt-12_Dx	Pt-12	AML	FALSE	Diagnosis	De Novo 			85.0	M									47,XY,+8[12]/47,XY,+15[8]/46,XY[5]		MetaData-Colorado.xlsx
-Colorado	Pt-12_Rl	Pt-12	AML	FALSE	Relapse	Relapse (ven/aza)	True	Relapse (ven/aza)	85.0	M									48,XY,+1,i(1)(q10),+8[5]/49,sl,-i(1)(q10),+der(1)t(1;1)(p11;q31),+20[15] 		MetaData-Colorado.xlsx
-Colorado	Pt-16_Dx	Pt-16	AML	FALSE	Diagnosis	De Novo 			70.0	F									46,XX,add(6)(q27)[15]/46,XX[9]		MetaData-Colorado.xlsx
-Colorado	Pt-20_Dx	Pt-20	AML	FALSE	Diagnosis	De Novo 			72.0	F									46,XX[20]		MetaData-Colorado.xlsx
-Colorado	Pt-69_Dx	Pt-69	AML	FALSE	Diagnosis	De Novo 			22.0	F									46,XX,t(6;11)(q27;q23)[11]/47,sl,+der(6)t(6;11)(q27;q23)[8]/46,XX[1]By FISH: Positive for an KMT2A (11q23) rearrangement, variant pattern, Loss of (17p13.1) TP53 sequences 		MetaData-Colorado.xlsx
-Colorado	Pt-69_Rl	Pt-69	AML	FALSE	Relapse	Relapse (ven/aza)	True	Relapse (ven/aza)	22.0	F									46,XX,t(6;11)(q27;q23)[20]		MetaData-Colorado.xlsx
-Colorado	Pt-89_Dx	Pt-89	AML	FALSE	Diagnosis	De Novo 			73.0	M									46,XY[20]		MetaData-Colorado.xlsx
-Columbia	AML1	AML1	AML	FALSE	Diagnosis	Diagnosis								M5	81.0	Acute monoblastic and monocytic leukaemia			46,XY[22]		Meta-Columbia.xlsx
-Columbia	AML10	AML10	AML	FALSE	Relapse	Relapse		Polycythemia vera/ hydroxyurea						M4	25.0	AML with myelodysplasia related changes			Complex		Meta-Columbia.xlsx
-Columbia	AML11	AML11	AML	FALSE	Diagnosis	Diagnosis								M1	88.0	AML without maturation			46,XX,2~7dmin[22]		Meta-Columbia.xlsx
-Columbia	AML12	AML12	AML	FALSE	Diagnosis	Diagnosis								M1	86.0	AML without maturation			46,XX[21]		Meta-Columbia.xlsx
-Columbia	AML13	AML13	AML	FALSE																	Meta-Columbia.xlsx
-Columbia	AML14	AML14	AML	FALSE																	Meta-Columbia.xlsx
-Columbia	AML2	AML2	AML	FALSE	Diagnosis	Diagnosis								M1	90.0	AML without maturation			46,XY[20]		Meta-Columbia.xlsx
-Columbia	AML3	AML3	AML	FALSE	Diagnosis	Diagnosis															Meta-Columbia.xlsx
-Columbia	AML4	AML4	AML	FALSE	Diagnosis	Diagnosis								M5b	77.0	Acute monoblastic and monocytic leukaemia			46,XY[20]		Meta-Columbia.xlsx
-Columbia	AML5	AML5	AML	FALSE	Diagnosis	Diagnosis								M1	92.0	AML without maturation			46,XY[20]		Meta-Columbia.xlsx
-Columbia	AML6	AML6	AML	FALSE	Diagnosis	Diagnosis								M1	81.0	AML without maturation			46,XY[19]		Meta-Columbia.xlsx
-Columbia	AML7	AML7	AML	FALSE	Diagnosis	Diagnosis								M5a	83.0	Acute monoblastic and monocytic leukaemia			47,XY,+8[7]/46,XY[5]		Meta-Columbia.xlsx
-Columbia	AML9	AML9	AML	FALSE	Diagnosis	Diagnosis		Polycythemia vera/ hydroxyurea						M4	40.0	AML with myelodysplasia related changes			Complex		Meta-Columbia.xlsx
-Columbia	BM_control	BM_control	Control	FALSE	Healthy																master list
-WashU	10DD-1002__Diagnosis	10DD-1002	AML	FALSE	Diagnosis	Diagnosis				M								CRi (responder)	46,XY,del(7)(q22q36) [del(7q)]		Metadata-WashU.xlsx
-WashU	10DD-1002__Treatment	10DD-1002	AML	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		M								CRi (responder)	46,XY,del(7)(q22q36) [del(7q)]		Metadata-WashU.xlsx
-WashU	10DD-1003__Diagnosis	10DD-1003	AML	FALSE	Diagnosis	Diagnosis				F								PR	47,XX,+8 [trisomy 8]		Metadata-WashU.xlsx
-WashU	10DD-1003__Relapse	10DD-1003	AML	FALSE	Relapse	Relapse				F								PR	47,XX,+8 [trisomy 8]		Metadata-WashU.xlsx
-WashU	10DD-1009__Diagnosis	10DD-1009	AML	FALSE	Diagnosis	Diagnosis				M								CR, CCR (responder)	45,X,-Y,del(7)(q32q34),t(8;21)(q22;q22)		Metadata-WashU.xlsx
-WashU	10DD-1009__Relapse	10DD-1009	AML	FALSE	Relapse	Relapse				M								CR, CCR (responder)	45,X,-Y,del(7)(q32q34),t(8;21)(q22;q22)		Metadata-WashU.xlsx
-WashU	10DD-1010__Diagnosis	10DD-1010	AML	FALSE	Diagnosis	Diagnosis				M								CR (responder)	46,XY [normal]		Metadata-WashU.xlsx
-WashU	10DD-1010__Relapse	10DD-1010	AML	FALSE	Relapse	Relapse				M								CR (responder)	46,XY [normal]		Metadata-WashU.xlsx
-WashU	10DD-1014__Diagnosis	10DD-1014	MDS	FALSE	Diagnosis	Diagnosis				M								CR, CCR (responder)	complex: del(5)(q13q33),der(17;21); FISH del5q 74%		Metadata-WashU.xlsx
-WashU	10DD-1014__Treatment	10DD-1014	MDS	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		M								CR, CCR (responder)	complex: del(5)(q13q33),der(17;21); FISH del5q 74%		Metadata-WashU.xlsx
-WashU	10DD-1051__Diagnosis	10DD-1051	MDS	FALSE	Diagnosis	Diagnosis				M								mCR, CCR (responder)	46,XY,t(11;19)(q23;p13.3); FISH KMT2A(MLL) 11q rearr.		Metadata-WashU.xlsx
-WashU	10DD-1051__Treatment	10DD-1051	MDS	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		M								mCR, CCR (responder)	46,XY,t(11;19)(q23;p13.3); FISH KMT2A(MLL) 11q rearr.		Metadata-WashU.xlsx
-WashU	10DD-1058__Diagnosis	10DD-1058	AML	FALSE	Diagnosis	Diagnosis				M								CRi, CCR (responder)	47,XY,+21		Metadata-WashU.xlsx
-WashU	10DD-1058__Treatment	10DD-1058	AML	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		M								CRi, CCR (responder)	47,XY,+21		Metadata-WashU.xlsx
-WashU	10DD-1061__Diagnosis	10DD-1061	MDS	FALSE	Diagnosis	Diagnosis				M								mCR (responder)	47,XY,add(2)(p13),del(5)(q22q33),-7,+8,del(8)(q11.2q21.2),+mar		Metadata-WashU.xlsx
-WashU	10DD-1061__Relapse	10DD-1061	MDS	FALSE	Relapse	Relapse				M								mCR (responder)	47,XY,add(2)(p13),del(5)(q22q33),-7,+8,del(8)(q11.2q21.2),+mar		Metadata-WashU.xlsx
-WashU	10DD-1062__Diagnosis	10DD-1062	AML	FALSE	Diagnosis	Diagnosis				F								CRi, CCR (responder)	near-tetraploid complex karyotype (60~89,XXXX, multiple losses)		Metadata-WashU.xlsx
-WashU	10DD-1062__Treatment	10DD-1062	AML	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		F								CRi, CCR (responder)	near-tetraploid complex karyotype (60~89,XXXX, multiple losses)		Metadata-WashU.xlsx
-WashU	10DD-1065__Diagnosis	10DD-1065	MDS	FALSE	Diagnosis	Diagnosis				F								mCR, CCR (responder)	complex: del(5)(q13q33),-7,+der(21)t(17;21); FISH del16q		Metadata-WashU.xlsx
-WashU	10DD-1065__Treatment	10DD-1065	MDS	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		F								mCR, CCR (responder)	complex: del(5)(q13q33),-7,+der(21)t(17;21); FISH del16q		Metadata-WashU.xlsx
-WashU	10DD-1070__Diagnosis	10DD-1070	AML	FALSE	Diagnosis	Diagnosis				M								CRi (responder)	46,XY [normal]		Metadata-WashU.xlsx
-WashU	10DD-1070__Treatment	10DD-1070	AML	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		M								CRi (responder)	46,XY [normal]		Metadata-WashU.xlsx
-WashU	10DD-1079__Diagnosis	10DD-1079	AML	FALSE	Diagnosis	Diagnosis				F								CR (responder)	46,XX [normal]		Metadata-WashU.xlsx
-WashU	10DD-1079__Relapse	10DD-1079	AML	FALSE	Relapse	Relapse				F								CR (responder)	46,XX [normal]		Metadata-WashU.xlsx
-WashU	10DD-1079__Treatment	10DD-1079	AML	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		F								CR (responder)	46,XX [normal]		Metadata-WashU.xlsx
-WashU	10DD-1082__Treatment	10DD-1082	AML	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		F								CRi (responder)	46,XX [normal]		Metadata-WashU.xlsx
-WashU	10DD-1085__Diagnosis	10DD-1085	MDS	FALSE	Diagnosis	Diagnosis				F								mCR, HI-Plt (responder)	complex: -3,del(5)(q15q33),-6,-17,-18,-19,-20		Metadata-WashU.xlsx
-WashU	10DD-1085__Relapse	10DD-1085	MDS	FALSE	Relapse	Relapse				F								mCR, HI-Plt (responder)	complex: -3,del(5)(q15q33),-6,-17,-18,-19,-20		Metadata-WashU.xlsx
-WashU	10DD-1086__Diagnosis	10DD-1086	AML	FALSE	Diagnosis	Diagnosis				M								CRi (responder)	complex: add(2),del(5),+6,add(7),+8,+9,+10,-13,der(16)t(15;16)		Metadata-WashU.xlsx
-WashU	10DD-1086__Treatment	10DD-1086	AML	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		M								CRi (responder)	complex: add(2),del(5),+6,add(7),+8,+9,+10,-13,der(16)t(15;16)		Metadata-WashU.xlsx
-WashU	184874__Diagnosis	184874	AML	FALSE	Diagnosis	Diagnosis				F											Metadata-WashU.xlsx
-WashU	220882__Diagnosis	220882	AML	FALSE	Diagnosis	Diagnosis				F				M2							Metadata-WashU.xlsx
-WashU	220882__Relapse	220882	AML	FALSE	Relapse	Relapse				F				M2							Metadata-WashU.xlsx
-WashU	220882__Treatment	220882	AML	FALSE	Treatment	Treatment	True	Azacitidine consolidation (serial timepoint)		F				M2							Metadata-WashU.xlsx
-WashU	332131__Diagnosis	332131	AML	FALSE	Diagnosis	Diagnosis				M				M1							Metadata-WashU.xlsx
-WashU	430998__Diagnosis	430998	AML	FALSE	Diagnosis	Diagnosis				M											Metadata-WashU.xlsx
-WashU	452198__Diagnosis	452198	AML	FALSE	Diagnosis	Diagnosis				M				M5							Metadata-WashU.xlsx
-WashU	452198__Relapse	452198	AML	FALSE	Relapse	Relapse				M				M5							Metadata-WashU.xlsx
-WashU	508084__Diagnosis	508084	AML	FALSE	Diagnosis	Diagnosis				M				M4							Metadata-WashU.xlsx
-WashU	508084__Relapse	508084	AML	FALSE	Relapse	Relapse				M				M4							Metadata-WashU.xlsx
-WashU	624400__Normal donor	624400	Control	FALSE	Healthy	Normal donor				M											Metadata-WashU.xlsx
-WashU	827494__Diagnosis	827494	AML	FALSE	Diagnosis	Diagnosis				F											Metadata-WashU.xlsx
-WashU	868442__Diagnosis	868442	AML	FALSE	Diagnosis	Diagnosis				M				M4							Metadata-WashU.xlsx
-WashU	869586__Diagnosis	869586	AML	FALSE	Diagnosis	Diagnosis				M				M4/M1							Metadata-WashU.xlsx
-WashU	869586__Relapse	869586	AML	FALSE	Relapse	Relapse				M				M4/M1							Metadata-WashU.xlsx
-WashU	869922__Diagnosis	869922	AML	FALSE	Diagnosis	Diagnosis				F				M2							Metadata-WashU.xlsx
-WashU	875663__Diagnosis	875663	AML	FALSE	Diagnosis	Diagnosis				F				M4							Metadata-WashU.xlsx
-WashU	916462__Diagnosis	916462	AML	FALSE	Diagnosis	Diagnosis				F				M1							Metadata-WashU.xlsx
-WashU	922185__Diagnosis	922185	AML	FALSE	Diagnosis	Diagnosis				M											Metadata-WashU.xlsx
-WashU	978897__Normal donor	978897	Control	FALSE	Healthy	Normal donor				M											Metadata-WashU.xlsx
-WashU	ND050119__Normal donor	ND050119	Control	FALSE	Healthy	Normal donor															Metadata-WashU.xlsx
-WashU	ND050819__Normal donor	ND050819	Control	FALSE	Healthy	Normal donor															Metadata-WashU.xlsx
-CCHMC	0018_Af_N1c	0018_Af_N1c	AML		Diagnosis														Non-Complex w/2 Unbalanced Rearrangements	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	0316_E_N1c	0316_E_N1c	AML		Diagnosis						White/European (from ID)								Normal	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	0817_E_N1c	0817_E_N1c	AML		Diagnosis						White/European (from ID)								Normal	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	1009_AfInv16_29M	1009_AfInv16_29M	AML		Diagnosis				29.0	M									inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	1036_EInv16_22M	1036_EInv16_22M																		no metadata matched	master list
-CCHMC	1060_EInv16_19M	1060_EInv16_19M	AML		Diagnosis				19.0	M	White/European (from ID)								inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	1076_AfInv16_51M	1076_AfInv16_51M	AML		Diagnosis				51.0	M									inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	1102_E_N1c	1102_E_N1c	AML		Diagnosis						White/European (from ID)								Sole-Y	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	1147_EInv16_44M	1147_EInv16_44M	AML		Diagnosis				44.0	M	White/European (from ID)								Inv(16) 	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	1239_EST8_44M_N1c	1239_EST8_44M_N1c	AML		Diagnosis						White/European (from ID)								Sole trisomy 8	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	143_AfST8_P64M	143_AfST8_P64M	AML		Diagnosis				64.0	M									Sole trisomy 8	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	1702-Et922-66F	1702-Et922-66F	AML		Diagnosis				66.0	F	White/European (from ID)								t(9;22) 	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	171_Af_N1c	171_Af_N1c	AML		Diagnosis														normal	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	1744_E_N1c	1744_E_N1c	AML		Diagnosis						White/European (from ID)								Normal	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	1782_Aft36_P71F	1782_Aft36_P71F	AML		Diagnosis				71.0	F									t(3;6)	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	1827_Af_N1c	1827_Af_N1c	AML		Diagnosis														normal	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	1893_Af_N1c	1893_Af_N1c	AML		Diagnosis														Sole trisomy 8	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	1906_Aft82_P36M	1906_Aft82_P36M	AML		Diagnosis				36.0	M									t(8;21)	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	2140_E_N1c	2140_E_N1c	AML		Diagnosis						White/European (from ID)								Normal	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	2270_Aft36_P71F	2270_Aft36_P71F																		no metadata matched	master list
-CCHMC	2660_Ast82_38M	2660_Ast82_38M	AML		Diagnosis				38.0	M	Asian (from ID)								Sole trisomy 8	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	2698_EInv16_P47M	2698_EInv16_P47M	AML		Diagnosis				47.0	M	White/European (from ID)								inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	2853_Aft36_P71F	2853_Aft36_P71F																		no metadata matched	master list
-CCHMC	287_AfInv_P53F_N1c	287_AfInv_P53F_N1c	AML		Diagnosis														normal	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	301_AfInv16_29M	301_AfInv16_29M	AML		Diagnosis				29.0	M									inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	3114_EInv_45F	3114_EInv_45F	AML		Diagnosis				45.0	F	White/European (from ID)								Inv(16) 	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	3410_AfST8_P64M	3410_AfST8_P64M	AML		Relapse				64.0	M									sole trisomy 8	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	376_Af_N1c	376_Af_N1c	AML		Diagnosis														normal	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	4440_AfInv16_P24M	4440_AfInv16_P24M	AML		Relapse				24.0	M									inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	4924_AfInv16_P49M	4924_AfInv16_P49M	AML		Relapse				49.0	M									inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	5381v2_AfInv16_P49M	5381v2_AfInv16_P49M	AML		Diagnosis				49.0	M									inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	550_EInv16_38M	550_EInv16_38M																		no metadata matched	master list
-CCHMC	562_AfInv16_25F	562_AfInv16_25F	AML		Diagnosis				25.0	F									normal	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	568_AfInv16_P24M	568_AfInv16_P24M	AML		Diagnosis				24.0	M									inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	596_E_N1c	596_E_N1c	AML		Diagnosis						White/European (from ID)								Normal	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	727_EInv16_35M	727_EInv16_35M	AML		Diagnosis				35.0	M	White/European (from ID)								inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	754_EInv16_47M	754_EInv16_47M																		no metadata matched	master list
-CCHMC	98-31_AfInv16_34F	98-31_AfInv16_34F	AML		Diagnosis				34.0	F									inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
-CCHMC	AM72	AM72																		no metadata matched	master list
-CCHMC	AML-12_CCHMC	AML-12_CCHMC																		no metadata matched	master list
-CCHMC	AML-14_CCHMC	AML-14_CCHMC																		no metadata matched	master list
-CCHMC	AML-7_CCHMC	AML-7_CCHMC																		no metadata matched	master list
-CCHMC	BF21	BF21																		no metadata matched	master list
-CCHMC	BF32	BF32																		no metadata matched	master list
-CCHMC	BF71	BF71																		no metadata matched	master list
-CCHMC	BM27	BM27																		no metadata matched	master list
-CCHMC	BM32	BM32																		no metadata matched	master list
-CCHMC	WF26	WF26																		no metadata matched	master list
-CCHMC	WF32	WF32																		no metadata matched	master list
-CCHMC	WF83	WF83																		no metadata matched	master list
-CCHMC	WM22	WM22																		no metadata matched	master list
-CCHMC	WM34	WM34																		no metadata matched	master list
-CCHMC	WM72	WM72																		no metadata matched	master list
-NYU-1	AML001	AML001		FALSE						M							Adverse				Meta-NYU-1.xlsx
-NYU-1	AML0024	AML0024	AML	FALSE					64.0	M			137.0				Adverse		"48,XY,+8,+8,i(8)(p10),t(9;15)(q33;q15),del(10)(q22.1q24),del(13)(q14q21)_x000B_(cp14)/44-48,idem,add(13)(p11.2)(cp2)
+Dataset	Sample	Donor_ID	disease_category	is_pediatric	timepoint	timepoint_detail	therapy	drug_treatment	age	sex	race	FAB	blast_pct	WHO_classification	ELN_risk	clinical_response	karyotype	notes	source
+Colorado	AML-01	AML-01	AML	FALSE	Diagnosis	De Novo 													MetaData-Colorado.xlsx
+Colorado	AML-02	AML-02	AML	FALSE	Relapse	Relapse (7+3, BMT)	True	Relapse (7+3, BMT)	56.0	M							46,XY[20] normal 		MetaData-Colorado.xlsx
+Colorado	AML-03	AML-03	AML	FALSE	Relapse	Relapse (7+3, MEC, Aza, HDM2 inhibitor (MK8242)	True	Relapse (7+3, MEC, Aza, HDM2 inhibitor (MK8242)	47.0	M							46,XY,del(7)(q21)[8]/46,sl,del(5)(q31q35),add(12)(p13)[7]/46,sl,add(12)(p13),del(17)(q21)[3]/46,XY,del(9)(q22q32)[2]		MetaData-Colorado.xlsx
+Colorado	AML-04	AML-04	AML	FALSE	Relapse	Relapse (prior MDS, Aza))	True	Relapse (prior MDS, Aza))	79.0	M							46,XY,t(6;9) (p21;q34)		MetaData-Colorado.xlsx
+Colorado	AML-05	AML-05	AML	FALSE	Relapse	Relapse (7+3)	True	Relapse (7+3)	36.0										MetaData-Colorado.xlsx
+Colorado	AML-06	AML-06	AML	FALSE	Diagnosis	Prior NHL, de novo AML			73.0	M							46,XY[20] normal 		MetaData-Colorado.xlsx
+Colorado	AML-07	AML-07	AML	FALSE	Diagnosis	De Novo			80.0	F							47,XX,+8[15]/47,XX,+11[1]/44-45,XX,add(5)(p12),dic(5;12)(q10;q10),t(11;14)(q13;q32),dic(17;18)(q10;q10), add(20)(q11.2)[cp8]/44,XX,dic(5;12)(q10;q10),der(8)(11qter- > 11q13::14q32- > 14q10::8p11.2- > 8qter),der(11)t(11;14)(q13;q32),dic(17;18)(q10;q10)[2]/46,XX[5]		MetaData-Colorado.xlsx
+Colorado	AML-08	AML-08	AML	FALSE	Diagnosis	De Novo 			52.0	M							45,XY,-7[3]/46,sl,+r(7)(p11q21)[11]/46,sdl1,der(5)t(1;5)(q31;p14)[5]/46,XY[1]		MetaData-Colorado.xlsx
+Colorado	AML-09	AML-09	AML	FALSE	Diagnosis	De Novo 			49.0	F							46, XX normal		MetaData-Colorado.xlsx
+Colorado	AML-10	AML-10	AML	FALSE	Relapse	Relapse (7+3)	True	Relapse (7+3)	49.0	F							46, XX normal 		MetaData-Colorado.xlsx
+Colorado	AML-11	AML-11	AML	FALSE						F							46,XX,inv(3)(q21q26)[10]		MetaData-Colorado.xlsx
+Colorado	AML-12	AML-12	AML	FALSE													trisomy 8, trisomy 12		MetaData-Colorado.xlsx
+Colorado	AML-13	AML-13	AML	FALSE	Diagnosis	De Novo 			77.0	F							46,XX[20] normal		MetaData-Colorado.xlsx
+Colorado	AML-14	AML-14	AML	FALSE	Diagnosis	De Novo 			21.0	M							inv(16) (p13.1q22)		MetaData-Colorado.xlsx
+Colorado	AML-15	AML-15	AML	FALSE		Refractory (ven/aza)		Refractory (ven/aza)	74.0	M							46,XY[8]		MetaData-Colorado.xlsx
+Colorado	AML-16	AML-16	AML	FALSE	Diagnosis	De Novo 			50.0	M							45,X,-Y; t(9;11)(p22;q23)		MetaData-Colorado.xlsx
+Colorado	AML-17	AML-17	AML	FALSE	Diagnosis	De Novo			63.0	M							46,XY[19] normal 		MetaData-Colorado.xlsx
+Colorado	AML-18	AML-18	AML	FALSE	Diagnosis	De Novo 			74.0	F							46,XX[20] normal		MetaData-Colorado.xlsx
+Colorado	AML-19	AML-19	AML	FALSE	Relapse	Relapse (7+3 and SCT)	True	Relapse (7+3 and SCT)	65.0	F							46,XX,add(14)(q22)[4], 46,XX[16]		MetaData-Colorado.xlsx
+Colorado	AML-20	AML-20	AML	FALSE	Diagnosis	De Novo 			60.0	F							46,XX,t(9;11)(p21;q23)[13]/47,sl,+21[4]/47,sl,+8[3]		MetaData-Colorado.xlsx
+Colorado	AML-21	AML-21	AML	FALSE	Diagnosis	De Novo			50.0	M							46,XY,add(1)(p11),del(5)(q15q33),del(7)(q22q36),der(11)t(1;11)(p31;p12-14)[20] 		MetaData-Colorado.xlsx
+Colorado	AML-22	AML-22	AML	FALSE	Diagnosis	De Novo			73.0	F							45,XX,add(3)(q27),-7,add(8)(q24),t(9;22)(q34;q11.2)[4]/54,sl,+3,-add(3)(q27),+7,+8,+10,+12,+13,+15,+20,+der(22)t(9;22)(q34;q11.2)[16]		MetaData-Colorado.xlsx
+Colorado	AML-23	AML-23	AML	FALSE	Diagnosis	De Novo				F							46,XX,t(6;11)(q27;q23)[18]/92,slx2[2]		MetaData-Colorado.xlsx
+Colorado	AML-24	AML-24	AML	FALSE		CMML progressed to AML			69.0	M							46,XX[16] normal		MetaData-Colorado.xlsx
+Colorado	Pt-12_Dx	Pt-12	AML	FALSE	Diagnosis	De Novo 			85.0	M							47,XY,+8[12]/47,XY,+15[8]/46,XY[5]		MetaData-Colorado.xlsx
+Colorado	Pt-12_Rl	Pt-12	AML	FALSE	Relapse	Relapse (ven/aza)	True	Relapse (ven/aza)	85.0	M							48,XY,+1,i(1)(q10),+8[5]/49,sl,-i(1)(q10),+der(1)t(1;1)(p11;q31),+20[15] 		MetaData-Colorado.xlsx
+Colorado	Pt-16_Dx	Pt-16	AML	FALSE	Diagnosis	De Novo 			70.0	F							46,XX,add(6)(q27)[15]/46,XX[9]		MetaData-Colorado.xlsx
+Colorado	Pt-20_Dx	Pt-20	AML	FALSE	Diagnosis	De Novo 			72.0	F							46,XX[20]		MetaData-Colorado.xlsx
+Colorado	Pt-69_Dx	Pt-69	AML	FALSE	Diagnosis	De Novo 			22.0	F							46,XX,t(6;11)(q27;q23)[11]/47,sl,+der(6)t(6;11)(q27;q23)[8]/46,XX[1]By FISH: Positive for an KMT2A (11q23) rearrangement, variant pattern, Loss of (17p13.1) TP53 sequences 		MetaData-Colorado.xlsx
+Colorado	Pt-69_Rl	Pt-69	AML	FALSE	Relapse	Relapse (ven/aza)	True	Relapse (ven/aza)	22.0	F							46,XX,t(6;11)(q27;q23)[20]		MetaData-Colorado.xlsx
+Colorado	Pt-89_Dx	Pt-89	AML	FALSE	Diagnosis	De Novo 			73.0	M							46,XY[20]		MetaData-Colorado.xlsx
+Columbia	AML1	AML1	AML	FALSE	Diagnosis	Diagnosis						M5	81.0	Acute monoblastic and monocytic leukaemia			46,XY[22]		Meta-Columbia.xlsx
+Columbia	AML10	AML10	AML	FALSE	Relapse	Relapse		Polycythemia vera/ hydroxyurea				M4	25.0	AML with myelodysplasia related changes			Complex		Meta-Columbia.xlsx
+Columbia	AML11	AML11	AML	FALSE	Diagnosis	Diagnosis						M1	88.0	AML without maturation			46,XX,2~7dmin[22]		Meta-Columbia.xlsx
+Columbia	AML12	AML12	AML	FALSE	Diagnosis	Diagnosis						M1	86.0	AML without maturation			46,XX[21]		Meta-Columbia.xlsx
+Columbia	AML13	AML13	AML	FALSE															Meta-Columbia.xlsx
+Columbia	AML14	AML14	AML	FALSE															Meta-Columbia.xlsx
+Columbia	AML2	AML2	AML	FALSE	Diagnosis	Diagnosis						M1	90.0	AML without maturation			46,XY[20]		Meta-Columbia.xlsx
+Columbia	AML3	AML3	AML	FALSE	Diagnosis	Diagnosis													Meta-Columbia.xlsx
+Columbia	AML4	AML4	AML	FALSE	Diagnosis	Diagnosis						M5b	77.0	Acute monoblastic and monocytic leukaemia			46,XY[20]		Meta-Columbia.xlsx
+Columbia	AML5	AML5	AML	FALSE	Diagnosis	Diagnosis						M1	92.0	AML without maturation			46,XY[20]		Meta-Columbia.xlsx
+Columbia	AML6	AML6	AML	FALSE	Diagnosis	Diagnosis						M1	81.0	AML without maturation			46,XY[19]		Meta-Columbia.xlsx
+Columbia	AML7	AML7	AML	FALSE	Diagnosis	Diagnosis						M5a	83.0	Acute monoblastic and monocytic leukaemia			47,XY,+8[7]/46,XY[5]		Meta-Columbia.xlsx
+Columbia	AML9	AML9	AML	FALSE	Diagnosis	Diagnosis		Polycythemia vera/ hydroxyurea				M4	40.0	AML with myelodysplasia related changes			Complex		Meta-Columbia.xlsx
+Columbia	BM_control	BM_control	Control	FALSE	Healthy														master list
+WashU	10DD-1002__Diagnosis	10DD-1002	AML	FALSE	Diagnosis	Diagnosis				M						CRi (responder)	46,XY,del(7)(q22q36) [del(7q)]		Metadata-WashU.xlsx
+WashU	10DD-1002__Treatment	10DD-1002	AML	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		M						CRi (responder)	46,XY,del(7)(q22q36) [del(7q)]		Metadata-WashU.xlsx
+WashU	10DD-1003__Diagnosis	10DD-1003	AML	FALSE	Diagnosis	Diagnosis				F						PR	47,XX,+8 [trisomy 8]		Metadata-WashU.xlsx
+WashU	10DD-1003__Relapse	10DD-1003	AML	FALSE	Relapse	Relapse				F						PR	47,XX,+8 [trisomy 8]		Metadata-WashU.xlsx
+WashU	10DD-1009__Diagnosis	10DD-1009	AML	FALSE	Diagnosis	Diagnosis				M						CR, CCR (responder)	45,X,-Y,del(7)(q32q34),t(8;21)(q22;q22)		Metadata-WashU.xlsx
+WashU	10DD-1009__Relapse	10DD-1009	AML	FALSE	Relapse	Relapse				M						CR, CCR (responder)	45,X,-Y,del(7)(q32q34),t(8;21)(q22;q22)		Metadata-WashU.xlsx
+WashU	10DD-1010__Diagnosis	10DD-1010	AML	FALSE	Diagnosis	Diagnosis				M						CR (responder)	46,XY [normal]		Metadata-WashU.xlsx
+WashU	10DD-1010__Relapse	10DD-1010	AML	FALSE	Relapse	Relapse				M						CR (responder)	46,XY [normal]		Metadata-WashU.xlsx
+WashU	10DD-1014__Diagnosis	10DD-1014	MDS	FALSE	Diagnosis	Diagnosis				M						CR, CCR (responder)	complex: del(5)(q13q33),der(17;21); FISH del5q 74%		Metadata-WashU.xlsx
+WashU	10DD-1014__Treatment	10DD-1014	MDS	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		M						CR, CCR (responder)	complex: del(5)(q13q33),der(17;21); FISH del5q 74%		Metadata-WashU.xlsx
+WashU	10DD-1051__Diagnosis	10DD-1051	MDS	FALSE	Diagnosis	Diagnosis				M						mCR, CCR (responder)	46,XY,t(11;19)(q23;p13.3); FISH KMT2A(MLL) 11q rearr.		Metadata-WashU.xlsx
+WashU	10DD-1051__Treatment	10DD-1051	MDS	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		M						mCR, CCR (responder)	46,XY,t(11;19)(q23;p13.3); FISH KMT2A(MLL) 11q rearr.		Metadata-WashU.xlsx
+WashU	10DD-1058__Diagnosis	10DD-1058	AML	FALSE	Diagnosis	Diagnosis				M						CRi, CCR (responder)	47,XY,+21		Metadata-WashU.xlsx
+WashU	10DD-1058__Treatment	10DD-1058	AML	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		M						CRi, CCR (responder)	47,XY,+21		Metadata-WashU.xlsx
+WashU	10DD-1061__Diagnosis	10DD-1061	MDS	FALSE	Diagnosis	Diagnosis				M						mCR (responder)	47,XY,add(2)(p13),del(5)(q22q33),-7,+8,del(8)(q11.2q21.2),+mar		Metadata-WashU.xlsx
+WashU	10DD-1061__Relapse	10DD-1061	MDS	FALSE	Relapse	Relapse				M						mCR (responder)	47,XY,add(2)(p13),del(5)(q22q33),-7,+8,del(8)(q11.2q21.2),+mar		Metadata-WashU.xlsx
+WashU	10DD-1062__Diagnosis	10DD-1062	AML	FALSE	Diagnosis	Diagnosis				F						CRi, CCR (responder)	near-tetraploid complex karyotype (60~89,XXXX, multiple losses)		Metadata-WashU.xlsx
+WashU	10DD-1062__Treatment	10DD-1062	AML	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		F						CRi, CCR (responder)	near-tetraploid complex karyotype (60~89,XXXX, multiple losses)		Metadata-WashU.xlsx
+WashU	10DD-1065__Diagnosis	10DD-1065	MDS	FALSE	Diagnosis	Diagnosis				F						mCR, CCR (responder)	complex: del(5)(q13q33),-7,+der(21)t(17;21); FISH del16q		Metadata-WashU.xlsx
+WashU	10DD-1065__Treatment	10DD-1065	MDS	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		F						mCR, CCR (responder)	complex: del(5)(q13q33),-7,+der(21)t(17;21); FISH del16q		Metadata-WashU.xlsx
+WashU	10DD-1070__Diagnosis	10DD-1070	AML	FALSE	Diagnosis	Diagnosis				M						CRi (responder)	46,XY [normal]		Metadata-WashU.xlsx
+WashU	10DD-1070__Treatment	10DD-1070	AML	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		M						CRi (responder)	46,XY [normal]		Metadata-WashU.xlsx
+WashU	10DD-1079__Diagnosis	10DD-1079	AML	FALSE	Diagnosis	Diagnosis				F						CR (responder)	46,XX [normal]		Metadata-WashU.xlsx
+WashU	10DD-1079__Relapse	10DD-1079	AML	FALSE	Relapse	Relapse				F						CR (responder)	46,XX [normal]		Metadata-WashU.xlsx
+WashU	10DD-1079__Treatment	10DD-1079	AML	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		F						CR (responder)	46,XX [normal]		Metadata-WashU.xlsx
+WashU	10DD-1082__Treatment	10DD-1082	AML	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		F						CRi (responder)	46,XX [normal]		Metadata-WashU.xlsx
+WashU	10DD-1085__Diagnosis	10DD-1085	MDS	FALSE	Diagnosis	Diagnosis				F						mCR, HI-Plt (responder)	complex: -3,del(5)(q15q33),-6,-17,-18,-19,-20		Metadata-WashU.xlsx
+WashU	10DD-1085__Relapse	10DD-1085	MDS	FALSE	Relapse	Relapse				F						mCR, HI-Plt (responder)	complex: -3,del(5)(q15q33),-6,-17,-18,-19,-20		Metadata-WashU.xlsx
+WashU	10DD-1086__Diagnosis	10DD-1086	AML	FALSE	Diagnosis	Diagnosis				M						CRi (responder)	complex: add(2),del(5),+6,add(7),+8,+9,+10,-13,der(16)t(15;16)		Metadata-WashU.xlsx
+WashU	10DD-1086__Treatment	10DD-1086	AML	FALSE	Treatment	Treatment	True	Decitabine (10-day; cycle 1 day 10)		M						CRi (responder)	complex: add(2),del(5),+6,add(7),+8,+9,+10,-13,der(16)t(15;16)		Metadata-WashU.xlsx
+WashU	184874__Diagnosis	184874	AML	FALSE	Diagnosis	Diagnosis				F									Metadata-WashU.xlsx
+WashU	220882__Diagnosis	220882	AML	FALSE	Diagnosis	Diagnosis				F		M2							Metadata-WashU.xlsx
+WashU	220882__Relapse	220882	AML	FALSE	Relapse	Relapse				F		M2							Metadata-WashU.xlsx
+WashU	220882__Treatment	220882	AML	FALSE	Treatment	Treatment	True	Azacitidine consolidation (serial timepoint)		F		M2							Metadata-WashU.xlsx
+WashU	332131__Diagnosis	332131	AML	FALSE	Diagnosis	Diagnosis				M		M1							Metadata-WashU.xlsx
+WashU	430998__Diagnosis	430998	AML	FALSE	Diagnosis	Diagnosis				M									Metadata-WashU.xlsx
+WashU	452198__Diagnosis	452198	AML	FALSE	Diagnosis	Diagnosis				M		M5							Metadata-WashU.xlsx
+WashU	452198__Relapse	452198	AML	FALSE	Relapse	Relapse				M		M5							Metadata-WashU.xlsx
+WashU	508084__Diagnosis	508084	AML	FALSE	Diagnosis	Diagnosis				M		M4							Metadata-WashU.xlsx
+WashU	508084__Relapse	508084	AML	FALSE	Relapse	Relapse				M		M4							Metadata-WashU.xlsx
+WashU	624400__Normal donor	624400	Control	FALSE	Healthy	Normal donor				M									Metadata-WashU.xlsx
+WashU	827494__Diagnosis	827494	AML	FALSE	Diagnosis	Diagnosis				F									Metadata-WashU.xlsx
+WashU	868442__Diagnosis	868442	AML	FALSE	Diagnosis	Diagnosis				M		M4							Metadata-WashU.xlsx
+WashU	869586__Diagnosis	869586	AML	FALSE	Diagnosis	Diagnosis				M		M4/M1							Metadata-WashU.xlsx
+WashU	869586__Relapse	869586	AML	FALSE	Relapse	Relapse				M		M4/M1							Metadata-WashU.xlsx
+WashU	869922__Diagnosis	869922	AML	FALSE	Diagnosis	Diagnosis				F		M2							Metadata-WashU.xlsx
+WashU	875663__Diagnosis	875663	AML	FALSE	Diagnosis	Diagnosis				F		M4							Metadata-WashU.xlsx
+WashU	916462__Diagnosis	916462	AML	FALSE	Diagnosis	Diagnosis				F		M1							Metadata-WashU.xlsx
+WashU	922185__Diagnosis	922185	AML	FALSE	Diagnosis	Diagnosis				M									Metadata-WashU.xlsx
+WashU	978897__Normal donor	978897	Control	FALSE	Healthy	Normal donor				M									Metadata-WashU.xlsx
+WashU	ND050119__Normal donor	ND050119	Control	FALSE	Healthy	Normal donor													Metadata-WashU.xlsx
+WashU	ND050819__Normal donor	ND050819	Control	FALSE	Healthy	Normal donor													Metadata-WashU.xlsx
+CCHMC	0018_Af_N1c	0018_Af_N1c	AML		Diagnosis												Non-Complex w/2 Unbalanced Rearrangements	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	0316_E_N1c	0316_E_N1c	AML		Diagnosis						White/European (from ID)						Normal	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	0817_E_N1c	0817_E_N1c	AML		Diagnosis						White/European (from ID)						Normal	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	1009_AfInv16_29M	1009_AfInv16_29M	AML		Diagnosis				29.0	M							inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	1036_EInv16_22M	1036_EInv16_22M																no metadata matched	master list
+CCHMC	1060_EInv16_19M	1060_EInv16_19M	AML		Diagnosis				19.0	M	White/European (from ID)						inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	1076_AfInv16_51M	1076_AfInv16_51M	AML		Diagnosis				51.0	M							inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	1102_E_N1c	1102_E_N1c	AML		Diagnosis						White/European (from ID)						Sole-Y	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	1147_EInv16_44M	1147_EInv16_44M	AML		Diagnosis				44.0	M	White/European (from ID)						Inv(16) 	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	1239_EST8_44M_N1c	1239_EST8_44M_N1c	AML		Diagnosis						White/European (from ID)						Sole trisomy 8	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	143_AfST8_P64M	143_AfST8_P64M	AML		Diagnosis				64.0	M							Sole trisomy 8	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	1702-Et922-66F	1702-Et922-66F	AML		Diagnosis				66.0	F	White/European (from ID)						t(9;22) 	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	171_Af_N1c	171_Af_N1c	AML		Diagnosis												normal	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	1744_E_N1c	1744_E_N1c	AML		Diagnosis						White/European (from ID)						Normal	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	1782_Aft36_P71F	1782_Aft36_P71F	AML		Diagnosis				71.0	F							t(3;6)	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	1827_Af_N1c	1827_Af_N1c	AML		Diagnosis												normal	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	1893_Af_N1c	1893_Af_N1c	AML		Diagnosis												Sole trisomy 8	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	1906_Aft82_P36M	1906_Aft82_P36M	AML		Diagnosis				36.0	M							t(8;21)	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	2140_E_N1c	2140_E_N1c	AML		Diagnosis						White/European (from ID)						Normal	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	2270_Aft36_P71F	2270_Aft36_P71F																no metadata matched	master list
+CCHMC	2660_Ast82_38M	2660_Ast82_38M	AML		Diagnosis				38.0	M	Asian (from ID)						Sole trisomy 8	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	2698_EInv16_P47M	2698_EInv16_P47M	AML		Diagnosis				47.0	M	White/European (from ID)						inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	2853_Aft36_P71F	2853_Aft36_P71F																no metadata matched	master list
+CCHMC	287_AfInv_P53F_N1c	287_AfInv_P53F_N1c	AML		Diagnosis												normal	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	301_AfInv16_29M	301_AfInv16_29M	AML		Diagnosis				29.0	M							inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	3114_EInv_45F	3114_EInv_45F	AML		Diagnosis				45.0	F	White/European (from ID)						Inv(16) 	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	3410_AfST8_P64M	3410_AfST8_P64M	AML		Relapse				64.0	M							sole trisomy 8	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	376_Af_N1c	376_Af_N1c	AML		Diagnosis												normal	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	4440_AfInv16_P24M	4440_AfInv16_P24M	AML		Relapse				24.0	M							inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	4924_AfInv16_P49M	4924_AfInv16_P49M	AML		Relapse				49.0	M							inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	5381v2_AfInv16_P49M	5381v2_AfInv16_P49M	AML		Diagnosis				49.0	M							inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	550_EInv16_38M	550_EInv16_38M																no metadata matched	master list
+CCHMC	562_AfInv16_25F	562_AfInv16_25F	AML		Diagnosis				25.0	F							normal	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	568_AfInv16_P24M	568_AfInv16_P24M	AML		Diagnosis				24.0	M							inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	596_E_N1c	596_E_N1c	AML		Diagnosis						White/European (from ID)						Normal	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	727_EInv16_35M	727_EInv16_35M	AML		Diagnosis				35.0	M	White/European (from ID)						inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	754_EInv16_47M	754_EInv16_47M																no metadata matched	master list
+CCHMC	98-31_AfInv16_34F	98-31_AfInv16_34F	AML		Diagnosis				34.0	F							inv(16)	race/age/sex inferred from sample ID	CCHMC.xlsx
+CCHMC	AM72	AM72																no metadata matched	master list
+CCHMC	AML-12_CCHMC	AML-12_CCHMC																no metadata matched	master list
+CCHMC	AML-14_CCHMC	AML-14_CCHMC																no metadata matched	master list
+CCHMC	AML-7_CCHMC	AML-7_CCHMC																no metadata matched	master list
+CCHMC	BF21	BF21																no metadata matched	master list
+CCHMC	BF32	BF32																no metadata matched	master list
+CCHMC	BF71	BF71																no metadata matched	master list
+CCHMC	BM27	BM27																no metadata matched	master list
+CCHMC	BM32	BM32																no metadata matched	master list
+CCHMC	WF26	WF26																no metadata matched	master list
+CCHMC	WF32	WF32																no metadata matched	master list
+CCHMC	WF83	WF83																no metadata matched	master list
+CCHMC	WM22	WM22																no metadata matched	master list
+CCHMC	WM34	WM34																no metadata matched	master list
+CCHMC	WM72	WM72																no metadata matched	master list
+NYU-1	AML001	AML001		FALSE						M					Adverse				Meta-NYU-1.xlsx
+NYU-1	AML0024	AML0024	AML	FALSE					64.0	M					Adverse		"48,XY,+8,+8,i(8)(p10),t(9;15)(q33;q15),del(10)(q22.1q24),del(13)(q14q21)_x000B_(cp14)/44-48,idem,add(13)(p11.2)(cp2)
 "		Meta-NYU-1.xlsx
-NYU-1	AML003	AML003	AML	FALSE																AML; no variant panel row in NYU-1 metadata file	master list
-NYU-1	AML0048	AML0048	AML	FALSE					70.0	F			780.0				Intermediate		47,XX,del(5)(q22q35),+8[20]		Meta-NYU-1.xlsx
-NYU-1	AML005	AML005		FALSE						F							Favorable				Meta-NYU-1.xlsx
-NYU-1	AML006	AML006		FALSE						F							Favorable				Meta-NYU-1.xlsx
-NYU-1	AML008	AML008		FALSE						F							Intermediate				Meta-NYU-1.xlsx
-NYU-1	AML009	AML009		FALSE						M							Adverse				Meta-NYU-1.xlsx
-NYU-1	AML0114	AML0114	AML	FALSE					58.0	M			183.0				Favorable		46,XY[19]/nonclonal[1] 		Meta-NYU-1.xlsx
-NYU-1	AML012	AML012		FALSE						F							Favorable				Meta-NYU-1.xlsx
-NYU-1	AML0160	AML0160	AML	FALSE					74.0	M			3.0				Adverse		46,XY[30]		Meta-NYU-1.xlsx
-NYU-1	AML022	AML022		FALSE						F							Favorable				Meta-NYU-1.xlsx
-NYU-1	AML025	AML025		FALSE						M							Intermediate				Meta-NYU-1.xlsx
-NYU-1	AML026	AML026		FALSE						F							Adverse				Meta-NYU-1.xlsx
-NYU-1	AML028	AML028		FALSE						M							Intermediate				Meta-NYU-1.xlsx
-NYU-1	AML0310	AML0310	AML	FALSE					64.0	M			1196.0				Intermediate		46, XY		Meta-NYU-1.xlsx
-NYU-1	AML033	AML033	AML	FALSE																AML; no variant panel row in NYU-1 metadata file	master list
-NYU-1	AML0361	AML0361	AML	FALSE					74.0	M			479.0				Adverse		46, XY		Meta-NYU-1.xlsx
-NYU-1	AML038	AML038		FALSE						F							Intermediate				Meta-NYU-1.xlsx
-NYU-1	AML043	AML043		FALSE						M							Adverse				Meta-NYU-1.xlsx
-NYU-1	AML048	AML048		FALSE						M							Intermediate				Meta-NYU-1.xlsx
-NYU-1	AML051	AML051		FALSE						M							Adverse				Meta-NYU-1.xlsx
-NYU-1	AML052	AML052		FALSE						M							Adverse				Meta-NYU-1.xlsx
-NYU-1	AML055	AML055		FALSE						F							Favorable				Meta-NYU-1.xlsx
-NYU-1	AML056	AML056		FALSE						F							Intermediate				Meta-NYU-1.xlsx
-NYU-1	AML0612	AML0612	AML	FALSE					64.0	F			1485.0				Adverse		47,XX,+8[18]/46,XX[1]/nonclonal[1]		Meta-NYU-1.xlsx
-NYU-1	AML0656	AML0656	AML	FALSE																AML; no variant panel row in NYU-1 metadata file	master list
-NYU-1	AML0693	AML0693	AML	FALSE					77.0	F			47.0				Adverse		74-89<4n>,XXXX,-8,-9,-9,-12,-17,i(17)(q10),+mar1,+mar2,+dmin[cp18]/46,XX[2] .ish dmin(amp CMYC)		Meta-NYU-1.xlsx
-NYU-1	AML073	AML073		FALSE						M							Adverse				Meta-NYU-1.xlsx
-NYU-1	AML1371	AML1371	AML	FALSE					78.0	M			631.0						46,XY (17 metas), -Y in 3 metas		Meta-NYU-1.xlsx
-NYU-1	AML1540	AML1540	AML	FALSE																AML; no variant panel row in NYU-1 metadata file	master list
-NYU-1	AML1552	AML1552	AML	FALSE																AML; no variant panel row in NYU-1 metadata file	master list
-NYU-1	AML2123	AML2123	AML	FALSE					71.0	F			1807.0				Intermediate		46,XX		Meta-NYU-1.xlsx
-NYU-1	AML22-Decitabine	AML22-Decitabine	AML	FALSE				Decitabine												AML; no variant panel row in NYU-1 metadata file	master list
-NYU-1	AML2451	AML2451	AML	FALSE					64.0	M			262.0				Favorable		46,XY		Meta-NYU-1.xlsx
-NYU-1	AML2910	AML2910	AML	FALSE					73.0	M			141.0				Adverse		46,XY		Meta-NYU-1.xlsx
-NYU-1	AML3050	AML3050	AML	FALSE					81.0	F			12.0				Adverse		"49,XX,+1,del(1)(p13),+8,+8[3]/50,sl,+5,del(5)(q13q33)[6,two w/nonclonal 
+NYU-1	AML003	AML003	AML	FALSE														AML; no variant panel row in NYU-1 metadata file	master list
+NYU-1	AML0048	AML0048	AML	FALSE					70.0	F					Intermediate		47,XX,del(5)(q22q35),+8[20]		Meta-NYU-1.xlsx
+NYU-1	AML005	AML005		FALSE						F					Favorable				Meta-NYU-1.xlsx
+NYU-1	AML006	AML006		FALSE						F					Favorable				Meta-NYU-1.xlsx
+NYU-1	AML008	AML008		FALSE						F					Intermediate				Meta-NYU-1.xlsx
+NYU-1	AML009	AML009		FALSE						M					Adverse				Meta-NYU-1.xlsx
+NYU-1	AML0114	AML0114	AML	FALSE					58.0	M					Favorable		46,XY[19]/nonclonal[1] 		Meta-NYU-1.xlsx
+NYU-1	AML012	AML012		FALSE						F					Favorable				Meta-NYU-1.xlsx
+NYU-1	AML0160	AML0160	AML	FALSE					74.0	M					Adverse		46,XY[30]		Meta-NYU-1.xlsx
+NYU-1	AML022	AML022		FALSE						F					Favorable				Meta-NYU-1.xlsx
+NYU-1	AML025	AML025		FALSE						M					Intermediate				Meta-NYU-1.xlsx
+NYU-1	AML026	AML026		FALSE						F					Adverse				Meta-NYU-1.xlsx
+NYU-1	AML028	AML028		FALSE						M					Intermediate				Meta-NYU-1.xlsx
+NYU-1	AML0310	AML0310	AML	FALSE					64.0	M					Intermediate		46, XY		Meta-NYU-1.xlsx
+NYU-1	AML033	AML033	AML	FALSE														AML; no variant panel row in NYU-1 metadata file	master list
+NYU-1	AML0361	AML0361	AML	FALSE					74.0	M					Adverse		46, XY		Meta-NYU-1.xlsx
+NYU-1	AML038	AML038		FALSE						F					Intermediate				Meta-NYU-1.xlsx
+NYU-1	AML043	AML043		FALSE						M					Adverse				Meta-NYU-1.xlsx
+NYU-1	AML048	AML048		FALSE						M					Intermediate				Meta-NYU-1.xlsx
+NYU-1	AML051	AML051		FALSE						M					Adverse				Meta-NYU-1.xlsx
+NYU-1	AML052	AML052		FALSE						M					Adverse				Meta-NYU-1.xlsx
+NYU-1	AML055	AML055		FALSE						F					Favorable				Meta-NYU-1.xlsx
+NYU-1	AML056	AML056		FALSE						F					Intermediate				Meta-NYU-1.xlsx
+NYU-1	AML0612	AML0612	AML	FALSE					64.0	F					Adverse		47,XX,+8[18]/46,XX[1]/nonclonal[1]		Meta-NYU-1.xlsx
+NYU-1	AML0656	AML0656	AML	FALSE														AML; no variant panel row in NYU-1 metadata file	master list
+NYU-1	AML0693	AML0693	AML	FALSE					77.0	F					Adverse		74-89<4n>,XXXX,-8,-9,-9,-12,-17,i(17)(q10),+mar1,+mar2,+dmin[cp18]/46,XX[2] .ish dmin(amp CMYC)		Meta-NYU-1.xlsx
+NYU-1	AML073	AML073		FALSE						M					Adverse				Meta-NYU-1.xlsx
+NYU-1	AML1371	AML1371	AML	FALSE					78.0	M							46,XY (17 metas), -Y in 3 metas		Meta-NYU-1.xlsx
+NYU-1	AML1540	AML1540	AML	FALSE														AML; no variant panel row in NYU-1 metadata file	master list
+NYU-1	AML1552	AML1552	AML	FALSE														AML; no variant panel row in NYU-1 metadata file	master list
+NYU-1	AML2123	AML2123	AML	FALSE					71.0	F					Intermediate		46,XX		Meta-NYU-1.xlsx
+NYU-1	AML22-Decitabine	AML22-Decitabine	AML	FALSE				Decitabine										AML; no variant panel row in NYU-1 metadata file	master list
+NYU-1	AML2451	AML2451	AML	FALSE					64.0	M					Favorable		46,XY		Meta-NYU-1.xlsx
+NYU-1	AML2910	AML2910	AML	FALSE					73.0	M					Adverse		46,XY		Meta-NYU-1.xlsx
+NYU-1	AML3050	AML3050	AML	FALSE					81.0	F					Adverse		"49,XX,+1,del(1)(p13),+8,+8[3]/50,sl,+5,del(5)(q13q33)[6,two w/nonclonal 
 abnormalities]/51,sld1,+mar[3]/51,sdl1,+6[2]/46,XX[6,one is 4n] "		Meta-NYU-1.xlsx
-NYU-1	AML3133	AML3133	AML	FALSE					57.0	M			170.0				Favorable		46,XY[19]/nonclonal[1]		Meta-NYU-1.xlsx
-NYU-1	AML3266	AML3266	AML	FALSE					32.0	F			1189.0				Adverse		46,XX,t(10;11)(p13;q21)[16]/46,XX[4].ish der(10)t(10;11)(5'KMT2A sep 3'KMT2A)		Meta-NYU-1.xlsx
-NYU-1	AML3730	AML3730	AML	FALSE					55.0	F			628.0				Adverse		46,XX,cryp der(7)t(7;11)(q22;q13).ish cryp der(7)t(7;11)(KMT2A+) .nuc ish(D7S486x1,D7Z1x2)[183/200]		Meta-NYU-1.xlsx
-NYU-1	AML3762	AML3762	AML	FALSE					62.0	M			61.0				Adverse		47,XY,+8[5]/46,XY[5]		Meta-NYU-1.xlsx
-NYU-1	AML3948	AML3948	AML	FALSE					78.0	F			42.0				Adverse		"45,XX,del(5)(q13q33),der(8)add(8)(p11.2)add(8)(q24),dic(17;18)(p11.2;p11.2)
+NYU-1	AML3133	AML3133	AML	FALSE					57.0	M					Favorable		46,XY[19]/nonclonal[1]		Meta-NYU-1.xlsx
+NYU-1	AML3266	AML3266	AML	FALSE					32.0	F					Adverse		46,XX,t(10;11)(p13;q21)[16]/46,XX[4].ish der(10)t(10;11)(5'KMT2A sep 3'KMT2A)		Meta-NYU-1.xlsx
+NYU-1	AML3730	AML3730	AML	FALSE					55.0	F					Adverse		46,XX,cryp der(7)t(7;11)(q22;q13).ish cryp der(7)t(7;11)(KMT2A+) .nuc ish(D7S486x1,D7Z1x2)[183/200]		Meta-NYU-1.xlsx
+NYU-1	AML3762	AML3762	AML	FALSE					62.0	M					Adverse		47,XY,+8[5]/46,XY[5]		Meta-NYU-1.xlsx
+NYU-1	AML3948	AML3948	AML	FALSE					78.0	F					Adverse		"45,XX,del(5)(q13q33),der(8)add(8)(p11.2)add(8)(q24),dic(17;18)(p11.2;p11.2)
 ,dmin[16,two w/nonclonal abnormalities]/46,XX[4"		Meta-NYU-1.xlsx
-NYU-1	AML4340	AML4340	AML	FALSE					80.0	M			455.0				Intermediate		46,XY		Meta-NYU-1.xlsx
-NYU-1	AML4897	AML4897	AML	FALSE					65.0	F			491.0				Favorable		46,XX		Meta-NYU-1.xlsx
-NYU-1	AML52-Azacitidine	AML52-Azacitidine	AML	FALSE				Azacitidine												AML; no variant panel row in NYU-1 metadata file	master list
-NYU-1	AML5292	AML5292	AML	FALSE																AML; no variant panel row in NYU-1 metadata file	master list
-NYU-1	Control0004	Control0004	Control	FALSE	Healthy																master list
-NYU-1	Control0005	Control0005	Control	FALSE	Healthy																master list
-NYU-1	Control0058	Control0058	Control	FALSE	Healthy																master list
-NYU-1	Control0082	Control0082	Control	FALSE	Healthy																master list
-NYU-1	Control1	Control1	Control	FALSE	Healthy																master list
-NYU-1	Control2	Control2	Control	FALSE	Healthy																master list
-NYU-1	Control3	Control3	Control	FALSE	Healthy																master list
-NYU-1	Control4	Control4	Control	FALSE	Healthy																master list
-NYU-1	Control4003	Control4003	Control	FALSE	Healthy																master list
-NYU-1	ETP9153	ETP9153	T-ALL	FALSE																ETP-ALL	master list
-NYU-1	HTO2-SRR16208954	HTO2-SRR16208954		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	HTO2-SRR16208955	HTO2-SRR16208955		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	HTO2-SRR16208956	HTO2-SRR16208956		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	HTO3-SRR16208954	HTO3-SRR16208954		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	HTO3-SRR16208955	HTO3-SRR16208955		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	HTO5-SRR16208954	HTO5-SRR16208954		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	HTO5-SRR16208955	HTO5-SRR16208955		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	HTO6-SRR16208954	HTO6-SRR16208954		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	HTO6-SRR16208955	HTO6-SRR16208955		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	MDS1123	MDS1123	MDS	FALSE																	master list
-NYU-1	MDS585	MDS585	MDS	FALSE																	master list
-NYU-1	NA-SRR16208928	NA-SRR16208928		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	NA-SRR16208929	NA-SRR16208929		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	NA-SRR16208930	NA-SRR16208930		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	NA-SRR16208931	NA-SRR16208931		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	NA-SRR16208932	NA-SRR16208932		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	PAUMTZ	PAUMTZ		FALSE						M							Adverse		46,XY, cryp ins(10;11)(p12;q23q23)[20] 		Meta-NYU-1.xlsx
-NYU-1	PAUMTZ-EoT	PAUMTZ		FALSE	Treatment	EoT				M							Adverse		46,XY, cryp ins(10;11)(p12;q23q23)[20] 		master list
-NYU-1	PAUMTZ-Relapse	PAUMTZ		FALSE	Relapse	Relapse				M							Adverse		46,XY, cryp ins(10;11)(p12;q23q23)[20] 		master list
-NYU-1	PAWWEE	PAWWEE		FALSE						F							Favorable		46,XX, cryp ins(21;8)(q22;q22q22)[15]/47,idem,+mar[5]		Meta-NYU-1.xlsx
-NYU-1	PAXMIJ	PAXMIJ		FALSE						F							Favorable		46,XX,t(8;21)(q22;q22)[2]/45,idem,-X[7]/46,idem,del(9)(q13q22)[5]/46,XX[6]		Meta-NYU-1.xlsx
-NYU-1	PAXMIJ-EoT	PAXMIJ		FALSE	Treatment	EoT				F							Favorable		46,XX,t(8;21)(q22;q22)[2]/45,idem,-X[7]/46,idem,del(9)(q13q22)[5]/46,XX[6]		master list
-NYU-1	PAXMIJ-Relapse	PAXMIJ		FALSE	Relapse	Relapse				F							Favorable		46,XX,t(8;21)(q22;q22)[2]/45,idem,-X[7]/46,idem,del(9)(q13q22)[5]/46,XX[6]		master list
-NYU-1	PR-TotalSeqA	PR-TotalSeqA		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	R1-TotalSeqA	R1-TotalSeqA		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	R2-TotalSeqA	R2-TotalSeqA		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	TALL3783	TALL3783	T-ALL	FALSE																	master list
-NYU-1	TALL3862	TALL3862	T-ALL	FALSE																	master list
-NYU-1	TALL4954	TALL4954	T-ALL	FALSE																	master list
-NYU-1	empty	empty		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag2-SRR16208949	hashtag2-SRR16208949		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag2-SRR16208950	hashtag2-SRR16208950		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag2-SRR16208957	hashtag2-SRR16208957		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag2-SRR16208958	hashtag2-SRR16208958		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag2-SRR16208964	hashtag2-SRR16208964		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag2-SRR16208965	hashtag2-SRR16208965		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag2-SRR16208966	hashtag2-SRR16208966		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag2-SRR16208967	hashtag2-SRR16208967		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag3-SRR16208949	hashtag3-SRR16208949		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag3-SRR16208950	hashtag3-SRR16208950		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag3-SRR16208957	hashtag3-SRR16208957		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag3-SRR16208959	hashtag3-SRR16208959		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag3-SRR16208965	hashtag3-SRR16208965		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag3-SRR16208966	hashtag3-SRR16208966		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag3-SRR16208967	hashtag3-SRR16208967		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag4-SRR16208949	hashtag4-SRR16208949		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag4-SRR16208950	hashtag4-SRR16208950		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag4-SRR16208958	hashtag4-SRR16208958		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag4-SRR16208964	hashtag4-SRR16208964		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag4-SRR16208965	hashtag4-SRR16208965		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag4-SRR16208966	hashtag4-SRR16208966		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag4-SRR16208967	hashtag4-SRR16208967		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag5-SRR16208965	hashtag5-SRR16208965		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag5-SRR16208966	hashtag5-SRR16208966		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag5-SRR16208967	hashtag5-SRR16208967		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag6-SRR16208965	hashtag6-SRR16208965		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag6-SRR16208966	hashtag6-SRR16208966		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag6-SRR16208967	hashtag6-SRR16208967		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag7-SRR16208965	hashtag7-SRR16208965		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag7-SRR16208966	hashtag7-SRR16208966		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-1	hashtag7-SRR16208967	hashtag7-SRR16208967		FALSE																technical/demultiplexing artifact - exclude from analysis	master list
-NYU-2	AML-09	AML-09	AML	FALSE		AML-09														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-11	AML-11	AML	FALSE		AML-11														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-16-Dx	AML-16-Dx	AML	FALSE	Diagnosis	AML-16-Dx														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-17-CR1	AML-17-CR1	AML	FALSE	Remission	AML-17-CR1														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-17-CR2	AML-17-CR2	AML	FALSE	Remission	AML-17-CR2														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-17-D1	AML-17-D1	AML	FALSE		AML-17-D1														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-17-D2	AML-17-D2	AML	FALSE		AML-17-D2														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-17-R1	AML-17-R1	AML	FALSE	Relapse	AML-17-R1														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-17-R2	AML-17-R2	AML	FALSE	Relapse	AML-17-R2														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-19-CR1	AML-19-CR1	AML	FALSE	Remission	AML-19-CR1														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-19-CR2	AML-19-CR2	AML	FALSE	Remission	AML-19-CR2														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-19-Dx1	AML-19-Dx1	AML	FALSE	Diagnosis	AML-19-Dx1														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-19-Dx2	AML-19-Dx2	AML	FALSE	Diagnosis	AML-19-Dx2														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-19-R1	AML-19-R1	AML	FALSE	Relapse	AML-19-R1														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-19-R2	AML-19-R2	AML	FALSE	Relapse	AML-19-R2														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-20-CR	AML-20-CR	AML	FALSE	Remission	AML-20-CR														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-20-Dx	AML-20-Dx	AML	FALSE	Diagnosis	AML-20-Dx														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-20-R1	AML-20-R1	AML	FALSE	Relapse	AML-20-R1														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-21-CR	AML-21-CR	AML	FALSE	Remission	AML-21-CR														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-21-Dx	AML-21-Dx	AML	FALSE	Diagnosis	AML-21-Dx														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML-21-R1	AML-21-R1	AML	FALSE	Relapse	AML-21-R1														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML0024	AML0024	AML	FALSE		AML0024														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML0048	AML0048	AML	FALSE		AML0048														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML1371	AML1371	AML	FALSE		AML1371														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML1896	AML1896	AML	FALSE		AML1896														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML2123	AML2123	AML	FALSE		AML2123														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML4340	AML4340	AML	FALSE		AML4340														METADATA PENDING (NYU-2 file not supplied)	master list
-NYU-2	AML4897	AML4897	AML	FALSE		AML4897														METADATA PENDING (NYU-2 file not supplied)	master list
-NIH	UPN111	UPN111	Control	FALSE	Healthy	HD1			62.0	F										Healthy donor (HD) control within GSE247531 aplastic-anemia study	Meta-NIH.xlsx
-NIH	UPN112	UPN112	Control	FALSE	Healthy	HD2			27.0	F										Healthy donor (HD) control within GSE247531 aplastic-anemia study	Meta-NIH.xlsx
-NIH	UPN113	UPN113	Control	FALSE	Healthy	HD3			28.0	F										Healthy donor (HD) control within GSE247531 aplastic-anemia study	Meta-NIH.xlsx
-NIH	UPN114	UPN114	Control	FALSE	Healthy	HD4			23.0	M										Healthy donor (HD) control within GSE247531 aplastic-anemia study	Meta-NIH.xlsx
-Milan	PT01_PT10__D30	PT01_PT10	AML	FALSE	Treatment	D30	True														Metadata-Milan.xlsx
-Milan	PT01__D14	PT01	AML	FALSE	Treatment	D14	True		52.0	M						NPM1	Intermediate	Adverse	46, XY		Metadata-Milan.xlsx
-Milan	PT01__D30	PT01	AML	FALSE	Treatment	D30	True		52.0	M						NPM1	Intermediate	Adverse	46, XY		Metadata-Milan.xlsx
-Milan	PT01__Diagnosis	PT01	AML	FALSE	Diagnosis	DX (Diagnosis)			52.0	M						NPM1	Intermediate	Adverse	46, XY		Metadata-Milan.xlsx
-Milan	PT02__D30	PT02	AML	FALSE	Treatment	D30	True		24.0	F				M5a		NPM1	Intermediate	Adverse	46, XX		Metadata-Milan.xlsx
-Milan	PT02__Diagnosis	PT02	AML	FALSE	Diagnosis	DX (Diagnosis)			24.0	F				M5a		NPM1	Intermediate	Adverse	46, XX		Metadata-Milan.xlsx
-Milan	PT06__D14	PT06	AML	FALSE	Treatment	D14	True		76.0	F				M2		NPM1	Favorable	Favorable	46, XX		Metadata-Milan.xlsx
-Milan	PT06__Diagnosis	PT06	AML	FALSE	Diagnosis	DX (Diagnosis)			76.0	F				M2		NPM1	Favorable	Favorable	46, XX		Metadata-Milan.xlsx
-Milan	PT07__D14	PT07	AML	FALSE	Treatment	D14	True		42.0	M				M5		NPM1	Favorable	Favorable	46, XY		Metadata-Milan.xlsx
-Milan	PT07__Diagnosis	PT07	AML	FALSE	Diagnosis	DX (Diagnosis)			42.0	M				M5		NPM1	Favorable	Favorable	46, XY		Metadata-Milan.xlsx
-Milan	PT08__D14	PT08	AML	FALSE	Treatment	D14	True		52.0	M				M4		NPM1	Favorable	Adverse	46, XY		Metadata-Milan.xlsx
-Milan	PT08__D30	PT08	AML	FALSE	Treatment	D30	True		52.0	M				M4		NPM1	Favorable	Adverse	46, XY		Metadata-Milan.xlsx
-Milan	PT08__Diagnosis	PT08	AML	FALSE	Diagnosis	DX (Diagnosis)			52.0	M				M4		NPM1	Favorable	Adverse	46, XY		Metadata-Milan.xlsx
-Milan	PT08__Relapse	PT08	AML	FALSE	Relapse	REL (Relapse)	True		52.0	M				M4		NPM1	Favorable	Adverse	46, XY		Metadata-Milan.xlsx
-Milan	PT09_PT13__D30	PT09_PT13	AML	FALSE	Treatment	D30	True														Metadata-Milan.xlsx
-Milan	PT09__D14	PT09	AML	FALSE	Treatment	D14	True		66.0	F				M4		NPM1	Intermediate	Adverse	46, XX		Metadata-Milan.xlsx
-Milan	PT09__Diagnosis	PT09	AML	FALSE	Diagnosis	DX (Diagnosis)			66.0	F				M4		NPM1	Intermediate	Adverse	46, XX		Metadata-Milan.xlsx
-Milan	PT10__D14	PT10	AML	FALSE	Treatment	D14	True		65.0	F				M5b		NPM1	Favorable	Adverse			Metadata-Milan.xlsx
-Milan	PT10__Diagnosis	PT10	AML	FALSE	Diagnosis	DX (Diagnosis)			65.0	F				M5b		NPM1	Favorable	Adverse			Metadata-Milan.xlsx
-Milan	PT10__Relapse	PT10	AML	FALSE	Relapse	REL (Relapse)	True		65.0	F				M5b		NPM1	Favorable	Adverse			Metadata-Milan.xlsx
-Milan	PT11__D30	PT11	AML	FALSE	Treatment	D30	True		19.0	M				M5a		DEL(7)	Adverse	Adverse	45, XY -7		Metadata-Milan.xlsx
-Milan	PT11__Diagnosis	PT11	AML	FALSE	Diagnosis	DX			19.0	M				M5a		DEL(7)	Adverse	Adverse	45, XY -7		Metadata-Milan.xlsx
-Milan	PT12_PT13__D14	PT12_PT13	AML	FALSE	Treatment	D14	True														Metadata-Milan.xlsx
-Milan	PT12__D30	PT12	AML	FALSE	Treatment	D30	True		44.0	M				M5a		NPM1	Favorable	Favorable	46, XY		Metadata-Milan.xlsx
-Milan	PT12__Diagnosis	PT12	AML	FALSE	Diagnosis	DX (Diagnosis)			44.0	M				M5a		NPM1	Favorable	Favorable	46, XY		Metadata-Milan.xlsx
-Milan	PT13__Diagnosis	PT13	AML	FALSE	Diagnosis	DX (Diagnosis)			72.0	M				M2		NPM1		Adverse	46, XY, t(10;13)		Metadata-Milan.xlsx
-Milan	PT15__Diagnosis	PT15	AML	FALSE	Diagnosis	DX (Diagnosis)			48.0	F				M5		NPM1	Favorable	Adverse	46, XX		Metadata-Milan.xlsx
-Milan	PT15__Relapse	PT15	AML	FALSE	Relapse	REL (Relapse)	True		48.0	F				M5		NPM1	Favorable	Adverse	46, XX		Metadata-Milan.xlsx
-Milan	PT17__D14	PT17	AML	FALSE	Treatment	D14	True		33.0	M				M5b		DEL(7)	Adverse	Adverse	45, XY -7		Metadata-Milan.xlsx
-Milan	PT17__D30	PT17	AML	FALSE	Treatment	D30	True		33.0	M				M5b		DEL(7)	Adverse	Adverse	45, XY -7		Metadata-Milan.xlsx
-Milan	PT17__Diagnosis	PT17	AML	FALSE	Diagnosis	DX			33.0	M				M5b		DEL(7)	Adverse	Adverse	45, XY -7		Metadata-Milan.xlsx
-Milan	PT18__D14	PT18	AML	FALSE	Treatment	D14	True		73.0	M						DEL(7)	Adverse	Adverse	45, XY -7		Metadata-Milan.xlsx
-Milan	PT18__Diagnosis	PT18	AML	FALSE	Diagnosis	DX			73.0	M						DEL(7)	Adverse	Adverse	45, XY -7		Metadata-Milan.xlsx
-Milan	PT19__Relapse	PT19	AML	FALSE	Relapse	REL	True		65.0	F						NPM1	Intermediate	Adverse	46, XX		Metadata-Milan.xlsx
-Milan	PT20__Relapse	PT20	AML	FALSE	Relapse	REL	True		59.0	F						NPM1	Favorable	Favorable	46, XX		Metadata-Milan.xlsx
-EBI	Donor 1	Donor 1		FALSE		Donor 1														METADATA PENDING (EBI file not supplied)	master list
-EBI	Donor 10	Donor 10		FALSE		Donor 10														METADATA PENDING (EBI file not supplied)	master list
-EBI	Donor 2	Donor 2		FALSE		Donor 2														METADATA PENDING (EBI file not supplied)	master list
-EBI	Donor 3	Donor 3		FALSE		Donor 3														METADATA PENDING (EBI file not supplied)	master list
-EBI	Donor 4	Donor 4		FALSE		Donor 4														METADATA PENDING (EBI file not supplied)	master list
-EBI	Donor 5	Donor 5		FALSE		Donor 5														METADATA PENDING (EBI file not supplied)	master list
-EBI	Donor 6	Donor 6		FALSE		Donor 6														METADATA PENDING (EBI file not supplied)	master list
-EBI	Donor 7	Donor 7		FALSE		Donor 7														METADATA PENDING (EBI file not supplied)	master list
-EBI	Donor 8	Donor 8		FALSE		Donor 8														METADATA PENDING (EBI file not supplied)	master list
-EBI	Donor 9	Donor 9		FALSE		Donor 9														METADATA PENDING (EBI file not supplied)	master list
-EBI	P01__Diagnosis	P01	AML	FALSE	Diagnosis	P01__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P01__Relapse	P01	AML	FALSE	Relapse	P01__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P02__Diagnosis	P02	AML	FALSE	Diagnosis	P02__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P02__Relapse	P02	AML	FALSE	Relapse	P02__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P03__Diagnosis	P03	AML	FALSE	Diagnosis	P03__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P03__Relapse	P03	AML	FALSE	Relapse	P03__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P04__Diagnosis	P04	AML	FALSE	Diagnosis	P04__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P04__Relapse	P04	AML	FALSE	Relapse	P04__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P05__Diagnosis	P05	AML	FALSE	Diagnosis	P05__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P05__Relapse	P05	AML	FALSE	Relapse	P05__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P06__Diagnosis	P06	AML	FALSE	Diagnosis	P06__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P06__Relapse	P06	AML	FALSE	Relapse	P06__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P07__Diagnosis	P07	AML	FALSE	Diagnosis	P07__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P07__Relapse	P07	AML	FALSE	Relapse	P07__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P08__Diagnosis	P08	AML	FALSE	Diagnosis	P08__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P08__Relapse	P08	AML	FALSE	Relapse	P08__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P09__Diagnosis	P09	AML	FALSE	Diagnosis	P09__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P09__Relapse	P09	AML	FALSE	Relapse	P09__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P10__Diagnosis	P10	AML	FALSE	Diagnosis	P10__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P10__Relapse	P10	AML	FALSE	Relapse	P10__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P11__Diagnosis	P11	AML	FALSE	Diagnosis	P11__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P11__Relapse	P11	AML	FALSE	Relapse	P11__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P12__Diagnosis	P12	AML	FALSE	Diagnosis	P12__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P12__Relapse	P12	AML	FALSE	Relapse	P12__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P13__Diagnosis	P13	AML	FALSE	Diagnosis	P13__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P13__Relapse	P13	AML	FALSE	Relapse	P13__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P14__Diagnosis	P14	AML	FALSE	Diagnosis	P14__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P14__Relapse	P14	AML	FALSE	Relapse	P14__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P15__Diagnosis	P15	AML	FALSE	Diagnosis	P15__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P15__Relapse	P15	AML	FALSE	Relapse	P15__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P16__Diagnosis	P16	AML	FALSE	Diagnosis	P16__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P16__Relapse	P16	AML	FALSE	Relapse	P16__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P17__Diagnosis	P17	AML	FALSE	Diagnosis	P17__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P17__Relapse	P17	AML	FALSE	Relapse	P17__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P18__Diagnosis	P18	AML	FALSE	Diagnosis	P18__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P18__Relapse	P18	AML	FALSE	Relapse	P18__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P19__Diagnosis	P19	AML	FALSE	Diagnosis	P19__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P19__Relapse	P19	AML	FALSE	Relapse	P19__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P20__Diagnosis	P20	AML	FALSE	Diagnosis	P20__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P20__Relapse	P20	AML	FALSE	Relapse	P20__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P21__Diagnosis	P21	AML	FALSE	Diagnosis	P21__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P21__Relapse	P21	AML	FALSE	Relapse	P21__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P22__Diagnosis	P22	AML	FALSE	Diagnosis	P22__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P22__Relapse	P22	AML	FALSE	Relapse	P22__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P23__Diagnosis	P23	AML	FALSE	Diagnosis	P23__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P23__Relapse	P23	AML	FALSE	Relapse	P23__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P24__Diagnosis	P24	AML	FALSE	Diagnosis	P24__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P24__Relapse	P24	AML	FALSE	Relapse	P24__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P25__Diagnosis	P25	AML	FALSE	Diagnosis	P25__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P25__Relapse	P25	AML	FALSE	Relapse	P25__Relapse														METADATA PENDING (EBI file not supplied)	master list
-EBI	P26__Diagnosis	P26	AML	FALSE	Diagnosis	P26__Diagnosis														METADATA PENDING (EBI file not supplied)	master list
-EBI	P26__Relapse	P26	AML	FALSE	Relapse	P26__Relapse														METADATA PENDING (EBI file not supplied)	master list
-3v2	GSM3901485	GSM3901485	Control	FALSE	Healthy															healthy bone-marrow control (10x 3v2)	master list
-3v2	GSM3901486	GSM3901486	Control	FALSE	Healthy															healthy bone-marrow control (10x 3v2)	master list
-3v2	GSM3901487	GSM3901487	Control	FALSE	Healthy															healthy bone-marrow control (10x 3v2)	master list
-3v2	GSM3901488	GSM3901488	Control	FALSE	Healthy															healthy bone-marrow control (10x 3v2)	master list
-3v2	GSM4874417	GSM4874417	Control	FALSE	Healthy															healthy bone-marrow control (10x 3v2)	master list
-3v3	adult_bone_marrow_1	adult_bone_marrow_1	Control	FALSE	Healthy															healthy bone-marrow control (10x 3v3)	master list
+NYU-1	AML4340	AML4340	AML	FALSE					80.0	M					Intermediate		46,XY		Meta-NYU-1.xlsx
+NYU-1	AML4897	AML4897	AML	FALSE					65.0	F					Favorable		46,XX		Meta-NYU-1.xlsx
+NYU-1	AML52-Azacitidine	AML52-Azacitidine	AML	FALSE				Azacitidine										AML; no variant panel row in NYU-1 metadata file	master list
+NYU-1	AML5292	AML5292	AML	FALSE														AML; no variant panel row in NYU-1 metadata file	master list
+NYU-1	Control0004	Control0004	Control	FALSE	Healthy														master list
+NYU-1	Control0005	Control0005	Control	FALSE	Healthy														master list
+NYU-1	Control0058	Control0058	Control	FALSE	Healthy														master list
+NYU-1	Control0082	Control0082	Control	FALSE	Healthy														master list
+NYU-1	Control1	Control1	Control	FALSE	Healthy														master list
+NYU-1	Control2	Control2	Control	FALSE	Healthy														master list
+NYU-1	Control3	Control3	Control	FALSE	Healthy														master list
+NYU-1	Control4	Control4	Control	FALSE	Healthy														master list
+NYU-1	Control4003	Control4003	Control	FALSE	Healthy														master list
+NYU-1	ETP9153	ETP9153	T-ALL	FALSE														ETP-ALL	master list
+NYU-1	HTO2-SRR16208954	HTO2-SRR16208954		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	HTO2-SRR16208955	HTO2-SRR16208955		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	HTO2-SRR16208956	HTO2-SRR16208956		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	HTO3-SRR16208954	HTO3-SRR16208954		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	HTO3-SRR16208955	HTO3-SRR16208955		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	HTO5-SRR16208954	HTO5-SRR16208954		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	HTO5-SRR16208955	HTO5-SRR16208955		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	HTO6-SRR16208954	HTO6-SRR16208954		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	HTO6-SRR16208955	HTO6-SRR16208955		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	MDS1123	MDS1123	MDS	FALSE															master list
+NYU-1	MDS585	MDS585	MDS	FALSE															master list
+NYU-1	NA-SRR16208928	NA-SRR16208928		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	NA-SRR16208929	NA-SRR16208929		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	NA-SRR16208930	NA-SRR16208930		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	NA-SRR16208931	NA-SRR16208931		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	NA-SRR16208932	NA-SRR16208932		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	PAUMTZ	PAUMTZ		FALSE						M					Adverse		46,XY, cryp ins(10;11)(p12;q23q23)[20] 		Meta-NYU-1.xlsx
+NYU-1	PAUMTZ-EoT	PAUMTZ		FALSE	Treatment	EoT				M					Adverse		46,XY, cryp ins(10;11)(p12;q23q23)[20] 		master list
+NYU-1	PAUMTZ-Relapse	PAUMTZ		FALSE	Relapse	Relapse				M					Adverse		46,XY, cryp ins(10;11)(p12;q23q23)[20] 		master list
+NYU-1	PAWWEE	PAWWEE		FALSE						F					Favorable		46,XX, cryp ins(21;8)(q22;q22q22)[15]/47,idem,+mar[5]		Meta-NYU-1.xlsx
+NYU-1	PAXMIJ	PAXMIJ		FALSE						F					Favorable		46,XX,t(8;21)(q22;q22)[2]/45,idem,-X[7]/46,idem,del(9)(q13q22)[5]/46,XX[6]		Meta-NYU-1.xlsx
+NYU-1	PAXMIJ-EoT	PAXMIJ		FALSE	Treatment	EoT				F					Favorable		46,XX,t(8;21)(q22;q22)[2]/45,idem,-X[7]/46,idem,del(9)(q13q22)[5]/46,XX[6]		master list
+NYU-1	PAXMIJ-Relapse	PAXMIJ		FALSE	Relapse	Relapse				F					Favorable		46,XX,t(8;21)(q22;q22)[2]/45,idem,-X[7]/46,idem,del(9)(q13q22)[5]/46,XX[6]		master list
+NYU-1	PR-TotalSeqA	PR-TotalSeqA		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	R1-TotalSeqA	R1-TotalSeqA		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	R2-TotalSeqA	R2-TotalSeqA		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	TALL3783	TALL3783	T-ALL	FALSE															master list
+NYU-1	TALL3862	TALL3862	T-ALL	FALSE															master list
+NYU-1	TALL4954	TALL4954	T-ALL	FALSE															master list
+NYU-1	empty	empty		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag2-SRR16208949	hashtag2-SRR16208949		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag2-SRR16208950	hashtag2-SRR16208950		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag2-SRR16208957	hashtag2-SRR16208957		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag2-SRR16208958	hashtag2-SRR16208958		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag2-SRR16208964	hashtag2-SRR16208964		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag2-SRR16208965	hashtag2-SRR16208965		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag2-SRR16208966	hashtag2-SRR16208966		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag2-SRR16208967	hashtag2-SRR16208967		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag3-SRR16208949	hashtag3-SRR16208949		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag3-SRR16208950	hashtag3-SRR16208950		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag3-SRR16208957	hashtag3-SRR16208957		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag3-SRR16208959	hashtag3-SRR16208959		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag3-SRR16208965	hashtag3-SRR16208965		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag3-SRR16208966	hashtag3-SRR16208966		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag3-SRR16208967	hashtag3-SRR16208967		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag4-SRR16208949	hashtag4-SRR16208949		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag4-SRR16208950	hashtag4-SRR16208950		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag4-SRR16208958	hashtag4-SRR16208958		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag4-SRR16208964	hashtag4-SRR16208964		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag4-SRR16208965	hashtag4-SRR16208965		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag4-SRR16208966	hashtag4-SRR16208966		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag4-SRR16208967	hashtag4-SRR16208967		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag5-SRR16208965	hashtag5-SRR16208965		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag5-SRR16208966	hashtag5-SRR16208966		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag5-SRR16208967	hashtag5-SRR16208967		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag6-SRR16208965	hashtag6-SRR16208965		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag6-SRR16208966	hashtag6-SRR16208966		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag6-SRR16208967	hashtag6-SRR16208967		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag7-SRR16208965	hashtag7-SRR16208965		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag7-SRR16208966	hashtag7-SRR16208966		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-1	hashtag7-SRR16208967	hashtag7-SRR16208967		FALSE														technical/demultiplexing artifact - exclude from analysis	master list
+NYU-2	AML-09	AML-09	AML	FALSE		AML-09												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-11	AML-11	AML	FALSE		AML-11												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-16-Dx	AML-16-Dx	AML	FALSE	Diagnosis	AML-16-Dx												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-17-CR1	AML-17-CR1	AML	FALSE	Remission	AML-17-CR1												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-17-CR2	AML-17-CR2	AML	FALSE	Remission	AML-17-CR2												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-17-D1	AML-17-D1	AML	FALSE		AML-17-D1												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-17-D2	AML-17-D2	AML	FALSE		AML-17-D2												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-17-R1	AML-17-R1	AML	FALSE	Relapse	AML-17-R1												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-17-R2	AML-17-R2	AML	FALSE	Relapse	AML-17-R2												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-19-CR1	AML-19-CR1	AML	FALSE	Remission	AML-19-CR1												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-19-CR2	AML-19-CR2	AML	FALSE	Remission	AML-19-CR2												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-19-Dx1	AML-19-Dx1	AML	FALSE	Diagnosis	AML-19-Dx1												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-19-Dx2	AML-19-Dx2	AML	FALSE	Diagnosis	AML-19-Dx2												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-19-R1	AML-19-R1	AML	FALSE	Relapse	AML-19-R1												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-19-R2	AML-19-R2	AML	FALSE	Relapse	AML-19-R2												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-20-CR	AML-20-CR	AML	FALSE	Remission	AML-20-CR												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-20-Dx	AML-20-Dx	AML	FALSE	Diagnosis	AML-20-Dx												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-20-R1	AML-20-R1	AML	FALSE	Relapse	AML-20-R1												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-21-CR	AML-21-CR	AML	FALSE	Remission	AML-21-CR												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-21-Dx	AML-21-Dx	AML	FALSE	Diagnosis	AML-21-Dx												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML-21-R1	AML-21-R1	AML	FALSE	Relapse	AML-21-R1												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML0024	AML0024	AML	FALSE		AML0024												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML0048	AML0048	AML	FALSE		AML0048												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML1371	AML1371	AML	FALSE		AML1371												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML1896	AML1896	AML	FALSE		AML1896												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML2123	AML2123	AML	FALSE		AML2123												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML4340	AML4340	AML	FALSE		AML4340												METADATA PENDING (NYU-2 file not supplied)	master list
+NYU-2	AML4897	AML4897	AML	FALSE		AML4897												METADATA PENDING (NYU-2 file not supplied)	master list
+NIH	UPN111	UPN111	Control	FALSE	Healthy	HD1			62.0	F								Healthy donor (HD) control within GSE247531 aplastic-anemia study	Meta-NIH.xlsx
+NIH	UPN112	UPN112	Control	FALSE	Healthy	HD2			27.0	F								Healthy donor (HD) control within GSE247531 aplastic-anemia study	Meta-NIH.xlsx
+NIH	UPN113	UPN113	Control	FALSE	Healthy	HD3			28.0	F								Healthy donor (HD) control within GSE247531 aplastic-anemia study	Meta-NIH.xlsx
+NIH	UPN114	UPN114	Control	FALSE	Healthy	HD4			23.0	M								Healthy donor (HD) control within GSE247531 aplastic-anemia study	Meta-NIH.xlsx
+Milan	PT01_PT10__D30	PT01_PT10	AML	FALSE	Treatment	D30	True												Metadata-Milan.xlsx
+Milan	PT01__D14	PT01	AML	FALSE	Treatment	D14	True		52.0	M				NPM1	Intermediate	Adverse	46, XY		Metadata-Milan.xlsx
+Milan	PT01__D30	PT01	AML	FALSE	Treatment	D30	True		52.0	M				NPM1	Intermediate	Adverse	46, XY		Metadata-Milan.xlsx
+Milan	PT01__Diagnosis	PT01	AML	FALSE	Diagnosis	DX (Diagnosis)			52.0	M				NPM1	Intermediate	Adverse	46, XY		Metadata-Milan.xlsx
+Milan	PT02__D30	PT02	AML	FALSE	Treatment	D30	True		24.0	F		M5a		NPM1	Intermediate	Adverse	46, XX		Metadata-Milan.xlsx
+Milan	PT02__Diagnosis	PT02	AML	FALSE	Diagnosis	DX (Diagnosis)			24.0	F		M5a		NPM1	Intermediate	Adverse	46, XX		Metadata-Milan.xlsx
+Milan	PT06__D14	PT06	AML	FALSE	Treatment	D14	True		76.0	F		M2		NPM1	Favorable	Favorable	46, XX		Metadata-Milan.xlsx
+Milan	PT06__Diagnosis	PT06	AML	FALSE	Diagnosis	DX (Diagnosis)			76.0	F		M2		NPM1	Favorable	Favorable	46, XX		Metadata-Milan.xlsx
+Milan	PT07__D14	PT07	AML	FALSE	Treatment	D14	True		42.0	M		M5		NPM1	Favorable	Favorable	46, XY		Metadata-Milan.xlsx
+Milan	PT07__Diagnosis	PT07	AML	FALSE	Diagnosis	DX (Diagnosis)			42.0	M		M5		NPM1	Favorable	Favorable	46, XY		Metadata-Milan.xlsx
+Milan	PT08__D14	PT08	AML	FALSE	Treatment	D14	True		52.0	M		M4		NPM1	Favorable	Adverse	46, XY		Metadata-Milan.xlsx
+Milan	PT08__D30	PT08	AML	FALSE	Treatment	D30	True		52.0	M		M4		NPM1	Favorable	Adverse	46, XY		Metadata-Milan.xlsx
+Milan	PT08__Diagnosis	PT08	AML	FALSE	Diagnosis	DX (Diagnosis)			52.0	M		M4		NPM1	Favorable	Adverse	46, XY		Metadata-Milan.xlsx
+Milan	PT08__Relapse	PT08	AML	FALSE	Relapse	REL (Relapse)	True		52.0	M		M4		NPM1	Favorable	Adverse	46, XY		Metadata-Milan.xlsx
+Milan	PT09_PT13__D30	PT09_PT13	AML	FALSE	Treatment	D30	True												Metadata-Milan.xlsx
+Milan	PT09__D14	PT09	AML	FALSE	Treatment	D14	True		66.0	F		M4		NPM1	Intermediate	Adverse	46, XX		Metadata-Milan.xlsx
+Milan	PT09__Diagnosis	PT09	AML	FALSE	Diagnosis	DX (Diagnosis)			66.0	F		M4		NPM1	Intermediate	Adverse	46, XX		Metadata-Milan.xlsx
+Milan	PT10__D14	PT10	AML	FALSE	Treatment	D14	True		65.0	F		M5b		NPM1	Favorable	Adverse			Metadata-Milan.xlsx
+Milan	PT10__Diagnosis	PT10	AML	FALSE	Diagnosis	DX (Diagnosis)			65.0	F		M5b		NPM1	Favorable	Adverse			Metadata-Milan.xlsx
+Milan	PT10__Relapse	PT10	AML	FALSE	Relapse	REL (Relapse)	True		65.0	F		M5b		NPM1	Favorable	Adverse			Metadata-Milan.xlsx
+Milan	PT11__D30	PT11	AML	FALSE	Treatment	D30	True		19.0	M		M5a		DEL(7)	Adverse	Adverse	45, XY -7		Metadata-Milan.xlsx
+Milan	PT11__Diagnosis	PT11	AML	FALSE	Diagnosis	DX			19.0	M		M5a		DEL(7)	Adverse	Adverse	45, XY -7		Metadata-Milan.xlsx
+Milan	PT12_PT13__D14	PT12_PT13	AML	FALSE	Treatment	D14	True												Metadata-Milan.xlsx
+Milan	PT12__D30	PT12	AML	FALSE	Treatment	D30	True		44.0	M		M5a		NPM1	Favorable	Favorable	46, XY		Metadata-Milan.xlsx
+Milan	PT12__Diagnosis	PT12	AML	FALSE	Diagnosis	DX (Diagnosis)			44.0	M		M5a		NPM1	Favorable	Favorable	46, XY		Metadata-Milan.xlsx
+Milan	PT13__Diagnosis	PT13	AML	FALSE	Diagnosis	DX (Diagnosis)			72.0	M		M2		NPM1		Adverse	46, XY, t(10;13)		Metadata-Milan.xlsx
+Milan	PT15__Diagnosis	PT15	AML	FALSE	Diagnosis	DX (Diagnosis)			48.0	F		M5		NPM1	Favorable	Adverse	46, XX		Metadata-Milan.xlsx
+Milan	PT15__Relapse	PT15	AML	FALSE	Relapse	REL (Relapse)	True		48.0	F		M5		NPM1	Favorable	Adverse	46, XX		Metadata-Milan.xlsx
+Milan	PT17__D14	PT17	AML	FALSE	Treatment	D14	True		33.0	M		M5b		DEL(7)	Adverse	Adverse	45, XY -7		Metadata-Milan.xlsx
+Milan	PT17__D30	PT17	AML	FALSE	Treatment	D30	True		33.0	M		M5b		DEL(7)	Adverse	Adverse	45, XY -7		Metadata-Milan.xlsx
+Milan	PT17__Diagnosis	PT17	AML	FALSE	Diagnosis	DX			33.0	M		M5b		DEL(7)	Adverse	Adverse	45, XY -7		Metadata-Milan.xlsx
+Milan	PT18__D14	PT18	AML	FALSE	Treatment	D14	True		73.0	M				DEL(7)	Adverse	Adverse	45, XY -7		Metadata-Milan.xlsx
+Milan	PT18__Diagnosis	PT18	AML	FALSE	Diagnosis	DX			73.0	M				DEL(7)	Adverse	Adverse	45, XY -7		Metadata-Milan.xlsx
+Milan	PT19__Relapse	PT19	AML	FALSE	Relapse	REL	True		65.0	F				NPM1	Intermediate	Adverse	46, XX		Metadata-Milan.xlsx
+Milan	PT20__Relapse	PT20	AML	FALSE	Relapse	REL	True		59.0	F				NPM1	Favorable	Favorable	46, XX		Metadata-Milan.xlsx
+EBI	Donor 1	Donor 1		FALSE		Donor 1												METADATA PENDING (EBI file not supplied)	master list
+EBI	Donor 10	Donor 10		FALSE		Donor 10												METADATA PENDING (EBI file not supplied)	master list
+EBI	Donor 2	Donor 2		FALSE		Donor 2												METADATA PENDING (EBI file not supplied)	master list
+EBI	Donor 3	Donor 3		FALSE		Donor 3												METADATA PENDING (EBI file not supplied)	master list
+EBI	Donor 4	Donor 4		FALSE		Donor 4												METADATA PENDING (EBI file not supplied)	master list
+EBI	Donor 5	Donor 5		FALSE		Donor 5												METADATA PENDING (EBI file not supplied)	master list
+EBI	Donor 6	Donor 6		FALSE		Donor 6												METADATA PENDING (EBI file not supplied)	master list
+EBI	Donor 7	Donor 7		FALSE		Donor 7												METADATA PENDING (EBI file not supplied)	master list
+EBI	Donor 8	Donor 8		FALSE		Donor 8												METADATA PENDING (EBI file not supplied)	master list
+EBI	Donor 9	Donor 9		FALSE		Donor 9												METADATA PENDING (EBI file not supplied)	master list
+EBI	P01__Diagnosis	P01	AML	FALSE	Diagnosis	P01__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P01__Relapse	P01	AML	FALSE	Relapse	P01__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P02__Diagnosis	P02	AML	FALSE	Diagnosis	P02__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P02__Relapse	P02	AML	FALSE	Relapse	P02__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P03__Diagnosis	P03	AML	FALSE	Diagnosis	P03__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P03__Relapse	P03	AML	FALSE	Relapse	P03__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P04__Diagnosis	P04	AML	FALSE	Diagnosis	P04__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P04__Relapse	P04	AML	FALSE	Relapse	P04__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P05__Diagnosis	P05	AML	FALSE	Diagnosis	P05__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P05__Relapse	P05	AML	FALSE	Relapse	P05__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P06__Diagnosis	P06	AML	FALSE	Diagnosis	P06__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P06__Relapse	P06	AML	FALSE	Relapse	P06__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P07__Diagnosis	P07	AML	FALSE	Diagnosis	P07__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P07__Relapse	P07	AML	FALSE	Relapse	P07__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P08__Diagnosis	P08	AML	FALSE	Diagnosis	P08__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P08__Relapse	P08	AML	FALSE	Relapse	P08__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P09__Diagnosis	P09	AML	FALSE	Diagnosis	P09__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P09__Relapse	P09	AML	FALSE	Relapse	P09__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P10__Diagnosis	P10	AML	FALSE	Diagnosis	P10__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P10__Relapse	P10	AML	FALSE	Relapse	P10__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P11__Diagnosis	P11	AML	FALSE	Diagnosis	P11__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P11__Relapse	P11	AML	FALSE	Relapse	P11__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P12__Diagnosis	P12	AML	FALSE	Diagnosis	P12__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P12__Relapse	P12	AML	FALSE	Relapse	P12__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P13__Diagnosis	P13	AML	FALSE	Diagnosis	P13__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P13__Relapse	P13	AML	FALSE	Relapse	P13__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P14__Diagnosis	P14	AML	FALSE	Diagnosis	P14__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P14__Relapse	P14	AML	FALSE	Relapse	P14__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P15__Diagnosis	P15	AML	FALSE	Diagnosis	P15__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P15__Relapse	P15	AML	FALSE	Relapse	P15__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P16__Diagnosis	P16	AML	FALSE	Diagnosis	P16__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P16__Relapse	P16	AML	FALSE	Relapse	P16__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P17__Diagnosis	P17	AML	FALSE	Diagnosis	P17__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P17__Relapse	P17	AML	FALSE	Relapse	P17__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P18__Diagnosis	P18	AML	FALSE	Diagnosis	P18__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P18__Relapse	P18	AML	FALSE	Relapse	P18__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P19__Diagnosis	P19	AML	FALSE	Diagnosis	P19__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P19__Relapse	P19	AML	FALSE	Relapse	P19__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P20__Diagnosis	P20	AML	FALSE	Diagnosis	P20__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P20__Relapse	P20	AML	FALSE	Relapse	P20__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P21__Diagnosis	P21	AML	FALSE	Diagnosis	P21__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P21__Relapse	P21	AML	FALSE	Relapse	P21__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P22__Diagnosis	P22	AML	FALSE	Diagnosis	P22__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P22__Relapse	P22	AML	FALSE	Relapse	P22__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P23__Diagnosis	P23	AML	FALSE	Diagnosis	P23__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P23__Relapse	P23	AML	FALSE	Relapse	P23__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P24__Diagnosis	P24	AML	FALSE	Diagnosis	P24__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P24__Relapse	P24	AML	FALSE	Relapse	P24__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P25__Diagnosis	P25	AML	FALSE	Diagnosis	P25__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P25__Relapse	P25	AML	FALSE	Relapse	P25__Relapse												METADATA PENDING (EBI file not supplied)	master list
+EBI	P26__Diagnosis	P26	AML	FALSE	Diagnosis	P26__Diagnosis												METADATA PENDING (EBI file not supplied)	master list
+EBI	P26__Relapse	P26	AML	FALSE	Relapse	P26__Relapse												METADATA PENDING (EBI file not supplied)	master list
+3v2	GSM3901485	GSM3901485	Control	FALSE	Healthy													healthy bone-marrow control (10x 3v2)	master list
+3v2	GSM3901486	GSM3901486	Control	FALSE	Healthy													healthy bone-marrow control (10x 3v2)	master list
+3v2	GSM3901487	GSM3901487	Control	FALSE	Healthy													healthy bone-marrow control (10x 3v2)	master list
+3v2	GSM3901488	GSM3901488	Control	FALSE	Healthy													healthy bone-marrow control (10x 3v2)	master list
+3v2	GSM4874417	GSM4874417	Control	FALSE	Healthy													healthy bone-marrow control (10x 3v2)	master list
+3v3	adult_bone_marrow_1	adult_bone_marrow_1	Control	FALSE	Healthy													healthy bone-marrow control (10x 3v3)	master list

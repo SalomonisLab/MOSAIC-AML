@@ -17,7 +17,6 @@ TARGETS = {
     "ELN_risk":           {"kind": "multiclass", "source": "ELN_risk"},
     "sex":                {"kind": "binary",     "source": "sex"},
     "is_pediatric":       {"kind": "binary",     "source": "is_pediatric"},
-    "overall_survival":   {"kind": "numeric",    "source": "overall_survival"},
     "age":                {"kind": "numeric",    "source": "age"},
 }
 

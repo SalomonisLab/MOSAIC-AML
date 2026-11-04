@@ -4,7 +4,7 @@ Question: does the engine's REASONING track independent clinical reality? We tak
 engine's DETERMINISTIC cohort-wide outputs — the genetic-anchored driver (the arbiter's
 leading hypothesis for anchored patients) and its ELN-expected risk class, plus the upstream
 LSC stemness call — and test their ASSOCIATION with the sparse clinical labels actually
-present (ELN_risk, clinical_response, overall_survival).
+present (ELN_risk, clinical_response; overall survival only when a metadata file supplies it).
 
 These are RETROSPECTIVE ASSOCIATIONS on tiny, partially-overlapping label sets — NOT trained
 predictors, NOT validated models. Every result carries its n and an `underpowered` flag
