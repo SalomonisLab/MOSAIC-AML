@@ -182,7 +182,7 @@ def load_into(ctx) -> None:
     meta["sample_key"] = [_key(d, s) for d, s in zip(meta["Dataset"], meta["Sample"])]
     meta = meta.replace("", np.nan).drop_duplicates("sample_key").set_index("sample_key")
     keep = ["Donor_ID", "disease_category", "is_pediatric", "timepoint", "therapy",
-            "drug_treatment", "age", "sex", "race", "vital_status", "overall_survival",
+            "drug_treatment", "age", "sex", "race",
             "FAB", "blast_pct", "WHO_classification", "ELN_risk", "clinical_response",
             "karyotype"]
     samples = samples.join(meta[[c for c in keep if c in meta.columns]], how="left")
@@ -191,7 +191,7 @@ def load_into(ctx) -> None:
         samples["donor_id"].notna() & (samples["donor_id"].astype(str) != "nan"),
         samples.index.to_series(),
     ).astype(str)
-    for c in ("age", "overall_survival", "blast_pct"):
+    for c in ("age", "blast_pct"):
         if c in samples.columns:
             samples[c] = pd.to_numeric(samples[c], errors="coerce")
     ctx.tables["samples"] = samples

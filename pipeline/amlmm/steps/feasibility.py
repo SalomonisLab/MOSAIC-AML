@@ -3,8 +3,7 @@
 For each candidate target: how many labeled samples, how many usable classes
 (>= min_class_n), majority-class fraction, and cohort confounding (Cramer's V
 between the label and the dataset of origin). Verdict yes/marginal/no. This is
-the cheap analysis that stops you wasting effort on targets like survival
-(n=19) or vital_status (n=0).
+the cheap analysis that stops you wasting effort on thinly labeled targets.
 """
 from __future__ import annotations
 import numpy as np
