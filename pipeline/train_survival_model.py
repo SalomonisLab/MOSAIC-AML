@@ -281,6 +281,9 @@ def main():
               "mut_columns": getattr(build_blocks, "mut_columns", []),
               # age-spline knots from the TRAINING quartiles, so inference rebuilds the same basis
               "age_knots": getattr(build_blocks, "age_knots", None),
+              # training medians of the clinical numerics, so a one-patient clinical block is filled
+              # the way training filled it instead of with NaN
+              "clin_medians": SD.clinical_medians(cl),
               # symbol -> ENSG, so a sample keyed by gene symbol (the atlas) can be aligned at inference
               "sym2ens": __import__("train_drug_model").sym2ens_map(genes)}
     for arm in ("deployed", "full", "molecular", "clin", "age_eln"):

@@ -37,7 +37,7 @@ if its cross-validated AUROC is ≥0.75 and stable across folds.
 - In nested CV, routing *every* category to the cohort model scored higher still (F1 0.398 vs
   0.368). At 130–184 patients, which categories get worse is not stable from sample to sample, so the
   conservative rule gives up some gain to avoid regressions.
-- Categories with no labelled truth in the cohort (KRAS, SF3B1, CREBBP, …) cannot be routed. They keep
+- Categories with no labeled truth in the cohort (KRAS, SF3B1, CREBBP, …) cannot be routed. They keep
   the shipped over-calling, so healthy controls still receive ~12 "present" calls.
 - `32266596_alldata.json.gz` routes `+8` (trisomy 8), which scored 0.51 in nested CV. Treat that category
   as unvalidated.
@@ -93,11 +93,11 @@ Held-out results on all 184 patients (5-fold x 2 nested CV, whole runs held out)
   -0.03) than not applying it (5 of 29, up to -0.02). With 5-50 mutated patients per mutation, a
   0.02 difference between two models is a handful of patient pairs.
 
-### Searching for the best model this data supports
+### Searching for the best model these data supports
 
 The principled near-optimal method was also tried for every mutation the shipped caller covers:
 treat the BeatAML model as a prior and let this cohort update it only as far as its data supports
-(maximum a posteriori logistic model, penalty centred on the BeatAML model, prior strength chosen by
+(maximum a posteriori logistic model, penalty centered on the BeatAML model, prior strength chosen by
 cross-validation per mutation or shared across mutations). On held-out patients it averaged 0.76
 against 0.79 for the served models, and was lower for 17 of 19 mutations. Even choosing the best
 prior strength per mutation in hindsight, after seeing the held-out answers, reaches only 0.80. The
@@ -134,7 +134,7 @@ model it uses and why.
 
 BeatAML2 (Bottomly et al. 2022, github.com/biodev/beataml2.0_data; 596 AML patients, one RNA
 specimen each, labels from clinical NPM1/FLT3-ITD calls, exome mutation calls, fusions and
-karyotype) was trained together with this cohort, each cohort standardised against itself. Scored
+karyotype) was trained together with this cohort, each cohort standardized against itself. Scored
 on held-out patients of this cohort (same folds as above), it beat the served model for 12 of 29
 mutations, which now use it: TET2, ASXL1, WT1, PTPN11, FLT3-ITD, CEBPA-bZIP, KMT2A-r, KRAS, DNMT3A,
 t(8;21), inv(3), +8 (gains 0.005-0.057). For the other 17 the earlier model stayed better.
@@ -154,3 +154,77 @@ not better than using the whole dataset (0.80-0.82 vs 0.82), but for 14 mutation
 version scored higher on held-out patients and is now used: KIT (+0.031), complex karyotype (+0.031),
 -7 (+0.011), t(8;21), DNMT3A, PTPN11, FLT3-ITD, KRAS, WT1, TP53, t(15;17), and ASXL1, CEBPA-bZIP, +8
 by less than 0.001. Most of these margins are within chance.
+
+### Predicted response to intensive induction (`response_models`)
+
+`32266596_custom.json.gz` also carries a treatment-response model, applied by
+`CohortAdapter.response()`. `ingest_patient.py --cohort-adapter` writes its output to the report's
+`treatment_response` field, and the decision board shows it as "Predicted response to treatment".
+
+- **Endpoint:** complete remission (CR or CRi) after first-line intensive induction chemotherapy.
+- **Training:** the 134 intensive-induction patients of 32266596 with a recorded first-line response,
+  plus 320 BeatAML2 patients sampled at initial diagnosis and treated with standard induction
+  chemotherapy. Model: linear SVM + logistic regression on 2,415 genes, each cohort standardized against
+  itself, Platt-calibrated on out-of-fold scores.
+- **Held-out AUROC** (32266596, 5-fold x 2, whole sequencing runs held out): 0.842. On the same patients:
+  - COMPASS predicted cytarabine sensitivity (what the drug layer offered before): 0.552
+  - ELN 2022 from true genetics: 0.783
+  - LSC17: 0.696
+  - the same model trained on BeatAML2 alone, never shown a label from this cohort: 0.787
+  - with age and true ELN added: 0.864
+- **Calibration:** by tertile, predicted vs observed CR was 0.28 vs 0.24-0.29, 0.67 vs 0.61-0.66 and 0.88
+  vs 0.93; Brier score 0.15-0.16 against 0.24 for the base rate.
+- **Not applicable to:** APL (the board says so when t(15;17) is called), venetoclax or HMA regimens,
+  and specimens the control gate calls healthy. The prediction does not see performance status,
+  comorbidities or the exact regimen.
+
+Fix: earlier versions of the two v2 files stored 51 NaN values in their evaluation notes. Reports built
+with them were not valid JSON, so the board could not open those patients. The values are now null, and
+the adapter replaces any non-finite value before it reaches a report.
+
+### Overall survival calibrated to the cohort (`survival_models`)
+
+`CohortAdapter.survival()` returns overall survival at 1, 2 and 3 years on this cohort's own scale.
+The report field is `cohort_survival` and the board card is "Prognosis". Two ridge Cox models (2,415
+genes) were trained on 184 patients of 32266596 (96 deaths) plus 440 BeatAML2 patients sampled at
+initial diagnosis (243 deaths). The partial likelihood is stratified by cohort, and the baseline
+survival curve is estimated on this cohort's out-of-fold risk scores.
+
+| Held-out C-index (32266596, 5-fold x 2, whole runs held out) | C |
+|---|---|
+| MOSAIC survival layer, RNA upload only | 0.608 |
+| New model, expression only | 0.665 |
+| New model, expression + age | 0.700 |
+| MOSAIC survival layer, age + ELN + labs | 0.703 |
+
+- **Calibration:** MOSAIC's general layer predicted about 5% 2-year survival on this cohort against 55%
+  observed. The new model predicts 0.54-0.55 overall, and 0.31/0.56/0.73 against observed 0.35/0.59/0.70
+  by risk tertile.
+- **When it does not help:** it does not improve on the general layer when age, ELN and labs are
+  available.
+- **Remission model not raised:** predicted genetics, age and a 5,000-gene variant were tested on top of
+  the remission model; none improved it (0.831-0.843 against 0.842).
+
+Survival-layer fixes in `survival_layer.py` and `amlmm/survival/data.py`:
+
+- **Age-only input returned NaN.** Clinical input with age but no labs produced a NaN risk score: the
+  one-patient clinical block filled a missing lab with the median of that one patient. Missing values are
+  now filled with the training-cohort medians. `train_survival_model.py` stores these as `clin_medians`,
+  with constants as a fallback for the current bundle.
+- **`arm_note` misdescribed the model.** It said the expression-only model was used whenever the arm was
+  `deployed`. It now names the arm used, the inputs supplied and the ones filled.
+
+### Independent test on GSE106291
+
+GSE106291 is the AMLCG cohort: 250 intensively treated AML patients with RNA-seq, 235 of them with an
+induction response. It was used two ways, and neither raised the remission model:
+
+- **As extra training data:** held-out AUROC on 32266596 was 0.829, against 0.837 without it on the same
+  shared genes.
+- **As an independent test:** the remission recipe (BeatAML2 + 32266596) scored AUROC 0.563 on it. That is
+  below age alone on that cohort (0.716) and below the published 29-gene + cytogenetic score (0.76). The
+  BeatAML2-only model scored 0.606.
+
+The 0.84 therefore describes patients like those in 32266596 and BeatAML2. It does not transfer to a
+cohort with older patients, different induction regimens and a different resistance definition, so
+treat the response model as cohort-specific, like the rest of this adapter.

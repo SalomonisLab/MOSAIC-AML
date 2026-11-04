@@ -70,6 +70,29 @@ def align_and_z(bundle, expr, sym2ens=None, cohort="sc"):
 # under 0.80 and warn between 0.80 and 0.95.
 MIN_GENE_FRACTION = 0.80
 WARN_GENE_FRACTION = 0.95
+# Training-cohort medians (BeatAML2, initial diagnosis, 444 patients) for bundles built before
+# train_survival_model.py stored its own `clin_medians`. Without them a patient given age but no labs
+# scored NaN: the one-row clinical block filled each missing lab with the median of that row.
+CLIN_MEDIANS = {"ageAtDiagnosis": 61.0, "%.Blasts.in.BM": 74.0, "%.Blasts.in.PB": 56.0, "wbcCount": 25.4}
+
+
+def _arm_note(arm, card, clinical, strat):
+    """Which model was used, and why, in words that match the arm actually chosen."""
+    ho = card.get("holdout", {})
+    c = lambda a: ho.get(a, {}).get("c_index", float("nan"))
+    if arm == "molecular":
+        return ("no age was supplied, so the expression-only model was used; it is weaker (hold-out "
+                "C-index %.3f vs %.3f for the deployed model with clinical data)" % (c("molecular"), c("deployed")))
+    given = [k for k in ("age", "eln", "wbc", "blasts_bm", "blasts_pb", "sex", "induction")
+             if clinical and clinical.get(k) not in (None, "")]
+    missing = [k for k in ("eln", "wbc", "blasts_bm", "blasts_pb") if k not in given]
+    note = "the %s model was used (expression + clinical, hold-out C-index %.3f); supplied: %s" % (
+        arm, c(arm), ", ".join(given) or "none")
+    if missing:
+        note += "; not supplied, filled the way training filled missing values: %s" % ", ".join(missing)
+    if strat is not None:
+        note += "; %s-induction stratum model" % strat["name"]
+    return note
 
 
 def _blocks_for(bundle, z_row, mutations=None, clinical=None):
@@ -110,8 +133,9 @@ def _blocks_for(bundle, z_row, mutations=None, clinical=None):
                             "isDenovo": clinical.get("is_denovo"),
                             "isTransformed": clinical.get("is_transformed"),
                             "priorMDS": clinical.get("prior_mds")}])
-        out["clin"], _ = SD.clinical_block(cl)
-        out["age_eln"], _ = SD.age_eln_block(cl)
+        fill = bundle.get("clin_medians") or CLIN_MEDIANS
+        out["clin"], _ = SD.clinical_block(cl, fill)
+        out["age_eln"], _ = SD.age_eln_block(cl, fill)
         age = out["age_eln"][:, [0]]
         kn = bundle.get("age_knots") or [45.0, 60.0, 71.0]
         out["age_spline"] = np.hstack([age] + [np.clip(age - q, 0, None) ** 3 for q in kn])
@@ -274,12 +298,7 @@ def run_for_expression(z_row, mutations=None, clinical=None, cohort="beataml",
     ho = card["holdout"].get(arm, {})
     return {
         "available": True, "arm": arm,
-        "arm_note": ("age and ELN 2017 were supplied, so the stronger combined model was used"
-                     if arm == "full" else
-                     "no age / ELN 2017 supplied, so the molecular-only model was used — it is weaker "
-                     "(hold-out C-index %.3f vs %.3f for the combined model)"
-                     % (card["holdout"].get("molecular", {}).get("c_index", float("nan")),
-                        card["holdout"].get("full", {}).get("c_index", float("nan")))),
+        "arm_note": _arm_note(arm, card, clinical, strat),
         "risk_score": round(risk, 4), "risk_score_raw": round(raw, 4), "cohort_reference": cohort,
         "genes_matched": n_genes_matched,
         "gene_coverage_warning": (None if (n_genes_matched is None
