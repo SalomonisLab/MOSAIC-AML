@@ -273,7 +273,8 @@ class CohortAdapter:
         out, zb = [], {}
         for m in models:
             rec = {"name": m["name"], "endpoint": m["endpoint"], "applies_to": m.get("applies_to"),
-                   "held_out": m.get("held_out"), "cohort": self.cohort}
+                   "held_out": m.get("held_out"), "cohort": self.cohort,
+                   "training_cohorts": [k.replace("cohort_", "") for k in m.get("training", {}) if k != "model"]}
             if refuse:
                 rec.update({"available": False, "reason": refuse})
                 out.append(rec)
@@ -303,7 +304,8 @@ class CohortAdapter:
         m = next((x for x in models if x["needs"] == ["age"]), None) if age is not None else None
         m = m or next(x for x in models if not x["needs"])
         rec = {"cohort": sm["cohort"], "endpoint": sm["endpoint"], "model": m["name"], "held_out": sm.get("held_out"),
-               "held_out_c_index": m.get("held_out_c_index")}
+               "held_out_c_index": m.get("held_out_c_index"),
+               "training_cohorts": [k.replace("cohort_", "") for k in sm.get("training", {}) if k != "model"]}
         self._dec_cache = {}
         refuse, prov, get = self._guard(bp, sample)
         if refuse:

@@ -571,9 +571,10 @@ function renderResponse(rep){
     return `<div class="trow">
       <div class="tdrv">${esc(r.name)}<span class="sub">held-out AUROC ${h.auroc!=null?(+h.auroc).toFixed(2):"–"}</span></div>
       <div><span class="drug"><b>${pct(r.probability)}</b><span>predicted chance of ${esc(r.endpoint)}${base}</span></span>
-        <div class="why">Trained on ${esc(r.cohort)} and BeatAML2 expression; calibrated on patients it was not trained on.
+        <div class="why">Trained on ${esc((r.training_cohorts&&r.training_cohorts.length?r.training_cohorts:[r.cohort,"BeatAML2"]).join(", ").replace(/, ([^,]*)$/," and $1"))} expression; calibrated on patients it was not trained on.
           For comparison on the same held-out patients: ELN 2022 from true genetics ${h.auroc_eln2022_true_genetics!=null?(+h.auroc_eln2022_true_genetics).toFixed(2):"–"},
           COMPASS predicted cytarabine sensitivity ${h.auroc_compass_cytarabine!=null?(+h.auroc_compass_cytarabine).toFixed(2):"–"}.
+          ${h.unseen_cohort_auroc?esc("On a cohort left out of training: "+Object.entries(h.unseen_cohort_auroc).filter(([k])=>k!=="protocol").map(([k,v])=>k+" "+(+v).toFixed(2)).join(", ")+"."):""}
           ${r.applies_to?esc("Applies to: "+r.applies_to)+".":""}</div></div></div>`;
   }).join("");
   return `<div class="card"><h2>Predicted response to treatment · research decision support</h2>${rows}
@@ -593,7 +594,7 @@ function renderCohortSurvival(rep){
   const cells = Object.entries(sp).map(([k,v])=>`<span class="drug"><b>${pct(v)}</b><span>alive at ${esc(k.replace("y"," y"))}</span></span>`).join("");
   return `<div class="card"><h2>Prognosis · overall survival calibrated to cohort ${esc(s.cohort)} · ${esc(s.risk_group)} risk</h2>
     <div class="trow"><div class="tdrv">${esc(s.model)}<span class="sub">held-out C-index ${s.held_out_c_index!=null?(+s.held_out_c_index).toFixed(2):"–"}</span></div>
-      <div>${cells}<div class="why">Risk percentile ${pct(s.risk_percentile)} within the cohort. Trained on ${esc(s.cohort)} and BeatAML2;
+      <div>${cells}<div class="why">Risk percentile ${pct(s.risk_percentile)} within the cohort. Trained on ${esc((s.training_cohorts&&s.training_cohorts.length?s.training_cohorts:[s.cohort,"BeatAML2"]).join(", ").replace(/, ([^,]*)$/," and $1"))};
       ${esc(h.calibration||"")}. For comparison, MOSAIC's general survival layer scored C-index
       ${h.c_index_mosaic_layer_upload!=null?(+h.c_index_mosaic_layer_upload).toFixed(2):"–"} from an upload and
       ${h.c_index_mosaic_layer_age_eln_labs!=null?(+h.c_index_mosaic_layer_age_eln_labs).toFixed(2):"–"} with age, ELN and labs on the same patients.</div></div></div></div>`;

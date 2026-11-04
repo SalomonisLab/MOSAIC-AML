@@ -185,23 +185,37 @@ the adapter replaces any non-finite value before it reaches a report.
 ### Overall survival calibrated to the cohort (`survival_models`)
 
 `CohortAdapter.survival()` returns overall survival at 1, 2 and 3 years on this cohort's own scale.
-The report field is `cohort_survival` and the board card is "Prognosis". Two ridge Cox models (2,415
-genes) were trained on 184 patients of 32266596 (96 deaths) plus 440 BeatAML2 patients sampled at
-initial diagnosis (243 deaths). The partial likelihood is stratified by cohort, and the baseline
-survival curve is estimated on this cohort's out-of-fold risk scores.
+The report field is `cohort_survival` and the board card is "Prognosis". Two ridge Cox models (2,327
+genes, block `rna_joint3`) were trained on three cohorts: 184 patients of 32266596 (96 deaths), 440
+BeatAML2 patients sampled at initial diagnosis (243 deaths), and 250 GSE106291 patients (German AML Cooperative Group (AMLCG) trial patients;
+intensively treated, 150 deaths). The partial likelihood is stratified by cohort, and the baseline
+survival curve is estimated on this cohort's out-of-fold risk scores. The genes are those of
+`rna_joint` that GSE106291 also measures.
 
 | Held-out C-index (32266596, 5-fold x 2, whole runs held out) | C |
 |---|---|
 | MOSAIC survival layer, RNA upload only | 0.608 |
-| New model, expression only | 0.665 |
-| New model, expression + age | 0.700 |
+| Two-cohort model (BeatAML2 + 32266596), expression only | 0.665 |
+| Three-cohort model, expression only | 0.682 |
+| Two-cohort model, expression + age | 0.700 |
 | MOSAIC survival layer, age + ELN + labs | 0.703 |
+| Three-cohort model, expression + age | 0.718 |
 
+- **Three cohorts against two:** with age, +0.018 (95% CI +0.005 to +0.030, paired bootstrap over
+  patients, 300 resamples, seed 0); expression only, +0.018 (-0.000 to +0.038). The three-cohort models
+  replaced the two-cohort models on 2026-11-04. GSE106291 plus this cohort without BeatAML2 scored 0.724
+  with age, with a wider interval (-0.010 to +0.056), so it was not chosen.
 - **Calibration:** MOSAIC's general layer predicted about 5% 2-year survival on this cohort against 55%
-  observed. The new model predicts 0.54-0.55 overall, and 0.31/0.56/0.73 against observed 0.35/0.59/0.70
-  by risk tertile.
-- **When it does not help:** it does not improve on the general layer when age, ELN and labs are
-  available.
+  observed. The three-cohort model predicts 0.54-0.55 overall, and 0.31/0.57/0.75 against observed
+  0.33/0.58/0.73 by risk tertile (expression only, repeat 1 of 2).
+- **Against the general layer:** with age alone, the three-cohort model matches the general layer that
+  also needs ELN risk and blood counts (0.718 against 0.703).
+- **GSE106291 for mutations:** as a third training cohort for RUNX1 (46 mutated) and t(8;21) (7 fused),
+  it lowered held-out AUROC (RUNX1 0.819-0.822 against 0.839; t(8;21) 0.932-0.933 against 0.945), so
+  both keep their models.
+- **Treatment-suggestion cut:** choosing each mutation's call cut for F1 (cross-fitted over 5 groups
+  of sequencing runs) instead of matching prevalence lowered pooled suggestion F1 from 0.685 to 0.662,
+  and a cut per drug class to 0.646, so the prevalence-matched cut stays.
 - **Remission model not raised:** predicted genetics, age and a 5,000-gene variant were tested on top of
   the remission model; none improved it (0.831-0.843 against 0.842).
 
@@ -217,14 +231,36 @@ Survival-layer fixes in `survival_layer.py` and `amlmm/survival/data.py`:
 ### Independent test on GSE106291
 
 GSE106291 is the AMLCG cohort: 250 intensively treated AML patients with RNA-seq, 235 of them with an
-induction response. It was used two ways, and neither raised the remission model:
+induction response. The first remission recipe (linear SVM + logistic on BeatAML2 + 32266596) scored AUROC
+0.563 on it, below age alone there (0.716).
 
-- **As extra training data:** held-out AUROC on 32266596 was 0.829, against 0.837 without it on the same
-  shared genes.
-- **As an independent test:** the remission recipe (BeatAML2 + 32266596) scored AUROC 0.563 on it. That is
-  below age alone on that cohort (0.716) and below the published 29-gene + cytogenetic score (0.76). The
-  BeatAML2-only model scored 0.606.
+### Remission model that transfers between cohorts (2026-11-04)
 
-The 0.84 therefore describes patients like those in 32266596 and BeatAML2. It does not transfer to a
-cohort with older patients, different induction regimens and a different resistance definition, so
-treat the response model as cohort-specific, like the rest of this adapter.
+Every recipe was scored leave-one-cohort-out over the three cohorts with an induction response
+(32266596, 134 patients; BeatAML2, 320; GSE106291, 235): trained on two, scored on the third. 88 recipes
+were compared (gene sets, ridge strength, one model per cohort, age stacked on top); scripts r7, r7b, r8 and
+r8b in `Downloads/32266596_experiments/scripts`.
+
+- **Where the drop comes from:** 32266596 and BeatAML2 transfer to each other (AUROC 0.73-0.83 in both
+  directions). Any model scored on GSE106291 reached 0.59-0.63, and GSE106291's own model reached
+  0.62-0.68 on the other two. Within GSE106291, cross-validated, RNA reached 0.789. The cohorts have
+  similar ages (median 56, 57 and 58 years) and CR rates (61%, 69%, 70%), so the difference is in how
+  expression relates to response in GSE106291 (AMLCG regimens, resistance as its endpoint), not in the
+  patient mix.
+- **Served now:** one ridge logistic model (C=0.005) per cohort, each standardized on its own training
+  scores, averaged, trained on all three cohorts (2,327 genes, block `rna_joint3`).
+
+| Held-out AUROC, complete remission | Previous model | Served now |
+|---|---|---|
+| 32266596, 5-fold x 2, whole runs held out | 0.842 | 0.842 (difference +0.001, 95% CI -0.045 to +0.048) |
+| 32266596 left out of training | 0.785 | 0.828 |
+| BeatAML2 left out of training | 0.726 | 0.721 |
+| GSE106291 left out of training | 0.563 | 0.641 |
+| BeatAML2, its own patients held out | 0.684 | 0.728 |
+| GSE106291, its own patients held out | 0.774 | 0.762 |
+
+- **Still open:** on GSE106291 as an unseen cohort, no RNA model beat age alone (0.716). Adding age to the
+  model raised GSE106291 to 0.659 left out and 0.786 held out, but lowered 32266596 to 0.828 (paired
+  difference -0.013), where age does not predict response (0.487), so it is not served.
+- **Calibration on 32266596 (out-of-fold):** predicted vs observed CR by tertile 0.26/0.29, 0.69/0.61,
+  0.89/0.93; Brier 0.159 against 0.237 for the base rate.
