@@ -291,6 +291,33 @@ class CohortAdapter:
             out.append(rec)
         return _finite(out)
 
+    def drug_classes(self, bp, sample):
+        """Drug-class calls from the file's `class_models` (v2 only): one model per drug class, trained on
+        'carries any of the class's trigger lesions'. Where a class has such a model, therapy.build_panels
+        lets it decide whether the class is suggested, in place of OR-ing the per-mutation calls.
+        Returns [] when the file has none, and entries with available=False when the guard refuses."""
+        models = self.d.get("class_models") or []
+        if not models:
+            return []
+        self._dec_cache = {}
+        refuse, prov, get = self._guard(bp, sample)
+        out, zb = [], {}
+        for m in models:
+            rec = {"drug_class": m["name"], "triggers": m["triggers"], "categories": m["categories"],
+                   "held_out": m.get("held_out"), "cv_auroc": m.get("cv_auroc"), "cohort": self.cohort}
+            if refuse:
+                out.append(dict(rec, available=False, reason=refuse))
+                continue
+            s = float(m["intercept"])
+            for name, coef in m["coef"].items():
+                if name not in zb:
+                    zb[name] = self._block_z(name, bp, sample, get)
+                s += float(np.dot(zb[name], coef))
+            q = _pct(m["oof_ref"], s)
+            out.append(dict(rec, available=True, probability=round(q, 3), threshold=round(float(m["threshold"]), 3),
+                            call="present" if q >= float(m["threshold"]) else "absent", provenance=prov))
+        return _finite(out)
+
     def survival(self, bp, sample, age=None):
         """Overall survival calibrated to this cohort, from the file's `survival_models` (v2 only).
 

@@ -276,6 +276,9 @@ def bulk_mutation_result(expr_linear, present_truth, ref="sc", adapter=None):
         surv = BP.cohort_adapter.survival(BP, expr_linear)  # overall survival calibrated to the adapter's cohort
         if surv:
             caller_meta["cohort_survival"] = surv
+        dcls = BP.cohort_adapter.drug_classes(BP, expr_linear)  # one model per drug class, if the adapter has them
+        if dcls:
+            caller_meta["drug_class_calls"] = dcls
     top = [p["mutation"] for p in preds if p["call"] == "present" and p["confidence"] == "ok"][:8]
     ev = {"witness": "bulk_mutation", "kind": "predictive", "status": "ok",
           "n_confident_present": n_called, "top_predicted_present": top,
@@ -350,7 +353,8 @@ def main_bulk(args, cfg, run_dir, sample_key):
         top_present = [p["mutation"] for p in mut_preds
                        if p["call"] == "present" and p["confidence"] == "ok"]
         panels = therapy.build_panels(mut_preds, present, client=make_client(args),
-                                      context={"input": "bulk RNA", "dataset": args.dataset})
+                                      context={"input": "bulk RNA", "dataset": args.dataset},
+                                      class_calls=(mut_caller or {}).get("drug_class_calls"))
 
         # COMPASS-AML on bulk: Models A and C only. Without cells there is no state layer, so coverage
         # and escape-clone terms are simply absent rather than guessed.
@@ -471,7 +475,8 @@ def main():
             mut_preds, mut_caller, _ = bulk_mutation_result(bulk_equiv_from_adata(adata), present, ref="sc",
                                                             adapter=args.cohort_adapter)
             panels = therapy.build_panels(mut_preds, present, client=client,
-                                          context={"input": "single-cell", "dataset": args.dataset})
+                                          context={"input": "single-cell", "dataset": args.dataset},
+                                          class_calls=(mut_caller or {}).get("drug_class_calls"))
         except Exception as _e:
             print("WARN bulk mutation caller skipped: %s" % _e, file=sys.stderr)
 

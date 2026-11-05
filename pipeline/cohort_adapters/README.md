@@ -264,3 +264,45 @@ r8b in `Downloads/32266596_experiments/scripts`.
   difference -0.013), where age does not predict response (0.487), so it is not served.
 - **Calibration on 32266596 (out-of-fold):** predicted vs observed CR by tertile 0.26/0.29, 0.69/0.61,
   0.89/0.93; Brier 0.159 against 0.237 for the base rate.
+
+### Treatment suggestions from one model per drug class (2026-11-04)
+
+A drug class used to be suggested when any of its trigger mutations was called. `class_models` adds one
+model per drug class, trained on "carries any trigger lesion" (the e15 recipe: this cohort + BeatAML2,
+each standardized against itself, block `rna_joint`). `CohortAdapter.drug_classes()` returns the class
+calls (report field `drug_class_calls`). For a class that has a model, `therapy.build_panels(...,
+class_calls=...)` suggests the class from that call: it adds one row named after the trigger the
+per-mutation models rank highest, and drops predicted rows of its triggers when the class is called
+absent. Sequenced or supplied drivers are unaffected. Each class's weighting (pooled or balanced) was
+chosen per fold by the training patients' inner out-of-fold AUROC. Scripts r12, r12b and r13 (class models), e20, r11 and s8
+(TCGA-LAML) and tcga_prep in `Downloads/32266596_experiments/scripts`.
+
+| Held-out drug-class F1 (32266596, 5-fold x 2, whole runs held out) | OR of mutation calls | Class model | Difference (95% CI) |
+|---|---|---|---|
+| RAS pathway (NRAS / KRAS / PTPN11), 40 carriers of 172 | 0.434 | 0.473 | +0.039 (-0.108 to +0.191) |
+| Splicing factor (SRSF2 / U2AF1), 25 of 142 | 0.688 | 0.723 | +0.035 (-0.105 to +0.192) |
+| CBF-AML (inv(16) / t(8;21)), 24 of 175 | 0.884 | 0.898 | +0.014 (-0.047 to +0.083) |
+| FLT3 inhibitor (ITD / TKD), 60 of 183 | 0.754 | 0.704 | not used |
+| Menin inhibitor (NPM1 / KMT2A-r), 51 of 183 | 0.913 | 0.904 | not used |
+| Hypomethylating agent (DNMT3A / TET2), 62 of 172 | 0.613 | 0.564 | not used |
+| HMA + venetoclax (-7 / complex karyotype), 43 of 181 | 0.725 | 0.627 | not used |
+
+- **All drug classes together:** suggestion F1 0.685 to 0.696 (+0.011, 95% CI -0.007 to +0.029, paired
+  bootstrap over patients, 2,000 resamples, seed 0), precision 0.703 to 0.722, recall 0.668 to 0.672,
+  347 suggestions instead of 354. The classes that use a class model were chosen on these held-out
+  results, so the gain is an upper estimate.
+- **Adapter check:** 138 class scorings through `CohortAdapter.drug_classes()` matched the direct
+  computation (worst percentile difference 0.0005; every call identical).
+
+Tested on the same folds and not adopted:
+
+- **TCGA-LAML as a third training cohort for mutations** (151 patients with RNA, mutation calls from the
+  TCGA 2013 study on cBioPortal `laml_tcga_pub`): held-out AUROC was lower for 24 of 29 mutations (mean
+  0.823 against 0.854), including KRAS (0.644 against 0.664), WT1, IDH2 and FLT3-TKD. It was higher for
+  +8, inv(3), STAG2, CEBPA bZIP and FLT3-ITD (+0.003 to +0.018); switching those lowered the FLT3-inhibitor
+  F1 from 0.754 to 0.715 and pooled suggestion F1 from 0.685 to 0.679. The GDC re-called somatic MAFs
+  were not used: they report NPM1 in 11 of 100 patients and no FLT3-ITD.
+- **TCGA-LAML as a fourth survival cohort:** C-index 0.678 against 0.685 for the served recipe on the
+  same genes (expression only; -0.007, 95% CI -0.022 to +0.010), 0.719 against 0.721 with age.
+- **Mutually exclusive lesions:** dropping the weaker of two calls that BeatAML2 shows are mutually
+  exclusive (58 pairs) changed suggestion F1 from 0.685 to 0.682.

@@ -541,7 +541,7 @@ function renderTreatments(rep){
         ?"written by the tumor-board agent, constrained to explain the rule engine's choice — it cannot add or change a drug"
         :"deterministic explanation (no LLM available)"}">${byAgent?"agent":"rules"}</span>${esc(t.explanation)}</div>`:"";
     return `<div class="trow">
-      <div class="tdrv">${esc(t.driver)}<span class="sub">score ${conf} · ${auc}</span></div>
+      <div class="tdrv">${esc(t.driver)}<span class="sub">score ${conf} · ${auc}</span>${t.match==="drug class"?`<span class="sub" title="one model for the whole drug class, trained on 'carries any of ${esc((t.class_model?.triggers||[]).join(", "))}'; it says the class applies, not which lesion">drug-class model · most likely ${esc(t.most_likely_driver||"–")}${t.class_model?.held_out_precision!=null?` · right in ${pct(t.class_model.held_out_precision)} of held-out patients`:""}</span>`:""}</div>
       <div>${pill}<div style="margin-top:8px">${drugs}</div>
         ${expl}
         ${t.rationale&&!t.explanation?`<div class="why">${esc(t.rationale)}</div>`:""}</div></div>`;

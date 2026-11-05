@@ -286,11 +286,17 @@ def explain_treatments(client, treatments, context=None):
     return treatments
 
 
-def build_panels(predictions, supplied=None, client=None, context=None):
+def build_panels(predictions, supplied=None, client=None, context=None, class_calls=None):
     """predictions: the report's mutation_predictions list (each: mutation, call, probability,
     confidence, heldout_auc/cv_auroc). supplied: user-provided (sequenced) drivers, gene-level.
+    class_calls: CohortAdapter.drug_classes() output. A drug class with an available class call is
+    suggested from that call, not from its trigger mutations' own calls; sequenced drivers are unaffected.
     -> {"treatments": [...], "tests": [...], "note": ...}"""
     preds = list(predictions or [])
+    classes = [c for c in (class_calls or []) if c.get("available")]
+
+    def _governed(cat):                       # the drug-class model decides for this predicted driver
+        return next((c for c in classes if cat in c.get("categories", [])), None)
     supplied = [str(s).upper() for s in (supplied or [])]
     sup_set = set(supplied)
 
@@ -313,6 +319,8 @@ def build_panels(predictions, supplied=None, client=None, context=None):
         conf_ok = str(p.get("confidence", "")) == "ok"
         called = p.get("call") == "present"
         if not ((called and conf_ok) or _exact(cat)):
+            continue
+        if not _confirmed(cat) and _governed(cat):
             continue
         rule, level = _rule_for(cat)
         if not rule:
@@ -341,6 +349,32 @@ def build_panels(predictions, supplied=None, client=None, context=None):
                           "priority": "confirm" if not _confirmed(cat) else "done",
                           "reason": ("confirm the predicted driver before any targeted decision"
                                      if not _confirmed(cat) else "already sequenced — no action")})
+
+    # 1b) drug classes called present by a class model -> one row per class, named after the trigger
+    #     the per-mutation models rank highest (the class model says "one of these", not which one)
+    for c in classes:
+        cats = c.get("categories", [])
+        if c.get("call") != "present" or any(t["driver"] in cats for t in treatments):
+            continue
+        cand = [p for p in preds if p.get("mutation") in cats and _rule_for(p.get("mutation"))[0]]
+        best = max(cand, key=lambda p: p.get("probability") or 0.0)["mutation"] if cand else cats[0]
+        rule, _ = _rule_for(best)
+        if not rule:
+            continue
+        ho = c.get("held_out") or {}
+        treatments.append({
+            "driver": c["drug_class"], "match": "drug class", "most_likely_driver": best,
+            "status": "PREDICTED — confirm before acting", "predicted": True,
+            "confidence": c.get("probability"), "reliability_auc": ho.get("class_auroc", c.get("cv_auroc")),
+            "drugs": rule["drugs"], "rationale": rule.get("why", ""),
+            "class_model": {"triggers": c.get("triggers"), "held_out_precision": ho.get("precision"),
+                            "held_out_recall": ho.get("recall")},
+        })
+        t = rule.get("test")
+        if t and t not in seen_x:
+            seen_x.add(t)
+            tests.append({"test": t, "why": rule.get("why", ""), "driver": c["drug_class"], "priority": "confirm",
+                          "reason": "confirm which of %s is present before any targeted decision" % " / ".join(c.get("triggers", []))})
 
     # 2) actionable drivers the model is UNRELIABLE about -> sequence them anyway (this is the point)
     for p in preds:
